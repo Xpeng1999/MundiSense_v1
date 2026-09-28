@@ -1,0 +1,53 @@
+{
+  "probe": "P2",
+  "status": "skipped_before_model_load",
+  "reason": "Observed source transfer rate makes the 70.5 GB download exceed one workday",
+  "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "revision": "26291f793822fb6be9555850f06dfe95f2d7e695",
+  "source_url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct/tree/26291f793822fb6be9555850f06dfe95f2d7e695",
+  "planned_bytes": 70530503760,
+  "x02_total_planned_bytes": 76112557680,
+  "range_sample_bytes": 8388608,
+  "range_sample_seconds": 29.478114,
+  "range_sample_bytes_per_second": 284570.7157520322,
+  "estimated_download_hours_at_observed_rate": 68.84688239344983,
+  "snapshot_failed_response_count": 5,
+  "snapshot_failed_response_received_bytes": 2540052527,
+  "label_first_token_ids": {
+    "neutral": 59568,
+    "joy": 4123,
+    "sadness": 82114,
+    "anger": 4003,
+    "fear": 69,
+    "disgust": 4243,
+    "surprise": 19784
+  },
+  "label_first_tokens_unique": true,
+  "model_load_attempted": false,
+  "scoring_attempted": false,
+  "note": "32 GB load feasibility is unverified because model weights were not fully downloaded.",
+  "git": {
+    "commit": "91b2bff4b7260ccbf20fcb2d44f064f6c082c309",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/code_download/src/emotioncore/x02/p2_status.py",
+    "--plan",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/download_plan.json",
+    "--model-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/models/P2",
+    "--snapshot-log",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/p2_download.log",
+    "--sample-bytes",
+    "8388608",
+    "--sample-seconds",
+    "29.478114",
+    "--output",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/p2_probe_status.json"
+  ],
+  "plan_sha256": "e559bf90045b3d057f138197d0e4d7d351ab8f1f59017ad805ea36d19fbdbd97",
+  "snapshot_log_sha256": "47df4dad583a346fe2587bad2983180d56260948b4765a6e2d49dcab77c3cbe9",
+  "recorded_at": "2026-09-28T14:01:22.623996+00:00"
+}
