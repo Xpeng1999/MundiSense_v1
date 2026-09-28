@@ -1,0 +1,327 @@
+{
+  "passed": true,
+  "completed": 40,
+  "required": 40,
+  "details": [
+    {
+      "id": "et_G00001_03_02_033",
+      "condition": "audio",
+      "old_pred": "anger",
+      "new_pred": "anger",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_04_02_014",
+      "condition": "audio",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_07_02_003",
+      "condition": "audio",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_07_02_006",
+      "condition": "audio",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_08_02_017",
+      "condition": "audio",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_09_01_031",
+      "condition": "audio",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_10_01_032",
+      "condition": "audio",
+      "old_pred": "surprise",
+      "new_pred": "surprise",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_10_02_019",
+      "condition": "audio",
+      "old_pred": "surprise",
+      "new_pred": "surprise",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_10_02_029",
+      "condition": "audio",
+      "old_pred": "surprise",
+      "new_pred": "surprise",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_11_01_020",
+      "condition": "audio",
+      "old_pred": "sadness",
+      "new_pred": "sadness",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_12_01_006",
+      "condition": "audio",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_12_02_021",
+      "condition": "audio",
+      "old_pred": "anger",
+      "new_pred": "anger",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_15_02_004",
+      "condition": "audio",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_15_02_008",
+      "condition": "audio",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_01_021",
+      "condition": "audio",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_02_018",
+      "condition": "audio",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_02_039",
+      "condition": "audio",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_17_01_043",
+      "condition": "audio",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_19_01_004",
+      "condition": "audio",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_19_02_021",
+      "condition": "audio",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_03_02_033",
+      "condition": "av",
+      "old_pred": "anger",
+      "new_pred": "anger",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_04_02_014",
+      "condition": "av",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_07_02_003",
+      "condition": "av",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_07_02_006",
+      "condition": "av",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_08_02_017",
+      "condition": "av",
+      "old_pred": "disgust",
+      "new_pred": "disgust",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_09_01_031",
+      "condition": "av",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_10_02_019",
+      "condition": "av",
+      "old_pred": "surprise",
+      "new_pred": "surprise",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_10_02_029",
+      "condition": "av",
+      "old_pred": "surprise",
+      "new_pred": "surprise",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_11_01_020",
+      "condition": "av",
+      "old_pred": "sadness",
+      "new_pred": "sadness",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_12_02_021",
+      "condition": "av",
+      "old_pred": "anger",
+      "new_pred": "anger",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_15_02_004",
+      "condition": "av",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_01_021",
+      "condition": "av",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_02_018",
+      "condition": "av",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_16_02_039",
+      "condition": "av",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_17_01_043",
+      "condition": "av",
+      "old_pred": "fear",
+      "new_pred": "fear",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_19_02_021",
+      "condition": "av",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_21_02_014",
+      "condition": "av",
+      "old_pred": "sadness",
+      "new_pred": "sadness",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_22_01_019",
+      "condition": "av",
+      "old_pred": "joy",
+      "new_pred": "joy",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_22_02_018",
+      "condition": "av",
+      "old_pred": "neutral",
+      "new_pred": "neutral",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    },
+    {
+      "id": "et_G00001_23_02_018",
+      "condition": "av",
+      "old_pred": "sadness",
+      "new_pred": "sadness",
+      "max_abs_logprob_difference": 0.0,
+      "passed": true
+    }
+  ]
+}

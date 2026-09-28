@@ -1,0 +1,8 @@
+legacy_root: /home/administrator/projects/emotion
+source_data_root: /home/administrator/emotion-data/emotionAI_dataset
+processed_root: /home/administrator/emotion-data/emotionAI_processed/phase1_v1
+derived_root: /home/administrator/emotion-data/emotioncore_derived
+run_root: /home/administrator/emotion-data/emotioncore_runs/X01
+model_root: /home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B
+adapter_root: /home/administrator/emotion-output/e3-core/v0-20260903-100430/checkpoint-5265
+yunet_model: /home/administrator/projects/emotion/artifacts/perception_setup/weights/face_detection_yunet_2023mar.onnx

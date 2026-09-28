@@ -1,0 +1,22 @@
+{
+  "et_test": {
+    "path": "experiments/X01_benchmark/results/et_test.jsonl",
+    "rows": 1929,
+    "sha256": "9875bcec77d2b7edab6ab3ecbe875461d1b0b32b4e901564c6b45c4e33b1de16"
+  },
+  "et_val": {
+    "path": "experiments/X01_benchmark/results/et_val.jsonl",
+    "rows": 1908,
+    "sha256": "088d99003bea5bba84cd5989357b64c0fe85fa4a456ab9532056cdfee9676d9e"
+  },
+  "sims_valid": {
+    "path": "experiments/X01_benchmark/results/sims_valid.jsonl",
+    "rows": 647,
+    "sha256": "3da69612eb1f7f1967c4f22254d7613f43f04283c03b5bfc1cc5ccd9241604f4"
+  },
+  "sims_test_lockbox": {
+    "path": "experiments/X01_benchmark/results/sims_test_lockbox.jsonl",
+    "rows": 1034,
+    "sha256": "730a43e1a95f640ef181fab38126c6a401d1d6947acc7b53281c031848e93b74"
+  }
+}
