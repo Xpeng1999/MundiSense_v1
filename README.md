@@ -26,6 +26,12 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m emotioncore.utils.e
 
 The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt`. `new_venv_verification.json` records zero version mismatches across all 296 locked packages, the separate interpreter and package path, and successful CUDA detection on the RTX 5090. The copied package set contains a pre-existing `gradio`/`starlette` constraint conflict, so dependency resolving `pip install -r requirements.lock.txt` is not the verified setup path. No package was installed into the old environment. The running X01 D2 evaluation was started consistently with the legacy interpreter before the new environment was fully provisioned; a fresh run can use the new `.venv`.
 
+### X01 D2 code provenance (review condition)
+
+All 16 D2 `run_meta.json` receipts record Git commit `2a5d7d2a62a3486831e4a9b94d5f513ff792d490` and `dirty: true`. The final X01 review commit is `c47e9e281db04bca2459aed1223fb1797bbd5bcf`. The recorded commit does not identify the exact uncommitted source present when each process started; X01 did not save a runtime diff, so that exact state cannot be reconstructed from Git alone.
+
+`git diff 2a5d7d2a62a3 c47e9e2 -- src/` changes 10 files (950 insertions, 29 deletions). The model scorer `src/emotioncore/models/qwen_omni.py` is unchanged. In the D2 runner, the later code adds a 300-second `SIGALRM` per sample and reads the same media limits from `configs/x01.yaml` instead of hardcoded values. The timeout was added during resumptions; it did not forcibly interrupt one native preprocessing stall, which is recorded as a failed receipt. Other source changes add media and face audits, metrics and reporting, the pipeline entry point, and environment and legacy snapshot checks. This commit comparison is a summary of recorded revisions, not proof that all resumed samples used identical uncommitted code.
+
 ## Reproduce X01
 
 From the repository root, one command runs extraction (if needed), both manifest builders, benchmark split generation, four-level leak checks, D3, all D2 conditions with resume, and metric analysis:
