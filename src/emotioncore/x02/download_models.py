@@ -25,6 +25,11 @@ MODELS = {
            ("config.json", "pytorch_model.bin", "tokenizer.json", "tokenizer_config.json",
             "vocab.txt", "special_tokens_map.json", "1_Pooling/config.json",
             "modules.json", "sentence_bert_config.json")),
+    "P2": ("Qwen/Qwen3-Omni-30B-A3B-Instruct",
+           ("config.json", "generation_config.json", "chat_template.json",
+            "preprocessor_config.json", "tokenizer_config.json", "vocab.json",
+            "merges.txt", "model.safetensors.index.json",
+            *(f"model-{index:05d}-of-00015.safetensors" for index in range(1, 16)))),
 }
 
 
