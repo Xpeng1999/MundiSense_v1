@@ -13,7 +13,7 @@ from emotioncore.data.decode_audit import run as run_decode_audit
 from emotioncore.data.emotiontalk import build as build_et
 from emotioncore.eval.analyze import analyze
 from emotioncore.eval.consistency import run as run_consistency
-from emotioncore.eval.run_baselines import run as run_baselines
+from emotioncore.eval.run_baselines import SAMPLE_TIMEOUT_S, run as run_baselines
 from emotioncore.tools.leakage_check import check
 from emotioncore.utils.common import load_paths, sha256_file, write_json_atomic
 
@@ -27,6 +27,7 @@ def run(paths_config: Path, experiment_config: Path, with_face_audit: bool) -> N
     write_json_atomic(results / "execution_config.json",
                       {"source": str(experiment_config),
                        "sha256": sha256_file(experiment_config),
+                       "per_sample_timeout_s": SAMPLE_TIMEOUT_S,
                        "values": yaml.safe_load(experiment_config.read_text(encoding="utf-8"))})
     extracted = paths["derived_root"] / "chsims_v2/raw"
     if not (extracted / ".extract_complete").is_file():

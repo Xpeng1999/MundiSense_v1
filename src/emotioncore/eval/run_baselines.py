@@ -16,13 +16,15 @@ from contextlib import contextmanager
 from emotioncore.models.qwen_omni import QwenOmniScorer
 from emotioncore.utils.common import load_paths, read_jsonl, sha256_file, write_json_atomic
 
+SAMPLE_TIMEOUT_S = 300
+
 
 def now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
 
 
 @contextmanager
-def sample_deadline(seconds: int = 300):
+def sample_deadline(seconds: int = SAMPLE_TIMEOUT_S):
     """Bound a single sample's media preprocessing and forward pass."""
     previous = signal.getsignal(signal.SIGALRM)
     def expired(_signum, _frame):

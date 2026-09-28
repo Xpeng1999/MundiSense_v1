@@ -192,7 +192,7 @@ def render(results: Path, output: Path) -> None:
               "- A、V、AV 与基座／旧 LoRA 的差值只在相同样本和相同 M 标签下解释；A 与 A 标签、V 与 V 标签结果并列保留，不作跨真值相减。SIMS-valid 的情绪概率差是跨任务代理量。",
               "", "## 7. 异常与未解决问题", "",
               f"- CH-SIMS v2 的 4,402／4,403 源材料差异、{sims['missing_count']} 条缺媒体和未验证说话人独立性见数据卡及 `OPEN_QUESTIONS.md`。",
-              "- D2 对单条预处理和前向计算设 300 秒运行时限；超时写失败凭证并保留在指标分母，具体组合和次数见第 6 节失败原因表。",
+              f"- D2 对单条预处理和前向计算设 {execution['per_sample_timeout_s']} 秒运行时限；超时写失败凭证并保留在指标分母，具体组合和次数见第 6 节失败原因表。",
               f"- 旧项目快照：新增 {legacy['added_count']}、既有文件 mtime/大小变化 {legacy['changed_existing_count']}、删除 {legacy['removed_count']}。新增项是 Python 缓存，已保留并停止后续写入；这项验收未通过。",
               "- 所有逐条预测只在服务器运行目录；仓库仅有逐条路径及 SHA-256 清单。"]
     for item in incidents["incidents"]:
