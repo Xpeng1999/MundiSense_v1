@@ -53,6 +53,7 @@ def render(results: Path, output: Path) -> None:
              f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
              "", "## 2. 实际完成情况与偏离计划之处", "", "### 事实", "",
              f"- 已建私有仓库、Mac 和服务器克隆；D2 每个组合均有独立 `run_meta.json`。本次收录 {len(predictions):,} 份服务器逐条预测的路径与 SHA-256。",
+             "- 服务器重启中断了长任务；D2 按已落盘样本 ID 续跑，人脸审计改用服务器运行目录中的逐片段原子凭证续跑。",
              "- D2 运行时的 Git 状态：" + "；".join(
                  f"`{commit[:12]}`、工作区{'有' if dirty else '无'}未提交改动"
                  for commit, dirty in run_revisions) + "；每组完整元数据在服务器 `run_meta.json`。",
