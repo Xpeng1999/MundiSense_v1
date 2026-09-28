@@ -6,10 +6,12 @@ import gc
 import hashlib
 import json
 import os
+import signal
 import subprocess
 import sys
 import time
 from pathlib import Path
+from contextlib import contextmanager
 
 from emotioncore.models.qwen_omni import QwenOmniScorer
 from emotioncore.utils.common import load_paths, read_jsonl, sha256_file, write_json_atomic
@@ -17,6 +19,21 @@ from emotioncore.utils.common import load_paths, read_jsonl, sha256_file, write_
 
 def now() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
+
+
+@contextmanager
+def sample_deadline(seconds: int = 300):
+    """Bound a single sample's media preprocessing and forward pass."""
+    previous = signal.getsignal(signal.SIGALRM)
+    def expired(_signum, _frame):
+        raise TimeoutError(f"Sample processing exceeded {seconds} seconds")
+    signal.signal(signal.SIGALRM, expired)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous)
 
 
 def tree_listing_sha256(root: Path | None) -> str | None:
@@ -110,10 +127,11 @@ def run_one(model: QwenOmniScorer, model_name: str, dataset: str, condition: str
         receipt = {"id": sample_id, "model": model_name, "dataset": dataset,
                    "condition": condition, "status": "ok", "at": now()}
         try:
-            media = media_for(row, dataset, condition, paths)
-            if not media.is_file():
-                raise FileNotFoundError(str(media))
-            receipt.update(model.score_file(system, user, media, condition))
+            with sample_deadline():
+                media = media_for(row, dataset, condition, paths)
+                if not media.is_file():
+                    raise FileNotFoundError(str(media))
+                receipt.update(model.score_file(system, user, media, condition))
         except Exception as exc:
             failures += 1
             receipt.update(status="failed", pred=None, pred_with_other=None,
