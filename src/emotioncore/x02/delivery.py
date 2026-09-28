@@ -96,6 +96,7 @@ def run(args: argparse.Namespace) -> None:
     if (p2["status"] == "completed") != (p2_result is not None):
         raise ValueError("P2 status and probe result disagree")
     downloads = read(root / "model_downloads.json")
+    modelscope_downloads = read(root / "modelscope_downloads.json")
     feature_meta = {}
     feature_runtime = {}
     for encoder in (*HEAD_ENCODERS, "T2_o", "T2_r"):
@@ -176,6 +177,7 @@ def run(args: argparse.Namespace) -> None:
                    "feature_runtime": feature_runtime,
                    "feature_run_meta": feature_meta,
                    "download_receipts": downloads,
+                   "modelscope_download_receipts": modelscope_downloads,
                    "folds_sha256": sha256(args.folds)}
     args.output_dir.mkdir(parents=True, exist_ok=True)
     write_json_atomic(args.output_dir / "all_metrics.json", all_metrics)
