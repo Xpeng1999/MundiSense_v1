@@ -1,0 +1,18 @@
+{
+  "train_manifests": [
+    "/home/administrator/projects/emotion/data/manifests_t0/swift/train_e3_core_av.jsonl",
+    "/home/administrator/projects/emotion/data/manifests_t0/swift/train_e3_core_audio.jsonl"
+  ],
+  "eval_manifest": "experiments/X01_benchmark/results/et_test.jsonl",
+  "train_rows": 56162,
+  "eval_rows": 1929,
+  "overlap_counts": {
+    "utterance": 0,
+    "media_sha256": 0,
+    "speaker": 0,
+    "dialogue": 0
+  },
+  "overlap_details": [],
+  "media_hashes_computed": false,
+  "missing_media_paths": []
+}

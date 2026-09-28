@@ -1,0 +1,15 @@
+{
+  "locked_packages": 296,
+  "installed_packages": 296,
+  "mismatch_count": 0,
+  "mismatches": {},
+  "key_versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.15.0",
+    "accelerate": "1.12.0",
+    "bitsandbytes": "0.50.1",
+    "qwen-omni-utils": "0.0.8",
+    "pyyaml": "6.0.3",
+    "peft": "0.19.1"
+  }
+}

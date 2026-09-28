@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "et_rows_and_official_counts": true,
+    "sims_rows_and_decode_coverage": true,
+    "face_audit_coverage": true,
+    "legacy_leak_reproduction": true,
+    "et_splits_clean": true,
+    "d3_passed": true,
+    "definition_unchanged": true,
+    "manifests_unchanged": true,
+    "lockbox_has_no_labels": true,
+    "no_lockbox_inference": true,
+    "all_16_runs": true,
+    "prediction_manifest_complete": true,
+    "prediction_hashes_valid": true,
+    "modality_and_eight_scores_valid": true,
+    "run_metadata_complete": true,
+    "tests_passed": true,
+    "environment_locked": true,
+    "incident_receipts_verified": true,
+    "report_sections": true,
+    "manifests_without_transcripts": true,
+    "no_media_or_weights_tracked": true
+  },
+  "functional_checks_passed": true,
+  "legacy_boundary_passed": false,
+  "review_required": true,
+  "legacy_added_files": 172
+}

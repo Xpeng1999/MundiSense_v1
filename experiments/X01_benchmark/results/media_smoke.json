@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "pred": "anger",
+    "pred_with_other": "anger",
+    "modality_switch": {
+      "processor": false,
+      "forward": false,
+      "has_audio": true,
+      "has_video": false
+    }
+  },
+  "video": {
+    "pred": "neutral",
+    "pred_with_other": "neutral",
+    "modality_switch": {
+      "processor": false,
+      "forward": false,
+      "has_audio": false,
+      "has_video": true
+    }
+  },
+  "av": {
+    "pred": "anger",
+    "pred_with_other": "anger",
+    "modality_switch": {
+      "processor": true,
+      "forward": true,
+      "has_audio": true,
+      "has_video": true
+    }
+  }
+}

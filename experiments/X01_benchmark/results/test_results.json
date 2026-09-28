@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/administrator/projects/emotioncore/.venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "output": "......                                                                   [100%]\n6 passed in 1.59s\n",
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0
+}

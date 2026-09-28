@@ -1,0 +1,944 @@
+{
+  "method": "ffmpeg -xerror -err_detect explode, full video/audio decode to null",
+  "rows": 4403,
+  "counts_by_mode": {
+    "test": {
+      "ok": 994,
+      "missing": 40
+    },
+    "train": {
+      "ok": 2635,
+      "missing": 87
+    },
+    "valid": {
+      "ok": 620,
+      "missing": 27
+    }
+  },
+  "failures": [
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0002",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0003",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0004",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0005",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0006",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0007",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0008",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0009",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0010",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0011",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0012",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0013",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0014",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0015",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0016",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0017",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0018",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0019",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0020",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0021",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0022",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0023",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0024",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0025",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0026",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0027",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0028",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0029",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0030",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0031",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0032",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0033",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0002",
+      "clip_id": "0034",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0035",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0036",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0002",
+      "clip_id": "0037",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0002",
+      "clip_id": "0038",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0010",
+      "clip_id": "0028",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0011",
+      "clip_id": "0031",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0021",
+      "clip_id": "0002",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0003",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0004",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0005",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0006",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0021",
+      "clip_id": "0007",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0021",
+      "clip_id": "0008",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0021",
+      "clip_id": "0009",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0021",
+      "clip_id": "0010",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0021",
+      "clip_id": "0011",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0024",
+      "clip_id": "0037",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0035",
+      "clip_id": "0001",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0046",
+      "clip_id": "0002",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0006",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0014",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0046",
+      "clip_id": "0026",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0046",
+      "clip_id": "0034",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0038",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0043",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0046",
+      "clip_id": "0048",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0049",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0046",
+      "clip_id": "0054",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0046",
+      "clip_id": "0059",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0001",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0002",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0003",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0004",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0006",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0008",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0009",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0010",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0011",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0012",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0013",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0014",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0015",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0016",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0049",
+      "clip_id": "0017",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0018",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0019",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0049",
+      "clip_id": "0020",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0021",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0049",
+      "clip_id": "0022",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0050",
+      "clip_id": "0001",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0050",
+      "clip_id": "0002",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "video_0050",
+      "clip_id": "0004",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0050",
+      "clip_id": "0005",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "video_0050",
+      "clip_id": "0006",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0050",
+      "clip_id": "0008",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0050",
+      "clip_id": "0010",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "video_0055",
+      "clip_id": "0034",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "csbgs2_0001",
+      "clip_id": "00033",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "aqgy4_0001",
+      "clip_id": "00028",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy4_0003",
+      "clip_id": "00001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy4_0020",
+      "clip_id": "00013",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "aqgy4_0023",
+      "clip_id": "00000",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy4_0024",
+      "clip_id": "00001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0005",
+      "clip_id": "00028",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0005",
+      "clip_id": "00040",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0007",
+      "clip_id": "00022",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00000",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00002",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00004",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00005",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00006",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00007",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00009",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00010",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00012",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00013",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00015",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00016",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00017",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00018",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00019",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00020",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00021",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00022",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00023",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00024",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00025",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00026",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00027",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00029",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00030",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00031",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00032",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00033",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00034",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00035",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00036",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00037",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0008",
+      "clip_id": "00038",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0014",
+      "clip_id": "00011",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0014",
+      "clip_id": "00044",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0014",
+      "clip_id": "00051",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0020",
+      "clip_id": "00012",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0020",
+      "clip_id": "00026",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0022",
+      "clip_id": "00012",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0024",
+      "clip_id": "00011",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0025",
+      "clip_id": "00001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0025",
+      "clip_id": "00016",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0028",
+      "clip_id": "00034",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "aqgy5_0028",
+      "clip_id": "00037",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "aqgy5_0028",
+      "clip_id": "00041",
+      "status": "missing"
+    },
+    {
+      "mode": "valid",
+      "video_id": "aqgy5_0030",
+      "clip_id": "00013",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0031",
+      "clip_id": "00014",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "aqgy5_0032",
+      "clip_id": "00001",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0032",
+      "clip_id": "00002",
+      "status": "missing"
+    },
+    {
+      "mode": "train",
+      "video_id": "aqgy5_0033",
+      "clip_id": "00005",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "test14",
+      "clip_id": "00000",
+      "status": "missing"
+    },
+    {
+      "mode": "test",
+      "video_id": "test14",
+      "clip_id": "00001",
+      "status": "missing"
+    }
+  ]
+}

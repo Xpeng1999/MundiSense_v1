@@ -1,0 +1,3003 @@
+{
+  "train_manifests": [
+    "/home/administrator/projects/emotion/data/manifests_t0/swift/train_e3_core_av.jsonl",
+    "/home/administrator/projects/emotion/data/manifests_t0/swift/train_e3_core_audio.jsonl"
+  ],
+  "eval_manifest": "/home/administrator/projects/emotion/av_attribution_v16/artifacts/selected_chinese.json",
+  "train_rows": 56162,
+  "eval_rows": 252,
+  "overlap_counts": {
+    "utterance": 161,
+    "media_sha256": 155,
+    "speaker": 168,
+    "dialogue": 168
+  },
+  "overlap_details": [
+    {
+      "id": "et_G00009_28_12_009",
+      "utterance": [
+        "G00009_28_12_009"
+      ],
+      "media_sha256": [
+        "f3a99c57397e483fd692560e45e267431c7d415ce9544c4063ac19fb755ef0a9"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_23_12_010",
+      "utterance": [
+        "G00009_23_12_010"
+      ],
+      "media_sha256": [
+        "bce180df7af9fdbeb157c9a0808fc4e1559fc59927ea1932c19aa73337913062"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "23"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_51_12_029",
+      "utterance": [
+        "G00009_51_12_029"
+      ],
+      "media_sha256": [
+        "361a5a7f3bc1e09f98767ccb9175bf454d18d9740de6ec6d9bdde07e02bba548"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "51"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_38_14_019",
+      "utterance": [
+        "G00009_38_14_019"
+      ],
+      "media_sha256": [
+        "a44958ade80c524be0487288910ae0878f87432054383f2d16be47a61f9f1034"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "38"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_07_14_022",
+      "utterance": [
+        "G00009_07_14_022"
+      ],
+      "media_sha256": [
+        "71d76472d09c96f823c39e9e1bf1ffa3a83f708fca928f068b70ecdd95ce9cf4"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "07"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_30_12_026",
+      "utterance": [
+        "G00009_30_12_026"
+      ],
+      "media_sha256": [
+        "55c4c73ed8a47447d180eb9340bf9497aeb81f927f182cdcf57dccf1966357c7"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "30"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_11_14_021",
+      "utterance": [
+        "G00009_11_14_021"
+      ],
+      "media_sha256": [
+        "08c5303b34dca739ce837361b4e1b4875da6b78b5b0db46c1cbfc7eb8a52f5e9"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "11"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_01_14_008",
+      "utterance": [
+        "G00009_01_14_008"
+      ],
+      "media_sha256": [
+        "c1e84c6b7f2f77638b6a2b6e13a9e92cb25ac592b2d0013d5b22fc1345f1bace"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "01"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_36_14_001",
+      "utterance": [
+        "G00009_36_14_001"
+      ],
+      "media_sha256": [
+        "e0f966abd0d6f1b67799c05f06ba0187968c959afef1e680ca7afe56c6ed51b3"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_51_14_022",
+      "utterance": [
+        "G00009_51_14_022"
+      ],
+      "media_sha256": [
+        "94d5d7e89d0c34db540a0c08adb15edc09bcf35290fb431e48967b5c7c7b04cd"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "51"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_51_14_002",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "51"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_54_12_005",
+      "utterance": [
+        "G00009_54_12_005"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "54"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_17_14_040",
+      "utterance": [
+        "G00009_17_14_040"
+      ],
+      "media_sha256": [
+        "f931fad3fcf173a631e3daaeec60f224aa97b78f0470773d5d38d90feac9a538"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "17"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_46_12_016",
+      "utterance": [
+        "G00009_46_12_016"
+      ],
+      "media_sha256": [
+        "b654d98f2d9fc86ac22406a641efbf478b8389a7a1200d7f5a194caa211bcb75"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "46"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_32_14_014",
+      "utterance": [
+        "G00009_32_14_014"
+      ],
+      "media_sha256": [
+        "37d4e9e7255b614ae899e91c4cbe921f55cebe9facf3cefd3e16a44da7315ae1"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "32"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_48_14_021",
+      "utterance": [
+        "G00009_48_14_021"
+      ],
+      "media_sha256": [
+        "b0180adc4818157464cede71124f9855c3b4fcbb0f80fa2167d25c0a192dd238"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_37_14_021",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "37"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_38_14_013",
+      "utterance": [
+        "G00009_38_14_013"
+      ],
+      "media_sha256": [
+        "be1cb480e9c80af950108483fefc06c8e1bcfd02962fd047f8fa66f6eeaab91f"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "38"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_39_12_037",
+      "utterance": [
+        "G00009_39_12_037"
+      ],
+      "media_sha256": [
+        "0b3afb5b89b4239c163507960d2d84c5392e1c47086dcf38890bc0702e0d5027"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "39"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_38_14_035",
+      "utterance": [
+        "G00009_38_14_035"
+      ],
+      "media_sha256": [
+        "c16de934b90da04c4ff896ebe037f2c888bc02462cc7573a03e601fa77360ff5"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "38"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_16_14_016",
+      "utterance": [
+        "G00009_16_14_016"
+      ],
+      "media_sha256": [
+        "8a406276a502ed773e16fbde9753f353c9610762978365055e74fe310b7b0ebc"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "16"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_15_14_017",
+      "utterance": [
+        "G00009_15_14_017"
+      ],
+      "media_sha256": [
+        "91d0b975f934de81335acba1aefd1feed0151d00313ff5dd6955822c21c46ed2"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "15"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_13_12_021",
+      "utterance": [
+        "G00009_13_12_021"
+      ],
+      "media_sha256": [
+        "ac163414a24e39c56c80ab3d5d879babdd7ff6ef15aa442715cb1eecb839dbf8"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "13"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_13_14_022",
+      "utterance": [
+        "G00009_13_14_022"
+      ],
+      "media_sha256": [
+        "f9066199cd8bffb0bb40d75d759a1e3133c54446f0c34efdd4a28170d167a0ba"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "13"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_19_12_028",
+      "utterance": [
+        "G00009_19_12_028"
+      ],
+      "media_sha256": [
+        "c04154a1d9299676530e2650f712fa8325d2a86e0fb1c309609d82d9f5f58d95"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "19"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_15_14_029",
+      "utterance": [
+        "G00009_15_14_029"
+      ],
+      "media_sha256": [
+        "a731b5ba550170cb969995f2e432dd556c6880f1e64b5fdf0f526a5252a11b9b"
+      ],
+      "speaker": [
+        "14"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "15"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_19_12_037",
+      "utterance": [
+        "G00009_19_12_037"
+      ],
+      "media_sha256": [
+        "46deff042f958aca283e37ae640fa674db09e4185bdefe47cd8cd3563a5a6df8"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "19"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00009_37_12_005",
+      "utterance": [
+        "G00009_37_12_005"
+      ],
+      "media_sha256": [
+        "cc1e401b66e285439cef049abd3e2e1afc9506f9b25e93a01b1b4ed457112d8c"
+      ],
+      "speaker": [
+        "12"
+      ],
+      "dialogue": [
+        [
+          "G00009",
+          "37"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_18_10_001",
+      "utterance": [
+        "G00005_18_10_001"
+      ],
+      "media_sha256": [
+        "0d736ab5c895b97c34add9aba8eeb57ef03115297b3743432bbae3ccbb667ac1"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "18"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_09_10_011",
+      "utterance": [
+        "G00005_09_10_011"
+      ],
+      "media_sha256": [
+        "1aecade131f9828a5be638d853f09dc18df76749982b2f5a3310df4eceec532e"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "09"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_08_10_022",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "08"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_42_10_011",
+      "utterance": [
+        "G00005_42_10_011"
+      ],
+      "media_sha256": [
+        "cbcdd3de43d8f610f77ff50e75d28d6eac1fd1f820dd3fe1b571beaf3bdb476f"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_08_06_014",
+      "utterance": [
+        "G00005_08_06_014"
+      ],
+      "media_sha256": [
+        "b37a826749db4467995206f8c5f79f63f37463d577cf386674f72128c78f1953"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "08"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_44_10_032",
+      "utterance": [
+        "G00005_44_10_032"
+      ],
+      "media_sha256": [
+        "96e88e6705f93e525d1d7634a652a79bc7af10854b9e76288effa94e081794e6"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "44"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_08_10_007",
+      "utterance": [
+        "G00005_08_10_007"
+      ],
+      "media_sha256": [
+        "e932119eb397a94a912955d6c6ddbde2af3a98de0f6b52e6f3beb30901697d86"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "08"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_12_06_045",
+      "utterance": [
+        "G00005_12_06_045"
+      ],
+      "media_sha256": [
+        "33d2d33a6e63941c4ab06c07a9e956d84cf0f8044b3d01ee9329d81f84c843fa"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_10_06_006",
+      "utterance": [
+        "G00005_10_06_006"
+      ],
+      "media_sha256": [
+        "436215471d61aa7cb91f88e8c5b22ddd6d2c7bc81484e56522a76824a357c8c7"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "10"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_45_06_014",
+      "utterance": [
+        "G00005_45_06_014"
+      ],
+      "media_sha256": [
+        "6d3a710753386c5727ceeccf142a175468443e7177dd5b3f4ffc91d0cbf0c224"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "45"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_42_06_008",
+      "utterance": [
+        "G00005_42_06_008"
+      ],
+      "media_sha256": [
+        "60368806d8d05e6614beabd4a91d12602ea3d592ab498f2522ae7dd7805236b1"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_46_06_019",
+      "utterance": [
+        "G00005_46_06_019"
+      ],
+      "media_sha256": [
+        "b9bccd60b66e4567909b7a5a777bb95f66edb5ecd1d8297b34d5e1d2f59e6bd1"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "46"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_34_06_029",
+      "utterance": [
+        "G00005_34_06_029"
+      ],
+      "media_sha256": [
+        "708725182303c701cfe62ae366f6a23278f14ac5d1d61b5773ba8158dc3ddf08"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "34"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_35_06_021",
+      "utterance": [
+        "G00005_35_06_021"
+      ],
+      "media_sha256": [
+        "993748bb3b3a6f2cb93c96a109a427bbe8f386f58efce05383534da1ba4ee55d"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "35"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_53_10_015",
+      "utterance": [
+        "G00005_53_10_015"
+      ],
+      "media_sha256": [
+        "e4ef5e8035a8d02ce637d9efc6aaa6e7ab5e9bcf070cefc9525f9abdd02e61cb"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "53"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_48_06_014",
+      "utterance": [
+        "G00005_48_06_014"
+      ],
+      "media_sha256": [
+        "0da9c3669048f1454aff1155f780cf482d92502eca55d4a569ec26b4f04a848e"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_37_06_030",
+      "utterance": [
+        "G00005_37_06_030"
+      ],
+      "media_sha256": [
+        "f44a7eed0b0feb136f8fb3e52e2ebe6cd9e94b588d8a202b7170a91928b4a41c"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "37"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_36_06_012",
+      "utterance": [
+        "G00005_36_06_012"
+      ],
+      "media_sha256": [
+        "ccb539e91f69aac09528ac6900e81e65746d3c0fa0acea9c8714706816fa51ab"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_03_10_042",
+      "utterance": [
+        "G00005_03_10_042"
+      ],
+      "media_sha256": [
+        "92a652d6b1ede4ccaf92cb0acbd867a29743442bfc94088096d57087b1585c16"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "03"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_36_06_024",
+      "utterance": [
+        "G00005_36_06_024"
+      ],
+      "media_sha256": [
+        "2fc3c08c56c610cb093542f3828a5dc245057413de4bd09c555331852c694dab"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_28_10_011",
+      "utterance": [
+        "G00005_28_10_011"
+      ],
+      "media_sha256": [
+        "f7dc06b327b174e89826c6d512b46da53fbf6add5905d9a161504b0a8f6da6ab"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_25_06_010",
+      "utterance": [
+        "G00005_25_06_010"
+      ],
+      "media_sha256": [
+        "88f86ff75af2432a33706a76c87b415e4b562407bb03ef836a4f549b56b4ebbd"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "25"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_36_10_003",
+      "utterance": [
+        "G00005_36_10_003"
+      ],
+      "media_sha256": [
+        "848cb3d893ac200a7dfc4cf06bbd8f7cc4401f300eb91cda7699a5c79a196f22"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_24_06_002",
+      "utterance": [
+        "G00005_24_06_002"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "24"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_28_10_031",
+      "utterance": [
+        "G00005_28_10_031"
+      ],
+      "media_sha256": [
+        "7fbdeb4c3f295b2e642947e1a1dfc5658001e9ef0465f6d5519d563bc59ddb99"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_37_06_028",
+      "utterance": [
+        "G00005_37_06_028"
+      ],
+      "media_sha256": [
+        "69d1ac2df76bbf4aef4d36db19b888d997d60bdf00a9c37581e4635421a11ef7"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "37"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_12_10_007",
+      "utterance": [
+        "G00005_12_10_007"
+      ],
+      "media_sha256": [
+        "334952e2a6feeebd8dffde63644cd9750ab6e7ab487db334dac667a8e3a59ecf"
+      ],
+      "speaker": [
+        "10"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00005_43_06_005",
+      "utterance": [
+        "G00005_43_06_005"
+      ],
+      "media_sha256": [
+        "9dc8dbba99e87ea73c5459eb6bf3dbff0383568011e290d7d8372a5ca55a0471"
+      ],
+      "speaker": [
+        "06"
+      ],
+      "dialogue": [
+        [
+          "G00005",
+          "43"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_01_09_003",
+      "utterance": [
+        "G00004_01_09_003"
+      ],
+      "media_sha256": [
+        "2cf74aca4fe9f266fa910fe2e5094f4758f4d288a1399ad1c5124be309873383"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "01"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_46_09_030",
+      "utterance": [
+        "G00004_46_09_030"
+      ],
+      "media_sha256": [
+        "c57c1d50c7c3ffdfa23388e15e0d551e7ebf05b443115ea687d9e4699b213625"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "46"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_62_05_008",
+      "utterance": [
+        "G00004_62_05_008"
+      ],
+      "media_sha256": [
+        "1665cab7cd3694cdd00acf77aff6d93751bf7f534785e55827f7cffe92296b69"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "62"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_17_09_024",
+      "utterance": [
+        "G00004_17_09_024"
+      ],
+      "media_sha256": [
+        "8e9cf97ee702000a7dd541b7d401f341ee11e3ed47090edc9985788c2268b51c"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "17"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_44_09_007",
+      "utterance": [
+        "G00004_44_09_007"
+      ],
+      "media_sha256": [
+        "4b7a9da3c17dc27fe21c827be892bee7e78c466403d084e77fa6cf53ca55f542"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "44"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_45_09_002",
+      "utterance": [
+        "G00004_45_09_002"
+      ],
+      "media_sha256": [
+        "6aa729b99130f0d2ebadfdc91df0ea29c4de0650e649dfb1ce1cc00c45ce0ec4"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "45"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_49_05_023",
+      "utterance": [
+        "G00004_49_05_023"
+      ],
+      "media_sha256": [
+        "c5c2ec6e7eaf21f3a475a377595912eb7868ac2fe855b2e68cd929b9afffafb1"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "49"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_06_05_014",
+      "utterance": [
+        "G00004_06_05_014"
+      ],
+      "media_sha256": [
+        "a111fc70ae80dea2e6543cd96c48f9e851cd014514db25c85a23dc6fee2e78f4"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "06"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_42_09_002",
+      "utterance": [
+        "G00004_42_09_002"
+      ],
+      "media_sha256": [
+        "6c856170e1c5368f4d1c71d895296b2ded36999699904a2d3ae88e4de02b32c0"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_41_09_002",
+      "utterance": [
+        "G00004_41_09_002"
+      ],
+      "media_sha256": [
+        "081e2bb3abbd7c406a20b78390a3fd6273dd5522e829c798c15bccc1178e033a"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "41"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_42_05_014",
+      "utterance": [
+        "G00004_42_05_014"
+      ],
+      "media_sha256": [
+        "f6bbb407dce1bf7291790267cb63843ecfc1f184b4577ff2a4998c57a9593c2a"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_11_05_008",
+      "utterance": [
+        "G00004_11_05_008"
+      ],
+      "media_sha256": [
+        "e78946dae6240ebc01ecfe785f3cf5059c56c3ef3b34c8888a4f8a0a35f43e8a"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "11"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_24_05_010",
+      "utterance": [
+        "G00004_24_05_010"
+      ],
+      "media_sha256": [
+        "0b1b9f56018d2609a8bc78c9ddd44ffa08bc408f6aab23ce5b88f17c2bfe4f6f"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "24"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_66_09_012",
+      "utterance": [
+        "G00004_66_09_012"
+      ],
+      "media_sha256": [
+        "84df54879e18db7a0c7dc02a09fd513ba1dc6a9ce676ab761be70d272a971520"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "66"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_27_09_008",
+      "utterance": [
+        "G00004_27_09_008"
+      ],
+      "media_sha256": [
+        "02822bb83ec68e94800370cc003843b1da6fe590f31d8e9129fa8ad41b2b745b"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "27"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_28_05_005",
+      "utterance": [
+        "G00004_28_05_005"
+      ],
+      "media_sha256": [
+        "8abc5b7bd4fbc48b521fdf592701cfd77595a58a461702b33972c56cc2de6bd1"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_29_09_009",
+      "utterance": [
+        "G00004_29_09_009"
+      ],
+      "media_sha256": [
+        "37182280e16772f4c10e266039e5fb7c9919c7f27aaba19984964713a98d5e93"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "29"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_29_05_010",
+      "utterance": [
+        "G00004_29_05_010"
+      ],
+      "media_sha256": [
+        "c639556dfb2e44b5db84b0a09e2c139b07359c0c213c244e5e4ecd4c1b03d0af"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "29"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_67_09_011",
+      "utterance": [
+        "G00004_67_09_011"
+      ],
+      "media_sha256": [
+        "e7d1931d42c48d9e9745aa2a9d128309dee6f8c3fb809fa6dc41cd41ecb826e4"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "67"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_48_09_001",
+      "utterance": [
+        "G00004_48_09_001"
+      ],
+      "media_sha256": [
+        "d11ee85ad7390e16a8be2c4bcf879a95d699f37a2cee9cd0f633cd713bffacdd"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_52_09_014",
+      "utterance": [
+        "G00004_52_09_014"
+      ],
+      "media_sha256": [
+        "e60d71e50e672e1de019090ebda2357efe0bc11ce580fec7ad2166a62ca0f440"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "52"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_62_09_027",
+      "utterance": [
+        "G00004_62_09_027"
+      ],
+      "media_sha256": [
+        "e09d2687e82347c921f5f7182ab7be5aaaddbf73ee8cc497f61b4410c873d454"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "62"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_18_09_017",
+      "utterance": [
+        "G00004_18_09_017"
+      ],
+      "media_sha256": [
+        "1dec503117d99e4cd71fa166d13475b654e30de586eb56dee28c75a3cbfd4f42"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "18"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_62_09_031",
+      "utterance": [
+        "G00004_62_09_031"
+      ],
+      "media_sha256": [
+        "3babee16e9f98e0e0369f8d453cc645fdce35fedfc9d8e2915c29c3a0867ddec"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "62"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_20_09_015",
+      "utterance": [
+        "G00004_20_09_015"
+      ],
+      "media_sha256": [
+        "72c929e4629deacd1a73a8e65268e9ee6c2ace568de9121a96075713bf18368d"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "20"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_48_09_013",
+      "utterance": [
+        "G00004_48_09_013"
+      ],
+      "media_sha256": [
+        "3d2b6b88449dcce685984f9a91588879e034faf9b5b3bcdeba27cb2e9a386d4f"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_06_09_006",
+      "utterance": [
+        "G00004_06_09_006"
+      ],
+      "media_sha256": [
+        "c86cfe7890bc0d9a106a90cf6a03884825491815089650d75ef9937d17a99d64"
+      ],
+      "speaker": [
+        "09"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "06"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00004_06_05_005",
+      "utterance": [
+        "G00004_06_05_005"
+      ],
+      "media_sha256": [
+        "8e5e99d105a8116d837211b4af1f14a4c95203f2d9f55d900a648739df192ede"
+      ],
+      "speaker": [
+        "05"
+      ],
+      "dialogue": [
+        [
+          "G00004",
+          "06"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_48_16_008",
+      "utterance": [
+        "G00013_48_16_008"
+      ],
+      "media_sha256": [
+        "af0bb9443e03db2a6e981e26d5928bd853ababdea24c6e124c2bfb53005e71a2"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_05_17_015",
+      "utterance": [
+        "G00013_05_17_015"
+      ],
+      "media_sha256": [
+        "4a4904526b02635303b460d90a7c06dcef3b0105ebdd2fb1fec873ea59df0277"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "05"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_12_16_033",
+      "utterance": [
+        "G00013_12_16_033"
+      ],
+      "media_sha256": [
+        "2743a4250a0302ede43b5d0ab7e30e0ceadd2263916a5881859a564690d4e2d8"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_03_17_034",
+      "utterance": [
+        "G00013_03_17_034"
+      ],
+      "media_sha256": [
+        "e624cc63b10ba3404787c14623ae20019fd4bfee74645796e55e493de60a36a1"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "03"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_26_16_014",
+      "utterance": [
+        "G00013_26_16_014"
+      ],
+      "media_sha256": [
+        "f07e31f6c67db01bfa566d2499df36e207807a8da85b1b59fb6e68a1a39f377a"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "26"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_37_16_021",
+      "utterance": [
+        "G00013_37_16_021"
+      ],
+      "media_sha256": [
+        "4f807ca6007ef6214a0599c2d21a4bd2f5d282eabfe4737e5f5eb58a6fa39892"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "37"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_26_17_005",
+      "utterance": [
+        "G00013_26_17_005"
+      ],
+      "media_sha256": [
+        "f922febda9aadd986addef240e603e3639fa312d795615e41f84a3e3830e7d29"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "26"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_09_17_003",
+      "utterance": [
+        "G00013_09_17_003"
+      ],
+      "media_sha256": [
+        "0919c2c60e9655c8d5e57b365a73feb4eaf1324b6f9011387a28ec07695130c4"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "09"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_47_16_012",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "47"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_46_17_003",
+      "utterance": [
+        "G00013_46_17_003"
+      ],
+      "media_sha256": [
+        "204bf60ae4c6e82c4225568f4d958c1dfb0873f61ca1b7abb24c64658a8c51d9"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "46"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_48_16_006",
+      "utterance": [
+        "G00013_48_16_006"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "48"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_42_17_011",
+      "utterance": [
+        "G00013_42_17_011"
+      ],
+      "media_sha256": [
+        "64bda8fa73dec59ec9e77a63eddb2968cdf8176c92567df2d65ca4191224a120"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_25_17_016",
+      "utterance": [
+        "G00013_25_17_016"
+      ],
+      "media_sha256": [
+        "f8350d1ea4ed35136fe5f1f1246f4df5fa94eb3b64b3387780c0056a4ba79dbc"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "25"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_33_17_024",
+      "utterance": [
+        "G00013_33_17_024"
+      ],
+      "media_sha256": [
+        "f3ce0259b1e1c083f8f198a4ab6b1fd4e172703ff9a5563cba084d0e0d45a0c5"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "33"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_29_17_011",
+      "utterance": [
+        "G00013_29_17_011"
+      ],
+      "media_sha256": [
+        "4dbfd474c17a3fbbc893864ef2812dbeebb8a00f86e3729da698ecd4984fff3b"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "29"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_33_16_019",
+      "utterance": [
+        "G00013_33_16_019"
+      ],
+      "media_sha256": [
+        "6f4c8f8c2529dc96e959f814345f8761572273c314ec396c55d7b78f75cc8a46"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "33"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_17_17_005",
+      "utterance": [
+        "G00013_17_17_005"
+      ],
+      "media_sha256": [
+        "4d7fd57f2084a1fa3fd1812d89a9f325ae19e30363e032c80162d04dbbf6baeb"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "17"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_57_17_011",
+      "utterance": [
+        "G00013_57_17_011"
+      ],
+      "media_sha256": [
+        "1a81ffa7a4cc7d8d75b388182e043a1abaa4d86792240308cb07e06222059d5c"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "57"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_54_16_004",
+      "utterance": [
+        "G00013_54_16_004"
+      ],
+      "media_sha256": [
+        "7dc11a03e16f17e112d966e5f776446669edfce149a2aab9caa8fecd9577330a"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "54"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_21_16_001",
+      "utterance": [
+        "G00013_21_16_001"
+      ],
+      "media_sha256": [
+        "349703eac08fde93cf4045b907f8f0dbb2af9b14cb8ab430ffc1aa4ee90c1691"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "21"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_12_16_019",
+      "utterance": [
+        "G00013_12_16_019"
+      ],
+      "media_sha256": [
+        "47256f22f88dcdc749f8e2ec6fa084f51fa4fc3ab280508ff90a1dd183aa092f"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_32_17_009",
+      "utterance": [
+        "G00013_32_17_009"
+      ],
+      "media_sha256": [
+        "3a569786ee0ec36b5d6fd164d14289e25f219646245e852ffa55f732c7e4732b"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "32"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_31_17_008",
+      "utterance": [
+        "G00013_31_17_008"
+      ],
+      "media_sha256": [
+        "dbba80df9f78c24540dd644eadeb903d22513da9ef2b85211d35200bdf149b20"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "31"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_30_17_004",
+      "utterance": [
+        "G00013_30_17_004"
+      ],
+      "media_sha256": [
+        "05864719cc7d490f7bb9ca86c7f0149c931ae3a5243d100d09b9c040d7e1cc00"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "30"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_20_17_007",
+      "utterance": [
+        "G00013_20_17_007"
+      ],
+      "media_sha256": [
+        "f15fb529284278f9db3ea184bbd6b804d97c08f6be26b50e66527fc534cc8dcf"
+      ],
+      "speaker": [
+        "17"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "20"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_54_16_006",
+      "utterance": [
+        "G00013_54_16_006"
+      ],
+      "media_sha256": [
+        "12e1c6446c46ed266d86357e580e0ad35373b45d372e87cd2b823bd3e27644d6"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "54"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_12_16_011",
+      "utterance": [
+        "G00013_12_16_011"
+      ],
+      "media_sha256": [
+        "c6ce019a243785f20a5610b5f8f5d3dc1751bd2283fe3dec1b13802dfd3f2ed3"
+      ],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00013_05_16_024",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "16"
+      ],
+      "dialogue": [
+        [
+          "G00013",
+          "05"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_17_08_009",
+      "utterance": [
+        "G00002_17_08_009"
+      ],
+      "media_sha256": [
+        "8ad95007bcc02c13085f6f9d5f9bd5199edcb81dad020fe3b3703dc789d2562b"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "17"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_09_08_042",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "09"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_06_07_009",
+      "utterance": [
+        "G00002_06_07_009"
+      ],
+      "media_sha256": [
+        "2a157c51608d510a4c91ec8151c5c6ef454f31995aa21c564e730cc802f8c6a8"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "06"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_31_08_024",
+      "utterance": [
+        "G00002_31_08_024"
+      ],
+      "media_sha256": [
+        "84682567cc0427e8f9b5df53002f2558e95e4b80374419636a9946178e9b6526"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "31"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_21_08_010",
+      "utterance": [
+        "G00002_21_08_010"
+      ],
+      "media_sha256": [
+        "d871cc0514d7ca4569da7551f3183e5f283b966c4d4ceeb11e55d19a0cecfbc8"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "21"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_02_07_003",
+      "utterance": [
+        "G00002_02_07_003"
+      ],
+      "media_sha256": [
+        "3efa1aed9e18d8a654517977775e2b355e33488f75cd21e723ee7cdb53318448"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "02"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_29_07_003",
+      "utterance": [
+        "G00002_29_07_003"
+      ],
+      "media_sha256": [
+        "4c19584bb9a3716d6e0f6b88c5397003e33c5fa7f84f2ed8fba5186fc2a4a9f7"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "29"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_23_07_028",
+      "utterance": [
+        "G00002_23_07_028"
+      ],
+      "media_sha256": [
+        "c6d4bb19cb0bbb4f37098a8063cd959c16a8e8cd5320856e086ab05dedc90041"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "23"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_19_08_006",
+      "utterance": [
+        "G00002_19_08_006"
+      ],
+      "media_sha256": [
+        "3094ae5725d7df9be7d18b1a9162a2875eca854fdbb04a3b83ceae9076780a8e"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "19"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_40_08_004",
+      "utterance": [
+        "G00002_40_08_004"
+      ],
+      "media_sha256": [
+        "ae6665ae819e4d98cbe57cbeda852ab4ea741b73096f50f6fdc967be43e4315b"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "40"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_20_07_012",
+      "utterance": [
+        "G00002_20_07_012"
+      ],
+      "media_sha256": [
+        "67658d2441e0ef0587bbc091b560b1be3e4085e9fef87f3abd994596c6f04efc"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "20"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_38_07_004",
+      "utterance": [
+        "G00002_38_07_004"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "38"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_04_07_016",
+      "utterance": [
+        "G00002_04_07_016"
+      ],
+      "media_sha256": [
+        "ca08fe4cbe8606a94f95de8520ee22b202a8c4660b159a41e4151b46cda0834b"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "04"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_25_07_005",
+      "utterance": [
+        "G00002_25_07_005"
+      ],
+      "media_sha256": [
+        "6a7dfe7f55292bad8158af3b35a929852c400427856d2145c5e12f8b15c389e9"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "25"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_26_08_019",
+      "utterance": [
+        "G00002_26_08_019"
+      ],
+      "media_sha256": [
+        "bbbf65492e353a64b782158e866639e95f0037161fb572e116ef2a418982a425"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "26"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_27_07_025",
+      "utterance": [
+        "G00002_27_07_025"
+      ],
+      "media_sha256": [
+        "3a2b9bf449155a03547711757816e30b7347c7c256dc05abf457a8f0efdeaa4f"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "27"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_36_07_005",
+      "utterance": [
+        "G00002_36_07_005"
+      ],
+      "media_sha256": [
+        "7e58877930b4df4bf1db9448e30a7f5322aaf552b3b97d1a1ca1465b07c62036"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_07_08_025",
+      "utterance": [
+        "G00002_07_08_025"
+      ],
+      "media_sha256": [
+        "6ded02f4f6d15de7d41ed10b3811368a4aefbd53bb5c732eb1337e799555439d"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "07"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_15_07_009",
+      "utterance": [
+        "G00002_15_07_009"
+      ],
+      "media_sha256": [
+        "e315fa68a0eb06e601fd395ff4199e5bddcd5509a24a2d3fd530e1dfec78abbe"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "15"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_36_07_012",
+      "utterance": [
+        "G00002_36_07_012"
+      ],
+      "media_sha256": [
+        "6a07bac2572054ec1168d1a636b6ead3f02a6f81c1d09b3c70305e322a39aa90"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_04_08_015",
+      "utterance": [
+        "G00002_04_08_015"
+      ],
+      "media_sha256": [
+        "f29484fff7fd7bf572fbc0a68d8189c012e16f9bc21184030aa832925bb1017a"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "04"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_17_08_011",
+      "utterance": [
+        "G00002_17_08_011"
+      ],
+      "media_sha256": [
+        "cdf4ba8afcbb94bd4e07233d3c89b334593a161e62b1faddb06367c1ab3bebb1"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "17"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_06_07_002",
+      "utterance": [
+        "G00002_06_07_002"
+      ],
+      "media_sha256": [
+        "171eba5cd74ab3e6c4f6a18175639a7bd5bd2e359c92c37bead6068347a67b41"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "06"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_16_07_021",
+      "utterance": [
+        "G00002_16_07_021"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "16"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_24_08_005",
+      "utterance": [
+        "G00002_24_08_005"
+      ],
+      "media_sha256": [
+        "fda00e6a79cb798959b06c4e238fcce8a01e08dd51ae727d33342ba1b95a23f3"
+      ],
+      "speaker": [
+        "08"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "24"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_03_07_010",
+      "utterance": [
+        "G00002_03_07_010"
+      ],
+      "media_sha256": [
+        "874ec62229411bb5185ee6614d7ced482441b016565e3df45ec60ec0ae1aecfa"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "03"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_03_07_003",
+      "utterance": [
+        "G00002_03_07_003"
+      ],
+      "media_sha256": [
+        "71537473dde21dd70279b25a27866eba4d5beb8f57b2fab6ab8d3608fb14eff8"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "03"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00002_28_07_010",
+      "utterance": [
+        "G00002_28_07_010"
+      ],
+      "media_sha256": [
+        "c646a15c2c365209824e59fa3f1dc679f97fede0bb7d4884305d3de94e2dcba6"
+      ],
+      "speaker": [
+        "07"
+      ],
+      "dialogue": [
+        [
+          "G00002",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_45_19_030",
+      "utterance": [
+        "G00014_45_19_030"
+      ],
+      "media_sha256": [
+        "a834e3968297af757ee63edf80dce1dcc73549ee3294a6542025f03b1bcfab16"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "45"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_26_18_004",
+      "utterance": [
+        "G00014_26_18_004"
+      ],
+      "media_sha256": [
+        "0614546266b53f65bbe0868e27a39f020ac4b6407116402a6f4d040a5db5477a"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "26"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_56_19_018",
+      "utterance": [
+        "G00014_56_19_018"
+      ],
+      "media_sha256": [
+        "25440414e9ab3b7d147f623b8c3b75d8e81114cf6b6caef588f2816125d11a10"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "56"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_19_19_020",
+      "utterance": [
+        "G00014_19_19_020"
+      ],
+      "media_sha256": [
+        "c666a2604090adc4d75d105b21b64c692d20411952ccdd45a8084e1cab5e8f79"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "19"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_12_18_036",
+      "utterance": [
+        "G00014_12_18_036"
+      ],
+      "media_sha256": [
+        "6c3765b9124a63adbca7d9cf0ef6e5a56989f8306647c176cb3250765720ef23"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "12"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_08_18_007",
+      "utterance": [
+        "G00014_08_18_007"
+      ],
+      "media_sha256": [
+        "10c79ee324c4c68285caa3f064eac8a2da7178d434f935d6ae3505b5b20eeea2"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "08"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_56_18_011",
+      "utterance": [
+        "G00014_56_18_011"
+      ],
+      "media_sha256": [
+        "f3927a817c3768c3000f20cfaad5c169919c745b8707f9fe3ec93b1a16d60624"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "56"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_04_19_014",
+      "utterance": [
+        "G00014_04_19_014"
+      ],
+      "media_sha256": [
+        "6231ab28da0e6aab70875299a8c04f8115f879be848be2c2faafafd411db4402"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "04"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_46_18_024",
+      "utterance": [
+        "G00014_46_18_024"
+      ],
+      "media_sha256": [
+        "ba4b60cdea9edae22423d016965da4202ea71dfdc9f37475ea95b7abb0b06562"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "46"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_54_19_001",
+      "utterance": [
+        "G00014_54_19_001"
+      ],
+      "media_sha256": [
+        "a6c305dfd1ae58d99cc9781f91c6db74afcabb69192ab6920c7a1a002f5c1854"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "54"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_55_18_009",
+      "utterance": [
+        "G00014_55_18_009"
+      ],
+      "media_sha256": [
+        "0129edb4c93c481b8c5660d4d164bf114925b807593f388c2a51cf5a841e9278"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "55"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_50_18_013",
+      "utterance": [
+        "G00014_50_18_013"
+      ],
+      "media_sha256": [
+        "3fe2297b82247b3bd8a6d82d50df808a02bf626042d5494646568061435c087a"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "50"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_28_18_023",
+      "utterance": [
+        "G00014_28_18_023"
+      ],
+      "media_sha256": [
+        "c8df32a7c0ddbedcdede3f4d86d7fbe491c7f8707e23bf82ec0d7303d8dcf0b7"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_41_18_034",
+      "utterance": [
+        "G00014_41_18_034"
+      ],
+      "media_sha256": [
+        "404b6e9a496b2a833875a3f4af3a760d6b556edb77ad7bd6cef783f64a704612"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "41"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_38_18_017",
+      "utterance": [
+        "G00014_38_18_017"
+      ],
+      "media_sha256": [
+        "7fab472bae073e6a0d24faffd0520528c4765423c8133e212845946a486b77e9"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "38"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_39_19_026",
+      "utterance": [
+        "G00014_39_19_026"
+      ],
+      "media_sha256": [
+        "cbfe3640b9de0eae8b37d967200c66cdbe33a553f01925e7c669d15d86a15c57"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "39"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_43_18_027",
+      "utterance": [
+        "G00014_43_18_027"
+      ],
+      "media_sha256": [
+        "c5244467a7fd9d239640a8a51a36e932a20be25605409a6856ffa73074798fb5"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "43"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_43_19_004",
+      "utterance": [
+        "G00014_43_19_004"
+      ],
+      "media_sha256": [
+        "bff27f9e38213143fd354930028b68a33af48e2e45fe3c20886cbd7dd59b1437"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "43"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_43_19_009",
+      "utterance": [
+        "G00014_43_19_009"
+      ],
+      "media_sha256": [
+        "c9ea2eefb9e22f2d2c0d2080935a25fdad17176084750cfe1c8d998d221d087c"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "43"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_42_19_014",
+      "utterance": [
+        "G00014_42_19_014"
+      ],
+      "media_sha256": [
+        "60af30f7721a691ed6a6a67f0aae48a0ecaf57aaebfca3b81b745d859cc63f22"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "42"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_30_18_017",
+      "utterance": [
+        "G00014_30_18_017"
+      ],
+      "media_sha256": [
+        "355ca8ebe971172dcd27a367872840467e65bfdff69d22b34ab0ef52793242a8"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "30"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_44_18_015",
+      "utterance": [
+        "G00014_44_18_015"
+      ],
+      "media_sha256": [],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "44"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_13_18_003",
+      "utterance": [
+        "G00014_13_18_003"
+      ],
+      "media_sha256": [
+        "c279fdcc6996a41b642db51eede8351f593c2500a99bba14d6179e984b11aee2"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "13"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_32_18_020",
+      "utterance": [],
+      "media_sha256": [],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "32"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_28_18_015",
+      "utterance": [
+        "G00014_28_18_015"
+      ],
+      "media_sha256": [
+        "05de13266cf8f5451dfd2b4c2367885ed12cfd9aad11c295abe3362e0915e9da"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "28"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_45_18_027",
+      "utterance": [
+        "G00014_45_18_027"
+      ],
+      "media_sha256": [
+        "8dba1bc4c49fd983bb5f3d36e4e5a226329be1a28ea91b98ba29490bd14b1d80"
+      ],
+      "speaker": [
+        "18"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "45"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_11_19_002",
+      "utterance": [
+        "G00014_11_19_002"
+      ],
+      "media_sha256": [
+        "68ece9047384f3f59506f50711e8d0f92241fea8cba9eec97f6be8dc546dd296"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "11"
+        ]
+      ]
+    },
+    {
+      "id": "et_G00014_13_19_024",
+      "utterance": [
+        "G00014_13_19_024"
+      ],
+      "media_sha256": [
+        "9df0c765e7bb2affe50b22fc52284dd0d6d5d592ba2da116ba8736e36b5af2fb"
+      ],
+      "speaker": [
+        "19"
+      ],
+      "dialogue": [
+        [
+          "G00014",
+          "13"
+        ]
+      ]
+    }
+  ],
+  "media_hashes_computed": true,
+  "missing_media_paths": []
+}

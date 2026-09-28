@@ -1,0 +1,25 @@
+{
+  "source": "configs/x01.yaml",
+  "sha256": "3b26741197db405b73b90393755b05475ddf5cbd75aa8a2b18428d6942ebee79",
+  "per_sample_timeout_s": 300,
+  "values": {
+    "video_max_pixels": 50176,
+    "fps_max_frames": 8,
+    "max_pixels": 401408,
+    "labels": [
+      "neutral",
+      "joy",
+      "sadness",
+      "anger",
+      "fear",
+      "disgust",
+      "surprise",
+      "other"
+    ],
+    "quantization": "NF4 double quantization",
+    "compute_dtype": "bfloat16",
+    "attention": "sdpa",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20260928
+  }
+}

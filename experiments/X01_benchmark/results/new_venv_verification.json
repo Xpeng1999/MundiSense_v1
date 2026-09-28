@@ -1,0 +1,23 @@
+{
+  "locked_packages": 296,
+  "installed_packages": 300,
+  "mismatch_count": 0,
+  "mismatches": {},
+  "key_versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.15.0",
+    "accelerate": "1.12.0",
+    "bitsandbytes": "0.50.1",
+    "qwen-omni-utils": "0.0.8",
+    "pyyaml": "6.0.3",
+    "peft": "0.19.1"
+  },
+  "interpreter": "/home/administrator/projects/emotioncore/.venv/bin/python",
+  "venv_prefix": "/home/administrator/projects/emotioncore/.venv",
+  "torch_file": "/home/administrator/projects/emotioncore/.venv/lib/python3.11/site-packages/torch/__init__.py",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "pip_check_exit_code": 1,
+  "pip_check_output": "gradio 5.50.0 has requirement starlette<1.0,>=0.40.0, but you have starlette 1.6.0.\n",
+  "lock_sha256": "8a88345abf6bc4ceae644069b1f52f5ffd5d0d6001322273d8fd73db96c684cc"
+}

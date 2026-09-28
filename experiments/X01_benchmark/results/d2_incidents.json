@@ -1,0 +1,30 @@
+{
+  "incidents": [
+    {
+      "model": "base",
+      "dataset": "sims_valid",
+      "condition": "av",
+      "sample_id": "aqgy4_0024__00004",
+      "media_path": "Raw/aqgy4_0024/00004.mp4",
+      "media_duration_s": 1.998,
+      "elapsed_lower_bound_s": 480,
+      "observation": "Processor made no output after more than eight minutes at near-full single-core CPU; ffmpeg full media decode succeeded with exit code 0.",
+      "action": "Stopped stalled D2 process, wrote an atomic failed receipt, and resumed from the next missing sample.",
+      "receipt_path": "/home/administrator/emotion-data/emotioncore_runs/X01/inference/base_sims_valid_av/predictions/aqgy4_0024__00004.json",
+      "receipt_sha256": "7201174da760f828b4d55dc7d235050b41a08d9dbd68b88d12e53579c2fb4740"
+    },
+    {
+      "model": "old_lora",
+      "dataset": "sims_valid",
+      "condition": "av",
+      "sample_id": "aqgy4_0024__00004",
+      "media_path": "Raw/aqgy4_0024/00004.mp4",
+      "media_duration_s": 1.998,
+      "elapsed_lower_bound_s": 300,
+      "observation": "The 300-second SIGALRM did not interrupt the native preprocessing call; the process was still using CPU beyond the deadline. The same media stalled the base model and passed complete ffmpeg decode.",
+      "action": "Stopped the stalled D2 process, wrote an atomic failed receipt, and resumed from the next missing sample.",
+      "receipt_path": "/home/administrator/emotion-data/emotioncore_runs/X01/inference/old_lora_sims_valid_av/predictions/aqgy4_0024__00004.json",
+      "receipt_sha256": "b24649c7d64e61e519d509b46d7560b58c28a71799e535d9ad00e2279f1ffcdf"
+    }
+  ]
+}
