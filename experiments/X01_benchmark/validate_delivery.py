@@ -20,6 +20,7 @@ def validate(paths_config: Path, results: Path, report: Path) -> dict:
     d3 = read("d3_consistency.json")
     v16 = read("leakage_v16.json")
     metrics = read("metrics.json")
+    faces = read("face_audit.json")
     predictions = read("prediction_manifest.json")
     tests = read("test_results.json")
     legacy = read("legacy_snapshot_audit.json")
@@ -32,6 +33,12 @@ def validate(paths_config: Path, results: Path, report: Path) -> dict:
         sims["rows"] == decode["rows"] == 4403
         and sum(sum(counts.values()) for counts in decode["counts_by_mode"].values()) == 4403
         and sum(counts.get("missing", 0) for counts in decode["counts_by_mode"].values()) == sims["missing_count"]
+    )
+    checks["face_audit_coverage"] = (
+        faces["emotiontalk"]["clips"] == 5837
+        and faces["chsims_v2"]["clips"] == 1647
+        and all(abs(sum(faces[name]["frames"]["fractions"].values()) - 1) < 1e-9
+                for name in ("emotiontalk", "chsims_v2"))
     )
     checks["legacy_leak_reproduction"] = (v16["overlap_counts"]["utterance"] == 161
                                           and v16["overlap_counts"]["speaker"] == 168)
