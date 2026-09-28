@@ -132,7 +132,14 @@ def analyze(paths_config: Path, results: Path, replicates: int, seed: int) -> No
                         (row.get("error") or row["status"]).split(":", 1)[0]
                         for row in rows if row["status"] != "ok"))
                 metrics["run_meta"][name] = {"path": str(directory / "run_meta.json"),
-                                             "sha256": sha256_file(directory / "run_meta.json")}
+                                             "sha256": sha256_file(directory / "run_meta.json"),
+                                             "git": meta["git"],
+                                             "configuration_sha256": meta["configuration_sha256"],
+                                             "model_listing_sha256": meta["model_listing_sha256"],
+                                             "adapter_listing_sha256": meta["adapter_listing_sha256"],
+                                             "manifest_sha256": meta["manifest_sha256"],
+                                             "started_at": meta["started_at"],
+                                             "ended_at": meta["ended_at"]}
                 for path in sorted(prediction_dir.glob("*.json")):
                     prediction_paths.append({"path": str(path), "sha256": sha256_file(path)})
     for dataset in ("et_test", "et_val"):

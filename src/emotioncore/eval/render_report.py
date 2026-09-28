@@ -40,6 +40,8 @@ def render(results: Path, output: Path) -> None:
     if len(predictions) != sum(x["n"] for x in metrics["et"].values()) + sum(x["n"] for x in metrics["sims_valid"].values()):
         raise RuntimeError("Prediction manifest does not cover all D2 rows")
     test_results = get(results, "test_results.json")
+    run_revisions = sorted({(row["git"]["commit"], row["git"]["dirty"])
+                            for row in metrics["run_meta"].values()})
 
     lines = ["# X01 工程基座与评测基准 v1 — 执行报告", "",
              "## 1. 摘要", "",
@@ -50,6 +52,9 @@ def render(results: Path, output: Path) -> None:
              f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
              "", "## 2. 实际完成情况与偏离计划之处", "", "### 事实", "",
              f"- 已建私有仓库、Mac 和服务器克隆；D2 每个组合均有独立 `run_meta.json`。本次收录 {len(predictions):,} 份服务器逐条预测的路径与 SHA-256。",
+             "- D2 运行时的 Git 状态：" + "；".join(
+                 f"`{commit[:12]}`、工作区{'有' if dirty else '无'}未提交改动"
+                 for commit, dirty in run_revisions) + "；每组完整元数据在服务器 `run_meta.json`。",
              f"- 新独立 Python 3.11 虚拟环境已具备 CUDA；锁中 {environment['locked_packages']} 个包与旧安装版本逐项相同（旧环境不一致 {environment['mismatch_count']} 个，新环境不一致 {new_environment['mismatch_count']} 个）。本次 D2 在新环境配齐前已用旧解释器启动并保持同一环境，未向旧环境安装包。",
              f"- 新环境 `pip check` 返回 {new_environment['pip_check_exit_code']}：{new_environment['pip_check_output'].strip() or '无冲突'}。该依赖冲突来自所复刻的既有包组合；GPU 环境验证在 `new_venv_verification.json`。",
              f"- `pytest`：{test_results['passed']} 通过、{test_results['failed']} 失败、{test_results['skipped']} 跳过。",
