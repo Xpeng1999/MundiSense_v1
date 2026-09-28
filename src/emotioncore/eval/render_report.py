@@ -43,6 +43,8 @@ def render(results: Path, output: Path) -> None:
     test_results = get(results, "test_results.json")
     run_revisions = sorted({(row["git"]["commit"], row["git"]["dirty"])
                             for row in metrics["run_meta"].values()})
+    added_cache = sum(path.endswith(".pyc") for path in legacy["added_files"])
+    added_other = sorted(path for path in legacy["added_files"] if not path.endswith(".pyc"))
 
     lines = ["# X01 工程基座与评测基准 v1 — 执行报告", "",
              "## 1. 摘要", "",
@@ -51,7 +53,7 @@ def render(results: Path, output: Path) -> None:
              f"- 旧训练对 ET-test/ET-val 四层重叠均为零；第 16 轮中文集同句 {v16['overlap_counts']['utterance']} 条、同媒体哈希 {v16['overlap_counts']['media_sha256']} 条。",
              f"- D3 完成 {d3['completed']}/{d3['required']} 条，最大 logprob 差 {num(max(x['max_abs_logprob_difference'] for x in d3['details']), 6)}；完整 D2 结果见第 6 节。",
              f"- 人脸审计中 ET-val 帧的多脸比例为 {num(faces['emotiontalk']['by_split']['val']['fractions']['2+'])}，SIMS-valid 为 {num(faces['chsims_v2']['by_split']['valid']['fractions']['2+'])}。",
-             f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
+             f"- 旧项目快照新增 {legacy['added_count']} 个文件（{added_cache} 个 `.pyc`、{len(added_other)} 个其他文件）；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
              "", "## 2. 实际完成情况与偏离计划之处", "", "### 事实", "",
              f"- 已建私有仓库、Mac 和服务器克隆；D2 每个组合均有独立 `run_meta.json`。本次收录 {len(predictions):,} 份服务器逐条预测的路径与 SHA-256。",
              "- 服务器重启中断了长任务；D2 按已落盘样本 ID 续跑，人脸审计改用服务器运行目录中的逐片段原子凭证续跑。",
@@ -64,7 +66,7 @@ def render(results: Path, output: Path) -> None:
              f"- 计划写 CH-SIMS v2 {sims['expected_rows_in_x01']:,} 条，源文件实际 {sims['rows']:,} 条；未删除任何源行。",
              "", "### 解读", "",
              "- CH-SIMS v2 的官方论文表格划分数相加与本地 CSV 一致，论文文字总数不同；这个源材料差异留给 reviewer 确认。",
-             "- 旧项目中新出现的缓存文件违反了零变更验收项。发现后已将仍在运行的任务改为禁止写入字节码并验证无新增变化；没有删除旧目录内文件。",
+             "- 旧项目新增文件违反零变更验收项；`.pyc` 可能由解释器自动生成，其他文件的创建者无法从快照确认。发现后已让本任务后续进程禁止写入字节码，复核快照无进一步新增；未删除旧目录内文件。",
              "", "## 3. 数据审计要点", "", "### 事实", "",
              "| 模态 | M 一致数/总数 | 一致率 | Fleiss κ | 5 票一致数 |",
              "| --- | ---: | ---: | ---: | ---: |"]
@@ -193,13 +195,13 @@ def render(results: Path, output: Path) -> None:
               "", "## 7. 异常与未解决问题", "",
               f"- CH-SIMS v2 的 4,402／4,403 源材料差异、{sims['missing_count']} 条缺媒体和未验证说话人独立性见数据卡及 `OPEN_QUESTIONS.md`。",
               f"- D2 对单条预处理和前向计算设 {execution['per_sample_timeout_s']} 秒 `SIGALRM` 时限；它无法强制中断本次底层媒体调用。同一 SIMS-valid 片段在两个模型的 AV 条件均超时，已人工停止进程、写失败凭证并断点续跑；失败保留在指标分母，具体组合和次数见第 6 节失败原因表。",
-              f"- 旧项目快照：新增 {legacy['added_count']}、既有文件 mtime/大小变化 {legacy['changed_existing_count']}、删除 {legacy['removed_count']}。新增项是 Python 缓存，已保留并停止后续写入；这项验收未通过。",
+              f"- 旧项目快照：新增 {legacy['added_count']}（`.pyc` {added_cache}、其他 {len(added_other)}）、既有文件 mtime/大小变化 {legacy['changed_existing_count']}、删除 {legacy['removed_count']}。其他新增路径：{'；'.join(added_other)}。这些文件均已保留；零变更验收项未通过。",
               "- 所有逐条预测只在服务器运行目录；仓库仅有逐条路径及 SHA-256 清单。"]
     for item in incidents["incidents"]:
         lines.append(f"- {item['model']} {item['dataset']} {item['condition']} 的 `{item['sample_id']}` 媒体时长 {num(item['media_duration_s'])} 秒；处理至少 {item['elapsed_lower_bound_s']} 秒无输出，`ffmpeg` 完整解码成功。已写失败凭证并断点续跑；凭证 SHA-256 为 `{item['receipt_sha256']}`。")
     lines += ["", "## 8. 给 reviewer 的问题", "",
               "1. 官方论文文字写 4,402、Table 1 和所给 CSV 为 4,403；是否以当前 4,403 行作为 Benchmark v1 的 SIMS-valid/lock-box 固定来源？",
-              "2. 旧项目因 Python 自动字节码生成而新增缓存文件，已有文件未变；请决定这一只读边界偏离的验收记录方式。",
+              f"2. 旧项目新增 {added_cache} 个 `.pyc` 和 {len(added_other)} 个其他文件，已有文件未变；其他文件的来源尚无法确认。请决定这一只读边界偏离的验收记录方式。",
               "3. CH-SIMS v2 无说话人 ID，官方来源未确立说话人独立性；是否需要后续单独获取说话人元数据？",
               "4. SIMS-valid 同一片段在两个 AV 模型的预处理都无法被 `SIGALRM` 中断；后续修订是否需要用独立进程约束预处理时间？本版已将两次失败计入分母。",
               ""]
