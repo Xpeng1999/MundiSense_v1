@@ -28,6 +28,8 @@ Add `--with-face-audit` to run the CPU YuNet audit after D2. The face audit can 
 
 The D2 runner refuses to start unless D3 passed all 40 comparisons and ET-test/ET-val are clean at all four leakage levels. Each of the 16 model × dataset × condition runs resumes by sample ID, writes each prediction atomically under the server X01 run root, and stores its own `run_meta.json`. The repository contains only transcript-free manifests and aggregate results; per-sample predictions remain on the server.
 
+The face audit also resumes from atomic per-clip receipts under the server X01 run root; its repository JSON contains aggregate frame and speaker counts. The CH-SIMS media audit fully decodes present audio/video streams to a null sink, including test lock-box media, without running model inference on test.
+
 ## Focused commands
 
 ```bash

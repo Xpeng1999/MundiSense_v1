@@ -27,4 +27,5 @@ __pycache__/
 **/personal_labels/
 **/secrets/
 **/run_meta.json
+experiments/X01_benchmark/results/face_progress.json
 **/*.log
