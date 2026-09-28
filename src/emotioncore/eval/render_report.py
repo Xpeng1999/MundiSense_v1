@@ -150,14 +150,14 @@ def render(results: Path, output: Path) -> None:
                 r = metrics["et"][f"{model}_{dataset}_{condition}"]["with_other"]
                 lines.append(f"| {model} | {dataset} | {condition} | {num(r['macro_f1'])} | {num(r['uar'])} | {num(r['wa'])} | {num(r['coverage'])} |")
     lines += ["", "### 事实：SIMS-valid", "",
-              "| 模型 | 条件 | n | 失败 | 覆盖率 | Pearson [95%] | Spearman [95%] | Acc-2 非零 [95%] |",
-              "| --- | --- | ---: | ---: | ---: | --- | --- | --- |"]
+              "| 模型 | 条件 | n | 失败 | 覆盖率 | 相关 n | Acc-2 非零 n | Pearson [95%] | Spearman [95%] | Acc-2 非零 [95%] |",
+              "| --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |"]
     for model in ("base", "old_lora"):
         for condition in ("audio", "av"):
             r = metrics["sims_valid"][f"{model}_sims_valid_{condition}"]
             def cell(metric):
                 return f"{num(r[metric])} {ci(r, metric)}" if r[metric] is not None else "—"
-            lines.append(f"| {model} | {condition} | {r['n']:,} | {r['n'] - r['valid']} | {num(r['coverage'])} | {cell('pearson')} | {cell('spearman')} | {cell('acc_2_nonzero')} |")
+            lines.append(f"| {model} | {condition} | {r['n']:,} | {r['n'] - r['valid']} | {num(r['coverage'])} | {r['correlation_denominator']} | {r['nonzero_denominator']} | {cell('pearson')} | {cell('spearman')} | {cell('acc_2_nonzero')} |")
     lines += ["", "### 事实：失败原因", "",
               "| 组合 | 原因 | 条数 |", "| --- | --- | ---: |"]
     for section in ("et", "sims_valid"):
@@ -189,7 +189,7 @@ def render(results: Path, output: Path) -> None:
             timing = r["runtime"]
             lines.append(f"| {model} | {rest.rsplit('_', 1)[0]} | {rest.rsplit('_', 1)[1]} | {num(timing['latency_p50_s'])} | {num(timing['latency_p95_s'])} | {num(timing['peak_cuda_allocated_mib'], 1)} |")
     lines += ["", "### 解读", "",
-              "- A、V、AV 与基座／旧 LoRA 的差值只在相同样本和相同 M 标签下解释；A 与 A 标签、V 与 V 标签结果并列保留，不作跨真值相减。SIMS-valid 的情绪概率差是跨任务代理量。",
+              "- A、V、AV 与基座／旧 LoRA 的差值只在相同样本和相同 M 标签下解释；A 与 A 标签、V 与 V 标签结果并列保留，不作跨真值相减。SIMS-valid 的情绪概率差是跨任务代理量。相关系数仅对有效评分计算，覆盖率和相关 n 同时列出；Acc-2 非零 n 保留失败样本并计错。",
               "", "## 7. 异常与未解决问题", "",
               f"- CH-SIMS v2 的 4,402／4,403 源材料差异、{sims['missing_count']} 条缺媒体和未验证说话人独立性见数据卡及 `OPEN_QUESTIONS.md`。",
               f"- D2 对单条预处理和前向计算设 {execution['per_sample_timeout_s']} 秒运行时限；超时写失败凭证并保留在指标分母，具体组合和次数见第 6 节失败原因表。",
