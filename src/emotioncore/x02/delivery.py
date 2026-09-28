@@ -97,6 +97,12 @@ def run(args: argparse.Namespace) -> None:
         raise ValueError("P2 status and probe result disagree")
     downloads = read(root / "model_downloads.json")
     modelscope_downloads = read(root / "modelscope_downloads.json")
+    migrations = {name: read(root / f"migration_{name}.json")
+                  for name in ("P2_modelscope", "V2_modelscope")}
+    for name, receipt in migrations.items():
+        link = root / "models" / name
+        if not link.is_symlink() or link.resolve() != Path(receipt["target_path"]):
+            raise ValueError(f"Model storage link differs from migration receipt: {name}")
     feature_meta = {}
     feature_runtime = {}
     for encoder in (*HEAD_ENCODERS, "T2_o", "T2_r"):
@@ -128,7 +134,11 @@ def run(args: argparse.Namespace) -> None:
         check_artifact(t1["oof"][source]["path"], t1["oof"][source]["sha256"])
         check_artifact(finals["T1"]["et_test"][source]["prediction_path"],
                        finals["T1"]["et_test"][source]["prediction_sha256"])
-    artifact_index = {"features": {}, "predictions": {}, "run_meta": {}}
+    artifact_index = {"features": {}, "predictions": {}, "run_meta": {},
+                      "model_storage": {name: {"logical_path": str(root / "models" / name),
+                                                "target_path": receipt["target_path"],
+                                                "migration_receipt": str(root / f"migration_{name}.json")}
+                                        for name, receipt in migrations.items()}}
     for encoder in (*HEAD_ENCODERS, "T2_o", "T2_r"):
         folder = "V3" if encoder.startswith("V3") else encoder
         path = root / "features" / folder / "run_meta_cv.json"
@@ -178,6 +188,7 @@ def run(args: argparse.Namespace) -> None:
                    "feature_run_meta": feature_meta,
                    "download_receipts": downloads,
                    "modelscope_download_receipts": modelscope_downloads,
+                   "model_storage_migrations": migrations,
                    "folds_sha256": sha256(args.folds)}
     args.output_dir.mkdir(parents=True, exist_ok=True)
     write_json_atomic(args.output_dir / "all_metrics.json", all_metrics)
@@ -210,7 +221,7 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
               f"V {f(data['P2_probe']['conditions']['video']['M']['macro_f1'])}、"
               f"AV {f(data['P2_probe']['conditions']['av']['M']['macro_f1'])} macro-F1。"
               if data['P2_probe'] else f"- P2：{p2['status']}；{p2['reason']}。"),
-             "- 全部概率、特征和媒体缓存留在服务器；仓库只保存指标与路径、SHA-256。", "",
+             "- 大型 ModelScope 权重存于 H 盘，X02/models 为符号链接；概率、特征和媒体缓存留在服务器。仓库只保存指标与路径、SHA-256。", "",
              "## 2. 完成情况与偏离", "",
              ("**事实。** A1–A3、V1–V3a/b、T1–T2 的 CV、ET-test 与 SIMS-valid 结果见第 5 节；P1 已完成。"
               + ("P2 也已完成。" if data['P2_probe'] else f"P2 {p2['status']}：{p2['reason']}。")), "",
@@ -321,6 +332,11 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
 def render_handoff(index: dict, selection: dict, root: Path) -> str:
     lines = ["# X03 对接说明", "",
              "X02 所有缓存留在服务器。先核对 `artifact_index.json` 的路径和 SHA-256；OOF 与 ET-test/SIMS-valid 预测均为 JSONL。",
+             "", "## 大型模型路径", "",
+             "| 用途 | X02 逻辑路径 | H 盘实际路径 |", "|---|---|---|"]
+    for name, item in index["model_storage"].items():
+        lines.append(f"| {name} | `{item['logical_path']}` | `{item['target_path']}` |")
+    lines += ["", "V2 主基线继续使用 `openai/clip-vit-large-patch14`；ModelScope CLIP-GmP 是不同变体，未用于 X02 主表。",
              "", "## 编码器特征", "",
              "| 编码器 | 模态 | 维度 | 帧率 / 粒度 | 收据目录 |",
              "|---|---|---|---|---|"]
