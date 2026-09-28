@@ -15,13 +15,13 @@ from emotioncore.x02.head_h1 import load_rows, sha256
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 
 
-SPECS = {"A1": (128, 1024), "A3": (128, 1024),
+SPECS = {"A1": (128, 1024), "A2": (128, 3584), "A3": (128, 1024),
          "V1": (8, 1288), "V2": (8, 768)}
 
 
 def read_feature(path: Path, encoder: str) -> np.ndarray:
     with np.load(path) as data:
-        if encoder == "A1":
+        if encoder in ("A1", "A2"):
             frames = data["frames"]
         elif encoder == "A3":
             frames = data["layers"]

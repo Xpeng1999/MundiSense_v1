@@ -48,7 +48,8 @@ def load_rows(manifest: Path, folds: dict) -> list[dict]:
 def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[np.ndarray, np.ndarray]:
     features = []
     available = []
-    dimension = 3072 if encoder == "A1" else 1024
+    dimensions = {"A1": (3072,), "A2": (7168,), "A3": (4, 2048), "T2": (1024,)}
+    dimension = dimensions[encoder]
     for row in rows:
         path = receipts_root / f"{row['utt_id']}.json"
         if not path.is_file():
@@ -56,7 +57,7 @@ def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[
         receipt = json.loads(path.read_text(encoding="utf-8"))
         if receipt["id"] != row["utt_id"]:
             raise ValueError("Feature receipt ID mismatch")
-        source_sha = row["wav"]["sha256"] if encoder == "A1" else receipt.get("input_sha256")
+        source_sha = row["wav"]["sha256"] if encoder.startswith("A") else receipt.get("input_sha256")
         if receipt.get("input_sha256") != source_sha:
             raise ValueError("Feature receipt input hash mismatch")
         if receipt["status"] != "ok":
@@ -70,11 +71,19 @@ def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[
             with np.load(feature_file) as data:
                 frames = data["frames"]
                 vector = np.concatenate((data["utterance"], frames.mean(0), frames.std(0)))
+        elif encoder == "A2":
+            with np.load(feature_file) as data:
+                frames = data["frames"].astype(np.float32)
+                vector = np.concatenate((frames.mean(0), frames.std(0)))
+        elif encoder == "A3":
+            with np.load(feature_file) as data:
+                layers = data["layers"].astype(np.float32)
+                vector = np.concatenate((layers.mean(1), layers.std(1)), axis=1)
         elif encoder == "T2":
             vector = np.load(feature_file)
         else:
             raise ValueError(f"Unsupported h1 encoder: {encoder}")
-        if vector.shape != (dimension,) or not np.isfinite(vector).all():
+        if vector.shape != dimension or not np.isfinite(vector).all():
             raise ValueError(f"Invalid feature vector: {row['utt_id']}")
         features.append(vector.astype(np.float32))
         available.append(True)
@@ -113,7 +122,20 @@ def train_once(x: np.ndarray, y: np.ndarray, available: np.ndarray,
                            dtype=torch.float32, device=device)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
-    model = torch.nn.Linear(x.shape[1], len(LABELS), device=device)
+    if x.ndim == 3:
+        class LayerWeightedLogistic(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.layer_logits = torch.nn.Parameter(torch.zeros(x.shape[1]))
+                self.linear = torch.nn.Linear(x.shape[2], len(LABELS))
+
+            def forward(self, values):
+                weights_ = torch.softmax(self.layer_logits, dim=0)
+                return self.linear((values * weights_.view(1, -1, 1)).sum(dim=1))
+
+        model = LayerWeightedLogistic().to(device)
+    else:
+        model = torch.nn.Linear(x.shape[1], len(LABELS), device=device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate,
                                   weight_decay=weight_decay)
     generator = torch.Generator(device="cpu").manual_seed(seed)
@@ -152,6 +174,8 @@ def train_once(x: np.ndarray, y: np.ndarray, available: np.ndarray,
     return {"model": model, "mean": mean, "std": std,
             "best_epoch": best_epoch if val_ids is not None else max_epochs,
             "validation": {"macro_f1": best[0], "uar": best[1]} if best else None,
+            "layer_weights": torch.softmax(model.layer_logits, dim=0).detach().cpu().tolist()
+                             if x.ndim == 3 else None,
             "class_counts": counts.tolist()}
 
 
@@ -212,7 +236,8 @@ def run(args: argparse.Namespace) -> None:
                                      seed=SEED + fold["fold"], device=args.device)
                 candidate = {"learning_rate": lr, "weight_decay": wd,
                              "best_epoch": trained["best_epoch"],
-                             "validation": trained["validation"]}
+                             "validation": trained["validation"],
+                             "layer_weights": trained["layer_weights"]}
                 candidates.append(candidate)
                 config_history[(lr, wd)].append(candidate)
                 del trained
@@ -228,12 +253,13 @@ def run(args: argparse.Namespace) -> None:
             status = "ok" if available[index] else "failed"
             oof.append({"utt_id": row["utt_id"], "speaker_id": row["speaker_id"],
                         "fold": fold["fold"], "truth_M": row["labels"]["M"],
-                        "truth_native": row["labels"]["A" if args.encoder == "A1" else "T"],
+                        "truth_native": row["labels"]["A" if args.encoder.startswith("A") else "T"],
                         "probabilities": probability.astype(float).tolist(),
                         "status": status})
         fold_records.append({"fold": fold["fold"], "inner_grid": candidates,
                              "selected": chosen, "outer_count": len(outer),
-                             "outer_feature_count": int(available[outer].sum())})
+                             "outer_feature_count": int(available[outer].sum()),
+                             "retrained_layer_weights": trained["layer_weights"]})
         write_json_atomic(args.output_dir / "progress.json",
                           {"completed_folds": len(fold_records), "total_folds": len(folds["folds"])})
     expected = {row["utt_id"] for row in rows}
@@ -284,7 +310,7 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--folds", type=Path, required=True)
     parser.add_argument("--receipts-root", type=Path, required=True)
-    parser.add_argument("--encoder", choices=("A1", "T2"), required=True)
+    parser.add_argument("--encoder", choices=("A1", "A2", "A3", "T2"), required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--allow-dirty", action="store_true")

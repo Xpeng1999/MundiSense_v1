@@ -256,7 +256,7 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--folds", type=Path, required=True)
     parser.add_argument("--pack-dir", type=Path, required=True)
-    parser.add_argument("--encoder", choices=("A1", "A3", "V1", "V2"), required=True)
+    parser.add_argument("--encoder", choices=("A1", "A2", "A3", "V1", "V2"), required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--batch-size", type=int, default=128)
