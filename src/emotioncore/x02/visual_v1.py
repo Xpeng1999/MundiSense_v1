@@ -137,6 +137,11 @@ def run(args: argparse.Namespace) -> None:
         for index, row in enumerate(rows, 1):
             path = receipts_dir / f"{row['utt_id']}.json"
             face_path = args.face_receipts / f"{row['utt_id']}.json"
+            wait_started = time.monotonic()
+            while not face_path.is_file() and args.wait_face_seconds > 0:
+                if time.monotonic() - wait_started >= args.wait_face_seconds:
+                    break
+                time.sleep(2)
             if not face_path.is_file():
                 raise RuntimeError(f"Face preprocessing incomplete: {row['utt_id']}")
             face = json.loads(face_path.read_text(encoding="utf-8"))
@@ -186,6 +191,7 @@ def main() -> None:
     parser.add_argument("--split", choices=("cv", "test"), default="cv")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=float, default=120)
+    parser.add_argument("--wait-face-seconds", type=float, default=0)
     parser.add_argument("--allow-dirty", action="store_true")
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
