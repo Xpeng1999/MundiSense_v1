@@ -7,7 +7,10 @@ import hashlib
 import json
 import math
 import os
+import re
+import subprocess
 import sys
+import tempfile
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -34,35 +37,36 @@ class TransferBudget:
 
 def range_get(url: str, start: int, end: int, expected_total: int,
               budget: TransferBudget) -> bytes:
-    import requests
-
     expected = end - start + 1
     last_error = None
     for attempt in range(1, 11):
         try:
-            with requests.get(url, headers={"Range": f"bytes={start}-{end}"},
-                              stream=True, timeout=(20, 90)) as response:
-                if response.status_code not in (200, 206):
-                    raise RuntimeError(f"HTTP {response.status_code}")
-                if response.status_code == 206:
-                    content_range = response.headers.get("Content-Range")
-                    if content_range != f"bytes {start}-{end}/{expected_total}":
-                        raise ValueError(f"Unexpected Content-Range: {content_range}")
+            with tempfile.NamedTemporaryFile(prefix="p2-headers-", delete=False) as stream:
+                header_path = Path(stream.name)
+            try:
+                command = ["curl", "-L", "--fail", "--silent", "--show-error",
+                           "--connect-timeout", "20", "--max-time", "120",
+                           "--range", f"{start}-{end}", "--dump-header", str(header_path)]
+                proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+                if proxy:
+                    command += ["--proxy", proxy]
+                result = subprocess.run([*command, url], capture_output=True, check=False)
+                budget.add(len(result.stdout))
+                if result.returncode:
+                    raise RuntimeError(result.stderr.decode(errors="replace")[:200])
+                headers = header_path.read_text(encoding="utf-8", errors="replace")
+                ranges = re.findall(r"(?im)^content-range:\s*([^\r\n]+)", headers)
+                if ranges:
+                    if ranges[-1] != f"bytes {start}-{end}/{expected_total}":
+                        raise ValueError(f"Unexpected Content-Range: {ranges[-1]}")
                 elif start != 0 or expected != expected_total:
                     raise ValueError("Server ignored a partial Range request")
-                chunks = []
-                received = 0
-                for piece in response.iter_content(chunk_size=1024 * 1024):
-                    if piece:
-                        budget.add(len(piece))
-                        chunks.append(piece)
-                        received += len(piece)
-                        if received > expected:
-                            raise ValueError("Range response exceeded requested bytes")
-                if received != expected:
-                    raise IOError(f"Short Range response: {received} != {expected}")
-                return b"".join(chunks)
-        except (Exception,) as exc:
+                if len(result.stdout) != expected:
+                    raise IOError(f"Short Range response: {len(result.stdout)} != {expected}")
+                return result.stdout
+            finally:
+                header_path.unlink(missing_ok=True)
+        except Exception as exc:
             if "exceed the 100 GB" in str(exc):
                 raise
             last_error = exc
