@@ -91,6 +91,10 @@ def run(args: argparse.Namespace) -> None:
     cer = read(root / "metrics/asr_cer_cv.json")
     p1 = read(root / "probes/P1/results.json")
     p2 = read(root / "p2_probe_status.json")
+    p2_result_path = root / "probes/P2/results.json"
+    p2_result = read(p2_result_path) if p2_result_path.is_file() else None
+    if (p2["status"] == "completed") != (p2_result is not None):
+        raise ValueError("P2 status and probe result disagree")
     downloads = read(root / "model_downloads.json")
     feature_meta = {}
     feature_runtime = {}
@@ -168,6 +172,7 @@ def run(args: argparse.Namespace) -> None:
                    "cv_T2": t2, "cv_T2_r": t2r, "final": finals,
                    "sims_valid": sims, "paired": paired, "face": face,
                    "asr_cer": cer, "P1": p1, "P2": p2,
+                   "P2_probe": p2_result,
                    "feature_runtime": feature_runtime,
                    "feature_run_meta": feature_meta,
                    "download_receipts": downloads,
@@ -199,11 +204,15 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
              f"- CV 池：{folds['cv_pool_count']:,} 句、{len(folds['cv_pool_speakers'])} 名说话人；ET-test：{folds['et_test_count']:,} 句。",
              f"- CV 冠军：A {sel['modality_champions']['A']['winner']}、V {sel['modality_champions']['V']['winner']}、T（ASR 输入）{sel['modality_champions']['T_deployment_r']['winner']}。",
              f"- P1 BF16 ET-val：A {f(p1['conditions']['audio']['M']['macro_f1'])}、AV {f(p1['conditions']['av']['M']['macro_f1'])} macro-F1。",
-             f"- P2：{p2['status']}；实测完整下载估算 {p2['estimated_download_hours_at_observed_rate']:.1f} 小时。",
+             (f"- P2 ET-val：A {f(data['P2_probe']['conditions']['audio']['M']['macro_f1'])}、"
+              f"V {f(data['P2_probe']['conditions']['video']['M']['macro_f1'])}、"
+              f"AV {f(data['P2_probe']['conditions']['av']['M']['macro_f1'])} macro-F1。"
+              if data['P2_probe'] else f"- P2：{p2['status']}；{p2['reason']}。"),
              "- 全部概率、特征和媒体缓存留在服务器；仓库只保存指标与路径、SHA-256。", "",
              "## 2. 完成情况与偏离", "",
-             "**事实。** A1–A3、V1–V3a/b、T1–T2 的 CV、ET-test 与 SIMS-valid 结果见第 5 节；P1 已完成。P2 因下载速度未达一个工作日限制而停止，未尝试模型加载。", "",
-             "**解读。** P2 不参与任何模态或主干选择。", "",
+             ("**事实。** A1–A3、V1–V3a/b、T1–T2 的 CV、ET-test 与 SIMS-valid 结果见第 5 节；P1 已完成。"
+              + ("P2 也已完成。" if data['P2_probe'] else f"P2 {p2['status']}：{p2['reason']}。")), "",
+             "**解读。** P2 是零样本探针，不参与单模态冠军选择。", "",
              "## 3. CV 池与折划分统计", "",
              f"冻结文件 SHA-256：`{data['folds_sha256']}`。排除说话人：{', '.join(folds['excluded_speakers'])}。", "",
              "| 外折 | 留出说话人 | 句数 | 内验证说话人 | 句数 |", "|---:|---|---:|---|---:|"]
@@ -265,7 +274,14 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
         comparison = item["bf16_minus_nf4_macro_f1"]
         low, high = comparison["left_minus_right_95"]
         lines.append(f"| P1 BF16 | {condition} | {f(item['M']['macro_f1'])} | {f(item['x01_nf4_M']['macro_f1'])} | [{f(low)}, {f(high)}] |")
-    lines += ["", f"P2：7 个首 token 两两不同；权重 {p2['planned_bytes']/1e9:.2f} GB，8 MiB 分段耗时 {p2['range_sample_seconds']:.2f} 秒，完整下载估算 {p2['estimated_download_hours_at_observed_rate']:.1f} 小时；未加载或推理。", "",
+    if data["P2_probe"]:
+        for condition in ("audio", "video", "av"):
+            item = data["P2_probe"]["conditions"][condition]
+            lines.append(f"| P2 NF4 thinker | {condition} | {f(item['M']['macro_f1'])} | — | — |")
+        lines += ["", f"P2：7 个首 token 两两不同；ModelScope 权重下载与加载收据见 `p2_probe_status.json`；三种条件均在 ET-val 评分。", ""]
+    else:
+        lines += ["", f"P2：7 个首 token 两两不同；{p2['status']}；{p2['reason']}。证据见 `p2_probe_status.json`。", ""]
+    lines += [
               "## 9. 与 X01 旧 LoRA 的 ET-test 对照", "",
               "**事实。** X01 旧 LoRA 的 ET-test macro-F1：A 0.603、V 0.287、AV 0.600。X02 的同模态 ET-test 结果见第 5 节。", "",
               "**解读。** 训练数据与模型条件不同，这里只作描述性对照，不作因果归因。", "",
@@ -280,15 +296,22 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
     for condition in ("audio", "av"):
         item = p1["conditions"][condition]
         lines.append(f"| {condition} | {f(item['latency_p50_s'])} / {f(item['latency_p95_s'])} | {item['peak_cuda_allocated_mib']:.0f} |")
+    if data["P2_probe"]:
+        lines += ["", "P2 条件推理：", "", "| 条件 | 延迟 P50 / P95（秒） | 峰值 CUDA MiB |", "|---|---:|---:|"]
+        for condition in ("audio", "video", "av"):
+            item = data["P2_probe"]["conditions"][condition]
+            lines.append(f"| {condition} | {f(item['latency_p50_s'])} / {f(item['latency_p95_s'])} | {item['peak_cuda_allocated_mib']:.0f} |")
     lines += ["", "## 11. 异常与未解决问题", "",
               f"- CH-SIMS valid 缺源视频 27/647；A/V 失败保留在 Acc-2 非零分母，相关系数附覆盖率。",
-              f"- P2 下载限时跳过，32 GB 量化加载兼容性尚未验证。证据在 `p2_probe_status.json`。",
+              ("- P2 在 32 GB 显存内用 NF4 thinker 推理；加载及运行收据见 `p2_probe_status.json`。"
+               if data["P2_probe"] else f"- P2：{p2['status']}；{p2['reason']}。证据在 `p2_probe_status.json`。"),
               "- T2 曾误启动一次 ASR 输入训练，已立即终止并隔离到服务器 `invalid_runs`；正式 `(r)` 结果由 `(o)` 模型回放，原始 `(o)` OOF 概率逐项核对一致。",
               "- CH-SIMS 无可用说话人 ID，跨语料只报告相关与 Acc-2，不声称说话人独立区间。", "",
               "## 12. 给 reviewer 的问题", "",
               "1. 是否接受第 11 节的缺失媒体分母与覆盖率口径？",
               "2. T 冠军按实际部署 ASR 输入的 CV 分数选择，是否符合后续 X03 使用方式？",
-              "3. 是否需要预置 P2 权重后另开 32 GB 显存加载验证？", "",
+              ("3. P2 零样本表现是否足以进入 X03 主干候选？"
+               if data["P2_probe"] else "3. 是否需要另开 P2 32 GB 显存加载验证？"), "",
               "所有聚合结果由 `emotioncore.x02.delivery` 从服务器收据生成；特征、逐句概率与完整转写均不入库。", ""]
     return "\n".join(lines)
 
