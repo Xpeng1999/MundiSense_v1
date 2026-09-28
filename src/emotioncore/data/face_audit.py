@@ -2,10 +2,12 @@ from __future__ import annotations
 
 import argparse
 import collections
+import concurrent.futures
 import hashlib
 import json
 import math
 import random
+import threading
 from pathlib import Path
 
 from emotioncore.utils.common import load_paths, read_jsonl, write_json_atomic
@@ -56,12 +58,19 @@ def summarize(records: list[dict]) -> dict:
             "decode_failures": sum(row["decode_failures"] for row in records)}
 
 
-def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None:
+def run(config: Path, results: Path, output: Path, seed: int = 20260928,
+        workers: int = 4) -> None:
     import cv2
 
     paths = load_paths(config)
-    detector = cv2.FaceDetectorYN.create(str(paths["yunet_model"]), "", (320, 320),
-                                         0.6, 0.3, 50)
+    local = threading.local()
+
+    def detector_for_thread():
+        if not hasattr(local, "detector"):
+            local.detector = cv2.FaceDetectorYN.create(
+                str(paths["yunet_model"]), "", (320, 320), 0.6, 0.3, 50)
+        return local.detector
+
     et = list(read_jsonl(results / "et_utterances.jsonl"))
     sims = list(read_jsonl(results / "chsims_v2_clips.jsonl"))
     rng = random.Random(seed)
@@ -72,7 +81,8 @@ def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None
     output.parent.mkdir(parents=True, exist_ok=True)
     receipt_root = paths["run_root"] / "face_audit"
     records = {"emotiontalk": [], "chsims_v2": []}
-    for index, row in enumerate(et_sample):
+
+    def et_record(row):
         sample_id = row["utt_id"]
         receipt = receipt_root / "emotiontalk" / (hashlib.sha256(sample_id.encode()).hexdigest() + ".json")
         if receipt.is_file():
@@ -81,16 +91,14 @@ def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None
                 raise RuntimeError("Face receipt ID mismatch")
         else:
             path = paths["processed_root"] / "emotiontalk" / row["mp4"]["path"]
-            measured = sample_clip(path, row["mp4"].get("duration_s") or 0, detector)
+            measured = sample_clip(path, row["mp4"].get("duration_s") or 0,
+                                   detector_for_thread())
             record = {"id": sample_id, "split": row["official_split"],
                       "speaker_id": row["speaker_id"], **measured}
             write_json_atomic(receipt, record)
-        records["emotiontalk"].append(record)
-        if (index + 1) % 100 == 0:
-            write_json_atomic(output.with_name("face_progress.json"),
-                              {"emotiontalk_done": index + 1, "emotiontalk_total": len(et_sample),
-                               "chsims_done": 0, "chsims_total": len(sims_sample)})
-    for index, row in enumerate(sims_sample):
+        return record
+
+    def sims_record(row):
         sample_id = f"{row['video_id']}__{row['clip_id']}"
         receipt = receipt_root / "chsims_v2" / (hashlib.sha256(sample_id.encode()).hexdigest() + ".json")
         if receipt.is_file():
@@ -99,14 +107,25 @@ def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None
                 raise RuntimeError("Face receipt ID mismatch")
         else:
             path = paths["derived_root"] / "chsims_v2/raw" / row["media"]["path"]
-            measured = sample_clip(path, row["media"].get("duration_s") or 0, detector)
+            measured = sample_clip(path, row["media"].get("duration_s") or 0,
+                                   detector_for_thread())
             record = {"id": sample_id, "split": row["mode"], **measured}
             write_json_atomic(receipt, record)
-        records["chsims_v2"].append(record)
-        if (index + 1) % 100 == 0:
-            write_json_atomic(output.with_name("face_progress.json"),
-                              {"emotiontalk_done": len(et_sample), "emotiontalk_total": len(et_sample),
-                               "chsims_done": index + 1, "chsims_total": len(sims_sample)})
+        return record
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        for index, record in enumerate(pool.map(et_record, et_sample), 1):
+            records["emotiontalk"].append(record)
+            if index % 100 == 0:
+                write_json_atomic(output.with_name("face_progress.json"),
+                                  {"emotiontalk_done": index, "emotiontalk_total": len(et_sample),
+                                   "chsims_done": 0, "chsims_total": len(sims_sample)})
+        for index, record in enumerate(pool.map(sims_record, sims_sample), 1):
+            records["chsims_v2"].append(record)
+            if index % 100 == 0:
+                write_json_atomic(output.with_name("face_progress.json"),
+                                  {"emotiontalk_done": len(et_sample), "emotiontalk_total": len(et_sample),
+                                   "chsims_done": index, "chsims_total": len(sims_sample)})
     write_json_atomic(output, {"seed": seed, "sampling_fps": 2, "yunet_score_threshold": 0.6,
                                "emotiontalk": summarize(records["emotiontalk"]),
                                "chsims_v2": summarize(records["chsims_v2"])})
@@ -117,8 +136,9 @@ def main() -> None:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--results", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
-    run(args.config, args.results, args.output)
+    run(args.config, args.results, args.output, workers=args.workers)
 
 
 if __name__ == "__main__":
