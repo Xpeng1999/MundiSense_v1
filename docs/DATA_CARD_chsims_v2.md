@@ -26,4 +26,13 @@ The [official MMSA result table](https://github.com/thuiar/MMSA/blob/master/resu
 
 ## Speaker and visual limitations
 
-The supplied `meta.csv` has no speaker identifier. Neither the [official repository](https://github.com/thuiar/ch-sims-v2) nor the [paper abstract](https://arxiv.org/abs/2209.02604) establishes that its `mode` split is speaker independent. We therefore do not claim speaker independence. The 2-fps YuNet audit covers all valid clips and a seeded random sample of 1,000 train clips; test clips are excluded from face analysis. See `results/face_audit.json` when complete.
+The supplied `meta.csv` has no speaker identifier. Neither the [official repository](https://github.com/thuiar/ch-sims-v2) nor the [paper abstract](https://arxiv.org/abs/2209.02604) establishes that its `mode` split is speaker independent. We therefore do not claim speaker independence.
+
+The 2-fps YuNet audit covers all 647 valid clips and a seeded random sample of 1,000 train clips (1,647 clips total). It read 11,902 frames; 228 requested frame seeks failed or came from missing media. Percentages use successfully read frames. Test clips were excluded from face analysis.
+
+| Split | Frames read | 0 faces | 1 face | ≥2 faces |
+| --- | ---: | ---: | ---: | ---: |
+| train | 7,245 | 0.69% | 63.20% | 36.11% |
+| valid | 4,657 | 0.28% | 74.73% | 24.99% |
+
+Face counts show how often multiple faces are visible, but do not identify the active speaker.

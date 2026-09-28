@@ -50,6 +50,7 @@ def render(results: Path, output: Path) -> None:
              f"- CH-SIMS v2 源 CSV 有 {sims['rows']:,} 条；缺媒体 {sims['missing_count']} 条，重复路径 {sims['duplicate_path_count']} 条，完整解码失败 {sum(x.get('decode_failed', 0) for x in decode['counts_by_mode'].values())} 条。",
              f"- 旧训练对 ET-test/ET-val 四层重叠均为零；第 16 轮中文集同句 {v16['overlap_counts']['utterance']} 条、同媒体哈希 {v16['overlap_counts']['media_sha256']} 条。",
              f"- D3 完成 {d3['completed']}/{d3['required']} 条，最大 logprob 差 {num(max(x['max_abs_logprob_difference'] for x in d3['details']), 6)}；完整 D2 结果见第 6 节。",
+             f"- 人脸审计中 ET-val 帧的多脸比例为 {num(faces['emotiontalk']['by_split']['val']['fractions']['2+'])}，SIMS-valid 为 {num(faces['chsims_v2']['by_split']['valid']['fractions']['2+'])}。",
              f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
              "", "## 2. 实际完成情况与偏离计划之处", "", "### 事实", "",
              f"- 已建私有仓库、Mac 和服务器克隆；D2 每个组合均有独立 `run_meta.json`。本次收录 {len(predictions):,} 份服务器逐条预测的路径与 SHA-256。",
@@ -92,6 +93,7 @@ def render(results: Path, output: Path) -> None:
         lines.append(f"| {name} | {f['clips']:,} | {num(fr['0'])} | {num(fr['1'])} | {num(fr['2+'])} | {f['decode_failures']} |")
     lines += ["", "### 解读", "",
               "- 脸数不等同于当前说话人的身份；CH-SIMS v2 的 `meta.csv` 无说话人 ID，不能据此声称官方划分与说话人无关。",
+              f"- EmotionTalk val 的多脸帧比例为 {num(faces['emotiontalk']['by_split']['val']['fractions']['2+'])}，说话人 15 对应受审计帧为 {num(faces['emotiontalk']['by_speaker']['15']['fractions']['2+'])}；单一可见脸假设并不普遍成立。此计数不能判定多脸帧中的当前说话人。",
               "", "## 4. Benchmark v1 定义摘要及 sha256", "",
               f"- 定义文件 SHA-256：`{freeze['definition_sha256']}`。ET-test 为主评测，ET-val 留作选择和校准；SIMS-valid 评估连续效价；CH-SIMS v2 test 是封存集。",
               "- ET 主标签为 M 的七类；拒识和解析失败计入错误。SIMS-valid 的概率来自八个候选首 token 对数概率的 softmax，以预定义概率差计算 Pearson、Spearman 和排除零标签的 Acc-2，不调阈值。",
