@@ -6,15 +6,25 @@ X01 registers Chinese emotion data, freezes Benchmark v1, audits leakage, and re
 
 Edit only `configs/paths.server.yaml` for a different host. All absolute paths, including the read-only legacy project, source datasets, processed media, model, adapter, derived-data root, and X01 run root, are there. `configs/x01.yaml` freezes media limits and evaluation parameters.
 
-Use Python 3.11 in a new repository-local environment:
+On the X01 server, reproduce the independent Python 3.11 environment from the audited legacy package tree without writing to the legacy directory:
 
 ```bash
 python3.11 -m venv .venv
-.venv/bin/python -m pip install -r requirements.lock.txt
-.venv/bin/python -m pip install --no-deps -e .
+legacy_root=$(awk '$1 == "legacy_root:" {print $2}' configs/paths.server.yaml)
+rsync -a --exclude='__pycache__/' "$legacy_root/.venv/lib/python3.11/site-packages/" .venv/lib/python3.11/site-packages/
+python3 - <<'PY'
+from pathlib import Path
+import shutil
+for metadata in Path('.venv/lib/python3.11/site-packages').glob('setuptools-*.dist-info'):
+    if metadata.name != 'setuptools-78.1.0.dist-info':
+        shutil.rmtree(metadata)
+PY
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m emotioncore.utils.environment \
+  --paths configs/paths.server.yaml --verify-current \
+  --output experiments/X01_benchmark/results/new_venv_verification.json
 ```
 
-The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt`. On the X01 server, the new `.venv` contains the audited package tree copied from the read-only legacy environment; no package was installed into the old environment. `new_venv_verification.json` records zero version mismatches across all 296 locked packages, the separate interpreter and package path, and successful CUDA detection on the RTX 5090. `pip check` still reports the pre-existing `gradio`/`starlette` constraint conflict in that lock. The running X01 D2 evaluation was started consistently with the legacy interpreter before the new environment was fully provisioned; a fresh run can use the new `.venv`.
+The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt`. `new_venv_verification.json` records zero version mismatches across all 296 locked packages, the separate interpreter and package path, and successful CUDA detection on the RTX 5090. The copied package set contains a pre-existing `gradio`/`starlette` constraint conflict, so dependency resolving `pip install -r requirements.lock.txt` is not the verified setup path. No package was installed into the old environment. The running X01 D2 evaluation was started consistently with the legacy interpreter before the new environment was fully provisioned; a fresh run can use the new `.venv`.
 
 ## Reproduce X01
 
