@@ -99,7 +99,7 @@ def run(args: argparse.Namespace) -> None:
                                 "sha256": audio["wav_sha256"]},
                         "mp4": {"path": str(video),
                                 "sha256": row["media"].get("sha256"),
-                                "duration_s": row["media"]["duration_s"]}})
+                                "duration_s": row["media"].get("duration_s") or 0.0}})
     validate_adapter(adapted)
     path = args.output_root / "sims_valid_adapter.jsonl"
     with path.open("w", encoding="utf-8") as stream:
