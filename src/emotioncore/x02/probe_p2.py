@@ -20,9 +20,12 @@ from emotioncore.x02.probe_p1 import EXPECTED_VAL_COUNT
 from emotioncore.x02.runtime import PersistentJSONWorker, git_provenance, write_json_atomic
 
 
-def media_worker() -> None:
+def media_worker(model_dir: Path) -> None:
     import torch
     from qwen_omni_utils import process_mm_info
+    from transformers import Qwen3OmniMoeProcessor
+
+    processor = Qwen3OmniMoeProcessor.from_pretrained(str(model_dir), local_files_only=True)
 
     for line in sys.stdin:
         try:
@@ -33,19 +36,23 @@ def media_worker() -> None:
             condition = task["condition"]
             if condition not in ("audio", "video", "av"):
                 raise ValueError(condition)
+            conv = conversation(task["system"], task["user"], str(media), condition != "audio")
+            prompt = processor.apply_chat_template(
+                conv, add_generation_prompt=True, tokenize=False) + ASSISTANT_PREFIX
             audios, images, videos = process_mm_info(
-                conversation("system", "user", str(media), condition != "audio"),
+                conv,
                 use_audio_in_video=condition == "av")
             if images is not None or bool(audios) != (condition != "video") or \
                bool(videos) != (condition != "audio"):
                 raise ValueError("Decoded modality does not match probe condition")
-            values = {}
-            if audios:
-                values["audio"] = np.asarray(audios[0], dtype=np.float32)
-            if videos:
-                frames = videos[0]
-                values["video"] = (frames.detach().cpu().numpy() if isinstance(frames, torch.Tensor)
-                                   else np.asarray(frames, dtype=np.float32))
+            inputs = processor(text=prompt, audio=audios, images=images, videos=videos,
+                               return_tensors="pt", padding=True,
+                               use_audio_in_video=condition == "av", fps=2.0)
+            if (bool(inputs.get("input_features") is not None) != (condition != "video") or
+                    bool(inputs.get("pixel_values_videos") is not None) != (condition != "audio")):
+                raise ValueError("Processed modality does not match probe condition")
+            values = {key: (value.detach().cpu().numpy() if isinstance(value, torch.Tensor)
+                            else np.asarray(value)) for key, value in inputs.items()}
             output = Path(task["output"])
             output.parent.mkdir(parents=True, exist_ok=True)
             temporary = output.with_name(f".{output.stem}.{os.getpid()}.npz")
@@ -80,25 +87,15 @@ class P2Scorer:
             device_map={"": 0}, attn_implementation="sdpa",
             local_files_only=True).eval()
 
-    def score(self, system: str, user: str, media: str, condition: str,
-              audio: np.ndarray | None, video: np.ndarray | None) -> dict:
+    def score_inputs(self, arrays: dict[str, np.ndarray], condition: str,
+                     preprocess_s: float) -> dict:
         torch = self.torch
-        conv = conversation(system, user, media, condition != "audio")
-        prompt = self.processor.apply_chat_template(
-            conv, add_generation_prompt=True, tokenize=False) + ASSISTANT_PREFIX
-        start = time.monotonic()
-        frames = torch.from_numpy(video) if video is not None else None
-        inputs = self.processor(text=prompt, audio=[audio] if audio is not None else None,
-                                videos=[frames] if frames is not None else None,
-                                return_tensors="pt", padding=True,
-                                use_audio_in_video=condition == "av", fps=2.0)
-        has_audio = inputs.get("input_features") is not None
-        has_video = inputs.get("pixel_values_videos") is not None
+        has_audio = "input_features" in arrays
+        has_video = "pixel_values_videos" in arrays
         if has_audio != (condition != "video") or has_video != (condition != "audio"):
             raise RuntimeError("Processor modality receipt mismatch")
-        preprocessing_s = time.monotonic() - start
-        inputs = {key: value.to(self.device) if hasattr(value, "to") else value
-                  for key, value in inputs.items()}
+        inputs = {key: torch.from_numpy(value).to(self.device)
+                  for key, value in arrays.items()}
         torch.cuda.synchronize()
         forward_start = time.monotonic()
         with torch.inference_mode():
@@ -110,7 +107,7 @@ class P2Scorer:
         return {"score_labels": list(LABELS), "raw_logprobs": logprobs.tolist(),
                 "scores": probabilities.tolist(),
                 "pred": LABELS[int(logprobs.argmax())],
-                "preprocess_s": preprocessing_s,
+                "preprocess_s": preprocess_s,
                 "forward_s": time.monotonic() - forward_start,
                 "peak_cuda_allocated_mib": torch.cuda.max_memory_allocated() / 2**20,
                 "modality_switch": {"processor": condition == "av",
@@ -177,7 +174,7 @@ def run(args: argparse.Namespace) -> None:
     env = os.environ.copy()
     env["PYTHONPATH"] = str(Path.cwd() / "src")
     worker = PersistentJSONWorker([sys.executable, "-u", "-m", "emotioncore.x02.probe_p2",
-                                   "--worker"], cwd=Path.cwd(), env=env,
+                                   "--worker", "--model-dir", str(args.model_dir)], cwd=Path.cwd(), env=env,
                                   stderr_path=args.output_dir / "worker_errors.log")
     try:
         for condition in args.conditions:
@@ -197,19 +194,20 @@ def run(args: argparse.Namespace) -> None:
                 input_sha = row["wav" if condition == "audio" else "mp4"]["sha256"]
                 prepared = args.output_dir / "prepared" / f"{row['utt_id']}_{condition}.npz"
                 decoded = worker.request({"media": str(media), "input_sha256": input_sha,
-                                          "condition": condition, "output": str(prepared)}, args.timeout)
+                                          "condition": condition, "system": system,
+                                          "user": user, "output": str(prepared)}, args.timeout)
                 receipt = {"id": row["utt_id"], "condition": condition,
                            "input_sha256": input_sha, "status": decoded["status"],
-                           "media_decode_s": decoded["elapsed_s"]}
+                           "media_preprocess_s": decoded["elapsed_s"]}
                 try:
                     if decoded["status"] != "ok":
                         raise RuntimeError(decoded.get("error", "Media preprocessing failed"))
                     if sha256(prepared) != decoded["sha256"]:
                         raise ValueError("Prepared media SHA mismatch")
                     with np.load(prepared) as data:
-                        audio = data["audio"].copy() if "audio" in data else None
-                        video = data["video"].copy() if "video" in data else None
-                    receipt.update(model.score(system, user, str(media), condition, audio, video))
+                        arrays = {key: data[key].copy() for key in data.files}
+                    receipt.update(model.score_inputs(arrays, condition,
+                                                      decoded["elapsed_s"]))
                 except Exception as exc:
                     receipt.update(status="failed", pred=None,
                                    error=f"{type(exc).__name__}: {str(exc)[:500]}")
@@ -245,7 +243,9 @@ def main() -> None:
     parser.add_argument("--allow-dirty", action="store_true")
     args = parser.parse_args()
     if args.worker:
-        media_worker()
+        if args.model_dir is None:
+            parser.error("--worker requires --model-dir")
+        media_worker(args.model_dir)
     else:
         for name in ("manifest", "media_root", "model_dir", "legacy_root", "output_dir"):
             if getattr(args, name) is None:
