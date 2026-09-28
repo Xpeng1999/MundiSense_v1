@@ -30,7 +30,9 @@ def run(args: argparse.Namespace) -> None:
     checkpoint_path = Path(annotated["checkpoint_path"])
     if sha256(checkpoint_path) != annotated["checkpoint_sha256"]:
         raise ValueError("Annotated final head checksum differs from receipt")
-    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+    # This checkpoint is produced by final_eval and SHA-verified above; its
+    # normalization arrays require pickle support in recent PyTorch releases.
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     if checkpoint["encoder"] != "T2" or checkpoint["head"] != "h1" or \
        checkpoint["folds_sha256"] != sha256(args.folds):
         raise ValueError("Annotated final head has wrong provenance")
