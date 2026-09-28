@@ -23,6 +23,7 @@ def ci(result: dict, metric: str, unit: str = "utterance") -> str:
 def render(results: Path, output: Path) -> None:
     et = get(results, "et_audit.json")
     sims = get(results, "chsims_audit.json")
+    decode = get(results, "chsims_decode_audit.json")
     d3 = get(results, "d3_consistency.json")
     v16 = get(results, "leakage_v16.json")
     correction = get(results, "legacy_correction.json")
@@ -34,6 +35,8 @@ def render(results: Path, output: Path) -> None:
     new_environment = get(results, "new_venv_verification.json")
     legacy = get(results, "legacy_snapshot_audit.json")
     predictions = get(results, "prediction_manifest.json")
+    if decode["rows"] != sims["rows"] or sum(sum(row.values()) for row in decode["counts_by_mode"].values()) != sims["rows"]:
+        raise RuntimeError("Full decode audit does not cover the CH-SIMS source manifest")
     if len(predictions) != sum(x["n"] for x in metrics["et"].values()) + sum(x["n"] for x in metrics["sims_valid"].values()):
         raise RuntimeError("Prediction manifest does not cover all D2 rows")
     test_results = get(results, "test_results.json")
@@ -41,7 +44,7 @@ def render(results: Path, output: Path) -> None:
     lines = ["# X01 工程基座与评测基准 v1 — 执行报告", "",
              "## 1. 摘要", "",
              f"- EmotionTalk 登记 {et['rows']:,} 条，官方各划分和各类计数差异 {len(et['official_differences'])} 格。",
-             f"- CH-SIMS v2 源 CSV 有 {sims['rows']:,} 条；缺媒体 {sims['missing_count']} 条，重复路径 {sims['duplicate_path_count']} 条。",
+             f"- CH-SIMS v2 源 CSV 有 {sims['rows']:,} 条；缺媒体 {sims['missing_count']} 条，重复路径 {sims['duplicate_path_count']} 条，完整解码失败 {sum(x.get('decode_failed', 0) for x in decode['counts_by_mode'].values())} 条。",
              f"- 旧训练对 ET-test/ET-val 四层重叠均为零；第 16 轮中文集同句 {v16['overlap_counts']['utterance']} 条、同媒体哈希 {v16['overlap_counts']['media_sha256']} 条。",
              f"- D3 完成 {d3['completed']}/{d3['required']} 条，最大 logprob 差 {num(max(x['max_abs_logprob_difference'] for x in d3['details']), 6)}；完整 D2 结果见第 6 节。",
              f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
@@ -66,7 +69,13 @@ def render(results: Path, output: Path) -> None:
                   for a, b in (("M", "A"), ("M", "V"), ("M", "T"),
                                ("A", "V"), ("A", "T"), ("V", "T"))) + "。",
               "", "- 各类别一致率、全部投票强度和 19 名说话人与组的关系见 `et_audit.json`。",
-              f"- CH-SIMS v2：train {sims['mode_counts']['train']:,}、valid {sims['mode_counts']['valid']:,}、test {sims['mode_counts']['test']:,}；现存媒体解码失败 {sims['decode_failure_count']} 条。test 只作清单、SHA-256 与解码登记，未作模型推理。",
+              f"- CH-SIMS v2：train {sims['mode_counts']['train']:,}、valid {sims['mode_counts']['valid']:,}、test {sims['mode_counts']['test']:,}；现存媒体 `ffprobe` 失败 {sims['decode_failure_count']} 条。完整 `ffmpeg` 解码结果如下；test 只作清单、SHA-256 与解码登记，未作模型推理。",
+              "", "| 划分 | 解码成功 | 缺媒体 | 探测失败 | 解码失败 |",
+              "| --- | ---: | ---: | ---: | ---: |"]
+    for mode in ("train", "valid", "test"):
+        row = decode["counts_by_mode"][mode]
+        lines.append(f"| {mode} | {row.get('ok', 0)} | {row.get('missing', 0)} | {row.get('probe_failed', 0)} | {row.get('decode_failed', 0)} |")
+    lines += ["",
               "- 2-fps YuNet 画面审计（零脸／一脸／多脸为帧比例）：", "",
               "| 数据 | 片段 | 0 脸 | 1 脸 | ≥2 脸 | 抽帧失败次数（含缺媒体） |",
               "| --- | ---: | ---: | ---: | ---: | ---: |"]

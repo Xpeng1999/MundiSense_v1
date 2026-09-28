@@ -9,6 +9,7 @@ from pathlib import Path
 
 from emotioncore.data.benchmark import build as build_benchmark
 from emotioncore.data.chsims import build as build_chsims
+from emotioncore.data.decode_audit import run as run_decode_audit
 from emotioncore.data.emotiontalk import build as build_et
 from emotioncore.eval.analyze import analyze
 from emotioncore.eval.consistency import run as run_consistency
@@ -36,6 +37,9 @@ def run(paths_config: Path, experiment_config: Path, with_face_audit: bool) -> N
         build_et(paths_config, results / "et_utterances.jsonl", workers=8)
     if not (results / "chsims_v2_clips.jsonl").is_file():
         build_chsims(paths_config, results / "chsims_v2_clips.jsonl", workers=8)
+    if not (results / "chsims_decode_audit.json").is_file():
+        run_decode_audit(paths_config, results / "chsims_v2_clips.jsonl",
+                         results / "chsims_decode_audit.json")
     if not (results / "benchmark_manifests.json").is_file():
         build_benchmark(results)
     write_json_atomic(results / "benchmark_freeze.json",
