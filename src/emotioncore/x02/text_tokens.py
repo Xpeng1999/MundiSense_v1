@@ -24,9 +24,18 @@ def run(args: argparse.Namespace) -> None:
 
     provenance = git_provenance(Path.cwd(), args.allow_dirty)
     folds = json.loads(args.folds.read_text(encoding="utf-8"))
-    if sha256(args.manifest) != folds["source_manifest_sha256"]:
-        raise ValueError("Manifest differs from frozen folds")
-    rows = load_rows(args.manifest, folds)
+    if args.split == "cv":
+        if sha256(args.manifest) != folds["source_manifest_sha256"]:
+            raise ValueError("Manifest differs from frozen folds")
+        rows = load_rows(args.manifest, folds)
+    else:
+        with args.manifest.open(encoding="utf-8") as stream:
+            rows = [json.loads(line) for line in stream]
+        if (len(rows) != folds["et_test_count"] or
+                len({row["utt_id"] for row in rows}) != len(rows) or
+                any(row["official_split"] != "test" or
+                    row["speaker_id"] not in folds["excluded_speakers"] for row in rows)):
+            raise ValueError("ET-test tokenization requires the sealed ET-test manifest")
     tokenizer = AutoTokenizer.from_pretrained(str(args.model_dir), local_files_only=True)
     ids = np.zeros((len(rows), MAX_LENGTH), dtype=np.int32)
     mask = np.zeros((len(rows), MAX_LENGTH), dtype=np.int8)
@@ -72,12 +81,12 @@ def run(args: argparse.Namespace) -> None:
         ids[index, :width] = tokenized["input_ids"]
         mask[index, :width] = tokenized["attention_mask"]
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    output = args.output_dir / f"T1_{args.source}_cv.npz"
+    output = args.output_dir / f"T1_{args.source}_{args.split}.npz"
     np.savez(output, input_ids=ids, attention_mask=mask, failed=status,
              utt_ids=np.asarray([row["utt_id"] for row in rows]))
     meta = {"git": provenance, "command": sys.argv,
             "ended_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-            "source": args.source, "split": "cv", "revision": REVISION,
+            "source": args.source, "split": args.split, "revision": REVISION,
             "model_dir": str(args.model_dir),
             "model_sha256": sha256(args.model_dir / "pytorch_model.bin"),
             "tokenizer_sha256": sha256(args.model_dir / "tokenizer.json"),
@@ -88,7 +97,7 @@ def run(args: argparse.Namespace) -> None:
             "samples": len(rows), "failed": int(status.sum()),
             "tokens_path": str(output), "tokens_sha256": sha256(output),
             "transcripts_server_only": True}
-    write_json_atomic(args.output_dir / f"T1_{args.source}_cv_meta.json", meta)
+    write_json_atomic(args.output_dir / f"T1_{args.source}_{args.split}_meta.json", meta)
 
 
 def main() -> None:
@@ -99,6 +108,7 @@ def main() -> None:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--asr-receipts", type=Path)
     parser.add_argument("--source", choices=("o", "r"), required=True)
+    parser.add_argument("--split", choices=("cv", "test"), default="cv")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--allow-dirty", action="store_true")
     args = parser.parse_args()
