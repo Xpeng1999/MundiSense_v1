@@ -192,7 +192,7 @@ def render(results: Path, output: Path) -> None:
               "- A、V、AV 与基座／旧 LoRA 的差值只在相同样本和相同 M 标签下解释；A 与 A 标签、V 与 V 标签结果并列保留，不作跨真值相减。SIMS-valid 的情绪概率差是跨任务代理量。相关系数仅对有效评分计算，覆盖率和相关 n 同时列出；Acc-2 非零 n 保留失败样本并计错。",
               "", "## 7. 异常与未解决问题", "",
               f"- CH-SIMS v2 的 4,402／4,403 源材料差异、{sims['missing_count']} 条缺媒体和未验证说话人独立性见数据卡及 `OPEN_QUESTIONS.md`。",
-              f"- D2 对单条预处理和前向计算设 {execution['per_sample_timeout_s']} 秒运行时限；超时写失败凭证并保留在指标分母，具体组合和次数见第 6 节失败原因表。",
+              f"- D2 对单条预处理和前向计算设 {execution['per_sample_timeout_s']} 秒 `SIGALRM` 时限；它无法强制中断本次底层媒体调用。同一 SIMS-valid 片段在两个模型的 AV 条件均超时，已人工停止进程、写失败凭证并断点续跑；失败保留在指标分母，具体组合和次数见第 6 节失败原因表。",
               f"- 旧项目快照：新增 {legacy['added_count']}、既有文件 mtime/大小变化 {legacy['changed_existing_count']}、删除 {legacy['removed_count']}。新增项是 Python 缓存，已保留并停止后续写入；这项验收未通过。",
               "- 所有逐条预测只在服务器运行目录；仓库仅有逐条路径及 SHA-256 清单。"]
     for item in incidents["incidents"]:
@@ -201,6 +201,7 @@ def render(results: Path, output: Path) -> None:
               "1. 官方论文文字写 4,402、Table 1 和所给 CSV 为 4,403；是否以当前 4,403 行作为 Benchmark v1 的 SIMS-valid/lock-box 固定来源？",
               "2. 旧项目因 Python 自动字节码生成而新增缓存文件，已有文件未变；请决定这一只读边界偏离的验收记录方式。",
               "3. CH-SIMS v2 无说话人 ID，官方来源未确立说话人独立性；是否需要后续单独获取说话人元数据？",
+              "4. SIMS-valid 同一片段在两个 AV 模型的预处理都无法被 `SIGALRM` 中断；后续修订是否需要用独立进程约束预处理时间？本版已将两次失败计入分母。",
               ""]
     output.write_text("\n".join(lines), encoding="utf-8")
 
