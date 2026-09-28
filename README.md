@@ -45,6 +45,10 @@ The face audit also resumes from atomic per-clip receipts under the server X01 r
 ```bash
 PYTHONPATH=src .venv/bin/python -m emotioncore.tools.leakage_check --train TRAIN_AV.jsonl TRAIN_AUDIO.jsonl --eval EVAL.jsonl --output leakage.json
 PYTHONPATH=src .venv/bin/python -m pytest -q
+PYTHONPATH=src .venv/bin/python experiments/X01_benchmark/validate_delivery.py \
+  --paths configs/paths.server.yaml --results experiments/X01_benchmark/results \
+  --report experiments/X01_benchmark/REPORT.md \
+  --output experiments/X01_benchmark/results/delivery_validation.json
 ```
 
 See `docs/BENCHMARK_v1.md` for frozen cohorts, labels, and metrics; data cards for audit detail; and `experiments/X01_benchmark/REPORT.md` for results and deviations.
