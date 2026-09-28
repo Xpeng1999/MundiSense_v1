@@ -1,0 +1,190 @@
+{
+  "version": "1",
+  "seed": 20260928,
+  "algorithm": "200000 seeded speaker shuffles; minimize outer count range then squared deviation; inner triple closest to one quarter of remaining utterances",
+  "source_manifest": "experiments/X01_benchmark/results/et_utterances.jsonl",
+  "source_manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "excluded_speakers": [
+    "02",
+    "13",
+    "20",
+    "21"
+  ],
+  "et_test_count": 1929,
+  "cv_pool_speakers": [
+    "01",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
+  ],
+  "cv_pool_count": 16366,
+  "speaker_counts": {
+    "01": 451,
+    "02": 803,
+    "05": 1209,
+    "06": 965,
+    "07": 1929,
+    "08": 1205,
+    "09": 1548,
+    "10": 553,
+    "11": 1748,
+    "12": 1618,
+    "13": 945,
+    "14": 1776,
+    "15": 502,
+    "16": 681,
+    "17": 702,
+    "18": 728,
+    "19": 751,
+    "20": 525,
+    "21": 611
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "outer_holdout_speakers": [
+        "01",
+        "08",
+        "12"
+      ],
+      "outer_holdout_count": 3274,
+      "inner_validation_speakers": [
+        "06",
+        "10",
+        "11"
+      ],
+      "inner_validation_count": 3266,
+      "inner_train_speakers": [
+        "05",
+        "07",
+        "09",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "inner_train_count": 9826
+    },
+    {
+      "fold": 1,
+      "outer_holdout_speakers": [
+        "05",
+        "09",
+        "15"
+      ],
+      "outer_holdout_count": 3259,
+      "inner_validation_speakers": [
+        "01",
+        "08",
+        "12"
+      ],
+      "inner_validation_count": 3274,
+      "inner_train_speakers": [
+        "06",
+        "07",
+        "10",
+        "11",
+        "14",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "inner_train_count": 9833
+    },
+    {
+      "fold": 2,
+      "outer_holdout_speakers": [
+        "06",
+        "10",
+        "14"
+      ],
+      "outer_holdout_count": 3294,
+      "inner_validation_speakers": [
+        "01",
+        "08",
+        "12"
+      ],
+      "inner_validation_count": 3274,
+      "inner_train_speakers": [
+        "05",
+        "07",
+        "09",
+        "11",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "inner_train_count": 9798
+    },
+    {
+      "fold": 3,
+      "outer_holdout_speakers": [
+        "07",
+        "16",
+        "17"
+      ],
+      "outer_holdout_count": 3312,
+      "inner_validation_speakers": [
+        "06",
+        "09",
+        "19"
+      ],
+      "inner_validation_count": 3264,
+      "inner_train_speakers": [
+        "01",
+        "05",
+        "08",
+        "10",
+        "11",
+        "12",
+        "14",
+        "15",
+        "18"
+      ],
+      "inner_train_count": 9790
+    },
+    {
+      "fold": 4,
+      "outer_holdout_speakers": [
+        "11",
+        "18",
+        "19"
+      ],
+      "outer_holdout_count": 3227,
+      "inner_validation_speakers": [
+        "06",
+        "12",
+        "17"
+      ],
+      "inner_validation_count": 3285,
+      "inner_train_speakers": [
+        "01",
+        "05",
+        "07",
+        "08",
+        "09",
+        "10",
+        "14",
+        "15",
+        "16"
+      ],
+      "inner_train_count": 9854
+    }
+  ]
+}
