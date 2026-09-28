@@ -24,6 +24,7 @@ def render(results: Path, output: Path) -> None:
     et = get(results, "et_audit.json")
     sims = get(results, "chsims_audit.json")
     decode = get(results, "chsims_decode_audit.json")
+    incidents = get(results, "d2_incidents.json")
     d3 = get(results, "d3_consistency.json")
     v16 = get(results, "leakage_v16.json")
     correction = get(results, "legacy_correction.json")
@@ -190,8 +191,10 @@ def render(results: Path, output: Path) -> None:
               f"- CH-SIMS v2 的 4,402／4,403 源材料差异、{sims['missing_count']} 条缺媒体和未验证说话人独立性见数据卡及 `OPEN_QUESTIONS.md`。",
               "- D2 对单条预处理和前向计算设 300 秒运行时限；超时写失败凭证并保留在指标分母，具体组合和次数见第 6 节失败原因表。",
               f"- 旧项目快照：新增 {legacy['added_count']}、既有文件 mtime/大小变化 {legacy['changed_existing_count']}、删除 {legacy['removed_count']}。新增项是 Python 缓存，已保留并停止后续写入；这项验收未通过。",
-              "- 所有逐条预测只在服务器运行目录；仓库仅有逐条路径及 SHA-256 清单。",
-              "", "## 8. 给 reviewer 的问题", "",
+              "- 所有逐条预测只在服务器运行目录；仓库仅有逐条路径及 SHA-256 清单。"]
+    for item in incidents["incidents"]:
+        lines.append(f"- {item['model']} {item['dataset']} {item['condition']} 的 `{item['sample_id']}` 媒体时长 {num(item['media_duration_s'])} 秒；处理至少 {item['elapsed_lower_bound_s']} 秒无输出，`ffmpeg` 完整解码成功。已写失败凭证并断点续跑；凭证 SHA-256 为 `{item['receipt_sha256']}`。")
+    lines += ["", "## 8. 给 reviewer 的问题", "",
               "1. 官方论文文字写 4,402、Table 1 和所给 CSV 为 4,403；是否以当前 4,403 行作为 Benchmark v1 的 SIMS-valid/lock-box 固定来源？",
               "2. 旧项目因 Python 自动字节码生成而新增缓存文件，已有文件未变；请决定这一只读边界偏离的验收记录方式。",
               "3. CH-SIMS v2 无说话人 ID，官方来源未确立说话人独立性；是否需要后续单独获取说话人元数据？",
