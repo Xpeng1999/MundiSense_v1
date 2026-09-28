@@ -16,7 +16,8 @@ from emotioncore.x02.runtime import git_provenance, write_json_atomic
 
 
 SPECS = {"A1": (128, 1024), "A2": (128, 3584), "A3": (128, 1024),
-         "V1": (8, 1288), "V2": (8, 768)}
+         "V1": (8, 1288), "V2": (8, 768), "V3a": (8, 3584),
+         "V3b": (8, 3584)}
 
 
 def read_feature(path: Path, encoder: str) -> np.ndarray:
@@ -27,7 +28,7 @@ def read_feature(path: Path, encoder: str) -> np.ndarray:
             frames = data["layers"]
         elif encoder == "V1":
             frames = np.concatenate((data["frames"], data["native_logits"]), axis=-1)
-        elif encoder == "V2":
+        elif encoder in ("V2", "V3a", "V3b"):
             frames = data["frames"]
         else:
             raise ValueError(f"Unsupported encoder: {encoder}")

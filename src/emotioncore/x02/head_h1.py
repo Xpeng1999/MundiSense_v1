@@ -48,7 +48,9 @@ def load_rows(manifest: Path, folds: dict) -> list[dict]:
 def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[np.ndarray, np.ndarray]:
     features = []
     available = []
-    dimensions = {"A1": (3072,), "A2": (7168,), "A3": (4, 2048), "T2": (1024,)}
+    dimensions = {"A1": (3072,), "A2": (7168,), "A3": (4, 2048),
+                  "V1": (2576,), "V2": (1536,), "V3a": (7168,),
+                  "V3b": (7168,), "T2": (1024,)}
     dimension = dimensions[encoder]
     for row in rows:
         path = receipts_root / f"{row['utt_id']}.json"
@@ -57,7 +59,9 @@ def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[
         receipt = json.loads(path.read_text(encoding="utf-8"))
         if receipt["id"] != row["utt_id"]:
             raise ValueError("Feature receipt ID mismatch")
-        source_sha = row["wav"]["sha256"] if encoder.startswith("A") else receipt.get("input_sha256")
+        source_sha = (row["wav"]["sha256"] if encoder.startswith("A") else
+                      row["mp4"]["sha256"] if encoder.startswith("V") else
+                      receipt.get("input_sha256"))
         if receipt.get("input_sha256") != source_sha:
             raise ValueError("Feature receipt input hash mismatch")
         if receipt["status"] != "ok":
@@ -79,6 +83,12 @@ def load_features(rows: list[dict], receipts_root: Path, encoder: str) -> tuple[
             with np.load(feature_file) as data:
                 layers = data["layers"].astype(np.float32)
                 vector = np.concatenate((layers.mean(1), layers.std(1)), axis=1)
+        elif encoder.startswith("V"):
+            with np.load(feature_file) as data:
+                frames = data["frames"].astype(np.float32)
+                if encoder == "V1":
+                    frames = np.concatenate((frames, data["native_logits"]), axis=1)
+                vector = np.concatenate((frames.mean(0), frames.std(0)))
         elif encoder == "T2":
             vector = np.load(feature_file)
         else:
@@ -253,7 +263,8 @@ def run(args: argparse.Namespace) -> None:
             status = "ok" if available[index] else "failed"
             oof.append({"utt_id": row["utt_id"], "speaker_id": row["speaker_id"],
                         "fold": fold["fold"], "truth_M": row["labels"]["M"],
-                        "truth_native": row["labels"]["A" if args.encoder.startswith("A") else "T"],
+                        "truth_native": row["labels"]["A" if args.encoder.startswith("A") else
+                                                        "V" if args.encoder.startswith("V") else "T"],
                         "probabilities": probability.astype(float).tolist(),
                         "status": status})
         fold_records.append({"fold": fold["fold"], "inner_grid": candidates,
@@ -310,7 +321,8 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--folds", type=Path, required=True)
     parser.add_argument("--receipts-root", type=Path, required=True)
-    parser.add_argument("--encoder", choices=("A1", "A2", "A3", "T2"), required=True)
+    parser.add_argument("--encoder", choices=("A1", "A2", "A3", "V1", "V2",
+                                              "V3a", "V3b", "T2"), required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--allow-dirty", action="store_true")
