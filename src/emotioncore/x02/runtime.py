@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import select
 import signal
 import subprocess
 import sys
@@ -68,6 +69,76 @@ def run_with_hard_timeout(command: list[str], timeout_s: float = PREPROCESS_TIME
             "elapsed_s": time.monotonic() - started,
             "stdout": stdout.decode(errors="replace"),
             "stderr": stderr.decode(errors="replace")}
+
+
+class PersistentJSONWorker:
+    """Reuse a preprocessing child while enforcing a parent-side deadline per task."""
+
+    def __init__(self, command: list[str], *, cwd: Path | None = None,
+                 env: dict[str, str] | None = None, stderr_path: Path | None = None):
+        self.command = command
+        self.cwd = cwd
+        self.env = env
+        self.stderr_path = stderr_path
+        self.child: subprocess.Popen | None = None
+        self._pending = b""
+        self._stderr = None
+
+    def _start(self) -> None:
+        if self.stderr_path:
+            self.stderr_path.parent.mkdir(parents=True, exist_ok=True)
+            self._stderr = self.stderr_path.open("ab", buffering=0)
+        self.child = subprocess.Popen(self.command, cwd=self.cwd, env=self.env,
+                                      stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                      stderr=self._stderr or subprocess.DEVNULL,
+                                      start_new_session=True, bufsize=0)
+        self._pending = b""
+
+    def close(self) -> None:
+        if self.child is not None and self.child.poll() is None:
+            try:
+                os.killpg(self.child.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            self.child.wait()
+        self.child = None
+        if self._stderr:
+            self._stderr.close()
+            self._stderr = None
+
+    def request(self, payload: dict, timeout_s: float = PREPROCESS_TIMEOUT_S) -> dict:
+        if timeout_s <= 0:
+            raise ValueError("timeout_s must be positive")
+        if self.child is None or self.child.poll() is not None:
+            self.close()
+            self._start()
+        assert self.child is not None and self.child.stdin and self.child.stdout
+        started = time.monotonic()
+        try:
+            self.child.stdin.write((json.dumps(payload, ensure_ascii=False) + "\n").encode())
+            self.child.stdin.flush()
+            while b"\n" not in self._pending:
+                remaining = timeout_s - (time.monotonic() - started)
+                if remaining <= 0:
+                    raise TimeoutError(f"Preprocessing exceeded {timeout_s} seconds")
+                ready, _, _ = select.select([self.child.stdout], [], [], remaining)
+                if not ready:
+                    raise TimeoutError(f"Preprocessing exceeded {timeout_s} seconds")
+                chunk = os.read(self.child.stdout.fileno(), 65536)
+                if not chunk:
+                    raise RuntimeError(f"Preprocessing child exited: {self.child.poll()}")
+                self._pending += chunk
+                if len(self._pending) > 8 * 1024 * 1024:
+                    raise RuntimeError("Preprocessing response exceeded 8 MiB")
+            line, self._pending = self._pending.split(b"\n", 1)
+            response = json.loads(line)
+            response["elapsed_s"] = time.monotonic() - started
+            return response
+        except (TimeoutError, BrokenPipeError, RuntimeError, json.JSONDecodeError) as exc:
+            self.close()
+            return {"status": "failed", "error": f"{type(exc).__name__}: {exc}",
+                    "timed_out": isinstance(exc, TimeoutError),
+                    "elapsed_s": time.monotonic() - started}
 
 
 def write_json_atomic(path: Path, payload: dict) -> None:

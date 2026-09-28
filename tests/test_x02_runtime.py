@@ -4,7 +4,7 @@ import time
 
 import pytest
 
-from emotioncore.x02.runtime import git_provenance, run_with_hard_timeout
+from emotioncore.x02.runtime import PersistentJSONWorker, git_provenance, run_with_hard_timeout
 
 
 def test_dirty_run_rejected_and_diff_captured(tmp_path):
@@ -37,3 +37,20 @@ def test_hard_timeout_kills_child_process_group(tmp_path):
     assert result["elapsed_s"] < 2
     time.sleep(0.7)
     assert not marker.exists()
+
+
+def test_persistent_preprocessor_restarts_after_timeout(tmp_path):
+    script = tmp_path / "worker.py"
+    script.write_text("import json,sys,time\n"
+                      "for line in sys.stdin:\n"
+                      "    task=json.loads(line)\n"
+                      "    if task.get('sleep'): time.sleep(10)\n"
+                      "    print(json.dumps({'status':'ok','id':task['id']}),flush=True)\n")
+    worker = PersistentJSONWorker([sys.executable, "-u", str(script)])
+    try:
+        assert worker.request({"id": "first"}, timeout_s=1)["id"] == "first"
+        timed_out = worker.request({"id": "slow", "sleep": True}, timeout_s=0.15)
+        assert timed_out["timed_out"] is True
+        assert worker.request({"id": "after"}, timeout_s=1)["id"] == "after"
+    finally:
+        worker.close()
