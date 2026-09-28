@@ -14,7 +14,7 @@ python3.11 -m venv .venv
 .venv/bin/python -m pip install --no-deps -e .
 ```
 
-The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt` and must be compared against the read-only legacy environment before GPU use. On the X01 server, the new `.venv` was created for audit and tests. Until the full CUDA stack is installed there, the documented temporary inference interpreter is `/home/administrator/projects/emotion/.venv/bin/python`; no package is installed into that old environment.
+The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt`. On the X01 server, the new `.venv` contains the audited package tree copied from the read-only legacy environment; no package was installed into the old environment. `new_venv_verification.json` records zero version mismatches across all 296 locked packages, the separate interpreter and package path, and successful CUDA detection on the RTX 5090. `pip check` still reports the pre-existing `gradio`/`starlette` constraint conflict in that lock. The running X01 D2 evaluation was started consistently with the legacy interpreter before the new environment was fully provisioned; a fresh run can use the new `.venv`.
 
 ## Reproduce X01
 
@@ -24,7 +24,7 @@ From the repository root, one command runs extraction (if needed), both manifest
 PYTHONPATH=src .venv/bin/python -m emotioncore.eval.run_all --paths configs/paths.server.yaml --config configs/x01.yaml
 ```
 
-Use the fully provisioned `.venv` for this command. If its CUDA dependencies are not yet available on the server, the same command can temporarily use the read-only legacy interpreter after changing only the interpreter path in the shell command. Add `--with-face-audit` to run the CPU YuNet audit after D2. The face audit can also run independently with `python -m emotioncore.data.face_audit --config configs/paths.server.yaml --results experiments/X01_benchmark/results --output experiments/X01_benchmark/results/face_audit.json`.
+Add `--with-face-audit` to run the CPU YuNet audit after D2. The face audit can also run independently with `PYTHONPATH=src .venv/bin/python -m emotioncore.data.face_audit --config configs/paths.server.yaml --results experiments/X01_benchmark/results --output experiments/X01_benchmark/results/face_audit.json`.
 
 The D2 runner refuses to start unless D3 passed all 40 comparisons and ET-test/ET-val are clean at all four leakage levels. Each of the 16 model × dataset × condition runs resumes by sample ID, writes each prediction atomically under the server X01 run root, and stores its own `run_meta.json`. The repository contains only transcript-free manifests and aggregate results; per-sample predictions remain on the server.
 

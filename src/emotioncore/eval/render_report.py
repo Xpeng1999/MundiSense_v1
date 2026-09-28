@@ -27,9 +27,11 @@ def render(results: Path, output: Path) -> None:
     v16 = get(results, "leakage_v16.json")
     correction = get(results, "legacy_correction.json")
     freeze = get(results, "benchmark_freeze.json")
+    execution = get(results, "execution_config.json")
     metrics = get(results, "metrics.json")
     faces = get(results, "face_audit.json")
     environment = get(results, "environment_compare.json")
+    new_environment = get(results, "new_venv_verification.json")
     legacy = get(results, "legacy_snapshot_audit.json")
     predictions = get(results, "prediction_manifest.json")
     if len(predictions) != sum(x["n"] for x in metrics["et"].values()) + sum(x["n"] for x in metrics["sims_valid"].values()):
@@ -45,7 +47,8 @@ def render(results: Path, output: Path) -> None:
              f"- 旧项目快照新增 {legacy['added_count']} 个缓存文件；已有文件变化 {legacy['changed_existing_count']}，详见第 7 节。",
              "", "## 2. 实际完成情况与偏离计划之处", "", "### 事实", "",
              f"- 已建私有仓库、Mac 和服务器克隆；D2 每个组合均有独立 `run_meta.json`。本次收录 {len(predictions):,} 份服务器逐条预测的路径与 SHA-256。",
-             f"- 新独立 Python 3.11 虚拟环境用于数据审计和测试；旧环境锁中 {environment['locked_packages']} 个包与旧安装版本逐项相同（不一致 {environment['mismatch_count']} 个）。GPU 推理暂用旧解释器，只读调用，未向其中安装包。",
+             f"- 新独立 Python 3.11 虚拟环境已具备 CUDA；锁中 {environment['locked_packages']} 个包与旧安装版本逐项相同（旧环境不一致 {environment['mismatch_count']} 个，新环境不一致 {new_environment['mismatch_count']} 个）。本次 D2 在新环境配齐前已用旧解释器启动并保持同一环境，未向旧环境安装包。",
+             f"- 新环境 `pip check` 返回 {new_environment['pip_check_exit_code']}：{new_environment['pip_check_output'].strip() or '无冲突'}。该依赖冲突来自所复刻的既有包组合；GPU 环境验证在 `new_venv_verification.json`。",
              f"- `pytest`：{test_results['passed']} 通过、{test_results['failed']} 失败、{test_results['skipped']} 跳过。",
              f"- 计划写 CH-SIMS v2 {sims['expected_rows_in_x01']:,} 条，源文件实际 {sims['rows']:,} 条；未删除任何源行。",
              "", "### 解读", "",
@@ -58,10 +61,14 @@ def render(results: Path, output: Path) -> None:
         x = et["m_vs_other"][mod]
         lines.append(f"| {mod} | {x['same']}/{x['total']} | {num(x['rate'])} | {num(et['fleiss_kappa'][mod])} | {et['majority_strength'][mod]['5']} |")
     lines += [f"| M | — | — | {num(et['fleiss_kappa']['M'])} | {et['majority_strength']['M']['5']} |",
+              "", "- 模态两两标签一致率：" + "；".join(
+                  f"{a}/{b} {num(et['pairwise_agreement'][a][b]['rate'])}"
+                  for a, b in (("M", "A"), ("M", "V"), ("M", "T"),
+                               ("A", "V"), ("A", "T"), ("V", "T"))) + "。",
               "", "- 各类别一致率、全部投票强度和 19 名说话人与组的关系见 `et_audit.json`。",
               f"- CH-SIMS v2：train {sims['mode_counts']['train']:,}、valid {sims['mode_counts']['valid']:,}、test {sims['mode_counts']['test']:,}；现存媒体解码失败 {sims['decode_failure_count']} 条。test 只作清单、SHA-256 与解码登记，未作模型推理。",
               "- 2-fps YuNet 画面审计（零脸／一脸／多脸为帧比例）：", "",
-              "| 数据 | 片段 | 0 脸 | 1 脸 | ≥2 脸 | 解码失败帧 |",
+              "| 数据 | 片段 | 0 脸 | 1 脸 | ≥2 脸 | 抽帧失败次数（含缺媒体） |",
               "| --- | ---: | ---: | ---: | ---: | ---: |"]
     for name in ("emotiontalk", "chsims_v2"):
         f = faces[name]
@@ -71,7 +78,8 @@ def render(results: Path, output: Path) -> None:
               "- 脸数不等同于当前说话人的身份；CH-SIMS v2 的 `meta.csv` 无说话人 ID，不能据此声称官方划分与说话人无关。",
               "", "## 4. Benchmark v1 定义摘要及 sha256", "",
               f"- 定义文件 SHA-256：`{freeze['definition_sha256']}`。ET-test 为主评测，ET-val 留作选择和校准；SIMS-valid 评估连续效价；CH-SIMS v2 test 是封存集。",
-              "- ET 主标签为 M 的七类；拒识和解析失败计入错误。SIMS-valid 以预定义概率差计算 Pearson、Spearman 和排除零标签的 Acc-2，不调阈值。",
+              "- ET 主标签为 M 的七类；拒识和解析失败计入错误。SIMS-valid 的概率来自八个候选首 token 对数概率的 softmax，以预定义概率差计算 Pearson、Spearman 和排除零标签的 Acc-2，不调阈值。",
+              f"- D2 配置：`VIDEO_MAX_PIXELS={execution['values']['video_max_pixels']}`、`FPS_MAX_FRAMES={execution['values']['fps_max_frames']}`、`MAX_PIXELS={execution['values']['max_pixels']}`；{execution['values']['quantization']}、{execution['values']['compute_dtype']}、{execution['values']['attention']}。配置 SHA-256：`{execution['sha256']}`。system/user 提示词取对应模态旧训练清单首行，逐字保持。",
               "", "| 清单 | 条数 | SHA-256 |", "| --- | ---: | --- |"]
     for name, entry in freeze["manifests"].items():
         lines.append(f"| {name} | {entry['rows']:,} | `{entry['sha256']}` |")
@@ -89,15 +97,15 @@ def render(results: Path, output: Path) -> None:
               "- 第 16 轮中文整体分数不能作为未泄漏的独立泛化证据；干净与泄漏组的样本和拒识率也不同，表中差异不是泄漏的因果效应。",
               "", "## 6. 基线结果", "", "### 事实：ET 主标签", "",
               "表内每个指标后依次给按句／按说话人 bootstrap 95% 区间（各 2,000 次）。测试集只有四名说话人，说话人区间仅描述性。", "",
-              "| 模型 | 集合 | 条件 | n | macro-F1 [句]/[人] | UAR [句]/[人] | WA [句]/[人] | 覆盖率 | 中性误报 |",
-              "| --- | --- | --- | ---: | --- | --- | --- | ---: | ---: |"]
+              "| 模型 | 集合 | 条件 | n | 失败 | macro-F1 [句]/[人] | UAR [句]/[人] | WA [句]/[人] | 覆盖率 | 中性误报 |",
+              "| --- | --- | --- | ---: | ---: | --- | --- | --- | ---: | ---: |"]
     for dataset in ("et_test", "et_val"):
         for model in ("base", "old_lora"):
             for condition in ("audio", "video", "av"):
                 r = metrics["et"][f"{model}_{dataset}_{condition}"]
                 def cell(metric):
                     return f"{num(r[metric])} {ci(r, metric)}/{ci(r, metric, 'speaker')}"
-                lines.append(f"| {model} | {dataset} | {condition} | {r['n']:,} | {cell('macro_f1')} | {cell('uar')} | {cell('wa')} | {num(r['coverage'])} | {num(r['neutral_false_positive_rate'])} |")
+                lines.append(f"| {model} | {dataset} | {condition} | {r['n']:,} | {r['failures']} | {cell('macro_f1')} | {cell('uar')} | {cell('wa')} | {num(r['coverage'])} | {num(r['neutral_false_positive_rate'])} |")
     lines += ["", "### 事实：逐说话人 ET 结果", "",
               "| 模型 | 集合 | 条件 | 说话人 | n | macro-F1 | UAR | WA | 覆盖率 |",
               "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |"]
@@ -124,17 +132,21 @@ def render(results: Path, output: Path) -> None:
                 r = metrics["et"][f"{model}_{dataset}_{condition}"]["with_other"]
                 lines.append(f"| {model} | {dataset} | {condition} | {num(r['macro_f1'])} | {num(r['uar'])} | {num(r['wa'])} | {num(r['coverage'])} |")
     lines += ["", "### 事实：SIMS-valid", "",
-              "| 模型 | 条件 | n | 覆盖率 | Pearson [95%] | Spearman [95%] | Acc-2 非零 [95%] |",
-              "| --- | --- | ---: | ---: | --- | --- | --- |"]
+              "| 模型 | 条件 | n | 失败 | 覆盖率 | Pearson [95%] | Spearman [95%] | Acc-2 非零 [95%] |",
+              "| --- | --- | ---: | ---: | ---: | --- | --- | --- |"]
     for model in ("base", "old_lora"):
         for condition in ("audio", "av"):
             r = metrics["sims_valid"][f"{model}_sims_valid_{condition}"]
             def cell(metric):
                 return f"{num(r[metric])} {ci(r, metric)}" if r[metric] is not None else "—"
-            lines.append(f"| {model} | {condition} | {r['n']:,} | {num(r['coverage'])} | {cell('pearson')} | {cell('spearman')} | {cell('acc_2_nonzero')} |")
+            lines.append(f"| {model} | {condition} | {r['n']:,} | {r['n'] - r['valid']} | {num(r['coverage'])} | {cell('pearson')} | {cell('spearman')} | {cell('acc_2_nonzero')} |")
     lines += ["", "### 事实：配对差值（macro-F1）", "",
               "| 左减右 | n | 差值 | 配对 95% 区间 |", "| --- | ---: | ---: | --- |"]
     for name, r in metrics["paired"].items():
+        lines.append(f"| {name} | {r['n']:,} | {num(r['difference'])} | [{num(r['left_minus_right_95'][0])}, {num(r['left_minus_right_95'][1])}] |")
+    lines += ["", "SIMS-valid 同样按相同样本做 A/AV 与基座/LoRA 配对比较：", "",
+              "| 左减右及指标 | n | 差值 | 配对 95% 区间 |", "| --- | ---: | ---: | --- |"]
+    for name, r in metrics["paired_sims"].items():
         lines.append(f"| {name} | {r['n']:,} | {num(r['difference'])} | [{num(r['left_minus_right_95'][0])}, {num(r['left_minus_right_95'][1])}] |")
     lines += ["", "### 事实：说话人、困难类别与耗时", "",
               "- 各组合的完整七类 P/R/F1、混淆矩阵、说话人结果、A/V 原生标签结果和包含 `other` 的次要结果均在 `metrics.json`。下面列 ET-test 的重点召回：", "",

@@ -1,4 +1,6 @@
-from emotioncore.eval.metrics import classification, sims_metrics
+import pytest
+
+from emotioncore.eval.metrics import classification, paired_sims_bootstrap, sims_metrics
 
 
 def test_invalid_predictions_stay_in_denominator():
@@ -23,3 +25,15 @@ def test_sims_excludes_zero_label_and_counts_failure_as_error():
     assert result["nonzero_correct"] == 2
     assert result["acc_2_nonzero"] == 2 / 3
     assert result["correlation_denominator"] == 3
+
+
+def test_paired_sims_requires_matching_ids_and_keeps_denominator():
+    left = [{"id": "one", "label": 1.0, "s": 0.8},
+            {"id": "two", "label": -1.0, "s": -0.4}]
+    right = [{"id": "one", "label": 1.0, "s": None},
+             {"id": "two", "label": -1.0, "s": -0.2}]
+    result = paired_sims_bootstrap(left, right, "acc_2_nonzero", repetitions=20)
+    assert result["n"] == 2
+    assert result["difference"] == 0.5
+    with pytest.raises(ValueError, match="identical ordered sample IDs"):
+        paired_sims_bootstrap(left, list(reversed(right)), "acc_2_nonzero", repetitions=20)

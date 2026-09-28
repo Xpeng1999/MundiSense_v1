@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import importlib.metadata
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 from emotioncore.utils.common import load_paths, write_json_atomic
@@ -37,10 +39,27 @@ def main() -> None:
     parser.add_argument("--paths", type=Path, required=True)
     parser.add_argument("--lock", type=Path, default=Path("requirements.lock.txt"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--verify-current", action="store_true")
     args = parser.parse_args()
-    paths = load_paths(args.paths)
-    site = paths["legacy_root"] / ".venv/lib/python3.11/site-packages"
-    write_json_atomic(args.output, compare(args.lock, site))
+    if args.verify_current:
+        import torch
+        from emotioncore.utils.common import sha256_file
+
+        site = Path(sys.prefix) / "lib/python3.11/site-packages"
+        receipt = compare(args.lock, site)
+        dependency_check = subprocess.run([sys.executable, "-m", "pip", "check"],
+                                          capture_output=True, text=True)
+        receipt.update({"interpreter": sys.executable, "venv_prefix": sys.prefix,
+                        "torch_file": torch.__file__, "cuda_available": torch.cuda.is_available(),
+                        "gpu": torch.cuda.get_device_name(0) if torch.cuda.is_available() else None,
+                        "pip_check_exit_code": dependency_check.returncode,
+                        "pip_check_output": dependency_check.stdout + dependency_check.stderr,
+                        "lock_sha256": sha256_file(args.lock)})
+    else:
+        paths = load_paths(args.paths)
+        site = paths["legacy_root"] / ".venv/lib/python3.11/site-packages"
+        receipt = compare(args.lock, site)
+    write_json_atomic(args.output, receipt)
 
 
 if __name__ == "__main__":

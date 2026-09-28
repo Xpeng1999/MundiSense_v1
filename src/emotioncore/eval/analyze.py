@@ -5,7 +5,8 @@ import collections
 import json
 from pathlib import Path
 
-from emotioncore.eval.metrics import bootstrap, classification, paired_bootstrap, percentile, sims_metrics
+from emotioncore.eval.metrics import (bootstrap, bootstrap_classification, classification,
+                                      paired_bootstrap, paired_sims_bootstrap, percentile, sims_metrics)
 from emotioncore.utils.common import load_paths, read_jsonl, sha256_file, write_json_atomic
 
 
@@ -40,11 +41,11 @@ def et_result(rows: list[dict], replicates: int, seed: int) -> dict:
     result["failure_reasons"] = dict(collections.Counter(
         (row.get("error") or row["status"]).split(":", 1)[0]
         for row in rows if row["status"] != "ok"))
-    for metric in ("macro_f1", "uar", "wa"):
-        result[f"{metric}_utterance_ci"] = bootstrap(rows, lambda sample: classification(sample)[metric],
-                                                      replicates, seed)
-        result[f"{metric}_speaker_ci"] = bootstrap(rows, lambda sample: classification(sample)[metric],
-                                                    replicates, seed, group_key="speaker_id")
+    for unit, group_key in (("utterance", None), ("speaker", "speaker_id")):
+        intervals = bootstrap_classification(rows, repetitions=replicates, seed=seed,
+                                             group_key=group_key)
+        for metric, interval in intervals.items():
+            result[f"{metric}_{unit}_ci"] = interval
     groups = collections.defaultdict(list)
     for row in rows:
         groups[row["speaker_id"]].append(row)
@@ -92,7 +93,8 @@ def legacy_correction(legacy: Path, leakage: Path) -> dict:
 def analyze(paths_config: Path, results: Path, replicates: int, seed: int) -> None:
     paths = load_paths(paths_config)
     all_rows = {}
-    metrics = {"et": {}, "sims_valid": {}, "paired": {}, "native_labels": {}, "run_meta": {},
+    metrics = {"et": {}, "sims_valid": {}, "paired": {}, "paired_sims": {},
+               "native_labels": {}, "run_meta": {},
                "bootstrap_replicates": replicates, "seed": seed,
                "speaker_interval_note": "ET test has four speakers; speaker bootstrap intervals are descriptive."}
     prediction_paths = []
@@ -143,6 +145,16 @@ def analyze(paths_config: Path, results: Path, replicates: int, seed: int) -> No
             a, b = f"old_lora_{dataset}_{condition}", f"base_{dataset}_{condition}"
             metrics["paired"][f"{a}_minus_{b}"] = paired_bootstrap(all_rows[a], all_rows[b],
                                                                       repetitions=replicates, seed=seed)
+    for model in ("base", "old_lora"):
+        a, b = f"{model}_sims_valid_av", f"{model}_sims_valid_audio"
+        for metric in ("pearson", "spearman", "acc_2_nonzero"):
+            metrics["paired_sims"][f"{a}_minus_{b}_{metric}"] = paired_sims_bootstrap(
+                all_rows[a], all_rows[b], metric, replicates, seed)
+    for condition in ("av", "audio"):
+        a, b = f"old_lora_sims_valid_{condition}", f"base_sims_valid_{condition}"
+        for metric in ("pearson", "spearman", "acc_2_nonzero"):
+            metrics["paired_sims"][f"{a}_minus_{b}_{metric}"] = paired_sims_bootstrap(
+                all_rows[a], all_rows[b], metric, replicates, seed)
     write_json_atomic(results / "metrics.json", metrics)
     write_json_atomic(results / "prediction_manifest.json", prediction_paths)
     write_json_atomic(results / "legacy_correction.json",

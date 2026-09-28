@@ -75,6 +75,31 @@ def bootstrap(rows: list[dict], metric: Callable[[list[dict]], float],
             "lower_95": percentile(values, 0.025), "upper_95": percentile(values, 0.975)}
 
 
+def bootstrap_classification(rows: list[dict], metrics: tuple[str, ...] = ("macro_f1", "uar", "wa"),
+                             repetitions: int = 2000, seed: int = 20260928,
+                             group_key: str | None = None) -> dict[str, dict]:
+    rng = random.Random(seed)
+    if group_key:
+        groups = collections.defaultdict(list)
+        for row in rows:
+            groups[row[group_key]].append(row)
+        keys = sorted(groups)
+        samples = ([item for key in rng.choices(keys, k=len(keys)) for item in groups[key]]
+                   for _ in range(repetitions))
+    else:
+        samples = (rng.choices(rows, k=len(rows)) for _ in range(repetitions))
+    values = {metric: [] for metric in metrics}
+    for sample in samples:
+        result = classification(sample)
+        for metric in metrics:
+            values[metric].append(result[metric])
+    return {metric: {"replicates": repetitions, "seed": seed,
+                     "unit": group_key or "utterance",
+                     "lower_95": percentile(series, 0.025),
+                     "upper_95": percentile(series, 0.975)}
+            for metric, series in values.items()}
+
+
 def paired_bootstrap(left: list[dict], right: list[dict], metric: str = "macro_f1",
                      repetitions: int = 2000, seed: int = 20260928) -> dict:
     if [row["id"] for row in left] != [row["id"] for row in right]:
@@ -127,3 +152,21 @@ def sims_metrics(rows: list[dict]) -> dict:
             "acc_2_nonzero": correct / len(nonzero) if nonzero else None,
             "nonzero_denominator": len(nonzero), "nonzero_correct": correct,
             "correlation_denominator": len(paired)}
+
+
+def paired_sims_bootstrap(left: list[dict], right: list[dict], metric: str,
+                          repetitions: int = 2000, seed: int = 20260928) -> dict:
+    if [row["id"] for row in left] != [row["id"] for row in right]:
+        raise ValueError("Paired SIMS comparison requires identical ordered sample IDs")
+    rng = random.Random(seed)
+    n = len(left)
+    values = []
+    for _ in range(repetitions):
+        indices = [rng.randrange(n) for _ in range(n)]
+        a = sims_metrics([left[i] for i in indices])[metric]
+        b = sims_metrics([right[i] for i in indices])[metric]
+        values.append((a or 0.0) - (b or 0.0))
+    a, b = sims_metrics(left)[metric], sims_metrics(right)[metric]
+    return {"n": n, "metric": metric, "difference": None if a is None or b is None else a - b,
+            "left_minus_right_95": [percentile(values, 0.025), percentile(values, 0.975)],
+            "replicates": repetitions, "seed": seed}

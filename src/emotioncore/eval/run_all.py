@@ -18,9 +18,15 @@ from emotioncore.utils.common import load_paths, sha256_file, write_json_atomic
 
 
 def run(paths_config: Path, experiment_config: Path, with_face_audit: bool) -> None:
+    import yaml
+
     paths = load_paths(paths_config)
     results = Path("experiments/X01_benchmark/results")
     results.mkdir(parents=True, exist_ok=True)
+    write_json_atomic(results / "execution_config.json",
+                      {"source": str(experiment_config),
+                       "sha256": sha256_file(experiment_config),
+                       "values": yaml.safe_load(experiment_config.read_text(encoding="utf-8"))})
     extracted = paths["derived_root"] / "chsims_v2/raw"
     if not (extracted / ".extract_complete").is_file():
         subprocess.run(["bash", "experiments/X01_benchmark/extract_chsims.sh",
