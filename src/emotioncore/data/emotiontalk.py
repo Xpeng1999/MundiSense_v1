@@ -102,6 +102,9 @@ def audit(rows: list[dict]) -> dict:
     speakers: dict[str, dict] = {}
     agreement = {mod: collections.Counter() for mod in ("A", "V", "T")}
     by_class = {label: {mod: collections.Counter() for mod in ("A", "V", "T")} for label in LABELS}
+    pairwise = {left: {right: collections.Counter() for right in MODALITIES} for left in MODALITIES}
+    pairwise_by_m_class = {label: {left: {right: collections.Counter() for right in MODALITIES}
+                                   for left in MODALITIES} for label in LABELS}
     majority = {mod: collections.Counter() for mod in MODALITIES}
     kappa_rows = {mod: [] for mod in MODALITIES}
     for row in rows:
@@ -117,6 +120,13 @@ def audit(rows: list[dict]) -> dict:
             agreement[mod]["same"] += same
             by_class[truth][mod]["total"] += 1
             by_class[truth][mod]["same"] += same
+        for left in MODALITIES:
+            for right in MODALITIES:
+                same = row["labels"][left] == row["labels"][right]
+                pairwise[left][right]["total"] += 1
+                pairwise[left][right]["same"] += same
+                pairwise_by_m_class[truth][left][right]["total"] += 1
+                pairwise_by_m_class[truth][left][right]["same"] += same
         for mod in MODALITIES:
             chosen = [v["emotion"] for v in row["votes"][mod].values()]
             kappa_rows[mod].append(chosen)
@@ -133,6 +143,14 @@ def audit(rows: list[dict]) -> dict:
             "m_vs_other_by_class": {label: {mod: {"same": c["same"], "total": c["total"],
                                                   "rate": c["same"] / c["total"]}
                                            for mod, c in mods.items()} for label, mods in by_class.items()},
+            "pairwise_agreement": {left: {right: {"same": c["same"], "total": c["total"],
+                                                   "rate": c["same"] / c["total"]}
+                                         for right, c in rights.items()} for left, rights in pairwise.items()},
+            "pairwise_by_m_class": {label: {left: {right: {"same": c["same"], "total": c["total"],
+                                                              "rate": c["same"] / c["total"]}
+                                                    for right, c in rights.items()}
+                                             for left, rights in lefts.items()}
+                                    for label, lefts in pairwise_by_m_class.items()},
             "fleiss_kappa": {mod: fleiss_kappa(v) for mod, v in kappa_rows.items()},
             "majority_strength": {mod: dict(sorted(c.items())) for mod, c in majority.items()}}
 

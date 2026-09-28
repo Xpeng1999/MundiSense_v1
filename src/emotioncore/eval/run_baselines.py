@@ -159,13 +159,18 @@ def run(config: Path, x01_config: Path, results: Path) -> None:
 
 
 def main() -> None:
+    import yaml
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--paths", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--results", type=Path, required=True)
     args = parser.parse_args()
+    experiment = yaml.safe_load(args.config.read_text(encoding="utf-8"))
     os.environ.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1",
-                      VIDEO_MAX_PIXELS="50176", FPS_MAX_FRAMES="8", MAX_PIXELS="401408",
+                      VIDEO_MAX_PIXELS=str(experiment["video_max_pixels"]),
+                      FPS_MAX_FRAMES=str(experiment["fps_max_frames"]),
+                      MAX_PIXELS=str(experiment["max_pixels"]),
                       TOKENIZERS_PARALLELISM="false", OMP_NUM_THREADS="4", MKL_NUM_THREADS="4")
     run(args.paths, args.config, args.results)
 
