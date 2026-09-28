@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 from pathlib import Path
@@ -65,6 +66,27 @@ def validate(paths_config: Path, results: Path, report: Path) -> dict:
     checks["prediction_manifest_complete"] = len(predictions) == sum(
         row["n"] for section in ("et", "sims_valid") for row in metrics[section].values()
     )
+    expected_modality = {
+        "audio": {"processor": False, "forward": False, "has_audio": True, "has_video": False},
+        "video": {"processor": False, "forward": False, "has_audio": False, "has_video": True},
+        "av": {"processor": True, "forward": True, "has_audio": True, "has_video": True},
+    }
+    seven_labels = ("neutral", "joy", "sadness", "anger", "fear", "disgust", "surprise")
+    hashes_valid = True
+    modality_valid = True
+    for entry in predictions:
+        payload = Path(entry["path"]).read_bytes()
+        hashes_valid &= hashlib.sha256(payload).hexdigest() == entry["sha256"]
+        receipt = json.loads(payload)
+        if receipt["status"] == "ok":
+            modality_valid &= (len(receipt["raw_logprobs"]) == 8
+                               and len(receipt["scores"]) == 8
+                               and abs(sum(receipt["scores"]) - 1) < 1e-5
+                               and receipt["modality_switch"] == expected_modality.get(receipt["condition"])
+                               and receipt["pred"] in seven_labels
+                               and receipt["pred_with_other"] in (*seven_labels, "other"))
+    checks["prediction_hashes_valid"] = hashes_valid
+    checks["modality_and_eight_scores_valid"] = modality_valid
     def metadata_complete(item: dict) -> bool:
         row = json.loads(Path(item["path"]).read_text(encoding="utf-8"))
         return row["completed"] == row["planned"] and row["ended_at"] is not None
