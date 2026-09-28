@@ -8,9 +8,17 @@ The [official CH-SIMS v2 repository](https://github.com/thuiar/ch-sims-v2) and [
 
 ## Counts and media audit
 
-The actual CSV contains **4,403 data rows**: 2,722 train, 647 valid, and 1,034 test. The [official paper's Table 1](https://arxiv.org/pdf/2209.02604) reports these same split counts (which sum to 4,403), while its prose says 4,402; X01's planned count followed that prose. `OPEN_QUESTIONS.md` records the discrepancy. There are no blank key rows and no repeated `(video_id, clip_id)` pairs. A direct `Raw/{video_id}/{clip_id}.mp4` lookup finds 154 missing rows, no duplicate media paths, and no ffprobe decode failures among present files. The earlier claim of 231 duplicate paths is not reproduced under this mapping. Individual failures and paths are in `results/chsims_audit.json`.
+The actual CSV contains **4,403 data rows**: 2,722 train, 647 valid, and 1,034 test. The [official paper's Table 1](https://arxiv.org/pdf/2209.02604) reports these same split counts (which sum to 4,403), while its prose says 4,402; X01's planned count followed that prose. `OPEN_QUESTIONS.md` records the discrepancy. There are no blank key rows and no repeated `(video_id, clip_id)` pairs. A direct `Raw/{video_id}/{clip_id}.mp4` lookup finds 154 missing rows and no duplicate media paths. The earlier claim of 231 duplicate paths is not reproduced under this mapping. Individual missing paths are in `results/chsims_audit.json`.
 
-The test set is a lock-box. This audit only lists it, hashes/probes its media, and records decode status. No Qwen model is run on its clips before X07. Its separate lock-box manifest omits labels.
+All present clips were decoded end to end with FFmpeg (`-xerror -err_detect explode`, video and audio streams to a null sink). None failed full decode. Machine-readable split counts and missing IDs are in `results/chsims_decode_audit.json`.
+
+| Split | Full decode succeeded | Missing media | Full decode failed |
+| --- | ---: | ---: | ---: |
+| Train | 2,635 | 87 | 0 |
+| Valid | 620 | 27 | 0 |
+| Test | 994 | 40 | 0 |
+
+The test set is a lock-box. This audit only lists it, hashes/probes and fully decodes its media, and records media status. No Qwen model is run on its clips before X07. Its separate lock-box manifest omits labels.
 
 ## Evaluation contract
 
