@@ -52,7 +52,7 @@ def worker_main(model_dir: Path) -> None:
                 path = Path(item["text_json"])
                 digest = sha256(path)
                 source = json.loads(path.read_text(encoding="utf-8"))
-                content = source["content"]
+                content = source["content" if task["source"] == "o" else "text"]
                 if not isinstance(content, str):
                     raise ValueError("Text content is not a string")
                 texts.append(content)
@@ -103,7 +103,7 @@ def run(args: argparse.Namespace) -> None:
         raise ValueError(f"Expected 16,366 CV utterances, got {len(rows)}")
     if args.limit is not None:
         rows = rows[:args.limit]
-    base = args.run_root / "features" / "T2_o"
+    base = args.run_root / "features" / f"T2_{args.source}"
     receipts_dir = base / "receipts"
     receipts_dir.mkdir(parents=True, exist_ok=True)
     meta_path = base / f"run_meta_{args.split}.json"
@@ -112,12 +112,13 @@ def run(args: argparse.Namespace) -> None:
             "manifest_sha256": manifest_hash, "model": str(args.model_dir),
             "model_sha256": model_hash, "revision": REVISION,
             "encoder": ENCODER, "preprocess_version": PREPROCESS_VERSION,
+            "text_source": args.source,
             "split": args.split, "count": len(rows), "timeout_s": args.timeout,
             "batch_size": args.batch_size}
     if meta_path.exists():
         old = json.loads(meta_path.read_text(encoding="utf-8"))
         for key in ("manifest_sha256", "model_sha256", "revision", "encoder",
-                    "preprocess_version", "split"):
+                    "preprocess_version", "text_source", "split"):
             if old[key] != meta[key]:
                 raise RuntimeError(f"Cannot resume T2 with changed {key}")
         if old["git"]["commit"] != meta["git"]["commit"]:
@@ -138,25 +139,50 @@ def run(args: argparse.Namespace) -> None:
             batch = rows[offset:offset + args.batch_size]
             missing = [row for row in batch if not (receipts_dir / f"{row['utt_id']}.json").exists()]
             if missing:
-                items = [{"id": row["utt_id"],
-                          "text_json": str(text_path(args.media_root, row["wav"]["path"])),
-                          "output": str(base / "data" / f"{row['utt_id']}.npy")}
-                         for row in missing]
-                response = worker.request({"items": items}, args.timeout)
+                items = []
+                asr_failures = {}
+                for row in missing:
+                    if args.source == "o":
+                        path = text_path(args.media_root, row["wav"]["path"])
+                    else:
+                        asr_path = args.asr_receipts / f"{row['utt_id']}.json"
+                        wait_started = time.monotonic()
+                        while not asr_path.is_file() and args.wait_asr_seconds > 0:
+                            if time.monotonic() - wait_started >= args.wait_asr_seconds:
+                                break
+                            time.sleep(2)
+                        if not asr_path.is_file():
+                            raise RuntimeError(f"ASR incomplete: {row['utt_id']}")
+                        asr = json.loads(asr_path.read_text(encoding="utf-8"))
+                        if asr["input_sha256"] != row["wav"]["sha256"]:
+                            raise ValueError(f"ASR input hash mismatch: {row['utt_id']}")
+                        if asr["status"] != "ok":
+                            asr_failures[row["utt_id"]] = {"status": "failed",
+                                "error": asr.get("error", "ASR failed")}
+                            continue
+                        path = Path(asr["transcript_path"])
+                        if sha256(path) != asr["transcript_sha256"]:
+                            raise ValueError(f"ASR transcript hash mismatch: {row['utt_id']}")
+                    items.append({"id": row["utt_id"], "text_json": str(path),
+                                  "output": str(base / "data" / f"{row['utt_id']}.npy")})
+                response = worker.request({"items": items, "source": args.source},
+                                          args.timeout) if items else {"status": "ok", "items": []}
                 by_id = {item["id"]: item for item in response.get("items", [])}
                 for row in missing:
-                    result = by_id.get(row["utt_id"], {"status": "failed",
+                    result = asr_failures.get(row["utt_id"]) or by_id.get(row["utt_id"], {"status": "failed",
                                 "error": response.get("error", "Missing result in BGE batch")})
                     receipt = {"id": row["utt_id"], "speaker_id": row["speaker_id"],
                                "official_split": row["official_split"],
                                "encoder": ENCODER, "revision": REVISION,
+                               "text_source": args.source,
                                "model_sha256": model_hash,
                                "preprocess_version": PREPROCESS_VERSION, **result}
                     write_json_atomic(receipts_dir / f"{row['utt_id']}.json", receipt)
             for row in batch:
                 receipt = json.loads((receipts_dir / f"{row['utt_id']}.json").read_text())
                 if (receipt["model_sha256"] != model_hash or
-                        receipt["preprocess_version"] != PREPROCESS_VERSION):
+                        receipt["preprocess_version"] != PREPROCESS_VERSION or
+                        receipt["text_source"] != args.source):
                     raise RuntimeError(f"T2 receipt provenance changed: {row['utt_id']}")
                 status[receipt["status"]] += 1
             done = offset + len(batch)
@@ -178,6 +204,9 @@ def main() -> None:
     parser.add_argument("--run-root", type=Path)
     parser.add_argument("--worker-python", default=sys.executable)
     parser.add_argument("--split", choices=("cv", "test"), default="cv")
+    parser.add_argument("--source", choices=("o", "r"), default="o")
+    parser.add_argument("--asr-receipts", type=Path)
+    parser.add_argument("--wait-asr-seconds", type=float, default=0)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--timeout", type=float, default=120)
@@ -192,6 +221,8 @@ def main() -> None:
                 parser.error(f"--{name.replace('_', '-')} is required")
         if args.batch_size < 1 or args.timeout <= 0:
             parser.error("--batch-size and --timeout must be positive")
+        if args.source == "r" and args.asr_receipts is None:
+            parser.error("--asr-receipts is required for source r")
         run(args)
 
 
