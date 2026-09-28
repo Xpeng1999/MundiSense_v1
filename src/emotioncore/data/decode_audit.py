@@ -13,6 +13,7 @@ from emotioncore.utils.common import load_paths, read_jsonl, write_json_atomic
 def decode(path: Path) -> tuple[bool, str | None]:
     result = subprocess.run(
         ["ffmpeg", "-nostdin", "-v", "error", "-xerror", "-err_detect", "explode",
+         "-threads", "1",
          "-i", str(path), "-map", "0:v:0", "-map", "0:a:0?", "-f", "null", "-"],
         capture_output=True, text=True,
     )

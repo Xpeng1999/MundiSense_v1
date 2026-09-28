@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import collections
+import hashlib
+import json
 import math
 import random
 from pathlib import Path
@@ -38,8 +40,10 @@ def sample_clip(video: Path, duration: float, detector) -> dict:
 def summarize(records: list[dict]) -> dict:
     totals = collections.Counter()
     by_speaker = collections.defaultdict(collections.Counter)
+    by_split = collections.defaultdict(collections.Counter)
     for row in records:
         totals.update(row["faces"])
+        by_split[row["split"]].update(row["faces"])
         if row.get("speaker_id"):
             by_speaker[row["speaker_id"]].update(row["faces"])
     def show(counts):
@@ -48,8 +52,8 @@ def summarize(records: list[dict]) -> dict:
                 "fractions": {key: counts[key] / n if n else None for key in ("0", "1", "2+")}}
     return {"clips": len(records), "frames": show(totals),
             "by_speaker": {speaker: show(counts) for speaker, counts in sorted(by_speaker.items())},
-            "decode_failures": sum(row["decode_failures"] for row in records),
-            "per_clip": records}
+            "by_split": {split: show(counts) for split, counts in sorted(by_split.items())},
+            "decode_failures": sum(row["decode_failures"] for row in records)}
 
 
 def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None:
@@ -66,21 +70,39 @@ def run(config: Path, results: Path, output: Path, seed: int = 20260928) -> None
     sims_sample = [row for row in sims if row["mode"] == "valid"]
     sims_sample += rng.sample([row for row in sims if row["mode"] == "train"], 1000)
     output.parent.mkdir(parents=True, exist_ok=True)
+    receipt_root = paths["run_root"] / "face_audit"
     records = {"emotiontalk": [], "chsims_v2": []}
     for index, row in enumerate(et_sample):
-        path = paths["processed_root"] / "emotiontalk" / row["mp4"]["path"]
-        measured = sample_clip(path, row["mp4"].get("duration_s") or 0, detector)
-        records["emotiontalk"].append({"id": row["utt_id"], "split": row["official_split"],
-                                       "speaker_id": row["speaker_id"], **measured})
+        sample_id = row["utt_id"]
+        receipt = receipt_root / "emotiontalk" / (hashlib.sha256(sample_id.encode()).hexdigest() + ".json")
+        if receipt.is_file():
+            record = json.loads(receipt.read_text(encoding="utf-8"))
+            if record["id"] != sample_id:
+                raise RuntimeError("Face receipt ID mismatch")
+        else:
+            path = paths["processed_root"] / "emotiontalk" / row["mp4"]["path"]
+            measured = sample_clip(path, row["mp4"].get("duration_s") or 0, detector)
+            record = {"id": sample_id, "split": row["official_split"],
+                      "speaker_id": row["speaker_id"], **measured}
+            write_json_atomic(receipt, record)
+        records["emotiontalk"].append(record)
         if (index + 1) % 100 == 0:
             write_json_atomic(output.with_name("face_progress.json"),
                               {"emotiontalk_done": index + 1, "emotiontalk_total": len(et_sample),
                                "chsims_done": 0, "chsims_total": len(sims_sample)})
     for index, row in enumerate(sims_sample):
-        path = paths["derived_root"] / "chsims_v2/raw" / row["media"]["path"]
-        measured = sample_clip(path, row["media"].get("duration_s") or 0, detector)
-        records["chsims_v2"].append({"id": f"{row['video_id']}__{row['clip_id']}",
-                                    "split": row["mode"], **measured})
+        sample_id = f"{row['video_id']}__{row['clip_id']}"
+        receipt = receipt_root / "chsims_v2" / (hashlib.sha256(sample_id.encode()).hexdigest() + ".json")
+        if receipt.is_file():
+            record = json.loads(receipt.read_text(encoding="utf-8"))
+            if record["id"] != sample_id:
+                raise RuntimeError("Face receipt ID mismatch")
+        else:
+            path = paths["derived_root"] / "chsims_v2/raw" / row["media"]["path"]
+            measured = sample_clip(path, row["media"].get("duration_s") or 0, detector)
+            record = {"id": sample_id, "split": row["mode"], **measured}
+            write_json_atomic(receipt, record)
+        records["chsims_v2"].append(record)
         if (index + 1) % 100 == 0:
             write_json_atomic(output.with_name("face_progress.json"),
                               {"emotiontalk_done": len(et_sample), "emotiontalk_total": len(et_sample),
