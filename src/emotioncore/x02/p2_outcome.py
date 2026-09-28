@@ -37,7 +37,10 @@ def run(args: argparse.Namespace) -> None:
         if probe.get("probe") != "P2" or set(probe["conditions"]) != {"audio", "video", "av"}:
             raise ValueError("Incomplete P2 condition result")
         run_meta = json.loads((args.probe_result.parent / "run_meta.json").read_text(encoding="utf-8"))
-        if not run_meta.get("ended_at") or len(set(run_meta["first_token_ids"])) != 7:
+        if (not run_meta.get("ended_at") or run_meta["rows"] != 1908 or
+                len(set(run_meta["first_token_ids"])) != 7 or
+                any(item["M"]["n"] != 1908 or item["M"]["valid"] == 0
+                    for item in probe["conditions"].values())):
             raise ValueError("P2 probe run did not finish or token IDs collided")
         output.update(status="completed", reason="ModelScope snapshot verified; NF4 thinker scored ET-val A/V/AV.",
                       scoring_attempted=True, probe_result_path=str(args.probe_result),
