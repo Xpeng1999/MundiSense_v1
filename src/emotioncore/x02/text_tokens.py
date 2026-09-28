@@ -28,7 +28,7 @@ def run(args: argparse.Namespace) -> None:
         if sha256(args.manifest) != folds["source_manifest_sha256"]:
             raise ValueError("Manifest differs from frozen folds")
         rows = load_rows(args.manifest, folds)
-    else:
+    elif args.split == "test":
         with args.manifest.open(encoding="utf-8") as stream:
             rows = [json.loads(line) for line in stream]
         if (len(rows) != folds["et_test_count"] or
@@ -36,6 +36,11 @@ def run(args: argparse.Namespace) -> None:
                 any(row["official_split"] != "test" or
                     row["speaker_id"] not in folds["excluded_speakers"] for row in rows)):
             raise ValueError("ET-test tokenization requires the sealed ET-test manifest")
+    else:
+        from emotioncore.x02.sims_prepare import validate_adapter
+        with args.manifest.open(encoding="utf-8") as stream:
+            rows = [json.loads(line) for line in stream]
+        validate_adapter(rows)
     tokenizer = AutoTokenizer.from_pretrained(str(args.model_dir), local_files_only=True)
     ids = np.zeros((len(rows), MAX_LENGTH), dtype=np.int32)
     mask = np.zeros((len(rows), MAX_LENGTH), dtype=np.int8)
@@ -108,7 +113,7 @@ def main() -> None:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--asr-receipts", type=Path)
     parser.add_argument("--source", choices=("o", "r"), required=True)
-    parser.add_argument("--split", choices=("cv", "test"), default="cv")
+    parser.add_argument("--split", choices=("cv", "test", "sims_valid"), default="cv")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--allow-dirty", action="store_true")
     args = parser.parse_args()

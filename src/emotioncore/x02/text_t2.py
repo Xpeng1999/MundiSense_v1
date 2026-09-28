@@ -96,6 +96,9 @@ def run(args: argparse.Namespace) -> None:
             if args.split == "test" and row["speaker_id"] not in EXCLUDED_SPEAKERS:
                 continue
             rows.append(row)
+    if args.split == "sims_valid":
+        from emotioncore.x02.sims_prepare import validate_adapter
+        validate_adapter(rows)
     ids = [row["utt_id"] for row in rows]
     if len(ids) != len(set(ids)):
         raise ValueError("Repeated utterance IDs in input manifest")
@@ -203,7 +206,7 @@ def main() -> None:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--run-root", type=Path)
     parser.add_argument("--worker-python", default=sys.executable)
-    parser.add_argument("--split", choices=("cv", "test"), default="cv")
+    parser.add_argument("--split", choices=("cv", "test", "sims_valid"), default="cv")
     parser.add_argument("--source", choices=("o", "r"), default="o")
     parser.add_argument("--asr-receipts", type=Path)
     parser.add_argument("--wait-asr-seconds", type=float, default=0)
