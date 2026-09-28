@@ -166,7 +166,9 @@ def render(results: Path, output: Path) -> None:
         for name, result in metrics[section].items():
             for reason, count in sorted(result["failure_reasons"].items()):
                 lines.append(f"| {name} | {reason} | {count} |")
-    lines += ["", "### 事实：配对差值（macro-F1）", "",
+    audio_missing = metrics["sims_valid"]["base_sims_valid_audio"]["failure_reasons"].get("RuntimeError", 0)
+    lines += ["", f"- SIMS-valid 音频条件的 {audio_missing} 条 `RuntimeError` 来自源 mp4 缺失、无法提取 wav；两模型遇到同一批缺失片段。AV 条件的 `FileNotFoundError` 对应同一批缺失媒体，均不是额外的样本。",
+              "", "### 事实：配对差值（macro-F1）", "",
               "| 左减右 | n | 差值 | 配对 95% 区间 |", "| --- | ---: | ---: | --- |"]
     for name, r in metrics["paired"].items():
         lines.append(f"| {name} | {r['n']:,} | {num(r['difference'])} | [{num(r['left_minus_right_95'][0])}, {num(r['left_minus_right_95'][1])}] |")
