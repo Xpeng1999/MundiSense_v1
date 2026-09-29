@@ -138,7 +138,10 @@ def model_and_optimizer():
             targets.append(name)
             visual.append(name)
     if not targets or not visual or any("audio_tower" in name for name in targets):
-        raise RuntimeError("LLM/vision LoRA target discovery failed")
+        examples = [name for name, _ in thinker.named_modules()
+                    if "visual" in name and "attn" in name][:12]
+        raise RuntimeError(f"LLM/vision LoRA target discovery failed: "
+                           f"targets={len(targets)} visual={len(visual)} examples={examples}")
     lora = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, bias="none",
                       target_modules=targets,
                       rank_pattern={name: 8 for name in visual},
