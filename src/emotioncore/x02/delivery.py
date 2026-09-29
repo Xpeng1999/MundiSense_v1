@@ -324,7 +324,8 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
               "1. 是否接受第 11 节的缺失媒体分母与覆盖率口径？",
               "2. T 冠军按实际部署 ASR 输入的 CV 分数选择，是否符合后续 X03 使用方式？",
               ("3. P2 零样本表现是否足以进入 X03 主干候选？"
-               if data["P2_probe"] else "3. 是否需要另开 P2 32 GB 显存加载验证？"), "",
+               if data["P2_probe"] else
+               "3. 是否接受 P2 资源探针超出 32 GB 显存约束的跳过记录？"), "",
               "所有聚合结果由 `emotioncore.x02.delivery` 从服务器收据生成；特征、逐句概率与完整转写均不入库。", ""]
     return "\n".join(lines)
 

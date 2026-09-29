@@ -32,6 +32,8 @@ def run(args: argparse.Namespace) -> None:
                   model_load_attempted=True, git=provenance,
                   command=sys.argv,
                   recorded_at=dt.datetime.now(dt.timezone.utc).isoformat())
+    if args.probe_result is not None and args.resource_probe is not None:
+        raise ValueError("Choose a full result or a resource probe, not both")
     if args.probe_result is not None:
         probe = json.loads(args.probe_result.read_text(encoding="utf-8"))
         if probe.get("probe") != "P2" or set(probe["conditions"]) != {"audio", "video", "av"}:
@@ -47,6 +49,36 @@ def run(args: argparse.Namespace) -> None:
                       probe_result_sha256=sha256(args.probe_result),
                       probe_run_meta_sha256=sha256(args.probe_result.parent / "run_meta.json"),
                       label_first_token_ids=run_meta["first_token_ids"])
+    elif args.resource_probe is not None:
+        if (args.gpu_memory_mib is None or args.gpu_memory_mib <= 0 or
+                not args.failure_reason or not args.attempt_log or
+                not args.attempt_log.is_file()):
+            raise ValueError("Resource skip requires GPU capacity, reason, and attempt log")
+        probe = json.loads(args.resource_probe.read_text(encoding="utf-8"))
+        probe_meta_path = args.resource_probe.parent / "run_meta.json"
+        probe_meta = json.loads(probe_meta_path.read_text(encoding="utf-8"))
+        if (probe.get("probe") != "P2" or
+                set(probe.get("conditions", {})) != {"audio", "video", "av"} or
+                probe_meta.get("rows") != 2 or not probe_meta.get("ended_at") or
+                len(set(probe_meta.get("first_token_ids") or [])) != 7 or
+                any(item["M"]["n"] != 2 or item["M"]["valid"] != 2
+                    for item in probe["conditions"].values())):
+            raise ValueError("P2 resource probe did not score all two-sample conditions")
+        peak = max(item["peak_cuda_allocated_mib"]
+                   for item in probe["conditions"].values())
+        if peak <= args.gpu_memory_mib:
+            raise ValueError("P2 resource probe did not exceed physical GPU memory")
+        output.update(status="skipped_after_resource_probe",
+                      reason=args.failure_reason, scoring_attempted=True,
+                      model_load_succeeded=True,
+                      resource_probe_result_path=str(args.resource_probe),
+                      resource_probe_result_sha256=sha256(args.resource_probe),
+                      resource_probe_run_meta_sha256=sha256(probe_meta_path),
+                      physical_gpu_memory_mib=args.gpu_memory_mib,
+                      peak_cuda_allocated_mib=peak,
+                      attempt_log_path=str(args.attempt_log),
+                      attempt_log_sha256=sha256(args.attempt_log),
+                      label_first_token_ids=probe_meta["first_token_ids"])
     else:
         if not args.failure_reason or not args.attempt_log or not args.attempt_log.is_file():
             raise ValueError("Failed P2 load requires a reason and attempt log")
@@ -64,6 +96,8 @@ def main() -> None:
     parser.add_argument("--migration-receipt", type=Path, required=True)
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--probe-result", type=Path)
+    parser.add_argument("--resource-probe", type=Path)
+    parser.add_argument("--gpu-memory-mib", type=float)
     parser.add_argument("--attempt-log", type=Path)
     parser.add_argument("--failure-reason")
     parser.add_argument("--output", type=Path, required=True)
