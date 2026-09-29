@@ -1,0 +1,30 @@
+{
+  "systems": {
+    "E1_A3": {
+      "cv_op_n_macro_f1": 0.5395857837992656,
+      "cv_op_n_neutral_miss_rate": 0.15500878734622145,
+      "sims_valid_available": true
+    },
+    "E1_A3_V2": {
+      "cv_op_n_macro_f1": 0.5867742761152343,
+      "cv_op_n_neutral_miss_rate": 0.1608084358523726,
+      "sims_valid_available": true
+    },
+    "E1_A3_V2_V1": {
+      "cv_op_n_macro_f1": 0.5957637424757832,
+      "cv_op_n_neutral_miss_rate": 0.15869947275922672,
+      "sims_valid_available": true
+    },
+    "E1_A3_V2_T1r": {
+      "cv_op_n_macro_f1": 0.6166872460364147,
+      "cv_op_n_neutral_miss_rate": 0.15659050966608085,
+      "sims_valid_available": true
+    },
+    "E1_A3_A2_V2_V1_T1r": {
+      "cv_op_n_macro_f1": 0.630854028709385,
+      "cv_op_n_neutral_miss_rate": 0.15729349736379614,
+      "sims_valid_available": true
+    }
+  },
+  "best_e1": "E1_A3_A2_V2_V1_T1r"
+}

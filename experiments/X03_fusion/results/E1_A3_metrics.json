@@ -528,14 +528,14 @@
   },
   "sims_valid": {
     "n": 647,
-    "valid": 647,
-    "coverage": 1.0,
-    "pearson": 0.6350416101550634,
-    "spearman": 0.6169224114657653,
-    "acc_2_nonzero": 0.7495495495495496,
+    "valid": 620,
+    "coverage": 0.9582689335394127,
+    "pearson": 0.6571682082608478,
+    "spearman": 0.6443438110649294,
+    "acc_2_nonzero": 0.7297297297297297,
     "nonzero_denominator": 555,
-    "nonzero_correct": 416,
-    "correlation_denominator": 647
+    "nonzero_correct": 405,
+    "correlation_denominator": 620
   },
   "sources": {
     "oof": {
@@ -559,16 +559,16 @@
   },
   "artifacts": {
     "oof": {
-      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1/E1_A3/oof.jsonl",
-      "sha256": "63580a27128ff54598c93cf7607c9f1caad8d76502d77af63110b6f7d609c4b0"
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/oof.jsonl",
+      "sha256": "568241f89393c5b8f53c0c274a2c762cd5385e2259ce1fa453d0f6dcaa8a4d70"
     },
     "et_test": {
-      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1/E1_A3/et_test.jsonl",
-      "sha256": "094a32803f8f016f7b7a9334dacb8f294863dc3d35e72d2ccb3f474219226d89"
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/et_test.jsonl",
+      "sha256": "36239b9a7e030df9be5451fd9d62035f0b989e7b1d9a3d8f7b1a071a9716b666"
     },
     "sims_valid": {
-      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1/E1_A3/sims_valid.jsonl",
-      "sha256": "d7cf1b418a61fd43a4fdc2b1121be70d78eb853a34bc81a6d97a91b7a6ab22cd"
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/sims_valid.jsonl",
+      "sha256": "637f82fc7215e5c6824ba39cf04b76d25c3c5eeea510151e425441ea8374632b"
     }
   }
 }

@@ -2,17 +2,19 @@
 
 ## 1. 摘要
 
-X02 交付补齐后，X03 已完成 E1 五个概率级组合的五折交叉拟合和评测，以及 Q 人脸视频全量预处理与 NF4 LoRA 冒烟测试。E1 五模态组合的 CV OP-N macro-F1 为 0.631；这只是臂内结果。Q 的六次训练、内验证和三条件推理据实测预计需 **45.95 GPU 小时**，尚未计模型加载和预处理，超过预注册的 45 小时上限。按 X03 第 11 节停止正式训练，因此 E2、Q、H 的正式对照和主架构决策均未完成。
+X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，并批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。64 句正式训练循环实测的保守总估算为 **47.63 GPU 小时**，低于门限。Q fold 0 正在训练；E2 正在 CPU 并行执行。E1 已完成缺脸规则及 T1r-valid 补跑。尚无跨臂结论。
 
 ## 2. 第 0 步完成情况
 
 - X02 代码经 `x02-unimodal` PR #2 合入 `main`，合并提交 `1969a90ce72c1fe93b506b2b85420452338bddb0`；X03 从该提交切出 `x03-fusion`。
 - [X02 补充说明](../X02_unimodal/ADDENDUM.md) 重算 CER：CV 池原口径 0.434，新口径 0.293；全部 19,250 句新口径 0.282。句级质量文件位于服务器 `/home/administrator/emotion-data/emotioncore_runs/X02/quality/utterance_quality.jsonl`，SHA-256 `80330bb718e31a8155793ab83e396bd4741a87347858f0342fd039cdb098bb32`，疑似截断 4,121 句。X02 原报告正文未改。
-- X02 的 37 个 bundle 和 21 个临时 worktree 已移到 `/home/administrator/emotion-data/emotioncore_runs/X02/archive`，原工作树路径以符号链接保持可读。工作树通过 `git worktree move` 更新注册，并未解除注册；此点与 X03 字面要求不同，见 [待确认问题](OPEN_QUESTIONS.md)。未删除文件。
+- X02 的 37 个 bundle 和 21 个临时 worktree 已移到 `/home/administrator/emotion-data/emotioncore_runs/X02/archive`，原工作树路径以符号链接保持可读。工作树通过 `git worktree move` 更新注册；reviewer 已接受该做法。未删除文件。
 
 ## 3. 完成情况与偏离
 
-已完成：冻结折和 X02 缓存 SHA 核验；E1 五组合 OOF、ET-test 和可用的 SIMS-valid；19,250 条人脸视频处理；Q 的 A/V/AV 模态冒烟和训练、推理计时。未完成：E2、Q 的 5 折和最终 adapter、H、完整主表、缺失模态与截断敏感性、配对区间、跨臂错误分析、可选 P。停止依据为第 11 节预算门禁，未缩减折数或修改协议。
+已完成 X02 交付、E1 五组合及 T1r SIMS-valid、ET 19,250 条人脸视频预处理、Q 模态冒烟和预算预检。固定内验证 [x03_inner_val_subsets.json](../../configs/x03_inner_val_subsets.json)（SHA-256 `be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd`）按七类分层，每折从内验证说话人抽取 700 句，种子 20260929。固定 [x03_face_missing_policy.json](../../configs/x03_face_missing_policy.json)（SHA-256 `ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c`）规定训练 V/AV 缺脸改 A；评估 V 均匀七类并强制计错，AV 仅音频回退；E/H 画面专家均匀。内验证仍每 0.25 epoch 只评 AV。其余折数、2 epoch 上限、学习率、LoRA 和 60/20/20 形式比例不变。
+
+Q fold 0 训练中，须先通过固定内验证 AV macro-F1 ≥ 0.45 才运行余下 4 折和最终模型。E2 CPU 五折训练并行中。H 与完整主表待 Q OOF。
 
 ## 4. 校准与工作点方法
 
@@ -26,25 +28,21 @@ E1 使用 X02 冻结概率，未重新提取特征；每组均覆盖 CV 16,366 �
 
 | E1 组合 | CV OP-A F1 | CV OP-N F1 | CV OP-N 中性失配率 | ET-test OP-N F1 | SIMS-valid Pearson |
 |---|---:|---:|---:|---:|---:|
-| A3 | 0.552 | 0.540 | 0.155 | 0.546 | 0.635 |
-| A3+V2 | 0.595 | 0.587 | 0.161 | 0.592 | 0.724 |
-| A3+V2+V1 | 0.601 | 0.596 | 0.159 | 0.593 | 0.728 |
-| A3+V2+T1r | 0.627 | 0.617 | 0.157 | 0.625 | — |
-| A3+A2+V2+V1+T1r | 0.639 | 0.631 | 0.157 | 0.626 | — |
+| A3 | 0.552 | 0.540 | 0.155 | 0.546 | 0.657 |
+| A3+V2 | 0.595 | 0.587 | 0.161 | 0.592 | 0.746 |
+| A3+V2+V1 | 0.601 | 0.596 | 0.159 | 0.593 | 0.749 |
+| A3+V2+T1r | 0.627 | 0.617 | 0.157 | 0.625 | 0.773 |
+| A3+A2+V2+V1+T1r | 0.639 | 0.631 | 0.157 | 0.626 | 0.777 |
 
-按预定 OP-N CV macro-F1，最后一组是 **E1 臂内最高**。X02 未提供 T1r 的 SIMS-valid 预测，因此两个含 T1r 组合不报告该项；没有用 T1o 偷换输入。E2 因预算门禁未启动。
+按预定 OP-N CV macro-F1，最后一组是 **E1 臂内最高**。X02 未提供 T1r 的 SIMS-valid 预测；reviewer 允许补做。SenseVoice 只处理 SIMS-valid 音频，成功 620/647，另外 27 条源音频缺失；冻结的 T1 最终模型已完成 r-token valid 推理，含 T1r 的两组已补齐此指标。E2 正在 CPU 五折训练。
 
 ## 6. 臂 Q
-
-**2026-09-29 批复与 fold 0 前冻结。** GPU 上限提高到 55 小时（不含已取消的 P 臂）；每折从内验证说话人按七类分层固定抽取 700 句，种子 20260929，仍每 0.25 epoch 只评 AV。[子集配置](../../configs/x03_inner_val_subsets.json) SHA-256 `be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd`。[缺脸配置](../../configs/x03_face_missing_policy.json) SHA-256 `ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c`。43 条缺脸句在训练时 V/AV 改 A；评估时 V 输出均匀分布并强制计错，AV 只用音频，E/H 画面专家均匀。折数、epoch 上限、学习率、LoRA 和 AV/A/V 比例均不变。旧估算与停止状态由本段及后续正式结果取代。
-
-64 句正式训练循环冒烟完成 8 次参数更新，用时 60.36 秒，即 0.943 秒/句，峰值 CUDA allocated 28,892 MiB。六次训练每轮共 62,201 句、最多两轮，按实测约 32.59 小时，另加 20% 训练耗时余量后为 39.11 小时；固定子集共 33,600 次 AV 验证预计 3.49 小时，三条件正式推理预计 4.54 小时，模型加载/保存预留 0.5 小时。总估算 **47.63 GPU 小时**，低于 55 小时门限；来源及计算见 [预检预算 JSON](results/q_budget_fold0_preflight.json)。CPU 媒体预处理不计 GPU 小时。缓存完成后运行 fold 0，内验证 AV macro-F1 达 0.45 才继续其余四折及最终模型。
 
 X02 人脸裁剪已在原框每侧外扩 20%。X03 对冻结裁剪帧重新做人脸尺寸至少 64/448 像素、YuNet 置信度至少 0.8 的过滤，再按原片段时长等间距选 8 帧，编码为 336×336 无音轨 MP4。每帧输入视觉处理器的源图像像素数为 **112,896**；示例编码流经 `ffprobe` 验证为 8 帧、336×336、仅视频流。全量 19,250 句中 19,207 条成功，43 条无合格人脸帧，其中官方 train 33、val 7、test 3；阈值没有事后调整。
 
 Q 冒烟使用原始 WAV 在处理子进程转为 16 kHz 单声道，A/V/AV 分别留下 processor 回执：A 仅音频，V 仅视频，AV 同时含二者；forward 再次断言。七类首 token ID 两两不同。模型从本地 Qwen2.5-Omni-7B 基座加载，NF4 双重量化、BF16；语言注意力 LoRA rank 16，视觉注意力 LoRA rank 8，音频塔无可训练参数。实测峰值 CUDA allocated：A 10,089 MiB、V 24,291 MiB、AV 25,816 MiB。这里只进行了重复单样本优化步，不产生可用于评估的 adapter。
 
-稳定步速按每条件三步中后两步的中位数：A 0.318 秒、V 0.750 秒、AV 0.854 秒；按 20%/20%/60% 加权为 0.726 秒/样本。五折的内训练集加最终模型内训练集每 epoch 共 62,201 句，最多两轮；每 0.25 epoch 对内验证说话人评估，合计 157,032 次 AV 验证。实测推理 A 0.195 秒、V 0.293 秒、AV 0.374 秒/句。由此估计训练 25.10 小时、验证 16.32 小时、OOF/ET-test/SIMS-valid 三条件推理 4.54 小时，总计 **45.95 小时**。该数尚未包含加载、保存和媒体处理，且仅以一个样本长度冒烟，故不能证明实际耗时更低。按预算门禁停止，未训练 fold 0，也未产生五折/最终 adapter 或训练曲线。
+64 句正式训练循环冒烟完成 8 次参数更新，用时 60.36 秒，即 0.943 秒/句，峰值 CUDA allocated 28,892 MiB。六次训练每轮共 62,201 句、最多两轮，按实测约 32.59 小时，另加 20% 训练耗时余量后为 39.11 小时；固定子集共 33,600 次 AV 验证预计 3.49 小时，三条件正式推理预计 4.54 小时，模型加载/保存预留 0.5 小时。总估算 **47.63 GPU 小时**，低于新门限 55 小时；来源及计算见 [预检预算 JSON](results/q_budget_fold0_preflight.json)。媒体 CPU 预处理未计 GPU 小时。Q fold 0 已启动，待训练完成按固定子集 AV macro-F1 ≥ 0.45 的健全性条件检查。
 
 ## 7. 臂 H
 
@@ -64,21 +62,18 @@ E1 各系统的逐类指标和混淆矩阵由脚本写入 `results/E1_*_metrics.
 
 ## 11. 臂 P
 
-按第 7 节“其余全部完成后再做”的条件，未启动下载或推理。
+Reviewer 取消臂 P。X02 P2 已用 bitsandbytes NF4 双重量化和 BF16 尝试 4bit 加载，PyTorch CUDA 峰值仍为 58,041.6 MiB。X02_REVIEW 中“未尝试 4bit”的说法与运行记录不符。
 
 ## 12. 耗时与资源
 
-E1 为 CPU 后处理。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
+E1 为 CPU 后处理。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
 
 ## 13. 异常
 
-- 43 条人脸视频因预注册过滤阈值无可用帧，收据保存于服务器 `$R3/media/receipts`。
-- 含 T1r 的 E1 组合缺少同输入条件的 SIMS-valid 缓存。
-- X02 归档工作树保留注册，见第 2 节。
-- 45 GPU 小时门限被正式估算触发；未进行 CH-SIMS test 推理。
+- ET 有 43 条固定人脸过滤失败，已在 fold 0 前冻结回退规则。
+- SIMS-valid SenseVoice 首次调用的 Python 环境缺少 FunASR，失败收据保留；改用 X02 原 FunASR 环境后成功 620/647，27 条源音频缺失。
+- CH-SIMS test 封存集未推理；旧项目目录保持只读。
 
 ## 14. 给 reviewer 的问题
 
-1. 预算门限触发后，是否另行提高预算并保持原协议重启 Q 的六次训练？本报告没有自行缩减折数、epoch 或验证频率。
-2. 对 43 条固定过滤失败的 V/AV 样本，是否接受明确的缺失状态与统一概率回退？正式 Q 运行前须冻结处理规则。
-3. T1r 无 SIMS-valid 缓存时，是否允许补做同输入条件的推理，或将这两组 SIMS-valid 保留空缺？
+预算、缺脸回退、T1r valid 补做、中性误报口径、X02 归档和取消 P 均已获批。目前没有新的协议问题。
