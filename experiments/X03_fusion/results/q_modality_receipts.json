@@ -1,0 +1,99 @@
+{
+  "A": {
+    "status": "ok",
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_smoke_budget/A.npz",
+    "sha256": "d7f90dcb0389f9227dc6763b0e33fdc6b068290b1e572cb6137855b2a8788336",
+    "condition": "A",
+    "processor_has_audio": true,
+    "processor_has_video": false,
+    "shapes": {
+      "input_ids": [
+        1,
+        144
+      ],
+      "attention_mask": [
+        1,
+        144
+      ],
+      "feature_attention_mask": [
+        1,
+        30000
+      ],
+      "input_features": [
+        1,
+        128,
+        30000
+      ]
+    },
+    "elapsed_s": 8.324256960986531
+  },
+  "V": {
+    "status": "ok",
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_smoke_budget/V.npz",
+    "sha256": "8f921c39839c7fd80f73c1bcc7e0f8f5eab9cd5a9e5fb18b1c38a1db21b11a2d",
+    "condition": "V",
+    "processor_has_audio": false,
+    "processor_has_video": true,
+    "shapes": {
+      "input_ids": [
+        1,
+        630
+      ],
+      "attention_mask": [
+        1,
+        630
+      ],
+      "pixel_values_videos": [
+        2304,
+        1176
+      ],
+      "video_grid_thw": [
+        1,
+        3
+      ],
+      "video_second_per_grid": [
+        1
+      ]
+    },
+    "elapsed_s": 0.09723350500280503
+  },
+  "AV": {
+    "status": "ok",
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_smoke_budget/AV.npz",
+    "sha256": "c4aef1e1efb987b46401d8943952378539d0f4c124bb01754afe2b5d3575c79b",
+    "condition": "AV",
+    "processor_has_audio": true,
+    "processor_has_video": true,
+    "shapes": {
+      "input_ids": [
+        1,
+        722
+      ],
+      "attention_mask": [
+        1,
+        722
+      ],
+      "pixel_values_videos": [
+        2304,
+        1176
+      ],
+      "video_grid_thw": [
+        1,
+        3
+      ],
+      "video_second_per_grid": [
+        1
+      ],
+      "feature_attention_mask": [
+        1,
+        30000
+      ],
+      "input_features": [
+        1,
+        128,
+        30000
+      ]
+    },
+    "elapsed_s": 0.16518680800800212
+  }
+}

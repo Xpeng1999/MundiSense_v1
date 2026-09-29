@@ -1,0 +1,22 @@
+{
+  "git": {
+    "commit": "8425883571a118869f84689ba19b1959448293be",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "started_at": "2026-09-29T03:24:15.884090+00:00",
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/q_smoke.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--media-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/media",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_smoke_budget"
+  ],
+  "model": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B",
+  "model_index_sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2",
+  "ended_at": "2026-09-29T03:24:51.801339+00:00",
+  "summary_sha256": "a33e2c5659f4b266b1cb1490d05262100d0fcbdd0430c2dd45f15171c6ccc79b"
+}
