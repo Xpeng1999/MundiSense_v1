@@ -183,7 +183,9 @@ def run(args: argparse.Namespace) -> None:
     progress = {"examples_seen": 0, "optimizer_steps": 0, "evals": [],
                 "best_av_macro_f1": -1.0, "best_checkpoint": None,
                 "gpu_elapsed_s": 0.0, "modality_forward_counts": {"A": 0, "V": 0, "AV": 0},
-                "face_missing_fallback_train": 0}
+                "face_missing_fallback_train": 0,
+                "time_breakdown_s": {"input_load": 0.0, "forward_backward": 0.0,
+                                     "optimizer": 0.0}}
     write_json_atomic(args.output_dir / "progress.json", progress)
     records_path = args.output_dir / "train_modality_receipts.jsonl"
     torch.cuda.reset_peak_memory_stats()
@@ -194,15 +196,27 @@ def run(args: argparse.Namespace) -> None:
             shuffled = train_rows.copy()
             random.Random(SEED + epoch + (0 if name == "final" else int(name.removeprefix("fold")) * 100)).shuffle(shuffled)
             for row in shuffled:
+                io_started = time.monotonic()
                 values = load_input(args.cache_root, row)
+                if args.smoke_examples is not None:
+                    torch.cuda.synchronize()
+                io_s = time.monotonic() - io_started
+                progress["time_breakdown_s"]["input_load"] += io_s
                 actual = set(values)
                 assert_modality_receipt(row["effective_form"], actual)
                 values = prepare_target(values, row["truth_M"], processor.tokenizer)
+                if args.smoke_examples is not None:
+                    torch.cuda.synchronize()
+                compute_started = time.monotonic()
                 result = thinker(**values, use_cache=False, use_audio_in_video=False)
                 loss = result.loss
                 if not torch.isfinite(loss):
                     raise RuntimeError(f"Q nonfinite training loss at {row['utt_id']}")
                 (loss / EFFECTIVE_BATCH).backward()
+                if args.smoke_examples is not None:
+                    torch.cuda.synchronize()
+                compute_s = time.monotonic() - compute_started
+                progress["time_breakdown_s"]["forward_backward"] += compute_s
                 del result, loss, values
                 progress["examples_seen"] += 1
                 progress["modality_forward_counts"][row["effective_form"]] += 1
@@ -212,12 +226,18 @@ def run(args: argparse.Namespace) -> None:
                                                 "effective_form": row["effective_form"],
                                                 "face_missing": row["face_missing"],
                                                 "forward_has_audio": "input_features" in actual,
-                                                "forward_has_video": "pixel_values_videos" in actual}) + "\n")
+                                                "forward_has_video": "pixel_values_videos" in actual,
+                                                "input_load_s": io_s,
+                                                "forward_backward_s": compute_s}) + "\n")
                 if progress["examples_seen"] % EFFECTIVE_BATCH == 0 or \
                    progress["examples_seen"] == total_examples:
+                    optimizer_started = time.monotonic()
                     optimizer.step()
                     scheduler.step()
                     optimizer.zero_grad(set_to_none=True)
+                    if args.smoke_examples is not None:
+                        torch.cuda.synchronize()
+                    progress["time_breakdown_s"]["optimizer"] += time.monotonic() - optimizer_started
                     progress["optimizer_steps"] += 1
                 if progress["examples_seen"] in boundaries:
                     torch.cuda.synchronize()
