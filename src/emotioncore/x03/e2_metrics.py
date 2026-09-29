@@ -36,6 +36,27 @@ def invalid_mask(rows: list[dict], condition: str) -> np.ndarray:
                        for row in rows])
 
 
+def fit_neutral_bias_with_invalid(logits: np.ndarray, y: np.ndarray,
+                                  invalid: np.ndarray, target: float = 0.15) -> float:
+    """Fit the frozen neutral-miss target while retaining invalid rows in its denominator."""
+    if not invalid.any():
+        return fit_neutral_bias(logits, y, target)
+    neutral = y == 0
+    if not neutral.any():
+        raise ValueError("No neutral rows in the E2 fitting folds")
+    available = neutral & ~invalid
+    if not available.any():
+        raise ValueError("No valid neutral rows in the E2 fitting folds")
+    margins = np.max(logits[available, 1:], axis=1) - logits[available, 0]
+    candidates = np.r_[np.nextafter(margins.min(), -np.inf),
+                       np.unique(margins), np.nextafter(margins.max(), np.inf)]
+    ordered = np.sort(margins)
+    miss = (len(margins) - np.searchsorted(ordered, candidates, side="right")) / int(neutral.sum())
+    best = min(range(len(candidates)),
+               key=lambda i: (abs(miss[i] - target), miss[i], candidates[i]))
+    return float(candidates[best])
+
+
 def score(rows: list[dict], probabilities: np.ndarray, condition: str) -> dict:
     truth = np.asarray([LABELS.index(row["truth_M"]) for row in rows])
     failed = invalid_mask(rows, condition)
@@ -69,7 +90,9 @@ def calibrated_oof(rows: list[dict], condition: str):
         fit = folds != fold
         held = folds == fold
         calibration = fit_calibration(logp[fit], y[fit])
-        bias = fit_neutral_bias(calibrated_logits(logp[fit], calibration), y[fit])
+        fit_invalid = invalid_mask([row for row, selected in zip(rows, fit) if selected], condition)
+        bias = fit_neutral_bias_with_invalid(calibrated_logits(logp[fit], calibration),
+                                             y[fit], fit_invalid)
         scores = calibrated_logits(logp[held], calibration)
         op_a[held] = softmax(scores)
         scores[:, 0] += bias
@@ -87,7 +110,8 @@ def apply_final(rows_oof: list[dict], rows_target: list[dict], condition: str):
     y = np.asarray([LABELS.index(row["truth_M"]) for row in rows_oof])
     oof_logp = np.log(np.clip(np.asarray([r["probabilities"] for r in rows_oof]), 1e-12, 1))
     calibration = fit_calibration(oof_logp, y)
-    bias = fit_neutral_bias(calibrated_logits(oof_logp, calibration), y)
+    bias = fit_neutral_bias_with_invalid(calibrated_logits(oof_logp, calibration), y,
+                                         invalid_mask(rows_oof, condition))
     target = np.log(np.clip(np.asarray([r["probabilities"] for r in rows_target]), 1e-12, 1))
     scores = calibrated_logits(target, calibration)
     op_a = softmax(scores)

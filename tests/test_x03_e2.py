@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 from emotioncore.x03.e2 import E2Model, predict, sample_keep
-from emotioncore.x03.e2_metrics import calibrated_oof, score
+from emotioncore.x03.e2_metrics import calibrated_oof, fit_neutral_bias_with_invalid, score
 
 
 def test_modality_dropout_keeps_one_available_modality():
@@ -58,3 +58,14 @@ def test_e2_fold_calibration_never_reads_held_fold_labels():
     assert parameters[0] == parameters_changed[0]
     assert np.array_equal(a[:14], a_changed[:14])
     assert np.array_equal(n[:14], n_changed[:14])
+
+
+def test_neutral_workpoint_retains_invalid_neutral_in_denominator():
+    logits = np.zeros((4, 7))
+    logits[1:, 1] = [0.1, 0.2, 0.3]
+    invalid = np.array([True, False, False, False])
+    bias = fit_neutral_bias_with_invalid(logits, np.zeros(4, dtype=int),
+                                         invalid, target=0.25)
+    assert np.isclose(bias, 0.2)
+    predicted = np.argmax(logits + np.array([bias, 0, 0, 0, 0, 0, 0]), axis=1)
+    assert int(np.count_nonzero((predicted[~invalid] != 0))) == 1
