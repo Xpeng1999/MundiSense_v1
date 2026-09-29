@@ -2,7 +2,7 @@
 
 ## 1. 摘要
 
-X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**。按恢复指令改用默认 CUDA 分配器并显式开启梯度检查点后，同一最长 20 条 AV 输入的显存预检全部通过，峰值 **12,315,284,992 字节**。检查点开启后的实测总时长预计 **71.88 小时**；Reviewer 随后批准将总上限提高至 **75 小时**（含 fold 0 的 7.18 小时、20% 余量及诊断预留）。[75 小时门禁回执](results/q_resume_budget_75.json)为 `within_budget`，Q 已恢复正式流水线，启动时正在进行 fold 0 的三条件外折推理；后续逐模型复核。E1/E2 已完成，尚无跨臂结论。
+X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**。按恢复指令改用默认 CUDA 分配器并显式开启梯度检查点后，同一最长 20 条 AV 输入的显存预检全部通过，峰值 **12,315,284,992 字节**。检查点开启后的实测总时长初估 **71.88 小时**；Reviewer 随后批准将总上限提高至 **75 小时**（含 fold 0 的 7.18 小时、20% 余量及诊断预留）。[75 小时门禁回执](results/q_resume_budget_75.json)为 `within_budget`。Q fold 0 三条件外折推理已完成，实耗 1.214 小时；依实际耗时更新的[逐模型预算回执](results/q_budget_progress.jsonl)预计总时长 **72.14 小时**，现进入 fold 1 训练。E1/E2 已完成，尚无跨臂结论。
 
 ## 2. 第 0 步完成情况
 
@@ -16,7 +16,7 @@ X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸�
 
 Q fold 0 已自然结束：两轮共处理 19,652 个训练样本，完成 8 次固定 700 句 AV 内验证；第 5 次验证得到最佳 macro-F1 0.6966，超过 0.45 门限。总 GPU 时长按 fold 0 实测重估为 50.51 小时，低于 55 小时门限。E2 CPU 分支已完成；H 与完整主表待 Q OOF。
 
-fold 0 全程保持原样。后续启动器通过了 fold 0 的健全性和初次时长门禁，15,281 条 AV 训练候选已全部缓存。修复分配器和检查点状态后，同一最长 20 条输入的显存门禁通过；按新单步耗时复核的 71.88 小时预计值处于现行 75 小时预算内。Q 于 2026-09-29 恢复，先补 fold 0 三条件外折推理，再按冻结协议训练 fold 1–4 与最终模型。E2 全程限定 CPU。
+fold 0 全程保持原样。后续启动器通过了 fold 0 的健全性和初次时长门禁，15,281 条 AV 训练候选已全部缓存。修复分配器和检查点状态后，同一最长 20 条输入的显存门禁通过；按新单步耗时复核的 71.88 小时预计值处于现行 75 小时预算内。Q 于 2026-09-29 恢复，fold 0 三条件外折推理完成并通过逐模型预算复核，fold 1 训练已启动。E2 全程限定 CPU。
 
 ## 4. 校准与工作点方法
 
@@ -59,7 +59,7 @@ Q 冒烟使用原始 WAV 在处理子进程转为 16 kHz 单声道，A/V/AV 分�
 
 fold 0 正式训练共处理 19,652 个样本，2457 次优化步，GPU 实测 **25,862.63 秒（7.18 小时）**；8 次固定 700 句 AV 内验证均覆盖完整且无推理失败。最佳为第 5 次，macro-F1 **0.696626**，adapter SHA-256 `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50`。模态前向回执：A 3960、V 3922、AV 11770；缺脸训练回退 30 次。完整训练曲线和统计见 [fold 0 汇总](results/q_fold0_summary.json)。流水线根据实测将六次训练及推理总 GPU 时长重估为 **50.5124 小时**，低于 55 小时上限；门禁值记录在服务器 `$R3/Q/pipeline_progress.json`。该预算仍须在后续每折根据实际耗时核验。
 
-fold 1 起的 Q 训练及推理进程使用**默认 CUDA 分配器**，不设置 `PYTORCH_CUDA_ALLOC_CONF` 或 `PYTORCH_ALLOC_CONF`。`get_peft_model` 后显式以 `use_reentrant=False` 开启梯度检查点，训练启动时断言 LLM、视觉塔、音频塔三处均为 True 并写入 `run_meta`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。这些训练保护均已实现，但 fold 1 尚未启动，因此没有正式训练监控或 OOM 跳过记录。
+fold 1 起的 Q 训练及推理进程使用**默认 CUDA 分配器**，不设置 `PYTORCH_CUDA_ALLOC_CONF` 或 `PYTORCH_ALLOC_CONF`。`get_peft_model` 后显式以 `use_reentrant=False` 开启梯度检查点，训练启动时断言 LLM、视觉塔、音频塔三处均为 True 并写入 `run_meta`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。fold 1 已启动；运行元数据证实 LLM、视觉塔、音频塔的检查点标志均为 True，分配器为默认值。当前无异常退出或 OOM 跳过。
 
 fold 0 结束后，流水线从六份冻结训练 manifest 中去重得到 15,281 条 AV 句，全部缓存成功，按实际 `input_ids` 长度选出最长 20 条（1,016–1,104 token），冻结清单 SHA-256 `feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10`。原先两次预检在首条遭驱动错误，故障记录见 [预检停止记录](results/q_pipeline_stop.json)。恢复后，首条样本在开启与关闭检查点时的 loss 相对差为 **0**，全部 480 个 LoRA 梯度最大相对差为 **0**；关闭检查点峰值 35,784,373,248 字节，开启后 12,324,995,584 字节，见 [等价性回执](results/q_checkpoint_equivalence.json)。随后以默认分配器和开启的检查点重跑相同 20 条，全部完成前向与反向，无 OOM，最大 `torch.cuda.max_memory_allocated` **12,315,284,992 字节**，低于不变的 **30,000,000,000 字节**门限，见 [正式预检回执](results/q_worst_case_recovery.json)。未截断或替换任何输入。
 
