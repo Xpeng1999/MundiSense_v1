@@ -36,7 +36,11 @@ def fit_neutral_bias_with_invalid(logits: np.ndarray, y: np.ndarray,
     candidates = np.r_[np.nextafter(margin.min(), -np.inf), np.unique(margin),
                        np.nextafter(margin.max(), np.inf)]
     ordered = np.sort(margin)
-    miss = (len(margin) - np.searchsorted(ordered, candidates, side="right")) / neutral.sum()
+    # Uniform missing-face V rows are forced errors. They still contribute to
+    # the true-neutral numerator when choosing the frozen OP-N work point.
+    forced_miss = int((neutral & invalid).sum())
+    miss = (forced_miss + len(margin) -
+            np.searchsorted(ordered, candidates, side="right")) / neutral.sum()
     best = min(range(len(candidates)), key=lambda i: (abs(miss[i] - target), miss[i], candidates[i]))
     return float(candidates[best])
 
