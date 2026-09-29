@@ -37,7 +37,9 @@ def run(args: argparse.Namespace) -> None:
         uid = row["utt_id"]
         condition = row["effective_form"]
         if condition == "uniform":
-            if row["assigned_form"] != "V" or not row["face_missing"]:
+            allowed = (row["assigned_form"] == "V" and row["face_missing"]) or \
+                      (row.get("split") == "sims_valid" and row.get("audio_missing"))
+            if not allowed:
                 raise ValueError("Uniform Q input outside missing-face V evaluation")
             return {"utt_id": uid, "status": "uniform", "effective_form": condition,
                     "face_missing": True}

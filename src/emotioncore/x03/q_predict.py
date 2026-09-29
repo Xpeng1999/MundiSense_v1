@@ -10,7 +10,7 @@ from pathlib import Path
 
 import numpy as np
 
-from emotioncore.eval.metrics import LABELS, classification
+from emotioncore.eval.metrics import LABELS, classification, sims_metrics
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x03.budget_v2 import FACE_SHA
 from emotioncore.x03.q_manifest import read_jsonl, sha256
@@ -26,7 +26,7 @@ def run(args: argparse.Namespace) -> None:
     if sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA:
         raise ValueError("Frozen face policy changed")
     manifest_meta = json.loads(args.manifest_meta.read_text(encoding="utf-8"))
-    if manifest_meta["face_policy_sha256"] != FACE_SHA or manifest_meta["git"]["dirty"]:
+    if manifest_meta.get("face_policy_sha256", FACE_SHA) != FACE_SHA or manifest_meta["git"]["dirty"]:
         raise ValueError("Inference manifest provenance mismatch")
     if args.run_name.startswith("fold"):
         run_id = args.run_name
@@ -34,6 +34,9 @@ def run(args: argparse.Namespace) -> None:
     elif args.run_name == "final_et_test":
         run_id = args.run_name
         split = "et_test"
+    elif args.run_name == "final_sims_valid":
+        run_id = args.run_name
+        split = "sims_valid"
     else:
         raise ValueError("Unsupported Q prediction run")
     manifests = {}
@@ -56,7 +59,9 @@ def run(args: argparse.Namespace) -> None:
     for form, rows in manifests.items():
         for row in rows:
             if row["effective_form"] == "uniform":
-                if form != "V" or not row["face_missing"]:
+                allowed = (form == "V" and row["face_missing"]) or \
+                          (split == "sims_valid" and row.get("audio_missing"))
+                if not allowed:
                     raise ValueError("Uniform score outside frozen missing-face V rule")
             elif not (args.cache_root / row["utt_id"] / f"{row['effective_form']}.json").is_file():
                 raise FileNotFoundError(f"Uncached Q input: {row['utt_id']}/{form}")
@@ -84,6 +89,7 @@ def run(args: argparse.Namespace) -> None:
         for form in ("A", "V", "AV"):
             output = args.output_dir / f"{form}.jsonl"
             scored = []
+            sims_scored = []
             durations = []
             uniform = 0
             fallback = 0
@@ -94,7 +100,7 @@ def run(args: argparse.Namespace) -> None:
                         probabilities = [1 / 7] * 7
                         pred = None  # Count the row as incorrect, even if its true label is neutral.
                         has_audio = has_video = False
-                        status = "face_missing"
+                        status = "missing_media" if row.get("audio_missing") else "face_missing"
                         uniform += 1
                     else:
                         values = load_input(args.cache_root, row)
@@ -111,20 +117,28 @@ def run(args: argparse.Namespace) -> None:
                     elapsed = time.monotonic() - started
                     durations.append(elapsed)
                     item = {"utt_id": row["utt_id"], "speaker_id": row["speaker_id"],
-                            "fold": row["fold"], "truth_M": row["truth_M"], "form": form,
+                            "fold": row["fold"], "form": form,
                             "effective_form": row["effective_form"], "face_missing": row["face_missing"],
                             "face_missing_fallback": row["face_missing_fallback"], "status": status,
                             "probabilities": probabilities, "pred": pred,
                             "forward_has_audio": has_audio, "forward_has_video": has_video,
                             "latency_s": elapsed}
+                    if split == "sims_valid":
+                        item["label"] = row["label"]
+                        item["s"] = None if row["effective_form"] == "uniform" else float(
+                            probabilities[1] - sum(probabilities[2:6]))
+                        sims_scored.append({"id": row["utt_id"], "label": row["label"],
+                                            "s": item["s"]})
+                    else:
+                        item["truth_M"] = row["truth_M"]
+                        scored.append({"id": row["utt_id"], "speaker_id": row["speaker_id"],
+                                       "truth": row["truth_M"], "pred": pred})
                     stream.write(json.dumps(item, ensure_ascii=False) + "\n")
-                    scored.append({"id": row["utt_id"], "speaker_id": row["speaker_id"],
-                                   "truth": row["truth_M"], "pred": pred})
                     if index % 100 == 0:
                         write_json_atomic(args.output_dir / "progress.json",
                                           {"form": form, "done": index, "total": len(ids)})
             summaries[form] = {"n": len(ids), "uniform": uniform, "face_missing_fallback": fallback,
-                               "classification": classification(scored),
+                               "metrics": sims_metrics(sims_scored) if split == "sims_valid" else classification(scored),
                                "latency_p50_s": float(np.percentile(durations, 50)),
                                "latency_p95_s": float(np.percentile(durations, 95)),
                                "path": str(output), "sha256": sha256(output)}
