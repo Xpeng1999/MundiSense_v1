@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 from emotioncore.x03.e2 import E2Model, predict, sample_keep
-from emotioncore.x03.e2_metrics import score
+from emotioncore.x03.e2_metrics import calibrated_oof, score
 
 
 def test_modality_dropout_keeps_one_available_modality():
@@ -36,3 +36,25 @@ def test_uniform_missing_visual_counts_as_error_even_for_neutral():
     assert result["failures"] == 1
     assert result["wa"] == 0
     assert result["face_missing_forced_error"] == 1
+
+
+def test_e2_fold_calibration_never_reads_held_fold_labels():
+    rng = np.random.default_rng(5)
+    from emotioncore.eval.metrics import LABELS
+
+    rows = []
+    for fold in range(5):
+        for repeat in range(2):
+            for label in LABELS:
+                rows.append({"fold": fold, "truth_M": label,
+                             "status": "ok",
+                             "probabilities": rng.dirichlet(np.ones(7)).tolist()})
+    a, n, parameters = calibrated_oof(rows, "AVT")
+    changed = [dict(row) for row in rows]
+    for row in changed:
+        if row["fold"] == 0:
+            row["truth_M"] = LABELS[(LABELS.index(row["truth_M"]) + 1) % 7]
+    a_changed, n_changed, parameters_changed = calibrated_oof(changed, "AVT")
+    assert parameters[0] == parameters_changed[0]
+    assert np.array_equal(a[:14], a_changed[:14])
+    assert np.array_equal(n[:14], n_changed[:14])
