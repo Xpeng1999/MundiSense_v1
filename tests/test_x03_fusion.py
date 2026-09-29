@@ -1,6 +1,6 @@
 import numpy as np
 
-from emotioncore.x03.fusion import crossfit, fit_neutral_bias, softmax
+from emotioncore.x03.fusion import apply_face_missing, crossfit, fit_neutral_bias, softmax
 
 
 def toy_data():
@@ -37,3 +37,13 @@ def test_neutral_working_point_uses_only_fit_rows():
     neutral = y[folds != 0] == 0
     miss_rate = np.mean(np.argmax(adjusted[neutral], axis=1) != 0)
     assert abs(miss_rate - 0.15) <= 1 / neutral.sum()
+
+
+def test_face_missing_only_uniforms_visual_expert():
+    probabilities = np.zeros((2, 2, 7))
+    probabilities[:, :, 0] = 1
+    changed = apply_face_missing(probabilities, ["missing", "present"],
+                                 ("A3_h2", "V2_h2"), {"missing"})
+    np.testing.assert_allclose(changed[0, 1], np.ones(7) / 7)
+    np.testing.assert_allclose(changed[0, 0], probabilities[0, 0])
+    np.testing.assert_allclose(changed[1], probabilities[1])

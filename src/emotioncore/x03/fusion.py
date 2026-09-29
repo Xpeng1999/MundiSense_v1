@@ -14,6 +14,7 @@ from scipy.special import logsumexp
 from emotioncore.eval.metrics import LABELS, classification, sims_metrics
 from emotioncore.x02.asr_cer import sha256
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
+from emotioncore.x03.budget_v2 import FACE_SHA
 
 
 COMBINATIONS = {
@@ -126,7 +127,18 @@ def index_rows(rows: list[dict], id_key: str) -> dict[str, dict]:
     return indexed
 
 
-def load_sources(index_path: Path, components: tuple[str, ...], split: str) -> tuple[list[str], np.ndarray, list[dict], dict]:
+def apply_face_missing(probabilities: np.ndarray, ids: list[str],
+                       components: tuple[str, ...], face_missing: set[str]) -> np.ndarray:
+    result = probabilities.copy()
+    missing = np.array([uid in face_missing for uid in ids])
+    for index, component in enumerate(components):
+        if component.startswith("V"):
+            result[missing, index, :] = 1 / 7
+    return result
+
+
+def load_sources(index_path: Path, components: tuple[str, ...], split: str,
+                 face_missing: set[str] | None = None) -> tuple[list[str], np.ndarray, list[dict], dict]:
     index = json.loads(index_path.read_text(encoding="utf-8"))
     maps = []
     provenance = {}
@@ -156,6 +168,8 @@ def load_sources(index_path: Path, components: tuple[str, ...], split: str) -> t
             if any(source[uid]["label"] != maps[0][uid]["label"] for uid in ids):
                 raise ValueError("SIMS labels disagree between sources")
     probabilities = np.stack([[source[uid]["probabilities"] for uid in ids] for source in maps], axis=1)
+    if face_missing:
+        probabilities = apply_face_missing(probabilities, ids, components, face_missing)
     if (probabilities.shape != (len(ids), len(components), 7) or
             not np.isfinite(probabilities).all() or
             not np.allclose(probabilities.sum(axis=2), 1, atol=1e-5)):
@@ -214,6 +228,9 @@ def write_predictions(path: Path, ids: list[str], records: list[dict],
 
 def run(args: argparse.Namespace) -> None:
     git = git_provenance(Path.cwd(), args.allow_dirty)
+    if sha256(args.face_policy) != FACE_SHA:
+        raise ValueError("Frozen face-missing policy SHA mismatch")
+    face_missing = set(json.loads(args.face_policy.read_text(encoding="utf-8"))["face_missing_utt_ids"])
     folds_path = Path("configs/folds_v1.json")
     expected_fold_sha = "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce"
     if sha256(folds_path) != expected_fold_sha:
@@ -228,11 +245,12 @@ def run(args: argparse.Namespace) -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     run_meta = {"git": git, "command": sys.argv,
                 "started_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-                "fold_sha256": expected_fold_sha, "artifact_index_sha256": sha256(args.artifact_index)}
+                "fold_sha256": expected_fold_sha, "artifact_index_sha256": sha256(args.artifact_index),
+                "face_policy_sha256": FACE_SHA}
     write_json_atomic(args.output_dir / "run_meta.json", run_meta)
     summary = {}
     for name, components in COMBINATIONS.items():
-        ids, logp, records, sources = load_sources(args.artifact_index, components, "oof")
+        ids, logp, records, sources = load_sources(args.artifact_index, components, "oof", face_missing)
         if set(ids) != cv_ids or len(ids) != 16_366:
             raise ValueError("Incomplete CV OOF coverage")
         y = np.array([LABELS.index(row["truth_M"]) for row in records])
@@ -248,7 +266,7 @@ def run(args: argparse.Namespace) -> None:
         cv = {"op_a": metrics(op_a, y, speakers, ids),
               "op_n": metrics(op_n, y, speakers, ids)}
         write_json_atomic(target_dir / "parameters.json", {"components": components, "folds": params})
-        test_ids, test_logp, test_records, test_sources = load_sources(args.artifact_index, components, "et_test")
+        test_ids, test_logp, test_records, test_sources = load_sources(args.artifact_index, components, "et_test", face_missing)
         if set(test_ids) != test_ids_expected or len(test_ids) != 1_929:
             raise ValueError("Incomplete ET-test coverage")
         test_a, test_n, final = apply_final(logp, y, test_logp)
@@ -259,7 +277,7 @@ def run(args: argparse.Namespace) -> None:
         sims = None
         sims_sources = None
         try:
-            sims_ids, sims_logp, sims_records, sims_sources = load_sources(args.artifact_index, components, "sims_valid")
+            sims_ids, sims_logp, sims_records, sims_sources = load_sources(args.artifact_index, components, "sims_valid", face_missing)
         except FileNotFoundError:
             pass
         else:
@@ -291,6 +309,7 @@ def run(args: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact-index", type=Path, required=True)
+    parser.add_argument("--face-policy", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--allow-dirty", action="store_true")
     run(parser.parse_args())
