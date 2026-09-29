@@ -172,10 +172,17 @@ def evaluate(args):
                                 args.device, args.batch_size)
         output = args.output_dir / f"{args.split}_{condition}.jsonl"
         with output.open("w", encoding="utf-8") as stream:
-            for row, probability, missing in zip(rows, probabilities, target["face_missing"]):
+            for index, (row, probability, missing) in enumerate(
+                    zip(rows, probabilities, target["face_missing"])):
+                audio_ok = bool(target["audio_lengths"][index])
+                visual_ok = bool(target["visual_lengths"][index])
+                text_ok = bool(target["text_available"][index])
+                valid = {"AVT": audio_ok or visual_ok or text_ok,
+                         "A": audio_ok, "V": visual_ok,
+                         "AV": audio_ok or visual_ok}[condition]
                 item = {"utt_id": row["utt_id"], "speaker_id": row["speaker_id"],
                         "condition": condition, "probabilities": probability.astype(float).tolist(),
-                        "status": "face_missing" if missing else "ok"}
+                        "status": "face_missing" if missing else "ok" if valid else "failed"}
                 if args.split == "et_test":
                     item["truth_M"] = row["labels"]["M"]
                 stream.write(json.dumps(item, ensure_ascii=False) + "\n")

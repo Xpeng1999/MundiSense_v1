@@ -9,7 +9,7 @@ from pathlib import Path
 
 import numpy as np
 
-from emotioncore.eval.metrics import LABELS, bootstrap_classification, classification
+from emotioncore.eval.metrics import LABELS, bootstrap_classification, classification, sims_metrics
 from emotioncore.x02.head_h1 import sha256
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x03.e2 import CONDITIONS
@@ -30,10 +30,15 @@ def ece15(probabilities: np.ndarray, truth: np.ndarray, failed: np.ndarray) -> f
                      for k in range(15) if np.any(bins == k)))
 
 
+def invalid_mask(rows: list[dict], condition: str) -> np.ndarray:
+    return np.asarray([row["status"] == "failed" or
+                       (condition == "V" and row["status"] == "face_missing")
+                       for row in rows])
+
+
 def score(rows: list[dict], probabilities: np.ndarray, condition: str) -> dict:
     truth = np.asarray([LABELS.index(row["truth_M"]) for row in rows])
-    failed = np.asarray([condition == "V" and row["status"] == "face_missing"
-                         for row in rows])
+    failed = invalid_mask(rows, condition)
     scored = [{"id": row["utt_id"], "speaker_id": row["speaker_id"],
                "truth": row["truth_M"],
                "pred": None if miss else LABELS[int(np.argmax(probability))]}
@@ -44,7 +49,8 @@ def score(rows: list[dict], probabilities: np.ndarray, condition: str) -> dict:
     result["ece15"] = ece15(probabilities, truth, failed)
     result["M_speaker_bootstrap_95"] = bootstrap_classification(
         scored, group_key="speaker_id")
-    result["face_missing_forced_error"] = int(failed.sum())
+    result["face_missing_forced_error"] = sum(
+        condition == "V" and row["status"] == "face_missing" for row in rows)
     return result
 
 
@@ -71,8 +77,7 @@ def calibrated_oof(rows: list[dict], condition: str):
         parameters.append({"fold": fold, "fit_count": int(fit.sum()),
                            "held_count": int(held.sum()),
                            "calibration": calibration.tolist(), "neutral_bias": bias})
-    missing = np.asarray([condition == "V" and row["status"] == "face_missing"
-                          for row in rows])
+    missing = invalid_mask(rows, condition)
     op_a[missing] = 1 / 7
     op_n[missing] = 1 / 7
     return op_a, op_n, parameters
@@ -88,8 +93,7 @@ def apply_final(rows_oof: list[dict], rows_target: list[dict], condition: str):
     op_a = softmax(scores)
     scores[:, 0] += bias
     op_n = softmax(scores)
-    missing = np.asarray([condition == "V" and row["status"] == "face_missing"
-                          for row in rows_target])
+    missing = invalid_mask(rows_target, condition)
     op_a[missing] = 1 / 7
     op_n[missing] = 1 / 7
     return op_a, op_n, {"calibration": calibration.tolist(), "neutral_bias": bias}
@@ -108,6 +112,16 @@ def write_predictions(path: Path, rows: list[dict], condition: str,
             stream.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
+def score_sims(rows: list[dict], op_n: np.ndarray, label_by_id: dict[str, float]) -> dict:
+    scored = []
+    for row, probability in zip(rows, op_n):
+        score_value = None if row["status"] == "failed" else float(
+            probability[1] - probability[2:6].sum())
+        scored.append({"id": row["utt_id"], "label": label_by_id[row["utt_id"]],
+                       "s": score_value})
+    return sims_metrics(scored)
+
+
 def run(args):
     git = git_provenance(Path.cwd(), args.allow_dirty)
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -116,6 +130,19 @@ def run(args):
     cv_ids = {row["utt_id"] for row in manifest
               if row["speaker_id"] in folds["cv_pool_speakers"]}
     test_ids = {row["utt_id"] for row in manifest if row["official_split"] == "test"}
+    sims_labels = None
+    if args.sims_dir is not None:
+        if args.artifact_index is None:
+            raise ValueError("SIMS-valid metrics require frozen X02 artifact index")
+        artifact_index = json.loads(args.artifact_index.read_text(encoding="utf-8"))
+        spec = artifact_index["predictions"]["A3_h2"]["sims_valid"]
+        source = Path(spec["path"])
+        if sha256(source) != spec["sha256"]:
+            raise ValueError("Frozen SIMS-valid label source SHA differs")
+        label_rows = read_jsonl(source)
+        sims_labels = {row["id"]: float(row["label"]) for row in label_rows}
+        if len(label_rows) != 647 or len(sims_labels) != 647:
+            raise ValueError("SIMS-valid label source coverage differs")
     expected_folds = {speaker: f["fold"] for f in folds["folds"]
                       for speaker in f["outer_holdout_speakers"]}
     summary = {}
@@ -145,9 +172,21 @@ def run(args):
                     "op_n": score(test_rows, test_n, condition)}
             artifacts["et_test"] = {"path": str(output), "sha256": sha256(output)}
             write_json_atomic(target_dir / "parameters_final.json", final)
+        sims = None
+        if sims_labels is not None:
+            sims_rows = read_jsonl(args.sims_dir / f"sims_valid_{condition}.jsonl")
+            if len(sims_rows) != 647 or {row["utt_id"] for row in sims_rows} != set(sims_labels):
+                raise ValueError("E2 SIMS-valid prediction coverage differs")
+            sims_a, sims_n, final = apply_final(rows, sims_rows, condition)
+            output = target_dir / "sims_valid.jsonl"
+            write_predictions(output, sims_rows, condition, sims_a, sims_n)
+            sims = score_sims(sims_rows, sims_n, sims_labels)
+            artifacts["sims_valid"] = {"path": str(output), "sha256": sha256(output)}
+            write_json_atomic(target_dir / "parameters_final.json", final)
         write_json_atomic(target_dir / "parameters_cv.json", {"folds": params})
         write_json_atomic(target_dir / "metrics.json",
                           {"condition": condition, "cv": cv, "et_test": test,
+                           "sims_valid": sims,
                            "artifacts": artifacts})
         summary[condition] = {"cv_op_n_macro_f1": cv["op_n"]["macro_f1"],
                               "cv_op_n_neutral_miss_rate": cv["op_n"]["neutral_false_positive_rate"],
@@ -167,6 +206,8 @@ def main():
     parser.add_argument("--folds", type=Path, required=True)
     parser.add_argument("--cv-dir", type=Path, required=True)
     parser.add_argument("--target-dir", type=Path, required=True)
+    parser.add_argument("--sims-dir", type=Path)
+    parser.add_argument("--artifact-index", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--allow-dirty", action="store_true")
     run(parser.parse_args())
