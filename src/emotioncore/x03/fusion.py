@@ -220,7 +220,7 @@ def write_predictions(path: Path, ids: list[str], records: list[dict],
     with path.open("w", encoding="utf-8") as stream:
         for uid, row, a, n in zip(ids, records, op_a, op_n):
             item = {"id": uid, "split": split, "op_a": a.tolist(), "op_n": n.tolist()}
-            for key in ("speaker_id", "fold", "truth_M", "label"):
+            for key in ("speaker_id", "fold", "truth_M", "label", "status", "feature_available"):
                 if key in row:
                     item[key] = row[key]
             stream.write(json.dumps(item, ensure_ascii=False) + "\n")
@@ -286,7 +286,8 @@ def run(args: argparse.Namespace) -> None:
             sims_a, sims_n, _ = apply_final(logp, y, sims_logp)
             write_predictions(target_dir / "sims_valid.jsonl", sims_ids, sims_records, sims_a, sims_n, "sims_valid")
             sims = sims_metrics([{"id": uid, "label": row["label"],
-                                  "s": float(p[1] - p[2:6].sum())}
+                                  "s": float(p[1] - p[2:6].sum())
+                                       if row.get("status") == "ok" else None}
                                  for uid, row, p in zip(sims_ids, sims_records, sims_n)])
         write_json_atomic(target_dir / "parameters_final.json", final)
         result = {"components": components, "cv": cv, "et_test": test, "sims_valid": sims,
