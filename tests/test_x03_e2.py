@@ -2,6 +2,7 @@ import numpy as np
 import torch
 
 from emotioncore.x03.e2 import E2Model, predict, sample_keep
+from emotioncore.x03.e2_metrics import score
 
 
 def test_modality_dropout_keeps_one_available_modality():
@@ -25,3 +26,13 @@ def test_visual_only_missing_face_is_uniform_and_kept_in_output():
     assert probabilities.shape == (2, 7)
     assert np.allclose(probabilities[1], 1 / 7, atol=0)
     assert np.allclose(probabilities.sum(axis=1), 1, atol=1e-6)
+
+
+def test_uniform_missing_visual_counts_as_error_even_for_neutral():
+    rows = [{"utt_id": "missing", "speaker_id": "01", "truth_M": "neutral",
+             "status": "face_missing"}]
+    result = score(rows, np.full((1, 7), 1 / 7), "V")
+    assert result["n"] == 1
+    assert result["failures"] == 1
+    assert result["wa"] == 0
+    assert result["face_missing_forced_error"] == 1
