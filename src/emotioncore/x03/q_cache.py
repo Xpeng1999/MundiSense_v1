@@ -36,6 +36,11 @@ def run(args: argparse.Namespace) -> None:
     def process(row: dict) -> dict:
         uid = row["utt_id"]
         condition = row["effective_form"]
+        if condition == "uniform":
+            if row["assigned_form"] != "V" or not row["face_missing"]:
+                raise ValueError("Uniform Q input outside missing-face V evaluation")
+            return {"utt_id": uid, "status": "uniform", "effective_form": condition,
+                    "face_missing": True}
         npz = args.cache_root / uid / f"{condition}.npz"
         receipt_path = args.cache_root / uid / f"{condition}.json"
         if receipt_path.is_file():
@@ -81,9 +86,10 @@ def run(args: argparse.Namespace) -> None:
                     write_json_atomic(args.output_dir / "progress.json",
                                       {"done": n, "total": len(rows)})
         summary = {"n": len(rows), "ok": sum(r["status"] == "ok" for r in receipts),
-                   "failed": sum(r["status"] != "ok" for r in receipts),
+                   "uniform": sum(r["status"] == "uniform" for r in receipts),
+                   "failed": sum(r["status"] not in ("ok", "uniform") for r in receipts),
                    "by_effective_form": {c: sum(r["effective_form"] == c for r in receipts)
-                                         for c in ("A", "V", "AV")},
+                                         for c in ("A", "V", "AV", "uniform")},
                    "face_missing": sum(r["face_missing"] for r in receipts)}
         write_json_atomic(args.output_dir / "summary.json", summary)
         if summary["failed"]:

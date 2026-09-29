@@ -113,7 +113,10 @@ def worker_main(detector_path: Path) -> None:
 def run(args: argparse.Namespace) -> None:
     provenance = git_provenance(Path.cwd(), args.allow_dirty)
     rows = [json.loads(line) for line in args.manifest.open(encoding="utf-8")]
-    if len(rows) != 19_250 or len({r["utt_id"] for r in rows}) != len(rows):
+    if args.split == "sims_valid":
+        from emotioncore.x02.sims_prepare import validate_adapter
+        validate_adapter(rows)
+    elif len(rows) != 19_250 or len({r["utt_id"] for r in rows}) != len(rows):
         raise ValueError("X03 accepts only the frozen EmotionTalk manifest")
     if args.limit is not None:
         rows = rows[:args.limit]
@@ -127,7 +130,7 @@ def run(args: argparse.Namespace) -> None:
             "preprocess_version": PREPROCESS_VERSION,
             "size": SIZE, "frames": FRAME_COUNT,
             "min_face_px_at_448": MIN_FACE_PX_AT_448,
-            "min_confidence": MIN_CONFIDENCE, "count": len(rows),
+            "min_confidence": MIN_CONFIDENCE, "split": args.split, "count": len(rows),
             "workers": args.workers, "timeout_s": args.timeout}
     write_json_atomic(meta_path, meta)
     local = threading.local()
@@ -202,6 +205,7 @@ def main() -> None:
     parser.add_argument("--detector", type=Path)
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--split", choices=("et", "sims_valid"), default="et")
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--timeout", type=float, default=120)
     parser.add_argument("--allow-dirty", action="store_true")
