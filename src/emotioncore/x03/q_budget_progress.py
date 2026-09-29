@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+from collections import Counter
 from pathlib import Path
 
 from emotioncore.x03.budget_v2 import GPU_LIMIT_H
 from emotioncore.x03.q_resume_budget import CONTINGENCY, DEBUG_RESERVE_H, LOAD_CHECKPOINT_OVERHEAD_H
+from emotioncore.x03.q_manifest import read_jsonl
 
 MODELS = ("fold0", "fold1", "fold2", "fold3", "fold4", "final")
 FORMS = ("A", "V", "AV")
@@ -30,7 +32,8 @@ def project(root: Path, progress: dict, completed_model: str) -> dict:
         raise ValueError(completed_model)
     completed = MODELS[:MODELS.index(completed_model) + 1]
     benchmark = _read(root / "gc_step_benchmark" / "summary.json")["forms"]
-    manifests = _read(root / "manifests" / "summary.json")
+    form_counts = {model: Counter(r["effective_form"] for r in read_jsonl(
+        root / "manifests" / f"{model}_train.jsonl")) for model in MODELS[1:]}
     inference = _read(root / "inference_manifests" / "summary.json")
     sims = _read(root / "sims_valid_manifests" / "summary.json")
     step_times = {}
@@ -50,14 +53,14 @@ def project(root: Path, progress: dict, completed_model: str) -> dict:
         actual_train_s += step_times[key]
         completed_gc_actual_s += step_times[key]
         completed_gc_baseline_s += sum(
-            2 * manifests[model]["assigned_counts"][form] * benchmark[form]["train_step_mean_s"]
+            2 * form_counts[model][form] * benchmark[form]["train_step_mean_s"]
             for form in FORMS) + 8 * 700 * benchmark["AV"]["inference_mean_s"]
     observed_ratio = (completed_gc_actual_s / completed_gc_baseline_s
                       if completed_gc_baseline_s else 1.0)
     pending_train_s = 0.0
     for model in MODELS[len(completed):]:
         pending_train_s += sum(
-            2 * manifests[model]["assigned_counts"][form] * benchmark[form]["train_step_mean_s"]
+            2 * form_counts[model][form] * benchmark[form]["train_step_mean_s"]
             for form in FORMS) + 8 * 700 * benchmark["AV"]["inference_mean_s"]
     pending_train_s *= observed_ratio * (1 + CONTINGENCY)
 

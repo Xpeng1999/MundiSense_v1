@@ -20,6 +20,10 @@ def test_completed_fold_time_changes_projection_and_stops_before_next_model(tmp_
     write(tmp_path / "manifests/summary.json", {
         name: {"assigned_counts": {"A": 100, "V": 100, "AV": 100}}
         for name in ("fold0", "fold1", "fold2", "fold3", "fold4", "final")})
+    for name in ("fold1", "fold2", "fold3", "fold4", "final"):
+        path = tmp_path / "manifests" / f"{name}_train.jsonl"
+        path.write_text("".join(json.dumps({"effective_form": form}) + "\n"
+                                for form in ("A", "V", "AV") for _ in range(100)))
     write(tmp_path / "inference_manifests/summary.json", {
         f"{run}_{form}": {"n": 10}
         for run in ("fold0", "fold1", "fold2", "fold3", "fold4", "final_et_test")
