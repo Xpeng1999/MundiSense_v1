@@ -2,7 +2,7 @@
 
 ## 1. 摘要
 
-X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，并批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。64 句正式训练循环实测的保守总估算为 **47.63 GPU 小时**，低于门限。Q fold 0 正在训练；E2 正在 CPU 并行执行。E1 已完成缺脸规则及 T1r-valid 补跑。尚无跨臂结论。
+X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，并批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。64 句正式训练循环实测的保守总估算为 **47.63 GPU 小时**，低于门限。Q fold 0 正在训练；E2 已在 CPU 上完成五折、目标集评估、校准及延迟测量。E1 已完成缺脸规则及 T1r-valid 补跑。尚无跨臂结论。
 
 ## 2. 第 0 步完成情况
 
@@ -14,9 +14,9 @@ X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，�
 
 已完成 X02 交付、E1 五组合及 T1r SIMS-valid、ET 19,250 条人脸视频预处理、Q 模态冒烟和预算预检。固定内验证 [x03_inner_val_subsets.json](../../configs/x03_inner_val_subsets.json)（SHA-256 `be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd`）按七类分层，每折从内验证说话人抽取 700 句，种子 20260929。固定 [x03_face_missing_policy.json](../../configs/x03_face_missing_policy.json)（SHA-256 `ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c`）规定训练 V/AV 缺脸改 A；评估 V 均匀七类并强制计错，AV 仅音频回退；E/H 画面专家均匀。内验证仍每 0.25 epoch 只评 AV。其余折数、2 epoch 上限、学习率、LoRA 和 60/20/20 形式比例不变。
 
-Q fold 0 训练中，首次固定 700 句 AV 内验证 macro-F1 为 0.5794。须待 fold 0 全部结束，再按最佳 checkpoint 核验 AV macro-F1 ≥ 0.45 并用实测总时长复核 55 GPU 小时门限，才能运行余下 4 折和最终模型。E2 CPU 五折训练并行中。H 与完整主表待 Q OOF。
+Q fold 0 训练中，已完成的固定 700 句 AV 内验证最佳 macro-F1 为 0.6615；此值不是 fold 0 结束门禁结果。须待 fold 0 全部结束，再按最佳 checkpoint 核验 AV macro-F1 ≥ 0.45 并用实测总时长复核 55 GPU 小时门限，才能运行余下 4 折和最终模型。E2 CPU 分支已完成；H 与完整主表待 Q OOF。
 
-新增显存保护仅从 fold 1 起生效，当前 fold 0 进程保持原样。原 fold 0 后续启动器已暂停，待保护代码和最坏情况预检接入后重新启用。E2 全程限定 CPU。
+新增显存保护仅从 fold 1 起生效，当前 fold 0 进程保持原样。接入保护代码与最坏情况预检的后续启动器已就位，等待 fold 0 自然结束。E2 全程限定 CPU。
 
 ## 4. 校准与工作点方法
 
@@ -36,7 +36,18 @@ E1 使用 X02 冻结概率，未重新提取特征；每组均覆盖 CV 16,366 �
 | A3+V2+T1r | 0.627 | 0.617 | 0.157 | 0.625 | 0.773 |
 | A3+A2+V2+V1+T1r | 0.639 | 0.631 | 0.157 | 0.626 | 0.777 |
 
-按预定 OP-N CV macro-F1，最后一组是 **E1 臂内最高**。X02 未提供 T1r 的 SIMS-valid 预测；reviewer 允许补做。SenseVoice 只处理 SIMS-valid 音频，成功 620/647，另外 27 条源音频缺失；冻结的 T1 最终模型已完成 r-token valid 推理，含 T1r 的两组已补齐此指标。E2 正在 CPU 五折训练。
+按预定 OP-N CV macro-F1，最后一组是 **E1 臂内最高**。X02 未提供 T1r 的 SIMS-valid 预测；reviewer 允许补做。SenseVoice 只处理 SIMS-valid 音频，成功 620/647，另外 27 条源音频缺失；冻结的 T1 最终模型已完成 r-token valid 推理，含 T1r 的两组已补齐此指标。
+
+E2 的五折特征级融合、全 CV 最终模型、ET-test、SIMS-valid、逐折校准和缺失模态评估均已完成。全部 E2 训练及推理使用 CPU，未占用 Q 的 GPU。下表为已冻结的 E2 指标；完整 OP-A/OP-N 指标、逐类结果及服务器概率文件的路径与 SHA-256 见 [AVT](results/E2_AVT_metrics.json)、[AV](results/E2_AV_metrics.json)、[A](results/E2_A_metrics.json)、[V](results/E2_V_metrics.json)。SIMS-valid 的相关系数基于有源音频的 620/647 句。
+
+| E2 条件 | CV OP-A F1 | CV OP-N F1 | ET-test OP-N F1 | SIMS-valid Pearson |
+|---|---:|---:|---:|---:|
+| A+V+T | 0.608 | 0.603 | 0.576 | 0.743 |
+| A+V | 0.563 | 0.558 | 0.512 | 0.714 |
+| A | 0.519 | 0.513 | 0.518 | 0.604 |
+| V | 0.419 | 0.402 | 0.326 | 0.625 |
+
+E2 的 V 条件中，CV 40 句及 ET-test 3 句缺合格人脸，按冻结规则输出均匀分布、计错且保留在分母。E2 A+V+T 的 ET-test 串行单句延迟 P50 为 5.424 秒、P95 为 16.118 秒（1,929 句；各阶段计时相加，不含模型加载）。原始 E2 汇总和 SHA-256：`$R3/E2/cv/results.json` 为 `de1eb0f74076d34f2ea4ec5a63e3ff69dd084a52f205f35f6db7c780a04cdea9`；`$R3/E2/eval/summary.json` 为 `ac73f78c2f68632375946fe96787c31eebc7aa79c84865fb19e3a144199d0329`；`$R3/E2/latency/summary.json` 为 `f11ce22be673e4cb67b0f99f82160a4ef235ebfad733b65f02b412b7c6e97b46`。
 
 ## 6. 臂 Q
 
@@ -54,11 +65,11 @@ Q 正式 OOF 不存在，H 未运行。
 
 ## 8. 主对照表与配对差值
 
-缺少 Q/H/E2 正式预测；完整主表和配对差值未生成。E1 的已有结果不充当最终架构对照。
+缺少 Q/H 正式预测；完整主表和配对差值未生成。E1/E2 的已有结果不充当最终架构对照。
 
 ## 9. 缺失模态鲁棒性与截断敏感性
 
-Q 仅完成模态冒烟，没有评估预测；E2 未训练。因此未计算鲁棒性或截断敏感性。X02 冻结质量标记已就绪，不参与参数选择。
+E2 的 A、V、A+V 缺失模态评估已完成，数值见第 5 节。Q 仅完成模态冒烟，没有评估预测；跨系统截断敏感性仍待 Q/H 完成。X02 冻结质量标记已就绪，不参与参数选择。
 
 ## 10. 错误分析
 
@@ -70,7 +81,7 @@ Reviewer 取消臂 P。X02 P2 已用 bitsandbytes NF4 双重量化和 BF16 尝�
 
 ## 12. 耗时与资源
 
-E1 为 CPU 后处理。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
+E1 为 CPU 后处理，E2 的训练、目标集评估和延迟测量在 Q 训练期间只用 CPU；E2 端到端延迟见第 5 节。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
 
 ## 13. 异常
 
