@@ -1,8 +1,10 @@
 import numpy as np
 import torch
+import json
 
 from emotioncore.x03.e2 import E2Model, predict, sample_keep
-from emotioncore.x03.e2_metrics import calibrated_oof, fit_neutral_bias_with_invalid, score
+from emotioncore.x03.e2_metrics import (calibrated_oof, fit_neutral_bias_with_invalid,
+                                        score, write_predictions)
 
 
 def test_modality_dropout_keeps_one_available_modality():
@@ -83,3 +85,18 @@ def test_calibrated_missing_visual_stays_uniform():
     op_a, op_n, _ = calibrated_oof(rows, "V")
     assert np.array_equal(op_a[0], np.full(7, 1 / 7))
     assert np.array_equal(op_n[0], np.full(7, 1 / 7))
+
+
+def test_sims_prediction_carries_frozen_label_and_valence(tmp_path):
+    path = tmp_path / "sims_valid.jsonl"
+    rows = [{"utt_id": "valid_one", "speaker_id": "sims_valid", "status": "ok"},
+            {"utt_id": "missing_one", "speaker_id": "sims_valid", "status": "failed"}]
+    probabilities = np.array([[0.1, 0.5, 0.1, 0.1, 0.1, 0.05, 0.05],
+                              [1 / 7] * 7])
+    write_predictions(path, rows, "AVT", probabilities, probabilities,
+                      sims_labels={"valid_one": 1.0, "missing_one": -1.0})
+    actual = [json.loads(line) for line in path.read_text().splitlines()]
+    assert actual[0]["label"] == 1.0
+    assert np.isclose(actual[0]["s"], 0.15)
+    assert actual[1]["label"] == -1.0
+    assert actual[1]["s"] is None

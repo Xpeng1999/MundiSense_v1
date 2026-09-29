@@ -124,7 +124,8 @@ def apply_final(rows_oof: list[dict], rows_target: list[dict], condition: str):
 
 
 def write_predictions(path: Path, rows: list[dict], condition: str,
-                      op_a: np.ndarray, op_n: np.ndarray):
+                      op_a: np.ndarray, op_n: np.ndarray,
+                      sims_labels: dict[str, float] | None = None):
     with path.open("w", encoding="utf-8") as stream:
         for row, a, n in zip(rows, op_a, op_n):
             item = {"utt_id": row["utt_id"], "speaker_id": row["speaker_id"],
@@ -133,6 +134,10 @@ def write_predictions(path: Path, rows: list[dict], condition: str,
             for key in ("fold", "truth_M"):
                 if key in row:
                     item[key] = row[key]
+            if sims_labels is not None:
+                item["label"] = sims_labels[row["utt_id"]]
+                item["s"] = None if row["status"] == "failed" else float(
+                    n[1] - n[2:6].sum())
             stream.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
@@ -203,7 +208,8 @@ def run(args):
                 raise ValueError("E2 SIMS-valid prediction coverage differs")
             sims_a, sims_n, final = apply_final(rows, sims_rows, condition)
             output = target_dir / "sims_valid.jsonl"
-            write_predictions(output, sims_rows, condition, sims_a, sims_n)
+            write_predictions(output, sims_rows, condition, sims_a, sims_n,
+                              sims_labels=sims_labels)
             sims = score_sims(sims_rows, sims_n, sims_labels)
             artifacts["sims_valid"] = {"path": str(output), "sha256": sha256(output)}
             write_json_atomic(target_dir / "parameters_final.json", final)
