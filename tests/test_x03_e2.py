@@ -69,3 +69,17 @@ def test_neutral_workpoint_retains_invalid_neutral_in_denominator():
     assert np.isclose(bias, 0.2)
     predicted = np.argmax(logits + np.array([bias, 0, 0, 0, 0, 0, 0]), axis=1)
     assert int(np.count_nonzero((predicted[~invalid] != 0))) == 1
+
+
+def test_calibrated_missing_visual_stays_uniform():
+    from emotioncore.eval.metrics import LABELS
+
+    rng = np.random.default_rng(17)
+    rows = [{"fold": fold, "truth_M": label,
+             "status": "face_missing" if fold == 0 and label == "neutral" else "ok",
+             "probabilities": (np.full(7, 1 / 7) if fold == 0 and label == "neutral"
+                               else rng.dirichlet(np.ones(7))).tolist()}
+            for fold in range(5) for label in LABELS]
+    op_a, op_n, _ = calibrated_oof(rows, "V")
+    assert np.array_equal(op_a[0], np.full(7, 1 / 7))
+    assert np.array_equal(op_n[0], np.full(7, 1 / 7))
