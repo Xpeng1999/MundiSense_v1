@@ -1,4 +1,4 @@
-"""Resume approved Q folds after fold-zero sanity, enforcing the 55-hour GPU cap."""
+"""Resume approved Q folds after fold-zero sanity, enforcing the 75-hour GPU cap."""
 from __future__ import annotations
 
 import argparse
@@ -13,6 +13,7 @@ from pathlib import Path
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x03.budget_v2 import FACE_SHA, GPU_LIMIT_H, SUBSET_SHA
 from emotioncore.x03.q_manifest import sha256
+from emotioncore.x03.q_budget_progress import record as record_budget
 
 
 def read(path: Path) -> dict:
@@ -102,42 +103,37 @@ def run(args: argparse.Namespace) -> None:
     if not resume_budget_path.is_file():
         raise RuntimeError("Q checkpointed step-time budget gate is missing")
     resume_budget = read(resume_budget_path)
-    if (resume_budget["status"] != "within_budget" or
+    if (resume_budget["gpu_limit_h"] != GPU_LIMIT_H or
+            resume_budget["status"] != "within_budget" or
             resume_budget["projected_total_gpu_h"] > GPU_LIMIT_H or
             resume_budget["equivalence_sha256"] !=
             sha256(args.root / "checkpoint_equivalence" / "receipt.json") or
             resume_budget["preflight_sha256"] !=
             sha256(args.root / "worst_case_preflight" / "summary.json")):
-        raise RuntimeError("Q checkpoint equivalence, memory or 55-hour gate is closed")
+        raise RuntimeError("Q checkpoint equivalence, memory or 75-hour gate is closed")
     budget = read(Path("experiments/X03_fusion/results/q_budget_fold0_preflight.json"))
-    if budget["status"] != "within_budget_estimate" or budget["gpu_limit_h"] != GPU_LIMIT_H:
+    if budget["status"] != "within_budget_estimate" or budget["gpu_limit_h"] != 55.0:
         raise RuntimeError("Q preflight budget gate is closed")
     root = args.root
     fold0 = read(root / "fold0" / "summary.json")
     if not fold0["sanity_pass"] or fold0["best_av_macro_f1"] < .45:
         raise RuntimeError("Fold 0 AV sanity gate failed; do not continue Q")
-    manifests = read(root / "manifests" / "summary.json")
-    projected_train_h = fold0["gpu_elapsed_s"] * sum(
-        manifests[name]["train_count"] for name in (*[f"fold{i}" for i in range(5)], "final")) / \
-        manifests["fold0"]["train_count"] / 3600
-    projected_total_h = projected_train_h + budget["projected_prediction_h"] + \
-        budget["model_load_checkpoint_overhead_h"]
-    if projected_total_h > GPU_LIMIT_H:
-        write_json_atomic(root / "pipeline_stop.json",
-                          {"reason": "fold0_reestimate_exceeds_55h",
-                           "projected_total_h": projected_total_h,
-                           "fold0_best_av_macro_f1": fold0["best_av_macro_f1"]})
-        raise RuntimeError("Fold 0 measured Q projection exceeds the 55-hour GPU cap")
     root.mkdir(parents=True, exist_ok=True)
     progress_path = root / "pipeline_progress.json"
     progress = read(progress_path) if progress_path.is_file() else {
         "git": git, "started_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "fold0_sanity_pass": True, "fold0_best_av_macro_f1": fold0["best_av_macro_f1"],
         "fold0_checkpoint_sha256": fold0["best_checkpoint_sha256"],
-        "fold0_reestimated_total_gpu_h": projected_total_h,
+        "fold0_reestimated_total_gpu_h": resume_budget["projected_total_gpu_h"],
         "gpu_limit_h": GPU_LIMIT_H, "active_step": None, "steps": []}
-    if progress["gpu_limit_h"] != GPU_LIMIT_H or progress["fold0_checkpoint_sha256"] != fold0["best_checkpoint_sha256"]:
+    if progress["fold0_checkpoint_sha256"] != fold0["best_checkpoint_sha256"]:
         raise ValueError("Prior Q pipeline progress differs from frozen gate")
+    if progress["gpu_limit_h"] == 55.0:
+        progress["previous_gpu_limit_h"] = 55.0
+        progress["gpu_limit_h"] = GPU_LIMIT_H
+        progress["budget_approval"] = "2026-09-29 reviewer approval: 75 h including fold0"
+    if progress["gpu_limit_h"] != GPU_LIMIT_H:
+        raise ValueError("Prior Q pipeline budget differs from approved gate")
     write_json_atomic(root / "pipeline_progress.json", progress)
     py = sys.executable
     cache = args.cache_root
@@ -178,6 +174,7 @@ def run(args: argparse.Namespace) -> None:
     for form in ("A", "V", "AV"):
         cache_manifest(f"fold0_infer_{form}", inference / f"fold0_{form}.jsonl")
     predict("fold0", inference / "run_meta.json", fold0)
+    record_budget(root, progress, "fold0")
     for index in range(1, 5):
         name = f"fold{index}"
         train_summary = root / name / "summary.json"
@@ -194,14 +191,12 @@ def run(args: argparse.Namespace) -> None:
         for form in ("A", "V", "AV"):
             cache_manifest(f"{name}_infer_{form}", inference / f"{name}_{form}.jsonl")
         predict(name, inference / "run_meta.json", trained)
-        consumed = fold0["gpu_elapsed_s"] + sum(
-            step["elapsed_s"] for step in progress["steps"]
-            if step["name"].startswith(("train_", "predict_")) or
-            step["name"] == "worst_case_probe")
-        progress["gpu_elapsed_h_upper_bound"] = consumed / 3600
+        if index == 1 and not (root / "interim_fold01.json").is_file():
+            run_step("interim_fold01", command("q_midterm", "--root", str(root),
+                     "--e1-root", str(root.parent / "E1_v4"),
+                     "--output", str(root / "interim_fold01.json")), root, progress)
+        progress["budget_projection"] = record_budget(root, progress, name)
         write_json_atomic(root / "pipeline_progress.json", progress)
-        if consumed / 3600 > GPU_LIMIT_H:
-            raise RuntimeError("Q GPU budget exceeded after completed fold")
     final_summary = root / "final" / "summary.json"
     if not final_summary.is_file():
         cache_manifest("final_train", root / "manifests" / "final_train.jsonl")
@@ -220,6 +215,7 @@ def run(args: argparse.Namespace) -> None:
     for form in ("A", "V", "AV"):
         cache_manifest(f"final_sims_valid_{form}", sims_manifest / f"final_sims_valid_{form}.jsonl")
     predict("final_sims_valid", sims_manifest / "run_meta.json", trained)
+    progress["budget_projection"] = record_budget(root, progress, "final")
     consumed = fold0["gpu_elapsed_s"] + sum(
         step["elapsed_s"] for step in progress["steps"]
         if step["name"].startswith(("train_", "predict_")) or
@@ -229,7 +225,7 @@ def run(args: argparse.Namespace) -> None:
     progress["completed"] = True
     write_json_atomic(root / "pipeline_progress.json", progress)
     if consumed / 3600 > GPU_LIMIT_H:
-        raise RuntimeError("Completed Q pipeline exceeded 55 GPU hours")
+        raise RuntimeError("Completed Q pipeline exceeded 75 GPU hours")
 
 
 def main() -> None:

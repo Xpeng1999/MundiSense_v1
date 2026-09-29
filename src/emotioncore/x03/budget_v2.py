@@ -10,7 +10,7 @@ from pathlib import Path
 
 SUBSET_SHA = "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd"
 FACE_SHA = "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c"
-GPU_LIMIT_H = 55.0
+GPU_LIMIT_H = 75.0  # Reviewer approval after the checkpointed-step re-estimate.
 
 
 def sha256(path: Path) -> str:

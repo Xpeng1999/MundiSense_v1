@@ -87,7 +87,7 @@ def run(args: argparse.Namespace) -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     write_json_atomic(args.output, result)
     if result["status"] != "within_budget":
-        raise RuntimeError("Checkpointed Q remaining schedule exceeds 55 GPU hours")
+        raise RuntimeError(f"Checkpointed Q remaining schedule exceeds {GPU_LIMIT_H:g} GPU hours")
 
 
 def main() -> None:
