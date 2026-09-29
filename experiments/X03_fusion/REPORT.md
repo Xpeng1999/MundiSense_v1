@@ -14,7 +14,7 @@ X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，�
 
 已完成 X02 交付、E1 五组合及 T1r SIMS-valid、ET 19,250 条人脸视频预处理、Q 模态冒烟和预算预检。固定内验证 [x03_inner_val_subsets.json](../../configs/x03_inner_val_subsets.json)（SHA-256 `be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd`）按七类分层，每折从内验证说话人抽取 700 句，种子 20260929。固定 [x03_face_missing_policy.json](../../configs/x03_face_missing_policy.json)（SHA-256 `ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c`）规定训练 V/AV 缺脸改 A；评估 V 均匀七类并强制计错，AV 仅音频回退；E/H 画面专家均匀。内验证仍每 0.25 epoch 只评 AV。其余折数、2 epoch 上限、学习率、LoRA 和 60/20/20 形式比例不变。
 
-Q fold 0 训练中，须先通过固定内验证 AV macro-F1 ≥ 0.45 才运行余下 4 折和最终模型。E2 CPU 五折训练并行中。H 与完整主表待 Q OOF。
+Q fold 0 训练中，首次固定 700 句 AV 内验证 macro-F1 为 0.5794。须待 fold 0 全部结束，再按最佳 checkpoint 核验 AV macro-F1 ≥ 0.45 并用实测总时长复核 55 GPU 小时门限，才能运行余下 4 折和最终模型。E2 CPU 五折训练并行中。H 与完整主表待 Q OOF。
 
 ## 4. 校准与工作点方法
 
@@ -42,7 +42,7 @@ X02 人脸裁剪已在原框每侧外扩 20%。X03 对冻结裁剪帧重新做�
 
 Q 冒烟使用原始 WAV 在处理子进程转为 16 kHz 单声道，A/V/AV 分别留下 processor 回执：A 仅音频，V 仅视频，AV 同时含二者；forward 再次断言。七类首 token ID 两两不同。模型从本地 Qwen2.5-Omni-7B 基座加载，NF4 双重量化、BF16；语言注意力 LoRA rank 16，视觉注意力 LoRA rank 8，音频塔无可训练参数。实测峰值 CUDA allocated：A 10,089 MiB、V 24,291 MiB、AV 25,816 MiB。这里只进行了重复单样本优化步，不产生可用于评估的 adapter。
 
-64 句正式训练循环冒烟完成 8 次参数更新，用时 60.36 秒，即 0.943 秒/句，峰值 CUDA allocated 28,892 MiB。六次训练每轮共 62,201 句、最多两轮，按实测约 32.59 小时，另加 20% 训练耗时余量后为 39.11 小时；固定子集共 33,600 次 AV 验证预计 3.49 小时，三条件正式推理预计 4.54 小时，模型加载/保存预留 0.5 小时。总估算 **47.63 GPU 小时**，低于新门限 55 小时；来源及计算见 [预检预算 JSON](results/q_budget_fold0_preflight.json)。媒体 CPU 预处理未计 GPU 小时。Q fold 0 已启动，待训练完成按固定子集 AV macro-F1 ≥ 0.45 的健全性条件检查。
+64 句正式训练循环冒烟完成 8 次参数更新，用时 60.36 秒，即 0.943 秒/句，峰值 CUDA allocated 28,892 MiB。六次训练每轮共 62,201 句、最多两轮，按实测约 32.59 小时，另加 20% 训练耗时余量后为 39.11 小时；固定子集共 33,600 次 AV 验证预计 3.49 小时，三条件正式推理预计 4.54 小时，模型加载/保存预留 0.5 小时。总估算 **47.63 GPU 小时**，低于新门限 55 小时；来源及计算见 [预检预算 JSON](results/q_budget_fold0_preflight.json)。媒体 CPU 预处理未计 GPU 小时。Q fold 0 首次 0.25 epoch 内验证已完成 700 句，AV macro-F1 为 0.5794，验证耗时 567.94 秒；最佳 adapter 已保存。仍须待两轮训练及 8 次验证全部结束，再执行正式健全性门禁和预算复核。
 
 ## 7. 臂 H
 
