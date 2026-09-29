@@ -1,0 +1,40 @@
+{
+  "status": "stopped_before_fold1",
+  "reason": "mandatory_longest20_av_memory_gate_inconclusive_after_cuda_driver_residency_failures",
+  "at": "2026-09-29T13:17:05.428664+00:00",
+  "fold0_sanity_pass": true,
+  "fold0_reestimated_total_gpu_h": 50.51235824791819,
+  "memory_limit_bytes": 30000000000,
+  "selected_count": 20,
+  "max_input_token_length": 1104,
+  "min_input_token_length": 1016,
+  "tested_with_successful_forward_and_backward": 0,
+  "attempts": [
+    {
+      "log": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/worst_case_probe_attempt0.log",
+        "sha256": "3fcc5be126a98f584b5519826087a9642a6e94ee56a5da66b3eaa6a01cb67150"
+      },
+      "soft_nofile": 1024,
+      "outcome": "CUDA driver error: unknown error; WSL dxg get_unused_fd_flags failed; no per-sample receipt"
+    },
+    {
+      "log": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/worst_case_retry1.log",
+        "sha256": "0e1affd2ba38caccd07e089617139dccc86402c06373a4f28d90f04b5ec9651b"
+      },
+      "soft_nofile": 65536,
+      "outcome": "CUDA driver error: device not ready during first backward; WSL dxg make_resident ioctl failed -12; no per-sample receipt"
+    }
+  ],
+  "selection": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/worst_case_preflight/selected_longest20.json",
+    "sha256": "feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10"
+  },
+  "pipeline_progress": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_progress.json",
+    "sha256": "69be56acdf17adef0ca434b15df6e1007cb63d4fd427bbde1c091ec4e247fae5"
+  },
+  "fold1_started": false,
+  "prohibited_next_step": "Do not run fold1 or downstream Q until the same frozen 20-sample probe completes under the literal 30,000,000,000-byte cap without OOM or driver residency failure."
+}

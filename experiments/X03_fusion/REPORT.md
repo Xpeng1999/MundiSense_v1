@@ -2,7 +2,7 @@
 
 ## 1. 摘要
 
-X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，并批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**；按实测重估总 GPU 时长 **50.51 小时**，通过前两项门禁。最长 20 条 AV 输入的显存门禁仍在准备缓存。E1/E2 已完成；尚无跨臂结论。
+X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，并批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**；按实测重估总 GPU 时长 **50.51 小时**，通过前两项门禁。最长 20 条 AV 输入的显存预检在首条样本上两次遭遇 WSL/CUDA 驱动错误，未取得有效峰值，已按门禁停止在 fold 1 前。E1/E2 已完成；尚无跨臂结论。
 
 ## 2. 第 0 步完成情况
 
@@ -16,7 +16,7 @@ X02 第 0 步已补齐。Reviewer 已将 Q 的 GPU 上限提高至 55 小时，�
 
 Q fold 0 已自然结束：两轮共处理 19,652 个训练样本，完成 8 次固定 700 句 AV 内验证；第 5 次验证得到最佳 macro-F1 0.6966，超过 0.45 门限。总 GPU 时长按 fold 0 实测重估为 50.51 小时，低于 55 小时门限。E2 CPU 分支已完成；H 与完整主表待 Q OOF。
 
-新增显存保护仅从 fold 1 起生效，fold 0 全程保持原样。后续启动器已通过前两项门禁，正在缓存最长 AV 输入候选；显存预检通过前不启动 fold 1。E2 全程限定 CPU。
+新增显存保护仅从 fold 1 起生效，fold 0 全程保持原样。后续启动器通过前两项门禁，并完成 15,281 条 AV 训练候选缓存；显存预检未通过，已停止，fold 1 未启动。E2 全程限定 CPU。
 
 ## 4. 校准与工作点方法
 
@@ -59,19 +59,21 @@ Q 冒烟使用原始 WAV 在处理子进程转为 16 kHz 单声道，A/V/AV 分�
 
 fold 0 正式训练共处理 19,652 个样本，2457 次优化步，GPU 实测 **25,862.63 秒（7.18 小时）**；8 次固定 700 句 AV 内验证均覆盖完整且无推理失败。最佳为第 5 次，macro-F1 **0.696626**，adapter SHA-256 `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50`。模态前向回执：A 3960、V 3922、AV 11770；缺脸训练回退 30 次。完整训练曲线和统计见 [fold 0 汇总](results/q_fold0_summary.json)。流水线根据实测将六次训练及推理总 GPU 时长重估为 **50.5124 小时**，低于 55 小时上限；门禁值记录在服务器 `$R3/Q/pipeline_progress.json`。该预算仍须在后续每折根据实际耗时核验。
 
-fold 1 起的 Q 训练及推理进程设 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。fold 0 结束后、fold 1 开始前，对全部训练 manifest 中去重的 15,281 条 AV 句按实际 `input_ids` 长度排序，逐条前后向检查最长 20 条；PyTorch 分配峰值超过 **30,000,000,000 字节（十进制 30 GB）**或 OOM 即停止，不截断输入。目前正在准备候选缓存，预检结果待运行。
+fold 1 起的 Q 训练及推理进程拟设 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。这些训练保护均已实现，但 fold 1 尚未启动，因此没有正式训练监控或 OOM 跳过记录。
+
+fold 0 结束后，流水线从六份冻结训练 manifest 中去重得到 15,281 条 AV 句，全部缓存成功，按实际 `input_ids` 长度选出最长 20 条（1,016–1,104 token），计划逐条前向加反向，检查 PyTorch 分配峰值不超过 **30,000,000,000 字节（十进制 30 GB）**且无 OOM。第一次预检在首条前向时出现 `CUDA driver error: unknown error`，同时 WSL 报文件描述符获取失败；将进程软上限从 1024 提至 65,536 后，原样重试在首条反向时出现 `CUDA driver error: device not ready`，WSL `dxgkio_make_resident` 返回 `-12`。两次均未完成任何一条前后向，未生成峰值收据，因此**不能判定 30 GB 数值门限是否满足**。按“20 条均完成且无 OOM 才继续”的门禁，Q 已停止在 fold 1 前；未截断或替换输入。服务器停止收据及日志 SHA-256 见 [预检停止记录](results/q_pipeline_stop.json)。
 
 ## 7. 臂 H
 
-Q 正式 OOF 不存在，H 未运行。
+Q 正式完整 OOF 不存在，H 未运行；fold 0 adapter 不参与跨臂比较。
 
 ## 8. 主对照表与配对差值
 
-缺少 Q/H 正式预测；完整主表和配对差值未生成。E1/E2 的已有结果不充当最终架构对照。
+因显存预检未能完成，缺少 Q/H 正式预测；完整主表和配对差值无法生成。E1/E2 的已有结果不充当最终架构对照。
 
 ## 9. 缺失模态鲁棒性与截断敏感性
 
-E2 的 A、V、A+V 缺失模态评估已完成，数值见第 5 节。Q 仅完成模态冒烟，没有评估预测；跨系统截断敏感性仍待 Q/H 完成。X02 冻结质量标记已就绪，不参与参数选择。
+E2 的 A、V、A+V 缺失模态评估已完成，数值见第 5 节。Q 仅完成模态冒烟和 fold 0 内验证，没有正式 OOF/目标集预测；跨系统截断敏感性因 Q/H 缺失无法完成。X02 冻结质量标记已就绪，不参与参数选择。
 
 ## 10. 错误分析
 
@@ -83,14 +85,15 @@ Reviewer 取消臂 P。X02 P2 已用 bitsandbytes NF4 双重量化和 BF16 尝�
 
 ## 12. 耗时与资源
 
-E1 为 CPU 后处理，E2 的训练、目标集评估和延迟测量在 Q 训练期间只用 CPU；E2 端到端延迟见第 5 节。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
+E1 为 CPU 后处理，E2 的训练、目标集评估和延迟测量在 Q 训练期间只用 CPU；E2 端到端延迟见第 5 节。Q fold 0 用 GPU 7.18 小时，首次最长 AV 预检进程用时 469.97 秒，第二次同样未产生有效显存收据；不得将驱动错误记为 30 GB 以内的成功测量。Q 冒烟显存峰值见第 6 节。GPU 预算估算、原始三条件计时与参数数量见 [预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
 
 ## 13. 异常
 
 - ET 有 43 条固定人脸过滤失败，已在 fold 0 前冻结回退规则。
 - SIMS-valid SenseVoice 首次调用的 Python 环境缺少 FunASR，失败收据保留；改用 X02 原 FunASR 环境后成功 620/647，27 条源音频缺失。
+- Q 最长 AV 显存预检两次在首条样本的 CUDA 前向或反向失败：第一次伴随 WSL 文件描述符错误，第二次在提高文件描述符上限后伴随 WSL 显存驻留 `-12`。未获得 20 条有效峰值；`nvidia-smi` 在进程退出后仍可读取 GPU。已冻结服务器日志及 [停止收据](results/q_pipeline_stop.json)，fold 1 零训练、零推理。
 - CH-SIMS test 封存集未推理；旧项目目录保持只读。
 
 ## 14. 给 reviewer 的问题
 
-预算、缺脸回退、T1r valid 补做、中性误报口径、X02 归档和取消 P 均已获批。目前没有新的协议问题。
+预算、缺脸回退、T1r valid 补做、中性误报口径、X02 归档和取消 P 均已获批。当前需先排除 WSL/CUDA 显存驻留故障，再用同一冻结清单完成全部 20 条 AV 前后向且每条峰值 ≤30,000,000,000 字节，才能恢复 Q；现有证据不支持放宽阈值、截断输入或选择架构。
