@@ -131,7 +131,7 @@ def model_and_optimizer():
     for name, module in thinker.named_modules():
         if not isinstance(module, torch.nn.Module):
             continue
-        if ".layers." in name and name.endswith((".q_proj", ".k_proj", ".v_proj", ".o_proj")):
+        if name.startswith("model.layers.") and name.endswith((".q_proj", ".k_proj", ".v_proj", ".o_proj")):
             targets.append(name)
         elif name.startswith("visual.blocks.") and name.endswith((".attn.q", ".attn.k",
                                                                   ".attn.v", ".attn.proj")):
