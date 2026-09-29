@@ -1,0 +1,345 @@
+{
+  "features": {
+    "A1": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A1/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A1/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A1/run_meta_cv.json",
+      "run_meta_sha256": "c9e1fb51936717e42a547a8466104fa9cb2ca2b0adcbd3b3dd97dd3835159b4f",
+      "dimension": "1024 frame + 1024 utterance",
+      "frame_rate": "50 Hz"
+    },
+    "A2": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A2/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A2/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A2/run_meta_cv.json",
+      "run_meta_sha256": "92708449ef95d0f3c75da21da4cba963be88f276393dc5b1d5c62abff282c544",
+      "dimension": "3584 frame",
+      "frame_rate": "~25 Hz; actual frame counts in receipts"
+    },
+    "A3": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A3/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A3/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/A3/run_meta_cv.json",
+      "run_meta_sha256": "10e5484218f8001bd69ce3402f8f4b025925e566553c52a4182d7f0bb0ce94a7",
+      "dimension": "4 × 1024 frame",
+      "frame_rate": "50 Hz"
+    },
+    "V1": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V1/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V1/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V1/run_meta_cv.json",
+      "run_meta_sha256": "c29a14fb617e91441439a80b72ea9d80f7c6da0b00d42641bf0f85226f4d7a87",
+      "dimension": "1280 frame + 8 native logits",
+      "frame_rate": "YuNet 5 fps, up to 8 frames"
+    },
+    "V2": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V2/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V2/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V2/run_meta_cv.json",
+      "run_meta_sha256": "054be3fd6651e700207b1a4de905ff629effa17a5f291b9ae02273e9dc2cefc3",
+      "dimension": "768 frame",
+      "frame_rate": "YuNet 5 fps, up to 8 frames"
+    },
+    "V3a": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3a/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3a/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3/run_meta_cv.json",
+      "run_meta_sha256": "acaf3f1071bfba40523ffcc67caa050fb63166707a00901750b4a6c26e489746",
+      "dimension": "3584 frame",
+      "frame_rate": "YuNet 5 fps sample positions, whole frame 50176 pixels"
+    },
+    "V3b": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3b/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3b/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/V3/run_meta_cv.json",
+      "run_meta_sha256": "acaf3f1071bfba40523ffcc67caa050fb63166707a00901750b4a6c26e489746",
+      "dimension": "3584 frame",
+      "frame_rate": "YuNet 5 fps sample positions, 448×448 face"
+    },
+    "T2_o": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_o/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_o/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_o/run_meta_cv.json",
+      "run_meta_sha256": "13109e84816abb7701b8245fde7317245694632a88a5ed7cc245e730cf292c46",
+      "dimension": "1024 sentence vector",
+      "frame_rate": "utterance"
+    },
+    "T2_r": {
+      "receipts": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_r/receipts",
+      "data": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_r/data",
+      "run_meta": "/home/administrator/emotion-data/emotioncore_runs/X02/features/T2_r/run_meta_cv.json",
+      "run_meta_sha256": "7da6900e15ea436793324979053fb27878b600625293762eff255dc46ac67349",
+      "dimension": "1024 sentence vector",
+      "frame_rate": "utterance"
+    },
+    "T1_o": {
+      "tokens": "/home/administrator/emotion-data/emotioncore_runs/X02/tokens/T1_o_cv.npz",
+      "tokens_sha256": "4aeb813d7be90547d9ea360bd62c6d89c101f9b6ba375df7b91f5f410be14342"
+    },
+    "T1_r": {
+      "tokens": "/home/administrator/emotion-data/emotioncore_runs/X02/tokens/T1_r_cv.npz",
+      "tokens_sha256": "edbea604cc9064b32edcb335ab2070ff74f0431c111f8cbc77f4333c2360a321"
+    }
+  },
+  "predictions": {
+    "A1_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A1_h1_cv/oof.jsonl",
+        "sha256": "9894084bb2228a97ec101e9e15bc7abdfdd8bb5aaaa97f68f08ae1ecafc5fb5f"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A1_h1/et_test.jsonl",
+        "sha256": "54875177a6b11d9fd88693b7f2c554aa8c39002fac988a5e4af359f5824993d7"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A1_h1/sims_valid.jsonl",
+        "sha256": "4d7e6cd5fa3282f88199aebc3e5208146479ab96f67e080e91bb7213b2a0f4ac"
+      }
+    },
+    "A1_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A1_h2_cv/oof.jsonl",
+        "sha256": "91d30ebfc5a5841c7104837a730b7bab6310609abd0e379553012242464305a0"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A1_h2/et_test.jsonl",
+        "sha256": "c5b40c1bd2b39bd57fd9e4434d145cfc49e5d3be714ac0ea8ff373c169c1030c"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A1_h2/sims_valid.jsonl",
+        "sha256": "486abe2d051a43aca6fc2be8733910ff29804eeee3d1df3c48614ebc718f2a59"
+      }
+    },
+    "A2_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A2_h1_cv/oof.jsonl",
+        "sha256": "4ca6266fcb1e89b1a7edaea95cd9db81af0f5758e07398b76f0ad694b46f0255"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A2_h1/et_test.jsonl",
+        "sha256": "528d3c2925171eed88efe4aa40c8cda95e4156daf416f132b4624fc2b00fe410"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A2_h1/sims_valid.jsonl",
+        "sha256": "021bc7f913beec10fb8582b91814590a55f681a4f37b2a5fd4bb9599712d0180"
+      }
+    },
+    "A2_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A2_h2_cv/oof.jsonl",
+        "sha256": "df4a99fe55a1e5e696bb34c0e7ba78ce0195bfaf39ab85a50bfc3810a632be55"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A2_h2/et_test.jsonl",
+        "sha256": "b4e82a91a175ac4e1a355f537f786155210d06de6e1a419daa6ea0c492bb0f92"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A2_h2/sims_valid.jsonl",
+        "sha256": "003901dbd1d2d13b1b497ac4f0204894f9a95f0377903a9ede75b0cdc7740b23"
+      }
+    },
+    "A3_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A3_h1_cv/oof.jsonl",
+        "sha256": "6c5eda93046534151e0f47e0f7fda36093ba3f03731e6b6165f836f974fbd655"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A3_h1/et_test.jsonl",
+        "sha256": "5ac127a60b7c4cbd60cf69a0775dba57cac95dfc610027caeb387124560fc249"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A3_h1/sims_valid.jsonl",
+        "sha256": "0b126b2c42af359c3d753231835af5a96a2fd143a9c71ab2ec2cbc2a70b16636"
+      }
+    },
+    "A3_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A3_h2_cv/oof.jsonl",
+        "sha256": "463b5da707b87fcabbfe2d2688f0fea106260bf745aafc5acf973876ed3f1dd5"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A3_h2/et_test.jsonl",
+        "sha256": "1d10673e11d4d57810110c8a0b4f221d5cdcb70884b1f5d326562d720efc691a"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A3_h2/sims_valid.jsonl",
+        "sha256": "39478e74bc96894e71b342227b4fdb8f4271311e272e4e065310bb2a1e06e45e"
+      }
+    },
+    "V1_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V1_h1_cv/oof.jsonl",
+        "sha256": "91459e665f39592e5ac04e9b15b14d14c7df5bb82b169e01c34540178b9f9d11"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V1_h1/et_test.jsonl",
+        "sha256": "5b8a14a8075c38539051887e1cecb66f4aa8222b0a85aad12de8343e3b16c894"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V1_h1/sims_valid.jsonl",
+        "sha256": "c558bb051d93bb3849c6fb54bfe31c13045013e850881fdfeb22c7b388e49547"
+      }
+    },
+    "V1_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V1_h2_cv/oof.jsonl",
+        "sha256": "406905cea1582da7f36929c9fa1989571eb45d0c42c420dd9970fdaca09fa130"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V1_h2/et_test.jsonl",
+        "sha256": "b48e3a47083e72022c5641246bb751ce8a099676026f807ee86f11ff70660cce"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V1_h2/sims_valid.jsonl",
+        "sha256": "657a548df18e4f2dc28875a9a4c3c50d19683c312d8bd8fc0f0e34504d32b43d"
+      }
+    },
+    "V2_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V2_h1_cv/oof.jsonl",
+        "sha256": "913a530995a6bb03e0d4da42606d11b1af5de538e9a9b82872e8ac0f78115e31"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V2_h1/et_test.jsonl",
+        "sha256": "13aaf54c137838b8a711147262091d16953a19001a1604dde0a468a3fa7b9c12"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V2_h1/sims_valid.jsonl",
+        "sha256": "8a8c01ce03b21ebf40ae2f1970b1b9434dc9e09ad629321321e55efdf2605ce6"
+      }
+    },
+    "V2_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V2_h2_cv/oof.jsonl",
+        "sha256": "5dd5837d47e6ed67830c79769e7c722fe0bc6116151e899bdd378cdbf1d681d0"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V2_h2/et_test.jsonl",
+        "sha256": "a2b85d8942ca1b79d31b468612d7d83f4cc7662208a91547972bac0a02c5cc86"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V2_h2/sims_valid.jsonl",
+        "sha256": "83f3bab1cd8dea16846551d3b774bfeffe99187718dfe5d986f032c26c49cac6"
+      }
+    },
+    "V3a_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V3a_h1_cv/oof.jsonl",
+        "sha256": "f45d60e5ca699d33b8ed9c04f2ad74af77e8ad0261cf7dbb3c0b56f2e96e275e"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V3a_h1/et_test.jsonl",
+        "sha256": "bbc9a19cc8b92bd5e173b48e53cbfb6b36f2d29ad07a5c77f92762c342110777"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V3a_h1/sims_valid.jsonl",
+        "sha256": "4cfed49426a9e9b84eff436b30235492f871cfc7d439f08777beb09cd6137d67"
+      }
+    },
+    "V3a_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V3a_h2_cv/oof.jsonl",
+        "sha256": "7d1911520173506c080210f8ac4d30c53123428ed757d0bdf006cf9896bb591f"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V3a_h2/et_test.jsonl",
+        "sha256": "e127d20b56877400d7ca865804b89497644881f0935da2d28198bfdf0ff931cf"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V3a_h2/sims_valid.jsonl",
+        "sha256": "436e90ca412fc760c162a189e36fb8a37eb6ad40cdd3032ec918c54422eded29"
+      }
+    },
+    "V3b_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V3b_h1_cv/oof.jsonl",
+        "sha256": "3e1da4f0cd70a333da16044a595550b5fe7ed7faa58b7569b90d4a02aa565b22"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V3b_h1/et_test.jsonl",
+        "sha256": "31bff5841dc5249cb868b7bff6df311caed20b25da6f452db2c780ca43a872ff"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V3b_h1/sims_valid.jsonl",
+        "sha256": "5a83109805fead2cb633f772930b14ae344fcf22ea22743e74ec4d65bf73f713"
+      }
+    },
+    "V3b_h2": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V3b_h2_cv/oof.jsonl",
+        "sha256": "6b8ec0ebdc6fced2b5e6a35346e215b4439b374dafd944a56c4517d34d97abc7"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V3b_h2/et_test.jsonl",
+        "sha256": "5cda8e99b803bec25792ac008b14ac74f1f26a73c54aacba0c7aa2a293d86f5b"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V3b_h2/sims_valid.jsonl",
+        "sha256": "a9383d2e678244d987c15b3b1fa319ecb29964700b4ff86f1ec1f1a6975088fe"
+      }
+    },
+    "T1": {
+      "o": {
+        "oof": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/T1_cv/oof_o.jsonl",
+          "sha256": "54d50c7d8773f24729db7308bd6f2601353a82397dbcec3908940f82fbbfd813"
+        },
+        "et_test": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/T1_test/et_test_o.jsonl",
+          "sha256": "b38d79c4d0b1753b137dc21bb44cd32a52e482183c68e30b656b3d664db275c8"
+        }
+      },
+      "r": {
+        "oof": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/T1_cv/oof_r.jsonl",
+          "sha256": "2dab95c05183af1519ee77990a4d6da4e24c038723d197c84097a0d21e15e312"
+        },
+        "et_test": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/T1_test/et_test_r.jsonl",
+          "sha256": "870903421a0883bd140654f33a08483dd90ee196ec546ccec3874747413764f2"
+        }
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/T1/sims_valid.jsonl",
+        "sha256": "3e98b578dc50b4068a58f928d9073cbcd7507412758dfdc4b18adfad438da5dc"
+      }
+    },
+    "T2_r": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/T2_h1_asr_replay/oof_r.jsonl",
+        "sha256": "3f65df8012c488850f71be9236ca1e4c4407880a2b53f32d25d2658b42beb655"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/T2_h1_r/et_test_r.jsonl",
+        "sha256": "af22003ae1f933d93ff1f4bb457d92753545dbd163326e2d21f8c1d9bde3c407"
+      }
+    },
+    "T2_h1": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/T2_h1_cv/oof.jsonl",
+        "sha256": "a139f53b148ef0a5b5299ce04b7cb1ef279f796bd21588e7821755415cc9397f"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/T2_h1/et_test.jsonl",
+        "sha256": "b51a560c30a72e15bdd3f034bbaf559aaebaf50d5a695fc2800ccc3f5a605f33"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/T2_h1/sims_valid.jsonl",
+        "sha256": "41521ebb5e5572226965c1a7ce679aff697b89e9c9b34a604b1e9a93a752bcd4"
+      }
+    }
+  },
+  "run_meta": {},
+  "model_storage": {
+    "P2_modelscope": {
+      "logical_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/P2_modelscope",
+      "target_path": "/mnt/h/emotionAI/emotioncore_models/X02/P2_modelscope",
+      "migration_receipt": "/home/administrator/emotion-data/emotioncore_runs/X02/migration_P2_modelscope.json"
+    },
+    "V2_modelscope": {
+      "logical_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2_modelscope",
+      "target_path": "/mnt/h/emotionAI/emotioncore_models/X02/V2_modelscope",
+      "migration_receipt": "/home/administrator/emotion-data/emotioncore_runs/X02/migration_V2_modelscope.json"
+    }
+  }
+}
