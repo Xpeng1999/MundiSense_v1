@@ -278,6 +278,8 @@ def run(args: argparse.Namespace) -> None:
             stop = next(end for end in ends if end > position)
             segment = ordered[position:stop]
             baseline_gradients = gradient_snapshot(parameters)
+            baseline_rng = (torch.get_rng_state(), torch.cuda.get_rng_state_all(),
+                            np.random.get_state(), random.getstate())
             completed = False
             local_records = []
             for attempt in (1, 2):
@@ -285,6 +287,10 @@ def run(args: argparse.Namespace) -> None:
                     gc.collect()
                     torch.cuda.empty_cache()
                     restore_gradients(optimizer, parameters, baseline_gradients)
+                    torch.set_rng_state(baseline_rng[0])
+                    torch.cuda.set_rng_state_all(baseline_rng[1])
+                    np.random.set_state(baseline_rng[2])
+                    random.setstate(baseline_rng[3])
                 local_records = []
                 try:
                     for row in segment:
@@ -328,6 +334,10 @@ def run(args: argparse.Namespace) -> None:
                                      "utt_ids": [r["utt_id"] for r in segment]})
             if not completed:
                 restore_gradients(optimizer, parameters, baseline_gradients)
+                torch.set_rng_state(baseline_rng[0])
+                torch.cuda.set_rng_state_all(baseline_rng[1])
+                np.random.set_state(baseline_rng[2])
+                random.setstate(baseline_rng[3])
                 for row in segment:
                     item = {"utt_id": row["utt_id"], "epoch": position // len(train_rows),
                             "effective_form": row["effective_form"],
