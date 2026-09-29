@@ -213,6 +213,8 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
                                ("selection", "cv_heads", "final", "sims_valid"))
     face, cer, p1, p2, paired = (data[key] for key in
                                  ("face", "asr_cer", "P1", "P2", "paired"))
+    p2_label = {"skipped_after_resource_probe": "按 32 GB 资源约束跳过"}.get(
+        p2["status"], p2["status"])
     lines = ["# X02 单模态强基线与模态信息量", "", "## 1. 摘要", "",
              f"- CV 池：{folds['cv_pool_count']:,} 句、{len(folds['cv_pool_speakers'])} 名说话人；ET-test：{folds['et_test_count']:,} 句。",
              f"- CV 冠军：A {sel['modality_champions']['A']['winner']}、V {sel['modality_champions']['V']['winner']}、T（ASR 输入）{sel['modality_champions']['T_deployment_r']['winner']}。",
@@ -220,11 +222,11 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
              (f"- P2 ET-val：A {f(data['P2_probe']['conditions']['audio']['M']['macro_f1'])}、"
               f"V {f(data['P2_probe']['conditions']['video']['M']['macro_f1'])}、"
               f"AV {f(data['P2_probe']['conditions']['av']['M']['macro_f1'])} macro-F1。"
-              if data['P2_probe'] else f"- P2：{p2['status']}；{p2['reason']}。"),
+              if data['P2_probe'] else f"- P2：{p2_label}；{p2['reason']}。"),
              "- 大型 ModelScope 权重存于 H 盘，X02/models 为符号链接；概率、特征和媒体缓存留在服务器。仓库只保存指标与路径、SHA-256。", "",
              "## 2. 完成情况与偏离", "",
              ("**事实。** A1–A3、V1–V3a/b、T1–T2 的 CV、ET-test 与 SIMS-valid 结果见第 5 节；P1 已完成。"
-              + ("P2 也已完成。" if data['P2_probe'] else f"P2 {p2['status']}：{p2['reason']}。")), "",
+              + ("P2 也已完成。" if data['P2_probe'] else f"P2 {p2_label}：{p2['reason']}。")), "",
              "**解读。** P2 是零样本探针，不参与单模态冠军选择。", "",
              "## 3. CV 池与折划分统计", "",
              f"冻结文件 SHA-256：`{data['folds_sha256']}`。排除说话人：{', '.join(folds['excluded_speakers'])}。", "",
@@ -293,7 +295,7 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
             lines.append(f"| P2 NF4 thinker | {condition} | {f(item['M']['macro_f1'])} | — | — |")
         lines += ["", f"P2：7 个首 token 两两不同；ModelScope 权重下载与加载收据见 `p2_probe_status.json`；三种条件均在 ET-val 评分。", ""]
     else:
-        lines += ["", f"P2：7 个首 token 两两不同；{p2['status']}；{p2['reason']}。证据见 `p2_probe_status.json`。", ""]
+        lines += ["", f"P2：7 个首 token 两两不同；{p2_label}；{p2['reason']}。证据见 `p2_probe_status.json`。", ""]
     lines += [
               "## 9. 与 X01 旧 LoRA 的 ET-test 对照", "",
               "**事实。** X01 旧 LoRA 的 ET-test macro-F1：A 0.603、V 0.287、AV 0.600。X02 的同模态 ET-test 结果见第 5 节。", "",
@@ -317,7 +319,7 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
     lines += ["", "## 11. 异常与未解决问题", "",
               f"- CH-SIMS valid 缺源视频 27/647；A/V 失败保留在 Acc-2 非零分母，相关系数附覆盖率。",
               ("- P2 在 32 GB 显存内用 NF4 thinker 推理；加载及运行收据见 `p2_probe_status.json`。"
-               if data["P2_probe"] else f"- P2：{p2['status']}；{p2['reason']}。证据在 `p2_probe_status.json`。"),
+               if data["P2_probe"] else f"- P2：{p2_label}；{p2['reason']}。证据在 `p2_probe_status.json`。"),
               "- T2 曾误启动一次 ASR 输入训练，已立即终止并隔离到服务器 `invalid_runs`；正式 `(r)` 结果由 `(o)` 模型回放，原始 `(o)` OOF 概率逐项核对一致。",
               "- CH-SIMS 无可用说话人 ID，跨语料只报告相关与 Acc-2，不声称说话人独立区间。", "",
               "## 12. 给 reviewer 的问题", "",
