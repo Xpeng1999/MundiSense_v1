@@ -1,0 +1,15 @@
+{
+  "status": "stopped_before_fold1",
+  "reason": "checkpointed_q_projected_gpu_hours_exceed_55",
+  "at": "2026-09-29T14:01:57.601170+00:00",
+  "gpu_limit_h": 55.0,
+  "mean_with_contingency_projection_h": 71.87737709226812,
+  "median_without_contingency_or_extra_overhead_h": 56.109659724717254,
+  "fold1_started": false,
+  "budget_summary_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/resume_budget/summary.json",
+  "budget_summary_sha256": "2a2975a770eaa68af40bed530d5616f5ead60ab26be329c34dd42c141a6dc620",
+  "benchmark_summary_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/gc_step_benchmark/summary.json",
+  "benchmark_summary_sha256": "c245a1cc392c2f7aaf39a969a15954e66af24f41c1a59d77992fd98ea7f3ea2b",
+  "memory_gate_pass": true,
+  "required_action": "Stop and report; do not alter fold count, epochs, inputs, learning rates or the 55-hour cap."
+}

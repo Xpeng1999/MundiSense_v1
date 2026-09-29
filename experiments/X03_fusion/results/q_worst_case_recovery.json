@@ -1,0 +1,243 @@
+{
+  "tested": 20,
+  "target": 20,
+  "gate": "pass",
+  "memory_limit_bytes": 30000000000,
+  "memory_limit_gb": 30,
+  "peak_allocated_bytes": 12315284992,
+  "parameter_info": {
+    "target_modules": 240,
+    "visual_target_modules": 128,
+    "llm_trainable_parameters": 10092544,
+    "vision_trainable_parameters": 2621440,
+    "gradient_checkpointing": {
+      "llm": true,
+      "vision": true,
+      "audio": true,
+      "use_reentrant": false
+    }
+  },
+  "receipts": [
+    {
+      "rank": 1,
+      "utt_id": "G00010_01_08_015",
+      "input_token_length": 1104,
+      "cache_sha256": "8efc720c9da94bb34655b6002337b04dc85f71139598a0af4492f1b1b45cf420",
+      "max_memory_allocated_bytes": 12315284992,
+      "max_memory_allocated_mib": 11744.77099609375,
+      "nvidia_smi_used_mib": 13146,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 2,
+      "utt_id": "G00011_10_09_011",
+      "input_token_length": 1101,
+      "cache_sha256": "fc5da20bbb9f7846071ac2c361e78665279c1b5ab19743b856145ae94bf8772b",
+      "max_memory_allocated_bytes": 12312144896,
+      "max_memory_allocated_mib": 11741.7763671875,
+      "nvidia_smi_used_mib": 13138,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 3,
+      "utt_id": "G00014_44_18_010",
+      "input_token_length": 1084,
+      "cache_sha256": "efbf2bcc7933779321dc84889321574a240c61223eacd88b820845599325f0b2",
+      "max_memory_allocated_bytes": 12258982400,
+      "max_memory_allocated_mib": 11691.07666015625,
+      "nvidia_smi_used_mib": 13108,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 4,
+      "utt_id": "G00006_22_12_026",
+      "input_token_length": 1077,
+      "cache_sha256": "53a7116797e3512a28141678b568ce1bf2e219b0c3f481cc011791c4e9789ebf",
+      "max_memory_allocated_bytes": 12239630848,
+      "max_memory_allocated_mib": 11672.62158203125,
+      "nvidia_smi_used_mib": 13096,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 5,
+      "utt_id": "G00011_48_06_011",
+      "input_token_length": 1076,
+      "cache_sha256": "05c6548d3e25b26c9f7b061fe3473afecef02c35390a29ca13639b391639ee27",
+      "max_memory_allocated_bytes": 12232288768,
+      "max_memory_allocated_mib": 11665.61962890625,
+      "nvidia_smi_used_mib": 13096,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 6,
+      "utt_id": "G00007_25_14_017",
+      "input_token_length": 1073,
+      "cache_sha256": "a40f23cc487a271427787f90ee7d6f3b8989ba7c589f80a9f1e49b5323a0a73b",
+      "max_memory_allocated_bytes": 12219841024,
+      "max_memory_allocated_mib": 11653.74853515625,
+      "nvidia_smi_used_mib": 13090,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 7,
+      "utt_id": "G00007_61_14_003",
+      "input_token_length": 1072,
+      "cache_sha256": "fc5fee0b5522d97b847959c99fd464848aee24a54f056560c6fb7b3198ab5de4",
+      "max_memory_allocated_bytes": 12219513344,
+      "max_memory_allocated_mib": 11653.43603515625,
+      "nvidia_smi_used_mib": 13090,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 8,
+      "utt_id": "G00011_47_09_011",
+      "input_token_length": 1068,
+      "cache_sha256": "f5cf99452563704251f64de35362ec842bed787b6a3929fd393c01b581edbbd4",
+      "max_memory_allocated_bytes": 12205430272,
+      "max_memory_allocated_mib": 11640.00537109375,
+      "nvidia_smi_used_mib": 13078,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 9,
+      "utt_id": "G00002_41_08_002",
+      "input_token_length": 1047,
+      "cache_sha256": "6ecb888c52bc5409f9fdae0579c20c5af6a2393b3e4ad5f621e441ed1a682940",
+      "max_memory_allocated_bytes": 12140294656,
+      "max_memory_allocated_mib": 11577.88720703125,
+      "nvidia_smi_used_mib": 13044,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 10,
+      "utt_id": "G00008_02_11_016",
+      "input_token_length": 1047,
+      "cache_sha256": "2f69e17ab2fe2f2d9182d76025f325a3a1c5dfe899a321ecd1464ee87afd1c97",
+      "max_memory_allocated_bytes": 12140438016,
+      "max_memory_allocated_mib": 11578.02392578125,
+      "nvidia_smi_used_mib": 13044,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 11,
+      "utt_id": "G00002_12_07_009",
+      "input_token_length": 1033,
+      "cache_sha256": "a7754301d16b0b2cc8a70714f8aa9815565c648623b7e76846568b483e212408",
+      "max_memory_allocated_bytes": 12091421696,
+      "max_memory_allocated_mib": 11531.2783203125,
+      "nvidia_smi_used_mib": 13020,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 12,
+      "utt_id": "G00007_58_14_005",
+      "input_token_length": 1031,
+      "cache_sha256": "360f9082ccb84537280046f43930bb9b906089f8e87ea74ff37ba6d13deae27e",
+      "max_memory_allocated_bytes": 12085352448,
+      "max_memory_allocated_mib": 11525.490234375,
+      "nvidia_smi_used_mib": 13020,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 13,
+      "utt_id": "G00014_26_19_023",
+      "input_token_length": 1027,
+      "cache_sha256": "e89156122ad211d838fb81ab326a3e7dc6e737414245bef4a0c7f36efacdd460",
+      "max_memory_allocated_bytes": 12071252992,
+      "max_memory_allocated_mib": 11512.0439453125,
+      "nvidia_smi_used_mib": 13008,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 14,
+      "utt_id": "G00014_05_19_013",
+      "input_token_length": 1024,
+      "cache_sha256": "90541ce49eaa741b47acac532485491ddc46a52edc5a06340db3745bf82e6074",
+      "max_memory_allocated_bytes": 12060897280,
+      "max_memory_allocated_mib": 11502.16796875,
+      "nvidia_smi_used_mib": 13002,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 15,
+      "utt_id": "G00007_27_14_003",
+      "input_token_length": 1022,
+      "cache_sha256": "d62509475908ac209ba9a4d773ede680e65f973619c48e8d74bb02a42e9aea29",
+      "max_memory_allocated_bytes": 12059378688,
+      "max_memory_allocated_mib": 11500.7197265625,
+      "nvidia_smi_used_mib": 13002,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 16,
+      "utt_id": "G00002_10_08_002",
+      "input_token_length": 1021,
+      "cache_sha256": "47c08981f15f8310850cfaf04731e1e390f258d99f8aa975f5deb1af0cf4f2c6",
+      "max_memory_allocated_bytes": 12050538496,
+      "max_memory_allocated_mib": 11492.2890625,
+      "nvidia_smi_used_mib": 12996,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 17,
+      "utt_id": "G00002_40_07_005",
+      "input_token_length": 1020,
+      "cache_sha256": "9f39d7a396bd8c929f3892c163a3ec1ae9f677ac7e70ede7550c47257989d38a",
+      "max_memory_allocated_bytes": 12050374656,
+      "max_memory_allocated_mib": 11492.1328125,
+      "nvidia_smi_used_mib": 12996,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 18,
+      "utt_id": "G00010_01_08_007",
+      "input_token_length": 1020,
+      "cache_sha256": "9c16370aa01bb51d1875874e698d83395b55d4b0414eb05daa6bd4a7130d2776",
+      "max_memory_allocated_bytes": 12050210816,
+      "max_memory_allocated_mib": 11491.9765625,
+      "nvidia_smi_used_mib": 12996,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 19,
+      "utt_id": "G00014_44_18_015",
+      "input_token_length": 1018,
+      "cache_sha256": "b3f4d7cd534954604ee13f1c5558145846bb63e026c0a6690f72c6035a4deeb1",
+      "max_memory_allocated_bytes": 12048692224,
+      "max_memory_allocated_mib": 11490.5283203125,
+      "nvidia_smi_used_mib": 12996,
+      "status": "ok",
+      "error": null
+    },
+    {
+      "rank": 20,
+      "utt_id": "G00002_11_08_003",
+      "input_token_length": 1016,
+      "cache_sha256": "f0b06b1fdb3a56cda21e4b3298acaccbf9e4a7bb645c6ed77b50c0b95790efb5",
+      "max_memory_allocated_bytes": 12037793792,
+      "max_memory_allocated_mib": 11480.134765625,
+      "nvidia_smi_used_mib": 12990,
+      "status": "ok",
+      "error": null
+    }
+  ],
+  "selection_sha256": "feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10"
+}

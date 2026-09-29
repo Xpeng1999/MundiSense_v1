@@ -29,8 +29,9 @@ X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据
 
 - E1 已完成五组合及 T1r SIMS-valid 补推理；其概率级融合只需已冻结的专家输出。E2 已在 CPU 完成五折、最终模型、ET-test、SIMS-valid、逐折校准和单句延迟测量。E2 的 AVT 原始 OOF、ET-test、SIMS-valid 概率分别位于 `$R3/E2/eval/AVT/{oof,et_test,sims_valid}.jsonl`；完整指标位于同目录 `metrics.json`，原始路径及 SHA-256 也记录在其 `artifacts` 字段。
 - Q 从只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B` 基座开始，NF4 双重量化、BF16、语言 LoRA rank 16 和视觉 LoRA rank 8，音频塔冻结。Q fold 0 已自然结束，固定 AV 内验证最佳 macro-F1 为 0.696626，通过 0.45 门限；按实测重估总 GPU 时长 50.5124 小时，通过 55 小时门限。fold 0 adapter 位于 `$R3/Q/fold0/best_adapter`，SHA-256 `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50`。
-- fold 0 不受新增显存保护影响。fold 1 起 Q 训练/推理须使用 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`；每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。这些保护已实现，但 fold 1 尚未启动。15,281 条去重 AV 训练候选已全部缓存，最长 20 条实际输入长度为 1,016–1,104 token。
-- 接入新门禁的启动器已通过 fold 0 的健全性和时长门禁。最长 20 条 AV 前后向预检在首条两次遭遇 WSL/CUDA 驱动错误，未取得有效峰值；按门禁停止在 fold 1 前。详细路径和日志 SHA-256 见 [停止收据](../experiments/X03_fusion/results/q_pipeline_stop.json)。修复运行环境后仍须对相同冻结 20 条逐条完成前后向，每条 `torch.cuda.max_memory_allocated` ≤30,000,000,000 字节且无 OOM，才可启动 fold 1。不得把 fold 0 adapter 当成正式跨臂结果。
+- fold 0 训练时梯度检查点未实际生效，伴随 WSL 显存溢出；按 reviewer 批复保留其有效结果且不重训。fold 1 起 Q 训练/推理使用默认 CUDA 分配器，启动器清除 `PYTORCH_CUDA_ALLOC_CONF` 和 `PYTORCH_ALLOC_CONF`；模型在 `get_peft_model` 后以 `use_reentrant=False` 显式开启检查点，并断言 LLM、视觉塔、音频塔均为 True。每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。
+- 15,281 条去重 AV 训练候选已全部缓存，冻结最长 20 条长度为 1,016–1,104 token，清单 SHA-256 `feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10`。原始 WSL 故障见 [停止收据](../experiments/X03_fusion/results/q_pipeline_stop.json)；修复后的首条 [等价性回执](../experiments/X03_fusion/results/q_checkpoint_equivalence.json) 和同一 20 条 [显存预检回执](../experiments/X03_fusion/results/q_worst_case_recovery.json) 均通过，最大分配峰值 12,315,284,992 字节，低于 30,000,000,000 字节。
+- 开启检查点后的 A/V/AV [单步实测](../experiments/X03_fusion/results/q_gc_step_benchmark.json)外推总 GPU 时长 71.88 小时，超过 55 小时上限；[预算停止收据](../experiments/X03_fusion/results/q_resume_budget_stop.json)已冻结，fold 1–4 和最终模型未启动。当前 Q 仅有 fold 0 adapter，不可作正式跨臂结果。H 与完整主表没有可用的 Q OOF，等待 reviewer 决定后续协议。
 - 臂 P 依 reviewer 批复取消；X02 已尝试 4bit，峰值 58,041.6 MiB。
 
 X03 完成后，本文件须补齐六个 Q adapter 的实际路径和 SHA-256、各候选系统最终推理入口及最终产物索引。
