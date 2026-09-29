@@ -29,7 +29,7 @@ X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据
 
 - E1 已完成五组合及 T1r SIMS-valid 补推理；其概率级融合只需已冻结的专家输出。E2 在 CPU 运行五折。
 - Q 从只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B` 基座开始，NF4 双重量化、BF16、语言 LoRA rank 16 和视觉 LoRA rank 8，音频塔冻结。Q fold 0 的首次固定 AV 内验证 macro-F1 为 0.5794；须等 fold 0 完成后按最终最佳 checkpoint 核验 ≥0.45，并用实测总时长重估 55 GPU 小时门限。
-- 当前 fold 0 不受新增显存保护影响。fold 1 起 Q 训练/推理使用 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`；每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。fold 0 后、fold 1 前须通过最长 20 条 AV 输入的 30 GiB 峰值门禁；候选全集是 15,281 条去重 AV 训练句。
+- 当前 fold 0 不受新增显存保护影响。fold 1 起 Q 训练/推理使用 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`；每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。fold 0 后、fold 1 前须通过最长 20 条 AV 输入的十进制 30 GB（30,000,000,000 字节）峰值门禁；候选全集是 15,281 条去重 AV 训练句。
 - 原 fold 0 完成后启动器为接入新门禁已暂停；验证新代码后须重新启用。若 fold 0 失败、健全性不足、估算超预算或最坏情况预检失败，流水线将停止并留下日志。Q 五折和最终 adapter 完成前，不应把首次验证的 adapter 当成正式跨臂结果。
 - 臂 P 依 reviewer 批复取消；X02 已尝试 4bit，峰值 58,041.6 MiB。
 

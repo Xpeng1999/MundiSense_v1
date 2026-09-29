@@ -18,7 +18,7 @@ from emotioncore.x03.q_train import load_input, prepare_target
 from emotioncore.x03.q_train_guarded import nvidia_memory_mib
 
 
-LIMIT_BYTES = 30 * 2**30  # 30 GiB, matching the GPU's MiB accounting.
+LIMIT_BYTES = 30_000_000_000  # The user's literal 30 GB limit, in bytes.
 TOP_N = 20
 
 
@@ -147,7 +147,7 @@ def probe(args: argparse.Namespace) -> None:
         allocated = int(torch.cuda.max_memory_allocated())
         if allocated > LIMIT_BYTES:
             gate = "stop"
-            status = "over_30_gib"
+            status = "over_30_gb"
         receipt = {"rank": item["rank"], "utt_id": row["utt_id"],
                    "input_token_length": item["input_token_length"],
                    "cache_sha256": item["cache_sha256"],
@@ -162,7 +162,7 @@ def probe(args: argparse.Namespace) -> None:
         if gate == "stop":
             break
     summary = {"tested": len(receipts), "target": TOP_N, "gate": gate,
-               "memory_limit_bytes": LIMIT_BYTES, "memory_limit_gib": 30,
+               "memory_limit_bytes": LIMIT_BYTES, "memory_limit_gb": 30,
                "peak_allocated_bytes": max(r["max_memory_allocated_bytes"] for r in receipts),
                "parameter_info": info, "receipts": receipts,
                "selection_sha256": sha256(args.output_dir / "selected_longest20.json")}
@@ -172,7 +172,7 @@ def probe(args: argparse.Namespace) -> None:
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     if gate != "pass":
         write_json_atomic(args.root / "pipeline_stop.json",
-                          {"reason": "worst_case_av_over_30_gib_or_oom",
+                          {"reason": "worst_case_av_over_30_gb_or_oom",
                            "preflight_summary": str(args.output_dir / "summary.json"),
                            "tested": len(receipts), "peak_allocated_bytes": summary["peak_allocated_bytes"]})
         raise RuntimeError("Q worst-case AV memory preflight failed")
