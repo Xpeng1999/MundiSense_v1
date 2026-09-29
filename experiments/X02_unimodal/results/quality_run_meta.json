@@ -1,0 +1,28 @@
+{
+  "git": {
+    "commit": "1f88f8146a88b1e45b013f2ded313a492fb466c4",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/code_final/src/emotioncore/x02/quality_addendum.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--media-root",
+    "/home/administrator/emotion-data/emotionAI_processed/phase1_v1/emotiontalk",
+    "--asr-receipts",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/asr/SenseVoiceSmall/receipts",
+    "--old-cv-cer",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/metrics/asr_cer_cv.json",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/quality"
+  ],
+  "started_at": "2026-09-29T02:32:39.621608+00:00",
+  "ended_at": "2026-09-29T02:33:04.019552+00:00",
+  "manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "quality_sha256": "80330bb718e31a8155793ab83e396bd4741a87347858f0342fd039cdb098bb32",
+  "summary_sha256": "65f9b5ee7f67aecc3c63b43c52f2db4ed3aa7a6af32423a01d01146bf8c798df",
+  "addendum_sha256": "62d5d6214521f640bf4f28896e25116ae8f52864f07152a2a3c5106a5f83ec3e",
+  "transcripts_server_only": true
+}
