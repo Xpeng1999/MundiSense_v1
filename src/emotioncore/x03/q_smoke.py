@@ -6,6 +6,7 @@ import datetime as dt
 import json
 import math
 import os
+import statistics
 import sys
 import time
 from pathlib import Path
@@ -214,6 +215,7 @@ def run(args: argparse.Namespace) -> None:
     thinker, optimizer, parameter_info = model_and_optimizer()
     thinker.train()
     results = {}
+    prepared = {}
     for condition in ("A", "V", "AV"):
         arrays = np.load(args.output_dir / f"{condition}.npz")
         assert_modality_receipt(condition, set(arrays.files))
@@ -225,30 +227,61 @@ def run(args: argparse.Namespace) -> None:
         values["input_ids"] = torch.cat((ids, answer), dim=1)
         values["attention_mask"] = torch.ones_like(values["input_ids"])
         values["labels"] = torch.cat((torch.full_like(ids, -100), answer), dim=1)
-        optimizer.zero_grad(set_to_none=True)
+        prepared[condition] = {key: value for key, value in values.items() if key != "labels"}
+        times = []
+        losses = []
         torch.cuda.reset_peak_memory_stats()
-        torch.cuda.synchronize()
-        started = time.monotonic()
-        output = thinker(**values, use_cache=False, use_audio_in_video=False)
-        loss = output.loss
-        if not torch.isfinite(loss):
-            raise RuntimeError(f"Nonfinite Q smoke loss: {condition}")
-        loss.backward()
-        optimizer.step()
-        torch.cuda.synchronize()
-        results[condition] = {"step_s": time.monotonic() - started,
+        for _ in range(3):
+            optimizer.zero_grad(set_to_none=True)
+            torch.cuda.synchronize()
+            started = time.monotonic()
+            output = thinker(**values, use_cache=False, use_audio_in_video=False)
+            loss = output.loss
+            if not torch.isfinite(loss):
+                raise RuntimeError(f"Nonfinite Q smoke loss: {condition}")
+            loss.backward()
+            optimizer.step()
+            torch.cuda.synchronize()
+            times.append(time.monotonic() - started)
+            losses.append(float(loss.detach().cpu()))
+        results[condition] = {"step_s": statistics.median(times[1:]),
+                              "step_repeats_s": times,
                               "loss": float(loss.detach().cpu()),
                               "peak_allocated_mib": torch.cuda.max_memory_allocated() / 2**20,
                               "forward_has_audio": "input_features" in values,
                               "forward_has_video": "pixel_values_videos" in values}
         assert_modality_receipt(condition, set(values))
         write_json_atomic(args.output_dir / "steps_partial.json", results)
+    thinker.eval()
+    with torch.inference_mode():
+        for condition, values in prepared.items():
+            times = []
+            for _ in range(4):
+                torch.cuda.synchronize()
+                started = time.monotonic()
+                thinker(**values, use_cache=False, use_audio_in_video=False)
+                torch.cuda.synchronize()
+                times.append(time.monotonic() - started)
+            results[condition]["inference_s"] = statistics.median(times[1:])
     weighted_step = .2 * results["A"]["step_s"] + .2 * results["V"]["step_s"] + .6 * results["AV"]["step_s"]
-    # Six runs, two epochs, 16,366 examples/run, effective batch eight.
-    projected_training_h = 6 * 2 * math.ceil(16_366 / 8) * weighted_step / 3600
+    folds = json.loads(Path("configs/folds_v1.json").read_text(encoding="utf-8"))
+    train_examples_per_epoch = (sum(f["inner_train_count"] for f in folds["folds"]) +
+                                folds["cv_pool_count"] - folds["folds"][0]["inner_validation_count"])
+    validation_examples = 8 * (sum(f["inner_validation_count"] for f in folds["folds"]) +
+                               folds["folds"][0]["inner_validation_count"])
+    projected_training_h = 2 * train_examples_per_epoch * weighted_step / 3600
+    projected_validation_h = validation_examples * results["AV"]["inference_s"] / 3600
+    projected_prediction_h = (16_366 + 1_929 + 647) * sum(
+        results[c]["inference_s"] for c in ("A", "V", "AV")) / 3600
+    projected_total_h = projected_training_h + projected_validation_h + projected_prediction_h
     summary = {"steps": results, "weighted_step_s": weighted_step,
-               "projected_training_h_without_eval_or_inference": projected_training_h,
-               "gpu_45h_gate": "stop" if projected_training_h > 45 else "training_only_within_budget",
+               "train_examples_per_epoch": train_examples_per_epoch,
+               "validation_examples": validation_examples,
+               "projected_training_h": projected_training_h,
+               "projected_validation_h": projected_validation_h,
+               "projected_prediction_h": projected_prediction_h,
+               "projected_total_h_without_loading_or_preprocessing": projected_total_h,
+               "gpu_45h_gate": "stop" if projected_total_h > 45 else "within_budget_estimate",
                "parameter_info": parameter_info, "first_token_ids": first_ids}
     write_json_atomic(args.output_dir / "summary.json", summary)
     meta["ended_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
