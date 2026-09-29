@@ -124,6 +124,24 @@ def run(args: argparse.Namespace) -> None:
                                     "model_latency_p50_s": percentile(values, 0.5) if values else None,
                                     "model_latency_p95_s": percentile(values, 0.95) if values else None,
                                     "latency_count": len(values)}
+    windows = []
+    for folder in ("features", "heads", "final", "sims_valid/features",
+                   "sims_valid/eval", "probes"):
+        for path in (root / folder).rglob("run_meta*.json"):
+            item = read(path)
+            if item.get("started_at") and item.get("ended_at"):
+                windows.append((dt.datetime.fromisoformat(item["started_at"]),
+                                dt.datetime.fromisoformat(item["ended_at"])))
+    if not windows:
+        raise ValueError("Missing X02 runtime metadata")
+    runtime_budget = {"single_gpu_span_upper_bound_h":
+                      (max(end for _, end in windows) - min(start for start, _ in windows)
+                       ).total_seconds() / 3600,
+                      "gpu_budget_h": 30,
+                      "first_start": min(start for start, _ in windows).isoformat(),
+                      "last_end": max(end for _, end in windows).isoformat(),
+                      "metadata_count": len(windows),
+                      "note": "Single-GPU first-to-last task span is an upper bound, not utilization."}
     for name, result in heads.items():
         check_artifact(result["oof_path"], result["oof_sha256"])
         check_artifact(finals[name]["prediction_path"], finals[name]["prediction_sha256"])
@@ -185,6 +203,7 @@ def run(args: argparse.Namespace) -> None:
                    "asr_cer": cer, "P1": p1, "P2": p2,
                    "P2_probe": p2_result,
                    "feature_runtime": feature_runtime,
+                   "runtime_budget": runtime_budget,
                    "feature_run_meta": feature_meta,
                    "download_receipts": downloads,
                    "modelscope_download_receipts": modelscope_downloads,
@@ -311,6 +330,8 @@ def render_report(folds: dict, data: dict, feature_meta: dict,
     for condition in ("audio", "av"):
         item = p1["conditions"][condition]
         lines.append(f"| {condition} | {f(item['latency_p50_s'])} / {f(item['latency_p95_s'])} | {item['peak_cuda_allocated_mib']:.0f} |")
+    lines += ["", f"单卡 GPU 任务从首个开始到最后结束的跨度上界为 {data['runtime_budget']['single_gpu_span_upper_bound_h']:.2f} 小时；该上界低于 30 小时预算，不代表实际 GPU 利用时长。",
+              f"公开模型下载含失败传输累计 {data['modelscope_download_receipts']['all_public_model_bytes']/1e9:.2f} GB，低于 100 GB 上限。"]
     if data["P2_probe"]:
         lines += ["", "P2 条件推理：", "", "| 条件 | 延迟 P50 / P95（秒） | 峰值 CUDA MiB |", "|---|---:|---:|"]
         for condition in ("audio", "video", "av"):
