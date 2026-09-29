@@ -1,0 +1,223 @@
+{
+  "fetched_at": "2026-09-28T15:00:08.601463+00:00",
+  "models": {
+    "V2_modelscope": {
+      "repo_id": "AI-ModelScope/CLIP-GmP-ViT-L-14",
+      "revision": "master",
+      "source_url": "https://modelscope.cn/models/AI-ModelScope/CLIP-GmP-ViT-L-14",
+      "planned_files": [
+        {
+          "Path": ".gitattributes",
+          "Size": 1519
+        },
+        {
+          "Path": "README.md",
+          "Size": 5991
+        },
+        {
+          "Path": "ViT-L-14-BEST-smooth-GmP-HF-format.safetensors",
+          "Size": 931448048
+        },
+        {
+          "Path": "ViT-L-14-BEST-smooth-GmP-TE-only-HF-format.safetensors",
+          "Size": 323409740
+        },
+        {
+          "Path": "ViT-L-14-BEST-smooth-GmP-ft-pickle-OpenAI.pt",
+          "Size": 932307905
+        },
+        {
+          "Path": "ViT-L-14-BEST-smooth-GmP-ft-state_dict.pt",
+          "Size": 932240142
+        },
+        {
+          "Path": "ViT-L-14-BEST-smooth-GmP-ft.safetensors",
+          "Size": 932103308
+        },
+        {
+          "Path": "ViT-L-14-GmP-ft-TE-only-HF-format.safetensors",
+          "Size": 324512588
+        },
+        {
+          "Path": "ViT-L-14-GmP-ft-pickle-OpenAI.pt",
+          "Size": 932299617
+        },
+        {
+          "Path": "ViT-L-14-GmP-ft-state_dict.pt",
+          "Size": 1710643872
+        },
+        {
+          "Path": "ViT-L-14-GmP-ft.safetensors",
+          "Size": 932103308
+        },
+        {
+          "Path": "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors",
+          "Size": 931448048
+        },
+        {
+          "Path": "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors",
+          "Size": 323409740
+        },
+        {
+          "Path": "ViT-L-14-TEXT-detail-improved-hiT-GmP-pickle-OpenAI.pt",
+          "Size": 932296502
+        },
+        {
+          "Path": "ViT-L-14-TEXT-detail-improved-hiT-GmP-state_dict.pt",
+          "Size": 932235192
+        },
+        {
+          "Path": "config.json",
+          "Size": 736
+        },
+        {
+          "Path": "configuration.json",
+          "Size": 79
+        },
+        {
+          "Path": "merges.txt",
+          "Size": 524619
+        },
+        {
+          "Path": "model.safetensors",
+          "Size": 1710537716
+        },
+        {
+          "Path": "preprocessor_config.json",
+          "Size": 316
+        },
+        {
+          "Path": "special_tokens_map.json",
+          "Size": 389
+        },
+        {
+          "Path": "tokenizer.json",
+          "Size": 2224003
+        },
+        {
+          "Path": "tokenizer_config.json",
+          "Size": 902
+        },
+        {
+          "Path": "vocab.json",
+          "Size": 961143
+        }
+      ],
+      "planned_bytes": 12784715423
+    },
+    "P2_modelscope": {
+      "repo_id": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "revision": "master",
+      "source_url": "https://modelscope.cn/models/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "planned_files": [
+        {
+          "Path": ".gitattributes",
+          "Size": 3222
+        },
+        {
+          "Path": "README.md",
+          "Size": 90295
+        },
+        {
+          "Path": "chat_template.json",
+          "Size": 6772
+        },
+        {
+          "Path": "config.json",
+          "Size": 13671
+        },
+        {
+          "Path": "configuration.json",
+          "Size": 43
+        },
+        {
+          "Path": "generation_config.json",
+          "Size": 146
+        },
+        {
+          "Path": "merges.txt",
+          "Size": 1671839
+        },
+        {
+          "Path": "model-00001-of-00015.safetensors",
+          "Size": 4997899632
+        },
+        {
+          "Path": "model-00002-of-00015.safetensors",
+          "Size": 4997754216
+        },
+        {
+          "Path": "model-00003-of-00015.safetensors",
+          "Size": 4997754216
+        },
+        {
+          "Path": "model-00004-of-00015.safetensors",
+          "Size": 4997755648
+        },
+        {
+          "Path": "model-00005-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00006-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00007-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00008-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00009-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00010-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00011-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00012-of-00015.safetensors",
+          "Size": 4997755792
+        },
+        {
+          "Path": "model-00013-of-00015.safetensors",
+          "Size": 4999771808
+        },
+        {
+          "Path": "model-00014-of-00015.safetensors",
+          "Size": 4996618552
+        },
+        {
+          "Path": "model-00015-of-00015.safetensors",
+          "Size": 553698794
+        },
+        {
+          "Path": "model.safetensors.index.json",
+          "Size": 2727350
+        },
+        {
+          "Path": "preprocessor_config.json",
+          "Size": 603
+        },
+        {
+          "Path": "tokenizer_config.json",
+          "Size": 7344
+        },
+        {
+          "Path": "vocab.json",
+          "Size": 2776833
+        }
+      ],
+      "planned_bytes": 70530597320
+    }
+  },
+  "prior_verified_bytes": 5582053920,
+  "planned_total_bytes": 83315312743
+}

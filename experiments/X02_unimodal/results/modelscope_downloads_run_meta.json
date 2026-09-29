@@ -1,0 +1,20 @@
+{
+  "git": {
+    "commit": "d94e4f1719b62d9f284d0c28dc008e51aa997afa",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/code_delivery/src/emotioncore/x02/modelscope_receipts.py",
+    "--plan",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/modelscope_plan.json",
+    "--run-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02",
+    "--output",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/modelscope_downloads.json"
+  ],
+  "plan_sha256": "9513d51b012de33ce2bc4249d493d5197de13889a38ffcd8e7434b460c9ed47b",
+  "receipt_sha256": "2e788b8109b209405fba176a289bfc2bae4249da18df3ea0088fa7bab5271175",
+  "ended_at": "2026-09-28T16:58:42.135097+00:00"
+}

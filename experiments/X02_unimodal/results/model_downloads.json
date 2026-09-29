@@ -1,0 +1,217 @@
+{
+  "models": {
+    "A3": {
+      "repo_id": "TencentGameMate/chinese-hubert-large",
+      "source_url": "https://huggingface.co/TencentGameMate/chinese-hubert-large/tree/90cb660492214f687e60f5ca509b20edae6e75bd",
+      "revision": "90cb660492214f687e60f5ca509b20edae6e75bd",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 1380,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "3a7cd8168d62ca606d1bbf1a5e391621fa89fa7b",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/A3/config.json",
+          "local_sha256": "8511d73054ac289ef47a527efdfd6738d2cb60f69f2973fdc9277492d9ff854b"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 211,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "15dafdfb87082ed17f859f7620759a95d5d62af2",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/A3/preprocessor_config.json",
+          "local_sha256": "6334d6e0c5f2084c9a99b85ddff243cbc79dbaa4aa790bcddf8c41c496fab6fb"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1261871939,
+          "upstream_lfs_sha256": "482c19cd60877832995d790ed10dd1203b1f8c86ed7a69b4bd27f470fc27ee43",
+          "upstream_git_blob": "d0a8072456c7f17e948e455575dbd063df06d7ab",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/A3/pytorch_model.bin",
+          "local_sha256": "482c19cd60877832995d790ed10dd1203b1f8c86ed7a69b4bd27f470fc27ee43"
+        }
+      ],
+      "planned_bytes": 1261873530,
+      "local_dir": "/home/administrator/emotion-data/emotioncore_runs/X02/models/A3"
+    },
+    "V2": {
+      "repo_id": "openai/clip-vit-large-patch14",
+      "source_url": "https://huggingface.co/openai/clip-vit-large-patch14/tree/32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 4519,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "2c19f6666e0e163c7954df66cb901353fcad088e",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2/config.json",
+          "local_sha256": "8a09b467700c58138c29d53c605b34ebc69beaadd13274a8a2af8ad2c2f4032a"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 316,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "5a12a1eb250987a4eee0e3e7d7338c4b22724be1",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2/preprocessor_config.json",
+          "local_sha256": "910e70b3956ac9879ebc90b22fb3bc8a75b6a0677814500101a4c072bd7857bd"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1710540580,
+          "upstream_lfs_sha256": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
+          "upstream_git_blob": "cacafd1899a1fbf021fe1eeaafebc9bc6d2a9c07",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2/model.safetensors",
+          "local_sha256": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb"
+        }
+      ],
+      "planned_bytes": 1710545415,
+      "local_dir": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2"
+    },
+    "T1": {
+      "repo_id": "hfl/chinese-roberta-wwm-ext-large",
+      "source_url": "https://huggingface.co/hfl/chinese-roberta-wwm-ext-large/tree/a25cc9e05974bd9687e528edd516f2cfdb3f5db9",
+      "revision": "a25cc9e05974bd9687e528edd516f2cfdb3f5db9",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 690,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "920741798717df58aa766c378de136df3053b609",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/config.json",
+          "local_sha256": "53d086daf0ccdddbeb78f8798f34c685a3c48089fa21ec61300527f083fa2563"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1306484351,
+          "upstream_lfs_sha256": "4ac62d49144d770c5ca9a5d1d3039c4995665a080febe63198189857c6bd11cd",
+          "upstream_git_blob": "c99146ee87b5041ce25adbe69bbcbb99b9d46ce2",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/pytorch_model.bin",
+          "local_sha256": "4ac62d49144d770c5ca9a5d1d3039c4995665a080febe63198189857c6bd11cd"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 268961,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "eba64ab600f7bb029b38ac391b35651e3b55f185",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/tokenizer.json",
+          "local_sha256": "53ff61207898738bbdc000f38abebef01041c8d23b6270c11855fc692d0a3ad6"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 19,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "66051e65c65b3ec5e0b437496d1e545c5d8934b4",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/tokenizer_config.json",
+          "local_sha256": "61785aeaba176fba6d6489f27dccfd2ddee6aee2af0e590451cab7d8b57e0874"
+        },
+        {
+          "path": "vocab.txt",
+          "bytes": 109540,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ca4f9781030019ab9b253c6dcb8c7878b6dc87a5",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/vocab.txt",
+          "local_sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 112,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "e7b0375001f109a6b8873d756ad4f7bbb15fbaa5",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/special_tokens_map.json",
+          "local_sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 2,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1/added_tokens.json",
+          "local_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        }
+      ],
+      "planned_bytes": 1306863675,
+      "local_dir": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T1"
+    },
+    "T2": {
+      "repo_id": "BAAI/bge-large-zh-v1.5",
+      "source_url": "https://huggingface.co/BAAI/bge-large-zh-v1.5/tree/79e7739b6ab944e86d6171e44d24c997fc1e0116",
+      "revision": "79e7739b6ab944e86d6171e44d24c997fc1e0116",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 1000,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "03df12a02c65a8ba9552ed63f6f1518575d1f7ef",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/config.json",
+          "local_sha256": "2d4f53504b43a856f982dad647835c0ae98f91a73c8ff0db95ab89e3e4806fa9"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1302220525,
+          "upstream_lfs_sha256": "bf84a56fb045c24e090495195584a3922c3e4204107f0bba8b79c11f67a207f2",
+          "upstream_git_blob": "6c433bc6b9e1b0f7ad8d929159baaf6d317c033c",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/pytorch_model.bin",
+          "local_sha256": "bf84a56fb045c24e090495195584a3922c3e4204107f0bba8b79c11f67a207f2"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 439124,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "15df791881f91e7963c9e0d704de2f2037baa002",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/tokenizer.json",
+          "local_sha256": "7dfbf1966ebf99d471c3796e9b457329d2b2182b817e144f1e904b957745c839"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 394,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "42046bd361a033a24264dc41de1fe6cafd68072f",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/tokenizer_config.json",
+          "local_sha256": "e1790949631401af1bfb6c9c7aeec7fcf612e274d73579d99f704faea40c8ba7"
+        },
+        {
+          "path": "vocab.txt",
+          "bytes": 109540,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ca4f9781030019ab9b253c6dcb8c7878b6dc87a5",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/vocab.txt",
+          "local_sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 125,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "a8b3208c2884c4efb86e49300fdd3dc877220cdf",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/special_tokens_map.json",
+          "local_sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"
+        },
+        {
+          "path": "1_Pooling/config.json",
+          "bytes": 191,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "9bd85925f325e25246d94c4918dc02ab98f2a1b7",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/1_Pooling/config.json",
+          "local_sha256": "e54c164a07274f2eb45bb724f54a79d1efcc90c41573887cd9a29aeee0597352"
+        },
+        {
+          "path": "modules.json",
+          "bytes": 349,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "952a9b81c0bfd99800fabf352f69c7ccd46c5e43",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/modules.json",
+          "local_sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "bytes": 52,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ea85692bff64b0d1917833c31ddbca8ab10f5455",
+          "local_path": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2/sentence_bert_config.json",
+          "local_sha256": "84e39fda68ccbff05bfa723ae9c0e70e23e2ec373b76e0f8c6e71af72a693cbf"
+        }
+      ],
+      "planned_bytes": 1302771300,
+      "local_dir": "/home/administrator/emotion-data/emotioncore_runs/X02/models/T2"
+    }
+  },
+  "total_verified_bytes": 5582053920
+}

@@ -1,0 +1,159 @@
+{
+  "per_encoder_head": {
+    "A1": {
+      "winner": "h2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.380611634967138,
+          "uar": 0.4169774772224315
+        },
+        "h2": {
+          "macro_f1": 0.38223789661348356,
+          "uar": 0.4122462623371475
+        }
+      }
+    },
+    "A2": {
+      "winner": "h2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.5204948258139697,
+          "uar": 0.576556550202305
+        },
+        "h2": {
+          "macro_f1": 0.5413141796962908,
+          "uar": 0.5833369543711895
+        }
+      }
+    },
+    "A3": {
+      "winner": "h2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.5478636857210154,
+          "uar": 0.5978042383933727
+        },
+        "h2": {
+          "macro_f1": 0.5565543857953669,
+          "uar": 0.6029728109498782
+        }
+      }
+    },
+    "V1": {
+      "winner": "h1",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.3632451646122303,
+          "uar": 0.4119735917444274
+        },
+        "h2": {
+          "macro_f1": 0.3596109499255124,
+          "uar": 0.3997325772036649
+        }
+      }
+    },
+    "V2": {
+      "winner": "h2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.3840554625825236,
+          "uar": 0.43666085412515704
+        },
+        "h2": {
+          "macro_f1": 0.41758319681916817,
+          "uar": 0.45760375124997843
+        }
+      }
+    },
+    "V3a": {
+      "winner": "h1",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.31505908908106045,
+          "uar": 0.35693119005516466
+        },
+        "h2": {
+          "macro_f1": 0.307841635508729,
+          "uar": 0.3479087389332881
+        }
+      }
+    },
+    "V3b": {
+      "winner": "h2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "h1": {
+          "macro_f1": 0.34294448984752895,
+          "uar": 0.3922331469870955
+        },
+        "h2": {
+          "macro_f1": 0.37448727079021965,
+          "uar": 0.3965711693168878
+        }
+      }
+    }
+  },
+  "modality_champions": {
+    "A": {
+      "winner": "A3",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "A1": {
+          "macro_f1": 0.38223789661348356,
+          "uar": 0.4122462623371475
+        },
+        "A2": {
+          "macro_f1": 0.5413141796962908,
+          "uar": 0.5833369543711895
+        },
+        "A3": {
+          "macro_f1": 0.5565543857953669,
+          "uar": 0.6029728109498782
+        }
+      }
+    },
+    "V": {
+      "winner": "V2",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "V1": {
+          "macro_f1": 0.3632451646122303,
+          "uar": 0.4119735917444274
+        },
+        "V2": {
+          "macro_f1": 0.41758319681916817,
+          "uar": 0.45760375124997843
+        },
+        "V3a": {
+          "macro_f1": 0.31505908908106045,
+          "uar": 0.35693119005516466
+        },
+        "V3b": {
+          "macro_f1": 0.37448727079021965,
+          "uar": 0.3965711693168878
+        }
+      }
+    },
+    "T_deployment_r": {
+      "winner": "T1",
+      "selection_rule": "CV M macro-F1, UAR tie-break, first fixed candidate order for exact ties",
+      "candidates": {
+        "T1": {
+          "macro_f1": 0.41909680091431806,
+          "uar": 0.44308431629199463
+        },
+        "T2": {
+          "macro_f1": 0.3572227321307149,
+          "uar": 0.44101958121726403
+        }
+      }
+    }
+  },
+  "note": "T champion uses ASR-input CV because deployment consumes ASR; all heads train on annotated text."
+}

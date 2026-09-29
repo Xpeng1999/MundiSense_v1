@@ -1,0 +1,15 @@
+{
+  "git": {
+    "commit": "2dd6f78938a28714d9295a80945e9759ec80e8c9",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/projects/emotioncore/src/emotioncore/x02/download_models.py",
+    "--run-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02"
+  ],
+  "endpoint": "https://hf-mirror.com",
+  "download_plan_sha256": "83b496ca2270bfef1e9ac1f3c39a0757d5e8cb81420ec96fe1f73429c0224a50"
+}

@@ -1,0 +1,171 @@
+{
+  "endpoint": "https://hf-mirror.com",
+  "total_planned_bytes": 5582053920,
+  "budget_bytes": 100000000000,
+  "models": {
+    "A3": {
+      "repo_id": "TencentGameMate/chinese-hubert-large",
+      "source_url": "https://huggingface.co/TencentGameMate/chinese-hubert-large/tree/90cb660492214f687e60f5ca509b20edae6e75bd",
+      "revision": "90cb660492214f687e60f5ca509b20edae6e75bd",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 1380,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "3a7cd8168d62ca606d1bbf1a5e391621fa89fa7b"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 211,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "15dafdfb87082ed17f859f7620759a95d5d62af2"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1261871939,
+          "upstream_lfs_sha256": "482c19cd60877832995d790ed10dd1203b1f8c86ed7a69b4bd27f470fc27ee43",
+          "upstream_git_blob": "d0a8072456c7f17e948e455575dbd063df06d7ab"
+        }
+      ],
+      "planned_bytes": 1261873530
+    },
+    "V2": {
+      "repo_id": "openai/clip-vit-large-patch14",
+      "source_url": "https://huggingface.co/openai/clip-vit-large-patch14/tree/32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 4519,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "2c19f6666e0e163c7954df66cb901353fcad088e"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 316,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "5a12a1eb250987a4eee0e3e7d7338c4b22724be1"
+        },
+        {
+          "path": "model.safetensors",
+          "bytes": 1710540580,
+          "upstream_lfs_sha256": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
+          "upstream_git_blob": "cacafd1899a1fbf021fe1eeaafebc9bc6d2a9c07"
+        }
+      ],
+      "planned_bytes": 1710545415
+    },
+    "T1": {
+      "repo_id": "hfl/chinese-roberta-wwm-ext-large",
+      "source_url": "https://huggingface.co/hfl/chinese-roberta-wwm-ext-large/tree/a25cc9e05974bd9687e528edd516f2cfdb3f5db9",
+      "revision": "a25cc9e05974bd9687e528edd516f2cfdb3f5db9",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 690,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "920741798717df58aa766c378de136df3053b609"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1306484351,
+          "upstream_lfs_sha256": "4ac62d49144d770c5ca9a5d1d3039c4995665a080febe63198189857c6bd11cd",
+          "upstream_git_blob": "c99146ee87b5041ce25adbe69bbcbb99b9d46ce2"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 268961,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "eba64ab600f7bb029b38ac391b35651e3b55f185"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 19,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "66051e65c65b3ec5e0b437496d1e545c5d8934b4"
+        },
+        {
+          "path": "vocab.txt",
+          "bytes": 109540,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ca4f9781030019ab9b253c6dcb8c7878b6dc87a5"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 112,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "e7b0375001f109a6b8873d756ad4f7bbb15fbaa5"
+        },
+        {
+          "path": "added_tokens.json",
+          "bytes": 2,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+        }
+      ],
+      "planned_bytes": 1306863675
+    },
+    "T2": {
+      "repo_id": "BAAI/bge-large-zh-v1.5",
+      "source_url": "https://huggingface.co/BAAI/bge-large-zh-v1.5/tree/79e7739b6ab944e86d6171e44d24c997fc1e0116",
+      "revision": "79e7739b6ab944e86d6171e44d24c997fc1e0116",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 1000,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "03df12a02c65a8ba9552ed63f6f1518575d1f7ef"
+        },
+        {
+          "path": "pytorch_model.bin",
+          "bytes": 1302220525,
+          "upstream_lfs_sha256": "bf84a56fb045c24e090495195584a3922c3e4204107f0bba8b79c11f67a207f2",
+          "upstream_git_blob": "6c433bc6b9e1b0f7ad8d929159baaf6d317c033c"
+        },
+        {
+          "path": "tokenizer.json",
+          "bytes": 439124,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "15df791881f91e7963c9e0d704de2f2037baa002"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "bytes": 394,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "42046bd361a033a24264dc41de1fe6cafd68072f"
+        },
+        {
+          "path": "vocab.txt",
+          "bytes": 109540,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ca4f9781030019ab9b253c6dcb8c7878b6dc87a5"
+        },
+        {
+          "path": "special_tokens_map.json",
+          "bytes": 125,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "a8b3208c2884c4efb86e49300fdd3dc877220cdf"
+        },
+        {
+          "path": "1_Pooling/config.json",
+          "bytes": 191,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "9bd85925f325e25246d94c4918dc02ab98f2a1b7"
+        },
+        {
+          "path": "modules.json",
+          "bytes": 349,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "952a9b81c0bfd99800fabf352f69c7ccd46c5e43"
+        },
+        {
+          "path": "sentence_bert_config.json",
+          "bytes": 52,
+          "upstream_lfs_sha256": null,
+          "upstream_git_blob": "ea85692bff64b0d1917833c31ddbca8ab10f5455"
+        }
+      ],
+      "planned_bytes": 1302771300
+    }
+  }
+}
