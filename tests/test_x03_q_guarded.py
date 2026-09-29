@@ -2,8 +2,10 @@ import json
 import sys
 
 import numpy as np
+import pytest
 
 from emotioncore.x03.q_pipeline import run_step
+from emotioncore.x03.q_manifest import sha256
 from emotioncore.x03.q_train import eval_boundaries
 from emotioncore.x03.q_train_guarded import (ordered_training_rows, restore_last,
                                              save_last, segment_ends,
@@ -23,7 +25,8 @@ def test_guarded_order_and_boundaries_preserve_frozen_trainer():
     assert ends == sorted(set(ends))
 
 
-def test_guarded_launcher_retries_once_from_last(tmp_path):
+def test_guarded_launcher_retries_once_from_last(tmp_path, monkeypatch):
+    monkeypatch.setattr("emotioncore.x03.q_pipeline.assert_e2_cpu", lambda: None)
     root = tmp_path / "q"
     root.mkdir()
     output = root / "fold1"
@@ -42,6 +45,21 @@ def test_guarded_launcher_retries_once_from_last(tmp_path):
     assert (root / "pipeline_logs" / "train_fold1_attempt1.log").is_file()
 
 
+def test_guarded_launcher_caps_retries_at_two(tmp_path, monkeypatch):
+    monkeypatch.setattr("emotioncore.x03.q_pipeline.assert_e2_cpu", lambda: None)
+    root = tmp_path / "q"
+    output = root / "fold1"
+    output.mkdir(parents=True)
+    (output / "last.json").write_text("{}")
+    progress = {"steps": []}
+    command = [sys.executable, "-c", "import sys;sys.exit(17)",
+               "--output-dir", str(output)]
+    with pytest.raises(RuntimeError, match="after 3 attempt"):
+        run_step("train_fold1", command, root, progress, resume_training=True)
+    assert len(progress["steps"]) == 3
+    assert len((root / "incidents.jsonl").read_text().splitlines()) == 3
+
+
 def test_longest_av_ranking_uses_input_token_length(tmp_path):
     rows = []
     for uid, length in (("c", 7), ("b", 13), ("a", 13)):
@@ -50,7 +68,7 @@ def test_longest_av_ranking_uses_input_token_length(tmp_path):
         np.savez(folder / "AV.npz", input_ids=np.zeros((1, length), dtype=np.int64))
         (folder / "AV.json").write_text(json.dumps({
             "status": "ok", "condition": "AV", "input_wav_sha256": "wav",
-            "input_video_sha256": "video"}))
+            "input_video_sha256": "video", "sha256": sha256(folder / "AV.npz")}))
         rows.append({"utt_id": uid, "wav_sha256": "wav", "video_sha256": "video"})
     ranked = select_longest(rows, tmp_path)
     assert [item["row"]["utt_id"] for item in ranked] == ["a", "b", "c"]

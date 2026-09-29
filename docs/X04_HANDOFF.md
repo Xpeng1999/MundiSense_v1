@@ -17,7 +17,8 @@ X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据
 | E1 五折概率融合、校准和目标集推理 | `python -m emotioncore.x03.fusion` | `$R3/T1r_sims_valid/artifact_index_x03.json`、X02 冻结概率、折文件和缺脸规则 | `$R3/E1_v4` |
 | E2 特征融合 | `python -m emotioncore.x03.e2` 及 E2 的后续校准入口 | `$R2/packs/A3`、`$R2/packs/V2`、`$R3/E2/cls_*`、折文件 | `$R3/E2` |
 | 八帧 336×336 人脸视频 | `python -m emotioncore.x03.media` | X02 face receipts/crops、YuNet、原始媒体 | `$R3/media` |
-| Q 预处理与训练 | `python -m emotioncore.x03.q_cache`、`python -m emotioncore.x03.q_train` | 本地 Qwen2.5-Omni-7B 基座、冻结 manifest、H 盘输入缓存 | `$R3/Q`；缓存 `/mnt/h/emotionAI/emotioncore_models/X03/q_inputs` |
+| Q 预处理与训练 | fold 0：`python -m emotioncore.x03.q_train`；fold 1 起：`python -m emotioncore.x03.q_train_guarded`；编排：`python -m emotioncore.x03.q_pipeline` | 本地 Qwen2.5-Omni-7B 基座、冻结 manifest、H 盘输入缓存 | `$R3/Q`；缓存 `/mnt/h/emotionAI/emotioncore_models/X03/q_inputs` |
+| 最长 AV 输入显存预检 | `python -m emotioncore.x03.q_worst_case` | 六份冻结训练 manifest；所有 AV 输入的 processor 缓存 | `$R3/Q/worst_case_preflight` |
 | Q 三条件预测与校准 | `python -m emotioncore.x03.q_predict`、`python -m emotioncore.x03.q_calibrate` | Q 五折及最终 adapter、A/V/AV 推理清单 | `$R3/Q/predict_*`、`$R3/Q_calibrated`（预测完成后） |
 | Q 融合与 H 五组合 | `python -m emotioncore.x03.h_fusion` | Q 原始 OOF/目标集概率和 X02 专家概率 | `$R3/H`（待执行） |
 | 主表、配对差值及错误分析 | `python -m emotioncore.x03.final_analysis` | E1/E2/Q/H 校准产物、X02 质量标记 | `$R3/analysis`（待执行） |
@@ -28,7 +29,8 @@ X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据
 
 - E1 已完成五组合及 T1r SIMS-valid 补推理；其概率级融合只需已冻结的专家输出。E2 在 CPU 运行五折。
 - Q 从只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B` 基座开始，NF4 双重量化、BF16、语言 LoRA rank 16 和视觉 LoRA rank 8，音频塔冻结。Q fold 0 的首次固定 AV 内验证 macro-F1 为 0.5794；须等 fold 0 完成后按最终最佳 checkpoint 核验 ≥0.45，并用实测总时长重估 55 GPU 小时门限。
-- Q fold 0 完成后，`$R3/Q/launch_after_fold0.sh` 只会调用带双门禁的 `emotioncore.x03.q_pipeline`；若 fold 0 失败、健全性不足或估算超预算，将停止并留下日志。Q 五折和最终 adapter 完成前，不应把首次验证的 adapter 当成正式跨臂结果。
+- 当前 fold 0 不受新增显存保护影响。fold 1 起 Q 训练/推理使用 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`；每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。fold 0 后、fold 1 前须通过最长 20 条 AV 输入的 30 GiB 峰值门禁；候选全集是 15,281 条去重 AV 训练句。
+- 原 fold 0 完成后启动器为接入新门禁已暂停；验证新代码后须重新启用。若 fold 0 失败、健全性不足、估算超预算或最坏情况预检失败，流水线将停止并留下日志。Q 五折和最终 adapter 完成前，不应把首次验证的 adapter 当成正式跨臂结果。
 - 臂 P 依 reviewer 批复取消；X02 已尝试 4bit，峰值 58,041.6 MiB。
 
 X03 完成后，本文件须补齐六个 Q adapter 的实际路径和 SHA-256、各候选系统最终推理入口及最终产物索引。

@@ -370,7 +370,7 @@ def run(args: argparse.Namespace) -> None:
                     step_s = batch_duration + time.monotonic() - optimizer_started
                     baseline = statistics.median(recent_steps) if len(recent_steps) >= 10 else None
                     slow_streak = slow_streak + 1 if baseline and step_s > 3 * baseline else 0
-                    if slow_streak >= 3:
+                    if slow_streak >= 2:
                         append_json(args.output_dir / "memory_warnings.jsonl",
                                     {"optimizer_step": progress["optimizer_steps"],
                                      "step_s": step_s, "median_previous_s": baseline,

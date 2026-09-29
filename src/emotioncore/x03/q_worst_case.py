@@ -59,13 +59,22 @@ def select_longest(rows: list[dict], cache_root: Path) -> list[dict]:
             length = int(data["input_ids"].shape[-1])
         ranked.append((length, row["utt_id"], row))
     ranked.sort(key=lambda item: (-item[0], item[1]))
-    return [{"rank": index, "input_token_length": length, "row": row,
-             "cache_sha256": sha256(cache_root / uid / "AV.npz")}
-            for index, (length, uid, row) in enumerate(ranked[:TOP_N], 1)]
+    selected = []
+    for index, (length, uid, row) in enumerate(ranked[:TOP_N], 1):
+        digest = sha256(cache_root / uid / "AV.npz")
+        receipt = json.loads((cache_root / uid / "AV.json").read_text(encoding="utf-8"))
+        if digest != receipt["sha256"]:
+            raise ValueError(f"Selected AV processor cache SHA changed: {uid}")
+        selected.append({"rank": index, "input_token_length": length,
+                         "row": row, "cache_sha256": digest})
+    return selected
 
 
 def prepare(args: argparse.Namespace) -> None:
     git = git_provenance(Path.cwd(), args.allow_dirty)
+    if (sha256(Path("configs/x03_inner_val_subsets.json")) != SUBSET_SHA or
+            sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA):
+        raise ValueError("Frozen X03 preflight config SHA changed")
     rows = training_av_rows(args.root)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     manifest = args.output_dir / "all_training_av.jsonl"
@@ -83,6 +92,9 @@ def probe(args: argparse.Namespace) -> None:
     from transformers import Qwen2_5OmniProcessor
 
     git = git_provenance(Path.cwd(), args.allow_dirty)
+    if (sha256(Path("configs/x03_inner_val_subsets.json")) != SUBSET_SHA or
+            sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA):
+        raise ValueError("Frozen X03 preflight config SHA changed")
     if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") != "expandable_segments:True":
         raise RuntimeError("Q AV preflight requires expandable CUDA segments")
     prepared = json.loads((args.output_dir / "prepare_summary.json").read_text(encoding="utf-8"))

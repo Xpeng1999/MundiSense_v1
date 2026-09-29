@@ -19,6 +19,24 @@ def read(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def assert_e2_cpu() -> None:
+    """Refuse to start a Q GPU step if an E2 process occupies CUDA."""
+    result = subprocess.run(["nvidia-smi", "--query-compute-apps=pid",
+                             "--format=csv,noheader"], capture_output=True,
+                            text=True, check=True, timeout=10)
+    for line in result.stdout.splitlines():
+        token = line.strip()
+        if not token.isdigit():
+            continue
+        command_path = Path("/proc") / token / "cmdline"
+        try:
+            command = command_path.read_bytes().replace(b"\0", b" ")
+        except (FileNotFoundError, PermissionError):
+            continue
+        if b"emotioncore.x03.e2" in command:
+            raise RuntimeError(f"E2 process {token} is on GPU during Q")
+
+
 def run_step(name: str, command: list[str], root: Path, progress: dict,
              *, resume_training: bool = False) -> None:
     log_root = root / "pipeline_logs"
@@ -28,8 +46,13 @@ def run_step(name: str, command: list[str], root: Path, progress: dict,
     env["PYTHONDONTWRITEBYTECODE"] = "1"
     env["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
     output_dir = Path(command[command.index("--output-dir") + 1]) if "--output-dir" in command else None
+    if resume_training and output_dir and (output_dir / "terminal_stop.json").is_file():
+        raise RuntimeError(f"Q training {name} has a frozen terminal stop")
+    existing_last = bool(resume_training and output_dir and (output_dir / "last.json").is_file())
     for attempt in range(3 if resume_training else 1):
-        active = command + (["--resume-last"] if attempt else [])
+        if name.startswith(("train_", "predict_")) or name == "worst_case_probe":
+            assert_e2_cpu()
+        active = command + (["--resume-last"] if attempt or existing_last else [])
         log = log_root / f"{name}_attempt{attempt}.log"
         started = time.monotonic()
         progress["active_step"] = name
