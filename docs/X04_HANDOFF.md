@@ -1,24 +1,34 @@
-# X03 → X04 交接：预算门禁后状态
+# X03 → X04 交接（执行中）
 
-X03 尚未完成架构对照，不应把 E1 臂内结果当作主干选择。停止依据及未完成项目见 [X03 报告](../experiments/X03_fusion/REPORT.md)。
+X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据交付后决定。当前进度见 [X03 报告](../experiments/X03_fusion/REPORT.md)。服务器运行根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下称 `$R3`），冻结 X02 运行根目录为 `/home/administrator/emotion-data/emotioncore_runs/X02`（下称 `$R2`）。
 
-## 可复现的入口
+## 冻结输入与规则
 
-| 项目 | 入口 | 依赖 | 服务器产物 |
+- 五个外折：`configs/folds_v1.json`，SHA-256 `85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce`。
+- 每折 700 句内验证：[`configs/x03_inner_val_subsets.json`](../configs/x03_inner_val_subsets.json)，种子 20260929，SHA-256 `be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd`。
+- 缺脸规则：[`configs/x03_face_missing_policy.json`](../configs/x03_face_missing_policy.json)，SHA-256 `ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c`。ET 的 43 句缺脸：训练 V/AV 改 A，评估 V 均匀且强制计错，AV 仅音频回退；E/H 视觉专家均匀。
+- 句级截断敏感性输入：`$R2/quality/utterance_quality.jsonl`，SHA-256 `80330bb718e31a8155793ab83e396bd4741a87347858f0342fd039cdb098bb32`。
+- CH-SIMS test 是封存集，X03 只使用 SIMS-valid。
+
+## 入口与依赖
+
+| 系统/阶段 | 入口 | 依赖 | 服务器产物 |
 |---|---|---|---|
-| E1 五折概率融合、校准、ET-test/SIMS-valid | `python -m emotioncore.x03.fusion` | `experiments/X02_unimodal/results/artifact_index.json` 所列冻结 OOF/测试概率；`configs/folds_v1.json` | `/home/administrator/emotion-data/emotioncore_runs/X03/E1` |
-| 336×336 八帧人脸视频 | `python -m emotioncore.x03.media` | X02 `face/receipts` 与 `face/frames`、YuNet 权重、冻结 ET manifest | `/home/administrator/emotion-data/emotioncore_runs/X03/media` |
-| Q NF4 LoRA 模态和耗时冒烟 | `python -m emotioncore.x03.q_smoke` | 本地 Qwen2.5-Omni-7B 基座、原始 WAV、X03 视频 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q_smoke_budget` |
+| E1 五折概率融合、校准和目标集推理 | `python -m emotioncore.x03.fusion` | `$R3/T1r_sims_valid/artifact_index_x03.json`、X02 冻结概率、折文件和缺脸规则 | `$R3/E1_v4` |
+| E2 特征融合 | `python -m emotioncore.x03.e2` 及 E2 的后续校准入口 | `$R2/packs/A3`、`$R2/packs/V2`、`$R3/E2/cls_*`、折文件 | `$R3/E2` |
+| 八帧 336×336 人脸视频 | `python -m emotioncore.x03.media` | X02 face receipts/crops、YuNet、原始媒体 | `$R3/media` |
+| Q 预处理与训练 | `python -m emotioncore.x03.q_cache`、`python -m emotioncore.x03.q_train` | 本地 Qwen2.5-Omni-7B 基座、冻结 manifest、H 盘输入缓存 | `$R3/Q`；缓存 `/mnt/h/emotionAI/emotioncore_models/X03/q_inputs` |
+| Q 三条件预测与校准 | `python -m emotioncore.x03.q_predict`、`python -m emotioncore.x03.q_calibrate` | Q 五折及最终 adapter、A/V/AV 推理清单 | `$R3/Q/predict_*`、`$R3/Q_calibrated`（预测完成后） |
+| Q 融合与 H 五组合 | `python -m emotioncore.x03.h_fusion` | Q 原始 OOF/目标集概率和 X02 专家概率 | `$R3/H`（待执行） |
+| 主表、配对差值及错误分析 | `python -m emotioncore.x03.final_analysis` | E1/E2/Q/H 校准产物、X02 质量标记 | `$R3/analysis`（待执行） |
 
-入口的完整参数、Git 提交、输入 SHA-256 和起止时间见各产物目录的 `run_meta.json`。E1 每个组合的 OOF、ET-test 和可用的 SIMS-valid 概率与参数保存在各自子目录；五模态 E1 OOF SHA-256 为 `a5cafc6f566fe86a90114fa2c82a6870798953f629bdd7488ede229b5447d71a`，ET-test SHA-256 为 `c1036fc4ee7322f6705b2fab52f033949b19a9aab2af138a80b1461878dc767d`。其他逐句概率的路径与 SHA-256 见仓库 `experiments/X03_fusion/results/E1_*_metrics.json`。
+每个正式运行的完整命令、输入校验和 Git 提交保存在其 `run_meta.json`。仓库只纳入汇总指标和路径/SHA-256，不纳入逐句概率或模型权重。
 
-## 模型与特征
+## 模型和当前门禁
 
-- E1 只依赖 X02 缓存概率，不加载大模型。含 T1r 两组没有 SIMS-valid 同条件概率。
-- Q 冒烟基座为只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B`，使用 NF4 双重量化与 BF16、语言 LoRA rank 16、视觉 LoRA rank 8；**没有正式 adapter**，不可用冒烟模型作评估。
-- 视频已生成 19,207/19,250 条，43 条固定人脸过滤失败。数据在 X03 运行根目录，不在 Git 仓库。
-- 可选 P 未启动。X02 大模型与 CLIP-GmP 的 H 盘位置仍见 [X02 对接说明](X03_HANDOFF.md)。
+- E1 已完成五组合及 T1r SIMS-valid 补推理；其概率级融合只需已冻结的专家输出。E2 在 CPU 运行五折。
+- Q 从只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B` 基座开始，NF4 双重量化、BF16、语言 LoRA rank 16 和视觉 LoRA rank 8，音频塔冻结。Q fold 0 的首次固定 AV 内验证 macro-F1 为 0.5794；须等 fold 0 完成后按最终最佳 checkpoint 核验 ≥0.45，并用实测总时长重估 55 GPU 小时门限。
+- Q fold 0 完成后，`$R3/Q/launch_after_fold0.sh` 只会调用带双门禁的 `emotioncore.x03.q_pipeline`；若 fold 0 失败、健全性不足或估算超预算，将停止并留下日志。Q 五折和最终 adapter 完成前，不应把首次验证的 adapter 当成正式跨臂结果。
+- 臂 P 依 reviewer 批复取消；X02 已尝试 4bit，峰值 58,041.6 MiB。
 
-## 继续前的门禁
-
-原定协议的 Q 全量预计 45.95 GPU 小时，超过 45 小时上限；E2、Q、H 的正式实验没有开始。若 reviewer 调整预算，先冻结 43 条人脸缺失的处理规则及 T1r 的 SIMS-valid 处理，再按原折分继续；CH-SIMS test 仍封存。
+X03 完成后，本文件须补齐六个 Q adapter 的实际路径和 SHA-256、各候选系统最终推理入口及最终产物索引。
