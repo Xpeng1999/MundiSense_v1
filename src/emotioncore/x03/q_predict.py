@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -22,6 +23,8 @@ def run(args: argparse.Namespace) -> None:
     import torch
     from transformers import Qwen2_5OmniProcessor
 
+    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") != "expandable_segments:True":
+        raise RuntimeError("Q prediction requires expandable CUDA segments")
     git = git_provenance(Path.cwd(), args.allow_dirty)
     if sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA:
         raise ValueError("Frozen face policy changed")
@@ -71,7 +74,8 @@ def run(args: argparse.Namespace) -> None:
             "manifest_meta_sha256": sha256(args.manifest_meta), "adapter": str(args.adapter),
             "adapter_sha256": args.adapter_sha256,
             "base_index_sha256": sha256(MODEL / "model.safetensors.index.json"),
-            "face_policy_sha256": FACE_SHA}
+            "face_policy_sha256": FACE_SHA,
+            "cuda_allocator": os.environ["PYTORCH_CUDA_ALLOC_CONF"]}
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     torch.set_num_threads(4)
     processor = Qwen2_5OmniProcessor.from_pretrained(str(MODEL), local_files_only=True)

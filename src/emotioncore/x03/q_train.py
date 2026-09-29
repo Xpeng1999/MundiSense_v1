@@ -124,6 +124,8 @@ def run(args: argparse.Namespace) -> None:
             manifest_meta["face_policy_sha256"] != FACE_SHA):
         raise ValueError("Q manifest run_meta does not match frozen protocol")
     name = args.fold_name
+    if name != "fold0":
+        raise RuntimeError("Q fold 1 onward must use q_train_guarded")
     manifest_info = manifest_meta["runs"][name]
     if (sha256(args.train_manifest) != manifest_info["train_sha256"] or
             sha256(args.val_manifest) != manifest_info["val_sha256"]):
