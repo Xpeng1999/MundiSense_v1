@@ -5,7 +5,9 @@ import numpy as np
 import pytest
 
 from emotioncore.x03.q_pipeline import run_step
+from emotioncore.x03.q_checkpoint_equivalence import relative_error
 from emotioncore.x03.q_manifest import sha256
+from emotioncore.x03.q_resume_budget import estimate
 from emotioncore.x03.q_train import eval_boundaries
 from emotioncore.x03.q_train_guarded import (ordered_training_rows, restore_last,
                                              save_last, segment_ends,
@@ -58,6 +60,44 @@ def test_guarded_launcher_caps_retries_at_two(tmp_path, monkeypatch):
         run_step("train_fold1", command, root, progress, resume_training=True)
     assert len(progress["steps"]) == 3
     assert len((root / "incidents.jsonl").read_text().splitlines()) == 3
+
+
+def test_q_launcher_clears_wsl_incompatible_allocator(tmp_path, monkeypatch):
+    monkeypatch.setenv("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+    monkeypatch.setenv("PYTORCH_ALLOC_CONF", "expandable_segments:True")
+    output = tmp_path / "allocator.txt"
+    command = [sys.executable, "-c",
+               "import os,pathlib,sys; pathlib.Path(sys.argv[1]).write_text("
+               "repr((os.getenv('PYTORCH_CUDA_ALLOC_CONF'), os.getenv('PYTORCH_ALLOC_CONF'))))",
+               str(output)]
+    progress = {"steps": []}
+    run_step("allocator_check", command, tmp_path, progress)
+    assert output.read_text() == "(None, None)"
+    assert progress["steps"][0]["cuda_allocator"] == "default"
+
+
+def test_q_checkpoint_relative_error_and_remaining_budget(tmp_path):
+    import torch
+
+    assert relative_error(torch.tensor([0.0]), torch.tensor([0.0])) == 0
+    assert relative_error(torch.tensor([1.0]), torch.tensor([1.0])) == 0
+    root = tmp_path / "q"
+    manifests = root / "manifests"
+    manifests.mkdir(parents=True)
+    for name in (*[f"fold{i}" for i in range(1, 5)], "final"):
+        (manifests / f"{name}_train.jsonl").write_text("".join(
+            json.dumps({"effective_form": form}) + "\n" for form in ("A", "V", "AV")))
+    benchmark = {"status": "complete", "cuda_allocator": "default",
+                 "gradient_checkpointing": {"llm": True, "vision": True, "audio": True},
+                 "forms": {form: {"train_step_mean_s": 1.0, "train_step_median_s": 1.0,
+                                  "inference_mean_s": 0.1, "inference_median_s": 0.1}
+                           for form in ("A", "V", "AV")}}
+    result = estimate(root, benchmark, {"gpu_elapsed_s": 3600})
+    assert result["remaining_training_examples_by_form"] == {"A": 10, "V": 10, "AV": 10}
+    assert result["status"] == "within_budget"
+    for form in ("A", "V", "AV"):
+        benchmark["forms"][form]["train_step_mean_s"] = 100_000.0
+    assert estimate(root, benchmark, {"gpu_elapsed_s": 3600})["status"] == "stop"
 
 
 def test_longest_av_ranking_uses_input_token_length(tmp_path):

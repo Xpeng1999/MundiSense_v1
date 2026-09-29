@@ -20,6 +20,7 @@ from emotioncore.x03.q_train_guarded import nvidia_memory_mib
 
 LIMIT_BYTES = 30_000_000_000  # The user's literal 30 GB limit, in bytes.
 TOP_N = 20
+FROZEN_SELECTION_SHA = "feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10"
 
 
 def training_av_rows(root: Path) -> list[dict]:
@@ -95,8 +96,8 @@ def probe(args: argparse.Namespace) -> None:
     if (sha256(Path("configs/x03_inner_val_subsets.json")) != SUBSET_SHA or
             sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA):
         raise ValueError("Frozen X03 preflight config SHA changed")
-    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") != "expandable_segments:True":
-        raise RuntimeError("Q AV preflight requires expandable CUDA segments")
+    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") or os.environ.get("PYTORCH_ALLOC_CONF"):
+        raise RuntimeError("Q AV preflight requires the default CUDA allocator")
     prepared = json.loads((args.output_dir / "prepare_summary.json").read_text(encoding="utf-8"))
     manifest = Path(prepared["manifest"])
     if sha256(manifest) != prepared["manifest_sha256"]:
@@ -105,21 +106,26 @@ def probe(args: argparse.Namespace) -> None:
     selected = select_longest(rows, args.cache_root)
     if len(selected) != TOP_N:
         raise ValueError("Fewer than 20 AV training samples available")
-    write_json_atomic(args.output_dir / "selected_longest20.json",
+    selected_path = args.output_dir / "selected_longest20.json"
+    write_json_atomic(selected_path,
                       {"selection": selected, "source_manifest_sha256": sha256(manifest),
                        "ranking": "input_ids token length descending, utt_id ascending"})
+    if sha256(selected_path) != FROZEN_SELECTION_SHA:
+        raise ValueError("Frozen longest-20 AV selection SHA changed")
     meta = {"git": git, "command": sys.argv,
             "started_at": dt.datetime.now(dt.timezone.utc).isoformat(),
             "model_index_sha256": sha256(MODEL / "model.safetensors.index.json"),
             "source_manifest_sha256": sha256(manifest),
-            "selection_sha256": sha256(args.output_dir / "selected_longest20.json"),
-            "cuda_allocator": os.environ["PYTORCH_CUDA_ALLOC_CONF"],
+            "selection_sha256": FROZEN_SELECTION_SHA,
+            "cuda_allocator": "default",
             "memory_limit_bytes": LIMIT_BYTES}
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     torch.manual_seed(20260929)
     torch.set_num_threads(4)
     processor = Qwen2_5OmniProcessor.from_pretrained(str(MODEL), local_files_only=True)
     thinker, optimizer, info = model_and_optimizer()
+    meta["gradient_checkpointing"] = info["gradient_checkpointing"]
+    write_json_atomic(args.output_dir / "run_meta.json", meta)
     thinker.train()
     receipts = []
     gate = "pass"

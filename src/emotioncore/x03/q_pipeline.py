@@ -44,7 +44,8 @@ def run_step(name: str, command: list[str], root: Path, progress: dict,
     env = os.environ.copy()
     env["PYTHONPATH"] = str(Path.cwd() / "src")
     env["PYTHONDONTWRITEBYTECODE"] = "1"
-    env["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+    env.pop("PYTORCH_CUDA_ALLOC_CONF", None)
+    env.pop("PYTORCH_ALLOC_CONF", None)
     output_dir = Path(command[command.index("--output-dir") + 1]) if "--output-dir" in command else None
     if resume_training and output_dir and (output_dir / "terminal_stop.json").is_file():
         raise RuntimeError(f"Q training {name} has a frozen terminal stop")
@@ -66,7 +67,7 @@ def run_step(name: str, command: list[str], root: Path, progress: dict,
         elapsed = time.monotonic() - started
         progress["steps"].append({"name": name, "attempt": attempt,
                                   "elapsed_s": elapsed, "exit_code": result.returncode,
-                                  "log": str(log), "cuda_allocator": env["PYTORCH_CUDA_ALLOC_CONF"]})
+                                  "log": str(log), "cuda_allocator": "default"})
         progress["active_step"] = None
         for key in ("active_attempt", "active_command", "active_started_at"):
             progress.pop(key, None)
@@ -95,6 +96,19 @@ def run(args: argparse.Namespace) -> None:
     if (sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA or
             sha256(Path("configs/x03_inner_val_subsets.json")) != SUBSET_SHA):
         raise ValueError("Frozen X03 Q protocol changed")
+    if (args.root / "pipeline_stop.json").is_file():
+        raise RuntimeError("Q has a terminal stop receipt; complete the recovery gates first")
+    resume_budget_path = args.root / "resume_budget" / "summary.json"
+    if not resume_budget_path.is_file():
+        raise RuntimeError("Q checkpointed step-time budget gate is missing")
+    resume_budget = read(resume_budget_path)
+    if (resume_budget["status"] != "within_budget" or
+            resume_budget["projected_total_gpu_h"] > GPU_LIMIT_H or
+            resume_budget["equivalence_sha256"] !=
+            sha256(args.root / "checkpoint_equivalence" / "receipt.json") or
+            resume_budget["preflight_sha256"] !=
+            sha256(args.root / "worst_case_preflight" / "summary.json")):
+        raise RuntimeError("Q checkpoint equivalence, memory or 55-hour gate is closed")
     budget = read(Path("experiments/X03_fusion/results/q_budget_fold0_preflight.json"))
     if budget["status"] != "within_budget_estimate" or budget["gpu_limit_h"] != GPU_LIMIT_H:
         raise RuntimeError("Q preflight budget gate is closed")

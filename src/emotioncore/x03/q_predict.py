@@ -23,8 +23,8 @@ def run(args: argparse.Namespace) -> None:
     import torch
     from transformers import Qwen2_5OmniProcessor
 
-    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") != "expandable_segments:True":
-        raise RuntimeError("Q prediction requires expandable CUDA segments")
+    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") or os.environ.get("PYTORCH_ALLOC_CONF"):
+        raise RuntimeError("Q prediction requires the default CUDA allocator")
     git = git_provenance(Path.cwd(), args.allow_dirty)
     if sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA:
         raise ValueError("Frozen face policy changed")
@@ -75,14 +75,16 @@ def run(args: argparse.Namespace) -> None:
             "adapter_sha256": args.adapter_sha256,
             "base_index_sha256": sha256(MODEL / "model.safetensors.index.json"),
             "face_policy_sha256": FACE_SHA,
-            "cuda_allocator": os.environ["PYTORCH_CUDA_ALLOC_CONF"]}
+            "cuda_allocator": "default"}
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     torch.set_num_threads(4)
     processor = Qwen2_5OmniProcessor.from_pretrained(str(MODEL), local_files_only=True)
     first_ids = [processor.tokenizer(label, add_special_tokens=False).input_ids[0] for label in LABELS]
     if len(set(first_ids)) != 7:
         raise RuntimeError("Seven label first-token IDs collide")
-    thinker, optimizer, _ = model_and_optimizer()
+    thinker, optimizer, parameter_info = model_and_optimizer()
+    meta["gradient_checkpointing"] = parameter_info["gradient_checkpointing"]
+    write_json_atomic(args.output_dir / "run_meta.json", meta)
     del optimizer
     thinker.load_adapter(str(args.adapter), adapter_name="best")
     thinker.set_adapter("best")

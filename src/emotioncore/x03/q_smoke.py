@@ -148,6 +148,19 @@ def model_and_optimizer():
                       rank_pattern={name: 8 for name in visual},
                       alpha_pattern={name: 16 for name in visual})
     thinker = get_peft_model(thinker, lora)
+    # PEFT wrapping can clear the checkpointing flags set by
+    # prepare_model_for_kbit_training. Enable them on the wrapped base model.
+    wrapped = thinker.base_model.model
+    wrapped.gradient_checkpointing_enable(
+        gradient_checkpointing_kwargs={"use_reentrant": False})
+    checkpointing = {
+        "llm": bool(getattr(wrapped.model, "gradient_checkpointing", False)),
+        "vision": bool(getattr(wrapped.visual, "gradient_checkpointing", False)),
+        "audio": bool(getattr(wrapped.audio_tower, "gradient_checkpointing", False)),
+        "use_reentrant": False,
+    }
+    if not all(checkpointing[name] for name in ("llm", "vision", "audio")):
+        raise RuntimeError(f"Q gradient checkpointing inactive: {checkpointing}")
     named_trainable = [(name, p) for name, p in thinker.named_parameters() if p.requires_grad]
     vision = [(name, p) for name, p in named_trainable if "visual.blocks." in name]
     llm = [(name, p) for name, p in named_trainable if "visual.blocks." not in name]
@@ -165,7 +178,8 @@ def model_and_optimizer():
     return thinker, optimizer, {"target_modules": len(targets),
                                 "visual_target_modules": len(visual),
                                 "llm_trainable_parameters": sum(p.numel() for _, p in llm),
-                                "vision_trainable_parameters": sum(p.numel() for _, p in vision)}
+                                "vision_trainable_parameters": sum(p.numel() for _, p in vision),
+                                "gradient_checkpointing": checkpointing}
 
 
 def run(args: argparse.Namespace) -> None:

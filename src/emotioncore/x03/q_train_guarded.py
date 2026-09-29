@@ -160,8 +160,8 @@ def run(args: argparse.Namespace) -> None:
 
     if args.fold_name == "fold0":
         raise ValueError("The active fold0 must remain on the original trainer")
-    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") != "expandable_segments:True":
-        raise RuntimeError("Guarded Q training requires expandable CUDA segments")
+    if os.environ.get("PYTORCH_CUDA_ALLOC_CONF") or os.environ.get("PYTORCH_ALLOC_CONF"):
+        raise RuntimeError("Guarded Q training requires the default CUDA allocator")
     git = git_provenance(Path.cwd(), args.allow_dirty)
     if (sha256(Path("configs/x03_inner_val_subsets.json")) != SUBSET_SHA or
             sha256(Path("configs/x03_face_missing_policy.json")) != FACE_SHA):
@@ -194,7 +194,7 @@ def run(args: argparse.Namespace) -> None:
             "seed": SEED, "max_epochs": MAX_EPOCHS, "effective_batch": EFFECTIVE_BATCH,
             "learning_rate": LR, "warmup_ratio": WARMUP_RATIO,
             "training_count": len(train_rows), "validation_count": len(val_rows),
-            "cuda_allocator": os.environ["PYTORCH_CUDA_ALLOC_CONF"],
+            "cuda_allocator": "default",
             "resume_last": args.resume_last}
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     torch.manual_seed(SEED)
@@ -207,6 +207,8 @@ def run(args: argparse.Namespace) -> None:
     if len(set(first_ids)) != 7:
         raise RuntimeError("Seven class first tokens collide")
     thinker, optimizer, parameter_info = model_and_optimizer()
+    meta["gradient_checkpointing"] = parameter_info["gradient_checkpointing"]
+    write_json_atomic(args.output_dir / "run_meta.json", meta)
     parameters = trainable_parameters(thinker)
     total_examples = len(train_rows) * MAX_EPOCHS
     optimizer_steps = math.ceil(total_examples / EFFECTIVE_BATCH)
