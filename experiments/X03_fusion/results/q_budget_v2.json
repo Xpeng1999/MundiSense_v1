@@ -1,0 +1,15 @@
+{
+  "gpu_limit_h": 55.0,
+  "projected_training_h": 25.095054023396443,
+  "projected_validation_h": 3.4920554386335425,
+  "projected_prediction_h": 4.535468033903428,
+  "projected_total_h_without_loading_or_preprocessing": 33.12257749593341,
+  "validation_examples": 33600,
+  "validation_frequency": "every_0.25_epoch_AV_only",
+  "status": "within_budget_estimate",
+  "assumptions": "Six runs; five outer folds plus final; at most two epochs; batch-one measured per-example times with effective batch eight via accumulation; no hyperparameter scan",
+  "source_smoke_sha256": "a33e2c5659f4b266b1cb1490d05262100d0fcbdd0430c2dd45f15171c6ccc79b",
+  "subset_sha256": "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "computed_at": "2026-09-29T03:52:31.515746+00:00"
+}
