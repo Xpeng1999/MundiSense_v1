@@ -1,0 +1,52 @@
+{
+  "method": "provisional OP-A: for each held fold, fit Q calibration only on the other completed fold; formal five-fold OP-A remains unchanged",
+  "gate": false,
+  "folds": [
+    0,
+    1
+  ],
+  "n": 6533,
+  "systems": {
+    "Q_AV": {
+      "n": 6533,
+      "macro_f1": 0.6168391190465724,
+      "neutral_false_positive_rate": 0.24297872340425533
+    },
+    "Q_A": {
+      "n": 6533,
+      "macro_f1": 0.5614956435804436,
+      "neutral_false_positive_rate": 0.2523404255319149
+    },
+    "E1_A3_A2_V2_V1_T1r": {
+      "n": 6533,
+      "macro_f1": 0.6371754801686748,
+      "neutral_false_positive_rate": 0.20893617021276595
+    }
+  },
+  "sources": {
+    "Q_AV": [
+      {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/AV.jsonl",
+        "sha256": "7408911e5fce4d589db1c366ac09b74b32840a09c0512d4242592aa9d493de62"
+      },
+      {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/AV.jsonl",
+        "sha256": "ff653ecb730c446d37535e2f7f552937f6a472ff9c8ff6cf0c30caa17094809f"
+      }
+    ],
+    "Q_A": [
+      {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/A.jsonl",
+        "sha256": "3c2db247d3fc332d75252a51c52181fba0211c87238e8682bf3e483baaad9439"
+      },
+      {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/A.jsonl",
+        "sha256": "c7f16f46f331bce090926ebe5aa1bced6a0acec41c28fa93da9c2b52ed9b749b"
+      }
+    ],
+    "E1": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r/oof.jsonl",
+      "sha256": "c1659d204c7a056e5f423bc6123be1261950efef28e90598284309fdf4465383"
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 ## 1. 摘要
 
-X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**。按恢复指令改用默认 CUDA 分配器并显式开启梯度检查点后，同一最长 20 条 AV 输入的显存预检全部通过，峰值 **12,315,284,992 字节**。检查点开启后的实测总时长初估 **71.88 小时**；Reviewer 随后批准将总上限提高至 **75 小时**（含 fold 0 的 7.18 小时、20% 余量及诊断预留）。[75 小时门禁回执](results/q_resume_budget_75.json)为 `within_budget`。Q fold 0 三条件外折推理已完成，实耗 1.214 小时；依实际耗时更新的[逐模型预算回执](results/q_budget_progress.jsonl)预计总时长 **72.14 小时**，现进入 fold 1 训练。E1/E2 已完成，尚无跨臂结论。
+X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸回退、T1r SIMS-valid 补做和取消 P 臂。两份新配置在 fold 0 前冻结 SHA-256。Q fold 0 已完成，最佳内验证 AV macro-F1 **0.6966**。按恢复指令改用默认 CUDA 分配器并显式开启梯度检查点后，同一最长 20 条 AV 输入的显存预检全部通过，峰值 **12,315,284,992 字节**。检查点开启后的实测总时长初估 **71.88 小时**；Reviewer 随后批准将总上限提高至 **75 小时**（含 fold 0 的 7.18 小时、20% 余量及诊断预留）。[75 小时门禁回执](results/q_resume_budget_75.json)为 `within_budget`。Q fold 0 和 fold 1 的训练与三条件外折推理均已完成；按实耗更新的[逐模型预算回执](results/q_budget_progress.jsonl)预计总时长 **74.67 小时**，尚处门限内，现开始 fold 2 数据准备。E1/E2 已完成；两折中期对照仅作描述，完整五折比较待 Q OOF 齐备。
 
 ## 2. 第 0 步完成情况
 
@@ -16,7 +16,7 @@ X02 第 0 步已补齐。Reviewer 批复固定 700 句内验证、43 条缺脸�
 
 Q fold 0 已自然结束：两轮共处理 19,652 个训练样本，完成 8 次固定 700 句 AV 内验证；第 5 次验证得到最佳 macro-F1 0.6966，超过 0.45 门限。总 GPU 时长按 fold 0 实测重估为 50.51 小时，低于 55 小时门限。E2 CPU 分支已完成；H 与完整主表待 Q OOF。
 
-fold 0 全程保持原样。后续启动器通过了 fold 0 的健全性和初次时长门禁，15,281 条 AV 训练候选已全部缓存。修复分配器和检查点状态后，同一最长 20 条输入的显存门禁通过；按新单步耗时复核的 71.88 小时预计值处于现行 75 小时预算内。Q 于 2026-09-29 恢复，fold 0 三条件外折推理完成并通过逐模型预算复核，fold 1 训练已启动。E2 全程限定 CPU。
+fold 0 全程保持原样。后续启动器通过了 fold 0 的健全性和初次时长门禁，15,281 条 AV 训练候选已全部缓存。修复分配器和检查点状态后，同一最长 20 条输入的显存门禁通过；按新单步耗时复核的 71.88 小时预计值处于现行 75 小时预算内。Q 于 2026-09-29 恢复，fold 0 和 fold 1 的外折推理均完成；fold 1 的 2 epoch、8 次固定 AV 内验证和三条件推理完成，开始 fold 2 数据准备。E2 全程限定 CPU。
 
 ## 4. 校准与工作点方法
 
@@ -59,7 +59,17 @@ Q 冒烟使用原始 WAV 在处理子进程转为 16 kHz 单声道，A/V/AV 分�
 
 fold 0 正式训练共处理 19,652 个样本，2457 次优化步，GPU 实测 **25,862.63 秒（7.18 小时）**；8 次固定 700 句 AV 内验证均覆盖完整且无推理失败。最佳为第 5 次，macro-F1 **0.696626**，adapter SHA-256 `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50`。模态前向回执：A 3960、V 3922、AV 11770；缺脸训练回退 30 次。完整训练曲线和统计见 [fold 0 汇总](results/q_fold0_summary.json)。流水线根据实测将六次训练及推理总 GPU 时长重估为 **50.5124 小时**，低于 55 小时上限；门禁值记录在服务器 `$R3/Q/pipeline_progress.json`。该预算仍须在后续每折根据实际耗时核验。
 
-fold 1 起的 Q 训练及推理进程使用**默认 CUDA 分配器**，不设置 `PYTORCH_CUDA_ALLOC_CONF` 或 `PYTORCH_ALLOC_CONF`。`get_peft_model` 后显式以 `use_reentrant=False` 开启梯度检查点，训练启动时断言 LLM、视觉塔、音频塔三处均为 True 并写入 `run_meta`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。fold 1 已启动；运行元数据证实 LLM、视觉塔、音频塔的检查点标志均为 True，分配器为默认值。当前无异常退出或 OOM 跳过。
+fold 1 起的 Q 训练及推理进程使用**默认 CUDA 分配器**，不设置 `PYTORCH_CUDA_ALLOC_CONF` 或 `PYTORCH_ALLOC_CONF`。`get_peft_model` 后显式以 `use_reentrant=False` 开启梯度检查点，训练启动时断言 LLM、视觉塔、音频塔三处均为 True 并写入 `run_meta`。训练每次内验证另存独立 `last`：adapter、优化器、调度器、PyTorch/NumPy/Python RNG、累积梯度、数据位置及输出文件偏移；异常退出最多从 `last` 重试 2 次，记录 `incidents.jsonl`。每个累积段遇 CUDA OOM 后清缓存重试一次，再失败则把该段句子和输入 token 长度记入 `skipped_oom.jsonl`；累计超过 10 句即停止。每 50 个优化步记录 PyTorch 峰值、`nvidia-smi` 已用显存和步时；连续 2 步超过此前步时中位数 3 倍时写告警。fold 1 的运行元数据证实 LLM、视觉塔、音频塔的检查点标志均为 True，分配器为默认值；两轮处理 **19,666** 句，8 次 AV 内验证最佳 macro-F1 **0.6227346**，训练 GPU 实耗 **34,911.33 秒**。无异常退出或 OOM 跳过；[fold 1 汇总](results/q_fold1_summary.json)保存训练回执。
+
+fold 0/1 的同批 **6,533** 条外折句子已生成[非门禁中期对照](results/q_interim_fold01.json)：
+
+| 系统 | OP-A macro-F1 | 中性误报率（真实中性被判非中性） |
+|---|---:|---:|
+| Q-AV | 0.6168 | 0.2430 |
+| Q-A | 0.5615 | 0.2523 |
+| E1 最佳组合 A3+A2+V2+V1+T1r | 0.6372 | 0.2089 |
+
+中期 Q 的每个留出折只用另一个**已完成**折拟合临时校准，再取 OP-A argmax；正式协议仍要求用其余四折拟合，待五折齐备后才生成最终 Q OP-A。E1 行来自其已完成的四折拟合 OOF。此表仅为进度信息，校准训练量不同，不用于模型或参数选择，也不构成最终跨臂结论。fold 1 训练与推理实耗纳入后，总 GPU 投影 **74.6650 小时**（含 20% 剩余余量、1 小时诊断预留及 0.5 小时加载预留），距 75 小时门限 **0.3350 小时**。fold 2 结束后仍须按同一门限再复核。
 
 fold 0 结束后，流水线从六份冻结训练 manifest 中去重得到 15,281 条 AV 句，全部缓存成功，按实际 `input_ids` 长度选出最长 20 条（1,016–1,104 token），冻结清单 SHA-256 `feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10`。原先两次预检在首条遭驱动错误，故障记录见 [预检停止记录](results/q_pipeline_stop.json)。恢复后，首条样本在开启与关闭检查点时的 loss 相对差为 **0**，全部 480 个 LoRA 梯度最大相对差为 **0**；关闭检查点峰值 35,784,373,248 字节，开启后 12,324,995,584 字节，见 [等价性回执](results/q_checkpoint_equivalence.json)。随后以默认分配器和开启的检查点重跑相同 20 条，全部完成前向与反向，无 OOM，最大 `torch.cuda.max_memory_allocated` **12,315,284,992 字节**，低于不变的 **30,000,000,000 字节**门限，见 [正式预检回执](results/q_worst_case_recovery.json)。未截断或替换任何输入。
 
@@ -71,7 +81,7 @@ Q 正式完整 OOF 不存在，H 未运行；fold 0 adapter 不参与跨臂比�
 
 ## 8. 主对照表与配对差值
 
-显存预检和现行 75 小时预算门禁均已通过，Q 已续行。fold 1–4 和最终模型尚未完成，完整主表与配对差值待正式预测齐备后生成。E1/E2 的已有结果不充当最终架构对照。
+显存预检和现行 75 小时预算门禁均已通过，Q 已续行。fold 2–4 和最终模型尚未完成，完整主表与配对差值待正式预测齐备后生成。两折中期数值不充当最终架构对照。
 
 ## 9. 缺失模态鲁棒性与截断敏感性
 
@@ -87,7 +97,7 @@ Reviewer 取消臂 P。X02 P2 已用 bitsandbytes NF4 双重量化和 BF16 尝�
 
 ## 12. 耗时与资源
 
-E1 为 CPU 后处理，E2 的训练、目标集评估和延迟测量在 Q 训练期间只用 CPU；E2 端到端延迟见第 5 节。Q fold 0 用 GPU 7.18 小时，首次最长 AV 预检进程用时 469.97 秒，第二次同样未产生有效显存收据；恢复后 20 条正式预检的最大峰值及新预算见第 6 节。按 A/V/AV 单步实测，剩余训练（含 20% 余量）54.06 小时、验证 3.61 小时、推理 5.52 小时，叠加 fold 0 7.18 小时和其他预留后总预计 71.88 小时。GPU 旧预算估算与参数数量见 [旧预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
+E1 为 CPU 后处理，E2 的训练、目标集评估和延迟测量在 Q 训练期间只用 CPU；E2 端到端延迟见第 5 节。Q fold 0 用 GPU 7.18 小时，首次最长 AV 预检进程用时 469.97 秒，第二次同样未产生有效显存收据；恢复后 20 条正式预检的最大峰值及新预算见第 6 节。按 A/V/AV 单步实测，剩余训练（含 20% 余量）54.06 小时、验证 3.61 小时、推理 5.52 小时，叠加 fold 0 7.18 小时和其他预留后初估 71.88 小时；fold 1 训练和推理完成后的逐模型重估为 **74.6650 小时**，仍低于 75 小时上限。GPU 旧预算估算与参数数量见 [旧预算 JSON](results/q_budget_summary.json)；视频覆盖见 [媒体 JSON](results/media_summary.json)；E1 汇总见 [E1 JSON](results/e1_summary_v4.json)。服务器结果根目录为 `/home/administrator/emotion-data/emotioncore_runs/X03`（下文记为 `$R3`）；运行元数据与 SHA-256 保存在 `results/`，逐句概率留在服务器，不入库。旧项目目录 `/home/administrator/projects/emotion` 只读使用本地基座和 YuNet 权重。
 
 ## 13. 异常
 
