@@ -1,0 +1,414 @@
+{
+  "A": {
+    "n": 3227,
+    "uniform": 0,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 3227,
+      "valid": 3227,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.5375025702396561,
+      "uar": 0.5292909637220771,
+      "wa": 0.6467307096374342,
+      "neutral_false_positive_rate": 0.26450116009280744,
+      "per_class": {
+        "neutral": {
+          "support": 1293,
+          "precision": 0.6664330763840224,
+          "recall": 0.7354988399071926,
+          "f1": 0.6992647058823529
+        },
+        "joy": {
+          "support": 593,
+          "precision": 0.6111111111111112,
+          "recall": 0.6492411467116358,
+          "f1": 0.6295993458708096
+        },
+        "sadness": {
+          "support": 144,
+          "precision": 0.6693548387096774,
+          "recall": 0.5763888888888888,
+          "f1": 0.6194029850746268
+        },
+        "anger": {
+          "support": 649,
+          "precision": 0.7012278308321964,
+          "recall": 0.7919876733436055,
+          "f1": 0.743849493487699
+        },
+        "fear": {
+          "support": 63,
+          "precision": 0.3815789473684211,
+          "recall": 0.4603174603174603,
+          "f1": 0.4172661870503597
+        },
+        "disgust": {
+          "support": 212,
+          "precision": 0.3764705882352941,
+          "recall": 0.1509433962264151,
+          "f1": 0.21548821548821548
+        },
+        "surprise": {
+          "support": 273,
+          "precision": 0.6118421052631579,
+          "recall": 0.34065934065934067,
+          "f1": 0.4376470588235294
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 951,
+          "joy": 148,
+          "sadness": 35,
+          "anger": 98,
+          "fear": 24,
+          "disgust": 21,
+          "surprise": 16
+        },
+        "joy": {
+          "neutral": 145,
+          "joy": 385,
+          "sadness": 1,
+          "anger": 25,
+          "fear": 10,
+          "disgust": 7,
+          "surprise": 20
+        },
+        "sadness": {
+          "neutral": 49,
+          "joy": 1,
+          "sadness": 83,
+          "anger": 6,
+          "fear": 2,
+          "disgust": 3,
+          "surprise": 0
+        },
+        "anger": {
+          "neutral": 79,
+          "joy": 25,
+          "sadness": 0,
+          "anger": 514,
+          "fear": 3,
+          "disgust": 17,
+          "surprise": 11
+        },
+        "fear": {
+          "neutral": 19,
+          "joy": 1,
+          "sadness": 0,
+          "anger": 6,
+          "fear": 29,
+          "disgust": 2,
+          "surprise": 6
+        },
+        "disgust": {
+          "neutral": 88,
+          "joy": 27,
+          "sadness": 3,
+          "anger": 49,
+          "fear": 7,
+          "disgust": 32,
+          "surprise": 6
+        },
+        "surprise": {
+          "neutral": 96,
+          "joy": 43,
+          "sadness": 2,
+          "anger": 35,
+          "fear": 1,
+          "disgust": 3,
+          "surprise": 93
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      }
+    },
+    "latency_p50_s": 0.36839740100549534,
+    "latency_p95_s": 0.4461296670895535,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/A.jsonl",
+    "sha256": "ab2c9c3b87d94c894f62f5adec61c5bbf4d4df6ed9b7a3580fdcb703c3b88cab"
+  },
+  "V": {
+    "n": 3227,
+    "uniform": 10,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 3227,
+      "valid": 3217,
+      "failures": 10,
+      "coverage": 0.996901146575767,
+      "macro_f1": 0.335470623450772,
+      "uar": 0.33527123045122664,
+      "wa": 0.5773163929346142,
+      "neutral_false_positive_rate": 0.15699922660479504,
+      "per_class": {
+        "neutral": {
+          "support": 1293,
+          "precision": 0.5795090715048026,
+          "recall": 0.839907192575406,
+          "f1": 0.6858225449952637
+        },
+        "joy": {
+          "support": 593,
+          "precision": 0.8313492063492064,
+          "recall": 0.7065767284991569,
+          "f1": 0.7639015496809481
+        },
+        "sadness": {
+          "support": 144,
+          "precision": 0.1797752808988764,
+          "recall": 0.1111111111111111,
+          "f1": 0.1373390557939914
+        },
+        "anger": {
+          "support": 649,
+          "precision": 0.540650406504065,
+          "recall": 0.4098613251155624,
+          "f1": 0.4662576687116564
+        },
+        "fear": {
+          "support": 63,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "disgust": {
+          "support": 212,
+          "precision": 0.25,
+          "recall": 0.0047169811320754715,
+          "f1": 0.009259259259259259
+        },
+        "surprise": {
+          "support": 273,
+          "precision": 0.2976190476190476,
+          "recall": 0.27472527472527475,
+          "f1": 0.28571428571428575
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 1086,
+          "joy": 36,
+          "sadness": 19,
+          "anger": 81,
+          "fear": 2,
+          "disgust": 1,
+          "surprise": 64
+        },
+        "joy": {
+          "neutral": 139,
+          "joy": 419,
+          "sadness": 0,
+          "anger": 22,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 12
+        },
+        "sadness": {
+          "neutral": 105,
+          "joy": 5,
+          "sadness": 16,
+          "anger": 14,
+          "fear": 0,
+          "disgust": 2,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 258,
+          "joy": 11,
+          "sadness": 30,
+          "anger": 266,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 83
+        },
+        "fear": {
+          "neutral": 36,
+          "joy": 0,
+          "sadness": 5,
+          "anger": 10,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 12
+        },
+        "disgust": {
+          "neutral": 105,
+          "joy": 6,
+          "sadness": 14,
+          "anger": 80,
+          "fear": 0,
+          "disgust": 1,
+          "surprise": 5
+        },
+        "surprise": {
+          "neutral": 145,
+          "joy": 27,
+          "sadness": 5,
+          "anger": 19,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 75
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 4,
+        "joy": 1,
+        "sadness": 1,
+        "anger": 1,
+        "fear": 0,
+        "disgust": 1,
+        "surprise": 2
+      }
+    },
+    "latency_p50_s": 0.41117259999737144,
+    "latency_p95_s": 0.4786809020268265,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/V.jsonl",
+    "sha256": "db5f599819e79ff9ca957a715829004733ea0627d8c7843fd968dacfa69a6e94"
+  },
+  "AV": {
+    "n": 3227,
+    "uniform": 0,
+    "face_missing_fallback": 10,
+    "metrics": {
+      "n": 3227,
+      "valid": 3227,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.5923863713789205,
+      "uar": 0.5752264248266512,
+      "wa": 0.713975828943291,
+      "neutral_false_positive_rate": 0.16163959783449341,
+      "per_class": {
+        "neutral": {
+          "support": 1293,
+          "precision": 0.6971061093247588,
+          "recall": 0.8383604021655066,
+          "f1": 0.7612359550561798
+        },
+        "joy": {
+          "support": 593,
+          "precision": 0.8565737051792829,
+          "recall": 0.7251264755480608,
+          "f1": 0.7853881278538812
+        },
+        "sadness": {
+          "support": 144,
+          "precision": 0.6576576576576577,
+          "recall": 0.5069444444444444,
+          "f1": 0.5725490196078431
+        },
+        "anger": {
+          "support": 649,
+          "precision": 0.7803379416282642,
+          "recall": 0.7827426810477658,
+          "f1": 0.7815384615384614
+        },
+        "fear": {
+          "support": 63,
+          "precision": 0.35802469135802467,
+          "recall": 0.4603174603174603,
+          "f1": 0.4027777777777778
+        },
+        "disgust": {
+          "support": 212,
+          "precision": 0.46788990825688076,
+          "recall": 0.24056603773584906,
+          "f1": 0.31775700934579443
+        },
+        "surprise": {
+          "support": 273,
+          "precision": 0.591743119266055,
+          "recall": 0.4725274725274725,
+          "f1": 0.5254582484725051
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 1084,
+          "joy": 38,
+          "sadness": 22,
+          "anger": 64,
+          "fear": 28,
+          "disgust": 20,
+          "surprise": 37
+        },
+        "joy": {
+          "neutral": 128,
+          "joy": 430,
+          "sadness": 0,
+          "anger": 8,
+          "fear": 7,
+          "disgust": 6,
+          "surprise": 14
+        },
+        "sadness": {
+          "neutral": 56,
+          "joy": 3,
+          "sadness": 73,
+          "anger": 6,
+          "fear": 2,
+          "disgust": 3,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 84,
+          "joy": 7,
+          "sadness": 7,
+          "anger": 508,
+          "fear": 6,
+          "disgust": 21,
+          "surprise": 16
+        },
+        "fear": {
+          "neutral": 18,
+          "joy": 0,
+          "sadness": 1,
+          "anger": 4,
+          "fear": 29,
+          "disgust": 2,
+          "surprise": 9
+        },
+        "disgust": {
+          "neutral": 86,
+          "joy": 7,
+          "sadness": 7,
+          "anger": 42,
+          "fear": 7,
+          "disgust": 51,
+          "surprise": 12
+        },
+        "surprise": {
+          "neutral": 99,
+          "joy": 17,
+          "sadness": 1,
+          "anger": 19,
+          "fear": 2,
+          "disgust": 6,
+          "surprise": 129
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      }
+    },
+    "latency_p50_s": 0.6127471209620126,
+    "latency_p95_s": 0.7166232988238335,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/AV.jsonl",
+    "sha256": "4aee4b03626497e24513c7cfe180b12917df187374a58f4e5e0a5720157e73fe"
+  },
+  "peak_cuda_allocated_mib": 8867.701171875
+}
