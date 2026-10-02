@@ -60,20 +60,31 @@ def run(args):
     selection=[{'utt_id':r['utt_id'],'audio_duration_s':r['wav']['duration_s'],
                 'wav_sha256':r['wav']['sha256'],'mp4_sha256':r['mp4']['sha256']} for r in rows]
     args.output_dir.mkdir(parents=True,exist_ok=True)
+    prior_meta = args.output_dir/'run_meta.json'
+    if prior_meta.exists() and not (args.output_dir/'initial_run_meta.json').exists():
+        write_json_atomic(args.output_dir/'initial_run_meta.json',json.loads(prior_meta.read_text()))
     write_json_atomic(args.output_dir/'selection.json',selection)
     meta={'git':git,'command':sys.argv,'started_at':dt.datetime.now(dt.timezone.utc).isoformat(),
           'selection_sha256':sha256(args.output_dir/'selection.json'),'manifest_sha256':sha256(args.manifest)}
     write_json_atomic(args.output_dir/'run_meta.json',meta)
-    summary={}
+    prior_progress=args.output_dir/'progress.json'
+    summary=json.loads(prior_progress.read_text()) if prior_progress.exists() else {}
     models={'A3':r2/'models/A3','A2':Path('/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B'),
             'V2':r2/'models/V2','V1':Path('/home/administrator/emotion-data/open_resources_v1/models/emotiefflib/enet_b0_8_best_afew.pt'),
             'SenseVoice':Path('/home/administrator/emotion-data/open_resources_v1/models/SenseVoiceSmall')}
     for stage,model in models.items():
+        if stage in summary:
+            receipt=summary[stage]['receipts']
+            if sha256(Path(receipt['path']))!=receipt['sha256']:
+                raise ValueError('Resource receipt changed on resume')
+            continue
         start=time.monotonic()
         env=os.environ.copy()
         env.pop('CUDA_VISIBLE_DEVICES',None)
         env.pop('PYTORCH_CUDA_ALLOC_CONF',None);env.pop('PYTORCH_ALLOC_CONF',None)
-        python = '/home/administrator/emotion-data/open_resources_v1/envs/audio/bin/python' if stage=='SenseVoice' else sys.executable
+        python = ('/home/administrator/emotion-data/open_resources_v1/envs/audio/bin/python' if stage=='SenseVoice'
+                  else '/home/administrator/emotion-data/open_resources_v1/envs/visual/bin/python' if stage=='V1'
+                  else sys.executable)
         child=PersistentJSONWorker([python,'-u','-m','emotioncore.x03.stage_resource','--worker',stage,'--model',str(model)],
                                    cwd=Path.cwd(),env=env,stderr_path=args.output_dir/(stage+'_errors.log'))
         measured=[]
