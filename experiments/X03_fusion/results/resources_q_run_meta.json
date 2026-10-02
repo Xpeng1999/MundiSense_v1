@@ -1,0 +1,20 @@
+{
+  "git": {
+    "commit": "a173de98d0a42089520e4a5f4964630833683428",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis_code/src/emotioncore/x03/q_inference_resource.py",
+    "--q-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q",
+    "--cache-root",
+    "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/resources_q"
+  ],
+  "ended_at": "2026-10-02T08:21:13.685255+00:00",
+  "adapter_sha256": "427ebc148d447ba03dc747429323b440b10cbb8b4b8876247f48f71573d2d5a4",
+  "summary_sha256": "b294fddd269d8d5c3c5728e292dcc172e071f429cb22420cdb1ce804c31ca075"
+}

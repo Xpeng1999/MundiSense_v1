@@ -1,0 +1,1237 @@
+{
+  "E_best": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4795,
+        "joy": 299,
+        "sadness": 117,
+        "anger": 160,
+        "fear": 77,
+        "disgust": 102,
+        "surprise": 140
+      },
+      "joy": {
+        "neutral": 611,
+        "joy": 2385,
+        "sadness": 10,
+        "anger": 45,
+        "fear": 8,
+        "disgust": 44,
+        "surprise": 78
+      },
+      "sadness": {
+        "neutral": 213,
+        "joy": 17,
+        "sadness": 666,
+        "anger": 17,
+        "fear": 27,
+        "disgust": 21,
+        "surprise": 2
+      },
+      "anger": {
+        "neutral": 425,
+        "joy": 32,
+        "sadness": 14,
+        "anger": 2505,
+        "fear": 33,
+        "disgust": 104,
+        "surprise": 51
+      },
+      "fear": {
+        "neutral": 251,
+        "joy": 19,
+        "sadness": 14,
+        "anger": 31,
+        "fear": 367,
+        "disgust": 19,
+        "surprise": 34
+      },
+      "disgust": {
+        "neutral": 553,
+        "joy": 49,
+        "sadness": 19,
+        "anger": 201,
+        "fear": 43,
+        "disgust": 302,
+        "surprise": 36
+      },
+      "surprise": {
+        "neutral": 536,
+        "joy": 137,
+        "sadness": 2,
+        "anger": 94,
+        "fear": 52,
+        "disgust": 44,
+        "surprise": 565
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 702,
+        "joy": 15,
+        "sadness": 15,
+        "anger": 29,
+        "fear": 3,
+        "disgust": 22,
+        "surprise": 15
+      },
+      "joy": {
+        "neutral": 46,
+        "joy": 187,
+        "sadness": 2,
+        "anger": 5,
+        "fear": 3,
+        "disgust": 1,
+        "surprise": 2
+      },
+      "sadness": {
+        "neutral": 43,
+        "joy": 8,
+        "sadness": 57,
+        "anger": 13,
+        "fear": 1,
+        "disgust": 0,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 48,
+        "joy": 1,
+        "sadness": 1,
+        "anger": 251,
+        "fear": 1,
+        "disgust": 29,
+        "surprise": 8
+      },
+      "fear": {
+        "neutral": 31,
+        "joy": 2,
+        "sadness": 5,
+        "anger": 30,
+        "fear": 52,
+        "disgust": 2,
+        "surprise": 3
+      },
+      "disgust": {
+        "neutral": 40,
+        "joy": 2,
+        "sadness": 1,
+        "anger": 33,
+        "fear": 2,
+        "disgust": 53,
+        "surprise": 3
+      },
+      "surprise": {
+        "neutral": 56,
+        "joy": 8,
+        "sadness": 0,
+        "anger": 18,
+        "fear": 3,
+        "disgust": 3,
+        "surprise": 73
+      }
+    }
+  },
+  "Q_AV": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4820,
+        "joy": 280,
+        "sadness": 97,
+        "anger": 226,
+        "fear": 69,
+        "disgust": 63,
+        "surprise": 135
+      },
+      "joy": {
+        "neutral": 549,
+        "joy": 2512,
+        "sadness": 4,
+        "anger": 34,
+        "fear": 9,
+        "disgust": 14,
+        "surprise": 59
+      },
+      "sadness": {
+        "neutral": 232,
+        "joy": 18,
+        "sadness": 639,
+        "anger": 41,
+        "fear": 19,
+        "disgust": 11,
+        "surprise": 3
+      },
+      "anger": {
+        "neutral": 415,
+        "joy": 36,
+        "sadness": 21,
+        "anger": 2537,
+        "fear": 24,
+        "disgust": 81,
+        "surprise": 50
+      },
+      "fear": {
+        "neutral": 250,
+        "joy": 13,
+        "sadness": 31,
+        "anger": 35,
+        "fear": 357,
+        "disgust": 18,
+        "surprise": 31
+      },
+      "disgust": {
+        "neutral": 529,
+        "joy": 56,
+        "sadness": 21,
+        "anger": 270,
+        "fear": 22,
+        "disgust": 271,
+        "surprise": 34
+      },
+      "surprise": {
+        "neutral": 548,
+        "joy": 135,
+        "sadness": 8,
+        "anger": 116,
+        "fear": 33,
+        "disgust": 20,
+        "surprise": 570
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 718,
+        "joy": 9,
+        "sadness": 23,
+        "anger": 25,
+        "fear": 5,
+        "disgust": 10,
+        "surprise": 11
+      },
+      "joy": {
+        "neutral": 57,
+        "joy": 179,
+        "sadness": 2,
+        "anger": 2,
+        "fear": 3,
+        "disgust": 1,
+        "surprise": 2
+      },
+      "sadness": {
+        "neutral": 41,
+        "joy": 6,
+        "sadness": 65,
+        "anger": 7,
+        "fear": 2,
+        "disgust": 1,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 48,
+        "joy": 2,
+        "sadness": 5,
+        "anger": 250,
+        "fear": 8,
+        "disgust": 15,
+        "surprise": 11
+      },
+      "fear": {
+        "neutral": 34,
+        "joy": 2,
+        "sadness": 7,
+        "anger": 10,
+        "fear": 67,
+        "disgust": 1,
+        "surprise": 4
+      },
+      "disgust": {
+        "neutral": 50,
+        "joy": 3,
+        "sadness": 6,
+        "anger": 29,
+        "fear": 5,
+        "disgust": 36,
+        "surprise": 5
+      },
+      "surprise": {
+        "neutral": 64,
+        "joy": 6,
+        "sadness": 4,
+        "anger": 13,
+        "fear": 6,
+        "disgust": 3,
+        "surprise": 65
+      }
+    }
+  },
+  "Q_A": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4817,
+        "joy": 333,
+        "sadness": 119,
+        "anger": 228,
+        "fear": 63,
+        "disgust": 54,
+        "surprise": 76
+      },
+      "joy": {
+        "neutral": 1195,
+        "joy": 1702,
+        "sadness": 26,
+        "anger": 89,
+        "fear": 20,
+        "disgust": 18,
+        "surprise": 131
+      },
+      "sadness": {
+        "neutral": 303,
+        "joy": 32,
+        "sadness": 565,
+        "anger": 36,
+        "fear": 17,
+        "disgust": 8,
+        "surprise": 2
+      },
+      "anger": {
+        "neutral": 482,
+        "joy": 64,
+        "sadness": 9,
+        "anger": 2491,
+        "fear": 19,
+        "disgust": 66,
+        "surprise": 33
+      },
+      "fear": {
+        "neutral": 291,
+        "joy": 14,
+        "sadness": 26,
+        "anger": 29,
+        "fear": 347,
+        "disgust": 7,
+        "surprise": 21
+      },
+      "disgust": {
+        "neutral": 600,
+        "joy": 55,
+        "sadness": 15,
+        "anger": 261,
+        "fear": 16,
+        "disgust": 213,
+        "surprise": 43
+      },
+      "surprise": {
+        "neutral": 660,
+        "joy": 112,
+        "sadness": 11,
+        "anger": 114,
+        "fear": 42,
+        "disgust": 25,
+        "surprise": 466
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 645,
+        "joy": 68,
+        "sadness": 24,
+        "anger": 36,
+        "fear": 2,
+        "disgust": 11,
+        "surprise": 15
+      },
+      "joy": {
+        "neutral": 75,
+        "joy": 152,
+        "sadness": 4,
+        "anger": 3,
+        "fear": 6,
+        "disgust": 2,
+        "surprise": 4
+      },
+      "sadness": {
+        "neutral": 38,
+        "joy": 4,
+        "sadness": 66,
+        "anger": 9,
+        "fear": 5,
+        "disgust": 0,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 43,
+        "joy": 6,
+        "sadness": 2,
+        "anger": 260,
+        "fear": 7,
+        "disgust": 13,
+        "surprise": 8
+      },
+      "fear": {
+        "neutral": 29,
+        "joy": 11,
+        "sadness": 4,
+        "anger": 11,
+        "fear": 64,
+        "disgust": 1,
+        "surprise": 5
+      },
+      "disgust": {
+        "neutral": 49,
+        "joy": 5,
+        "sadness": 2,
+        "anger": 33,
+        "fear": 2,
+        "disgust": 39,
+        "surprise": 4
+      },
+      "surprise": {
+        "neutral": 61,
+        "joy": 16,
+        "sadness": 6,
+        "anger": 9,
+        "fear": 9,
+        "disgust": 0,
+        "surprise": 60
+      }
+    }
+  },
+  "Q_fusion": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4821,
+        "joy": 278,
+        "sadness": 103,
+        "anger": 221,
+        "fear": 71,
+        "disgust": 71,
+        "surprise": 125
+      },
+      "joy": {
+        "neutral": 570,
+        "joy": 2483,
+        "sadness": 5,
+        "anger": 35,
+        "fear": 12,
+        "disgust": 13,
+        "surprise": 63
+      },
+      "sadness": {
+        "neutral": 232,
+        "joy": 18,
+        "sadness": 644,
+        "anger": 39,
+        "fear": 17,
+        "disgust": 10,
+        "surprise": 3
+      },
+      "anger": {
+        "neutral": 398,
+        "joy": 34,
+        "sadness": 21,
+        "anger": 2552,
+        "fear": 26,
+        "disgust": 85,
+        "surprise": 48
+      },
+      "fear": {
+        "neutral": 243,
+        "joy": 12,
+        "sadness": 32,
+        "anger": 34,
+        "fear": 365,
+        "disgust": 19,
+        "surprise": 30
+      },
+      "disgust": {
+        "neutral": 528,
+        "joy": 51,
+        "sadness": 20,
+        "anger": 266,
+        "fear": 22,
+        "disgust": 279,
+        "surprise": 37
+      },
+      "surprise": {
+        "neutral": 551,
+        "joy": 128,
+        "sadness": 9,
+        "anger": 116,
+        "fear": 37,
+        "disgust": 23,
+        "surprise": 566
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 709,
+        "joy": 14,
+        "sadness": 25,
+        "anger": 26,
+        "fear": 6,
+        "disgust": 9,
+        "surprise": 12
+      },
+      "joy": {
+        "neutral": 56,
+        "joy": 178,
+        "sadness": 2,
+        "anger": 3,
+        "fear": 5,
+        "disgust": 1,
+        "surprise": 1
+      },
+      "sadness": {
+        "neutral": 38,
+        "joy": 7,
+        "sadness": 66,
+        "anger": 7,
+        "fear": 3,
+        "disgust": 1,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 43,
+        "joy": 2,
+        "sadness": 5,
+        "anger": 253,
+        "fear": 8,
+        "disgust": 17,
+        "surprise": 11
+      },
+      "fear": {
+        "neutral": 33,
+        "joy": 3,
+        "sadness": 7,
+        "anger": 10,
+        "fear": 68,
+        "disgust": 1,
+        "surprise": 3
+      },
+      "disgust": {
+        "neutral": 50,
+        "joy": 3,
+        "sadness": 3,
+        "anger": 30,
+        "fear": 5,
+        "disgust": 38,
+        "surprise": 5
+      },
+      "surprise": {
+        "neutral": 62,
+        "joy": 6,
+        "sadness": 4,
+        "anger": 12,
+        "fear": 6,
+        "disgust": 3,
+        "surprise": 68
+      }
+    }
+  },
+  "H_best": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4796,
+        "joy": 302,
+        "sadness": 117,
+        "anger": 190,
+        "fear": 64,
+        "disgust": 73,
+        "surprise": 148
+      },
+      "joy": {
+        "neutral": 510,
+        "joy": 2524,
+        "sadness": 6,
+        "anger": 32,
+        "fear": 6,
+        "disgust": 28,
+        "surprise": 75
+      },
+      "sadness": {
+        "neutral": 185,
+        "joy": 16,
+        "sadness": 699,
+        "anger": 21,
+        "fear": 23,
+        "disgust": 18,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 358,
+        "joy": 37,
+        "sadness": 18,
+        "anger": 2564,
+        "fear": 31,
+        "disgust": 104,
+        "surprise": 52
+      },
+      "fear": {
+        "neutral": 220,
+        "joy": 14,
+        "sadness": 22,
+        "anger": 27,
+        "fear": 396,
+        "disgust": 16,
+        "surprise": 40
+      },
+      "disgust": {
+        "neutral": 523,
+        "joy": 52,
+        "sadness": 17,
+        "anger": 243,
+        "fear": 33,
+        "disgust": 301,
+        "surprise": 34
+      },
+      "surprise": {
+        "neutral": 493,
+        "joy": 119,
+        "sadness": 4,
+        "anger": 101,
+        "fear": 47,
+        "disgust": 32,
+        "surprise": 634
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 711,
+        "joy": 12,
+        "sadness": 13,
+        "anger": 22,
+        "fear": 6,
+        "disgust": 24,
+        "surprise": 13
+      },
+      "joy": {
+        "neutral": 47,
+        "joy": 189,
+        "sadness": 2,
+        "anger": 2,
+        "fear": 4,
+        "disgust": 1,
+        "surprise": 1
+      },
+      "sadness": {
+        "neutral": 39,
+        "joy": 8,
+        "sadness": 63,
+        "anger": 10,
+        "fear": 1,
+        "disgust": 1,
+        "surprise": 1
+      },
+      "anger": {
+        "neutral": 32,
+        "joy": 1,
+        "sadness": 1,
+        "anger": 269,
+        "fear": 2,
+        "disgust": 25,
+        "surprise": 9
+      },
+      "fear": {
+        "neutral": 25,
+        "joy": 2,
+        "sadness": 4,
+        "anger": 17,
+        "fear": 71,
+        "disgust": 3,
+        "surprise": 3
+      },
+      "disgust": {
+        "neutral": 43,
+        "joy": 2,
+        "sadness": 2,
+        "anger": 31,
+        "fear": 6,
+        "disgust": 46,
+        "surprise": 4
+      },
+      "surprise": {
+        "neutral": 51,
+        "joy": 6,
+        "sadness": 0,
+        "anger": 12,
+        "fear": 8,
+        "disgust": 3,
+        "surprise": 81
+      }
+    }
+  },
+  "A3_reference": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4808,
+        "joy": 315,
+        "sadness": 121,
+        "anger": 204,
+        "fear": 76,
+        "disgust": 44,
+        "surprise": 122
+      },
+      "joy": {
+        "neutral": 981,
+        "joy": 1915,
+        "sadness": 33,
+        "anger": 128,
+        "fear": 17,
+        "disgust": 21,
+        "surprise": 86
+      },
+      "sadness": {
+        "neutral": 268,
+        "joy": 56,
+        "sadness": 585,
+        "anger": 14,
+        "fear": 22,
+        "disgust": 13,
+        "surprise": 5
+      },
+      "anger": {
+        "neutral": 454,
+        "joy": 84,
+        "sadness": 15,
+        "anger": 2464,
+        "fear": 35,
+        "disgust": 48,
+        "surprise": 64
+      },
+      "fear": {
+        "neutral": 314,
+        "joy": 39,
+        "sadness": 32,
+        "anger": 30,
+        "fear": 255,
+        "disgust": 15,
+        "surprise": 50
+      },
+      "disgust": {
+        "neutral": 740,
+        "joy": 71,
+        "sadness": 11,
+        "anger": 189,
+        "fear": 32,
+        "disgust": 110,
+        "surprise": 50
+      },
+      "surprise": {
+        "neutral": 609,
+        "joy": 132,
+        "sadness": 5,
+        "anger": 126,
+        "fear": 55,
+        "disgust": 29,
+        "surprise": 474
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 667,
+        "joy": 29,
+        "sadness": 33,
+        "anger": 21,
+        "fear": 7,
+        "disgust": 11,
+        "surprise": 33
+      },
+      "joy": {
+        "neutral": 61,
+        "joy": 169,
+        "sadness": 4,
+        "anger": 6,
+        "fear": 3,
+        "disgust": 0,
+        "surprise": 3
+      },
+      "sadness": {
+        "neutral": 39,
+        "joy": 7,
+        "sadness": 69,
+        "anger": 7,
+        "fear": 1,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "anger": {
+        "neutral": 50,
+        "joy": 4,
+        "sadness": 1,
+        "anger": 245,
+        "fear": 6,
+        "disgust": 18,
+        "surprise": 15
+      },
+      "fear": {
+        "neutral": 26,
+        "joy": 14,
+        "sadness": 14,
+        "anger": 15,
+        "fear": 48,
+        "disgust": 1,
+        "surprise": 7
+      },
+      "disgust": {
+        "neutral": 66,
+        "joy": 10,
+        "sadness": 5,
+        "anger": 20,
+        "fear": 7,
+        "disgust": 17,
+        "surprise": 9
+      },
+      "surprise": {
+        "neutral": 68,
+        "joy": 14,
+        "sadness": 1,
+        "anger": 11,
+        "fear": 4,
+        "disgust": 0,
+        "surprise": 63
+      }
+    }
+  },
+  "V2_reference": {
+    "cv_confusion_op_n": {
+      "neutral": {
+        "neutral": 4698,
+        "joy": 353,
+        "sadness": 115,
+        "anger": 411,
+        "fear": 32,
+        "disgust": 10,
+        "surprise": 57
+      },
+      "joy": {
+        "neutral": 797,
+        "joy": 2259,
+        "sadness": 3,
+        "anger": 74,
+        "fear": 0,
+        "disgust": 7,
+        "surprise": 33
+      },
+      "sadness": {
+        "neutral": 423,
+        "joy": 9,
+        "sadness": 451,
+        "anger": 48,
+        "fear": 14,
+        "disgust": 14,
+        "surprise": 0
+      },
+      "anger": {
+        "neutral": 1510,
+        "joy": 47,
+        "sadness": 54,
+        "anger": 1435,
+        "fear": 34,
+        "disgust": 33,
+        "surprise": 46
+      },
+      "fear": {
+        "neutral": 426,
+        "joy": 11,
+        "sadness": 16,
+        "anger": 150,
+        "fear": 97,
+        "disgust": 26,
+        "surprise": 8
+      },
+      "disgust": {
+        "neutral": 773,
+        "joy": 70,
+        "sadness": 48,
+        "anger": 221,
+        "fear": 41,
+        "disgust": 33,
+        "surprise": 13
+      },
+      "surprise": {
+        "neutral": 824,
+        "joy": 175,
+        "sadness": 11,
+        "anger": 225,
+        "fear": 53,
+        "disgust": 13,
+        "surprise": 125
+      }
+    },
+    "et_test_confusion_op_n": {
+      "neutral": {
+        "neutral": 581,
+        "joy": 3,
+        "sadness": 1,
+        "anger": 203,
+        "fear": 7,
+        "disgust": 3,
+        "surprise": 1
+      },
+      "joy": {
+        "neutral": 61,
+        "joy": 153,
+        "sadness": 3,
+        "anger": 25,
+        "fear": 0,
+        "disgust": 1,
+        "surprise": 2
+      },
+      "sadness": {
+        "neutral": 52,
+        "joy": 7,
+        "sadness": 22,
+        "anger": 38,
+        "fear": 1,
+        "disgust": 3,
+        "surprise": 0
+      },
+      "anger": {
+        "neutral": 83,
+        "joy": 1,
+        "sadness": 2,
+        "anger": 248,
+        "fear": 1,
+        "disgust": 3,
+        "surprise": 1
+      },
+      "fear": {
+        "neutral": 12,
+        "joy": 0,
+        "sadness": 7,
+        "anger": 99,
+        "fear": 6,
+        "disgust": 1,
+        "surprise": 0
+      },
+      "disgust": {
+        "neutral": 33,
+        "joy": 0,
+        "sadness": 2,
+        "anger": 92,
+        "fear": 5,
+        "disgust": 2,
+        "surprise": 0
+      },
+      "surprise": {
+        "neutral": 47,
+        "joy": 7,
+        "sadness": 0,
+        "anger": 94,
+        "fear": 7,
+        "disgust": 1,
+        "surprise": 5
+      }
+    }
+  },
+  "E_vs_Q_AV_complementarity": {
+    "n": 16366,
+    "both_correct": 10283,
+    "E_correct_Q_wrong": 1302,
+    "E_wrong_Q_correct": 1423,
+    "both_wrong": 3358,
+    "E_correct_Q_wrong_fraction": 0.07955517536355859,
+    "E_wrong_Q_correct_fraction": 0.08694855187584016
+  },
+  "speaker_ranks_cv_op_n": {
+    "01": {
+      "scores": {
+        "E_best": 0.584725736585102,
+        "Q_AV": 0.6464364058516087,
+        "Q_A": 0.5328039706906832,
+        "Q_fusion": 0.6425608285237724,
+        "H_best": 0.633745227414274,
+        "A3_reference": 0.36431170852158684,
+        "V2_reference": 0.28958003719531744
+      },
+      "ranking": [
+        "Q_AV",
+        "Q_fusion",
+        "H_best",
+        "E_best",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "05": {
+      "scores": {
+        "E_best": 0.7133742575638689,
+        "Q_AV": 0.6952116649544673,
+        "Q_A": 0.6488049205464029,
+        "Q_fusion": 0.7014916150999976,
+        "H_best": 0.7418567544433395,
+        "A3_reference": 0.638249439763008,
+        "V2_reference": 0.4692541238598683
+      },
+      "ranking": [
+        "H_best",
+        "E_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "06": {
+      "scores": {
+        "E_best": 0.6348395227443598,
+        "Q_AV": 0.7203607606133956,
+        "Q_A": 0.6616558273696324,
+        "Q_fusion": 0.721726290351655,
+        "H_best": 0.7168925165839303,
+        "A3_reference": 0.5090702177814329,
+        "V2_reference": 0.3592033522547456
+      },
+      "ranking": [
+        "Q_fusion",
+        "Q_AV",
+        "H_best",
+        "Q_A",
+        "E_best",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "07": {
+      "scores": {
+        "E_best": 0.6786647059516614,
+        "Q_AV": 0.6580564486267362,
+        "Q_A": 0.5775564967315017,
+        "Q_fusion": 0.6633337077000695,
+        "H_best": 0.6943686372569745,
+        "A3_reference": 0.5708994839773714,
+        "V2_reference": 0.4548520996056209
+      },
+      "ranking": [
+        "H_best",
+        "E_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "08": {
+      "scores": {
+        "E_best": 0.5980457900005282,
+        "Q_AV": 0.5633281900657074,
+        "Q_A": 0.48795025784025453,
+        "Q_fusion": 0.5700332282391992,
+        "H_best": 0.5924888872015351,
+        "A3_reference": 0.48682256178531313,
+        "V2_reference": 0.3314379081319387
+      },
+      "ranking": [
+        "E_best",
+        "H_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "09": {
+      "scores": {
+        "E_best": 0.5624303243133216,
+        "Q_AV": 0.521598362387713,
+        "Q_A": 0.4856628989550852,
+        "Q_fusion": 0.5313072813236474,
+        "H_best": 0.5443220210599314,
+        "A3_reference": 0.4503697508230947,
+        "V2_reference": 0.3014130311160785
+      },
+      "ranking": [
+        "E_best",
+        "H_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "10": {
+      "scores": {
+        "E_best": 0.4232467531304175,
+        "Q_AV": 0.5248239060386973,
+        "Q_A": 0.5071909383837089,
+        "Q_fusion": 0.5305556254480844,
+        "H_best": 0.5307188078074533,
+        "A3_reference": 0.45899444143146395,
+        "V2_reference": 0.2845199710469172
+      },
+      "ranking": [
+        "H_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "E_best",
+        "V2_reference"
+      ]
+    },
+    "11": {
+      "scores": {
+        "E_best": 0.6241626251792269,
+        "Q_AV": 0.5836976164482597,
+        "Q_A": 0.546090436042702,
+        "Q_fusion": 0.5850029786778173,
+        "H_best": 0.6469638014166454,
+        "A3_reference": 0.5602040139492278,
+        "V2_reference": 0.4085407442311723
+      },
+      "ranking": [
+        "H_best",
+        "E_best",
+        "Q_fusion",
+        "Q_AV",
+        "A3_reference",
+        "Q_A",
+        "V2_reference"
+      ]
+    },
+    "12": {
+      "scores": {
+        "E_best": 0.5628221550116849,
+        "Q_AV": 0.6322754068991083,
+        "Q_A": 0.49959735342273764,
+        "Q_fusion": 0.6220447229627061,
+        "H_best": 0.5939115852715223,
+        "A3_reference": 0.4451864265905708,
+        "V2_reference": 0.27977850341005894
+      },
+      "ranking": [
+        "Q_AV",
+        "Q_fusion",
+        "H_best",
+        "E_best",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "14": {
+      "scores": {
+        "E_best": 0.5624445382600588,
+        "Q_AV": 0.6386609041464738,
+        "Q_A": 0.6057169840141322,
+        "Q_fusion": 0.6451483590567797,
+        "H_best": 0.6233650590076552,
+        "A3_reference": 0.5388803654852337,
+        "V2_reference": 0.3466757357276685
+      },
+      "ranking": [
+        "Q_fusion",
+        "Q_AV",
+        "H_best",
+        "Q_A",
+        "E_best",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "15": {
+      "scores": {
+        "E_best": 0.6141974223671606,
+        "Q_AV": 0.5737904665175354,
+        "Q_A": 0.5482562561578754,
+        "Q_fusion": 0.5755960463174412,
+        "H_best": 0.6234877065220731,
+        "A3_reference": 0.4766524934660739,
+        "V2_reference": 0.37036206795656396
+      },
+      "ranking": [
+        "H_best",
+        "E_best",
+        "Q_fusion",
+        "Q_AV",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "16": {
+      "scores": {
+        "E_best": 0.642509617079536,
+        "Q_AV": 0.6758075845599871,
+        "Q_A": 0.5795259883685329,
+        "Q_fusion": 0.6647116264159791,
+        "H_best": 0.6874735689337651,
+        "A3_reference": 0.5832720649976241,
+        "V2_reference": 0.35081559300525206
+      },
+      "ranking": [
+        "H_best",
+        "Q_AV",
+        "Q_fusion",
+        "E_best",
+        "A3_reference",
+        "Q_A",
+        "V2_reference"
+      ]
+    },
+    "17": {
+      "scores": {
+        "E_best": 0.5163956359743173,
+        "Q_AV": 0.5393654182506425,
+        "Q_A": 0.4460959863882509,
+        "Q_fusion": 0.5331975499636002,
+        "H_best": 0.5558055507062544,
+        "A3_reference": 0.4535349412570671,
+        "V2_reference": 0.3848109792012777
+      },
+      "ranking": [
+        "H_best",
+        "Q_AV",
+        "Q_fusion",
+        "E_best",
+        "A3_reference",
+        "Q_A",
+        "V2_reference"
+      ]
+    },
+    "18": {
+      "scores": {
+        "E_best": 0.5986113158053975,
+        "Q_AV": 0.6131487099422698,
+        "Q_A": 0.5760109547703532,
+        "Q_fusion": 0.6112770382553607,
+        "H_best": 0.6392519123283645,
+        "A3_reference": 0.5194343316042301,
+        "V2_reference": 0.30182976935446687
+      },
+      "ranking": [
+        "H_best",
+        "Q_AV",
+        "Q_fusion",
+        "E_best",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    },
+    "19": {
+      "scores": {
+        "E_best": 0.49672744662109014,
+        "Q_AV": 0.5271283222383796,
+        "Q_A": 0.45384334451627867,
+        "Q_fusion": 0.5127070400282452,
+        "H_best": 0.5317868259712845,
+        "A3_reference": 0.43160903520215765,
+        "V2_reference": 0.3206321368586715
+      },
+      "ranking": [
+        "H_best",
+        "Q_AV",
+        "Q_fusion",
+        "E_best",
+        "Q_A",
+        "A3_reference",
+        "V2_reference"
+      ]
+    }
+  }
+}

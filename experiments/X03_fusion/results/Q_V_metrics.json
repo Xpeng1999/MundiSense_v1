@@ -1,0 +1,747 @@
+{
+  "cv": {
+    "op_a": {
+      "n": 16366,
+      "valid": 16326,
+      "failures": 40,
+      "coverage": 0.9975559085909813,
+      "macro_f1": 0.35662238698851134,
+      "uar": 0.3632043811378902,
+      "wa": 0.5471098619088354,
+      "neutral_false_positive_rate": 0.22390158172231986,
+      "per_class": {
+        "neutral": {
+          "support": 5690,
+          "precision": 0.5349374164540042,
+          "recall": 0.7736379613356766,
+          "f1": 0.6325167037861916
+        },
+        "joy": {
+          "support": 3181,
+          "precision": 0.7446181067531702,
+          "recall": 0.7937755422823012,
+          "f1": 0.7684114424832624
+        },
+        "sadness": {
+          "support": 963,
+          "precision": 0.5496794871794872,
+          "recall": 0.3561786085150571,
+          "f1": 0.4322621298046629
+        },
+        "anger": {
+          "support": 3164,
+          "precision": 0.4565826330532213,
+          "recall": 0.463653603034134,
+          "f1": 0.46009095185824056
+        },
+        "fear": {
+          "support": 735,
+          "precision": 0.36363636363636365,
+          "recall": 0.005442176870748299,
+          "f1": 0.010723860589812333
+        },
+        "disgust": {
+          "support": 1203,
+          "precision": 0.3,
+          "recall": 0.004987531172069825,
+          "f1": 0.009811937857726901
+        },
+        "surprise": {
+          "support": 1430,
+          "precision": 0.24701670644391407,
+          "recall": 0.14475524475524476,
+          "f1": 0.18253968253968253
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 4402,
+          "joy": 374,
+          "sadness": 67,
+          "anger": 535,
+          "fear": 2,
+          "disgust": 1,
+          "surprise": 295
+        },
+        "joy": {
+          "neutral": 491,
+          "joy": 2525,
+          "sadness": 5,
+          "anger": 93,
+          "fear": 0,
+          "disgust": 2,
+          "surprise": 57
+        },
+        "sadness": {
+          "neutral": 419,
+          "joy": 34,
+          "sadness": 343,
+          "anger": 157,
+          "fear": 0,
+          "disgust": 3,
+          "surprise": 3
+        },
+        "anger": {
+          "neutral": 1246,
+          "joy": 121,
+          "sadness": 104,
+          "anger": 1467,
+          "fear": 2,
+          "disgust": 6,
+          "surprise": 213
+        },
+        "fear": {
+          "neutral": 349,
+          "joy": 26,
+          "sadness": 25,
+          "anger": 303,
+          "fear": 4,
+          "disgust": 0,
+          "surprise": 27
+        },
+        "disgust": {
+          "neutral": 636,
+          "joy": 101,
+          "sadness": 64,
+          "anger": 353,
+          "fear": 3,
+          "disgust": 6,
+          "surprise": 36
+        },
+        "surprise": {
+          "neutral": 686,
+          "joy": 210,
+          "sadness": 16,
+          "anger": 305,
+          "fear": 0,
+          "disgust": 2,
+          "surprise": 207
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 14,
+        "joy": 8,
+        "sadness": 4,
+        "anger": 5,
+        "fear": 1,
+        "disgust": 4,
+        "surprise": 4
+      },
+      "nonneutral_macro_recall": 0.2947987844382592,
+      "ece15": 0.01950595905225212,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.33106632711423456,
+          "upper_95": 0.37066070381866567
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.3369919328690539,
+          "upper_95": 0.3790969338979479
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5271587139893987,
+          "upper_95": 0.5698472271531675
+        }
+      },
+      "face_missing_forced_error": 40
+    },
+    "op_n": {
+      "n": 16366,
+      "valid": 16326,
+      "failures": 40,
+      "coverage": 0.9975559085909813,
+      "macro_f1": 0.3481478975406218,
+      "uar": 0.3514158173427024,
+      "wa": 0.5461933276304534,
+      "neutral_false_positive_rate": 0.17082601054481547,
+      "per_class": {
+        "neutral": {
+          "support": 5690,
+          "precision": 0.5114711318908339,
+          "recall": 0.826713532513181,
+          "f1": 0.6319607711426076
+        },
+        "joy": {
+          "support": 3181,
+          "precision": 0.7672305764411027,
+          "recall": 0.7698836843759824,
+          "f1": 0.7685548407343481
+        },
+        "sadness": {
+          "support": 963,
+          "precision": 0.5884543761638734,
+          "recall": 0.328141225337487,
+          "f1": 0.4213333333333334
+        },
+        "anger": {
+          "support": 3164,
+          "precision": 0.47045951859956237,
+          "recall": 0.4077117572692794,
+          "f1": 0.4368438875719607
+        },
+        "fear": {
+          "support": 735,
+          "precision": 0.3333333333333333,
+          "recall": 0.0027210884353741495,
+          "f1": 0.005398110661268556
+        },
+        "disgust": {
+          "support": 1203,
+          "precision": 0.2857142857142857,
+          "recall": 0.0016625103906899418,
+          "f1": 0.003305785123966942
+        },
+        "surprise": {
+          "support": 1430,
+          "precision": 0.27286821705426356,
+          "recall": 0.12307692307692308,
+          "f1": 0.16963855421686747
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 4704,
+          "joy": 311,
+          "sadness": 50,
+          "anger": 407,
+          "fear": 2,
+          "disgust": 0,
+          "surprise": 202
+        },
+        "joy": {
+          "neutral": 601,
+          "joy": 2449,
+          "sadness": 5,
+          "anger": 78,
+          "fear": 0,
+          "disgust": 2,
+          "surprise": 38
+        },
+        "sadness": {
+          "neutral": 469,
+          "joy": 32,
+          "sadness": 316,
+          "anger": 140,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 2
+        },
+        "anger": {
+          "neutral": 1508,
+          "joy": 98,
+          "sadness": 84,
+          "anger": 1290,
+          "fear": 1,
+          "disgust": 2,
+          "surprise": 176
+        },
+        "fear": {
+          "neutral": 393,
+          "joy": 25,
+          "sadness": 23,
+          "anger": 273,
+          "fear": 2,
+          "disgust": 0,
+          "surprise": 18
+        },
+        "disgust": {
+          "neutral": 728,
+          "joy": 89,
+          "sadness": 43,
+          "anger": 303,
+          "fear": 1,
+          "disgust": 2,
+          "surprise": 33
+        },
+        "surprise": {
+          "neutral": 794,
+          "joy": 188,
+          "sadness": 16,
+          "anger": 251,
+          "fear": 0,
+          "disgust": 1,
+          "surprise": 176
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 14,
+        "joy": 8,
+        "sadness": 4,
+        "anger": 5,
+        "fear": 1,
+        "disgust": 4,
+        "surprise": 4
+      },
+      "nonneutral_macro_recall": 0.27219953148095605,
+      "ece15": 0.04573433947287358,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.32110195548457904,
+          "upper_95": 0.3625327897606869
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.3244585319217377,
+          "upper_95": 0.36970888665517293
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5249250793128252,
+          "upper_95": 0.5703498301741138
+        }
+      },
+      "face_missing_forced_error": 40
+    }
+  },
+  "parameters_oof": [
+    {
+      "held_fold": 0,
+      "fit_count": 13092,
+      "held_count": 3274,
+      "valid_fit_count": 13065,
+      "calibration": [
+        0.21852889685574295,
+        0.018719862666641645,
+        -0.3623224820059672,
+        0.25669273483716143,
+        -0.12864031947374618,
+        0.07826337149334704,
+        0.12464342290512494,
+        0.012640465007307818
+      ],
+      "neutral_bias": 0.2927872423505916
+    },
+    {
+      "held_fold": 1,
+      "fit_count": 13107,
+      "held_count": 3259,
+      "valid_fit_count": 13071,
+      "calibration": [
+        0.2496549732800551,
+        0.22006134543788508,
+        -0.2669404123947285,
+        0.37722950305556074,
+        -0.08480299243652138,
+        0.0011787183442489339,
+        -0.06568508680270423,
+        -0.18103855464836988
+      ],
+      "neutral_bias": 0.285373502849966
+    },
+    {
+      "held_fold": 2,
+      "fit_count": 13072,
+      "held_count": 3294,
+      "valid_fit_count": 13038,
+      "calibration": [
+        0.254579963287975,
+        0.1059044207081482,
+        -0.0819965124736561,
+        0.34947087996068166,
+        -0.02622272650425792,
+        -0.10840328076269493,
+        0.014889879318194429,
+        -0.2536392647390397
+      ],
+      "neutral_bias": 0.27442800125367617
+    },
+    {
+      "held_fold": 3,
+      "fit_count": 13054,
+      "held_count": 3312,
+      "valid_fit_count": 13021,
+      "calibration": [
+        0.1875107142711331,
+        0.08467762896885993,
+        -0.44050298657622505,
+        0.45849673533827856,
+        -0.013399133406434421,
+        -0.008357629519101862,
+        0.22411936679238195,
+        -0.30503662448089836
+      ],
+      "neutral_bias": 0.1823687717154372
+    },
+    {
+      "held_fold": 4,
+      "fit_count": 13139,
+      "held_count": 3227,
+      "valid_fit_count": 13109,
+      "calibration": [
+        0.19939761569598394,
+        0.0334189888428385,
+        -0.5539598593712037,
+        0.46599984147441803,
+        -0.18306422723961782,
+        0.17839921870250786,
+        0.14004720032881665,
+        -0.08083929023827327
+      ],
+      "neutral_bias": 0.4537267750275762
+    }
+  ],
+  "parameters_final": {
+    "calibration": [
+      0.22836170787753307,
+      0.09940250721018774,
+      -0.33634318012291436,
+      0.3757294158875801,
+      -0.08402742365709288,
+      0.02713602798812828,
+      0.0858920256060414,
+      -0.16779316885361392
+    ],
+    "neutral_bias": 0.3047374980987466
+  },
+  "et_test": {
+    "op_a": {
+      "n": 1929,
+      "valid": 1926,
+      "failures": 3,
+      "coverage": 0.9984447900466563,
+      "macro_f1": 0.31173383607639094,
+      "uar": 0.3204624747310156,
+      "wa": 0.5578019699326076,
+      "neutral_false_positive_rate": 0.05493133583021224,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.569811320754717,
+          "recall": 0.9425717852684145,
+          "f1": 0.7102539981185325
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.7980769230769231,
+          "recall": 0.6747967479674797,
+          "f1": 0.7312775330396476
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.23809523809523808,
+          "recall": 0.2032520325203252,
+          "f1": 0.21929824561403508
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.4419475655430712,
+          "recall": 0.3480825958702065,
+          "f1": 0.3894389438943895
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.5714285714285714,
+          "recall": 0.07453416149068323,
+          "f1": 0.13186813186813187
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 755,
+          "joy": 10,
+          "sadness": 13,
+          "anger": 21,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "joy": {
+          "neutral": 76,
+          "joy": 166,
+          "sadness": 0,
+          "anger": 2,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 1
+        },
+        "sadness": {
+          "neutral": 78,
+          "joy": 10,
+          "sadness": 25,
+          "anger": 10,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "anger": {
+          "neutral": 184,
+          "joy": 4,
+          "sadness": 25,
+          "anger": 118,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 8
+        },
+        "fear": {
+          "neutral": 57,
+          "joy": 1,
+          "sadness": 19,
+          "anger": 48,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "disgust": {
+          "neutral": 79,
+          "joy": 6,
+          "sadness": 15,
+          "anger": 34,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "surprise": {
+          "neutral": 96,
+          "joy": 11,
+          "sadness": 8,
+          "anger": 34,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 12
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 2,
+        "joy": 1,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.2167775896414491,
+      "ece15": 0.044857645853095485,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.24243896284889585,
+          "upper_95": 0.33699394084966483
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.23626920911081073,
+          "upper_95": 0.37601170876781065
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.46645367412140576,
+          "upper_95": 0.67601246105919
+        }
+      },
+      "face_missing_forced_error": 3
+    },
+    "op_n": {
+      "n": 1929,
+      "valid": 1926,
+      "failures": 3,
+      "coverage": 0.9984447900466563,
+      "macro_f1": 0.29682035352816616,
+      "uar": 0.30525207867110876,
+      "wa": 0.5510627268014515,
+      "neutral_false_positive_rate": 0.03620474406991261,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.5453257790368272,
+          "recall": 0.9612983770287141,
+          "f1": 0.6958879349299594
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.8214285714285714,
+          "recall": 0.6544715447154471,
+          "f1": 0.7285067873303166
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.23595505617977527,
+          "recall": 0.17073170731707318,
+          "f1": 0.19811320754716982
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.48148148148148145,
+          "recall": 0.30678466076696165,
+          "f1": 0.3747747747747747
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.5384615384615384,
+          "recall": 0.043478260869565216,
+          "f1": 0.08045977011494253
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 770,
+          "joy": 8,
+          "sadness": 9,
+          "anger": 12,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "joy": {
+          "neutral": 81,
+          "joy": 161,
+          "sadness": 0,
+          "anger": 2,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 1
+        },
+        "sadness": {
+          "neutral": 83,
+          "joy": 10,
+          "sadness": 21,
+          "anger": 9,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "anger": {
+          "neutral": 205,
+          "joy": 2,
+          "sadness": 23,
+          "anger": 104,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 5
+        },
+        "fear": {
+          "neutral": 68,
+          "joy": 1,
+          "sadness": 19,
+          "anger": 37,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "disgust": {
+          "neutral": 93,
+          "joy": 4,
+          "sadness": 12,
+          "anger": 25,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 0
+        },
+        "surprise": {
+          "neutral": 112,
+          "joy": 10,
+          "sadness": 5,
+          "anger": 27,
+          "fear": 0,
+          "disgust": 0,
+          "surprise": 7
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 2,
+        "joy": 1,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.19591102894484116,
+      "ece15": 0.0708319690109317,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.2318756872295634,
+          "upper_95": 0.32020856557526894
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.22860237332899688,
+          "upper_95": 0.36032236856510785
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.46112886048988283,
+          "upper_95": 0.673787271918113
+        }
+      },
+      "face_missing_forced_error": 3
+    }
+  },
+  "sims_valid": {
+    "n": 647,
+    "valid": 610,
+    "coverage": 0.9428129829984544,
+    "pearson": 0.6223746896815393,
+    "spearman": 0.6045033410140092,
+    "acc_2_nonzero": 0.7513513513513513,
+    "nonzero_denominator": 555,
+    "nonzero_correct": 417,
+    "correlation_denominator": 610
+  },
+  "artifacts": {
+    "oof": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_V/oof.jsonl",
+      "sha256": "b2816937bab046362816b77a0d3fa31f83fba91ebae7f7876c807f9e620dd2be"
+    },
+    "et_test": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_V/et_test.jsonl",
+      "sha256": "f7efa7cadedaa7691d0b260d1f64e23a129f2d99ff467b420d8393ad8320522c"
+    },
+    "sims_valid": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_V/sims_valid.jsonl",
+      "sha256": "aa1f9532ea08cd110fc511fcf792d7cd3ae03ae24f71af74b829bb06da7220c0"
+    }
+  }
+}

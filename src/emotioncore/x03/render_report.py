@@ -34,6 +34,7 @@ def render(root: Path):
         'fold0 保留检查点未生效时的有效训练结果；fold1–4 与最终模型显式开启梯度检查点。CH-SIMS test 零推理；最终架构选择交 reviewer。'])
     old=(root/'experiments/X03_fusion/REPORT.md').read_text()
     old_sections={int(n):text.strip() for n,text in re.findall(r'^## (\d+)\.[^\n]*\n(.*?)(?=^## \d+\.|\Z)',old,re.M|re.S)}
+    old_sections[13]=old_sections[13].split('\n- 汇总补测V1',1)[0]
     sections[2]=old_sections[2]
     sections[3]='''完成：第 0 步、E1 五组合、E2 网格/五折/最终模型、Q 六模型及三条件预测、H 五组合、主表、配对差值、视觉修正描述性对照、缺失模态、截断敏感性、错误分析、延迟与资源统计。
 
@@ -47,6 +48,10 @@ E2 的 [CLS] 来自未微调 T1 基座及冻结 r-token IDs，防止全 CV 微�
 ECE 为 15 个等宽分箱。主比较指标是 CV OP-N macro-F1。主表附 2,000 次说话人整群 bootstrap、种子 20260929 的 95% 区间，覆盖六项总体指标与逐类 P/R/F1；保留原系统 JSON 的历史区间种子。ET-test 仅四名说话人，区间应结合此局限解读。配对差值的两个系统使用完全相同的 CV 句子与相同说话人重采样。中期两折校准未用于正式结果。
 
 完整指标与区间：[主表](results/main_table_complete.json)、[完整区间](results/complete_speaker_intervals.json)。'''
+    tests=read('delivery_tests')
+    audit=read('delivery_verification')
+    count=re.search(r'(\d+) passed',tests['stdout']).group(1)
+    sections[3]+=f"\n\n交付测试 **{count} 项通过**，覆盖逐折防泄漏、OP-N拟合集、OOF覆盖、Q模态与恢复/OOM/预算保护。只读最终核验 **{audit['verified_systems']} 个候选系统**的三划分覆盖、概率有效性和工件SHA全部通过；见[核验回执](results/delivery_verification.json)。"
     e1=[]
     for name in ('E1_A3','E1_A3_V2','E1_A3_V2_V1','E1_A3_V2_T1r','E1_A3_A2_V2_V1_T1r'):
         j=read(name+'_metrics');e1.append([name,f(j['cv']['op_a']['macro_f1']),f(j['cv']['op_n']['macro_f1']),f(j['et_test']['op_n']['macro_f1']),f(j['sims_valid']['pearson'])])
@@ -111,6 +116,7 @@ fold0 最佳内验证0.696626通过0.45门禁，原结果未重训。fold1–4/�
 显存为串行分阶段的实际CUDA allocated峰值：A3/A2/V2/V1/SenseVoice独立进程测ET-test最长20个音频片段（视觉固定8帧），Q保存全1,929句三条件正式推理总体峰值并另测各形式最长20个token输入。Q-A行用A探测峰值，含AV行保守使用完整三条件总体峰值。CPU检测/T1/heads/融合不占CUDA。此表不能解释为多模型同时驻留的显存。模型数计所需独立神经权重工件，Q两形式共用一份，分类头另外计数；融合/校准向量不算神经模型。详细路径、方法、源SHA与逐句计时SHA见 `latency_summary.json`、`resources_summary.json`、`resources_q_summary.json`、完整主表。
 
 '''+md(['复核阶段','GPU总投影小时','门禁'],[[j['completed_model'],f(j['projected_total_gpu_h']),j['status']] for j in budget])+f"\n\nQ训练与推理进程实耗合计{budget[-1]['projected_total_gpu_h']-1.5:.4f}小时；六次复核保留20%剩余任务余量、1小时诊断与0.5小时加载预留。最终无剩余任务投影{budget[-1]['projected_total_gpu_h']:.4f}小时≤75小时。此次资源探测的额外GPU进程时间计入诊断预留，未突破1小时；CPU延迟、E2与后处理不计GPU。预算账本见 `q_budget_progress.jsonl`，最终审计见 `delivery_verification.json`。"
+    sections[12]+=f"\n\n此次GPU资源补测含加载及V1失败尝试的进程计时为 **{audit['supplemental_resource_process_seconds_including_load_and_failed_V1']:.2f} 秒**，记入诊断预留。"
     sections[13]=old_sections[13]+'''
 - 汇总补测V1显存时，X02/venv缺timm导致子进程在加载模型前退出。保留错误日志和initial_run_meta，改用X02原`open_resources_v1/envs/visual/bin/python`恢复；已完成的A3/A2/V2测量通过SHA后复用。模型、输入、正式预测与选择未改。后续V1与SenseVoice测量成功。
 - 正式Q全部模型与三条件推理无异常退出重试、无OOM跳过；训练保护机制保持启用。延迟/资源补测为报告计时，不用于选参。

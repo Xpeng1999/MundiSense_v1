@@ -1,0 +1,897 @@
+{
+  "components": [
+    "Q_AV",
+    "A3_h2",
+    "V2_h2"
+  ],
+  "cv": {
+    "op_a": {
+      "n": 16366,
+      "valid": 16366,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.658557125309092,
+      "uar": 0.6409653669479703,
+      "wa": 0.7298056947329831,
+      "neutral_false_positive_rate": 0.18769771528998241,
+      "per_class": {
+        "neutral": {
+          "support": 5690,
+          "precision": 0.6980818607461109,
+          "recall": 0.8123022847100175,
+          "f1": 0.7508732028267403
+        },
+        "joy": {
+          "support": 3181,
+          "precision": 0.8078725398313027,
+          "recall": 0.812951901917636,
+          "f1": 0.8104042619868381
+        },
+        "sadness": {
+          "support": 963,
+          "precision": 0.774054054054054,
+          "recall": 0.7435098650051921,
+          "f1": 0.7584745762711865
+        },
+        "anger": {
+          "support": 3164,
+          "precision": 0.7955165101484398,
+          "recall": 0.8299620733249052,
+          "f1": 0.8123743232791957
+        },
+        "fear": {
+          "support": 735,
+          "precision": 0.6387596899224807,
+          "recall": 0.5605442176870749,
+          "f1": 0.5971014492753624
+        },
+        "disgust": {
+          "support": 1203,
+          "precision": 0.5099009900990099,
+          "recall": 0.256857855361596,
+          "f1": 0.3416252072968491
+        },
+        "surprise": {
+          "support": 1430,
+          "precision": 0.6307403936269915,
+          "recall": 0.4706293706293706,
+          "f1": 0.5390468562274728
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 4622,
+          "joy": 348,
+          "sadness": 135,
+          "anger": 223,
+          "fear": 81,
+          "disgust": 100,
+          "surprise": 181
+        },
+        "joy": {
+          "neutral": 440,
+          "joy": 2586,
+          "sadness": 5,
+          "anger": 38,
+          "fear": 8,
+          "disgust": 29,
+          "surprise": 75
+        },
+        "sadness": {
+          "neutral": 165,
+          "joy": 20,
+          "sadness": 716,
+          "anger": 23,
+          "fear": 25,
+          "disgust": 14,
+          "surprise": 0
+        },
+        "anger": {
+          "neutral": 290,
+          "joy": 34,
+          "sadness": 22,
+          "anger": 2626,
+          "fear": 34,
+          "disgust": 103,
+          "surprise": 55
+        },
+        "fear": {
+          "neutral": 197,
+          "joy": 16,
+          "sadness": 21,
+          "anger": 31,
+          "fear": 412,
+          "disgust": 16,
+          "surprise": 42
+        },
+        "disgust": {
+          "neutral": 487,
+          "joy": 63,
+          "sadness": 21,
+          "anger": 247,
+          "fear": 35,
+          "disgust": 309,
+          "surprise": 41
+        },
+        "surprise": {
+          "neutral": 420,
+          "joy": 134,
+          "sadness": 5,
+          "anger": 113,
+          "fear": 50,
+          "disgust": 35,
+          "surprise": 673
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.612409213987629,
+      "ece15": 0.013028394652619466,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.6220081157954951,
+          "upper_95": 0.684883407123699
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5978958094169493,
+          "upper_95": 0.6733177265420421
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.7111965645236356,
+          "upper_95": 0.7494399911760545
+        }
+      },
+      "face_missing_forced_error": 0
+    },
+    "op_n": {
+      "n": 16366,
+      "valid": 16366,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.6517079308315925,
+      "uar": 0.6259714388550371,
+      "wa": 0.7279726261762189,
+      "neutral_false_positive_rate": 0.15448154657293497,
+      "per_class": {
+        "neutral": {
+          "support": 5690,
+          "precision": 0.674281709880869,
+          "recall": 0.845518453427065,
+          "f1": 0.750253411306043
+        },
+        "joy": {
+          "support": 3181,
+          "precision": 0.8242582328007825,
+          "recall": 0.794718641936498,
+          "f1": 0.8092189500640204
+        },
+        "sadness": {
+          "support": 963,
+          "precision": 0.7931818181818182,
+          "recall": 0.7248182762201454,
+          "f1": 0.7574606619641889
+        },
+        "anger": {
+          "support": 3164,
+          "precision": 0.8078848560700876,
+          "recall": 0.816055625790139,
+          "f1": 0.8119496855345912
+        },
+        "fear": {
+          "support": 735,
+          "precision": 0.6505016722408027,
+          "recall": 0.5292517006802722,
+          "f1": 0.5836459114778696
+        },
+        "disgust": {
+          "support": 1203,
+          "precision": 0.533457249070632,
+          "recall": 0.23857024106400665,
+          "f1": 0.3296955772544514
+        },
+        "surprise": {
+          "support": 1430,
+          "precision": 0.6502100840336135,
+          "recall": 0.43286713286713285,
+          "f1": 0.5197313182199832
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 4811,
+          "joy": 294,
+          "sadness": 115,
+          "anger": 187,
+          "fear": 66,
+          "disgust": 74,
+          "surprise": 143
+        },
+        "joy": {
+          "neutral": 511,
+          "joy": 2528,
+          "sadness": 5,
+          "anger": 37,
+          "fear": 6,
+          "disgust": 25,
+          "surprise": 69
+        },
+        "sadness": {
+          "neutral": 186,
+          "joy": 17,
+          "sadness": 698,
+          "anger": 23,
+          "fear": 25,
+          "disgust": 14,
+          "surprise": 0
+        },
+        "anger": {
+          "neutral": 356,
+          "joy": 34,
+          "sadness": 21,
+          "anger": 2582,
+          "fear": 32,
+          "disgust": 92,
+          "surprise": 47
+        },
+        "fear": {
+          "neutral": 227,
+          "joy": 16,
+          "sadness": 18,
+          "anger": 29,
+          "fear": 389,
+          "disgust": 16,
+          "surprise": 40
+        },
+        "disgust": {
+          "neutral": 543,
+          "joy": 56,
+          "sadness": 19,
+          "anger": 232,
+          "fear": 32,
+          "disgust": 287,
+          "surprise": 34
+        },
+        "surprise": {
+          "neutral": 501,
+          "joy": 122,
+          "sadness": 4,
+          "anger": 106,
+          "fear": 48,
+          "disgust": 30,
+          "surprise": 619
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.5893802697596989,
+      "ece15": 0.019203657334022045,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.6110971171196605,
+          "upper_95": 0.6801907816889925
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5784664461524582,
+          "upper_95": 0.661856837856292
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.7097585079125298,
+          "upper_95": 0.7475449373380625
+        }
+      },
+      "face_missing_forced_error": 0
+    }
+  },
+  "parameters_oof": [
+    {
+      "fold": 0,
+      "fit_count": 13092,
+      "held_count": 3274,
+      "fusion": [
+        0.5893059173820169,
+        0.3866103762855738,
+        0.25813708155223464,
+        0.24898770966011238,
+        -0.1900734357087551,
+        0.06150098504124092,
+        0.00745125176643484,
+        -0.11791751222332209,
+        0.007926662275519669,
+        -0.017877466986971364
+      ],
+      "calibration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "neutral_bias": 0.31068498487173346
+    },
+    {
+      "fold": 1,
+      "fit_count": 13107,
+      "held_count": 3259,
+      "fusion": [
+        0.6201911927326839,
+        0.40059362322981223,
+        0.2578258764795668,
+        0.31775495182292574,
+        -0.18263638919602332,
+        0.10106410937914218,
+        0.08684238598789748,
+        -0.12485083282451992,
+        -0.11578685016448348,
+        -0.08239017886475684
+      ],
+      "calibration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "neutral_bias": 0.1796524641401156
+    },
+    {
+      "fold": 2,
+      "fit_count": 13072,
+      "held_count": 3294,
+      "fusion": [
+        0.5589668024598281,
+        0.38938154086789234,
+        0.3198441550963921,
+        0.30202313530567926,
+        0.025879475608804586,
+        0.03603044577251393,
+        0.2305059951675348,
+        -0.3449766342788293,
+        -0.13682339153305512,
+        -0.11264246332705281
+      ],
+      "calibration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "neutral_bias": 0.21516684695258959
+    },
+    {
+      "fold": 3,
+      "fit_count": 13054,
+      "held_count": 3312,
+      "fusion": [
+        0.585691760231782,
+        0.4216697919959083,
+        0.27885144752935076,
+        0.29214304892208687,
+        -0.35268157862889293,
+        0.2450205185583446,
+        0.042479370620329214,
+        -0.1111874067832737,
+        0.04023086269703051,
+        -0.15600492448476927
+      ],
+      "calibration": [
+        1.106892355551281e-05,
+        -5.295763827461997e-06,
+        2.531308496145357e-06,
+        1.1324274851176597e-06,
+        7.438494264988549e-07,
+        3.552713678800501e-06,
+        -1.176836406102666e-06,
+        -1.3988810110276972e-06
+      ],
+      "neutral_bias": 0.16165198348159393
+    },
+    {
+      "fold": 4,
+      "fit_count": 13139,
+      "held_count": 3227,
+      "fusion": [
+        0.6159777717909274,
+        0.3936163525706474,
+        0.2769642428943601,
+        0.21663584932170613,
+        -0.4417664408515052,
+        0.2895100663251086,
+        -0.03903954017777102,
+        -0.017461722394601083,
+        0.03509587086675505,
+        -0.042971736213185625
+      ],
+      "calibration": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "neutral_bias": 0.27614166178210486
+    }
+  ],
+  "sources": {
+    "oof": {
+      "q": {
+        "AV": [
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/AV.jsonl",
+            "sha256": "7408911e5fce4d589db1c366ac09b74b32840a09c0512d4242592aa9d493de62"
+          },
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/AV.jsonl",
+            "sha256": "ff653ecb730c446d37535e2f7f552937f6a472ff9c8ff6cf0c30caa17094809f"
+          },
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/AV.jsonl",
+            "sha256": "d0e3695f39261772009216857539ab61f55c7517968d2c4b053bbdf87d417089"
+          },
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/AV.jsonl",
+            "sha256": "102afa3caa1e179b5a4819e6998748aa4e9a8ef184462e2460c11958aa74f6cb"
+          },
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/AV.jsonl",
+            "sha256": "4aee4b03626497e24513c7cfe180b12917df187374a58f4e5e0a5720157e73fe"
+          }
+        ]
+      },
+      "experts": {
+        "A3_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/A3_h2_cv/oof.jsonl",
+          "sha256": "463b5da707b87fcabbfe2d2688f0fea106260bf745aafc5acf973876ed3f1dd5"
+        },
+        "V2_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/heads/V2_h2_cv/oof.jsonl",
+          "sha256": "5dd5837d47e6ed67830c79769e7c722fe0bc6116151e899bdd378cdbf1d681d0"
+        }
+      }
+    },
+    "et_test": {
+      "q": {
+        "AV": [
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/AV.jsonl",
+            "sha256": "951b5b9283ba8ab2375c4f8c30df282fd96f3fc4bf7477d6ca17d4005259b7c1"
+          }
+        ]
+      },
+      "experts": {
+        "A3_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/A3_h2/et_test.jsonl",
+          "sha256": "1d10673e11d4d57810110c8a0b4f221d5cdcb70884b1f5d326562d720efc691a"
+        },
+        "V2_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/final/V2_h2/et_test.jsonl",
+          "sha256": "a2b85d8942ca1b79d31b468612d7d83f4cc7662208a91547972bac0a02c5cc86"
+        }
+      }
+    },
+    "sims_valid": {
+      "q": {
+        "AV": [
+          {
+            "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/AV.jsonl",
+            "sha256": "ccbf8575986ae21fa0b57b7ebba51d7e11abe4c07e178135e3d0aa9bab76a11a"
+          }
+        ]
+      },
+      "experts": {
+        "A3_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/A3_h2/sims_valid.jsonl",
+          "sha256": "39478e74bc96894e71b342227b4fdb8f4271311e272e4e065310bb2a1e06e45e"
+        },
+        "V2_h2": {
+          "path": "/home/administrator/emotion-data/emotioncore_runs/X02/sims_valid/eval/V2_h2/sims_valid.jsonl",
+          "sha256": "83f3bab1cd8dea16846551d3b774bfeffe99187718dfe5d986f032c26c49cac6"
+        }
+      }
+    }
+  },
+  "parameters_final": {
+    "fusion": [
+      0.593184127873401,
+      0.3974194298730592,
+      0.27774025500156974,
+      0.27569859887585374,
+      -0.23254474788584154,
+      0.1456913390284687,
+      0.06658010102384872,
+      -0.14053144754861827,
+      -0.031347901582533005,
+      -0.08354652366055662
+    ],
+    "calibration": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "neutral_bias": 0.22360891374841518
+  },
+  "et_test": {
+    "op_a": {
+      "n": 1929,
+      "valid": 1929,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.6595400216556209,
+      "uar": 0.6338788469701095,
+      "wa": 0.7387247278382582,
+      "neutral_false_positive_rate": 0.1373283395755306,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.7660753880266076,
+          "recall": 0.8626716604244694,
+          "f1": 0.8115091015854374
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.8508771929824561,
+          "recall": 0.7886178861788617,
+          "f1": 0.8185654008438819
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.67,
+          "recall": 0.5447154471544715,
+          "f1": 0.6008968609865469
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.7207446808510638,
+          "recall": 0.799410029498525,
+          "f1": 0.7580419580419582
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.71,
+          "recall": 0.568,
+          "f1": 0.631111111111111
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.45714285714285713,
+          "recall": 0.3582089552238806,
+          "f1": 0.401673640167364
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.7033898305084746,
+          "recall": 0.515527950310559,
+          "f1": 0.5949820788530464
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 691,
+          "joy": 13,
+          "sadness": 22,
+          "anger": 31,
+          "fear": 7,
+          "disgust": 23,
+          "surprise": 14
+        },
+        "joy": {
+          "neutral": 40,
+          "joy": 194,
+          "sadness": 2,
+          "anger": 2,
+          "fear": 5,
+          "disgust": 1,
+          "surprise": 2
+        },
+        "sadness": {
+          "neutral": 37,
+          "joy": 8,
+          "sadness": 67,
+          "anger": 9,
+          "fear": 0,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 29,
+          "joy": 1,
+          "sadness": 1,
+          "anger": 271,
+          "fear": 3,
+          "disgust": 25,
+          "surprise": 9
+        },
+        "fear": {
+          "neutral": 24,
+          "joy": 2,
+          "sadness": 5,
+          "anger": 16,
+          "fear": 71,
+          "disgust": 3,
+          "surprise": 4
+        },
+        "disgust": {
+          "neutral": 33,
+          "joy": 4,
+          "sadness": 3,
+          "anger": 35,
+          "fear": 6,
+          "disgust": 48,
+          "surprise": 5
+        },
+        "surprise": {
+          "neutral": 48,
+          "joy": 6,
+          "sadness": 0,
+          "anger": 12,
+          "fear": 8,
+          "disgust": 4,
+          "surprise": 83
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.5957467113943831,
+      "ece15": 0.03334306750467356,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.582080718523036,
+          "upper_95": 0.6904157185781213
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5294832459681934,
+          "upper_95": 0.6869030201492932
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.6914022517911975,
+          "upper_95": 0.792167334223409
+        }
+      },
+      "face_missing_forced_error": 0
+    },
+    "op_n": {
+      "n": 1929,
+      "valid": 1929,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.6506062561599341,
+      "uar": 0.6179032331674928,
+      "wa": 0.7350959046137895,
+      "neutral_false_positive_rate": 0.11860174781523096,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.7455121436114044,
+          "recall": 0.8813982521847691,
+          "f1": 0.8077803203661327
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.8532110091743119,
+          "recall": 0.7560975609756098,
+          "f1": 0.8017241379310345
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.6956521739130435,
+          "recall": 0.5203252032520326,
+          "f1": 0.5953488372093023
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.7336956521739131,
+          "recall": 0.7964601769911505,
+          "f1": 0.7637906647807639
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.711340206185567,
+          "recall": 0.552,
+          "f1": 0.6216216216216216
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.4536082474226804,
+          "recall": 0.3283582089552239,
+          "f1": 0.380952380952381
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.7181818181818181,
+          "recall": 0.4906832298136646,
+          "f1": 0.5830258302583026
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 706,
+          "joy": 12,
+          "sadness": 17,
+          "anger": 27,
+          "fear": 7,
+          "disgust": 20,
+          "surprise": 12
+        },
+        "joy": {
+          "neutral": 49,
+          "joy": 186,
+          "sadness": 2,
+          "anger": 2,
+          "fear": 5,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "sadness": {
+          "neutral": 40,
+          "joy": 8,
+          "sadness": 64,
+          "anger": 9,
+          "fear": 0,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 30,
+          "joy": 1,
+          "sadness": 1,
+          "anger": 270,
+          "fear": 3,
+          "disgust": 25,
+          "surprise": 9
+        },
+        "fear": {
+          "neutral": 26,
+          "joy": 2,
+          "sadness": 5,
+          "anger": 16,
+          "fear": 69,
+          "disgust": 3,
+          "surprise": 4
+        },
+        "disgust": {
+          "neutral": 42,
+          "joy": 3,
+          "sadness": 3,
+          "anger": 32,
+          "fear": 6,
+          "disgust": 44,
+          "surprise": 4
+        },
+        "surprise": {
+          "neutral": 54,
+          "joy": 6,
+          "sadness": 0,
+          "anger": 12,
+          "fear": 7,
+          "disgust": 3,
+          "surprise": 79
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      },
+      "nonneutral_macro_recall": 0.5739873966646135,
+      "ece15": 0.023964223727908025,
+      "speaker_bootstrap_95": {
+        "macro_f1": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5629642132030936,
+          "upper_95": 0.6857640323486472
+        },
+        "uar": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.5007671530004997,
+          "upper_95": 0.6795877887501497
+        },
+        "wa": {
+          "replicates": 2000,
+          "seed": 20260928,
+          "unit": "speaker_id",
+          "lower_95": 0.6842374616171955,
+          "upper_95": 0.7908322207387628
+        }
+      },
+      "face_missing_forced_error": 0
+    }
+  },
+  "sims_valid": {
+    "n": 647,
+    "valid": 620,
+    "coverage": 0.9582689335394127,
+    "pearson": 0.7982448695186201,
+    "spearman": 0.7994009411554366,
+    "acc_2_nonzero": 0.8396396396396396,
+    "nonzero_denominator": 555,
+    "nonzero_correct": 466,
+    "correlation_denominator": 620
+  },
+  "artifacts": {
+    "oof": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_A3_V2/oof.jsonl",
+      "sha256": "636ec83f3d0bfc3fd28a94633a262f7fafd8c36cfcfda910cdc0cd70ca355104"
+    },
+    "et_test": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_A3_V2/et_test.jsonl",
+      "sha256": "8d2b6f3220a8739ef1bd340bbc2dddc92f31e13ef646c4767bf38b325068eb93"
+    },
+    "sims_valid": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_A3_V2/sims_valid.jsonl",
+      "sha256": "cd7df2fc4be055573ac16b60fe73af5b0ae7e8144a359b606cdeeda8e5a90eac"
+    }
+  }
+}

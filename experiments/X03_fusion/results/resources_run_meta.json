@@ -1,0 +1,24 @@
+{
+  "git": {
+    "commit": "0a6e1aa241c233c229e9de942be13818577c672d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis_code/src/emotioncore/x03/stage_resource.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--x02-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02",
+    "--x03-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/resources"
+  ],
+  "started_at": "2026-10-02T08:12:47.149298+00:00",
+  "selection_sha256": "45878b9b3815be5fbb837be86b521b2e702254c22ef90f80ccf8066e0d6eaff8",
+  "manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "ended_at": "2026-10-02T08:13:15.636213+00:00",
+  "summary_sha256": "fe8ebe125ba84ab18ea25dfc22410680c505085850a2c2708a6ce060c6e8464e"
+}

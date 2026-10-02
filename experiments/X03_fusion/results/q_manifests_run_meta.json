@@ -1,0 +1,100 @@
+{
+  "git": {
+    "commit": "c81e49db279b434324a23dfe3cc56b68634f678a",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "created_at": "2026-09-29T03:58:57.429755+00:00",
+  "manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "subsets_sha256": "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "seed": 20260929,
+  "runs": {
+    "fold0": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_train.jsonl",
+      "train_sha256": "94260ad7b6f71587e4e15deae8e4fc0fdd5b2b8a44cd2098e66ff68cd852d923",
+      "train_count": 9826,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_val.jsonl",
+      "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 1965,
+        "V": 1965,
+        "AV": 5896
+      },
+      "face_missing_fallback_train": 15
+    },
+    "fold1": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold1_train.jsonl",
+      "train_sha256": "ef7fee726d3792e5e2f138fb30eb8ad6932639bc46a58f0e8f30ffe0887566c7",
+      "train_count": 9833,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold1_val.jsonl",
+      "val_sha256": "075bfa7bc21e89356a4ed334deb5d3fa8e1ea6824fe137d118395f5a53a4a2d8",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 1967,
+        "V": 1966,
+        "AV": 5900
+      },
+      "face_missing_fallback_train": 18
+    },
+    "fold2": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold2_train.jsonl",
+      "train_sha256": "e7a1600172f9e8a875e7a4621aa669a295f0fa3fc533271fda7d2bd867c0dcd7",
+      "train_count": 9798,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold2_val.jsonl",
+      "val_sha256": "92d77420bd47abd376541d7e43d4ebdf3f35577c9844f71413030450c579340e",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 1960,
+        "V": 1959,
+        "AV": 5879
+      },
+      "face_missing_fallback_train": 12
+    },
+    "fold3": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold3_train.jsonl",
+      "train_sha256": "415f293a2456ff9934ba06c2cc260a9db9de6d4699e308d0c0a3543745ef0056",
+      "train_count": 9790,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold3_val.jsonl",
+      "val_sha256": "1ccc8bd934350684cfdd9063a905e986ae6854703d7b7b43cb8f8861aa2a26f8",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 1958,
+        "V": 1958,
+        "AV": 5874
+      },
+      "face_missing_fallback_train": 24
+    },
+    "fold4": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold4_train.jsonl",
+      "train_sha256": "8fb487f62b7c87376278d763461b81066ca65cefcf623ab8c26bb99b3552eed6",
+      "train_count": 9854,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold4_val.jsonl",
+      "val_sha256": "17371310c6d6803f3d3e4fe4590887f3d2770b45aa637bc94809fad2c8a2dd14",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 1971,
+        "V": 1971,
+        "AV": 5912
+      },
+      "face_missing_fallback_train": 23
+    },
+    "final": {
+      "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_train.jsonl",
+      "train_sha256": "0ef313f34d5ffb434c1a01569910d36d25639390c7ce6b3735d16a61bfbc4632",
+      "train_count": 13100,
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_val.jsonl",
+      "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+      "val_count": 700,
+      "assigned_counts": {
+        "A": 2620,
+        "V": 2620,
+        "AV": 7860
+      },
+      "face_missing_fallback_train": 24
+    }
+  }
+}

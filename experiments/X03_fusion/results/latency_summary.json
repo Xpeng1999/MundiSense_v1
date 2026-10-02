@@ -1,0 +1,103 @@
+{
+  "method": "serial sum of frozen per-utterance encoder/ASR/face/Q-forward receipts plus isolated CPU Q processor, CPU classifier heads and frozen postprocessing",
+  "count": 1929,
+  "model_loading_excluded": true,
+  "warmup": 8,
+  "limitation": "stage-accounted steady-state latency, not a co-resident deployment wall-clock benchmark; cache output serialization and IPC included",
+  "devices": "face/Q processor/T1/classifier heads/fusion CPU; frozen encoders/ASR/Q forward CUDA",
+  "systems": {
+    "E_best": {
+      "p50_s": 6.454425437037571,
+      "p95_s": 17.154917116787686,
+      "stages": [
+        "face",
+        "A3",
+        "A3_head",
+        "A2",
+        "A2_head",
+        "V2",
+        "V2_head",
+        "V1",
+        "V1_head",
+        "SenseVoice",
+        "T1",
+        "E_best_post"
+      ]
+    },
+    "Q_AV": {
+      "p50_s": 5.578223060088931,
+      "p95_s": 16.01950662658055,
+      "stages": [
+        "face",
+        "Q_video_prepare",
+        "Q_AV_processor",
+        "Q_AV_forward",
+        "Q_AV_post"
+      ]
+    },
+    "Q_A": {
+      "p50_s": 0.3743688020040281,
+      "p95_s": 0.41361578038195146,
+      "stages": [
+        "Q_A_processor",
+        "Q_A_forward",
+        "Q_A_post"
+      ]
+    },
+    "Q_fusion": {
+      "p50_s": 5.952274599010707,
+      "p95_s": 16.42596852720599,
+      "stages": [
+        "face",
+        "Q_video_prepare",
+        "Q_AV_processor",
+        "Q_AV_forward",
+        "Q_A_processor",
+        "Q_A_forward",
+        "Q_fusion_post"
+      ]
+    },
+    "H_best": {
+      "p50_s": 6.5020664558323915,
+      "p95_s": 17.237842960857233,
+      "stages": [
+        "face",
+        "Q_video_prepare",
+        "Q_AV_processor",
+        "Q_AV_forward",
+        "Q_A_processor",
+        "Q_A_forward",
+        "A3",
+        "A3_head",
+        "V2",
+        "V2_head",
+        "V1",
+        "V1_head",
+        "H_best_post"
+      ]
+    },
+    "A3_reference": {
+      "p50_s": 0.08666170696233166,
+      "p95_s": 0.144276694572909,
+      "stages": [
+        "A3",
+        "A3_head",
+        "A3_reference_post"
+      ]
+    },
+    "V2_reference": {
+      "p50_s": 5.0055179729970405,
+      "p95_s": 15.560465402780391,
+      "stages": [
+        "face",
+        "V2",
+        "V2_head",
+        "V2_reference_post"
+      ]
+    }
+  },
+  "sample_timings": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/latency/et_test_latency.jsonl",
+    "sha256": "a644a57c021ff6ea0bdc6812cdfe30ee97594efa08d232a02292780c3feac77b"
+  }
+}
