@@ -31,7 +31,20 @@ X03 的最终主对照表尚未生成；架构选择由 reviewer 在完整证据
 - Q 从只读 `/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B` 基座开始，NF4 双重量化、BF16、语言 LoRA rank 16 和视觉 LoRA rank 8，音频塔冻结。Q fold 0 已自然结束，固定 AV 内验证最佳 macro-F1 为 0.696626，通过 0.45 门限；按实测重估总 GPU 时长 50.5124 小时，通过 55 小时门限。fold 0 adapter 位于 `$R3/Q/fold0/best_adapter`，SHA-256 `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50`。
 - fold 0 训练时梯度检查点未实际生效，伴随 WSL 显存溢出；按 reviewer 批复保留其有效结果且不重训。fold 1 起 Q 训练/推理使用默认 CUDA 分配器，启动器清除 `PYTORCH_CUDA_ALLOC_CONF` 和 `PYTORCH_ALLOC_CONF`；模型在 `get_peft_model` 后以 `use_reentrant=False` 显式开启检查点，并断言 LLM、视觉塔、音频塔均为 True。每次内验证另存可恢复的 `last`，异常最多自动重试 2 次，OOM 跳过及监控留下逐句/逐步记录。
 - 15,281 条去重 AV 训练候选已全部缓存，冻结最长 20 条长度为 1,016–1,104 token，清单 SHA-256 `feb1e44736402825dcdaafe9afee25f2c3b9b53edb6cfdf8b0124dbf8807cf10`。原始 WSL 故障见 [停止收据](../experiments/X03_fusion/results/q_pipeline_stop.json)；修复后的首条 [等价性回执](../experiments/X03_fusion/results/q_checkpoint_equivalence.json) 和同一 20 条 [显存预检回执](../experiments/X03_fusion/results/q_worst_case_recovery.json) 均通过，最大分配峰值 12,315,284,992 字节，低于 30,000,000,000 字节。
-- 开启检查点后的 A/V/AV [单步实测](../experiments/X03_fusion/results/q_gc_step_benchmark.json)外推总 GPU 时长 71.88 小时，超过 55 小时上限；[预算停止收据](../experiments/X03_fusion/results/q_resume_budget_stop.json)已冻结，fold 1–4 和最终模型未启动。当前 Q 仅有 fold 0 adapter，不可作正式跨臂结果。H 与完整主表没有可用的 Q OOF，等待 reviewer 决定后续协议。
+- 开启检查点后的 A/V/AV 单步外推曾超过原 55 小时门限，历史[停止收据](../experiments/X03_fusion/results/q_resume_budget_stop.json)保留。Reviewer 后续批准 **75 小时总上限**，含 fold 0 已用时、20% 剩余余量及诊断预留；每模型按实耗复核，超限须停在下一模型前。六个 Q 模型现已全部训练完成，五折 A/V/AV 外折概率各覆盖 16,366 句且 ID 唯一；最终模型目标集推理正在进行。最新完整预算投影为 **72.6248 小时**，见[逐模型回执](../experiments/X03_fusion/results/q_budget_progress.jsonl)。正式校准、H 与主表将在 Q 目标集预测齐备后生成，不作架构推荐。
 - 臂 P 依 reviewer 批复取消；X02 已尝试 4bit，峰值 58,041.6 MiB。
 
-X03 完成后，本文件须补齐六个 Q adapter 的实际路径和 SHA-256、各候选系统最终推理入口及最终产物索引。
+## Q adapter 路径与 SHA-256
+
+以下路径均来自完成训练的汇总回执；fold 0 保留原结果，fold 1–4 与最终模型显式开启梯度检查点。
+
+| 模型 | adapter 路径 | SHA-256 |
+|---|---|---|
+| fold0 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold0/best_adapter` | `aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50` |
+| fold1 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold1/best_adapter_eval6` | `937832359fe53b5aff1de59bf4c1f5f2e6277a802e870686c13f8c3a78d0f5eb` |
+| fold2 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold2/best_adapter_eval8` | `9f3823b162ee88eb0f557c6246c52cc538851fe07a205edb590c2487b3eb4eb6` |
+| fold3 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold3/best_adapter_eval8` | `9287b9722f9cf0c571426e69c1dd607f62e28f0397e98675efaf4fac49913d3d` |
+| fold4 | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold4/best_adapter_eval6` | `5a23c9a273d08d980853e3991e87e2047701412a262fbde0d68301ad318d9e1a` |
+| final | `/home/administrator/emotion-data/emotioncore_runs/X03/Q/final/best_adapter_eval8` | `427ebc148d447ba03dc747429323b440b10cbb8b4b8876247f48f71573d2d5a4` |
+
+X03 完成后补齐各候选系统最终推理入口的完整命令及最终产物索引。
