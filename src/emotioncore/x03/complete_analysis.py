@@ -79,6 +79,7 @@ def run(args):
     table=json.loads((r3/'analysis/main_table.json').read_text())
     latency=json.loads((r3/'latency/summary.json').read_text())
     resources=json.loads((r3/'resources/summary.json').read_text())
+    q_resources=json.loads((r3/'resources_q/summary.json').read_text())
     manifest=read_jsonl(args.manifest)
     cv_ids={r['utt_id'] for r in manifest if r['official_split'] in ('train','val') and r['speaker_id'] in json.loads(Path('configs/folds_v1.json').read_text())['cv_pool_speakers']}
     test_ids={r['utt_id'] for r in manifest if r['official_split']=='test'}
@@ -92,7 +93,11 @@ def run(args):
         count=resource_counts(components)
         gpu_stages=[s for s in ('Q','A3','A2','V2','V1','SenseVoice') if (s=='Q' and any(c.startswith('Q_') for c in components)) or (s=='SenseVoice' and 'T1_r' in components) or any(c.startswith(s+'_') for c in components)]
         count['peak_cuda_allocated_bytes']=max(resources['stages'][s]['peak_cuda_allocated_bytes'] for s in gpu_stages)
+        if name=='Q_A':
+            count['peak_cuda_allocated_bytes']=q_resources['conditions']['A']['peak_cuda_allocated_bytes']
+            count['memory_method']='longest 20 frozen ET-test A inputs, same final adapter and default CUDA allocator'
         count['memory_method']=resources['method'];count['memory_limitation']=resources['limitation']
+        count['q_condition_probes']={f:q_resources['conditions'][f]['peak_cuda_allocated_bytes'] for f in ('A','V','AV')} if 'Q' in gpu_stages else None
         bundle['resources']=count
         intervals[name]={}
         for split,ids,points in [('cv',cv_ids,('op_a','op_n')),('et_test',test_ids,('op_n',))]:
@@ -123,6 +128,7 @@ def run(args):
                       'source_main_sha256':sha256(r3/'analysis/main_table.json'),
                       'latency_sha256':sha256(r3/'latency/summary.json'),
                       'resources_sha256':sha256(r3/'resources/summary.json'),
+                      'q_resources_sha256':sha256(r3/'resources_q/summary.json'),
                       'outputs':{p.name:sha256(p) for p in args.output_dir.glob('*.json') if p.name!='run_meta.json'}})
 
 
