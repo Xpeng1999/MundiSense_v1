@@ -18,6 +18,7 @@ def run(args):
     if os.environ.get('PYTORCH_CUDA_ALLOC_CONF') or os.environ.get('PYTORCH_ALLOC_CONF'):
         raise RuntimeError('Default allocator required')
     git=git_provenance(Path.cwd());started=time.monotonic()
+    torch.set_num_threads(4)
     train=json.loads((args.q_root/'final/summary.json').read_text())
     adapter=Path(train['best_checkpoint'])
     if sha256(adapter/'adapter_model.safetensors')!=train['best_checkpoint_sha256']:

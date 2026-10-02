@@ -93,10 +93,10 @@ def run(args):
         count=resource_counts(components)
         gpu_stages=[s for s in ('Q','A3','A2','V2','V1','SenseVoice') if (s=='Q' and any(c.startswith('Q_') for c in components)) or (s=='SenseVoice' and 'T1_r' in components) or any(c.startswith(s+'_') for c in components)]
         count['peak_cuda_allocated_bytes']=max(resources['stages'][s]['peak_cuda_allocated_bytes'] for s in gpu_stages)
+        count['memory_method']=resources['method'];count['memory_limitation']=resources['limitation']
         if name=='Q_A':
             count['peak_cuda_allocated_bytes']=q_resources['conditions']['A']['peak_cuda_allocated_bytes']
             count['memory_method']='longest 20 frozen ET-test A inputs, same final adapter and default CUDA allocator'
-        count['memory_method']=resources['method'];count['memory_limitation']=resources['limitation']
         count['q_condition_probes']={f:q_resources['conditions'][f]['peak_cuda_allocated_bytes'] for f in ('A','V','AV')} if 'Q' in gpu_stages else None
         bundle['resources']=count
         intervals[name]={}
@@ -116,6 +116,10 @@ def run(args):
             robustness[arm][form]={'cv':metric['cv'],'et_test':metric['et_test'],'sims_valid':metric['sims_valid']}
     visual={'purpose':'descriptive comparison; different X02/X03 calibration and training conditions, not a causal estimate',
             'Q_V_X03':robustness['Q']['V']}
+    from emotioncore.x03.h_fusion import q_rows
+    raw,_=q_rows(r3/'Q','V','oof')
+    scored=[{'truth':r['truth_M'],'pred':None if r['status']=='face_missing' else LABELS[int(np.argmax(r['probabilities']))]} for r in raw]
+    visual['Q_V_raw_argmax_X03']=classification(scored)
     for n in ('V3a','V3b'):
         p=r2/f'heads/{n}_h1_cv/results.json'
         visual[n+'_h1_X02']={'source':str(p),'sha256':sha256(p),'results':json.loads(p.read_text())}
