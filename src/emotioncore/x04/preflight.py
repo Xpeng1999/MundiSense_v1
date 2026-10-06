@@ -32,6 +32,11 @@ def run(args):
     write_rows(args.derived/"manifests/all_features.jsonl",all_rows)
     timings={}
     benchmark_root = args.benchmark_root or args.derived/"benchmark200"
+    reference = args.derived/"benchmark200/face/receipts"
+    if benchmark_root != args.derived/"benchmark200" and reference.exists():
+        frozen_ids = {p.stem for p in reference.glob("*.json")}
+        if len(frozen_ids) != 200 or frozen_ids != {r["utt_id"] for r in rows}:
+            raise ValueError("200-MER IDs changed during metadata repair")
     for stage in ("face","A3","V2","V1"):
         storage_gate()
         execute("emotioncore.x04.features","--stage",stage,"--manifest",bench,"--run-root",benchmark_root)
