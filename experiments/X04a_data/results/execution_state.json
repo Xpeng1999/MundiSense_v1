@@ -8,24 +8,28 @@
   "active_preparation_output": "preparation_v2",
   "preflight_launcher": "gate_launch.sh; waits preparation_v2/data_registration.json; gate_code (15e0bc3)",
   "preflight_output": "preflight",
-  "runner_code": "runner_code (f966ed4), NOT LAUNCHED",
+  "runner_code": "analysis_code (4fc26fe) validated; successor with data evidence and X04b budget estimate to deploy; NOT LAUNCHED",
   "next_required_action": "Wait preparation_v2 and preflight. Copy actual budget_preflight.json into results, generate REPORT budget/data sections, commit clean, deploy new worktree, then launch emotioncore.x04.pipeline. It requires committed budget hash matching --budget.",
   "automatic_followup": "x04a hourly, user explicitly approved",
   "pending_after_pipeline": [
-    "X03 fusion/calibration OP-N reuse",
-    "seed20261006 paired bootstrap2000",
-    "D0 reproducibility",
-    "MER/SIMS and per-class analyses",
-    "X04b CPU token-length budget only",
-    "14-section REPORT and X05_HANDOFF",
-    "PR x04-data->main and automation deletion"
+    "Execute and inspect aggregate analysis receipts",
+    "14-section REPORT, data cards, DATA_REGISTRY and X05_HANDOFF",
+    "PR x04-data->main, attach and delete automation"
   ],
   "tests": {
-    "command": "pytest tests/test_x04_dedup.py tests/test_x04_heads.py tests/test_x03_fusion.py -q",
-    "passed": 14,
-    "code": "f966ed4"
+    "command": "pytest tests/test_x04_analysis.py tests/test_x04_heads.py tests/test_x04_dedup.py tests/test_x03_fusion.py -q",
+    "passed": 17,
+    "code": "4fc26fe"
   },
   "incidents": [
     "Initial official archive collector did not follow restricted symlink directory view; no media extracted. Preserve receipts; v2 private script adds find -L only."
+  ],
+  "implemented_after_pipeline": [
+    "X03 frozen fusion/calibration, OP-N",
+    "paired speaker bootstrap2000 seed20261006",
+    "D0 reproducibility",
+    "native MER6/shared5 and worried distributions",
+    "MER-only contact sheets",
+    "CPU-only token-length X04b estimate"
   ]
 }

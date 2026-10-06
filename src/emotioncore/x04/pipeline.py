@@ -87,11 +87,13 @@ def run(args):
         execute("full_A3","emotioncore.x04.features",["--stage","A3","--manifest",source,"--run-root",args.derived/"full"],gpu=True)
         heads("A3")
         wait(face)
+        execute("data_evidence","emotioncore.x04.data_evidence",["--derived",args.derived,"--output",args.derived/"data_evidence"],cpu=True)
         for encoder in ("V2","V1"):
             execute("full_"+encoder,"emotioncore.x04.features",["--stage",encoder,"--manifest",source,"--run-root",args.derived/"full"],gpu=True)
             heads(encoder)
         execute("q_media","emotioncore.x04.q_mer",["--action","media","--derived",args.derived],cpu=True)
         execute("q_cache","emotioncore.x04.q_mer",["--action","cache","--derived",args.derived],cpu=True)
+        execute("x04b_budget_only","emotioncore.x04.budget",["--derived",args.derived,"--output",args.derived/"budget_estimate"],cpu=True)
         execute("q_mer_predict","emotioncore.x04.q_mer",["--action","predict","--derived",args.derived,"--output",args.derived/"Q_predictions"],gpu=True)
         for arm,encoder,output,item in cpu_jobs:
             wait(item)
