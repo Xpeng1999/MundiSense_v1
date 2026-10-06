@@ -190,6 +190,26 @@ def stack(args, arm, components, split, artifacts, face_missing):
     return records, np.stack(raw, axis=1), bad
 
 
+def d0_reproduction(fresh, old_path, cv_ids):
+    old={r['utt_id']:r for r in read_jsonl(old_path)}
+    fresh=sorted(fresh,key=lambda r:r['utt_id'])
+    if len(fresh)!=len(cv_ids) or {r['utt_id'] for r in fresh}!=set(cv_ids) or set(old)!=set(cv_ids):
+        raise ValueError('STOP D0/X02 reference OOF coverage changed')
+    for row in fresh:
+        previous=old[row['utt_id']]
+        if any(previous[k]!=row[k] for k in ('speaker_id','fold','truth_M')):
+            raise ValueError('STOP D0/X02 speaker/fold/label mismatch')
+    p_old=np.array([old[r['utt_id']]['probabilities'] for r in fresh])
+    p_new=np.array([r['probabilities'] for r in fresh])
+    raw_bad=np.array([r['status']!='ok' for r in fresh])
+    old_bad=np.array([old[r['utt_id']]['status']!='ok' for r in fresh])
+    result={'argmax_agreement':float((p_old.argmax(1)==p_new.argmax(1)).mean()),
+        'new_raw':et_metrics(p_new,fresh,raw_bad),'old_raw':et_metrics(p_old,fresh,old_bad),
+        'reference_path':str(old_path),'reference_sha256':sha256(old_path)}
+    result['macro_f1_difference']=result['new_raw']['macro_f1']-result['old_raw']['macro_f1']
+    return result
+
+
 def run(args):
     git = git_provenance(Path.cwd()); require_h(args.output); storage_gate()
     folds_path = Path("configs/folds_v1.json")
@@ -278,18 +298,8 @@ def run(args):
             selections[key] = json.loads((job/"results.json").read_text())
             if arm == "D0":
                 old_path = args.r2/f"heads/{name}_h2_cv/oof.jsonl"
-                old = {r["utt_id"]: r for r in read_jsonl(old_path)}
                 fresh = source(args, arm, name, "oof", artifacts)
-                fresh.sort(key=lambda r: r["utt_id"])
-                if set(old) != set(cv): raise ValueError("X02 reference coverage changed")
-                p_old = np.array([old[r["utt_id"]]["probabilities"] for r in fresh])
-                p_new = np.array([r["probabilities"] for r in fresh])
-                raw_bad = np.array([r["status"] != "ok" for r in fresh])
-                old_bad = np.array([old[r["utt_id"]]["status"] != "ok" for r in fresh])
-                reproduction[name] = {"argmax_agreement": float((p_old.argmax(1) == p_new.argmax(1)).mean()),
-                    "new_raw": et_metrics(p_new, fresh, raw_bad), "old_raw": et_metrics(p_old, fresh, old_bad),
-                    "reference_path": str(old_path), "reference_sha256": sha256(old_path)}
-                reproduction[name]["macro_f1_difference"] = reproduction[name]["new_raw"]["macro_f1"]-reproduction[name]["old_raw"]["macro_f1"]
+                reproduction[name]=d0_reproduction(fresh,old_path,cv)
         write_json_atomic(args.output/"progress.json", {"completed": key, "done": len(table), "total": len(planned)})
     comparisons = [("D1/"+s, "D0/"+s) for s in SYSTEMS] + [("D3/H_ref", "D1/H_ref")]
     if "D1_audioonly/A3" in paired_rows: comparisons += [("D1_audioonly/A3", "D1/A3")]

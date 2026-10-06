@@ -135,10 +135,36 @@ def run(args):
                     if sha256(path)!=spec['sha256']:raise ValueError('Pipeline history SHA changed')
                     previous=export(path,results/f"pipeline_stop_{read(path)['git']['commit'][:8]}.json")
                 export(path,results/'pipeline_original_stop.json')
+            from emotioncore.x04.pipeline import completed_head
+            completions={}
+            for arm in ('D0','D1','D2','D3','D1_audioonly'):
+                for encoder in ('A3','V2','V1'):
+                    job=args.derived/f'heads/{arm}/{encoder}'
+                    meta=completed_head(job)
+                    if not meta:continue
+                    result=read(job/'results.json')
+                    completions[f'{arm}/{encoder}']={
+                        'run_meta':{'path':str(job/'run_meta.json'),'sha256':sha256(job/'run_meta.json')},
+                        'results':{'path':str(job/'results.json'),'sha256':sha256(job/'results.json')},
+                        'git':meta['git'],'started_at':meta['started_at'],'ended_at':meta['ended_at'],
+                        'elapsed_s':meta['elapsed_s'],'device':meta['device'],
+                        'oof_sha256':result['oof_sha256'],'checkpoint_sha256':result['checkpoint_sha256'],
+                        'folds':[{'fold':s['fold'],'outer_count':s['outer_count'],'selected':s['selected']}
+                                 for s in result['folds']],'final_config':result['final_config']}
+            assert_aggregate(completions)
+            write_json_atomic(results/'heads_complete.json',completions)
+            rendered=[]
+            for stage in progress['steps']:
+                parts=stage['name'].split('_')
+                key='/'.join(parts[1:]) if len(parts)==3 and parts[0]=='heads' else None
+                finished=completions.get(key)
+                status='完成（产物SHA核验）' if finished else (str(stage['returncode']) if 'returncode' in stage else '运行中')
+                elapsed=finished['elapsed_s'] if finished else stage.get('elapsed_s')
+                if elapsed is None and stage.get('reused_from'):duration='复用；原回执见索引'
+                else:duration=fmt(elapsed/3600) if elapsed is not None else '待结束'
+                rendered.append((stage['name'],status,duration,'CPU' if stage['cpu_only'] else 'GPU'))
             stages=table(["阶段","状态","实测墙钟小时","设备"],
-                [(s['name'],str(s['returncode']) if 'returncode' in s else '运行中',
-                  fmt(s['elapsed_s']/3600) if 'elapsed_s' in s else '待结束',
-                  'CPU' if s['cpu_only'] else 'GPU') for s in progress['steps']])
+                rendered)
             report=replace_section(report,3,
                 f"第0步、注册/去重和200句预检完成；正式管线使用干净提交{progress['git']['commit']}，启动{progress['started_at']}，当前状态{progress['status']}。\n\n"+
                 stages+"\n\nA3头cuda:0单进程、V1/V2头CPU并行，Q本轮零训练。未完成阶段的结果仍待执行。")
@@ -160,6 +186,13 @@ def run(args):
                 resources += f"\n\n正式管线已结束阶段GPU累计账本{progress.get('charged_gpu_hours',0):.6f}小时；当前GPU阶段结束或停止时加入。\n\n"+stages
     report = replace_section(report,12,resources)
     report=replace_section(report,5,"统一8维h2，语料掩码及α网格不变。A3头cuda:0单进程，V1/V2头CPU并行；源特征fp16，只锁页单批128MiB缓冲。批次顺序、seed20260928、网格、早停和最终选参与X02一致；GPU取数与X02精确相等回执见results/gpu_batch_equivalence.json。")
+    early_repro=args.derived/'d0_reproduction/d0_reproducibility.json'
+    if early_repro.exists() and not args.complete:
+        repro=export(early_repro,results/'d0_reproducibility.json')
+        export(args.derived/'d0_reproduction/run_meta.json',results/'d0_reproduction_run_meta.json')
+        report=replace_section(report,6,table(['编码器','逐句argmax一致率','本轮原始F1','X02原始F1','差值'],
+            [(k,fmt(v['argmax_agreement']),fmt(v['new_raw']['macro_f1']),fmt(v['old_raw']['macro_f1']),fmt(v['macro_f1_difference']))
+             for k,v in repro.items()])+'\n\n使用原始头输出对比；正式评估另执行冻结缺脸规则。仅复算已有OOF，本步骤零训练、零模型推理，不据此改变选择或参数。')
     if args.complete:
         main = export(args.derived/"analysis/main_table.json", results/"main_table.json")
         paired = export(args.derived/"analysis/paired_differences.json", results/"paired_differences.json")
