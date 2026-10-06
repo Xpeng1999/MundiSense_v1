@@ -1,0 +1,36 @@
+{
+  "status": "provisional_before_200_MER_preflight",
+  "estimated_remaining_wall_days": [
+    3,
+    5
+  ],
+  "A3_CPU_jobs_isolated_hours": {
+    "D0": {
+      "hours_X02_median_plus_patience": 8.524834868123191,
+      "hours_if_every_config_reaches_50_epoch_cap": 30.342243750181904
+    },
+    "D1": {
+      "hours_X02_median_plus_patience": 41.942988312397695,
+      "hours_if_every_config_reaches_50_epoch_cap": 143.05917616207685
+    },
+    "D2": {
+      "hours_X02_median_plus_patience": 22.177679710819696,
+      "hours_if_every_config_reaches_50_epoch_cap": 75.25768722961463
+    },
+    "D3": {
+      "hours_X02_median_plus_patience": 56.76156940603978,
+      "hours_if_every_config_reaches_50_epoch_cap": 193.49851559889066
+    },
+    "D1_audioonly": {
+      "hours_X02_median_plus_patience": 41.942988312397695,
+      "hours_if_every_config_reaches_50_epoch_cap": 143.05917616207685
+    }
+  },
+  "CPU_probe_sha256_source": "cpu_timing_estimate.json",
+  "nominal_assumption": "X02 A3 median best epoch10 + patience5; nominal refit10 epochs. Full MER9395/CREMA7442 counts before dedup. Actual early stopping and parallel CPU/H I/O contention unknown.",
+  "not_a_deadline": true,
+  "GPU_limit_hours": 20,
+  "formal_training_started": false,
+  "Q_training": false,
+  "next_update": "After first formal CPU fold/grid observations and mandatory200 MER GPU preflight"
+}

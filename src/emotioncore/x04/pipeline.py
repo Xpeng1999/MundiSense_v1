@@ -1,7 +1,6 @@
 """Authorized X04a execution, with budget/storage gates and isolated children."""
 from __future__ import annotations
 import argparse
-import concurrent.futures
 import datetime as dt
 import json
 import os
@@ -34,7 +33,9 @@ def run(args):
     progress={"git":git,"command":sys.argv,"started_at":dt.datetime.now(dt.timezone.utc).isoformat(),
         "budget_sha256":sha256(args.budget),"report_sha256":sha256(Path("experiments/X04a_data/REPORT.md")),"steps":[],"status":"running"}
     write_json_atomic(args.output/"pipeline_progress.json",progress)
-    charged=budget["measured_gpu_hours"]*3600
+    started_pipeline=time.monotonic()
+    charged=(budget["measured_gpu_hours"]+args.prior_gpu_hours)*3600
+    progress["prior_gpu_hours"]=args.prior_gpu_hours
     children=[];cpu_jobs=[]
     def spawn(name,module,options,*,cpu=False):
         env=os.environ.copy();env["PYTHONDONTWRITEBYTECODE"]="1"
@@ -68,6 +69,7 @@ def run(args):
         if child.returncode:raise RuntimeError(f"X04a child failed: {record['name']} exit={child.returncode}")
     def execute(name,module,options,*,cpu=False,gpu=False):wait(spawn(name,module,options,cpu=cpu),gpu=gpu)
     def heads(encoder):
+        if encoder=="A3":raise ValueError("A3 must be serialized on GPU")
         import json as _json
         rows=[_json.loads(s) for s in source.read_text().splitlines()]
         pack(rows,args.derived/f"full/features/{encoder}/receipts",encoder,args.derived/f"packs/{encoder}")
@@ -76,21 +78,43 @@ def run(args):
             options=["--arm",arm,"--encoder",encoder,"--derived",args.derived,"--dedup",dedup,
                      "--output",output,"--device","cpu","--threads",8 if encoder=="A3" else 4]
             cpu_jobs.append((arm,encoder,output,spawn(f"heads_{arm}_{encoder}","emotioncore.x04.heads",options,cpu=True)))
-        report=json.loads(dedup.read_text())
-        if encoder=="A3" and report["fingerprint_available"]:
-            output=args.derived/"heads/D1_audioonly/A3"
-            options=["--arm","D1","--encoder","A3","--derived",args.derived,"--dedup",dedup,
-                     "--output",output,"--device","cpu","--threads",8,"--sensitivity"]
-            cpu_jobs.append(("D1_audioonly",encoder,output,spawn("heads_D1_audioonly_A3","emotioncore.x04.heads",options,cpu=True)))
+    def a3_options(arm,*,first=False,sensitivity=False):
+        output=args.derived/f"heads/{arm}/A3"
+        options=["--arm","D1" if sensitivity else arm,"--encoder","A3","--derived",args.derived,
+                 "--dedup",dedup,"--output",output,"--device","cuda:0","--threads",8]
+        if first:options.append("--stop-after-first-grid")
+        if sensitivity:options.append("--sensitivity")
+        return options
     try:
         face=spawn("full_face","emotioncore.x04.features",["--stage","face","--manifest",source,"--run-root",args.derived/"full"],cpu=True)
         execute("full_A3","emotioncore.x04.features",["--stage","A3","--manifest",source,"--run-root",args.derived/"full"],gpu=True)
-        heads("A3")
         wait(face)
         execute("data_evidence","emotioncore.x04.data_evidence",["--derived",args.derived,"--output",args.derived/"data_evidence"],cpu=True)
         for encoder in ("V2","V1"):
             execute("full_"+encoder,"emotioncore.x04.features",["--stage",encoder,"--manifest",source,"--run-root",args.derived/"full"],gpu=True)
             heads(encoder)
+        rows=[json.loads(s) for s in source.read_text().splitlines()]
+        pack(rows,args.derived/"full/features/A3/receipts","A3",args.derived/"packs/A3")
+        execute("heads_D0_A3_first_grid","emotioncore.x04.heads",a3_options("D0",first=True),gpu=True)
+        execute("first_grid_budget","emotioncore.x04.head_budget",[
+            "--derived",args.derived,"--dedup",dedup,
+            "--first-grid",args.derived/"heads/D0/A3/first_grid_complete.json",
+            "--budget",args.budget,"--charged-gpu-hours",charged/3600,
+            "--wall-elapsed-hours",(time.monotonic()-started_pipeline)/3600,
+            "--cpu-remaining-hours",0,"--cpu-elapsed-hours",min((time.monotonic()-job[3][2])/3600 for job in cpu_jobs),
+            "--output",args.output/"first_grid_budget"],cpu=True)
+        progress["first_grid_budget_sha256"]=sha256(args.output/"first_grid_budget/wall_time_estimate.json")
+        # The budget child writes REPORT section12 before the next GPU head.
+        for arm in ("D0","D1","D2","D3"):
+            execute(f"heads_{arm}_A3","emotioncore.x04.heads",a3_options(arm),gpu=True)
+            execute(f"targets_{arm}_A3","emotioncore.x04.targets",["--arm",arm,"--encoder","A3",
+                "--job",args.derived/f"heads/{arm}/A3","--derived",args.derived,
+                "--output",args.derived/f"heads/{arm}/A3/targets"],cpu=True)
+        if json.loads(dedup.read_text())["fingerprint_available"]:
+            execute("heads_D1_audioonly_A3","emotioncore.x04.heads",a3_options("D1_audioonly",sensitivity=True),gpu=True)
+            execute("targets_D1_audioonly_A3","emotioncore.x04.targets",["--arm","D1","--encoder","A3",
+                "--job",args.derived/"heads/D1_audioonly/A3","--derived",args.derived,
+                "--output",args.derived/"heads/D1_audioonly/A3/targets"],cpu=True)
         execute("q_media","emotioncore.x04.q_mer",["--action","media","--derived",args.derived],cpu=True)
         execute("q_cache","emotioncore.x04.q_mer",["--action","cache","--derived",args.derived],cpu=True)
         execute("x04b_budget_only","emotioncore.x04.budget",["--derived",args.derived,"--output",args.derived/"budget_estimate"],cpu=True)
@@ -115,6 +139,7 @@ def run(args):
 def main():
     p=argparse.ArgumentParser();p.add_argument("--derived",type=Path,required=True);p.add_argument("--budget",type=Path,required=True)
     p.add_argument("--preflight",type=Path,required=True);p.add_argument("--output",type=Path,required=True)
+    p.add_argument("--prior-gpu-hours",type=float,required=True)
     run(p.parse_args())
 
 

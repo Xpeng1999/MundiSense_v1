@@ -1,6 +1,7 @@
 """Eight-output X02 h2 heads with corpus masks and frozen nested speaker CV."""
 from __future__ import annotations
 import argparse
+import fcntl
 import datetime as dt
 import json
 import statistics
@@ -113,9 +114,43 @@ class Frames:
         self.arrays = arrays; self.offsets = np.cumsum([0] + [len(a) for a in arrays])
         self.lengths = np.concatenate(lengths)
         self.layered = arrays[0].ndim == 4; self.dimension = arrays[0].shape[-1]
+        self.pinned_buffer = None
+        self.source_tensors = None
+        self.transfer_done = None
 
     def batch(self, indices, device):
         import torch
+        if torch.device(device).type == "cuda":
+            if len(indices) > 128:
+                raise ValueError("Only one batch128 pinned buffer is authorized")
+            if self.pinned_buffer is None:
+                if any(a.dtype != np.float16 for a in self.arrays):
+                    raise ValueError("GPU source features must remain fp16")
+                self.source_tensors = [torch.from_numpy(a) for a in self.arrays]
+                self.pinned_buffer = torch.empty((128, *self.arrays[0].shape[1:]),
+                                                 dtype=torch.float16, pin_memory=True)
+                self.transfer_done = torch.cuda.Event()
+                self.transfer_pending = False
+            if self.transfer_pending:
+                # The buffer cannot be overwritten until its previous H2D copy
+                # completes. No source dataset is pinned or converted to fp32.
+                self.transfer_done.synchronize()
+            order = []; offset = 0
+            for j, source in enumerate(self.source_tensors):
+                positions = np.flatnonzero((indices >= self.offsets[j]) & (indices < self.offsets[j+1]))
+                if not len(positions): continue
+                local = torch.from_numpy((indices[positions]-self.offsets[j]).astype(np.int64))
+                torch.index_select(source, 0, local, out=self.pinned_buffer[offset:offset+len(positions)])
+                order.extend(positions.tolist()); offset += len(positions)
+            if offset != len(indices): raise ValueError("Batch index outside feature arrays")
+            half = self.pinned_buffer[:len(indices)].to(device, non_blocking=True)
+            self.transfer_done.record(torch.cuda.current_stream(device))
+            self.transfer_pending = True
+            if order != list(range(len(indices))):
+                inverse = torch.from_numpy(np.argsort(order).astype(np.int64)).to(device)
+                half = torch.index_select(half, 0, inverse)
+            x = half.to(dtype=torch.float32)
+            return x, torch.from_numpy(self.lengths[indices].astype(np.int64)).to(device)
         shape = (len(indices), *self.arrays[0].shape[1:])
         x = np.empty(shape, dtype=np.float32)
         for j, a in enumerate(self.arrays):
@@ -144,6 +179,7 @@ def predict(model, data, indices, device, corpus="ET", unsupported_worried=False
 
 def train(data, rows, train_indices, val_indices, config, seed, device, fixed_epochs=None):
     import torch
+    started = time.monotonic()
     valid_train = train_indices[data.lengths[train_indices] > 0]
     if not len(valid_train):
         raise ValueError("No usable training features")
@@ -164,10 +200,12 @@ def train(data, rows, train_indices, val_indices, config, seed, device, fixed_ep
     model = build_model(data.dimension, data.layered, device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"], weight_decay=config["weight_decay"])
     best = None; best_state = None; best_epoch = 0; patience = 0; epochs = 0
-    history = []
+    history = []; train_seconds = 0.; validation_seconds = 0.
     for epoch in range(1, (fixed_epochs if fixed_epochs is not None else head_h2.MAX_EPOCHS)+1):
         storage_gate()
         model.train()
+        if torch.device(device).type == "cuda": torch.cuda.synchronize()
+        epoch_start = time.monotonic()
         for batch in head_h2.batches(valid_train, 128, seed + epoch):
             x, n = data.batch(batch, device)
             labels = torch.from_numpy(y[batch]).to(device)
@@ -177,11 +215,15 @@ def train(data, rows, train_indices, val_indices, config, seed, device, fixed_ep
             # D0 uses X02's weighted-mean CE exactly; alpha is applied afterward.
             loss = (masked_ce(model(x, n), labels, masks([rows[i]["corpus"] for i in batch], device)) * weight * alpha).sum() / weight.sum()
             loss.backward(); optimizer.step()
+        if torch.device(device).type == "cuda": torch.cuda.synchronize()
+        train_seconds += time.monotonic()-epoch_start
         epochs = epoch
         if val_indices is None: continue
+        validation_start = time.monotonic()
         probabilities = predict(model, data, val_indices, device)
         score = head_h1.scores(y[val_indices], probabilities.argmax(1), data.lengths[val_indices] > 0)
         history.append({"epoch": epoch, **score})
+        validation_seconds += time.monotonic()-validation_start
         rank = (score["macro_f1"], score["uar"])
         if best is None or rank > best:
             best = rank; best_epoch = epoch; patience = 0
@@ -192,7 +234,12 @@ def train(data, rows, train_indices, val_indices, config, seed, device, fixed_ep
     if best_state is not None: model.load_state_dict(best_state)
     return model, {"best_epoch": best_epoch if val_indices is not None else fixed_epochs,
         "validation": {"macro_f1": best[0], "uar": best[1]} if best else None,
-        "epochs_executed": epochs, "history": history, "class_counts": counts}
+        "epochs_executed": epochs, "history": history, "class_counts": counts,
+        "elapsed_s": time.monotonic()-started, "train_seconds": train_seconds,
+        "validation_seconds": validation_seconds, "valid_train_n": len(valid_train),
+        "validation_n": len(val_indices) if val_indices is not None else 0,
+        "train_batches": epochs*int(np.ceil(len(valid_train)/128)),
+        "validation_batches": epochs*int(np.ceil((data.lengths[val_indices]>0).sum()/128)) if val_indices is not None else 0}
 
 
 def choose(candidates):
@@ -203,8 +250,17 @@ def choose(candidates):
 def run(args):
     import torch
     git = git_provenance(Path.cwd()); require_h(args.output); storage_gate()
-    if args.device != "cpu":
-        raise ValueError("X04a head launcher reserves GPU budget by using CPU only")
+    expected_device = "cuda:0" if args.encoder == "A3" else "cpu"
+    if args.device != expected_device:
+        raise ValueError(f"Reviewer device approval requires {args.encoder} on {expected_device}")
+    if args.encoder == "A3":
+        lock_path = args.derived / "locks/A3_gpu_head.lock"
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+        # Hold the advisory lock for the complete run, including selection/refit.
+        gpu_lock = lock_path.open("a")
+        try: fcntl.flock(gpu_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise RuntimeError("STOP another GPU head training process is active")
     torch.set_num_threads(args.threads); torch.set_num_interop_threads(1)
     folds_path = Path("configs/folds_v1.json")
     if head_h1.sha256(folds_path) != FOLDS_SHA: raise ValueError("Frozen folds changed")
@@ -238,6 +294,7 @@ def run(args):
         "heads_only": True, "Q_training": False, "folds_sha256": FOLDS_SHA,
         "seed": head_h1.SEED, "max_epochs": head_h2.MAX_EPOCHS, "patience": head_h2.PATIENCE,
         "batch_size":128,"dropout":head_h2.DROPOUT,"alphas":ALPHAS if args.arm != "D0" else [1.],
+        "fetch":"fp16 source, one pinned batch128, index_select, non_blocking H2D then float32" if args.encoder=="A3" else "X02 CPU float32 batch",
         "extra_train_count":len(extra_ids),"excluded_ids_sha256":head_h1.sha256(args.dedup),
         "weight_normalization":"per-corpus sample-average=1, batch denominator sum base weights, then alpha numerator"}
     write_json_atomic(args.output / "run_meta.json", meta)
@@ -261,6 +318,16 @@ def run(args):
             candidates.append(candidate); config_history[i].append(candidate)
             write_json_atomic(args.output/"progress.json",{"fold":fold["fold"],"grid_done":i+1,"grid_total":len(configs),"phase":"selection","elapsed_s":time.monotonic()-started})
         chosen=choose(candidates)
+        if args.encoder == "A3" and fold["fold"] == 0 and args.stop_after_first_grid:
+            write_json_atomic(args.output/"first_grid_complete.json",{
+                "git":git,"arm":args.arm,"encoder":args.encoder,"fold":0,"grid":candidates,
+                "selection_elapsed_s":time.monotonic()-started,"grid_count":len(candidates),
+                "pinned_buffer_bytes":data.pinned_buffer.numel()*data.pinned_buffer.element_size(),
+                "stage":"complete first outer fold hyperparameter grid; before refit",
+                "completed_at":dt.datetime.now(dt.timezone.utc).isoformat()})
+            meta.update(ended_at=dt.datetime.now(dt.timezone.utc).isoformat(),status="first_grid_complete")
+            write_json_atomic(args.output/"first_grid_run_meta.json",meta)
+            return
         et_outer_train=np.flatnonzero(~np.isin(speakers,fold["outer_holdout_speakers"])) if args.arm != "D2" else np.array([],dtype=int)
         outer_train=np.concatenate([et_outer_train,extra_ids])
         validate_training(rows,outer_train,fold["outer_holdout_speakers"],[],excluded,stage="refit")
@@ -293,9 +360,13 @@ def main():
     p.add_argument("--encoder",choices=["A3","V2","V1"],required=True)
     p.add_argument("--derived",type=Path,required=True);p.add_argument("--dedup",type=Path,required=True)
     p.add_argument("--r2",type=Path,default=Path("/home/administrator/emotion-data/emotioncore_runs/X02"))
-    p.add_argument("--output",type=Path,required=True);p.add_argument("--device",default="cpu");p.add_argument("--threads",type=int,default=8)
-    p.add_argument("--sensitivity",action="store_true");args=p.parse_args()
+    p.add_argument("--output",type=Path,required=True);p.add_argument("--device");p.add_argument("--threads",type=int,default=8)
+    p.add_argument("--sensitivity",action="store_true")
+    p.add_argument("--stop-after-first-grid",action="store_true");args=p.parse_args()
+    args.device = args.device or ("cuda:0" if args.encoder == "A3" else "cpu")
     if args.sensitivity and (args.arm!="D1" or args.encoder!="A3"):p.error("Only D1 A3 sensitivity is authorized")
+    if args.stop_after_first_grid and (args.arm != "D0" or args.encoder != "A3"):
+        p.error("First-grid budget probe must be the D0 A3 fold0 grid")
     run(args)
 
 
