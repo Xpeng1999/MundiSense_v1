@@ -1,0 +1,394 @@
+{
+  "conditions": {
+    "A": {
+      "peak_cuda_allocated_bytes": 8893148672,
+      "selection_rule": "20 longest input_ids in frozen ET-test A manifest",
+      "manifest_sha256": "e2803a1efdd25b4a226750f7debfe1cd3147697279e464be0578f6f72f6341ea",
+      "samples": [
+        {
+          "utt_id": "G00003_31_13_011",
+          "effective_form": "A",
+          "tokens": 477,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_45_21_003",
+          "effective_form": "A",
+          "tokens": 466,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_53_20_016",
+          "effective_form": "A",
+          "tokens": 458,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_30_02_014",
+          "effective_form": "A",
+          "tokens": 443,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_16_13_013",
+          "effective_form": "A",
+          "tokens": 436,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_20_13_012",
+          "effective_form": "A",
+          "tokens": 426,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_31_02_015",
+          "effective_form": "A",
+          "tokens": 421,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_31_13_005",
+          "effective_form": "A",
+          "tokens": 416,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_11_02_018",
+          "effective_form": "A",
+          "tokens": 414,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_30_13_015",
+          "effective_form": "A",
+          "tokens": 403,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_16_13_016",
+          "effective_form": "A",
+          "tokens": 399,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_36_02_008",
+          "effective_form": "A",
+          "tokens": 397,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_51_20_009",
+          "effective_form": "A",
+          "tokens": 397,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_33_21_007",
+          "effective_form": "A",
+          "tokens": 391,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_31_13_012",
+          "effective_form": "A",
+          "tokens": 387,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_31_13_008",
+          "effective_form": "A",
+          "tokens": 383,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_46_21_007",
+          "effective_form": "A",
+          "tokens": 382,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_30_13_011",
+          "effective_form": "A",
+          "tokens": 380,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00015_51_20_001",
+          "effective_form": "A",
+          "tokens": 378,
+          "peak_cuda_allocated_bytes": 8893148672
+        },
+        {
+          "utt_id": "G00003_21_02_008",
+          "effective_form": "A",
+          "tokens": 371,
+          "peak_cuda_allocated_bytes": 8893148672
+        }
+      ]
+    },
+    "V": {
+      "peak_cuda_allocated_bytes": 8987311616,
+      "selection_rule": "20 longest input_ids in frozen ET-test V manifest",
+      "manifest_sha256": "1179fcfa77e546465064df0df135a986c05d5e3cdecfa68b8aa868c803eabff1",
+      "samples": [
+        {
+          "utt_id": "G00003_11_02_002",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_004",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_006",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_008",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_010",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_012",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_016",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_018",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_020",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_022",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_02_024",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_001",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_007",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_009",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_013",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_015",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_017",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_019",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_021",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        },
+        {
+          "utt_id": "G00003_11_13_023",
+          "effective_form": "V",
+          "tokens": 630,
+          "peak_cuda_allocated_bytes": 8987311616
+        }
+      ]
+    },
+    "AV": {
+      "peak_cuda_allocated_bytes": 9279570944,
+      "selection_rule": "20 longest input_ids in frozen ET-test AV manifest",
+      "manifest_sha256": "4f64648688ad631ff958eb3a1b6b7ef25e37589316ab5ab2071a4fb7ed2a984b",
+      "samples": [
+        {
+          "utt_id": "G00003_31_13_011",
+          "effective_form": "AV",
+          "tokens": 1055,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_45_21_003",
+          "effective_form": "AV",
+          "tokens": 1044,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_53_20_016",
+          "effective_form": "AV",
+          "tokens": 1036,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_30_02_014",
+          "effective_form": "AV",
+          "tokens": 1021,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_16_13_013",
+          "effective_form": "AV",
+          "tokens": 1014,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_20_13_012",
+          "effective_form": "AV",
+          "tokens": 1004,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_31_02_015",
+          "effective_form": "AV",
+          "tokens": 999,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_31_13_005",
+          "effective_form": "AV",
+          "tokens": 994,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_11_02_018",
+          "effective_form": "AV",
+          "tokens": 992,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_30_13_015",
+          "effective_form": "AV",
+          "tokens": 981,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_16_13_016",
+          "effective_form": "AV",
+          "tokens": 977,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_36_02_008",
+          "effective_form": "AV",
+          "tokens": 975,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_51_20_009",
+          "effective_form": "AV",
+          "tokens": 975,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_33_21_007",
+          "effective_form": "AV",
+          "tokens": 969,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_31_13_012",
+          "effective_form": "AV",
+          "tokens": 965,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_31_13_008",
+          "effective_form": "AV",
+          "tokens": 961,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_46_21_007",
+          "effective_form": "AV",
+          "tokens": 960,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_30_13_011",
+          "effective_form": "AV",
+          "tokens": 958,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00015_51_20_001",
+          "effective_form": "AV",
+          "tokens": 956,
+          "peak_cuda_allocated_bytes": 9279570944
+        },
+        {
+          "utt_id": "G00003_21_02_008",
+          "effective_form": "AV",
+          "tokens": 949,
+          "peak_cuda_allocated_bytes": 9279570944
+        }
+      ]
+    }
+  },
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  },
+  "cuda_allocator": "default",
+  "elapsed_s_including_load": 76.11407873802818,
+  "limitation": "longest 20 ET-test inputs per form; full formal inference overall peak also retained"
+}

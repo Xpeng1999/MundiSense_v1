@@ -96,9 +96,9 @@ def predict_t1_final(args: argparse.Namespace, rows: list[dict]):
     checkpoint = torch.load(path, map_location="cpu", weights_only=True)
     if checkpoint["config"] != result["final_config"] or tuple(checkpoint["labels"]) != LABELS:
         raise ValueError("T1 final checkpoint differs from CV selection")
-    token_path = args.tokens_dir / "T1_o_sims_valid.npz"
-    token_meta = json.loads((args.tokens_dir / "T1_o_sims_valid_meta.json").read_text(encoding="utf-8"))
-    if (token_meta["source"] != "o" or token_meta["split"] != "sims_valid" or
+    token_path = args.tokens_dir / f"T1_{args.t1_source}_sims_valid.npz"
+    token_meta = json.loads((args.tokens_dir / f"T1_{args.t1_source}_sims_valid_meta.json").read_text(encoding="utf-8"))
+    if (token_meta["source"] != args.t1_source or token_meta["split"] != "sims_valid" or
             token_meta["manifest_sha256"] != head_h1.sha256(args.adapter) or
             token_meta["folds_sha256"] != head_h1.sha256(args.folds) or
             token_meta["tokens_sha256"] != head_h1.sha256(token_path)):
@@ -179,6 +179,7 @@ def main() -> None:
     parser.add_argument("--receipts", type=Path)
     parser.add_argument("--tokens-dir", type=Path)
     parser.add_argument("--model-dir", type=Path)
+    parser.add_argument("--t1-source", choices=("o", "r"), default="o")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--device", default="cuda:0")

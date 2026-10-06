@@ -1,0 +1,35 @@
+{
+  "git": {
+    "commit": "ef23d355a9f4044a8fcd14a0e09c96fbae4d865b",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/media.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--face-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/face",
+    "--detector",
+    "/home/administrator/projects/emotion/artifacts/perception_setup/weights/face_detection_yunet_2023mar.onnx",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/media",
+    "--workers",
+    "4"
+  ],
+  "started_at": "2026-09-29T03:01:19.891898+00:00",
+  "manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "yunet_sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+  "face_summary_sha256": "d824546ecad748fa43dbcd36f706df0722c430d6f43dcb980e89243c23bda34c",
+  "preprocess_version": "x03_face336_v1",
+  "size": 336,
+  "frames": 8,
+  "min_face_px_at_448": 64,
+  "min_confidence": 0.8,
+  "count": 19250,
+  "workers": 4,
+  "timeout_s": 120,
+  "ended_at": "2026-09-29T03:13:07.772883+00:00",
+  "summary_sha256": "b0869a835f501ef8e1d2f666a606c87d81c747652caa960ff90dafadb1e0c4e2"
+}

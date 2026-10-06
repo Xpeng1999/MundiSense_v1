@@ -1,0 +1,34 @@
+{
+  "H_best_minus_E_best": {
+    "unit": "speaker",
+    "seed": 20260929,
+    "replicates": 2000,
+    "difference": 0.023823344568205562,
+    "lower_95": 0.011769409414698829,
+    "upper_95": 0.04097102834942451
+  },
+  "H_best_minus_Q_AV": {
+    "unit": "speaker",
+    "seed": 20260929,
+    "replicates": 2000,
+    "difference": 0.02169288389637547,
+    "lower_95": 0.0022758513760459346,
+    "upper_95": 0.03625014604937578
+  },
+  "Q_AV_minus_Q_A": {
+    "unit": "speaker",
+    "seed": 20260929,
+    "replicates": 2000,
+    "difference": 0.06493221651892545,
+    "lower_95": 0.049274847957843405,
+    "upper_95": 0.08289368994868689
+  },
+  "E_best_minus_A3_reference": {
+    "unit": "speaker",
+    "seed": 20260929,
+    "replicates": 2000,
+    "difference": 0.09126824491011942,
+    "lower_95": 0.07166404052997537,
+    "upper_95": 0.11041511453837878
+  }
+}

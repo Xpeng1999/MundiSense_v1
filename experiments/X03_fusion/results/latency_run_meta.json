@@ -1,0 +1,28 @@
+{
+  "git": {
+    "commit": "480d80ff9e01290633acd26e6202b1cb6011695c",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/latency.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--x02-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02",
+    "--x03-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/latency",
+    "--artifact-index",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/T1r_sims_valid/artifact_index_x03.json"
+  ],
+  "started_at": "2026-10-02T08:08:02.100366+00:00",
+  "manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "cuda": false,
+  "threads": 4,
+  "ended_at": "2026-10-02T08:37:41.307208+00:00",
+  "elapsed_s": 1779.9453867989942,
+  "summary_sha256": "bf78301b4bac44b7ad3d1f2ed1d9b6c83f212978f2c4bc9e3849840f06205852"
+}

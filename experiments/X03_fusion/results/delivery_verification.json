@@ -1,0 +1,308 @@
+{
+  "status": "passed",
+  "git": {
+    "commit": "9935f38aab169deb7eb760b0e161ac719b2c66c9",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/verify_delivery_20261002.py",
+    "--x03-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03"
+  ],
+  "ended_at": "2026-10-02T08:56:21.470242+00:00",
+  "script_sha256": "1ee19038acd79b369cb6b27c81c7729e97fd5386d8aced13b50a3110c10d3804",
+  "frozen_configs_verified": true,
+  "q_adapters": {
+    "fold0": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold0/best_adapter/adapter_model.safetensors",
+      "sha256": "aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50"
+    },
+    "fold1": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold1/best_adapter_eval6/adapter_model.safetensors",
+      "sha256": "937832359fe53b5aff1de59bf4c1f5f2e6277a802e870686c13f8c3a78d0f5eb"
+    },
+    "fold2": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold2/best_adapter_eval8/adapter_model.safetensors",
+      "sha256": "9f3823b162ee88eb0f557c6246c52cc538851fe07a205edb590c2487b3eb4eb6"
+    },
+    "fold3": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold3/best_adapter_eval8/adapter_model.safetensors",
+      "sha256": "9287b9722f9cf0c571426e69c1dd607f62e28f0397e98675efaf4fac49913d3d"
+    },
+    "fold4": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/fold4/best_adapter_eval6/adapter_model.safetensors",
+      "sha256": "5a23c9a273d08d980853e3991e87e2047701412a262fbde0d68301ad318d9e1a"
+    },
+    "final": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/final/best_adapter_eval8/adapter_model.safetensors",
+      "sha256": "427ebc148d447ba03dc747429323b440b10cbb8b4b8876247f48f71573d2d5a4"
+    }
+  },
+  "q_training": {
+    "fold0": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "05",
+        "07",
+        "09",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ]
+    },
+    "fold1": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "06",
+        "07",
+        "10",
+        "11",
+        "14",
+        "16",
+        "17",
+        "18",
+        "19"
+      ]
+    },
+    "fold2": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "05",
+        "07",
+        "09",
+        "11",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ]
+    },
+    "fold3": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "01",
+        "05",
+        "08",
+        "10",
+        "11",
+        "12",
+        "14",
+        "15",
+        "18"
+      ]
+    },
+    "fold4": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "01",
+        "05",
+        "07",
+        "08",
+        "09",
+        "10",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    "final": {
+      "validation_events": 8,
+      "validation_n": 700,
+      "skipped_oom": 0,
+      "train_speakers": [
+        "01",
+        "05",
+        "07",
+        "08",
+        "09",
+        "12",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ]
+    }
+  },
+  "q_raw_coverage": {
+    "A": {
+      "cv_n": 16366,
+      "unique_ids": 16366,
+      "et_test": {
+        "n": 1929,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/A.jsonl",
+        "sha256": "706be3204258dec2087cddc242e218e83d76e4870fe94580a155f2da980a6e2c"
+      },
+      "sims_valid": {
+        "n": 647,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/A.jsonl",
+        "sha256": "545f69e272b097de3d31b8a759ee9fca47fee16a2e6c9db47c00cd8ee3454d22"
+      }
+    },
+    "V": {
+      "cv_n": 16366,
+      "unique_ids": 16366,
+      "et_test": {
+        "n": 1929,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/V.jsonl",
+        "sha256": "1a24ed2adde4ebf7449504711556063c4ec39c95457dece05ec76e739a919d9e"
+      },
+      "sims_valid": {
+        "n": 647,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/V.jsonl",
+        "sha256": "d1623f71f8359a31f031efe27ae22f59b5e20726db34fd001cb09b9b5680cf52"
+      }
+    },
+    "AV": {
+      "cv_n": 16366,
+      "unique_ids": 16366,
+      "et_test": {
+        "n": 1929,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/AV.jsonl",
+        "sha256": "951b5b9283ba8ab2375c4f8c30df282fd96f3fc4bf7477d6ca17d4005259b7c1"
+      },
+      "sims_valid": {
+        "n": 647,
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/AV.jsonl",
+        "sha256": "ccbf8575986ae21fa0b57b7ebba51d7e11abe4c07e178135e3d0aa9bab76a11a"
+      }
+    }
+  },
+  "system_coverage": {
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_V2": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_V2_V1": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_V2_T1r": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E2/eval/AV": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E2/eval/V": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E2/eval/A": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E2/eval/AVT": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_AV": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_V": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_A": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_A3_V2": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/Q_fusion": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_QAV_A3_V2_V1": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_V2_V1": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_V2": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QAV_V2": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference": {
+      "cv": 16366,
+      "et_test": 1929,
+      "sims_valid": 647
+    }
+  },
+  "verified_systems": 19,
+  "q_training_incidents": 0,
+  "q_oom_skipped_utterances": 0,
+  "all_model_budget_gates_passed": true,
+  "q_accounted_training_prediction_gpu_h": 68.0242816977161,
+  "q_accounted_with_reserves_gpu_h": 69.5242816977161,
+  "supplemental_resource_process_seconds_including_load_and_failed_V1": 155.23742653805056,
+  "supplemental_resource_charged_to_diagnostic_reserve": true,
+  "test_receipt": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/delivery_tests_20261002.json",
+    "sha256": "42ef504a06047d383272ccdf71121dd03c7cfac3da2d728395c8c58dce8e2ce9"
+  },
+  "sealed_sims_test": "No inference entry invoked; audited target manifests only et_test/sims_valid; sealed contents not opened",
+  "original_project": "Only read model/YuNet paths; all outputs under emotioncore_runs or H input cache",
+  "used_final_run_meta": {
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/run_meta.json": "232007966ecedf5a2c43495be4d59ccc4b633c872e08c37adb182be7c5e5d6a1",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H/run_meta.json": "3607dc54aebb69c8348c967a5ef3bdaeeea129445368f9975180e4c4aa676318",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/run_meta.json": "c32af6d90406b9931b6999c597bc662423985806b30474a9576cd11ed7ccfcc7",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis/run_meta.json": "84c8f640b80c33d850a916b7ae921147479ca8ad235f9bc385d83faf97c6c0a4",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis_complete/run_meta.json": "4f01c2c03743b87a61a5c0970e87a9c29234056c3e5d0751d1734e6fd57ceb12",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/latency/run_meta.json": "fea4949880cdab390b0e43237513f79cd961c64e963bdab5b2ea3d9a5e9794f2"
+  },
+  "main_table_sha256": "7c177fedf14257c3c57ab039c9868e129bb1893f6396e1ef3af73466e2bdbf33"
+}

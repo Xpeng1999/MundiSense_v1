@@ -1,0 +1,73 @@
+{
+  "method": "maximum live CUDA allocated memory per isolated serial stage; expert probes use 20 longest ET-test audio clips, Q uses all 1929 formal ET-test clips",
+  "limitation": "not a simultaneous-residency memory benchmark; CPU face/T1/heads/fusion allocate no CUDA memory",
+  "stages": {
+    "A3": {
+      "sample_count": 20,
+      "peak_cuda_allocated_bytes": 1741254144,
+      "peak_cuda_reserved_bytes": 1851785216,
+      "nvidia_smi_observed_max_mib": 2542,
+      "process_elapsed_s_including_load": 12.877826676005498,
+      "model": "/home/administrator/emotion-data/emotioncore_runs/X02/models/A3",
+      "receipts": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/resources/A3_receipts.json",
+        "sha256": "ba361c464d9e641efa9871100b0e8b5e66b87709050fa4785c5b5ee55f10a5ca"
+      }
+    },
+    "A2": {
+      "sample_count": 20,
+      "peak_cuda_allocated_bytes": 1322421248,
+      "peak_cuda_reserved_bytes": 1465909248,
+      "nvidia_smi_observed_max_mib": 2174,
+      "process_elapsed_s_including_load": 22.511947110993788,
+      "model": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B",
+      "receipts": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/resources/A2_receipts.json",
+        "sha256": "7abfe307fc57be7ab488c934f0336af229fd87bbe33ef0a638d8aff30aee5e55"
+      }
+    },
+    "V2": {
+      "sample_count": 20,
+      "peak_cuda_allocated_bytes": 1859855360,
+      "peak_cuda_reserved_bytes": 1986002944,
+      "nvidia_smi_observed_max_mib": 2668,
+      "process_elapsed_s_including_load": 12.139775289979298,
+      "model": "/home/administrator/emotion-data/emotioncore_runs/X02/models/V2",
+      "receipts": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/resources/V2_receipts.json",
+        "sha256": "983fa9fd225fb17f51e80bc9838f2de144d193ac234cda440b3153b1ac86b38e"
+      }
+    },
+    "V1": {
+      "sample_count": 20,
+      "peak_cuda_allocated_bytes": 138216448,
+      "peak_cuda_reserved_bytes": 188743680,
+      "nvidia_smi_observed_max_mib": 954,
+      "process_elapsed_s_including_load": 8.82197344204178,
+      "model": "/home/administrator/emotion-data/open_resources_v1/models/emotiefflib/enet_b0_8_best_afew.pt",
+      "receipts": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/resources/V1_receipts.json",
+        "sha256": "ae3d8c82952b68934a999610754dd321f21d81e5f7b217e9417a8fce623e370f"
+      }
+    },
+    "SenseVoice": {
+      "sample_count": 20,
+      "peak_cuda_allocated_bytes": 1020210688,
+      "peak_cuda_reserved_bytes": 1098907648,
+      "nvidia_smi_observed_max_mib": 1762,
+      "process_elapsed_s_including_load": 19.61691455700202,
+      "model": "/home/administrator/emotion-data/open_resources_v1/models/SenseVoiceSmall",
+      "receipts": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/resources/SenseVoice_receipts.json",
+        "sha256": "b870649453083562741b3e3ac67d07f8620df0edb1216cea29adfdd2f7685f55"
+      }
+    },
+    "Q": {
+      "sample_count": 1929,
+      "peak_cuda_allocated_bytes": 9279571456,
+      "source": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/summary.json",
+      "sha256": "6a762f945d898a3fec1f19bacf95b64bef692697eca1dea0711bfeb67e8bcd13"
+    }
+  },
+  "elapsed_s_including_load": 29.534670041990466
+}

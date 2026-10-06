@@ -1,0 +1,22 @@
+{
+  "gpu_limit_h": 55.0,
+  "training_samples_per_epoch": 62201,
+  "max_epochs": 2,
+  "loop_smoke_examples": 64,
+  "loop_smoke_elapsed_s": 60.35689986999205,
+  "measured_seconds_per_training_sample": 0.9430765604686258,
+  "projected_training_h": 32.58905840983833,
+  "training_contingency_fraction": 0.2,
+  "projected_training_h_with_contingency": 39.106870091805995,
+  "projected_validation_h": 3.4920554386335425,
+  "projected_prediction_h": 4.535468033903428,
+  "model_load_checkpoint_overhead_h": 0.5,
+  "projected_total_h": 47.634393564342965,
+  "status": "within_budget_estimate",
+  "source_loop_smoke_sha256": "dea3c6725c1e93a529c3d515f1ac520207893eb1e230cb512150a13b30a8a6e4",
+  "source_budget_v2_sha256": "9c191bdba77e9c7083048817a8c6ced0817a792cbf23512cd2e3364b3706569e",
+  "subset_sha256": "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "computed_at": "2026-09-29T04:33:18.306102+00:00",
+  "assumptions": "64-example formal-loop A/V/AV smoke measured with local cached inputs; 20% training contingency; frozen 700-row AV validation; X02 single-sample prediction benchmark; six model loads/checkpoint overhead capped as estimate 0.5 h; CPU preprocessing excluded from GPU hours."
+}

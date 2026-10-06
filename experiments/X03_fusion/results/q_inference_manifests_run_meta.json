@@ -1,0 +1,141 @@
+{
+  "git": {
+    "commit": "047db491a7abda53b2c4a51c9088ecfb680f85d0",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": "emotioncore.x03.q_infer_manifest",
+  "created_at": "2026-09-29T04:46:43.443667+00:00",
+  "et_manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "outputs": {
+    "fold0_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_A.jsonl",
+      "sha256": "4b2285dce503b2357b1dd8bd1bd249ab08d3c8d4387d1bc326acdb805c093afb",
+      "n": 3274,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "fold0_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_V.jsonl",
+      "sha256": "aec2232fea71f3ebb8dec6782aede24c9ba0c63a9620448e0067876a4ec06ecc",
+      "n": 3274,
+      "uniform": 13,
+      "face_missing_fallback": 0
+    },
+    "fold0_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_AV.jsonl",
+      "sha256": "c0ba3815cf237f9a3c8135e38723a489c3b40c290406ba0d686e981b1745b4ef",
+      "n": 3274,
+      "uniform": 0,
+      "face_missing_fallback": 13
+    },
+    "fold1_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_A.jsonl",
+      "sha256": "d13fe3bf3c53eb3089bdd63a65db357d70431e06088b1ad3fc69b487a54e939e",
+      "n": 3259,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "fold1_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_V.jsonl",
+      "sha256": "42bdb0904b0aa0274321859f650224fee7ed0a9b087b92f0224765bff64bf5dc",
+      "n": 3259,
+      "uniform": 4,
+      "face_missing_fallback": 0
+    },
+    "fold1_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_AV.jsonl",
+      "sha256": "e573c81b8c979dd24d8f7517cd6b47ffbe7a2dba6cf5ad4bd10d3a432acc7dec",
+      "n": 3259,
+      "uniform": 0,
+      "face_missing_fallback": 4
+    },
+    "fold2_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_A.jsonl",
+      "sha256": "19230686ba6b6e0aee49eb89bec42b63dac3ae9772729639a5f8a696d4b9f09f",
+      "n": 3294,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "fold2_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_V.jsonl",
+      "sha256": "131aa1bf674f61d9db11dd63ce225ebe4852673804c739d8988e59d5cef81539",
+      "n": 3294,
+      "uniform": 6,
+      "face_missing_fallback": 0
+    },
+    "fold2_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_AV.jsonl",
+      "sha256": "c35e2dd20c2aa40cfdc89b8db96810891cc9465e7a32cd4e37fc0546f3044bc8",
+      "n": 3294,
+      "uniform": 0,
+      "face_missing_fallback": 6
+    },
+    "fold3_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_A.jsonl",
+      "sha256": "18ebaeb8606a314f5ba4e129b0938ee15f43a765e31f5b098929b74c9408bfa5",
+      "n": 3312,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "fold3_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_V.jsonl",
+      "sha256": "53e7bb5055fa628ab3fae87144c257e445482200b5698bcd58f32ec0f907da6b",
+      "n": 3312,
+      "uniform": 7,
+      "face_missing_fallback": 0
+    },
+    "fold3_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_AV.jsonl",
+      "sha256": "14e4e49cafac13657fe999bc5f99fdc4f59f236b1911d8ab9bf390314a4fc15d",
+      "n": 3312,
+      "uniform": 0,
+      "face_missing_fallback": 7
+    },
+    "fold4_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_A.jsonl",
+      "sha256": "711a08ed7fe076b99f02ad3dfef3e2e474459141a9f55e47f542ce18cd576b19",
+      "n": 3227,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "fold4_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_V.jsonl",
+      "sha256": "9dd9553aeb86e5648623620dfcbc4b4dec471e6223f2aa2f8f4bbc5235ce415c",
+      "n": 3227,
+      "uniform": 10,
+      "face_missing_fallback": 0
+    },
+    "fold4_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_AV.jsonl",
+      "sha256": "6c5140c318bcb76d75b1dd19f679f67a3b86a3a94a8b72e645272bdd9bedff73",
+      "n": 3227,
+      "uniform": 0,
+      "face_missing_fallback": 10
+    },
+    "final_et_test_A": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/final_et_test_A.jsonl",
+      "sha256": "e2803a1efdd25b4a226750f7debfe1cd3147697279e464be0578f6f72f6341ea",
+      "n": 1929,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "final_et_test_V": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/final_et_test_V.jsonl",
+      "sha256": "1179fcfa77e546465064df0df135a986c05d5e3cdecfa68b8aa868c803eabff1",
+      "n": 1929,
+      "uniform": 3,
+      "face_missing_fallback": 0
+    },
+    "final_et_test_AV": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/final_et_test_AV.jsonl",
+      "sha256": "4f64648688ad631ff958eb3a1b6b7ef25e37589316ab5ab2071a4fb7ed2a984b",
+      "n": 1929,
+      "uniform": 0,
+      "face_missing_fallback": 3
+    }
+  }
+}

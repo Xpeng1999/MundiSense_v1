@@ -1,0 +1,44 @@
+{
+  "git": {
+    "commit": "cb1e64f4c351f30b1aee4a943058708514bdc2ce",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/final_analysis.py",
+    "--e1-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4",
+    "--e2-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/E2/eval",
+    "--q-cal-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated",
+    "--h-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H",
+    "--v2-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference",
+    "--quality",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/quality/utterance_quality.jsonl",
+    "--folds",
+    "configs/folds_v1.json",
+    "--et-manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--x01-metrics",
+    "experiments/X01_benchmark/results/metrics.json",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis"
+  ],
+  "started_at": "2026-10-02T08:00:30.087013+00:00",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "quality_sha256": "80330bb718e31a8155793ab83e396bd4741a87347858f0342fd039cdb098bb32",
+  "et_manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "selected_e": "E1_A3_A2_V2_V1_T1r",
+  "selected_h": "H_QA_QAV_A3_V2_V1",
+  "ended_at": "2026-10-02T08:03:08.871282+00:00",
+  "outputs": {
+    "main_table.json": "413c8d00cfe04d8be149f3ffbe950477793d0281431dd70b1e7167a5f9ff4061",
+    "paired_speaker_bootstrap.json": "148f41178fe3f0b9798db496b50405be7ed54063ac1330bd809536e6124ae7ce",
+    "truncation_sensitivity.json": "2cf44101289273ea022ee6d4d34cbc7ce9f82dfa862643b05afca0ad169e216c",
+    "error_analysis.json": "3c25190de9a673c825b7cf34b7f4c8c5b1f036a8fe930d3eb067a282b9ac97be"
+  }
+}

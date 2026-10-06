@@ -1,0 +1,63 @@
+{
+  "A": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.7285550495697891,
+      "spearman": 0.727392072040143,
+      "acc_2_nonzero": 0.8036036036036036,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 446,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.27704550401540473,
+    "latency_p95_s": 0.2953467407787684,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/A.jsonl",
+    "sha256": "545f69e272b097de3d31b8a759ee9fca47fee16a2e6c9db47c00cd8ee3454d22"
+  },
+  "V": {
+    "n": 647,
+    "uniform": 37,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 647,
+      "valid": 610,
+      "coverage": 0.9428129829984544,
+      "pearson": 0.6357712890578268,
+      "spearman": 0.6108963724458072,
+      "acc_2_nonzero": 0.7513513513513513,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 417,
+      "correlation_denominator": 610
+    },
+    "latency_p50_s": 0.34794107696507126,
+    "latency_p95_s": 0.36776690497063097,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/V.jsonl",
+    "sha256": "d1623f71f8359a31f031efe27ae22f59b5e20726db34fd001cb09b9b5680cf52"
+  },
+  "AV": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 10,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.7724414046441078,
+      "spearman": 0.7713772175733238,
+      "acc_2_nonzero": 0.8162162162162162,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 453,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.49661039700731635,
+    "latency_p95_s": 0.536363948287908,
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/AV.jsonl",
+    "sha256": "ccbf8575986ae21fa0b57b7ebba51d7e11abe4c07e178135e3d0aa9bab76a11a"
+  },
+  "peak_cuda_allocated_mib": 8798.5595703125
+}

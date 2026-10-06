@@ -1,0 +1,128 @@
+{
+  "E_best": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r",
+    "metrics_sha256": "213f2909b08f805bb6ce27782774862a67dc8a7777b29e6f57e204c7d9150d7d",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r/oof.jsonl",
+        "sha256": "c1659d204c7a056e5f423bc6123be1261950efef28e90598284309fdf4465383"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r/et_test.jsonl",
+        "sha256": "c52a1d97a0db75f70e959cdda15efd0c0576d9416365677c3d159cda3ddba9a9"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3_A2_V2_V1_T1r/sims_valid.jsonl",
+        "sha256": "c50a7161d20b8f8bd6c7657ec76315bc6db5be7d190f74247972b42abdc49d0c"
+      }
+    }
+  },
+  "Q_AV": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_AV",
+    "metrics_sha256": "c2e4ebebd02e1780b91992578512d8dd896c4d34c2c246d4a0255abc9f4e2f2b",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_AV/oof.jsonl",
+        "sha256": "d9a9e77acad366c948ae282881d9650faf5f06661aff731d1fcb9bad974194a6"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_AV/et_test.jsonl",
+        "sha256": "9701cae35ab7a4a8d9e2826ddb7c48d8ab98bf95121b61852a67067a9de963e3"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_AV/sims_valid.jsonl",
+        "sha256": "37acbc06afd59ea7dde25446cfa46e2ae4e2741e4ee63f1cd5d1292242f7abad"
+      }
+    }
+  },
+  "Q_A": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_A",
+    "metrics_sha256": "225b98a369d8de2011bf87fc81d82d14a85c4b7cdaaae809d4f2d01b49b1c712",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_A/oof.jsonl",
+        "sha256": "228c97cc70c370dba552633239f8ad5f964c6903a45322161eb9a9fb91908bf4"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_A/et_test.jsonl",
+        "sha256": "7ae794479a197a83357d3a899d0578c760b83af96d99640763c91514a9ec85cf"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated/Q_A/sims_valid.jsonl",
+        "sha256": "ddf3ed31f1ef244c92a9d907bfd2cc1936ea583f10f3c7c64aa7f602ee3ff5fc"
+      }
+    }
+  },
+  "Q_fusion": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/H/Q_fusion",
+    "metrics_sha256": "95bb1951fd929d14a4bcc00c40c47cddf59b799c92ef43059bbac88a40e80b17",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/Q_fusion/oof.jsonl",
+        "sha256": "c22f0d41357aaaefd5645d6a8c88ae65c24c81774dc3d3dbb3fd6dcb11c24560"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/Q_fusion/et_test.jsonl",
+        "sha256": "10f3234216ef2adb9b61294da9eba30a63e59d63709f571f72cf3965daa84343"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/Q_fusion/sims_valid.jsonl",
+        "sha256": "079a5265d96fe94ef03c7eae8d5b8546d9be1cc8f27b0b07a207da00d5a47f8f"
+      }
+    }
+  },
+  "H_best": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_QAV_A3_V2_V1",
+    "metrics_sha256": "2d770688a6f595e1997f16444ff49818e08b5c2c6ab1e84ca964cb132c8386dc",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_QAV_A3_V2_V1/oof.jsonl",
+        "sha256": "603453d3db5bb508e83e8f7431807f50e965e3a6c2bb93beae1b228fe70bd4d2"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_QAV_A3_V2_V1/et_test.jsonl",
+        "sha256": "0fc0bb9b557c123ac94708b9d83c2551846a3ae3d9e025c1d7db15a1b8563d2d"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/H/H_QA_QAV_A3_V2_V1/sims_valid.jsonl",
+        "sha256": "326b1fe88c2a8788e58b46d2b56c13a1a5ebfafad394cdedb2379189b6f6892e"
+      }
+    }
+  },
+  "A3_reference": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3",
+    "metrics_sha256": "b621d955ab4ba67a2a2769e2670c3f8fdb94d8804b558ea92eb3404669fb1226",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/oof.jsonl",
+        "sha256": "568241f89393c5b8f53c0c274a2c762cd5385e2259ce1fa453d0f6dcaa8a4d70"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/et_test.jsonl",
+        "sha256": "36239b9a7e030df9be5451fd9d62035f0b989e7b1d9a3d8f7b1a071a9716b666"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E1_v4/E1_A3/sims_valid.jsonl",
+        "sha256": "637f82fc7215e5c6824ba39cf04b76d25c3c5eeea510151e425441ea8374632b"
+      }
+    }
+  },
+  "V2_reference": {
+    "root": "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference",
+    "metrics_sha256": "24c889c26fd11d2dd59625cef7204f6d7d4243a9de133ac95b1920b2da4b2229",
+    "probabilities": {
+      "oof": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference/oof.jsonl",
+        "sha256": "33de11e59d1d667b4cf39e22a8558ba8f68b0942224f8efc696ac33dfdeb7f0f"
+      },
+      "et_test": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference/et_test.jsonl",
+        "sha256": "2fb5882259a902b26347f814d77149ce071a6348edc14a8975fc9a38b76e00b0"
+      },
+      "sims_valid": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X03/V2_reference/sims_valid.jsonl",
+        "sha256": "63858f5cf5789288aa940bba3bd8c7de8533d71008f8ed75119acdd50fff129e"
+      }
+    }
+  }
+}

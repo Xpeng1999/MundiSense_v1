@@ -1,0 +1,382 @@
+{
+  "git": {
+    "commit": "a98dc3ae2ddd5ac88c6ff921ecaffcdb22a3427a",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "started_at": "2026-09-29T11:49:26.883717+00:00",
+  "fold0_sanity_pass": true,
+  "fold0_best_av_macro_f1": 0.6966262370177382,
+  "fold0_checkpoint_sha256": "aa1e213b1eac1ad0f1b42207e7b503b99fdf3e82d849c8f39d1bcf34ecce8b50",
+  "fold0_reestimated_total_gpu_h": 50.51235824791819,
+  "gpu_limit_h": 75.0,
+  "active_step": null,
+  "steps": [
+    {
+      "name": "cache_worst_case_all_training_av",
+      "attempt": 0,
+      "elapsed_s": 2619.266888216007,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_worst_case_all_training_av_attempt0.log",
+      "cuda_allocator": "expandable_segments:True"
+    },
+    {
+      "name": "worst_case_probe",
+      "attempt": 0,
+      "elapsed_s": 469.9740687940066,
+      "exit_code": 1,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/worst_case_probe_attempt0.log",
+      "cuda_allocator": "expandable_segments:True"
+    },
+    {
+      "name": "predict_fold0",
+      "attempt": 0,
+      "elapsed_s": 4369.172325887004,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_fold0_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold1_train",
+      "attempt": 0,
+      "elapsed_s": 1306.0875922220002,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold1_train_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold1_val",
+      "attempt": 0,
+      "elapsed_s": 86.33372043901181,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold1_val_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "train_fold1",
+      "attempt": 0,
+      "elapsed_s": 34956.04294458999,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/train_fold1_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold1_infer_A",
+      "attempt": 0,
+      "elapsed_s": 454.2094154189981,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold1_infer_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold1_infer_V",
+      "attempt": 0,
+      "elapsed_s": 332.7738661079784,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold1_infer_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold1_infer_AV",
+      "attempt": 0,
+      "elapsed_s": 503.90473251702497,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold1_infer_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_fold1",
+      "attempt": 0,
+      "elapsed_s": 4637.278854267002,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_fold1_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "interim_fold01",
+      "attempt": 0,
+      "elapsed_s": 1.612084369000513,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/interim_fold01_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold2_train",
+      "attempt": 0,
+      "elapsed_s": 1263.0087931469898,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold2_train_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold2_val",
+      "attempt": 0,
+      "elapsed_s": 115.71328065398848,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold2_val_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "train_fold2",
+      "attempt": 0,
+      "elapsed_s": 36833.475638214004,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/train_fold2_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold2_infer_A",
+      "attempt": 0,
+      "elapsed_s": 555.2228399350133,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold2_infer_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold2_infer_V",
+      "attempt": 0,
+      "elapsed_s": 353.67636454998865,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold2_infer_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold2_infer_AV",
+      "attempt": 0,
+      "elapsed_s": 530.1102810710145,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold2_infer_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_fold2",
+      "attempt": 0,
+      "elapsed_s": 5012.294910903001,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_fold2_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold3_train",
+      "attempt": 0,
+      "elapsed_s": 1232.3445477919886,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold3_train_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold3_val",
+      "attempt": 0,
+      "elapsed_s": 136.31168231301126,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold3_val_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "train_fold3",
+      "attempt": 0,
+      "elapsed_s": 36860.75714857099,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/train_fold3_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold3_infer_A",
+      "attempt": 0,
+      "elapsed_s": 461.63895118399523,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold3_infer_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold3_infer_V",
+      "attempt": 0,
+      "elapsed_s": 456.6430936129764,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold3_infer_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold3_infer_AV",
+      "attempt": 0,
+      "elapsed_s": 508.6312547980051,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold3_infer_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_fold3",
+      "attempt": 0,
+      "elapsed_s": 4853.800791560992,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_fold3_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold4_train",
+      "attempt": 0,
+      "elapsed_s": 1500.1847402459825,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold4_train_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold4_val",
+      "attempt": 0,
+      "elapsed_s": 108.11052474699682,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold4_val_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "train_fold4",
+      "attempt": 0,
+      "elapsed_s": 37774.338666694995,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/train_fold4_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold4_infer_A",
+      "attempt": 0,
+      "elapsed_s": 386.9679533750168,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold4_infer_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold4_infer_V",
+      "attempt": 0,
+      "elapsed_s": 304.1898977670353,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold4_infer_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_fold4_infer_AV",
+      "attempt": 0,
+      "elapsed_s": 437.08503807900706,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_fold4_infer_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_fold4",
+      "attempt": 0,
+      "elapsed_s": 4554.939370848995,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_fold4_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_train",
+      "attempt": 0,
+      "elapsed_s": 1607.4337506989832,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_train_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_val",
+      "attempt": 0,
+      "elapsed_s": 124.41961416101549,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_val_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "train_final",
+      "attempt": 0,
+      "elapsed_s": 46305.76007527701,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/train_final_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_et_test_A",
+      "attempt": 0,
+      "elapsed_s": 258.7279085579794,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_et_test_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_et_test_V",
+      "attempt": 0,
+      "elapsed_s": 190.49038539303,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_et_test_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_et_test_AV",
+      "attempt": 0,
+      "elapsed_s": 408.83341247501085,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_et_test_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_final_et_test",
+      "attempt": 0,
+      "elapsed_s": 2146.335385239974,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_final_et_test_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_sims_valid_A",
+      "attempt": 0,
+      "elapsed_s": 47.71114479703829,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_sims_valid_A_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_sims_valid_V",
+      "attempt": 0,
+      "elapsed_s": 33.06954284000676,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_sims_valid_V_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "cache_final_sims_valid_AV",
+      "attempt": 0,
+      "elapsed_s": 70.03807150502689,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/cache_final_sims_valid_AV_attempt0.log",
+      "cuda_allocator": "default"
+    },
+    {
+      "name": "predict_final_sims_valid",
+      "attempt": 0,
+      "elapsed_s": 720.5900086230249,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/pipeline_logs/predict_final_sims_valid_attempt0.log",
+      "cuda_allocator": "default"
+    }
+  ],
+  "previous_gpu_limit_h": 55.0,
+  "budget_approval": "2026-09-29 reviewer approval: 75 h including fold0",
+  "budget_projection": {
+    "completed_model": "final",
+    "at": "2026-10-02T07:27:23.543261+00:00",
+    "gpu_limit_h": 75.0,
+    "fold0_actual_h": 7.184063330861386,
+    "completed_checkpointed_model_actual_h": 53.53621513148527,
+    "completed_prediction_actual_h": 7.304003235369443,
+    "remaining_training_validation_h_with_contingency": 0.0,
+    "remaining_prediction_h_with_contingency": 0.0,
+    "checkpointed_actual_to_benchmark_ratio": 1.1138891667227602,
+    "contingency_fraction": 0.2,
+    "diagnostic_gpu_reserve_h": 1.0,
+    "load_checkpoint_overhead_h": 0.5,
+    "projected_total_gpu_h": 69.5242816977161,
+    "status": "within_budget"
+  },
+  "gpu_elapsed_h_upper_bound": 68.15483005015889,
+  "completed_at": "2026-10-02T07:27:23.543971+00:00",
+  "completed": true
+}

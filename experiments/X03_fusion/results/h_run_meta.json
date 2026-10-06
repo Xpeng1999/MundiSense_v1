@@ -1,0 +1,28 @@
+{
+  "git": {
+    "commit": "cb1e64f4c351f30b1aee4a943058708514bdc2ce",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/h_fusion.py",
+    "--q-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q",
+    "--artifact-index",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/T1r_sims_valid/artifact_index_x03.json",
+    "--folds",
+    "configs/folds_v1.json",
+    "--face-policy",
+    "configs/x03_face_missing_policy.json",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/H"
+  ],
+  "started_at": "2026-10-02T07:55:47.462274+00:00",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "artifact_index_sha256": "cf89c448cd7c0b2b96e3bd70e71354db3f59a77841f9b7064098d4f02ca3f7b3",
+  "q_root": "/home/administrator/emotion-data/emotioncore_runs/X03/Q",
+  "ended_at": "2026-10-02T08:00:28.600439+00:00",
+  "summary_sha256": "a7d1712ba7cbec864d74e32bd18aa63954ca8b41ddaed5c7fd9c26819d917fdf"
+}

@@ -1,0 +1,25 @@
+{
+  "git": {
+    "commit": "cb1e64f4c351f30b1aee4a943058708514bdc2ce",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/code/src/emotioncore/x03/q_calibrate.py",
+    "--prediction-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q",
+    "--folds",
+    "configs/folds_v1.json",
+    "--et-manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibrated"
+  ],
+  "started_at": "2026-10-02T07:53:43.846144+00:00",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "et_manifest_sha256": "29eaa5c8d532119554b716ff6f2ecb12185f143f09573b5f43102b52da27626e",
+  "q_prediction_root": "/home/administrator/emotion-data/emotioncore_runs/X03/Q",
+  "ended_at": "2026-10-02T07:55:46.831646+00:00",
+  "summary_sha256": "e3fb59e3cbe74796902895b7dac225211daf64b3a8f7e3658ca4daaf9b4a70a2"
+}

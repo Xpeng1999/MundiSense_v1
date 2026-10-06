@@ -1,0 +1,31 @@
+{
+  "git": {
+    "commit": "9935f38aab169deb7eb760b0e161ac719b2c66c9",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis_code/src/emotioncore/x03/complete_analysis.py",
+    "--manifest",
+    "experiments/X01_benchmark/results/et_utterances.jsonl",
+    "--x02-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X02",
+    "--x03-root",
+    "/home/administrator/emotion-data/emotioncore_runs/X03",
+    "--output-dir",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/analysis_complete"
+  ],
+  "ended_at": "2026-10-02T08:38:05.803050+00:00",
+  "source_main_sha256": "413c8d00cfe04d8be149f3ffbe950477793d0281431dd70b1e7167a5f9ff4061",
+  "latency_sha256": "bf78301b4bac44b7ad3d1f2ed1d9b6c83f212978f2c4bc9e3849840f06205852",
+  "resources_sha256": "fe8ebe125ba84ab18ea25dfc22410680c505085850a2c2708a6ce060c6e8464e",
+  "q_resources_sha256": "b294fddd269d8d5c3c5728e292dcc172e071f429cb22420cdb1ce804c31ca075",
+  "outputs": {
+    "complete_speaker_intervals.json": "7b3d2f82b9e619795c36be5dbef218dfc05d5999f719582b51c18fb1a1b8e259",
+    "final_artifact_index.json": "30f58a2d768ac46e1a1462b6b2803416a90fd5dc5dbbfd2d702413f3ebd802ff",
+    "modality_robustness.json": "c40d868d12c5e8f3444fb82c7bad53a253eb8e140fb493faca529eb961316140",
+    "main_table_complete.json": "7c177fedf14257c3c57ab039c9868e129bb1893f6396e1ef3af73466e2bdbf33",
+    "visual_correction.json": "2c98062ce0e90f32a834ed646d3486963a046dc7a2e90180aa6e0bf05dc0b404"
+  }
+}

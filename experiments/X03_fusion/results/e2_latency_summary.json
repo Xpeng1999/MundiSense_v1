@@ -1,0 +1,63 @@
+{
+  "count": 1929,
+  "condition": "AVT",
+  "method": "sum of frozen per-utterance stage elapsed_s and CPU single-sample T1/E2 forward times",
+  "model_loading_excluded": true,
+  "warmup_count": 8,
+  "stage_devices": {
+    "face": "CPU/YuNet",
+    "A3": "X02 CUDA feature run",
+    "V2": "X02 CUDA feature run",
+    "SenseVoice": "X02 CUDA ASR run",
+    "T1_base": "CPU",
+    "E2_head": "CPU"
+  },
+  "stage_statistics": {
+    "face": {
+      "n": 1929,
+      "p50_s": 4.789556891999382,
+      "p95_s": 15.203617240201854,
+      "mean_s": 6.330482726853875
+    },
+    "A3": {
+      "n": 1929,
+      "p50_s": 0.08353393800280173,
+      "p95_s": 0.14114524340111528,
+      "mean_s": 0.08895522008349295
+    },
+    "V2": {
+      "n": 1929,
+      "p50_s": 0.11338410000462318,
+      "p95_s": 0.6420145101998059,
+      "mean_s": 0.2416136243665915
+    },
+    "SenseVoice": {
+      "n": 1929,
+      "p50_s": 0.13539989799755858,
+      "p95_s": 0.17435637680100624,
+      "mean_s": 0.13767051972316613
+    },
+    "T1_base": {
+      "n": 1929,
+      "p50_s": 0.18310790100076701,
+      "p95_s": 0.31585507880372454,
+      "mean_s": 0.19523505205890973
+    },
+    "E2_head": {
+      "n": 1929,
+      "p50_s": 0.0032460999937029555,
+      "p95_s": 0.004712720005773008,
+      "mean_s": 0.003354467953843578
+    },
+    "serial_total": {
+      "n": 1929,
+      "p50_s": 5.423634831004165,
+      "p95_s": 16.117932334808575,
+      "mean_s": 6.997311611039879
+    }
+  },
+  "sample_timings": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/E2/latency/et_test_latency.jsonl",
+    "sha256": "960d5138401a869f99078009c93682fad624e8b121519daa9e6bab9c065781f1"
+  }
+}

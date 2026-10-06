@@ -1,0 +1,27 @@
+{
+  "started_at": "2026-10-02T07:53:41.794476+00:00",
+  "gpu": false,
+  "steps": [
+    {
+      "name": "Q_calibration",
+      "elapsed_s": 125.1279880059883,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/Q_calibration_20261002.log"
+    },
+    {
+      "name": "H_fusion",
+      "elapsed_s": 281.7595204630052,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/H_fusion_20261002.log"
+    },
+    {
+      "name": "final_analysis",
+      "elapsed_s": 160.4269184000441,
+      "exit_code": 0,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X03/final_analysis_20261002.log"
+    }
+  ],
+  "active_step": null,
+  "status": "complete",
+  "ended_at": "2026-10-02T08:03:09.112145+00:00"
+}

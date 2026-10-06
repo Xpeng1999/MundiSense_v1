@@ -1,0 +1,66 @@
+{
+  "steps": {
+    "A": {
+      "step_s": 0.31834128250193316,
+      "step_repeats_s": [
+        1.6979681069933577,
+        0.27874387899646536,
+        0.357938686007401
+      ],
+      "loss": 0.6838433146476746,
+      "peak_allocated_mib": 10089.26611328125,
+      "forward_has_audio": true,
+      "forward_has_video": false,
+      "inference_s": 0.19473610300337896
+    },
+    "V": {
+      "step_s": 0.7503556535084499,
+      "step_repeats_s": [
+        0.9448795710050035,
+        0.6903917030140292,
+        0.8103196040028706
+      ],
+      "loss": 0.40764978528022766,
+      "peak_allocated_mib": 24291.06201171875,
+      "forward_has_audio": false,
+      "forward_has_video": true,
+      "inference_s": 0.2930982550024055
+    },
+    "AV": {
+      "step_s": 0.8541206094960216,
+      "step_repeats_s": [
+        0.8024875039991457,
+        0.8210183039918775,
+        0.8872229150001658
+      ],
+      "loss": 0.15528926253318787,
+      "peak_allocated_mib": 25815.99365234375,
+      "forward_has_audio": true,
+      "forward_has_video": true,
+      "inference_s": 0.374148796996451
+    }
+  },
+  "weighted_step_s": 0.7262117528996896,
+  "train_examples_per_epoch": 62201,
+  "validation_examples": 157032,
+  "projected_training_h": 25.095054023396443,
+  "projected_validation_h": 16.320370524985194,
+  "projected_prediction_h": 4.535468033903428,
+  "projected_total_h_without_loading_or_preprocessing": 45.950892582285064,
+  "gpu_45h_gate": "stop",
+  "parameter_info": {
+    "target_modules": 240,
+    "visual_target_modules": 128,
+    "llm_trainable_parameters": 10092544,
+    "vision_trainable_parameters": 2621440
+  },
+  "first_token_ids": [
+    59568,
+    4123,
+    82114,
+    4003,
+    69,
+    4243,
+    19784
+  ]
+}

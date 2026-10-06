@@ -1,0 +1,17 @@
+{
+  "git_commit": "9935f38aab169deb7eb760b0e161ac719b2c66c9",
+  "returncode": 0,
+  "stdout": ".................................                                        [100%]\n33 passed in 5.46s\n",
+  "test_files": [
+    "tests/test_x03_complete_analysis.py",
+    "tests/test_x03_e2.py",
+    "tests/test_x03_final_analysis.py",
+    "tests/test_x03_frozen_protocol.py",
+    "tests/test_x03_fusion.py",
+    "tests/test_x03_media.py",
+    "tests/test_x03_q_budget_progress.py",
+    "tests/test_x03_q_calibrate.py",
+    "tests/test_x03_q_guarded.py",
+    "tests/test_x03_q_modalities.py"
+  ]
+}

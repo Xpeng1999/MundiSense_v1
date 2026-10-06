@@ -1,0 +1,33 @@
+{
+  "Q_fusion": {
+    "cv_op_n_macro_f1": 0.6344458818502015,
+    "et_test_op_n_macro_f1": 0.6237309209562518,
+    "sims_valid_pearson": 0.7690222823739455
+  },
+  "H_QAV_V2": {
+    "cv_op_n_macro_f1": 0.6314529424049813,
+    "et_test_op_n_macro_f1": 0.6241600519555269,
+    "sims_valid_pearson": 0.7790644282981506
+  },
+  "H_QAV_V2_V1": {
+    "cv_op_n_macro_f1": 0.6322207876209692,
+    "et_test_op_n_macro_f1": 0.623358127120096,
+    "sims_valid_pearson": 0.7782054298964689
+  },
+  "H_QAV_A3_V2": {
+    "cv_op_n_macro_f1": 0.6517079308315925,
+    "et_test_op_n_macro_f1": 0.6506062561599341,
+    "sims_valid_pearson": 0.7982448695186201
+  },
+  "H_QA_V2": {
+    "cv_op_n_macro_f1": 0.6239751701031349,
+    "et_test_op_n_macro_f1": 0.6094627534572209,
+    "sims_valid_pearson": 0.7959643482212103
+  },
+  "H_QA_QAV_A3_V2_V1": {
+    "cv_op_n_macro_f1": 0.6546773732775906,
+    "et_test_op_n_macro_f1": 0.6592441948401302,
+    "sims_valid_pearson": 0.8035228540509474
+  },
+  "best_h": "H_QA_QAV_A3_V2_V1"
+}
