@@ -98,7 +98,8 @@ def run(args):
             # Sensitivity also reports frozen targets; it is not a new recipe.
             execute(f"targets_{arm}_{encoder}","emotioncore.x04.targets",["--arm","D1" if arm=="D1_audioonly" else arm,
                 "--encoder",encoder,"--job",output,"--derived",args.derived,"--output",output/"targets"],cpu=True)
-        progress.update(status="heads_and_targets_complete",ended_at=dt.datetime.now(dt.timezone.utc).isoformat())
+        execute("report_analysis","emotioncore.x04.analysis",["--derived",args.derived,"--output",args.derived/"analysis"],cpu=True)
+        progress.update(status="analysis_complete",ended_at=dt.datetime.now(dt.timezone.utc).isoformat())
         write_json_atomic(args.output/"pipeline_progress.json",progress)
     except Exception as exc:
         for child in children:
