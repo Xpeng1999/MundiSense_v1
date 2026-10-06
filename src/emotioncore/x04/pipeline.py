@@ -27,6 +27,13 @@ def run(args):
         raise ValueError("Budget receipt must be committed with REPORT before full execution")
     budget=json.loads(args.budget.read_text())
     if not budget["passed"] or budget["total_projection_gpu_hours"]>20:raise ValueError("X04a budget gate closed")
+    equality=json.loads(Path("experiments/X04a_data/results/gpu_batch_equivalence.json").read_text())
+    if not (equality["passed"] and equality["features_torch_equal"] and equality["lengths_torch_equal"]
+            and not equality["source_pinned"] and equality["pinned_buffer_bytes"]==134217728):
+        raise ValueError("STOP exact X02 batch verification gate closed")
+    prior=json.loads(Path("experiments/X04a_data/results/gpu_prior_ledger.json").read_text())
+    if abs(args.prior_gpu_hours-prior["charged_prior_gpu_hours"])>1e-12:
+        raise ValueError("Prior GPU charge differs from committed ledger")
     source=args.derived/"manifests/all_features.jsonl"
     dedup=args.preflight/"dedup/dedup_report.json"
     # Older preflight worktrees lack identity fields; freeze identities separately,
@@ -58,6 +65,8 @@ def run(args):
     def wait(item,*,gpu=False):
         nonlocal charged
         child,record,started=item
+        record["gpu_charged"]=gpu
+        record["monotonic_start"]=started
         while child.poll() is None:
             storage_gate()
             for other in children:
@@ -133,6 +142,9 @@ def run(args):
         progress.update(status="analysis_complete",ended_at=dt.datetime.now(dt.timezone.utc).isoformat())
         write_json_atomic(args.output/"pipeline_progress.json",progress)
     except Exception as exc:
+        charged+=sum(time.monotonic()-s["monotonic_start"] for s in progress["steps"]
+                     if s.get("gpu_charged") and "elapsed_s" not in s)
+        progress["charged_gpu_hours"]=charged/3600
         for child in children:
             if child.poll() is None:
                 try:os.killpg(child.pid,signal.SIGKILL)

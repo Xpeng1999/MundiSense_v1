@@ -35,6 +35,14 @@
     "path": "experiments/X04a_data/results/gpu_batch_equivalence.json",
     "sha256": "a1cf63fd12512b2b83c2edaae753b36df0e809c5ee2aacf8072ba51bacf8a442"
   },
+  "gpu_prior_ledger.json": {
+    "path": "experiments/X04a_data/results/gpu_prior_ledger.json",
+    "sha256": "c3c434c28f9e7148cb2ca9b55ab49c119592f7744561eb5e22195ae7d9ee6b4f"
+  },
+  "gpu_tests.json": {
+    "path": "experiments/X04a_data/results/gpu_tests.json",
+    "sha256": "0450fbc824dcb1df97612fe989144449be7d1037d75e440e18a6ec5c5abb11c9"
+  },
   "license_evidence.json": {
     "path": "experiments/X04a_data/results/license_evidence.json",
     "sha256": "a20eff9d442fc7dad161723e1fd5acc687bf9f0ae96830f997d17fa74fe45b5b"
