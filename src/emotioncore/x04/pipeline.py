@@ -45,6 +45,7 @@ def run(args):
     progress={"git":git,"command":sys.argv,"started_at":dt.datetime.now(dt.timezone.utc).isoformat(),
         "budget_sha256":sha256(args.budget),"report_sha256":sha256(Path("experiments/X04a_data/REPORT.md")),"steps":[],"status":"running"}
     write_json_atomic(args.output/"pipeline_progress.json",progress)
+    write_json_atomic(args.output/"run_meta.json",progress)
     started_pipeline=time.monotonic()
     charged=(budget["measured_gpu_hours"]+args.prior_gpu_hours)*3600
     progress["prior_gpu_hours"]=args.prior_gpu_hours
@@ -141,6 +142,7 @@ def run(args):
         execute("report_analysis","emotioncore.x04.analysis",["--derived",args.derived,"--output",args.derived/"analysis"],cpu=True)
         progress.update(status="analysis_complete",ended_at=dt.datetime.now(dt.timezone.utc).isoformat())
         write_json_atomic(args.output/"pipeline_progress.json",progress)
+        write_json_atomic(args.output/"run_meta.json",progress)
     except Exception as exc:
         charged+=sum(time.monotonic()-s["monotonic_start"] for s in progress["steps"]
                      if s.get("gpu_charged") and "elapsed_s" not in s)
@@ -150,7 +152,8 @@ def run(args):
                 try:os.killpg(child.pid,signal.SIGKILL)
                 except ProcessLookupError:pass
         progress.update(status="stopped",error=f"{type(exc).__name__}: {exc}",at=dt.datetime.now(dt.timezone.utc).isoformat())
-        write_json_atomic(args.output/"pipeline_stop.json",progress);raise
+        write_json_atomic(args.output/"pipeline_stop.json",progress)
+        write_json_atomic(args.output/"run_meta.json",progress);raise
 
 
 def main():
