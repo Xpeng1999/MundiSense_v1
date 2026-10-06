@@ -16,6 +16,19 @@ from emotioncore.x04.heads import pack
 from emotioncore.x04.prepare import require_h, storage_gate
 
 
+def resume_receipt(path, budget_sha):
+    saved=json.loads(path.read_text())
+    if saved['status']!='stopped' or saved['budget_sha256']!=budget_sha:
+        raise ValueError('Resume requires a stopped run with the same frozen budget')
+    successful={s['name'] for s in saved['steps'] if s.get('returncode')==0}
+    required={'full_face','full_A3','full_V2','full_V1','data_evidence','heads_D0_A3_first_grid'}
+    if not required.issubset(successful):
+        raise ValueError('Resume after first grid requires all preparation stages complete')
+    if not 0<=saved['charged_gpu_hours']<20:
+        raise ValueError('Resume GPU ledger is outside the authorized budget')
+    return saved
+
+
 def run(args):
     git=git_provenance(Path.cwd());require_h(args.derived);storage_gate()
     (args.derived/"locks").mkdir(parents=True,exist_ok=True)
@@ -44,10 +57,17 @@ def run(args):
     args.output.mkdir(parents=True,exist_ok=True)
     progress={"git":git,"command":sys.argv,"started_at":dt.datetime.now(dt.timezone.utc).isoformat(),
         "budget_sha256":sha256(args.budget),"report_sha256":sha256(Path("experiments/X04a_data/REPORT.md")),"steps":[],"status":"running"}
+    saved=resume_receipt(args.resume_from,sha256(args.budget)) if args.resume_from else None
+    elapsed_before=0.
+    if saved:
+        elapsed_before=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(saved['started_at'])).total_seconds()
+        progress['resumed_from']={'path':str(args.resume_from),'sha256':sha256(args.resume_from),
+                                 'git':saved['git'],'charged_gpu_hours':saved['charged_gpu_hours']}
+        progress['steps']=[s for s in saved['steps'] if s.get('returncode')==0 and not s['name'].startswith('heads_D')]
     write_json_atomic(args.output/"pipeline_progress.json",progress)
     write_json_atomic(args.output/"run_meta.json",progress)
     started_pipeline=time.monotonic()
-    charged=(budget["measured_gpu_hours"]+args.prior_gpu_hours)*3600
+    charged=saved['charged_gpu_hours']*3600 if saved else (budget["measured_gpu_hours"]+args.prior_gpu_hours)*3600
     progress["prior_gpu_hours"]=args.prior_gpu_hours
     children=[];cpu_jobs=[]
     def spawn(name,module,options,*,cpu=False):
@@ -90,6 +110,17 @@ def run(args):
         pack(rows,args.derived/f"full/features/{encoder}/receipts",encoder,args.derived/f"packs/{encoder}")
         for arm in ("D0","D1","D2","D3"):
             output=args.derived/f"heads/{arm}/{encoder}"
+            if saved and (output/'results.json').exists():
+                result=json.loads((output/'results.json').read_text())
+                for filename,key in [('oof.jsonl','oof_sha256'),('final_head.pt','checkpoint_sha256')]:
+                    if sha256(output/filename)!=result[key]:raise ValueError('Completed head artifact SHA changed')
+                meta=json.loads((output/'run_meta.json').read_text())
+                if 'ended_at' not in meta:raise ValueError('Completed head run_meta missing completion')
+                progress['steps'].append({'name':f'heads_{arm}_{encoder}','cpu_only':True,
+                    'returncode':0,'elapsed_s':meta['elapsed_s'],'reused_from':str(output/'run_meta.json'),
+                    'source_sha256':sha256(output/'run_meta.json')})
+                cpu_jobs.append((arm,encoder,output,None))
+                continue
             options=["--arm",arm,"--encoder",encoder,"--derived",args.derived,"--dedup",dedup,
                      "--output",output,"--device","cpu","--threads",8 if encoder=="A3" else 4]
             cpu_jobs.append((arm,encoder,output,spawn(f"heads_{arm}_{encoder}","emotioncore.x04.heads",options,cpu=True)))
@@ -101,22 +132,25 @@ def run(args):
         if sensitivity:options.append("--sensitivity")
         return options
     try:
-        face=spawn("full_face","emotioncore.x04.features",["--stage","face","--manifest",source,"--run-root",args.derived/"full"],cpu=True)
-        execute("full_A3","emotioncore.x04.features",["--stage","A3","--manifest",source,"--run-root",args.derived/"full"],gpu=True)
-        wait(face)
-        execute("data_evidence","emotioncore.x04.data_evidence",["--derived",args.derived,"--output",args.derived/"data_evidence"],cpu=True)
-        for encoder in ("V2","V1"):
-            execute("full_"+encoder,"emotioncore.x04.features",["--stage",encoder,"--manifest",source,"--run-root",args.derived/"full"],gpu=True)
-            heads(encoder)
-        rows=[json.loads(s) for s in source.read_text().splitlines()]
-        pack(rows,args.derived/"full/features/A3/receipts","A3",args.derived/"packs/A3")
-        execute("heads_D0_A3_first_grid","emotioncore.x04.heads",a3_options("D0",first=True),gpu=True)
+        if saved:
+            for encoder in ('V2','V1'):heads(encoder)
+        else:
+            face=spawn("full_face","emotioncore.x04.features",["--stage","face","--manifest",source,"--run-root",args.derived/"full"],cpu=True)
+            execute("full_A3","emotioncore.x04.features",["--stage","A3","--manifest",source,"--run-root",args.derived/"full"],gpu=True)
+            wait(face)
+            execute("data_evidence","emotioncore.x04.data_evidence",["--derived",args.derived,"--output",args.derived/"data_evidence"],cpu=True)
+            for encoder in ("V2","V1"):
+                execute("full_"+encoder,"emotioncore.x04.features",["--stage",encoder,"--manifest",source,"--run-root",args.derived/"full"],gpu=True)
+                heads(encoder)
+            rows=[json.loads(s) for s in source.read_text().splitlines()]
+            pack(rows,args.derived/"full/features/A3/receipts","A3",args.derived/"packs/A3")
+            execute("heads_D0_A3_first_grid","emotioncore.x04.heads",a3_options("D0",first=True),gpu=True)
         execute("first_grid_budget","emotioncore.x04.head_budget",[
             "--derived",args.derived,"--dedup",dedup,
             "--first-grid",args.derived/"heads/D0/A3/first_grid_complete.json",
             "--budget",args.budget,"--charged-gpu-hours",charged/3600,
-            "--wall-elapsed-hours",(time.monotonic()-started_pipeline)/3600,
-            "--cpu-remaining-hours",0,"--cpu-elapsed-hours",min((time.monotonic()-job[3][2])/3600 for job in cpu_jobs),
+            "--wall-elapsed-hours",(elapsed_before+time.monotonic()-started_pipeline)/3600,
+            "--cpu-remaining-hours",0,"--cpu-elapsed-hours",min([(time.monotonic()-job[3][2])/3600 for job in cpu_jobs if job[3]] or [0.]),
             "--output",args.output/"first_grid_budget"],cpu=True)
         progress["first_grid_budget_sha256"]=sha256(args.output/"first_grid_budget/wall_time_estimate.json")
         # The budget child writes REPORT section12 before the next GPU head.
@@ -135,7 +169,7 @@ def run(args):
         execute("x04b_budget_only","emotioncore.x04.budget",["--derived",args.derived,"--output",args.derived/"budget_estimate"],cpu=True)
         execute("q_mer_predict","emotioncore.x04.q_mer",["--action","predict","--derived",args.derived,"--output",args.derived/"Q_predictions"],gpu=True)
         for arm,encoder,output,item in cpu_jobs:
-            wait(item)
+            if item:wait(item)
             # Sensitivity also reports frozen targets; it is not a new recipe.
             execute(f"targets_{arm}_{encoder}","emotioncore.x04.targets",["--arm","D1" if arm=="D1_audioonly" else arm,
                 "--encoder",encoder,"--job",output,"--derived",args.derived,"--output",output/"targets"],cpu=True)
@@ -160,6 +194,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument("--derived",type=Path,required=True);p.add_argument("--budget",type=Path,required=True)
     p.add_argument("--preflight",type=Path,required=True);p.add_argument("--output",type=Path,required=True)
     p.add_argument("--prior-gpu-hours",type=float,required=True)
+    p.add_argument("--resume-from",type=Path,help="Stopped run_meta after successful feature extraction and first A3 grid")
     run(p.parse_args())
 
 
