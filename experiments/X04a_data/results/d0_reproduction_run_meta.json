@@ -1,0 +1,42 @@
+{
+  "git": {
+    "commit": "3a358964b4ffd9c2a69ea3ed477445ab37cc09ba",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/d0_report_code/src/emotioncore/x04/reproduce.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/d0_reproduction"
+  ],
+  "started_at": "2026-10-06T13:29:34.765436+00:00",
+  "device": "CPU",
+  "Q_training": false,
+  "model_inference": false,
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "sources": {
+    "A3": {
+      "oof_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/oof.jsonl",
+      "oof_sha256": "5e08c57d9240a65edb220cda3bfa7006c7d72c8fdb6c69f22d9a37aa02c6fb4a",
+      "run_meta_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/run_meta.json",
+      "run_meta_sha256": "49dbd5813a25d50d18a1c1e78aa8d671617728b91689b1e35b5dd50a06bd6e5d"
+    },
+    "V2": {
+      "oof_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V2/oof.jsonl",
+      "oof_sha256": "50569373e61d9692421a2f424c70e3d980b035a5d40ef40fa802b3659cdfdf97",
+      "run_meta_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V2/run_meta.json",
+      "run_meta_sha256": "026d4f327b8862738dcb11683c91e365863147bc4ba3f855ec560c93f82e534f"
+    },
+    "V1": {
+      "oof_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V1/oof.jsonl",
+      "oof_sha256": "584d8b162212a337294c978332b77126b554d9a0dbc42e6f119067636fa8c9db",
+      "run_meta_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V1/run_meta.json",
+      "run_meta_sha256": "21c55707c69fb4d2647bc6f1577b8daf70da15037cee4e720a4673d648810c35"
+    }
+  },
+  "ended_at": "2026-10-06T13:29:37.897858+00:00",
+  "result_sha256": "ff1671cea55377949544fbd0ec4437865a22c1311d2b8c2a916510d8bd9d2294"
+}

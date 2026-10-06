@@ -35,6 +35,14 @@
     "path": "experiments/X04a_data/results/cpu_timing_estimate.json",
     "sha256": "4fefbaaa329eeff49fddf8ccd40a28d1f33440c9c0d09d80fb762bde4abc85e8"
   },
+  "d0_reproducibility.json": {
+    "path": "experiments/X04a_data/results/d0_reproducibility.json",
+    "sha256": "ff1671cea55377949544fbd0ec4437865a22c1311d2b8c2a916510d8bd9d2294"
+  },
+  "d0_reproduction_run_meta.json": {
+    "path": "experiments/X04a_data/results/d0_reproduction_run_meta.json",
+    "sha256": "3e10c3229b53be7d2455d6158cb007a22bd8e84e9b0dbff38207b31260a62d28"
+  },
   "data_registration.json": {
     "path": "experiments/X04a_data/results/data_registration.json",
     "sha256": "d9265a0081a508e2f7b68f9a21c4644915bad3a1d560718eb4d1acfa4a2cfc72"
@@ -53,7 +61,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "4449c45a2d9a45c0d1a0fbb63169942c2e774a75e70e8ba4d646075d2bac7d77"
+    "sha256": "0ef75f57e190ef946f12529a523b67750ad57e44bc76c413cfef96c9ff0a985f"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
@@ -83,6 +91,10 @@
     "path": "experiments/X04a_data/results/gpu_tests.json",
     "sha256": "0450fbc824dcb1df97612fe989144449be7d1037d75e440e18a6ec5c5abb11c9"
   },
+  "heads_complete.json": {
+    "path": "experiments/X04a_data/results/heads_complete.json",
+    "sha256": "e27dbe85064dc656fe77eed6256e75ad0812b419d5f662005ce7bd1a995b1a1c"
+  },
   "license_evidence.json": {
     "path": "experiments/X04a_data/results/license_evidence.json",
     "sha256": "a20eff9d442fc7dad161723e1fd5acc687bf9f0ae96830f997d17fa74fe45b5b"
@@ -105,7 +117,7 @@
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "f1514ff0f5e030bab11a8c1d3bda28d5826a5d2501188e396045d880e7ee4df1"
+    "sha256": "b519c80fe94d142ba95b4deb1181a13840745bf06b53f2713881f4d4463896a1"
   },
   "target_recovery_tests.json": {
     "path": "experiments/X04a_data/results/target_recovery_tests.json",

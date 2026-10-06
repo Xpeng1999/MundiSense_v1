@@ -20,18 +20,19 @@ X03 REPORT 第 13 节已补记编排器代码来源（补记提交 `3fa500d`）�
 | full_V2 | 0 | 0.5862 | GPU |
 | full_V1 | 0 | 0.5987 | GPU |
 | first_grid_budget | 0 | 0.0014 | CPU |
-| heads_D0_A3_first_grid | 0 | 待结束 | GPU |
-| heads_D0_V2 | 0 | 0.1555 | CPU |
-| heads_D1_V2 | 0 | 0.6985 | CPU |
-| heads_D2_V2 | 0 | 0.4393 | CPU |
-| heads_D3_V2 | 0 | 0.9481 | CPU |
-| heads_D0_V1 | 0 | 0.1585 | CPU |
-| heads_D1_V1 | 运行中 | 待结束 | CPU |
-| heads_D2_V1 | 运行中 | 待结束 | CPU |
-| heads_D3_V1 | 运行中 | 待结束 | CPU |
+| heads_D0_A3_first_grid | 0 | 复用；原回执见索引 | GPU |
+| heads_D0_V2 | 完成（产物SHA核验） | 0.1555 | CPU |
+| heads_D1_V2 | 完成（产物SHA核验） | 0.6985 | CPU |
+| heads_D2_V2 | 完成（产物SHA核验） | 0.4393 | CPU |
+| heads_D3_V2 | 完成（产物SHA核验） | 0.9481 | CPU |
+| heads_D0_V1 | 完成（产物SHA核验） | 0.1585 | CPU |
+| heads_D1_V1 | 完成（产物SHA核验） | 0.3951 | CPU |
+| heads_D2_V1 | 完成（产物SHA核验） | 0.3040 | CPU |
+| heads_D3_V1 | 完成（产物SHA核验） | 0.7996 | CPU |
 | first_grid_budget | 0 | 0.0014 | CPU |
-| heads_D0_A3 | 0 | 0.2703 | GPU |
-| targets_D0_A3 | 运行中 | 待结束 | CPU |
+| heads_D0_A3 | 完成（产物SHA核验） | 0.2703 | GPU |
+| targets_D0_A3 | 0 | 0.0125 | CPU |
+| heads_D1_A3 | 运行中 | 待结束 | GPU |
 
 A3头cuda:0单进程、V1/V2头CPU并行，Q本轮零训练。未完成阶段的结果仍待执行。
 
@@ -68,7 +69,13 @@ A3头cuda:0单进程、V1/V2头CPU并行，Q本轮零训练。未完成阶段的
 
 ## 6. D0 可复现性
 
-待执行。
+| 编码器 | 逐句argmax一致率 | 本轮原始F1 | X02原始F1 | 差值 |
+| --- | --- | --- | --- | --- |
+| A3 | 1.0000 | 0.5566 | 0.5566 | 0.0000 |
+| V2 | 0.8559 | 0.4215 | 0.4176 | 0.0039 |
+| V1 | 0.9234 | 0.3672 | 0.3596 | 0.0076 |
+
+使用原始头输出对比；正式评估另执行冻结缺脸规则。仅复算已有OOF，本步骤零训练、零模型推理，不据此改变选择或参数。
 
 ## 7. 单模态结果
 
@@ -110,18 +117,19 @@ GPU 已计入 1.988 小时；全部 A3 臂剩余投影 10.764 小时，Q MER-tes
 | full_V2 | 0 | 0.5862 | GPU |
 | full_V1 | 0 | 0.5987 | GPU |
 | first_grid_budget | 0 | 0.0014 | CPU |
-| heads_D0_A3_first_grid | 0 | 待结束 | GPU |
-| heads_D0_V2 | 0 | 0.1555 | CPU |
-| heads_D1_V2 | 0 | 0.6985 | CPU |
-| heads_D2_V2 | 0 | 0.4393 | CPU |
-| heads_D3_V2 | 0 | 0.9481 | CPU |
-| heads_D0_V1 | 0 | 0.1585 | CPU |
-| heads_D1_V1 | 运行中 | 待结束 | CPU |
-| heads_D2_V1 | 运行中 | 待结束 | CPU |
-| heads_D3_V1 | 运行中 | 待结束 | CPU |
+| heads_D0_A3_first_grid | 0 | 复用；原回执见索引 | GPU |
+| heads_D0_V2 | 完成（产物SHA核验） | 0.1555 | CPU |
+| heads_D1_V2 | 完成（产物SHA核验） | 0.6985 | CPU |
+| heads_D2_V2 | 完成（产物SHA核验） | 0.4393 | CPU |
+| heads_D3_V2 | 完成（产物SHA核验） | 0.9481 | CPU |
+| heads_D0_V1 | 完成（产物SHA核验） | 0.1585 | CPU |
+| heads_D1_V1 | 完成（产物SHA核验） | 0.3951 | CPU |
+| heads_D2_V1 | 完成（产物SHA核验） | 0.3040 | CPU |
+| heads_D3_V1 | 完成（产物SHA核验） | 0.7996 | CPU |
 | first_grid_budget | 0 | 0.0014 | CPU |
-| heads_D0_A3 | 0 | 0.2703 | GPU |
-| targets_D0_A3 | 运行中 | 待结束 | CPU |
+| heads_D0_A3 | 完成（产物SHA核验） | 0.2703 | GPU |
+| targets_D0_A3 | 0 | 0.0125 | CPU |
+| heads_D1_A3 | 运行中 | 待结束 | GPU |
 
 ## 13. 异常
 

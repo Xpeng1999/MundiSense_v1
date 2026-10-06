@@ -361,7 +361,38 @@
         "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/targets"
       ],
       "started_at": "2026-10-06T12:31:52.262353+00:00",
-      "cpu_only": true
+      "cpu_only": true,
+      "gpu_charged": false,
+      "monotonic_start": 710788.729489776,
+      "ended_at": "2026-10-06T12:32:37.270078+00:00",
+      "elapsed_s": 45.00553836300969,
+      "returncode": 0
+    },
+    {
+      "name": "heads_D1_A3",
+      "pid": 1373173,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.heads",
+        "--arm",
+        "D1",
+        "--encoder",
+        "A3",
+        "--derived",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a",
+        "--dedup",
+        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
+        "--output",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3",
+        "--device",
+        "cuda:0",
+        "--threads",
+        "8"
+      ],
+      "started_at": "2026-10-06T12:32:37.277979+00:00",
+      "cpu_only": false
     }
   ],
   "status": "running",
