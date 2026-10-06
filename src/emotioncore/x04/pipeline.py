@@ -77,7 +77,11 @@ def run(args):
     saved=resume_receipt(args.resume_from,sha256(args.budget)) if args.resume_from else None
     elapsed_before=0.
     if saved:
-        elapsed_before=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(saved['started_at'])).total_seconds()
+        origin=saved
+        while 'resumed_from' in origin:
+            origin=json.loads(Path(origin['resumed_from']['path']).read_text())
+        progress['original_started_at']=origin['started_at']
+        elapsed_before=(dt.datetime.now(dt.timezone.utc)-dt.datetime.fromisoformat(origin['started_at'])).total_seconds()
         progress['resumed_from']={'path':str(args.resume_from),'sha256':sha256(args.resume_from),
                                  'git':saved['git'],'charged_gpu_hours':saved['charged_gpu_hours']}
         progress['steps']=[s for s in saved['steps'] if s.get('returncode')==0 and not s['name'].startswith('heads_D')]
