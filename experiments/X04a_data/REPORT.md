@@ -125,6 +125,8 @@ GPU 已计入 1.689 小时；全部 A3 臂剩余投影 11.243 小时，Q MER-tes
 
 2026-10-06 11:26 UTC，D0 A3 首折6配置网格全部完成后，预算写入因 NumPy int64 无法 JSON 序列化失败；编排器自动停止并终止自身未完成的 CPU 子任务。原 pipeline_gpu 的 stop/run_meta、日志及全部缓存保留。修复仅把预算计数转换为 Python int，回归测试覆盖真实 NumPy 计数；原首折回执重算 GPU 总投影15.558小时，门禁通过。恢复从成功的特征/首折之后开始，GPU累计1.689476小时承接原账本；完整头以OOF/检查点SHA验证后复用，未完成头复用已完成网格并按原种子重训外折，不修改协议或参数。
 
+2026-10-06 11:50 UTC，D0 A3五折和最终头完成，随后CPU目标推理因SIMS媒体adapter按设计不含label而退出。修复复用X02 valid-only清单核验，将标签从冻结X01 sims_valid.jsonl按647个有序ID关联；不读取多划分SIMS元数据，不改变任何训练或标签。原pipeline_gpu_resume停止回执保留；第二次恢复承接GPU累计1.988128小时，已完成D0 A3校验OOF与检查点SHA后复用，零重训。
+
 ## 14. 给 reviewer 的问题
 
 见 [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)，未覆盖细节按保守口径记录。

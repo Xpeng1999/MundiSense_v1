@@ -8,8 +8,16 @@ from pathlib import Path
 import numpy as np
 from emotioncore.x02 import head_h1
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
+from emotioncore.x02.sims_eval import load_rows as load_sims_adapter
 from emotioncore.x04.heads import Frames, build_model, pack
 from emotioncore.x04.prepare import require_h, storage_gate, write_rows
+
+
+def load_sims_rows(adapter, valid_manifest):
+    rows, original=load_sims_adapter(adapter, valid_manifest)
+    # The frozen media adapter deliberately has no labels. Join only the
+    # validated valid-only X01 manifest, never the multi-split SIMS metadata.
+    return [{**row,'label':source['label']} for row,source in zip(rows,original,strict=True)]
 
 
 def run(args):
@@ -24,7 +32,11 @@ def run(args):
     write_json_atomic(args.output/"run_meta.json",meta)
     all_et=[json.loads(s) for s in Path("experiments/X01_benchmark/results/et_utterances.jsonl").read_text().splitlines()]
     mer=[json.loads(s) for s in (args.derived/"manifests/mer_test.jsonl").read_text().splitlines()]
-    sims=[json.loads(s) for s in (args.r2/"sims_valid/sims_valid_adapter.jsonl").read_text().splitlines()]
+    valid_manifest=Path('experiments/X01_benchmark/results/sims_valid.jsonl')
+    sims=load_sims_rows(args.r2/'sims_valid/sims_valid_adapter.jsonl', valid_manifest)
+    meta['sims_valid_manifest_sha256']=head_h1.sha256(valid_manifest)
+    meta['sims_adapter_sha256']=head_h1.sha256(args.r2/'sims_valid/sims_valid_adapter.jsonl')
+    write_json_atomic(args.output/'run_meta.json',meta)
     cohorts={"et_test":([r for r in all_et if r["official_split"]=="test"],args.r2/f"features/{args.encoder}/receipts"),
              "sims_valid":(sims,args.r2/f"sims_valid/features/{args.encoder}/receipts"),
              "mer_test":(mer,args.derived/f"full/features/{args.encoder}/receipts")}

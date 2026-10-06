@@ -129,7 +129,12 @@ def run(args):
         if progress_path.exists():
             progress=export(progress_path,results/'execution_progress.json')
             if 'resumed_from' in progress:
-                export(Path(progress['resumed_from']['path']),results/'pipeline_original_stop.json')
+                previous=progress
+                while 'resumed_from' in previous:
+                    spec=previous['resumed_from'];path=Path(spec['path'])
+                    if sha256(path)!=spec['sha256']:raise ValueError('Pipeline history SHA changed')
+                    previous=export(path,results/f"pipeline_stop_{read(path)['git']['commit'][:8]}.json")
+                export(path,results/'pipeline_original_stop.json')
             stages=table(["阶段","状态","实测墙钟小时","设备"],
                 [(s['name'],str(s['returncode']) if 'returncode' in s else '运行中',
                   fmt(s['elapsed_s']/3600) if 'elapsed_s' in s else '待结束',

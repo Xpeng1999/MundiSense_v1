@@ -21,12 +21,29 @@ def resume_receipt(path, budget_sha):
     if saved['status']!='stopped' or saved['budget_sha256']!=budget_sha:
         raise ValueError('Resume requires a stopped run with the same frozen budget')
     successful={s['name'] for s in saved['steps'] if s.get('returncode')==0}
+    if 'resumed_from' in saved:
+        parent=saved['resumed_from'];parent_path=Path(parent['path'])
+        if sha256(parent_path)!=parent['sha256']:raise ValueError('Resume history SHA changed')
+        previous=resume_receipt(parent_path,budget_sha)
+        if saved['charged_gpu_hours']<previous['charged_gpu_hours']:
+            raise ValueError('Resume ledger cannot decrease')
+        successful.update(s['name'] for s in previous['steps'] if s.get('returncode')==0)
     required={'full_face','full_A3','full_V2','full_V1','data_evidence','heads_D0_A3_first_grid'}
     if not required.issubset(successful):
         raise ValueError('Resume after first grid requires all preparation stages complete')
     if not 0<=saved['charged_gpu_hours']<20:
         raise ValueError('Resume GPU ledger is outside the authorized budget')
     return saved
+
+
+def completed_head(output):
+    if not (output/'results.json').exists():return None
+    result=json.loads((output/'results.json').read_text())
+    for filename,key in [('oof.jsonl','oof_sha256'),('final_head.pt','checkpoint_sha256')]:
+        if sha256(output/filename)!=result[key]:raise ValueError('Completed head artifact SHA changed')
+    meta=json.loads((output/'run_meta.json').read_text())
+    if 'ended_at' not in meta:raise ValueError('Completed head run_meta missing completion')
+    return meta
 
 
 def run(args):
@@ -64,11 +81,17 @@ def run(args):
         progress['resumed_from']={'path':str(args.resume_from),'sha256':sha256(args.resume_from),
                                  'git':saved['git'],'charged_gpu_hours':saved['charged_gpu_hours']}
         progress['steps']=[s for s in saved['steps'] if s.get('returncode')==0 and not s['name'].startswith('heads_D')]
+        # Keep the original first-grid success visible through repeated resumes.
+        if not any(s['name']=='heads_D0_A3_first_grid' for s in progress['steps']):
+            progress['steps'].append({'name':'heads_D0_A3_first_grid','cpu_only':False,'returncode':0,
+                'reused_from':str(args.derived/'heads/D0/A3/first_grid_complete.json'),
+                'source_sha256':sha256(args.derived/'heads/D0/A3/first_grid_complete.json')})
     write_json_atomic(args.output/"pipeline_progress.json",progress)
     write_json_atomic(args.output/"run_meta.json",progress)
     started_pipeline=time.monotonic()
     charged=saved['charged_gpu_hours']*3600 if saved else (budget["measured_gpu_hours"]+args.prior_gpu_hours)*3600
     progress["prior_gpu_hours"]=args.prior_gpu_hours
+    progress['charged_gpu_hours']=charged/3600
     children=[];cpu_jobs=[]
     def spawn(name,module,options,*,cpu=False):
         env=os.environ.copy();env["PYTHONDONTWRITEBYTECODE"]="1"
@@ -110,12 +133,8 @@ def run(args):
         pack(rows,args.derived/f"full/features/{encoder}/receipts",encoder,args.derived/f"packs/{encoder}")
         for arm in ("D0","D1","D2","D3"):
             output=args.derived/f"heads/{arm}/{encoder}"
-            if saved and (output/'results.json').exists():
-                result=json.loads((output/'results.json').read_text())
-                for filename,key in [('oof.jsonl','oof_sha256'),('final_head.pt','checkpoint_sha256')]:
-                    if sha256(output/filename)!=result[key]:raise ValueError('Completed head artifact SHA changed')
-                meta=json.loads((output/'run_meta.json').read_text())
-                if 'ended_at' not in meta:raise ValueError('Completed head run_meta missing completion')
+            meta=completed_head(output) if saved else None
+            if meta:
                 progress['steps'].append({'name':f'heads_{arm}_{encoder}','cpu_only':True,
                     'returncode':0,'elapsed_s':meta['elapsed_s'],'reused_from':str(output/'run_meta.json'),
                     'source_sha256':sha256(output/'run_meta.json')})
@@ -155,7 +174,13 @@ def run(args):
         progress["first_grid_budget_sha256"]=sha256(args.output/"first_grid_budget/wall_time_estimate.json")
         # The budget child writes REPORT section12 before the next GPU head.
         for arm in ("D0","D1","D2","D3"):
-            execute(f"heads_{arm}_A3","emotioncore.x04.heads",a3_options(arm),gpu=True)
+            output=args.derived/f'heads/{arm}/A3'
+            meta=completed_head(output) if saved else None
+            if meta:
+                progress['steps'].append({'name':f'heads_{arm}_A3','cpu_only':False,'returncode':0,
+                    'elapsed_s':meta['elapsed_s'],'reused_from':str(output/'run_meta.json'),
+                    'source_sha256':sha256(output/'run_meta.json'),'gpu_charge_inherited':True})
+            else:execute(f"heads_{arm}_A3","emotioncore.x04.heads",a3_options(arm),gpu=True)
             execute(f"targets_{arm}_A3","emotioncore.x04.targets",["--arm",arm,"--encoder","A3",
                 "--job",args.derived/f"heads/{arm}/A3","--derived",args.derived,
                 "--output",args.derived/f"heads/{arm}/A3/targets"],cpu=True)
@@ -186,6 +211,7 @@ def run(args):
                 try:os.killpg(child.pid,signal.SIGKILL)
                 except ProcessLookupError:pass
         progress.update(status="stopped",error=f"{type(exc).__name__}: {exc}",at=dt.datetime.now(dt.timezone.utc).isoformat())
+        write_json_atomic(args.output/'pipeline_progress.json',progress)
         write_json_atomic(args.output/"pipeline_stop.json",progress)
         write_json_atomic(args.output/"run_meta.json",progress);raise
 
