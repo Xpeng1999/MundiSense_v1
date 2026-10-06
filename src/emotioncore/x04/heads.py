@@ -27,7 +27,10 @@ def build_model(dimension, layered, device):
     model = head_h2.build_model(dimension, layered, device)
     old = model.classifier[-1]
     # Preserve the original seven-class initialization and RNG sequence.
-    with torch.random.fork_rng(devices=[]):
+    # torch.manual_seed also seeds CUDA: restore that RNG as well so the extra
+    # output cannot change the frozen GPU dropout sequence.
+    cuda_devices = [torch.device(device).index or 0] if torch.device(device).type == "cuda" else []
+    with torch.random.fork_rng(devices=cuda_devices):
         torch.manual_seed(head_h1.SEED + 8000)
         replacement = torch.nn.Linear(256, 8)
     with torch.no_grad():

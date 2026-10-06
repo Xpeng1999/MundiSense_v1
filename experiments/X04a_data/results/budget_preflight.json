@@ -1,0 +1,50 @@
+{
+  "benchmark_n": 200,
+  "benchmark_manifest_sha256": "4036ff078299d4a9c4bafb2a9435448f5b8e62832a8f58603f64e1e90d08b21b",
+  "total_feature_samples": 17409,
+  "all_features_manifest_sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3",
+  "dedup_report_sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad",
+  "timings": {
+    "face": {
+      "gpu_seconds": 0,
+      "cpu_seconds": 124.01112591801211,
+      "status": null
+    },
+    "A3": {
+      "gpu_seconds": 24.686710769077763,
+      "cpu_seconds": 0,
+      "status": {
+        "ok": 200
+      }
+    },
+    "V2": {
+      "gpu_seconds": 30.40608590398915,
+      "cpu_seconds": 0,
+      "status": {
+        "ok": 200
+      }
+    },
+    "V1": {
+      "gpu_seconds": 35.03274185699411,
+      "cpu_seconds": 0,
+      "status": {
+        "ok": 200
+      }
+    }
+  },
+  "head_device": "cpu",
+  "head_gpu_hours": 0,
+  "measured_gpu_hours": 0.02503487181390584,
+  "extraction_projection_hours": 2.179160417041434,
+  "Q_mer_test_projection_hours": 0.17523606316629226,
+  "Q_projection_source": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/run_meta.json",
+  "Q_projection_source_sha256": "77930376ea8b6ac03314384abca2af6a61460fff12458267bad63bc4f7c90912",
+  "reserve_multiplier": 1.2,
+  "load_reserve_hours": 0.16666666666666666,
+  "total_projection_gpu_hours": 3.0169773147298433,
+  "limit_gpu_hours": 20,
+  "passed": true,
+  "CPU_face_projection_hours": 2.998485682092601,
+  "fingerprint_sensitivity_training_device": "cpu",
+  "CH_SIMS_model_inference": 0
+}

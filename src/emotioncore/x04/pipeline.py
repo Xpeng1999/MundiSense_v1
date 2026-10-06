@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 import datetime as dt
+import fcntl
 import json
 import os
 import signal
@@ -17,6 +18,10 @@ from emotioncore.x04.prepare import require_h, storage_gate
 
 def run(args):
     git=git_provenance(Path.cwd());require_h(args.derived);storage_gate()
+    (args.derived/"locks").mkdir(parents=True,exist_ok=True)
+    pipeline_lock=(args.derived/"locks/x04_pipeline.lock").open("a")
+    try:fcntl.flock(pipeline_lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    except BlockingIOError:raise RuntimeError("STOP another X04a pipeline is active")
     recorded=Path("experiments/X04a_data/results/budget_preflight.json")
     if not recorded.exists() or sha256(recorded)!=sha256(args.budget):
         raise ValueError("Budget receipt must be committed with REPORT before full execution")

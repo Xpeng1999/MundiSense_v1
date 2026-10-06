@@ -70,3 +70,15 @@ def test_gpu_batch_is_exact_x02_and_reuses_one_pinned_buffer():
     pointer = data.pinned_buffer.data_ptr()
     data.batch(indices[:8],"cuda:0")
     assert data.pinned_buffer.data_ptr() == pointer
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="Requires server CUDA RNG")
+def test_d0_extra_output_preserves_cuda_dropout_rng():
+    torch.manual_seed(20260928);torch.cuda.manual_seed_all(20260928)
+    old=head_h2.build_model(8,False,"cuda:0")
+    cpu_state=torch.random.get_rng_state();gpu_state=torch.cuda.get_rng_state(0)
+    torch.manual_seed(20260928);torch.cuda.manual_seed_all(20260928)
+    new=build_model(8,False,"cuda:0")
+    assert torch.equal(torch.random.get_rng_state(),cpu_state)
+    assert torch.equal(torch.cuda.get_rng_state(0),gpu_state)
+    del old,new

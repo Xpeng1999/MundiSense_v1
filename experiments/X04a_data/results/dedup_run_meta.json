@@ -1,0 +1,30 @@
+{
+  "git": {
+    "commit": "8a92a9dfea3ed01874f81745ad0237350b82455a",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/duration_v3_code/src/emotioncore/x04/dedup.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup",
+    "--sims-media",
+    "/home/administrator/emotion-data/emotioncore_derived/chsims_v2/raw/Raw"
+  ],
+  "started_at": "2026-10-06T07:34:54.208447+00:00",
+  "sims_usecols": [
+    "video_id",
+    "clip_id",
+    "text",
+    "mode"
+  ],
+  "sims_model_inference": 0,
+  "sims_meta_sha256": "be7e482640e7ee24d2070033e1e2aef61ce183199286a8a18b0d6247556bf150",
+  "subtitle_sha256": "bc3562cfda38a44e6a970a44cffc38fbca7f39ec39ed9c438152b0794bed4003",
+  "fingerprint_method": "exact complete raw Chromaprint sequence equality",
+  "ended_at": "2026-10-06T07:35:06.644461+00:00",
+  "report_sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad"
+}

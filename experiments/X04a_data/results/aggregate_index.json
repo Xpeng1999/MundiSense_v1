@@ -1,0 +1,58 @@
+{
+  "archive_receipt.json": {
+    "path": "experiments/X04a_data/results/archive_receipt.json",
+    "sha256": "de3b779acfd76e70f6c4b346847172c5755578ef859ecd710fae50bdc1aea1cb"
+  },
+  "budget_preflight.json": {
+    "path": "experiments/X04a_data/results/budget_preflight.json",
+    "sha256": "6d14d0503735440523774c51ff31213f47faa650ce3cc7898258611b751faa05"
+  },
+  "cpu_timing_estimate.json": {
+    "path": "experiments/X04a_data/results/cpu_timing_estimate.json",
+    "sha256": "4fefbaaa329eeff49fddf8ccd40a28d1f33440c9c0d09d80fb762bde4abc85e8"
+  },
+  "data_registration.json": {
+    "path": "experiments/X04a_data/results/data_registration.json",
+    "sha256": "d9265a0081a508e2f7b68f9a21c4644915bad3a1d560718eb4d1acfa4a2cfc72"
+  },
+  "dedup_report.json": {
+    "path": "experiments/X04a_data/results/dedup_report.json",
+    "sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad"
+  },
+  "dedup_run_meta.json": {
+    "path": "experiments/X04a_data/results/dedup_run_meta.json",
+    "sha256": "882ae7a7364d267c7b9914f6cf9a08a769fcb929212d26978c240c6080b49662"
+  },
+  "device_adjustment.json": {
+    "path": "experiments/X04a_data/results/device_adjustment.json",
+    "sha256": "89c2a2c6dcf11e2de65c91c898df89dab97e1d6d7e7bda59e95c29615d52ab61"
+  },
+  "execution_state.json": {
+    "path": "experiments/X04a_data/results/execution_state.json",
+    "sha256": "79a9baa52e0d1190b1daf101176d32ac23a42a1572575e0693f78dddc0f20e1f"
+  },
+  "gpu_batch_equivalence.json": {
+    "path": "experiments/X04a_data/results/gpu_batch_equivalence.json",
+    "sha256": "a1cf63fd12512b2b83c2edaae753b36df0e809c5ee2aacf8072ba51bacf8a442"
+  },
+  "license_evidence.json": {
+    "path": "experiments/X04a_data/results/license_evidence.json",
+    "sha256": "a20eff9d442fc7dad161723e1fd5acc687bf9f0ae96830f997d17fa74fe45b5b"
+  },
+  "prepare_run_meta.json": {
+    "path": "experiments/X04a_data/results/prepare_run_meta.json",
+    "sha256": "bad8e62024cc116c547f6ae07c9af86c75765b59a5a3dc4b48731121d4e84bcc"
+  },
+  "report_run_meta.json": {
+    "path": "experiments/X04a_data/results/report_run_meta.json",
+    "sha256": "3cadeca3cd041c32b3b29f0f15a336714f921150bde417382b96de215facb865"
+  },
+  "wall_time_estimate.json": {
+    "path": "experiments/X04a_data/results/wall_time_estimate.json",
+    "sha256": "1655f787e994c160ed06808ac20ddb2e2481844ab6f27d14ac81929815b3420e"
+  },
+  "wall_time_estimate_cpu.json": {
+    "path": "experiments/X04a_data/results/wall_time_estimate_cpu.json",
+    "sha256": "83c4f1fc8bac575e63033f513a29b3d1c97c206fc4df2c32ffa49fb2543987ab"
+  }
+}
