@@ -1,0 +1,18 @@
+{
+  "git": {
+    "commit": "77e9691f7668689ad9955c25258cfa4085bdb568",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_pipeline_code/src/emotioncore/x04/data_evidence.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/data_evidence"
+  ],
+  "started_at": "2026-10-06T09:49:49.379352+00:00",
+  "ended_at": "2026-10-06T09:51:01.812266+00:00",
+  "face_evidence_sha256": "bfaf872390a513504ab3191282056f0ca5f93a3d45e306f0bf4cffc3cb515d12"
+}

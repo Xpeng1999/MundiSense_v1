@@ -36,14 +36,9 @@
   },
   "gpu_wall_seconds": 1283.0554125759518,
   "gpu_timing_convention": "worker lifetime wall time incl loading and request I/O; face stage CPU excluded",
-  "request_timing_aggregate": {
-    "n": 17409,
-    "median_s": 0.06046420393977314,
-    "min_s": 0.035249798907898366,
-    "max_s": 9.527270411956124
-  },
   "source_run_meta": {
     "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/full/features/A3/run_meta.json",
     "sha256": "1b4df3bf9daf53f17dc8b2e55c057b08e572c59f5f7cb0b2b4836939bbe9d704"
-  }
+  },
+  "request_count": 17409
 }

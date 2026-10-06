@@ -1,7 +1,7 @@
 {
   "A3_features_complete.json": {
     "path": "experiments/X04a_data/results/A3_features_complete.json",
-    "sha256": "e971ac24cd40cecf683e0e51ec3d49f4496a59a50e850ffa02b08280e1aca652"
+    "sha256": "bf437028f65321db453d0edb4a1097cd444356695185ace33338cc7c3afe96aa"
   },
   "archive_receipt.json": {
     "path": "experiments/X04a_data/results/archive_receipt.json",
@@ -33,11 +33,23 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "817ee400cef2e041340e233d3f6a1c8865bb823a1f98c1ec0dadb67c5a4d4988"
+    "sha256": "ee3762367868e16b428f48a2481b7204520919af082bf2028adfe1c2a5aec304"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
     "sha256": "79a9baa52e0d1190b1daf101176d32ac23a42a1572575e0693f78dddc0f20e1f"
+  },
+  "face_evidence.json": {
+    "path": "experiments/X04a_data/results/face_evidence.json",
+    "sha256": "bfaf872390a513504ab3191282056f0ca5f93a3d45e306f0bf4cffc3cb515d12"
+  },
+  "face_evidence_run_meta.json": {
+    "path": "experiments/X04a_data/results/face_evidence_run_meta.json",
+    "sha256": "010a004ab70d10c6c26fc45aa0c2c30fa2ef5e28cc300a8b3363dd4a91060324"
+  },
+  "face_timing.json": {
+    "path": "experiments/X04a_data/results/face_timing.json",
+    "sha256": "ea7cd24db78648de145a753b5cd04a817ce3534f978f36037d4645c0abba028d"
   },
   "gpu_batch_equivalence.json": {
     "path": "experiments/X04a_data/results/gpu_batch_equivalence.json",
@@ -61,7 +73,7 @@
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "3cadeca3cd041c32b3b29f0f15a336714f921150bde417382b96de215facb865"
+    "sha256": "2fd2be1b01ddd55d2d679ea80780cfaa3e96c0315cc949c6dba3d0861fd9d052"
   },
   "wall_time_estimate.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate.json",

@@ -38,7 +38,12 @@
         "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
       ],
       "started_at": "2026-10-06T07:46:58.463009+00:00",
-      "cpu_only": true
+      "cpu_only": true,
+      "gpu_charged": false,
+      "monotonic_start": 693694.929731004,
+      "ended_at": "2026-10-06T09:49:49.292755+00:00",
+      "elapsed_s": 7370.827978935908,
+      "returncode": 0
     },
     {
       "name": "full_A3",
@@ -62,6 +67,45 @@
       "ended_at": "2026-10-06T08:08:23.621309+00:00",
       "elapsed_s": 1285.1541274350602,
       "returncode": 0
+    },
+    {
+      "name": "data_evidence",
+      "pid": 1339725,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.data_evidence",
+        "--derived",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a",
+        "--output",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/data_evidence"
+      ],
+      "started_at": "2026-10-06T09:49:49.297688+00:00",
+      "cpu_only": true,
+      "gpu_charged": false,
+      "monotonic_start": 701065.764513646,
+      "ended_at": "2026-10-06T09:51:04.305534+00:00",
+      "elapsed_s": 75.00597563094925,
+      "returncode": 0
+    },
+    {
+      "name": "full_V2",
+      "pid": 1339978,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.features",
+        "--stage",
+        "V2",
+        "--manifest",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+        "--run-root",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
+      ],
+      "started_at": "2026-10-06T09:51:04.310595+00:00",
+      "cpu_only": false
     }
   ],
   "status": "running",
