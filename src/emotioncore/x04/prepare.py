@@ -93,18 +93,35 @@ def extract(mer: Path, derived: Path, output: Path) -> dict:
                "official_script_sha256": sha256(mer / "extract_mer2026_archives.sh"),
                "view": str(view), "target": str(derived / "media"),
                "openface_visible": False}
+    # Official find does not traverse a symlinked package directory. Adapt a
+    # private copy only to follow that restricted view; no openface is visible.
+    official = Path(receipt["official_script"])
+    effective = derived / "extract_audio_video_view.sh"
+    script = official.read_text()
+    needle = 'find "$package_dir" -maxdepth 1'
+    if script.count(needle) != 1:
+        raise ValueError("Official archive collector changed; review required")
+    effective.write_text(script.replace(needle, 'find -L "$package_dir" -maxdepth 1'))
+    receipt.update(effective_script=str(effective), effective_script_sha256=sha256(effective),
+                   adaptation="one find -L for restricted audio/video symlink view")
     write_json_atomic(output / "archive_receipt.json", receipt)
     marker = derived / "extract_complete.json"
     if marker.exists():
         old = json.loads(marker.read_text())
         if old["archives"] != archives:
             raise ValueError("Extracted archives differ from recorded source hashes")
-        return old
-    result = run_with_hard_timeout(["bash", receipt["official_script"], str(view),
+        if len(list((derived / "media/audio").glob("*"))) >= 20000 and len(list((derived / "media/video").glob("*"))) >= 20000:
+            return old
+        write_json_atomic(derived / "extract_initial_noop.json", old)
+    result = run_with_hard_timeout(["bash", str(effective), str(view),
         str(derived / "media"), "track1_train", "track1_track2_candidate"], 7200)
     write_json_atomic(output / "extract_receipt.json", result)
     if result["returncode"] or result["timed_out"]:
         raise RuntimeError("Official extraction failed; see extract_receipt.json")
+    counts = {medium: len(list((derived / "media" / medium).glob("*"))) for medium in ("audio", "video")}
+    if min(counts.values()) < 20000:
+        raise RuntimeError(f"Extraction produced too few media files: {counts}")
+    receipt["extracted_counts"] = counts
     write_json_atomic(marker, receipt)
     return receipt
 
@@ -146,7 +163,7 @@ def register(args) -> None:
             "corpus": "CREMA", "official_split": "train", "speaker_id": fields[0],
             "label": CREMA_MAP[fields[2]], "native_label": fields[2],
             "audio_path": str(wav), "video_path": str(args.crema / "VideoFlash" / (wav.stem + ".flv"))})
-    records_dir = args.derived / "registration"
+    records_dir = args.derived / "registration_v2"
     records_dir.mkdir(parents=True, exist_ok=True)
     def one(row):
         path = records_dir / (row["utt_id"] + ".json")
