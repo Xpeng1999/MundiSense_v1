@@ -377,6 +377,7 @@ Q训练与推理进程实耗合计68.0243小时；六次复核保留20%剩余任
 
 ## 13. 异常
 
+- `q_pipeline_progress.json` 的 git 字段停在编排器首次启动时的 `a98dc3a`；2026-09-29 22:47 重启编排器时的代码为 `cb1e64f`，证据是各子进程 run_meta 和进程启动时间。本次仅补记代码来源，不重跑任何内容，不改其他数字。
 - ET 有 43 条固定人脸过滤失败，已在 fold 0 前冻结回退规则。
 - SIMS-valid SenseVoice 首次调用的 Python 环境缺少 FunASR，失败收据保留；改用 X02 原 FunASR 环境后成功 620/647，27 条源音频缺失。
 - Q 最长 AV 显存预检最初两次在首条样本的 CUDA 前向或反向失败：第一次伴随 WSL `get_object_fd` 文件描述符错误，第二次在提高文件描述符上限后伴随 `make_resident -12`。Reviewer 诊断表明 `expandable_segments:True` 与 WSL2 不兼容，且 `prepare_model_for_kbit_training` 后 LLM、视觉塔、音频塔的检查点标志均为 False；最长样本峰值约 33.3 GiB，溢出到系统内存。按恢复批复改用默认分配器，并在 PEFT 包装后显式开启三处检查点。首条等价性及冻结 20 条显存预检均通过；历史故障与原 [停止收据](results/q_pipeline_stop.json) 保留。fold 0 在检查点未生效且有显存溢出的条件下训练，**不重训**；fold 1–4 与最终模型使用开启的检查点。
