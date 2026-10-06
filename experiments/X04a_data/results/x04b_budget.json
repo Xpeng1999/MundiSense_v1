@@ -1,0 +1,200 @@
+{
+  "Q_training": false,
+  "estimate_only": true,
+  "forms_ratio": {
+    "A": 0.2,
+    "V": 0.2,
+    "AV": 0.6
+  },
+  "method": "X03 per-form mean for ET; monotone upper envelope for MER; quadratic extrapolation above measured maximum; then observed checkpointed actual/benchmark ratio",
+  "limitation": "Only seven X03 probes per form; upper envelope and extrapolation are conservative planning assumptions, not validated MER training timings",
+  "observed_actual_to_benchmark_ratio": 1.1138891667227602,
+  "token_lengths": {
+    "A": {
+      "n": 9386,
+      "min": 60.0,
+      "p10": 104.0,
+      "p50": 131.0,
+      "p90": 215.0,
+      "p95": 255.0,
+      "p99": 352.0,
+      "max": 1222.0,
+      "by_effective_form": {
+        "A": 9386,
+        "V": 0,
+        "AV": 0
+      }
+    },
+    "V": {
+      "n": 9386,
+      "min": 69.0,
+      "p10": 630.0,
+      "p50": 630.0,
+      "p90": 630.0,
+      "p95": 630.0,
+      "p99": 630.0,
+      "max": 630.0,
+      "by_effective_form": {
+        "A": 117,
+        "V": 9269,
+        "AV": 0
+      }
+    },
+    "AV": {
+      "n": 9386,
+      "min": 69.0,
+      "p10": 680.0,
+      "p50": 709.0,
+      "p90": 793.0,
+      "p95": 833.0,
+      "p99": 930.0,
+      "max": 1800.0,
+      "by_effective_form": {
+        "A": 117,
+        "V": 0,
+        "AV": 9269
+      }
+    }
+  },
+  "extrapolated_counts": {
+    "A": 28,
+    "V": 1,
+    "AV": 24
+  },
+  "Q_media_face_missing": {
+    "train": {
+      "n": 9386,
+      "missing": 117
+    },
+    "test": {
+      "n": 572,
+      "missing": 5
+    }
+  },
+  "costs": {
+    "A": {
+      "train_all_MER_one_epoch_s": 19912.095542283434,
+      "inference_all_MER_s": 1862.597658547338
+    },
+    "V": {
+      "train_all_MER_one_epoch_s": 15974.37580751488,
+      "inference_all_MER_s": 3009.42382638931
+    },
+    "AV": {
+      "train_all_MER_one_epoch_s": 17546.576240769224,
+      "inference_all_MER_s": 3775.983653203938
+    }
+  },
+  "runs": {
+    "fold0": {
+      "ET_train_n": 9826,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 68005.6529478544,
+      "prediction_s_before_observed_ratio": 2861.4589495075425
+    },
+    "fold1": {
+      "ET_train_n": 9833,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 68022.21206465684,
+      "prediction_s_before_observed_ratio": 2848.349027625254
+    },
+    "fold2": {
+      "ET_train_n": 9798,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 67923.71422785825,
+      "prediction_s_before_observed_ratio": 2878.9388453505944
+    },
+    "fold3": {
+      "ET_train_n": 9790,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 67884.01425596258,
+      "prediction_s_before_observed_ratio": 2894.6707516093406
+    },
+    "fold4": {
+      "ET_train_n": 9854,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 68087.4591611041,
+      "prediction_s_before_observed_ratio": 2820.3811942763714
+    },
+    "final": {
+      "ET_train_n": 13100,
+      "MER_train_n": 9386,
+      "epochs": 2,
+      "validation_n": 700,
+      "validation_calls": 8,
+      "training_validation_s_before_observed_ratio": 78139.32139403388,
+      "prediction_s_before_observed_ratio": 2595.0360384867827
+    }
+  },
+  "plans": {
+    "five_folds_plus_final": {
+      "models": [
+        "fold0",
+        "fold1",
+        "fold2",
+        "fold3",
+        "fold4",
+        "final"
+      ],
+      "training_validation_hours": 129.354208186203,
+      "prediction_hours": 5.228730283776188,
+      "reserve_fraction": 0.2,
+      "load_checkpoint_reserve_hours": 0.5,
+      "diagnostic_reserve_hours": 1.0,
+      "total_gpu_hours": 162.99952616397505
+    },
+    "fold0_fold1_plus_final": {
+      "models": [
+        "fold0",
+        "fold1",
+        "final"
+      ],
+      "training_validation_hours": 66.26625244604016,
+      "prediction_hours": 2.569632161200276,
+      "reserve_fraction": 0.2,
+      "load_checkpoint_reserve_hours": 0.5,
+      "diagnostic_reserve_hours": 1.0,
+      "total_gpu_hours": 84.10306152868853
+    }
+  },
+  "source_benchmark": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/gc_step_benchmark/summary.json",
+    "sha256": "c245a1cc392c2f7aaf39a969a15954e66af24f41c1a59d77992fd98ea7f3ea2b"
+  },
+  "source_actual_budget": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/q_budget_progress.jsonl",
+    "sha256": "f473e3144e989ff6a6e3830e759ad538d1f37b80050f779f741c401b4c01999a"
+  },
+  "source_MER_manifests": {
+    "A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_A.jsonl",
+      "sha256": "f738627e187f3ab4444f08b7383ab56e88e272eb6f3badc5b5a33dd03731130d",
+      "n": 9386
+    },
+    "V": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_V.jsonl",
+      "sha256": "7332ac954de271dcf4e0981cd5e1a48740faeb1ed9f0bd9aac63604dbf6be606",
+      "n": 9386
+    },
+    "AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_AV.jsonl",
+      "sha256": "4320e75c8ba13ac2a728b98a631b2e74be6d53fe4608ce34c1a9883dee78f68d",
+      "n": 9386
+    }
+  }
+}

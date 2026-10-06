@@ -1,0 +1,47 @@
+{
+  "git": {
+    "commit": "970ff484017bee04dea890d2946d8ce5d2888777",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_resume2_live_code/src/emotioncore/x04/q_mer.py",
+    "--action",
+    "predict",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions"
+  ],
+  "started_at": "2026-10-06T18:56:04.874613+00:00",
+  "adapter_sha256": "427ebc148d447ba03dc747429323b440b10cbb8b4b8876247f48f71573d2d5a4",
+  "base_index_sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2",
+  "Q_training": false,
+  "cuda_allocator": "default",
+  "forms": [
+    "A",
+    "AV"
+  ],
+  "ended_at": "2026-10-06T19:03:42.680279+00:00",
+  "gpu_wall_seconds": 457.8002086170018,
+  "peak_allocated_bytes": 9169498624,
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  },
+  "artifacts": {
+    "A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/A.jsonl",
+      "sha256": "01b0c62065e04431563303e560345661e97928c973276ab7dd55cbb741ed3b71",
+      "n": 572
+    },
+    "AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/AV.jsonl",
+      "sha256": "1598077bbca3a30d0066ba406ef7cf89f13c2aa3bedb073828c301eac3e76738",
+      "n": 572
+    }
+  }
+}

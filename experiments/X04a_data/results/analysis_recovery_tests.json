@@ -1,0 +1,18 @@
+{
+  "git_commit": "94b2f9be",
+  "at": "2026-10-06T19:35:37.602584+00:00",
+  "tests": 31,
+  "passed": 29,
+  "skipped": 2,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 4.44,
+  "cpu_only": true,
+  "GPU_verification": "Prior committed gpu_batch_equivalence.json and GPU test receipts unchanged",
+  "junit": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X04a/analysis_recovery_tests.xml",
+    "sha256": "2f03f20b0f4d07a05a19f7d899cd9e5f68acee163e59b4f84e7e29b2288dc5c8"
+  },
+  "CH_SIMS_test_model_inference": false,
+  "Q_training": false
+}

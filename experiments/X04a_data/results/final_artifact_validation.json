@@ -1,0 +1,21 @@
+{
+  "validated_at": "2026-10-06T19:39:45.777828+00:00",
+  "analysis_commit": "94b2f9be7f1bbfa0418b746870a75ec8159eb0ea",
+  "systems": 27,
+  "paired_comparisons": 8,
+  "scored_artifacts": 108,
+  "counts": {
+    "oof": 16366,
+    "et_test": 1929,
+    "sims_valid": 647,
+    "mer_test": 572,
+    "mer_shared5": 442
+  },
+  "unique_ids": true,
+  "all_scored_sha256_verified": true,
+  "aggregate_sha256_verified": true,
+  "root_free_bytes": 113820188672,
+  "gpu_hours": 7.306861735864171,
+  "Q_training": false,
+  "CH_SIMS_test_model_inference": false
+}
