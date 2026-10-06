@@ -49,7 +49,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8"
+    "sha256": "387468d30e5c318b68223a95f24291197caea2ec9394aa25d85e60997b84ba32"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
@@ -83,17 +83,21 @@
     "path": "experiments/X04a_data/results/license_evidence.json",
     "sha256": "a20eff9d442fc7dad161723e1fd5acc687bf9f0ae96830f997d17fa74fe45b5b"
   },
+  "pipeline_original_stop.json": {
+    "path": "experiments/X04a_data/results/pipeline_original_stop.json",
+    "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8"
+  },
   "prepare_run_meta.json": {
     "path": "experiments/X04a_data/results/prepare_run_meta.json",
     "sha256": "bad8e62024cc116c547f6ae07c9af86c75765b59a5a3dc4b48731121d4e84bcc"
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "2ec83ce9120428b340e08ae8033b97430b0c627be75a5f6a8a9274dea3a34d69"
+    "sha256": "f72eb171de26dcc01130ac38ecbc5e399e7d8eebb0ba9ec6f6000e3646eebc60"
   },
   "wall_time_estimate.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate.json",
-    "sha256": "7c1b115438d952e8d3bfbb6667d6a092cafa1561081ba153fa08ab58de9b0a19"
+    "sha256": "44003db9b50573b9dc2e59e17f9ac0af5aa15743a86c84793ed48644e102fee6"
   },
   "wall_time_estimate_cpu.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate_cpu.json",

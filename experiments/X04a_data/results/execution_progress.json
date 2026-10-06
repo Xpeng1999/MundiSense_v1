@@ -1,12 +1,12 @@
 {
   "git": {
-    "commit": "77e9691f7668689ad9955c25258cfa4085bdb568",
+    "commit": "638715a0543c2aeba5c3596ae391628cf12c4bf5",
     "dirty": false,
     "status": "",
     "full_diff": null
   },
   "command": [
-    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_pipeline_code/src/emotioncore/x04/pipeline.py",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_resume_code/src/emotioncore/x04/pipeline.py",
     "--derived",
     "/mnt/h/emotionAI/emotioncore_runs/X04a",
     "--budget",
@@ -14,13 +14,15 @@
     "--preflight",
     "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3",
     "--output",
-    "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu_resume",
     "--prior-gpu-hours",
-    "0.039274694421066666"
+    "0.039274694421066666",
+    "--resume-from",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu/run_meta.json"
   ],
-  "started_at": "2026-10-06T07:46:58.457761+00:00",
+  "started_at": "2026-10-06T11:30:49.888218+00:00",
   "budget_sha256": "6d14d0503735440523774c51ff31213f47faa650ce3cc7898258611b751faa05",
-  "report_sha256": "3bba952bff26fa8a7c99758669770c72b6e6c88b9c8c56e965f0504d4f149535",
+  "report_sha256": "1347053fd5e1ad9d97e8473302627884914371df5991bb5946cc717e86b5dd1f",
   "steps": [
     {
       "name": "full_face",
@@ -113,110 +115,6 @@
       "returncode": 0
     },
     {
-      "name": "heads_D0_V2",
-      "pid": 1347566,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.heads",
-        "--arm",
-        "D0",
-        "--encoder",
-        "V2",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--output",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V2",
-        "--device",
-        "cpu",
-        "--threads",
-        "4"
-      ],
-      "started_at": "2026-10-06T10:28:50.789223+00:00",
-      "cpu_only": true
-    },
-    {
-      "name": "heads_D1_V2",
-      "pid": 1347567,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.heads",
-        "--arm",
-        "D1",
-        "--encoder",
-        "V2",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--output",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2",
-        "--device",
-        "cpu",
-        "--threads",
-        "4"
-      ],
-      "started_at": "2026-10-06T10:28:50.793472+00:00",
-      "cpu_only": true
-    },
-    {
-      "name": "heads_D2_V2",
-      "pid": 1347568,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.heads",
-        "--arm",
-        "D2",
-        "--encoder",
-        "V2",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--output",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D2/V2",
-        "--device",
-        "cpu",
-        "--threads",
-        "4"
-      ],
-      "started_at": "2026-10-06T10:28:50.795736+00:00",
-      "cpu_only": true
-    },
-    {
-      "name": "heads_D3_V2",
-      "pid": 1347569,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.heads",
-        "--arm",
-        "D3",
-        "--encoder",
-        "V2",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--output",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D3/V2",
-        "--device",
-        "cpu",
-        "--threads",
-        "4"
-      ],
-      "started_at": "2026-10-06T10:28:50.797959+00:00",
-      "cpu_only": true
-    },
-    {
       "name": "full_V1",
       "pid": 1347582,
       "command": [
@@ -240,34 +138,48 @@
       "returncode": 0
     },
     {
+      "name": "heads_D0_V2",
+      "cpu_only": true,
+      "returncode": 0,
+      "elapsed_s": 559.729545852053,
+      "reused_from": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V2/run_meta.json",
+      "source_sha256": "026d4f327b8862738dcb11683c91e365863147bc4ba3f855ec560c93f82e534f"
+    },
+    {
+      "name": "heads_D1_V2",
+      "cpu_only": true,
+      "returncode": 0,
+      "elapsed_s": 2514.576645072084,
+      "reused_from": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/run_meta.json",
+      "source_sha256": "4c887658d421dc07b4864e0d4fc1c8360111bb990bb55550b02b5d998afaebf8"
+    },
+    {
+      "name": "heads_D2_V2",
+      "cpu_only": true,
+      "returncode": 0,
+      "elapsed_s": 1581.565969279036,
+      "reused_from": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D2/V2/run_meta.json",
+      "source_sha256": "357e36a8ff912fbedc1e45314b16a435634c429cacc8d4d82f1e7ee1b71aeb85"
+    },
+    {
+      "name": "heads_D3_V2",
+      "cpu_only": true,
+      "returncode": 0,
+      "elapsed_s": 3413.1815867470577,
+      "reused_from": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D3/V2/run_meta.json",
+      "source_sha256": "396419103609b71f97955e90619cf0ec31ae815c3aa927b81cf96a4bc1ea0e0a"
+    },
+    {
       "name": "heads_D0_V1",
-      "pid": 1354915,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.heads",
-        "--arm",
-        "D0",
-        "--encoder",
-        "V1",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--output",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V1",
-        "--device",
-        "cpu",
-        "--threads",
-        "4"
-      ],
-      "started_at": "2026-10-06T11:07:24.528750+00:00",
-      "cpu_only": true
+      "cpu_only": true,
+      "returncode": 0,
+      "elapsed_s": 570.5232354179025,
+      "reused_from": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/V1/run_meta.json",
+      "source_sha256": "21c55707c69fb4d2647bc6f1577b8daf70da15037cee4e720a4673d648810c35"
     },
     {
       "name": "heads_D1_V1",
-      "pid": 1354916,
+      "pid": 1360184,
       "command": [
         "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
         "-u",
@@ -288,12 +200,12 @@
         "--threads",
         "4"
       ],
-      "started_at": "2026-10-06T11:07:24.534349+00:00",
+      "started_at": "2026-10-06T11:30:53.918016+00:00",
       "cpu_only": true
     },
     {
       "name": "heads_D2_V1",
-      "pid": 1354917,
+      "pid": 1360185,
       "command": [
         "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
         "-u",
@@ -314,12 +226,12 @@
         "--threads",
         "4"
       ],
-      "started_at": "2026-10-06T11:07:24.537444+00:00",
+      "started_at": "2026-10-06T11:30:53.924853+00:00",
       "cpu_only": true
     },
     {
       "name": "heads_D3_V1",
-      "pid": 1354918,
+      "pid": 1360186,
       "command": [
         "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
         "-u",
@@ -340,12 +252,47 @@
         "--threads",
         "4"
       ],
-      "started_at": "2026-10-06T11:07:24.540056+00:00",
+      "started_at": "2026-10-06T11:30:53.928623+00:00",
       "cpu_only": true
     },
     {
-      "name": "heads_D0_A3_first_grid",
-      "pid": 1357678,
+      "name": "first_grid_budget",
+      "pid": 1360193,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.head_budget",
+        "--derived",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a",
+        "--dedup",
+        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
+        "--first-grid",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/first_grid_complete.json",
+        "--budget",
+        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/budget_preflight.json",
+        "--charged-gpu-hours",
+        "1.6894760072821744",
+        "--wall-elapsed-hours",
+        "3.7320894705749943",
+        "--cpu-remaining-hours",
+        "0",
+        "--cpu-elapsed-hours",
+        "1.4976000012312498e-05",
+        "--output",
+        "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu_resume/first_grid_budget"
+      ],
+      "started_at": "2026-10-06T11:30:53.985522+00:00",
+      "cpu_only": true,
+      "gpu_charged": false,
+      "monotonic_start": 707130.455198924,
+      "ended_at": "2026-10-06T11:30:58.990747+00:00",
+      "elapsed_s": 5.00049963593483,
+      "returncode": 0
+    },
+    {
+      "name": "heads_D0_A3",
+      "pid": 1360232,
       "command": [
         "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
         "-u",
@@ -364,56 +311,25 @@
         "--device",
         "cuda:0",
         "--threads",
-        "8",
-        "--stop-after-first-grid"
+        "8"
       ],
-      "started_at": "2026-10-06T11:21:43.168386+00:00",
-      "cpu_only": false,
-      "gpu_charged": true,
-      "monotonic_start": 706579.638619738,
-      "ended_at": "2026-10-06T11:26:43.209429+00:00",
-      "elapsed_s": 300.0356746489415,
-      "returncode": 0
-    },
-    {
-      "name": "first_grid_budget",
-      "pid": 1358666,
-      "command": [
-        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
-        "-u",
-        "-m",
-        "emotioncore.x04.head_budget",
-        "--derived",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a",
-        "--dedup",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
-        "--first-grid",
-        "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/first_grid_complete.json",
-        "--budget",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/budget_preflight.json",
-        "--charged-gpu-hours",
-        "1.6894760072821744",
-        "--wall-elapsed-hours",
-        "3.6624329800508306",
-        "--cpu-remaining-hours",
-        "0",
-        "--cpu-elapsed-hours",
-        "0.3218552711336007",
-        "--output",
-        "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu/first_grid_budget"
-      ],
-      "started_at": "2026-10-06T11:26:43.222074+00:00",
-      "cpu_only": true,
-      "gpu_charged": false,
-      "monotonic_start": 706879.689565887,
-      "ended_at": "2026-10-06T11:26:48.225098+00:00",
-      "elapsed_s": 5.000487192068249,
-      "returncode": 1
+      "started_at": "2026-10-06T11:30:58.995359+00:00",
+      "cpu_only": false
     }
   ],
-  "status": "stopped",
+  "status": "running",
+  "resumed_from": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu/run_meta.json",
+    "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8",
+    "git": {
+      "commit": "77e9691f7668689ad9955c25258cfa4085bdb568",
+      "dirty": false,
+      "status": "",
+      "full_diff": null
+    },
+    "charged_gpu_hours": 1.6894760072821744
+  },
   "prior_gpu_hours": 0.039274694421066667,
   "charged_gpu_hours": 1.6894760072821744,
-  "error": "RuntimeError: X04a child failed: first_grid_budget exit=1",
-  "at": "2026-10-06T11:26:48.230311+00:00"
+  "first_grid_budget_sha256": "44003db9b50573b9dc2e59e17f9ac0af5aa15743a86c84793ed48644e102fee6"
 }
