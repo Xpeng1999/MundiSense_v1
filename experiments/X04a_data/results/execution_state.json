@@ -1,0 +1,31 @@
+{
+  "status": "preparation_running",
+  "Q_training": false,
+  "formal_heads_started": false,
+  "server_root": "/home/administrator/emotion-data/emotioncore_runs/X04a",
+  "derived_root": "/mnt/h/emotionAI/emotioncore_runs/X04a",
+  "active_preparation_code": "prepare_v2_code (6a287cd)",
+  "active_preparation_output": "preparation_v2",
+  "preflight_launcher": "gate_launch.sh; waits preparation_v2/data_registration.json; gate_code (15e0bc3)",
+  "preflight_output": "preflight",
+  "runner_code": "runner_code (f966ed4), NOT LAUNCHED",
+  "next_required_action": "Wait preparation_v2 and preflight. Copy actual budget_preflight.json into results, generate REPORT budget/data sections, commit clean, deploy new worktree, then launch emotioncore.x04.pipeline. It requires committed budget hash matching --budget.",
+  "automatic_followup": "x04a hourly, user explicitly approved",
+  "pending_after_pipeline": [
+    "X03 fusion/calibration OP-N reuse",
+    "seed20261006 paired bootstrap2000",
+    "D0 reproducibility",
+    "MER/SIMS and per-class analyses",
+    "X04b CPU token-length budget only",
+    "14-section REPORT and X05_HANDOFF",
+    "PR x04-data->main and automation deletion"
+  ],
+  "tests": {
+    "command": "pytest tests/test_x04_dedup.py tests/test_x04_heads.py tests/test_x03_fusion.py -q",
+    "passed": 14,
+    "code": "f966ed4"
+  },
+  "incidents": [
+    "Initial official archive collector did not follow restricted symlink directory view; no media extracted. Preserve receipts; v2 private script adds find -L only."
+  ]
+}
