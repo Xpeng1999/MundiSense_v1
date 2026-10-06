@@ -1,0 +1,88 @@
+{
+  "started_at": "2026-10-06T07:02:17.754620+00:00",
+  "git": {
+    "commit": "5243e0ce739731ba7bc857a780eab33d2e43d431",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "purpose": "CPU timing probe only; no checkpoint, no target inference, not a formal grid run",
+  "Q_training": false,
+  "benchmarks": {
+    "A3": {
+      "threads": 8,
+      "batch": 128,
+      "training_step_s": [
+        0.762383091961965,
+        0.6700938930734992,
+        0.6055038929916918,
+        0.6697742049582303,
+        0.6644099050899968,
+        0.6422287049936131,
+        0.6538571049459279,
+        0.6334477040218189,
+        0.6099044040311128,
+        0.6602385049918666
+      ],
+      "steady_train_median_s": 0.6480429049697705,
+      "steady_forward_median_s": 0.34822935197735205
+    },
+    "V2": {
+      "threads": 4,
+      "batch": 128,
+      "training_step_s": [
+        0.028757399995811284,
+        0.019112100009806454,
+        0.020512400078587234,
+        0.016706801019608974,
+        0.015511200064793229,
+        0.018915400025434792,
+        0.01762080006301403,
+        0.01593180000782013,
+        0.017911800066940486,
+        0.016179899917915463
+      ],
+      "steady_train_median_s": 0.017163800541311502,
+      "steady_forward_median_s": 0.009080099989660084
+    },
+    "V1": {
+      "threads": 4,
+      "batch": 128,
+      "training_step_s": [
+        0.0268629000056535,
+        0.028248000075109303,
+        0.02805480093229562,
+        0.0236478999722749,
+        0.028556699980981648,
+        0.01945380005054176,
+        0.0225925010163337,
+        0.02363900002092123,
+        0.02420200000051409,
+        0.022523800027556717
+      ],
+      "steady_train_median_s": 0.023643449996598065,
+      "steady_forward_median_s": 0.01387005002470687
+    }
+  },
+  "X02_history": {
+    "A3": {
+      "best_epoch_median": 10.0,
+      "best_epoch_p90": 18.0,
+      "best_epoch_max": 18,
+      "best_epoch_note": "X02 best epochs exclude patience overhead; X04 early-stop epochs unknown"
+    },
+    "V2": {
+      "best_epoch_median": 5.0,
+      "best_epoch_p90": 12.0,
+      "best_epoch_max": 13,
+      "best_epoch_note": "X02 best epochs exclude patience overhead; X04 early-stop epochs unknown"
+    },
+    "V1": {
+      "best_epoch_median": 4.0,
+      "best_epoch_p90": 11.0,
+      "best_epoch_max": 12,
+      "best_epoch_note": "X02 best epochs exclude patience overhead; X04 early-stop epochs unknown"
+    }
+  },
+  "ended_at": "2026-10-06T07:02:30.145316+00:00"
+}
