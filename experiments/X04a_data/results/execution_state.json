@@ -8,7 +8,7 @@
   "active_preparation_output": "preparation_v2",
   "preflight_launcher": "gate_launch.sh; waits preparation_v2/data_registration.json; gate_code (15e0bc3)",
   "preflight_output": "preflight",
-  "runner_code": "analysis_code (4fc26fe) validated; successor with data evidence and X04b budget estimate to deploy; NOT LAUNCHED",
+  "runner_code": "evidence_code (5243e0c) validated, NOT LAUNCHED; deploy successor after actual budget/report commit",
   "next_required_action": "Wait preparation_v2 and preflight. Copy actual budget_preflight.json into results, generate REPORT budget/data sections, commit clean, deploy new worktree, then launch emotioncore.x04.pipeline. It requires committed budget hash matching --budget.",
   "automatic_followup": "x04a hourly, user explicitly approved",
   "pending_after_pipeline": [
@@ -17,9 +17,9 @@
     "PR x04-data->main, attach and delete automation"
   ],
   "tests": {
-    "command": "pytest tests/test_x04_analysis.py tests/test_x04_heads.py tests/test_x04_dedup.py tests/test_x03_fusion.py -q",
-    "passed": 17,
-    "code": "4fc26fe"
+    "command": "pytest tests/test_x04_analysis.py tests/test_x04_budget.py tests/test_x04_heads.py tests/test_x04_dedup.py tests/test_x03_fusion.py -q",
+    "passed": 18,
+    "code": "5243e0c"
   },
   "incidents": [
     "Initial official archive collector did not follow restricted symlink directory view; no media extracted. Preserve receipts; v2 private script adds find -L only."
