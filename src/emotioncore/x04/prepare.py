@@ -6,6 +6,7 @@ import collections
 import concurrent.futures
 import datetime as dt
 import json
+import math
 import os
 import shutil
 import sys
@@ -37,12 +38,28 @@ def require_h(path: Path) -> None:
         raise ValueError("New media and derived artifacts must be on /mnt/h")
 
 
+def media_duration(info: dict, preferred: str) -> tuple[float, str]:
+    """Ignore auxiliary data-stream duration; sample only audiovisual content."""
+    for stream in info.get("streams", []):
+        if stream.get("codec_type") == preferred:
+            try:
+                value = float(stream["duration"])
+                if math.isfinite(value) and value > 0:
+                    return value, preferred+"_stream"
+            except (KeyError, TypeError, ValueError):
+                pass
+    value = float(info.get("format", {}).get("duration", 0))
+    if not math.isfinite(value) or value <= 0:
+        raise ValueError("Media has no finite positive duration")
+    return value, "container_fallback"
+
+
 def probe(path: Path) -> dict:
     if not path.is_file():
         return {"status": "missing", "path": str(path), "sha256": None,
                 "duration_s": None}
     result = run_with_hard_timeout(["ffprobe", "-v", "error", "-show_entries",
-        "format=duration:stream=codec_type,width,height,sample_rate,channels",
+        "format=duration:stream=codec_type,duration,width,height,sample_rate,channels",
         "-of", "json", str(path)], 120)
     base = {"path": str(path), "sha256": sha256(path),
             "bytes": path.stat().st_size}
@@ -50,8 +67,10 @@ def probe(path: Path) -> dict:
         return {**base, "status": "failed", "duration_s": None,
                 "error": result["stderr"][-500:]}
     info = json.loads(result["stdout"])
+    duration, source = media_duration(info, "audio" if path.suffix.lower()==".wav" else "video")
     return {**base, "status": "ok",
-            "duration_s": float(info.get("format", {}).get("duration", 0)),
+            "duration_s": duration, "duration_source": source,
+            "container_duration_s": float(info.get("format", {}).get("duration", 0)),
             "streams": info.get("streams", [])}
 
 
@@ -163,7 +182,7 @@ def register(args) -> None:
             "corpus": "CREMA", "official_split": "train", "speaker_id": fields[0],
             "label": CREMA_MAP[fields[2]], "native_label": fields[2],
             "audio_path": str(wav), "video_path": str(args.crema / "VideoFlash" / (wav.stem + ".flv"))})
-    records_dir = args.derived / "registration_v2"
+    records_dir = args.derived / args.registration_name
     records_dir.mkdir(parents=True, exist_ok=True)
     def one(row):
         path = records_dir / (row["utt_id"] + ".json")
@@ -216,6 +235,7 @@ def main():
     p.add_argument("--crema", type=Path, default=Path("/home/administrator/emotion-data/emotionAI_dataset/CREMA-D"))
     p.add_argument("--derived", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
+    p.add_argument("--registration-name", choices=["registration_v2", "registration_v3"], default="registration_v2")
     args = p.parse_args()
     try:
         register(args)

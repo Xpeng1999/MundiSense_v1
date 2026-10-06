@@ -31,10 +31,11 @@ def run(args):
         all_rows.extend(json.loads(s) for s in (args.derived/f"manifests/{name}.jsonl").read_text().splitlines())
     write_rows(args.derived/"manifests/all_features.jsonl",all_rows)
     timings={}
+    benchmark_root = args.benchmark_root or args.derived/"benchmark200"
     for stage in ("face","A3","V2","V1"):
         storage_gate()
-        execute("emotioncore.x04.features","--stage",stage,"--manifest",bench,"--run-root",args.derived/"benchmark200")
-        path=args.derived/"benchmark200"/("face/timing.json" if stage=="face" else f"features/{stage}/run_meta.json")
+        execute("emotioncore.x04.features","--stage",stage,"--manifest",bench,"--run-root",benchmark_root)
+        path=benchmark_root/("face/timing.json" if stage=="face" else f"features/{stage}/run_meta.json")
         timings[stage]=json.loads(path.read_text())
     if timings["A3"]["status"]!={"ok":200}:
         raise RuntimeError("A3 benchmark contains failed outputs; repair before estimating budget")
@@ -66,6 +67,7 @@ def run(args):
 def main():
     p=argparse.ArgumentParser();p.add_argument("--derived",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True);p.add_argument("--registration",type=Path,required=True)
+    p.add_argument("--benchmark-root",type=Path)
     args=p.parse_args()
     try:run(args)
     except Exception as exc:
