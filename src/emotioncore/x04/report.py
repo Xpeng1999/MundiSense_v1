@@ -69,6 +69,9 @@ def run(args):
     face = None
     evidence = args.derived/"data_evidence/face_evidence.json"
     if evidence.exists(): face = export(evidence, results/"face_evidence.json")
+    if face:
+        export(args.derived/"data_evidence/run_meta.json",results/"face_evidence_run_meta.json")
+        export(args.derived/"full/face/timing.json",results/"face_timing.json")
     licenses = {}
     for name, path in (("MER", Path("/mnt/h/emotion-data/MER2026/README.md")),
                        ("CREMA", Path("/home/administrator/emotion-data/emotionAI_dataset/CREMA-D/LICENSE.txt"))):
@@ -112,15 +115,42 @@ def run(args):
         [(name, spec["candidate_pairs"],spec["excluded_mer_ids"],spec["confirmed_mer_ids"]) for name,spec in dedup["directions"].items()])
     test_fraction = dedup["directions"]["SIMS_test"]["candidate_mer_ids"]/dedup["mer_train_before"]
     summary += f"\n\n与 CH-SIMS test 的文本候选占 {test_fraction:.6%}，低于5%门限；共排除{len(dedup['excluded_ids'])}个不同 MER-train ID。仅读取SIMS四列，零模型推理；指纹工具可用，确认方法为完整原始序列相等，未确认不改变保守文本排除。缺失字幕{dedup['missing_subtitle_count']}条。详见数据卡及 results/dedup_report.json。"
+    if face:
+        summary += "\n\n人脸管线完整回执：\n\n"+table(
+            ["队列","n","状态","帧读取失败数","多脸比例"],
+            [(name,c['clips'],json.dumps(c['status_counts']),c['decode_failures'],fmt(c['multi_face_fraction']))
+             for name,c in face['cohorts'].items()])
+        summary += f"\n\n随机多脸联系表{face['contact_sheets']['sample_count']}条、种子{face['contact_sheets']['seed']}，图像只存服务器。帧读取失败不等于整句失败；无脸按冻结规则保留分母并计为错误。"
     report = replace_section(report, 4, summary)
     report = replace_section(report, 3, "第0步完成；注册、保守去重和相同200句的修复后预算预检完成。正式运行只在本预算及报告提交并部署干净工作区后启动。A3头按最新批复使用cuda:0串行训练，V1/V2头CPU并行，Q仅补MER-test A/AV；全量结果尚待执行。")
     resources = f"相同200句修复后预检通过：特征与Q推理GPU投影 **{budget['total_projection_gpu_hours']:.3f}小时**（上限20）；此项尚不包含新批复的A3头训练。其中特征{budget['extraction_projection_hours']:.3f}小时、Q MER-test {budget['Q_mer_test_projection_hours']:.3f}小时，计20%余量、10分钟加载预留及该次预检GPU实耗。原v2预检消耗另记入pipeline GPU账本。CPU人脸处理投影{budget['CPU_face_projection_hours']:.3f}小时。预算原回执SHA `{sha256(args.preflight/'budget_preflight.json')}`。\n\nA3头使用cuda:0，fp16 mmap来源、单个128MiB锁页批次缓冲、index_select和non_blocking传输后转float32；新取数须torch.equal通过。首个外折完整网格后重新估算全部A3臂与总墙钟并写wall_time_estimate.json；总GPU投影超过20小时即停，不开始下一模型。批次顺序、网格、种子、早停和α不变。V1/V2头CPU并行。\n\nCPU分类头旧估算3–5天仅为历史CPU计划，已由最新GPU设备批复替代，不能当作当前ETA。每小时自动推进至报告和PR交付后停止。全部新增派生文件在H盘；根分区门限80,000,000,000字节。"
     if args.pipeline_root:
+        progress_path=args.pipeline_root/'pipeline_progress.json'
+        if progress_path.exists():
+            progress=export(progress_path,results/'execution_progress.json')
+            stages=table(["阶段","状态","实测墙钟小时","设备"],
+                [(s['name'],str(s['returncode']) if 'returncode' in s else '运行中',
+                  fmt(s['elapsed_s']/3600) if 'elapsed_s' in s else '待结束',
+                  'CPU' if s['cpu_only'] else 'GPU') for s in progress['steps']])
+            report=replace_section(report,3,
+                f"第0步、注册/去重和200句预检完成；正式管线使用干净提交{progress['git']['commit']}，启动{progress['started_at']}，当前状态{progress['status']}。\n\n"+
+                stages+"\n\nA3头cuda:0单进程、V1/V2头CPU并行，Q本轮零训练。未完成阶段的结果仍待执行。")
+            resources += f"\n\n正式管线已结束阶段的GPU累计账本{progress.get('charged_gpu_hours',0):.6f}小时（包括预检与验证预留）；当前GPU阶段的用时在结束或停止时加入。阶段0表示成功返回。\n\n"+stages
+            for encoder in ('A3','V2','V1'):
+                path=args.derived/f'full/features/{encoder}/run_meta.json'
+                if path.exists() and 'ended_at' in read(path):
+                    payload=read(path);request_seconds=payload.pop('request_seconds',[])
+                    payload['source_run_meta']={'path':str(path),'sha256':sha256(path)}
+                    payload['request_count']=len(request_seconds)
+                    assert_aggregate(payload)
+                    write_json_atomic(results/f'{encoder}_features_complete.json',payload)
         wall_path=args.pipeline_root/'first_grid_budget/wall_time_estimate.json'
         if wall_path.exists():
             export(wall_path,results/'wall_time_estimate.json')
             report=replace_section(report,12,(args.pipeline_root/'first_grid_budget/REPORT.md').read_text().split('## 12. ',1)[1].split('\n',1)[1].split('\n## 13.',1)[0].strip())
             resources=report.split('## 12. ',1)[1].split('\n',1)[1].split('\n## 13.',1)[0].strip()
+            if progress_path.exists():
+                resources += f"\n\n正式管线已结束阶段GPU累计账本{progress.get('charged_gpu_hours',0):.6f}小时；当前GPU阶段结束或停止时加入。\n\n"+stages
     report = replace_section(report,12,resources)
     report=replace_section(report,5,"统一8维h2，语料掩码及α网格不变。A3头cuda:0单进程，V1/V2头CPU并行；源特征fp16，只锁页单批128MiB缓冲。批次顺序、seed20260928、网格、早停和最终选参与X02一致；GPU取数与X02精确相等回执见results/gpu_batch_equivalence.json。")
     if args.complete:
