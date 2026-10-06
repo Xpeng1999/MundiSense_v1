@@ -13,6 +13,11 @@ from emotioncore.x04.report import replace_section
 
 
 def project(grid, counts, charged_hours, remaining_gpu_hours, cpu_remaining_hours=0.):
+    # Counts derived from NumPy masks must remain ordinary JSON integers in the
+    # receipt. Python sum over numpy.bool_ produces numpy.int64.
+    counts = [{**s, 'grid_count': int(s['grid_count']),
+               **{k: [int(n) for n in s[k]] for k in
+                  ('selection_n', 'validation_n', 'refit_n', 'outer_n')}} for s in counts]
     if len(grid) != 6 or any(not r.get('train_batches') or not r.get('validation_batches') for r in grid):
         raise ValueError('First D0 outer-fold grid must include all six timed configurations')
     train_step = max(r['train_seconds']/r['train_batches'] for r in grid)
