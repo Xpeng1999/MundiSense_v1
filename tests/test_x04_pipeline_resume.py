@@ -14,6 +14,8 @@ def test_resume_keeps_gpu_ledger_and_requires_completed_preparation(tmp_path):
     with pytest.raises(ValueError):resume_receipt(path,'other')
     saved['steps'].pop();path.write_text(json.dumps(saved))
     with pytest.raises(ValueError):resume_receipt(path,'frozen')
+    saved['charged_gpu_hours']=20;path.write_text(json.dumps(saved))
+    with pytest.raises(ValueError):resume_receipt(path,'frozen')
 
 
 def test_repeated_resume_validates_history_sha_and_monotonic_gpu_ledger(tmp_path):
@@ -41,5 +43,3 @@ def test_completed_head_reuse_rejects_changed_checkpoint(tmp_path):
     assert completed_head(tmp_path)['elapsed_s']==973.
     (tmp_path/'final_head.pt').write_bytes(b'changed')
     with pytest.raises(ValueError):completed_head(tmp_path)
-    saved['charged_gpu_hours']=20;path.write_text(json.dumps(saved))
-    with pytest.raises(ValueError):resume_receipt(path,'frozen')
