@@ -166,6 +166,7 @@ def train(data, rows, train_indices, val_indices, config, seed, device, fixed_ep
     best = None; best_state = None; best_epoch = 0; patience = 0; epochs = 0
     history = []
     for epoch in range(1, (fixed_epochs if fixed_epochs is not None else head_h2.MAX_EPOCHS)+1):
+        storage_gate()
         model.train()
         for batch in head_h2.batches(valid_train, 128, seed + epoch):
             x, n = data.batch(batch, device)
@@ -212,6 +213,10 @@ def run(args):
     cv = head_h1.load_rows(manifest, folds)
     for row in cv: row.update(corpus="ET", label=row["labels"]["M"])
     extra_rows = [json.loads(s) for s in (args.derived / "manifests/all_features.jsonl").read_text().splitlines()]
+    budget_path = args.derived / "budget_preflight.json"
+    budget = json.loads(budget_path.read_text())
+    if not budget["passed"] or head_h1.sha256(args.derived / "manifests/all_features.jsonl") != budget["all_features_manifest_sha256"] or head_h1.sha256(args.dedup) != budget["dedup_report_sha256"]:
+        raise ValueError("Data or dedup changed after X04a budget/freeze gate")
     excluded = set(json.loads(args.dedup.read_text())["excluded_ids"])
     if args.sensitivity: excluded = set(json.loads(args.dedup.read_text())["audio_confirmed_ids"])
     mer = [i for i,r in enumerate(extra_rows) if r["corpus"] == "MER" and r["official_split"] == "train" and r["utt_id"] not in excluded]

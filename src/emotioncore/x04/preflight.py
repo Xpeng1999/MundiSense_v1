@@ -46,6 +46,8 @@ def run(args):
     load_reserve=600.
     projection=(extraction_projection+q_projection)*1.2+load_reserve+measured_gpu
     budget={"benchmark_n":200,"benchmark_manifest_sha256":sha256(bench),"total_feature_samples":len(all_rows),
+        "all_features_manifest_sha256":sha256(args.derived/"manifests/all_features.jsonl"),
+        "dedup_report_sha256":sha256(args.output/"dedup/dedup_report.json"),
         "timings":{e:{"gpu_seconds":timings[e].get("gpu_wall_seconds",0),"cpu_seconds":timings[e].get("cpu_wall_seconds",0),"status":timings[e].get("status")} for e in timings},
         "head_device":"cpu","head_gpu_hours":0,"measured_gpu_hours":measured_gpu/3600,
         "extraction_projection_hours":extraction_projection/3600,"Q_mer_test_projection_hours":q_projection/3600,
