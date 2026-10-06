@@ -3,6 +3,18 @@
     "path": "experiments/X04a_data/results/A3_features_complete.json",
     "sha256": "bf437028f65321db453d0edb4a1097cd444356695185ace33338cc7c3afe96aa"
   },
+  "A3_first_grid_complete.json": {
+    "path": "experiments/X04a_data/results/A3_first_grid_complete.json",
+    "sha256": "3f0353220545973047e3fe8aad7e9845a91c5f56dcb66ece8160bc80aace5205"
+  },
+  "V1_features_complete.json": {
+    "path": "experiments/X04a_data/results/V1_features_complete.json",
+    "sha256": "201570d62b4cdf2b865f22de00021e999d53c68e276a1f2d71e808141b88ac56"
+  },
+  "V2_features_complete.json": {
+    "path": "experiments/X04a_data/results/V2_features_complete.json",
+    "sha256": "0a1e3f8ff5583536aefee34537adc88ab10f7c609982e0e95be76d36007531c4"
+  },
   "archive_receipt.json": {
     "path": "experiments/X04a_data/results/archive_receipt.json",
     "sha256": "de3b779acfd76e70f6c4b346847172c5755578ef859ecd710fae50bdc1aea1cb"
@@ -10,6 +22,10 @@
   "budget_preflight.json": {
     "path": "experiments/X04a_data/results/budget_preflight.json",
     "sha256": "6d14d0503735440523774c51ff31213f47faa650ce3cc7898258611b751faa05"
+  },
+  "budget_recovery_tests.json": {
+    "path": "experiments/X04a_data/results/budget_recovery_tests.json",
+    "sha256": "998d44b672142f4e6a696630a3f9f4575d586901eba0630fc9a4a9a75c6f85ea"
   },
   "cpu_timing_estimate.json": {
     "path": "experiments/X04a_data/results/cpu_timing_estimate.json",
@@ -33,7 +49,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "ee3762367868e16b428f48a2481b7204520919af082bf2028adfe1c2a5aec304"
+    "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
@@ -73,11 +89,11 @@
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "2fd2be1b01ddd55d2d679ea80780cfaa3e96c0315cc949c6dba3d0861fd9d052"
+    "sha256": "2ec83ce9120428b340e08ae8033b97430b0c627be75a5f6a8a9274dea3a34d69"
   },
   "wall_time_estimate.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate.json",
-    "sha256": "1655f787e994c160ed06808ac20ddb2e2481844ab6f27d14ac81929815b3420e"
+    "sha256": "7c1b115438d952e8d3bfbb6667d6a092cafa1561081ba153fa08ab58de9b0a19"
   },
   "wall_time_estimate_cpu.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate_cpu.json",
