@@ -32,7 +32,9 @@ X03 REPORT 第 13 节已补记编排器代码来源（补记提交 `3fa500d`）�
 | first_grid_budget | 0 | 0.0014 | CPU |
 | heads_D0_A3 | 完成（产物SHA核验） | 0.2703 | GPU |
 | targets_D0_A3 | 0 | 0.0125 | CPU |
-| heads_D1_A3 | 运行中 | 待结束 | GPU |
+| heads_D1_A3 | 完成（产物SHA核验） | 1.3547 | GPU |
+| targets_D1_A3 | 0 | 0.0139 | CPU |
+| heads_D2_A3 | 运行中 | 待结束 | GPU |
 
 A3头cuda:0单进程、V1/V2头CPU并行，Q本轮零训练。未完成阶段的结果仍待执行。
 
@@ -107,7 +109,7 @@ GPU 已计入 1.988 小时；全部 A3 臂剩余投影 10.764 小时，Q MER-tes
 
 首折回执和逐臂预测见 wall_time_estimate.json。根分区最低80,000,000,000字节；所有新增派生媒体在H盘。
 
-正式管线已结束阶段GPU累计账本1.988128小时；当前GPU阶段结束或停止时加入。
+正式管线已结束阶段GPU累计账本3.373026小时；当前GPU阶段结束或停止时加入。
 
 | 阶段 | 状态 | 实测墙钟小时 | 设备 |
 | --- | --- | --- | --- |
@@ -129,7 +131,9 @@ GPU 已计入 1.988 小时；全部 A3 臂剩余投影 10.764 小时，Q MER-tes
 | first_grid_budget | 0 | 0.0014 | CPU |
 | heads_D0_A3 | 完成（产物SHA核验） | 0.2703 | GPU |
 | targets_D0_A3 | 0 | 0.0125 | CPU |
-| heads_D1_A3 | 运行中 | 待结束 | GPU |
+| heads_D1_A3 | 完成（产物SHA核验） | 1.3547 | GPU |
+| targets_D1_A3 | 0 | 0.0139 | CPU |
+| heads_D2_A3 | 运行中 | 待结束 | GPU |
 
 ## 13. 异常
 

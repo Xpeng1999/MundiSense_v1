@@ -61,7 +61,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "0ef75f57e190ef946f12529a523b67750ad57e44bc76c413cfef96c9ff0a985f"
+    "sha256": "3151a1549e4bc8b125510445c6a7a6b312cf31a5f7282b41911d0e84e8e2459d"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
@@ -93,7 +93,7 @@
   },
   "heads_complete.json": {
     "path": "experiments/X04a_data/results/heads_complete.json",
-    "sha256": "e27dbe85064dc656fe77eed6256e75ad0812b419d5f662005ce7bd1a995b1a1c"
+    "sha256": "36d44fa4113f7a9a66061e8e38388d8c0c798af905291a33bff9a9ca9a1331a7"
   },
   "license_evidence.json": {
     "path": "experiments/X04a_data/results/license_evidence.json",
@@ -117,7 +117,7 @@
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "b519c80fe94d142ba95b4deb1181a13840745bf06b53f2713881f4d4463896a1"
+    "sha256": "0bc478ffbe38db4035134d0c6347f42e728db99495338a661357fe4d48950e2b"
   },
   "target_recovery_tests.json": {
     "path": "experiments/X04a_data/results/target_recovery_tests.json",
