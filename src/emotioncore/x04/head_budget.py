@@ -12,7 +12,7 @@ from emotioncore.x04.heads import FOLDS_SHA
 from emotioncore.x04.report import replace_section
 
 
-def project(grid, counts, charged_hours, remaining_gpu_hours, cpu_remaining_hours=0.):
+def project(grid, counts, charged_hours, remaining_gpu_hours, cpu_remaining_hours=0., completed_arms=()):
     # Counts derived from NumPy masks must remain ordinary JSON integers in the
     # receipt. Python sum over numpy.bool_ produces numpy.int64.
     counts = [{**s, 'grid_count': int(s['grid_count']),
@@ -26,6 +26,7 @@ def project(grid, counts, charged_hours, remaining_gpu_hours, cpu_remaining_hour
     selection_epochs = min(50, max(r['epochs_executed'] for r in grid)+5)
     refit_epochs = max(r['best_epoch'] for r in grid)
     def arm_cost(spec, epochs, refit):
+        if spec['arm'] in completed_arms:return 0.
         selection = sum(spec['grid_count']*(epochs*(math.ceil(n/128)*train_step+math.ceil(v/128)*val_step)+overhead)
                         for n,v in zip(spec['selection_n'],spec['validation_n']))
         if spec['arm']=='D0':
@@ -44,6 +45,7 @@ def project(grid, counts, charged_hours, remaining_gpu_hours, cpu_remaining_hour
         'config_overhead_seconds':overhead,'selection_epochs_projection':selection_epochs,'refit_epochs_projection':refit_epochs,
         'assumptions':'Maximum measured per-batch cost; max observed grid epochs plus patience5 capped50; max observed best epoch for refits; 50-epoch bound separately reported. No early-stopping cap or grid changed.',
         'A3_arms':arms,'A3_remaining_gpu_hours':head_hours,'charged_gpu_hours':charged_hours,
+        'completed_A3_arms_reused':list(completed_arms),
         'remaining_other_gpu_hours':remaining_gpu_hours,'reserve_multiplier':1.2,'load_reserve_hours':1/6,
         'total_projection_gpu_hours':total,'limit_gpu_hours':20,'passed':total<=20,
         'remaining_wall_hours_projection':max(serial_remaining,cpu_remaining_hours)*1.2,
@@ -93,7 +95,9 @@ def run(args):
                 projected.append(seconds/3600)
         # Eight independently parallel CPU jobs; retain 20% elsewhere for IO.
         visual_cpu=max(visual_cpu,max(projected)-args.cpu_elapsed_hours,0.)
-    receipt=project(first['grid'],specs,args.charged_gpu_hours,preflight['Q_mer_test_projection_hours'],visual_cpu)
+    from emotioncore.x04.pipeline import completed_head
+    completed=[s['arm'] for s in specs if completed_head(args.derived/f"heads/{s['arm']}/A3")]
+    receipt=project(first['grid'],specs,args.charged_gpu_hours,preflight['Q_mer_test_projection_hours'],visual_cpu,completed)
     receipt.update(git=git,at=dt.datetime.now(dt.timezone.utc).isoformat(),first_grid_sha256=head_h1.sha256(args.first_grid),
                    budget_sha256=head_h1.sha256(args.budget),pipeline_wall_elapsed_hours=args.wall_elapsed_hours,
                    total_wall_hours_projection=args.wall_elapsed_hours+receipt['remaining_wall_hours_projection'])

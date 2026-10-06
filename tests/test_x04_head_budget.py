@@ -17,6 +17,9 @@ def test_first_grid_projection_includes_every_arm_and_budget_stop():
     assert r['total_projection_gpu_hours']>r['charged_gpu_hours']+r['A3_remaining_gpu_hours']
     assert r['total_projection_if_all_reach_50']>r['total_projection_gpu_hours']
     assert not project(grid,counts,19.9,.2)['passed']
+    resumed=project(grid,counts,1.,.2,completed_arms=('D0',))
+    assert resumed['A3_arms']['D0']['remaining_gpu_hours']==0
+    assert resumed['A3_remaining_gpu_hours']==r['A3_remaining_gpu_hours']-r['A3_arms']['D0']['remaining_gpu_hours']
 
 
 def test_numpy_corpus_counts_write_a_complete_json_receipt():

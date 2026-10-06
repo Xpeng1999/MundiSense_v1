@@ -14,6 +14,7 @@ def test_resume_keeps_gpu_ledger_and_requires_completed_preparation(tmp_path):
     with pytest.raises(ValueError):resume_receipt(path,'other')
     saved['steps'].pop();path.write_text(json.dumps(saved))
     with pytest.raises(ValueError):resume_receipt(path,'frozen')
+    saved['steps'].append({'name':'heads_D0_A3_first_grid','returncode':0})
     saved['charged_gpu_hours']=20;path.write_text(json.dumps(saved))
     with pytest.raises(ValueError):resume_receipt(path,'frozen')
 
