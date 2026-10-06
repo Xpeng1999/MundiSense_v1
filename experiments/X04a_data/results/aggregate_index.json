@@ -27,6 +27,10 @@
     "path": "experiments/X04a_data/results/device_adjustment.json",
     "sha256": "89c2a2c6dcf11e2de65c91c898df89dab97e1d6d7e7bda59e95c29615d52ab61"
   },
+  "execution_progress.json": {
+    "path": "experiments/X04a_data/results/execution_progress.json",
+    "sha256": "926638b04a51961bef3a267e0ea9737197657a92f23ee514a44e5ef8f1f972ee"
+  },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
     "sha256": "79a9baa52e0d1190b1daf101176d32ac23a42a1572575e0693f78dddc0f20e1f"

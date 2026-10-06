@@ -1,0 +1,64 @@
+{
+  "git": {
+    "commit": "77e9691f7668689ad9955c25258cfa4085bdb568",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_pipeline_code/src/emotioncore/x04/pipeline.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--budget",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/budget_preflight.json",
+    "--preflight",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3",
+    "--output",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu",
+    "--prior-gpu-hours",
+    "0.039274694421066666"
+  ],
+  "started_at": "2026-10-06T07:46:58.457761+00:00",
+  "budget_sha256": "6d14d0503735440523774c51ff31213f47faa650ce3cc7898258611b751faa05",
+  "report_sha256": "3bba952bff26fa8a7c99758669770c72b6e6c88b9c8c56e965f0504d4f149535",
+  "steps": [
+    {
+      "name": "full_face",
+      "pid": 3139223,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.features",
+        "--stage",
+        "face",
+        "--manifest",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+        "--run-root",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
+      ],
+      "started_at": "2026-10-06T07:46:58.463009+00:00",
+      "cpu_only": true
+    },
+    {
+      "name": "full_A3",
+      "pid": 3139224,
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x04.features",
+        "--stage",
+        "A3",
+        "--manifest",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+        "--run-root",
+        "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
+      ],
+      "started_at": "2026-10-06T07:46:58.465589+00:00",
+      "cpu_only": false
+    }
+  ],
+  "status": "running",
+  "prior_gpu_hours": 0.039274694421066667
+}
