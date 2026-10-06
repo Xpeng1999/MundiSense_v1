@@ -56,9 +56,15 @@
         "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
       ],
       "started_at": "2026-10-06T07:46:58.465589+00:00",
-      "cpu_only": false
+      "cpu_only": false,
+      "gpu_charged": true,
+      "monotonic_start": 693694.932131704,
+      "ended_at": "2026-10-06T08:08:23.621309+00:00",
+      "elapsed_s": 1285.1541274350602,
+      "returncode": 0
     }
   ],
   "status": "running",
-  "prior_gpu_hours": 0.039274694421066667
+  "prior_gpu_hours": 0.039274694421066667,
+  "charged_gpu_hours": 0.42129682385582257
 }

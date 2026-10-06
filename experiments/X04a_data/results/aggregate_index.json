@@ -1,4 +1,8 @@
 {
+  "A3_features_complete.json": {
+    "path": "experiments/X04a_data/results/A3_features_complete.json",
+    "sha256": "e971ac24cd40cecf683e0e51ec3d49f4496a59a50e850ffa02b08280e1aca652"
+  },
   "archive_receipt.json": {
     "path": "experiments/X04a_data/results/archive_receipt.json",
     "sha256": "de3b779acfd76e70f6c4b346847172c5755578ef859ecd710fae50bdc1aea1cb"
@@ -29,7 +33,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "926638b04a51961bef3a267e0ea9737197657a92f23ee514a44e5ef8f1f972ee"
+    "sha256": "817ee400cef2e041340e233d3f6a1c8865bb823a1f98c1ec0dadb67c5a4d4988"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",

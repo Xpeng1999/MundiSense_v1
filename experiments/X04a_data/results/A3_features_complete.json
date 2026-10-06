@@ -1,0 +1,49 @@
+{
+  "git": {
+    "commit": "77e9691f7668689ad9955c25258cfa4085bdb568",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_pipeline_code/src/emotioncore/x04/features.py",
+    "--stage",
+    "A3",
+    "--manifest",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+    "--run-root",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/full"
+  ],
+  "started_at": "2026-10-06T07:47:00.247588+00:00",
+  "encoder": "A3_chinese_hubert_large",
+  "revision": "90cb660492214f687e60f5ca509b20edae6e75bd",
+  "model_sha256": "482c19cd60877832995d790ed10dd1203b1f8c86ed7a69b4bd27f470fc27ee43",
+  "preprocess_version": "1",
+  "frozen_worker_path": "/home/administrator/emotion-data/emotioncore_runs/X04a/gpu_pipeline_code/src/emotioncore/x02/audio_a3.py",
+  "frozen_worker_sha256": "072b716f5538659ce9870967070a1f47f9ce791da682ffc4cb15bc7e45bb2442",
+  "manifest": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+  "manifest_sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3",
+  "n": 17409,
+  "timeout_s": 120,
+  "storage": {
+    "root_free_bytes": 114867503104,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 92314970750976
+  },
+  "ended_at": "2026-10-06T08:08:23.458008+00:00",
+  "status": {
+    "ok": 17409
+  },
+  "gpu_wall_seconds": 1283.0554125759518,
+  "gpu_timing_convention": "worker lifetime wall time incl loading and request I/O; face stage CPU excluded",
+  "request_timing_aggregate": {
+    "n": 17409,
+    "median_s": 0.06046420393977314,
+    "min_s": 0.035249798907898366,
+    "max_s": 9.527270411956124
+  },
+  "source_run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/full/features/A3/run_meta.json",
+    "sha256": "1b4df3bf9daf53f17dc8b2e55c057b08e572c59f5f7cb0b2b4836939bbe9d704"
+  }
+}
