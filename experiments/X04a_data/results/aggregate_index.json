@@ -7,6 +7,10 @@
     "path": "experiments/X04a_data/results/A3_first_grid_complete.json",
     "sha256": "3f0353220545973047e3fe8aad7e9845a91c5f56dcb66ece8160bc80aace5205"
   },
+  "D0_A3_target_artifacts.json": {
+    "path": "experiments/X04a_data/results/D0_A3_target_artifacts.json",
+    "sha256": "13d48a7f591adee72c44e244e2d7bf2431f24dd202c788786315aba24ce4f299"
+  },
   "V1_features_complete.json": {
     "path": "experiments/X04a_data/results/V1_features_complete.json",
     "sha256": "201570d62b4cdf2b865f22de00021e999d53c68e276a1f2d71e808141b88ac56"
@@ -49,7 +53,7 @@
   },
   "execution_progress.json": {
     "path": "experiments/X04a_data/results/execution_progress.json",
-    "sha256": "387468d30e5c318b68223a95f24291197caea2ec9394aa25d85e60997b84ba32"
+    "sha256": "4449c45a2d9a45c0d1a0fbb63169942c2e774a75e70e8ba4d646075d2bac7d77"
   },
   "execution_state.json": {
     "path": "experiments/X04a_data/results/execution_state.json",
@@ -87,17 +91,29 @@
     "path": "experiments/X04a_data/results/pipeline_original_stop.json",
     "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8"
   },
+  "pipeline_stop_638715a0.json": {
+    "path": "experiments/X04a_data/results/pipeline_stop_638715a0.json",
+    "sha256": "f28ae0bbf6dcdb9c2d92847a12815badebc8e4cb91f87e865f8bb327c70302b4"
+  },
+  "pipeline_stop_77e9691f.json": {
+    "path": "experiments/X04a_data/results/pipeline_stop_77e9691f.json",
+    "sha256": "da48f9353221a6e49d45a7e53d74fc58e92b9568901d459496ba64664e8735c8"
+  },
   "prepare_run_meta.json": {
     "path": "experiments/X04a_data/results/prepare_run_meta.json",
     "sha256": "bad8e62024cc116c547f6ae07c9af86c75765b59a5a3dc4b48731121d4e84bcc"
   },
   "report_run_meta.json": {
     "path": "experiments/X04a_data/results/report_run_meta.json",
-    "sha256": "f72eb171de26dcc01130ac38ecbc5e399e7d8eebb0ba9ec6f6000e3646eebc60"
+    "sha256": "f1514ff0f5e030bab11a8c1d3bda28d5826a5d2501188e396045d880e7ee4df1"
+  },
+  "target_recovery_tests.json": {
+    "path": "experiments/X04a_data/results/target_recovery_tests.json",
+    "sha256": "c95648cd573cf53bc8df558656c5385de835329d49d274c70ad479c8212306a3"
   },
   "wall_time_estimate.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate.json",
-    "sha256": "44003db9b50573b9dc2e59e17f9ac0af5aa15743a86c84793ed48644e102fee6"
+    "sha256": "7fa6894cbc1b1debe6a2e1a3a5ecb20f85520306fae931b33383fb3f939e7e88"
   },
   "wall_time_estimate_cpu.json": {
     "path": "experiments/X04a_data/results/wall_time_estimate_cpu.json",
