@@ -94,6 +94,19 @@ def scored(probabilities, records, invalid):
             for r, p, bad in zip(records, probabilities, invalid, strict=True)]
 
 
+def worried_destinations(probabilities, records, invalid):
+    """Describe worried truths with JSON-native counts, including failures."""
+    return {
+        "worried_to_ET_op_n": dict(collections.Counter(
+            LABELS[int(p[:7].argmax())]
+            for r, p, bad in zip(records, probabilities, invalid, strict=True)
+            if r["truth_M"] == "worried" and not bad)),
+        "worried_support": sum(r["truth_M"] == "worried" for r in records),
+        "worried_failed": int(sum(r["truth_M"] == "worried" and bad
+                                  for r, bad in zip(records, invalid, strict=True))),
+    }
+
+
 def et_metrics(p, records, invalid):
     result = classification(scored(p, records, invalid))
     y = np.array([LABELS.index(r["truth_M"]) for r in records])
@@ -273,11 +286,7 @@ def run(args):
                 item[split] = {point: {"native6": native_metrics(p, rows, invalid),
                     "shared5": native_metrics(p, rows, invalid, shared=True)} for point, p in (("op_a", pa), ("op_n", pn))}
                 if arm in ("D0", "Q"):
-                    worried = [r for r in rows if r["truth_M"] == "worried"]
-                    item["worried_to_ET_op_n"] = dict(collections.Counter(LABELS[int(p[:7].argmax())]
-                        for r, p, bad_row in zip(rows, pn, invalid) if r["truth_M"] == "worried" and not bad_row))
-                    item["worried_support"] = len(worried)
-                    item["worried_failed"] = sum(r["truth_M"] == "worried" and b for r, b in zip(rows, invalid))
+                    item.update(worried_destinations(pn, rows, invalid))
             else:
                 p = target[..., :7]/target[..., :7].sum(2, keepdims=True)
                 lp = np.log(np.clip(p, 1e-12, 1))

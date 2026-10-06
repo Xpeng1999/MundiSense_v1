@@ -1,7 +1,17 @@
+import json
 import numpy as np
 import pytest
 from emotioncore.x03 import fusion
-from emotioncore.x04.analysis import extend_mer, native_metrics, paired_speakers
+from emotioncore.x04.analysis import extend_mer, native_metrics, paired_speakers, worried_destinations
+
+
+def test_worried_destinations_numpy_failure_flags_are_json_serializable():
+    records = [{"truth_M": k} for k in ("worried", "worried", "joy")]
+    p = np.full((3, 8), 1/8)
+    p[1, 3] = .9
+    result = worried_destinations(p, records, np.array([True, False, False]))
+    assert json.loads(json.dumps(result)) == {
+        "worried_to_ET_op_n": {"anger": 1}, "worried_support": 2, "worried_failed": 1}
 
 
 def test_eighth_class_extension_preserves_frozen_seven_class_calibration():

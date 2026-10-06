@@ -194,24 +194,39 @@ def run(args):
             [(k,fmt(v['argmax_agreement']),fmt(v['new_raw']['macro_f1']),fmt(v['old_raw']['macro_f1']),fmt(v['macro_f1_difference']))
              for k,v in repro.items()])+'\n\n使用原始头输出对比；正式评估另执行冻结缺脸规则。仅复算已有OOF，本步骤零训练、零模型推理，不据此改变选择或参数。')
     if args.complete:
-        main = export(args.derived/"analysis/main_table.json", results/"main_table.json")
-        paired = export(args.derived/"analysis/paired_differences.json", results/"paired_differences.json")
-        repro = export(args.derived/"analysis/d0_reproducibility.json", results/"d0_reproducibility.json")
-        export(args.derived/"analysis/selected_configs.json", results/"selected_configs.json")
-        export(args.derived/"analysis/source_artifact_index.json", results/"source_artifact_index.json")
+        analysis_root = args.analysis_root or args.derived/"analysis"
+        analysis_meta = export(analysis_root/"run_meta.json", results/"analysis_run_meta.json")
+        if not analysis_meta.get('ended_at'):raise ValueError('Analysis has not completed')
+        for name, digest in analysis_meta['outputs'].items():
+            if sha256(analysis_root/name)!=digest:raise ValueError('Analysis output SHA changed')
+        main = export(analysis_root/"main_table.json", results/"main_table.json")
+        paired = export(analysis_root/"paired_differences.json", results/"paired_differences.json")
+        repro = export(analysis_root/"d0_reproducibility.json", results/"d0_reproducibility.json")
+        selected = export(analysis_root/"selected_configs.json", results/"selected_configs.json")
+        export(analysis_root/"source_artifact_index.json", results/"source_artifact_index.json")
         qb = export(args.derived/"budget_estimate/x04b_budget.json", results/"x04b_budget.json")
+        export(args.derived/"budget_estimate/run_meta.json", results/"x04b_budget_run_meta.json")
+        export(args.derived/"Q_predictions/run_meta.json", results/"q_predictions_run_meta.json")
+        q_media = export(args.derived/"Q_media/summary.json", results/"q_media_summary.json")
         report = replace_section(report,1,"X04a计算完成：D0–D3×A3/V2/V1五折及最终模型、冻结Q的MER-test A/AV推理和三套融合。\n主比较均使用本轮D0，V1为h2。全部跨语料只报告，Q零训练。\n不决定数据配方，提交reviewer验收；本轮X04a结束。")
         report = replace_section(report,3,"注册、去重、200句预算门禁、12组专家头五折/最终模型、Q MER-test A/AV、融合及各项分析完成。敏感性仅D1 A3；详见回执、OPEN_QUESTIONS和第13节。等待reviewer验收，未运行X04b。")
         report = replace_section(report,6,table(["编码器","逐句argmax一致率","本轮原始F1","X02原始F1","差值"],[(k,fmt(v['argmax_agreement']),fmt(v['new_raw']['macro_f1']),fmt(v['old_raw']['macro_f1']),fmt(v['macro_f1_difference'])) for k,v in repro.items()])+"\n\n使用原始头输出对比；正式评估另执行冻结缺脸规则。")
         def et_table(keys):
             return table(["系统/臂","CV OP-A F1","CV OP-N F1","CV OP-N中性误报","ET-test OP-N F1"],[(k,fmt(main[k]['cv']['op_a']['macro_f1']),fmt(main[k]['cv']['op_n']['macro_f1']),fmt(main[k]['cv']['op_n']['neutral_false_positive_rate']),fmt(main[k]['et_test']['macro_f1'])) for k in keys])
-        report = replace_section(report,7,et_table([k for k in main if k.split('/')[-1] in ('A3','V2','V1')])+"\n\n每折α及学习率/权重衰减/epoch全部见 results/selected_configs.json。")
+        alpha_table = table(['系统/臂','fold0 α','fold1 α','fold2 α','fold3 α','fold4 α','final α'],
+            [(k,*[f['selected']['alpha'] for f in v['folds']],v['final_config']['alpha'])
+             for k,v in selected.items()])
+        report = replace_section(report,7,et_table([k for k in main if k.split('/')[-1] in ('A3','V2','V1')])+"\n\n"+alpha_table+"\n\n每折学习率/权重衰减/epoch全部见 results/selected_configs.json；D0的α=1只是统一配置字段，没有额外语料。")
         report = replace_section(report,8,et_table([k for k in main if k.split('/')[-1] in ('H_ref','H3','E3')])+"\n\n"+table(["配对比较","CV OP-N F1差值","说话人95%区间"],[(k,fmt(v['difference']),str([round(x,4) for x in v['left_minus_right_95']])) for k,v in paired.items()])+"\n\n2000次说话人整群配对重采样，种子20261006。融合、校准和OP-N均复用X03：每个外折拟合只使用其余四折OOF标签，目标集零拟合。D0的V1为h2，与X03的h1参考不同。")
         report = replace_section(report,9,table(["系统/臂","SIMS Pearson","SIMS Spearman","SIMS Acc2","MER6 OP-N F1","MER共享5 OP-N F1"],[(k,fmt(v['sims_valid']['pearson']),fmt(v['sims_valid']['spearman']),fmt(v['sims_valid']['acc_2_nonzero']),fmt(v['mer_test']['op_n']['native6']['macro_f1']),fmt(v['mer_test']['op_n']['shared5']['macro_f1'])) for k,v in main.items()])+"\n\n"+table(["D0或Q系统","worried真值数","预测ET类分布","失败数"],[(k,v['worried_support'],json.dumps(v['worried_to_ET_op_n'],ensure_ascii=False),v['worried_failed']) for k,v in main.items() if 'worried_to_ET_op_n' in v])+"\n\nMER五共享类删除worried真值并在五个共享原生类上归一化；worried去向使用全部七个ET类。D0/Q的第八类为零；MER融合第八类偏置保持零，其余参数从ET学习。未把worried硬映射。MER不保证说话人独立。")
         report = replace_section(report,10,table(["系统/臂","类别","CV OP-N P","R","F1","ET-test OP-N F1"],[(k,c,fmt(v['cv']['op_n']['per_class'][c]['precision']),fmt(v['cv']['op_n']['per_class'][c]['recall']),fmt(v['cv']['op_n']['per_class'][c]['f1']),fmt(v['et_test']['per_class'][c]['f1'])) for k,v in main.items() for c in ('fear','disgust','surprise')]))
         report = replace_section(report,11,table(["仅估算方案","GPU小时含余量和预留"],[(k,fmt(v['total_gpu_hours'])) for k,v in qb['plans'].items()])+"\n\n两折预指定fold0/1；各模型2epoch、8次700句AV验证，AV/A/V=60/20/20。基于X03检查点开启后的实测、MER输入长度和缺脸回退，保守上包络及区间外平方外推；20%余量、0.5小时加载及1小时诊断预留。外推数量/长度分布/缺脸数和局限详见 results/x04b_budget.json。本轮零Q训练，此估算不构成X04b执行授权。")
+        missing = table(['Q媒体划分','总句数','无合格脸','比例'],
+            [(k,v['n'],v['missing'],f"{v['missing']/v['n']:.4%}") for k,v in q_media['by_split'].items()])
+        section11 = report.split('## 11. ',1)[1].split('\n',1)[1].split('\n## 12.',1)[0].strip()
+        report = replace_section(report,11,section11+'\n\n'+missing+'\n\nQ的V/AV无合格脸时回退A；MER-test只推理A/AV。媒体沿用X03尺寸、置信度和8帧规则，无学习推理的准备回执见 results/q_media_summary.json。')
         handoff = "# X05 输入交接 — X04a证据\n\n本轮结束，等待reviewer。数据配方和X04b均未决定。\n\n"
-        handoff += table(["系统/臂","报告指标","冻结参数/概率目录"],[(k,"experiments/X04a_data/results/main_table.json",str(args.derived/'analysis'/k)) for k in main])
+        handoff += table(["系统/臂","报告指标","冻结参数/概率目录"],[(k,"experiments/X04a_data/results/main_table.json",str(analysis_root/k)) for k in main])
         handoff += f"\n\nCPU目标推理：`python -m emotioncore.x04.targets --arm D1 --encoder A3 --job {args.derived}/heads/D1/A3 --derived {args.derived} --output <H盘目录>`；其他臂/编码器替换相应参数。融合应用参数来自上述 metrics.json，不在新目标标签上再拟合。\n\n汇总分析入口：`python -m emotioncore.x04.analysis --derived {args.derived} --output <H盘目录>`。该命令从冻结OOF重建参数，不运行Q训练。Q只读X03 adapter SHA427ebc14…d5a4。完整输入/概率/头路径和SHA见 results/source_artifact_index.json、selected_configs.json、main_table.json；仓库不含媒体、字幕、特征或逐句概率。CH-SIMS test零模型推理。\n"
         (args.repo/"docs/X05_HANDOFF.md").write_text(handoff)
     (dest/"REPORT.md").write_text(report)
@@ -224,6 +239,7 @@ def main():
     p.add_argument("--registration",type=Path,required=True);p.add_argument("--preflight",type=Path,required=True)
     p.add_argument("--derived",type=Path,required=True);p.add_argument("--complete",action="store_true")
     p.add_argument("--pipeline-root",type=Path)
+    p.add_argument("--analysis-root",type=Path)
     run(p.parse_args())
 
 

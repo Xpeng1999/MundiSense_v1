@@ -159,6 +159,9 @@ GPU 已计入 1.988 小时；全部 A3 臂剩余投影 10.764 小时，Q MER-tes
 
 2026-10-06 11:50 UTC，D0 A3五折和最终头完成，随后CPU目标推理因SIMS媒体adapter按设计不含label而退出。修复复用X02 valid-only清单核验，将标签从冻结X01 sims_valid.jsonl按647个有序ID关联；不读取多划分SIMS元数据，不改变任何训练或标签。原pipeline_gpu_resume停止回执保留；第二次恢复承接GPU累计1.988128小时，已完成D0 A3校验OOF与检查点SHA后复用，零重训。
 
+
+2026-10-06 19:05 UTC，全部专家训练、39份专家目标集与冻结Q的MER-test A/AV推理完成后，CPU分析在写入第一组metrics.json时停止。worried失败计数对NumPy布尔值求和产生int64，JSON无法序列化；修复仅把描述性计数转换为Python int，回归测试覆盖NumPy失败标记，不改变任何指标定义、训练或选择。原pipeline_gpu_resume2的停止回执、report_analysis.log及H盘analysis失败产物保留；恢复仅从冻结预测重新执行CPU分析，独立输出analysis_recovery，不重新训练、提取特征或推理。GPU最终账本7.306862小时（含先前预检/验证预留）。
+
 ## 14. 给 reviewer 的问题
 
 见 [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)，未覆盖细节按保守口径记录。
