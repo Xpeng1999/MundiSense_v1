@@ -16,5 +16,5 @@
     "mer_test": 572
   },
   "Q_training": false,
-  "test_model_inference": false
+  "CH_SIMS_test_model_inference": false
 }
