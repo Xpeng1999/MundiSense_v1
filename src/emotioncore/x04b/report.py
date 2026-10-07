@@ -22,6 +22,11 @@ def run(args):
         summary=export(path,results/(n+'_summary.json'));meta=export(path.parent/'run_meta.json',results/(n+'_run_meta.json'));completions[n]=summary
     if completions:
         report=replace_section(report,5,table(['模型','最佳内验证AV F1','最佳验证次数','检查点路径','adapter SHA','OOM跳过句次'],[(n,fmt(s['best_av_macro_f1']),s['best_eval_index'],s['best_checkpoint'],s['best_checkpoint_sha256'],s['skipped_oom']) for n,s in completions.items()])+'\n\n每0.25epoch固定700句AV验证；全部验证曲线及模态统计见各summary。last与best独立保存，异常恢复及GPU耗时含在编排账本。')
+        if (args.derived/'precheck/summary.json').exists():
+            report=replace_section(report,5,report.split('## 5. ',1)[1].split('\n',1)[1].split('\n## 6.',1)[0].strip()+f"\n\n最长20条AV预检{probe['gate']}，峰值{probe['peak_allocated_bytes']:,}字节，门限30,000,000,000字节；回执见results/precheck.json。")
+        for n in completions:
+            path=args.derived/'Q'/n/'completion_verification.json'
+            if path.exists():export(path,results/(n+'_completion_verification.json'))
     status=None
     if (args.root/'pipeline_progress.json').exists():
         status=export(args.root/'pipeline_progress.json',results/'pipeline_progress.json')
@@ -32,8 +37,13 @@ def run(args):
         if (args.root/'launch.json').exists():export(args.root/'launch.json',results/'launch.json')
         export(args.root/'run_meta.json',results/'pipeline_run_meta.json')
         report=replace_section(report,3,f"状态：{status['status']}。已完成模型{list(completions)}；活动阶段{status.get('active_step')}。不改变科学协议、不在ET-test/MER-test选择。"+(f"\n\n停止原因：{status['reason']}" if 'reason' in status else ''))
+        report=replace_section(report,1,f"X04b状态：{status['status']}；已完成模型{list(completions)}，活动阶段{status.get('active_step')}。仅执行预登记的fold0、fold1和最终模型；是否采用Q_mix由reviewer决定。")
         resource=report.split('## 9. ',1)[1].split('\n',1)[1].split('\n## 10.',1)[0].strip()
         report=replace_section(report,9,resource+f"\n\n编排GPU累计账本{status['charged_gpu_hours']:.6f}小时（活动阶段结束/停止后入账；异常重试全计）。最新预算见results/q_budget_progress.json。")
+        projection=status.get('budget_projection')
+        if projection:
+            resource=report.split('## 9. ',1)[1].split('\n',1)[1].split('\n## 10.',1)[0].strip()
+            report=replace_section(report,9,resource+f"\n\n最新复核（{projection['at']}，{projection['completed_model']}）：总GPU投影{projection['projected_total_gpu_h']:.6f}小时，上限{projection['limit_h']}，门禁{'通过' if projection['passed'] else '停止'}；包含剩余阶段20%余量与加载/诊断预留。")
         incidents=read_jsonl(args.root/'incidents.jsonl') if (args.root/'incidents.jsonl').exists() else []
         report=replace_section(report,10,f"编排异常退出回执{len(incidents)}次，见results/incidents.json。" if incidents else '暂无异常退出。')
         if status.get('reason'):report=replace_section(report,10,f"停止时间：{status.get('stopped_at')}。停止原因：{status['reason']}。原停止及异常回执保留，未自行放宽门限。")
