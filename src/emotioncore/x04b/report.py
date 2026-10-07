@@ -14,6 +14,7 @@ def run(args):
     if (args.derived/'tests.json').exists():export(args.derived/'tests.json',results/'tests.json')
     if (args.derived/'precheck/summary.json').exists():
         probe=export(args.derived/'precheck/summary.json',results/'precheck.json');export(args.derived/'precheck/run_meta.json',results/'precheck_run_meta.json')
+        report=replace_section(report,5,f"最长20条AV预检{probe['gate']}；最大分配显存{probe['peak_allocated_bytes']:,}字节，门限30,000,000,000字节。清单SHA与逐条回执见results/precheck.json；预检零优化更新。")
     completions={}
     for n in ('fold0','fold1','final'):
         path=args.derived/'Q'/n/'summary.json'
@@ -28,12 +29,21 @@ def run(args):
         if (args.root/'q_budget_progress.jsonl').exists():
             write_json_atomic(results/'q_budget_progress.json',read_jsonl(args.root/'q_budget_progress.jsonl'))
         if (args.root/'incidents.jsonl').exists():write_json_atomic(results/'incidents.json',read_jsonl(args.root/'incidents.jsonl'))
+        if (args.root/'launch.json').exists():export(args.root/'launch.json',results/'launch.json')
+        export(args.root/'run_meta.json',results/'pipeline_run_meta.json')
         report=replace_section(report,3,f"状态：{status['status']}。已完成模型{list(completions)}；活动阶段{status.get('active_step')}。不改变科学协议、不在ET-test/MER-test选择。"+(f"\n\n停止原因：{status['reason']}" if 'reason' in status else ''))
         resource=report.split('## 9. ',1)[1].split('\n',1)[1].split('\n## 10.',1)[0].strip()
         report=replace_section(report,9,resource+f"\n\n编排GPU累计账本{status['charged_gpu_hours']:.6f}小时（活动阶段结束/停止后入账；异常重试全计）。最新预算见results/q_budget_progress.json。")
+        incidents=read_jsonl(args.root/'incidents.jsonl') if (args.root/'incidents.jsonl').exists() else []
+        report=replace_section(report,10,f"编排异常退出回执{len(incidents)}次，见results/incidents.json。" if incidents else '暂无异常退出。')
+        if status.get('reason'):report=replace_section(report,10,f"停止时间：{status.get('stopped_at')}。停止原因：{status['reason']}。原停止及异常回执保留，未自行放宽门限。")
     interim=args.derived/'interim'
     if (interim/'futility.json').exists():
         gate=export(interim/'futility.json',results/'futility.json');export(interim/'run_meta.json',results/'interim_run_meta.json')
+        for filename in ('main_table.json','primary.json','secondary.json','source_artifact_index.json'):
+            export(interim/filename,results/('interim_'+filename))
+        report=replace_section(report,6,f"两折互拟合中期证据已生成，全部指标与2000次说话人bootstrap见results/interim_primary.json及interim_main_table.json。Q-AV OP-N差值{gate['point_difference']:.6f}，徒劳门限−0.02，{'停止' if gate['stop'] else '通过'}。P2须最终模型完成后计算；未用目标标签调参。")
+        report=replace_section(report,7,'两折Q-AV、Q-A、H3配对差值与区间见results/interim_secondary.json，逐类值见interim_main_table.json。')
         if gate['stop']:report=replace_section(report,1,'fold1后徒劳门禁触发，按预登记协议停止，未训练最终模型。是否采用Q_mix由reviewer决定。')
     analysis=args.derived/'analysis'
     if (analysis/'run_meta.json').exists() and json.loads((analysis/'run_meta.json').read_text()).get('ended_at'):
