@@ -1,9 +1,15 @@
 {
   "first_token_receipt.json": "2b52528e01fdbbf0c2d82292de55838b783e5833cff342143eea02ea804e5bd0",
   "budget_preflight.json": "d37595391f473b0501148e8fe430a654bdcb9c5fa730dca064e114afc2e697f3",
+  "pipeline_progress.json": "a7b220ceda6fe2a37a611b82e6c9367caaeb9b71b38ce70714d2e92cb4bd14e7",
   "budget_run_meta.json": "3d1b861b13aaf91b6f0bac9b92d6e00175755e9673373ef8da7df462a77952a4",
+  "q_budget_progress.json": "7bbfdf82c6d16e05c8dfd18fd1f451f12975faa93837603f2ba994860064ec3d",
+  "precheck.json": "e35087572f9e8b8edaa7b83f5c613bd7269ad686dd83cad1de9938f2f9490c4c",
+  "precheck_run_meta.json": "2369add91e6800c0caf59ec04ef87875089d5e37679ca1e57a521e05edbf2677",
+  "pipeline_run_meta.json": "ee3a37faf3582150cdf8bc7b4361edababc5fbc1f308bdcc4a7535672211df3a",
   "reference_fit_smoke.json": "eb6033b35065f1f23e9895e5c6d46890be80e461f2f48a2e30c51ae835ca8467",
-  "report_run_meta.json": "d3dece8c7a2656677f9b9e75aaadd5016590005efdf3be120fb6402558323985",
+  "report_run_meta.json": "100f8addbefa083979ff724d590dd854254c53e98e0dbcb014d9c2fcf6995ebb",
+  "launch.json": "8a53c0c1ab13642c2d8eaa5eeac9c164591a53a63f241d255e9c93586e4285da",
   "manifest_run_meta.json": "b41edb62e30ac376410b7336ff8325a7e83c503389a90e3e76e5bb53659a4224",
   "tests.json": "294b56acab3563f39450da64be776079a3d30cfa6afc4d0ef61703dfe14cb858"
 }

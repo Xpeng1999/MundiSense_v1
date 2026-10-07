@@ -1,0 +1,169 @@
+{
+  "gate": "pass",
+  "tested": 20,
+  "peak_allocated_bytes": 14577884160,
+  "receipts": [
+    {
+      "utt_id": "mer_sample_00000760",
+      "corpus": "MER",
+      "input_token_length": 1800,
+      "peak_allocated_bytes": 14577884160,
+      "loss": 0.3930148780345917,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00005441",
+      "corpus": "MER",
+      "input_token_length": 1664,
+      "peak_allocated_bytes": 14145298432,
+      "loss": 0.47591185569763184,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00001637",
+      "corpus": "MER",
+      "input_token_length": 1588,
+      "peak_allocated_bytes": 13900663296,
+      "loss": 0.6010085344314575,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00005309",
+      "corpus": "MER",
+      "input_token_length": 1549,
+      "peak_allocated_bytes": 13770318336,
+      "loss": 0.4625070095062256,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00005602",
+      "corpus": "MER",
+      "input_token_length": 1533,
+      "peak_allocated_bytes": 13721591808,
+      "loss": 0.7128573656082153,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00003561",
+      "corpus": "MER",
+      "input_token_length": 1316,
+      "peak_allocated_bytes": 13014903808,
+      "loss": 0.39953723549842834,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00002473",
+      "corpus": "MER",
+      "input_token_length": 1243,
+      "peak_allocated_bytes": 12773341696,
+      "loss": 0.058282073587179184,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00001114",
+      "corpus": "MER",
+      "input_token_length": 1233,
+      "peak_allocated_bytes": 12742003712,
+      "loss": 0.047740377485752106,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00003474",
+      "corpus": "MER",
+      "input_token_length": 1217,
+      "peak_allocated_bytes": 12690472448,
+      "loss": 0.46755069494247437,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00003076",
+      "corpus": "MER",
+      "input_token_length": 1211,
+      "peak_allocated_bytes": 12672381440,
+      "loss": 0.7592177391052246,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00001636",
+      "corpus": "MER",
+      "input_token_length": 1183,
+      "peak_allocated_bytes": 12582226432,
+      "loss": 0.4004130959510803,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00003911",
+      "corpus": "MER",
+      "input_token_length": 1170,
+      "peak_allocated_bytes": 12541949440,
+      "loss": 0.390671044588089,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00003598",
+      "corpus": "MER",
+      "input_token_length": 1130,
+      "peak_allocated_bytes": 12407812608,
+      "loss": 0.43388986587524414,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00001410",
+      "corpus": "MER",
+      "input_token_length": 1127,
+      "peak_allocated_bytes": 12396244480,
+      "loss": 0.04974210262298584,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00004469",
+      "corpus": "MER",
+      "input_token_length": 1121,
+      "peak_allocated_bytes": 12378593792,
+      "loss": 0.3070302903652191,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00001720",
+      "corpus": "MER",
+      "input_token_length": 1107,
+      "peak_allocated_bytes": 12331620352,
+      "loss": 1.3030951023101807,
+      "passed": true
+    },
+    {
+      "utt_id": "G00010_01_08_015",
+      "corpus": "ET",
+      "input_token_length": 1104,
+      "peak_allocated_bytes": 12324389888,
+      "loss": 3.445858955383301,
+      "passed": true
+    },
+    {
+      "utt_id": "G00011_10_09_011",
+      "corpus": "ET",
+      "input_token_length": 1101,
+      "peak_allocated_bytes": 12312248320,
+      "loss": 3.051351308822632,
+      "passed": true
+    },
+    {
+      "utt_id": "G00006_51_12_014",
+      "corpus": "ET",
+      "input_token_length": 1092,
+      "peak_allocated_bytes": 12287313920,
+      "loss": 2.5499866008758545,
+      "passed": true
+    },
+    {
+      "utt_id": "mer_sample_00006009",
+      "corpus": "MER",
+      "input_token_length": 1091,
+      "peak_allocated_bytes": 12280410112,
+      "loss": 1.5215272903442383,
+      "passed": true
+    }
+  ],
+  "elapsed_s": 68.2433495830046,
+  "selection_sha256": "4dede0637a95611870e1b1df8faa0ff3d938a2ad634d892f4a978ab50752a833"
+}

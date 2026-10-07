@@ -1,0 +1,16 @@
+[
+  {
+    "completed_model": "preflight",
+    "at": "2026-10-07T04:18:14.903056+00:00",
+    "charged_gpu_hours": 0.0,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 49.82300365553236,
+    "remaining_prediction_h": 2.569632161200276,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 1.0,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 64.37116298007916,
+    "limit_h": 70,
+    "passed": true
+  }
+]

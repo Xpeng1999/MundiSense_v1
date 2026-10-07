@@ -1,0 +1,56 @@
+{
+  "git": {
+    "commit": "dc8d9da5a3c1b7be5b6e673a33d4826f9d1abcf8",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "started_at": "2026-10-07T04:18:14.894552+00:00",
+  "steps": [
+    {
+      "name": "precheck",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 400.0252476360183,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/precheck_attempt0.log",
+      "log_sha256": "d6d539d346cdefca8d5596e7b0fdf48d307966d08c6eafff2e2c6d3a82054ba1"
+    }
+  ],
+  "charged_gpu_hours": 0.11111812434333843,
+  "status": "running",
+  "budget_projection": {
+    "completed_model": "preflight",
+    "at": "2026-10-07T04:18:14.903056+00:00",
+    "charged_gpu_hours": 0.0,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 49.82300365553236,
+    "remaining_prediction_h": 2.569632161200276,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 1.0,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 64.37116298007916,
+    "limit_h": 70,
+    "passed": true
+  },
+  "active_step": "train_fold0",
+  "active_started_at": "2026-10-07T04:24:55.082471+00:00",
+  "active_command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x04b.train",
+    "--fold-name",
+    "fold0",
+    "--manifest-meta",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/run_meta.json",
+    "--val-manifest",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_val.jsonl",
+    "--cache-root",
+    "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
+    "--output-dir",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0"
+  ],
+  "active_attempt": 0,
+  "child_pid": 258367
+}
