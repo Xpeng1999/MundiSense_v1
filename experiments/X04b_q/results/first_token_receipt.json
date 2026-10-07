@@ -1,0 +1,17 @@
+{
+  "first_token_ids": {
+    "neutral": 59568,
+    "joy": 4123,
+    "sadness": 82114,
+    "anger": 4003,
+    "fear": 69,
+    "disgust": 4243,
+    "surprise": 19784,
+    "other": 1575,
+    "worried": 49710
+  },
+  "unique": true,
+  "at": "2026-10-07T04:08:00.952799+00:00",
+  "model": "Qwen2.5-Omni-7B",
+  "learned_inference": false
+}
