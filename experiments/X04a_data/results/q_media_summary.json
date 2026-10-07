@@ -1,0 +1,39 @@
+{
+  "outputs": {
+    "train_A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_A.jsonl",
+      "sha256": "f738627e187f3ab4444f08b7383ab56e88e272eb6f3badc5b5a33dd03731130d",
+      "n": 9386
+    },
+    "train_V": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_V.jsonl",
+      "sha256": "7332ac954de271dcf4e0981cd5e1a48740faeb1ed9f0bd9aac63604dbf6be606",
+      "n": 9386
+    },
+    "train_AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_AV.jsonl",
+      "sha256": "4320e75c8ba13ac2a728b98a631b2e74be6d53fe4608ce34c1a9883dee78f68d",
+      "n": 9386
+    },
+    "test_A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/test_A.jsonl",
+      "sha256": "3f5d57bae1acaf44935019537c48af6dcd7ce48ac64cb9bd14d8b33c38fa2b82",
+      "n": 572
+    },
+    "test_AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/test_AV.jsonl",
+      "sha256": "4dd9af7d3c6af941f04a721e2d93220391e72dc4998bfc4c1d2ecda94d0ff335",
+      "n": 572
+    }
+  },
+  "by_split": {
+    "train": {
+      "n": 9386,
+      "missing": 117
+    },
+    "test": {
+      "n": 572,
+      "missing": 5
+    }
+  }
+}

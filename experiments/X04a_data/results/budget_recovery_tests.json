@@ -1,0 +1,13 @@
+{
+  "source_commit": "45092380",
+  "tests": [
+    "tests/test_x04_head_budget.py",
+    "tests/test_x04_pipeline_resume.py"
+  ],
+  "passed": 3,
+  "failed": 0,
+  "elapsed_s": 0.16,
+  "device": "CPU",
+  "source_worktree": "/home/administrator/emotion-data/emotioncore_runs/X04a/recovery_report_code",
+  "changes": "JSON integer normalization and resume ledger/preparation guards"
+}

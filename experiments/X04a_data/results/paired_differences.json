@@ -1,0 +1,98 @@
+{
+  "D1/A3 minus D0/A3": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.015083615565535502,
+    "left_minus_right_95": [
+      -0.0002915876678004664,
+      0.02637497855657228
+    ]
+  },
+  "D1/V2 minus D0/V2": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.020001263081258325,
+    "left_minus_right_95": [
+      -0.00036838828019907925,
+      0.04394267460284082
+    ]
+  },
+  "D1/V1 minus D0/V1": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.03498065605504069,
+    "left_minus_right_95": [
+      -0.017674900322946465,
+      0.09320734213749181
+    ]
+  },
+  "D1/H_ref minus D0/H_ref": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.008634704590815612,
+    "left_minus_right_95": [
+      0.0011046431068690884,
+      0.015311874438438384
+    ]
+  },
+  "D1/H3 minus D0/H3": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.0005831657837613857,
+    "left_minus_right_95": [
+      -0.007208625564102264,
+      0.008068439414962008
+    ]
+  },
+  "D1/E3 minus D0/E3": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.01277314793890083,
+    "left_minus_right_95": [
+      0.004025888592612201,
+      0.0229879117449925
+    ]
+  },
+  "D3/H_ref minus D1/H_ref": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": 0.00432985134601549,
+    "left_minus_right_95": [
+      -0.0019519591460558565,
+      0.009095668860689951
+    ]
+  },
+  "D1_audioonly/A3 minus D1/A3": {
+    "n": 16366,
+    "unit": "speaker_id",
+    "speaker_count": 15,
+    "seed": 20261006,
+    "replicates": 2000,
+    "difference": -0.00805994254139264,
+    "left_minus_right_95": [
+      -0.025254671484238007,
+      0.01102006879695319
+    ]
+  }
+}

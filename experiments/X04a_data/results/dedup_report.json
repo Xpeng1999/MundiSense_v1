@@ -1,0 +1,121 @@
+{
+  "directions": {
+    "MER_test": {
+      "candidate_pairs": 2,
+      "candidate_mer_ids": 2,
+      "excluded_mer_ids": 2,
+      "confirmed_pairs": 0,
+      "confirmed_mer_ids": 0,
+      "pairs": [
+        {
+          "source_id": "mer_samplenew3_00041228",
+          "target_id": "mer_samplenew3_00093762",
+          "similarity": 1.0,
+          "short_exact": true,
+          "audio_confirmed": false,
+          "audio_available": false
+        },
+        {
+          "source_id": "mer_samplenew3_00110230",
+          "target_id": "mer_samplenew3_00067188",
+          "similarity": 0.7142857142857143,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": true
+        }
+      ]
+    },
+    "SIMS_valid": {
+      "candidate_pairs": 4,
+      "candidate_mer_ids": 4,
+      "excluded_mer_ids": 4,
+      "confirmed_pairs": 0,
+      "confirmed_mer_ids": 0,
+      "pairs": [
+        {
+          "source_id": "mer_sample_00005396",
+          "target_id": "sims_video_0056_0073",
+          "similarity": 1.0,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": false
+        },
+        {
+          "source_id": "mer_sample_00000957",
+          "target_id": "sims_video_0056_0013",
+          "similarity": 1.0,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": false
+        },
+        {
+          "source_id": "mer_sample_00000723",
+          "target_id": "sims_video_0056_0050",
+          "similarity": 1.0,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": true
+        },
+        {
+          "source_id": "mer_samplenew_00009074",
+          "target_id": "sims_video_0011_0007",
+          "similarity": 1.0,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": true
+        }
+      ]
+    },
+    "SIMS_test": {
+      "candidate_pairs": 3,
+      "candidate_mer_ids": 3,
+      "excluded_mer_ids": 3,
+      "confirmed_pairs": 0,
+      "confirmed_mer_ids": 0,
+      "pairs": [
+        {
+          "source_id": "mer_sample_00002517",
+          "target_id": "sims_video_0003_0006",
+          "similarity": 0.7692307692307693,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": false
+        },
+        {
+          "source_id": "mer_sample_00000876",
+          "target_id": "sims_video_0056_0006",
+          "similarity": 0.8333333333333334,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": false
+        },
+        {
+          "source_id": "mer_samplenew3_00104997",
+          "target_id": "sims_video_0028_0002",
+          "similarity": 1.0,
+          "short_exact": false,
+          "audio_confirmed": false,
+          "audio_available": false
+        }
+      ]
+    }
+  },
+  "mer_train_before": 9395,
+  "mer_train_after": 9386,
+  "excluded_ids": [
+    "mer_sample_00000723",
+    "mer_sample_00000876",
+    "mer_sample_00000957",
+    "mer_sample_00002517",
+    "mer_sample_00005396",
+    "mer_samplenew3_00041228",
+    "mer_samplenew3_00104997",
+    "mer_samplenew3_00110230",
+    "mer_samplenew_00009074"
+  ],
+  "audio_confirmed_ids": [],
+  "fingerprint_available": true,
+  "fpcalc_path": "/usr/bin/fpcalc",
+  "short_duration_probe_failures": 0,
+  "missing_subtitle_count": 224
+}

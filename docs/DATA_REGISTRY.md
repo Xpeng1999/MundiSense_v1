@@ -17,3 +17,13 @@ Sizes are on-disk `du -sh` observations from the read-only `emotionAI_dataset` d
 | e3_datasets | 165G | JSON, ZIP and media | Terms unverified | Existing E3 resources; no X01 processing | Legacy training resources only |
 | video_emo_dataset | 11G | repository files and media | Local README; terms unverified | No | Potential video emotion data for later screening |
 | voice_emo_dataset | 2.8G | Parquet, CSV, scripts | Terms unverified | No | Potential voice emotion data for later screening |
+
+## X04a 注册补充
+
+| 语料 | 本轮角色 | n | 数据卡 |
+| --- | --- | --- | --- |
+| MER2026 train | 只训练；保守文本去重后 | 9386 | DATA_CARD_mer2026.md |
+| MER2026 test | 只报告，禁止选择 | 572 | DATA_CARD_mer2026.md |
+| CREMA-D | 只训练 | 7442 | DATA_CARD_cremad.md |
+
+MER 媒体及派生文件留在 H 盘；MER2025 不另加入。CH-SIMS 任意划分均不训练，test 零模型推理。Benchmark v1.1 保留原 ET/SIMS 定义全文不变。

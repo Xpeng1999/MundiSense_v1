@@ -1,0 +1,32 @@
+{
+  "git": {
+    "commit": "8a92a9dfea3ed01874f81745ad0237350b82455a",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/duration_v3_code/src/emotioncore/x04/prepare.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/preparation_v3",
+    "--registration-name",
+    "registration_v3"
+  ],
+  "started_at": "2026-10-06T07:25:35.991639+00:00",
+  "storage": {
+    "root_free_bytes": 115077955584,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 92316041740288
+  },
+  "CH_SIMS_read": false,
+  "ended_at": "2026-10-06T07:34:53.120894+00:00",
+  "elapsed_s": 557.3431600680342,
+  "registration_sha256": "d9265a0081a508e2f7b68f9a21c4644915bad3a1d560718eb4d1acfa4a2cfc72",
+  "storage_end": {
+    "root_free_bytes": 115077918720,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 92315445690368
+  }
+}

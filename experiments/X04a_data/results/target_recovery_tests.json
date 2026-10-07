@@ -1,0 +1,20 @@
+{
+  "tested_commit": "5a3a76a",
+  "tests": [
+    "tests/test_x04_targets.py",
+    "tests/test_x04_pipeline_resume.py",
+    "tests/test_x04_head_budget.py"
+  ],
+  "passed": 6,
+  "failed": 0,
+  "elapsed_s": 0.22,
+  "device": "CPU",
+  "real_target_smoke_commit": "02dbb3f",
+  "real_target_coverage": {
+    "et_test": 1929,
+    "sims_valid": 647,
+    "mer_test": 572
+  },
+  "Q_training": false,
+  "CH_SIMS_test_model_inference": false
+}

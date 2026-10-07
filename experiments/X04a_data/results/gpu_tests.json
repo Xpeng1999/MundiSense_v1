@@ -1,0 +1,11 @@
+{
+  "initial_commit": "3282e5d9d37d2180f1060ff8fe89da65724ff691",
+  "initial_passed": 22,
+  "initial_seconds": 5.06,
+  "latest_commit": "48b45257",
+  "targeted_passed": 10,
+  "targeted_seconds": 4.36,
+  "new_cuda_rng_preservation_test": "passed",
+  "cuda_batch_equal_test": "passed, not skipped",
+  "Q_training": false
+}

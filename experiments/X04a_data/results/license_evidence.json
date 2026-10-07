@@ -1,0 +1,10 @@
+{
+  "MER": {
+    "path": "/mnt/h/emotion-data/MER2026/README.md",
+    "sha256": "7257704eef53cac3d78b95f7b9527c8f1314f9ea71c27558e9f4a416a0e2ce08"
+  },
+  "CREMA": {
+    "path": "/home/administrator/emotion-data/emotionAI_dataset/CREMA-D/LICENSE.txt",
+    "sha256": "e76747a4efa4b338914bb3f930b5d3d3c3ac15b886bbabf897f6a19731f987f8"
+  }
+}

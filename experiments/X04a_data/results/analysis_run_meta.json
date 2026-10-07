@@ -1,0 +1,31 @@
+{
+  "git": {
+    "commit": "94b2f9be7f1bbfa0418b746870a75ec8159eb0ea",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04a/analysis_recovery_code94b2f9b/src/emotioncore/x04/analysis.py",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/analysis_recovery"
+  ],
+  "started_at": "2026-10-06T19:34:24.017942+00:00",
+  "Q_training": false,
+  "target_labels_used_for_fitting": false,
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "bootstrap_seed": 20261006,
+  "bootstrap_repetitions": 2000,
+  "ended_at": "2026-10-06T19:38:25.412217+00:00",
+  "outputs": {
+    "d0_reproducibility.json": "ff1671cea55377949544fbd0ec4437865a22c1311d2b8c2a916510d8bd9d2294",
+    "main_table.json": "8b0e8da990dae0b247cc0133d6e17d0092ed7b3b95be82d4e5be4b30fe39cb00",
+    "paired_differences.json": "c0cdf631e7de02a51de21b6c784a5e9a94fbb9b9b3648a3865380ca871576dc8",
+    "progress.json": "2b80ff56e02da87441a4b3ce3537e14840c6cf07abbf84d0d0a618809be23907",
+    "selected_configs.json": "ad7dcf7bf96271423cf1266a1e4bdbabf34463dca9204fdf1060ece205afd840",
+    "source_artifact_index.json": "f4c651c920be49e4a7ad2dba0b76b71748f2fdcf799455f451b9260c99344a25"
+  }
+}

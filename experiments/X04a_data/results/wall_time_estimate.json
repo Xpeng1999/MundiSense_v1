@@ -1,0 +1,214 @@
+{
+  "status": "measured_first_outer_fold_grid",
+  "head_device": "cuda:0",
+  "gpu_heads_max_concurrency": 1,
+  "train_seconds_per_batch": 0.02427242158378426,
+  "validation_seconds_per_batch": 0.020139944061072758,
+  "config_overhead_seconds": 1.7254686172818765,
+  "selection_epochs_projection": 25,
+  "refit_epochs_projection": 15,
+  "assumptions": "Maximum measured per-batch cost; max observed grid epochs plus patience5 capped50; max observed best epoch for refits; 50-epoch bound separately reported. No early-stopping cap or grid changed.",
+  "A3_arms": {
+    "D0": {
+      "remaining_gpu_hours": 0.0,
+      "remaining_gpu_hours_if_all_reach_50": 0.0,
+      "arm": "D0",
+      "grid_count": 6,
+      "selection_n": [
+        9826,
+        9833,
+        9798,
+        9790,
+        9854
+      ],
+      "validation_n": [
+        3266,
+        3274,
+        3274,
+        3264,
+        3285
+      ],
+      "refit_n": [
+        13092,
+        13107,
+        13072,
+        13054,
+        13139,
+        16366
+      ],
+      "outer_n": [
+        3274,
+        3259,
+        3294,
+        3312,
+        3227
+      ]
+    },
+    "D1": {
+      "remaining_gpu_hours": 2.768083712091631,
+      "remaining_gpu_hours_if_all_reach_50": 5.635331875040509,
+      "arm": "D1",
+      "grid_count": 18,
+      "selection_n": [
+        19212,
+        19219,
+        19184,
+        19176,
+        19240
+      ],
+      "validation_n": [
+        3266,
+        3274,
+        3274,
+        3264,
+        3285
+      ],
+      "refit_n": [
+        22478,
+        22493,
+        22458,
+        22440,
+        22525,
+        25752
+      ],
+      "outer_n": [
+        3274,
+        3259,
+        3294,
+        3312,
+        3227
+      ]
+    },
+    "D2": {
+      "remaining_gpu_hours": 1.5415173413910663,
+      "remaining_gpu_hours_if_all_reach_50": 3.096166883803523,
+      "arm": "D2",
+      "grid_count": 18,
+      "selection_n": [
+        9386,
+        9386,
+        9386,
+        9386,
+        9386
+      ],
+      "validation_n": [
+        3266,
+        3274,
+        3274,
+        3264,
+        3285
+      ],
+      "refit_n": [
+        9386,
+        9386,
+        9386,
+        9386,
+        9386,
+        9386
+      ],
+      "outer_n": [
+        3274,
+        3259,
+        3294,
+        3312,
+        3227
+      ]
+    },
+    "D3": {
+      "remaining_gpu_hours": 3.6862891935882027,
+      "remaining_gpu_hours_if_all_reach_50": 7.518804366548879,
+      "arm": "D3",
+      "grid_count": 18,
+      "selection_n": [
+        26654,
+        26661,
+        26626,
+        26618,
+        26682
+      ],
+      "validation_n": [
+        3266,
+        3274,
+        3274,
+        3264,
+        3285
+      ],
+      "refit_n": [
+        29920,
+        29935,
+        29900,
+        29882,
+        29967,
+        33194
+      ],
+      "outer_n": [
+        3274,
+        3259,
+        3294,
+        3312,
+        3227
+      ]
+    },
+    "D1_audioonly": {
+      "remaining_gpu_hours": 2.7681848471815633,
+      "remaining_gpu_hours_if_all_reach_50": 5.63566899200695,
+      "arm": "D1_audioonly",
+      "grid_count": 18,
+      "selection_n": [
+        19221,
+        19228,
+        19193,
+        19185,
+        19249
+      ],
+      "validation_n": [
+        3266,
+        3274,
+        3274,
+        3264,
+        3285
+      ],
+      "refit_n": [
+        22487,
+        22502,
+        22467,
+        22449,
+        22534,
+        25761
+      ],
+      "outer_n": [
+        3274,
+        3259,
+        3294,
+        3312,
+        3227
+      ]
+    }
+  },
+  "A3_remaining_gpu_hours": 10.764075094252464,
+  "charged_gpu_hours": 1.9881278757316339,
+  "completed_A3_arms_reused": [
+    "D0"
+  ],
+  "remaining_other_gpu_hours": 0.17523606316629226,
+  "reserve_multiplier": 1.2,
+  "load_reserve_hours": 0.16666666666666666,
+  "total_projection_gpu_hours": 15.281967931300805,
+  "limit_gpu_hours": 20,
+  "passed": true,
+  "remaining_wall_hours_projection": 13.127173388902506,
+  "CPU_visual_remaining_hours_projection": 2.3641500569824063,
+  "total_projection_if_all_reach_50": 28.628244359077684,
+  "Q_training": false,
+  "git": {
+    "commit": "970ff484017bee04dea890d2946d8ce5d2888777",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "at": "2026-10-06T12:31:48.806816+00:00",
+  "first_grid_sha256": "3f0353220545973047e3fe8aad7e9845a91c5f56dcb66ece8160bc80aace5205",
+  "budget_sha256": "6d14d0503735440523774c51ff31213f47faa650ce3cc7898258611b751faa05",
+  "pipeline_wall_elapsed_hours": 4.746851729840305,
+  "total_wall_hours_projection": 17.87402511874281
+}

@@ -1,0 +1,60 @@
+{
+  "archives": [
+    {
+      "path": "/mnt/h/emotion-data/MER2026/audio_7z/audio_track1_train/audio_split.zip",
+      "sha256": "9e20dd2c59c04bcaae488ca447098e8409bcf41cd8c8f88292c08de482009399",
+      "bytes": 1138941632,
+      "medium": "audio",
+      "package": "track1_train",
+      "members": 9396
+    },
+    {
+      "path": "/mnt/h/emotion-data/MER2026/audio_7z/audio_track1_track2_candidate/audio_split_0001.zip",
+      "sha256": "ca854e03bd5ef4a420ae307ef6f0d29a4c35e4b9a2cdaec032d81860bbd0a934",
+      "bytes": 999167204,
+      "medium": "audio",
+      "package": "track1_track2_candidate",
+      "members": 10001
+    },
+    {
+      "path": "/mnt/h/emotion-data/MER2026/audio_7z/audio_track1_track2_candidate/audio_split_0002.zip",
+      "sha256": "18ae07bd81cbef33c9cbf8d6e0e4648fc32a1858879d61391580385804d2dafc",
+      "bytes": 986911672,
+      "medium": "audio",
+      "package": "track1_track2_candidate",
+      "members": 10001
+    },
+    {
+      "path": "/mnt/h/emotion-data/MER2026/video_7z/video_track1_train/video_split.zip",
+      "sha256": "4a160d72f71ca6a1a82d97cbf2bf41c6b9459110f2bacae91df91eaba80703c2",
+      "bytes": 12389053743,
+      "medium": "video",
+      "package": "track1_train",
+      "members": 9396
+    },
+    {
+      "path": "/mnt/h/emotion-data/MER2026/video_7z/video_track1_track2_candidate/video_split_0001.zip",
+      "sha256": "91efdc7c9f3bbb6d227e87760b664f933cf45e7d0e71d7f1d7e7433d14093c2c",
+      "bytes": 18327702741,
+      "medium": "video",
+      "package": "track1_track2_candidate",
+      "members": 10001
+    },
+    {
+      "path": "/mnt/h/emotion-data/MER2026/video_7z/video_track1_track2_candidate/video_split_0002.zip",
+      "sha256": "7d5d8fec346c77d5d2d02bca0c34a1178813ff5aecd7e04d0f75930de0877629",
+      "bytes": 18315305676,
+      "medium": "video",
+      "package": "track1_track2_candidate",
+      "members": 10001
+    }
+  ],
+  "official_script": "/mnt/h/emotion-data/MER2026/extract_mer2026_archives.sh",
+  "official_script_sha256": "ccf8cebacea886548972fcbee00ea4362afe619a1ea30779ee332c26edeb766e",
+  "view": "/mnt/h/emotionAI/emotioncore_runs/X04a/archive_view",
+  "target": "/mnt/h/emotionAI/emotioncore_runs/X04a/media",
+  "openface_visible": false,
+  "effective_script": "/mnt/h/emotionAI/emotioncore_runs/X04a/extract_audio_video_view.sh",
+  "effective_script_sha256": "2e60836380651d7b736ea96534a5d36d54d0459512934a7b2c3c0f598a66dcbd",
+  "adaptation": "one find -L for restricted audio/video symlink view"
+}

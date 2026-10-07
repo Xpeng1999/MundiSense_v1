@@ -1,0 +1,24 @@
+{
+  "pid": 154511,
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x04.analysis",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04a/analysis_recovery"
+  ],
+  "cwd": "/home/administrator/emotion-data/emotioncore_runs/X04a/analysis_recovery_code94b2f9b",
+  "started_at": "2026-10-06T19:34:22.692382+00:00",
+  "cpu_only": true,
+  "GPU_ledger_unchanged_hours": 7.306861735864171,
+  "regression_tests": {
+    "passed": 7,
+    "seconds": 1.02
+  },
+  "original_stop": "/home/administrator/emotion-data/emotioncore_runs/X04a/pipeline_gpu_resume2/pipeline_stop.json",
+  "original_analysis": "/mnt/h/emotionAI/emotioncore_runs/X04a/analysis",
+  "output": "/mnt/h/emotionAI/emotioncore_runs/X04a/analysis_recovery"
+}

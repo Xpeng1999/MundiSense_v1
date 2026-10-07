@@ -1,0 +1,7 @@
+{
+  "prior_v2_preflight_gpu_hours": 0.0226080277544,
+  "prior_v2_source": "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight/budget_preflight.json",
+  "verification_reserve_seconds": 60,
+  "verification_charge_method": "Conservative full60s allowance covers22-test suite5.06s,10 targeted tests4.36s, real ET equality1.133774s and Python/CUDA initialization; not reported as measured GPU utilization",
+  "charged_prior_gpu_hours": 0.039274694421066667
+}

@@ -1,0 +1,20 @@
+{
+  "et_test": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/targets/et_test.jsonl",
+    "sha256": "3ca8e84efd1979fe7284259f25d225fae27762de8042db92ecfce023bad12ad9",
+    "count": 1929,
+    "feature_available": 1929
+  },
+  "sims_valid": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/targets/sims_valid.jsonl",
+    "sha256": "04954c813d28adeee0efb41a27e73b43427c3dcdfe3ed5233c00246ea72995ac",
+    "count": 647,
+    "feature_available": 620
+  },
+  "mer_test": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D0/A3/targets/mer_test.jsonl",
+    "sha256": "01e0c2ae9be1c2de9853ece5105c715f82fdb5aaeab3054a0bcc99822cb072b6",
+    "count": 572,
+    "feature_available": 572
+  }
+}

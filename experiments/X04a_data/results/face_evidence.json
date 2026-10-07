@@ -1,0 +1,453 @@
+{
+  "cohorts": {
+    "MER_train": {
+      "clips": 9395,
+      "status_counts": {
+        "ok": 9393,
+        "no_face": 2
+      },
+      "no_face_fraction": 0.00021287919105907396,
+      "multi_face_clips": 2911,
+      "multi_face_fraction": 0.30984566258648216,
+      "area_ratio": {
+        "n": 2911,
+        "p10": 0.6841257469862685,
+        "p50": 1.7841248138277395,
+        "p90": 19.32199558211521
+      },
+      "by_speaker": {
+        "unknown": {
+          "ok": 9393,
+          "no_face": 2
+        }
+      },
+      "decoded_frames": 181735,
+      "decode_failures": 206
+    },
+    "MER_test": {
+      "clips": 572,
+      "status_counts": {
+        "ok": 572
+      },
+      "no_face_fraction": 0.0,
+      "multi_face_clips": 191,
+      "multi_face_fraction": 0.3339160839160839,
+      "area_ratio": {
+        "n": 191,
+        "p10": 0.5468132009846322,
+        "p50": 1.6314632230523904,
+        "p90": 23.52059902004285
+      },
+      "by_speaker": {
+        "unknown": {
+          "ok": 572
+        }
+      },
+      "decoded_frames": 8433,
+      "decode_failures": 13
+    },
+    "CREMA_train": {
+      "clips": 7442,
+      "status_counts": {
+        "ok": 7441,
+        "no_face": 1
+      },
+      "no_face_fraction": 0.0001343724805159903,
+      "multi_face_clips": 0,
+      "multi_face_fraction": 0.0,
+      "area_ratio": {
+        "n": 0,
+        "p10": null,
+        "p50": null,
+        "p90": null
+      },
+      "by_speaker": {
+        "1001": {
+          "ok": 82
+        },
+        "1002": {
+          "ok": 81
+        },
+        "1003": {
+          "ok": 82
+        },
+        "1004": {
+          "ok": 82
+        },
+        "1005": {
+          "ok": 82
+        },
+        "1006": {
+          "ok": 82
+        },
+        "1007": {
+          "ok": 82
+        },
+        "1008": {
+          "ok": 76
+        },
+        "1009": {
+          "ok": 76
+        },
+        "1010": {
+          "ok": 82
+        },
+        "1011": {
+          "ok": 82
+        },
+        "1012": {
+          "ok": 82
+        },
+        "1013": {
+          "ok": 82
+        },
+        "1014": {
+          "ok": 82
+        },
+        "1015": {
+          "ok": 82
+        },
+        "1016": {
+          "ok": 82
+        },
+        "1017": {
+          "ok": 82
+        },
+        "1018": {
+          "ok": 82
+        },
+        "1019": {
+          "ok": 76
+        },
+        "1020": {
+          "ok": 82
+        },
+        "1021": {
+          "ok": 82
+        },
+        "1022": {
+          "ok": 82
+        },
+        "1023": {
+          "ok": 82
+        },
+        "1024": {
+          "ok": 82
+        },
+        "1025": {
+          "ok": 82
+        },
+        "1026": {
+          "ok": 82
+        },
+        "1027": {
+          "ok": 82
+        },
+        "1028": {
+          "ok": 82
+        },
+        "1029": {
+          "ok": 82
+        },
+        "1030": {
+          "ok": 82
+        },
+        "1031": {
+          "ok": 82
+        },
+        "1032": {
+          "ok": 82
+        },
+        "1033": {
+          "ok": 82
+        },
+        "1034": {
+          "ok": 82
+        },
+        "1035": {
+          "ok": 82
+        },
+        "1036": {
+          "ok": 82
+        },
+        "1037": {
+          "ok": 82
+        },
+        "1038": {
+          "ok": 82
+        },
+        "1039": {
+          "ok": 82
+        },
+        "1040": {
+          "ok": 82
+        },
+        "1041": {
+          "ok": 82
+        },
+        "1042": {
+          "ok": 82
+        },
+        "1043": {
+          "ok": 82
+        },
+        "1044": {
+          "ok": 82
+        },
+        "1045": {
+          "ok": 82
+        },
+        "1046": {
+          "ok": 82
+        },
+        "1047": {
+          "ok": 82
+        },
+        "1048": {
+          "ok": 82
+        },
+        "1049": {
+          "ok": 82
+        },
+        "1050": {
+          "ok": 82
+        },
+        "1051": {
+          "ok": 82
+        },
+        "1052": {
+          "ok": 82
+        },
+        "1053": {
+          "ok": 82
+        },
+        "1054": {
+          "ok": 82
+        },
+        "1055": {
+          "ok": 82
+        },
+        "1056": {
+          "ok": 82
+        },
+        "1057": {
+          "ok": 82
+        },
+        "1058": {
+          "ok": 82
+        },
+        "1059": {
+          "ok": 82
+        },
+        "1060": {
+          "ok": 82
+        },
+        "1061": {
+          "ok": 82
+        },
+        "1062": {
+          "ok": 82
+        },
+        "1063": {
+          "ok": 82
+        },
+        "1064": {
+          "ok": 82
+        },
+        "1065": {
+          "ok": 82
+        },
+        "1066": {
+          "ok": 82
+        },
+        "1067": {
+          "ok": 82
+        },
+        "1068": {
+          "ok": 82
+        },
+        "1069": {
+          "ok": 82
+        },
+        "1070": {
+          "ok": 82
+        },
+        "1071": {
+          "ok": 82
+        },
+        "1072": {
+          "ok": 82
+        },
+        "1073": {
+          "ok": 82
+        },
+        "1074": {
+          "ok": 82
+        },
+        "1075": {
+          "ok": 82
+        },
+        "1076": {
+          "ok": 80,
+          "no_face": 1
+        },
+        "1077": {
+          "ok": 82
+        },
+        "1078": {
+          "ok": 82
+        },
+        "1079": {
+          "ok": 82
+        },
+        "1080": {
+          "ok": 82
+        },
+        "1081": {
+          "ok": 82
+        },
+        "1082": {
+          "ok": 82
+        },
+        "1083": {
+          "ok": 82
+        },
+        "1084": {
+          "ok": 82
+        },
+        "1085": {
+          "ok": 82
+        },
+        "1086": {
+          "ok": 82
+        },
+        "1087": {
+          "ok": 82
+        },
+        "1088": {
+          "ok": 82
+        },
+        "1089": {
+          "ok": 82
+        },
+        "1090": {
+          "ok": 82
+        },
+        "1091": {
+          "ok": 82
+        }
+      },
+      "decoded_frames": 98203,
+      "decode_failures": 1241
+    }
+  },
+  "contact_sheets": {
+    "seed": 20261006,
+    "requested_count": 60,
+    "sample_count": 60,
+    "available_multiface_preview_count": 3102,
+    "MER_only": true,
+    "sheets": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_00.jpg",
+        "sha256": "5db8e190589a44542fc0ef60c9af32cc78bd0506bd869704d4a4b23e08318144",
+        "sample_ids": [
+          "mer_samplenew3_00073045",
+          "mer_sample_00002959",
+          "mer_samplenew_00004831",
+          "mer_samplenew3_00021815",
+          "mer_samplenew3_00022411",
+          "mer_samplenew3_00077019",
+          "mer_samplenew3_00001630",
+          "mer_samplenew3_00087470",
+          "mer_samplenew3_00009723",
+          "mer_samplenew3_00079370"
+        ]
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_01.jpg",
+        "sha256": "0caa44315300f8a12909a619a56cb04ab1ce3f0cf64d6ad09b3eeb34e0c46634",
+        "sample_ids": [
+          "mer_samplenew3_00105064",
+          "mer_samplenew3_00079698",
+          "mer_samplenew_00032194",
+          "mer_samplenew3_00084759",
+          "mer_samplenew_00070449",
+          "mer_sample_00001141",
+          "mer_sample_00004005",
+          "mer_sample_00000476",
+          "mer_samplenew3_00010195",
+          "mer_sample_00004258"
+        ]
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_02.jpg",
+        "sha256": "1142f6efc380c28e281de41b68c650e1b8642cedda65290d89df506703c60014",
+        "sample_ids": [
+          "mer_sample_00002899",
+          "mer_samplenew_00058101",
+          "mer_samplenew3_00014812",
+          "mer_samplenew3_00065196",
+          "mer_samplenew3_00093488",
+          "mer_samplenew3_00056725",
+          "mer_samplenew3_00041700",
+          "mer_samplenew3_00006664",
+          "mer_sample_00000276",
+          "mer_sample_00003147"
+        ]
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_03.jpg",
+        "sha256": "a968929058195e96274239dd4f6b444af9580c87c9727c71d8e2fa5e8bfb5a89",
+        "sample_ids": [
+          "mer_sample_00006051",
+          "mer_samplenew3_00073831",
+          "mer_sample_00004933",
+          "mer_samplenew3_00005608",
+          "mer_sample_00004739",
+          "mer_sample_00006121",
+          "mer_samplenew_00049232",
+          "mer_samplenew3_00111445",
+          "mer_samplenew3_00064162",
+          "mer_sample_00002120"
+        ]
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_04.jpg",
+        "sha256": "dffcba75a860d1731d548e6504f5ae8a9283b9b60f9b404513dd5f46deb07993",
+        "sample_ids": [
+          "mer_sample_00001051",
+          "mer_samplenew3_00115113",
+          "mer_sample_00003601",
+          "mer_samplenew_00033816",
+          "mer_samplenew3_00058696",
+          "mer_sample_00002233",
+          "mer_sample_00006724",
+          "mer_samplenew3_00018132",
+          "mer_sample_00004578",
+          "mer_samplenew3_00045599"
+        ]
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/MER_contact_sheets/contact_05.jpg",
+        "sha256": "1d4eb38e34928cde3b98413983019674bbc9982272117525971552d8f204a7cf",
+        "sample_ids": [
+          "mer_samplenew3_00070595",
+          "mer_samplenew3_00008867",
+          "mer_sample_00005889",
+          "mer_samplenew3_00039101",
+          "mer_samplenew3_00008749",
+          "mer_sample_00001426",
+          "mer_samplenew3_00077078",
+          "mer_samplenew3_00073217",
+          "mer_sample_00000000",
+          "mer_samplenew3_00106283"
+        ]
+      }
+    ],
+    "server_only": true
+  },
+  "manifest_path": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+  "manifest_sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3",
+  "decode_definition": "decoded frame/read failures from unchanged X02 face receipts; ffprobe registration is header-only"
+}

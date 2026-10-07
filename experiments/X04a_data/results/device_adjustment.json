@@ -1,0 +1,14 @@
+{
+  "authority": "Latest user-provided reviewer approval 2026-10-06",
+  "A3_head_device": "cuda:0",
+  "V1_V2_head_device": "cpu",
+  "max_concurrent_GPU_heads": 1,
+  "fp16_source": "mmap/RAM, never whole dataset pinned",
+  "batch_buffer_bytes": 134217728,
+  "fetch": "torch.index_select -> pinned batch -> non_blocking H2D -> float32",
+  "batch_equality_receipt": "gpu_batch_equivalence.json",
+  "first_grid_gate": "Complete D0 A3 fold0 six-configuration grid, re-estimate all arms and wall time before next GPU head",
+  "gpu_limit_hours": 20,
+  "grid_seed_order_alpha_early_stop_changed": false,
+  "Q_training": false
+}
