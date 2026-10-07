@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-07T19:41:22.200256+00:00",
+  "passed": true,
+  "model": "fold0",
+  "ordered_manifest_match": true,
+  "modality_assertions_pass": true,
+  "training_count": 29038,
+  "corpus_counts": {
+    "ET": 19652,
+    "MER": 9386
+  },
+  "validation_evaluations": 8,
+  "validation_sentences_each": 700,
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  },
+  "best_adapter_sha256": "8d2020c851555ad22bc997e939f1f6d2818e5f6a22e84c40ab8087f030a5168c",
+  "last": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/last_checkpoints/cursor_00029038_f6a92bea",
+    "position": 29038,
+    "state_sha256": "8a997d22bd6ccef97532ea3240ea0e23d86bcf74d81b28db4517b9738ef67beb",
+    "adapter_sha256": "b48e6e6d85ab2e167d8345f74128b2c6a6d263b2880922820a0c363d37aef7f5",
+    "train_manifest_sha256": "e545692c96369028e9ba0902c63707a9612e03d1d59b5e451136a30b8ccd129c",
+    "val_manifest_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56"
+  },
+  "skipped_oom": 0,
+  "monitor_records": 72,
+  "monitor_peak_bytes": 14741833216,
+  "source_artifacts": [
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/summary.json",
+      "sha256": "5aa3681bb526a7cda3f45267108b016d77db037e7221a79c6e59fb237dfc8e64"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/run_meta.json",
+      "sha256": "6c00fd614952312ffac28e97d0a9059727c4007c93dd0e843052fc95a37e6090"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/train_modality_receipts.jsonl",
+      "sha256": "9d8155eb1dbd744fb714395f6dc8b860306ea807ffa331695c1ad75497898d3a"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/memory_monitor.jsonl",
+      "sha256": "b4e728aa8083f19fdd3361116c4347784b90948b49dd46e9b608c8c440d91e8f"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0/last.json",
+      "sha256": "1c7a962dbb3b4e247b4c17e5fe9369252d62ae00333477f718298c54c5109c2e"
+    }
+  ]
+}

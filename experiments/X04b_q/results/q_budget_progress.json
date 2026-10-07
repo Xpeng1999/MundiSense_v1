@@ -12,5 +12,19 @@
     "projected_total_gpu_h": 64.37116298007916,
     "limit_h": 70,
     "passed": true
+  },
+  {
+    "completed_model": "fold0",
+    "at": "2026-10-07T19:12:28.291408+00:00",
+    "charged_gpu_hours": 14.903666814309448,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 34.26220878166752,
+    "remaining_prediction_h": 2.569632161200276,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 0.8888818756566615,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 60.49075782140746,
+    "limit_h": 70,
+    "passed": true
   }
 ]
