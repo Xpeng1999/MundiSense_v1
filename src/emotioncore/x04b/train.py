@@ -22,134 +22,13 @@ from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x03.budget_v2 import FACE_SHA, SUBSET_SHA
 from emotioncore.x03.q_manifest import read_jsonl, sha256
 from emotioncore.x03.q_smoke import MODEL, assert_modality_receipt, model_and_optimizer
+from emotioncore.x03.q_train_guarded import (segment_ends, nvidia_memory_mib, trainable_parameters, gradient_snapshot, restore_gradients, save_last, restore_last)
 from emotioncore.x04b.loss import forward_loss, mer_target, token_ids
 from emotioncore.x04b.prepare import MER_LABELS
 from emotioncore.x04.prepare import storage_gate
 from emotioncore.x03.q_train import (EFFECTIVE_BATCH, LR, MAX_EPOCHS, SEED,
                                      WARMUP_RATIO, eval_boundaries, load_input,
                                      prepare_target, validate)
-
-
-def ordered_training_rows(rows: list[dict], name: str) -> list[dict]:
-    """Exactly match the frozen fold-specific order of the original trainer."""
-    ordered = []
-    for epoch in range(MAX_EPOCHS):
-        shuffled = rows.copy()
-        random.Random(SEED + epoch + (0 if name == "final" else
-                                     int(name.removeprefix("fold")) * 100)).shuffle(shuffled)
-        ordered.extend(shuffled)
-    return ordered
-
-
-def segment_ends(n: int) -> list[int]:
-    """Split at optimizer and validation boundaries without moving either."""
-    total = n * MAX_EPOCHS
-    return sorted(set(range(EFFECTIVE_BATCH, total + 1, EFFECTIVE_BATCH)) |
-                  set(eval_boundaries(n)) | {total})
-
-
-def nvidia_memory_mib() -> int | None:
-    try:
-        result = subprocess.run(
-            ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"],
-            check=True, capture_output=True, text=True, timeout=5)
-        return int(result.stdout.splitlines()[0].strip())
-    except (OSError, ValueError, IndexError, subprocess.SubprocessError):
-        return None
-
-
-def trainable_parameters(thinker):
-    return {name: parameter for name, parameter in thinker.named_parameters()
-            if parameter.requires_grad}
-
-
-def gradient_snapshot(parameters: dict) -> dict:
-    return {name: None if parameter.grad is None else parameter.grad.detach().cpu().clone()
-            for name, parameter in parameters.items()}
-
-
-def restore_gradients(optimizer, parameters: dict, snapshot: dict) -> None:
-    optimizer.zero_grad(set_to_none=True)
-    for name, saved in snapshot.items():
-        if saved is not None:
-            parameters[name].grad = saved.to(device=parameters[name].device,
-                                             dtype=parameters[name].dtype)
-
-
-def save_last(root: Path, thinker, optimizer, scheduler, parameters: dict,
-              progress: dict, position: int, records, skipped, manifest_sha: str,
-              val_sha: str) -> dict:
-    import torch
-
-    for stream in (records, skipped):
-        stream.flush()
-        os.fsync(stream.fileno())
-    checkpoint_root = root / "last_checkpoints"
-    checkpoint_root.mkdir(parents=True, exist_ok=True)
-    identifier = f"cursor_{position:08d}_{uuid.uuid4().hex[:8]}"
-    temporary = checkpoint_root / f".{identifier}.tmp"
-    final = checkpoint_root / identifier
-    temporary.mkdir()
-    thinker.save_pretrained(str(temporary / "adapter"), safe_serialization=True)
-    state = {
-        "position": position, "progress": progress,
-        "train_manifest_sha256": manifest_sha, "val_manifest_sha256": val_sha,
-        "face_policy_sha256": FACE_SHA, "subsets_sha256": SUBSET_SHA,
-        "record_bytes": (root / "train_modality_receipts.jsonl").stat().st_size,
-        "skipped_bytes": (root / "skipped_oom.jsonl").stat().st_size,
-        "adapter_parameters": {name: value.detach().cpu().clone()
-                               for name, value in parameters.items()},
-        "gradients": gradient_snapshot(parameters),
-        "optimizer": optimizer.state_dict(), "scheduler": scheduler.state_dict(),
-        "torch_rng": torch.get_rng_state(),
-        "cuda_rng": torch.cuda.get_rng_state_all(),
-        "numpy_rng": np.random.get_state(), "python_rng": random.getstate(),
-    }
-    torch.save(state, temporary / "state.pt")
-    pointer = {"path": str(final), "position": position,
-               "state_sha256": sha256(temporary / "state.pt"),
-               "adapter_sha256": sha256(temporary / "adapter" / "adapter_model.safetensors"),
-               "train_manifest_sha256": manifest_sha,
-               "val_manifest_sha256": val_sha}
-    os.replace(temporary, final)
-    write_json_atomic(root / "last.json", pointer)
-    return pointer
-
-
-def restore_last(root: Path, thinker, optimizer, scheduler, parameters: dict,
-                 manifest_sha: str, val_sha: str) -> tuple[int, dict, int, int]:
-    import torch
-
-    pointer = json.loads((root / "last.json").read_text(encoding="utf-8"))
-    path = Path(pointer["path"])
-    if (pointer["train_manifest_sha256"] != manifest_sha or
-            pointer["val_manifest_sha256"] != val_sha or
-            sha256(path / "state.pt") != pointer["state_sha256"] or
-            sha256(path / "adapter" / "adapter_model.safetensors") !=
-            pointer["adapter_sha256"]):
-        raise ValueError("Last Q checkpoint provenance or SHA mismatch")
-    state = torch.load(path / "state.pt", map_location="cpu", weights_only=False)
-    if (state["train_manifest_sha256"] != manifest_sha or
-            state["val_manifest_sha256"] != val_sha or
-            state["face_policy_sha256"] != FACE_SHA or
-            state["subsets_sha256"] != SUBSET_SHA or
-            state["position"] != pointer["position"] or
-            set(state["adapter_parameters"]) != set(parameters)):
-        raise ValueError("Last Q checkpoint state differs from frozen run")
-    for name, parameter in parameters.items():
-        saved = state["adapter_parameters"][name]
-        if saved.shape != parameter.shape:
-            raise ValueError(f"Last Q adapter shape differs: {name}")
-        parameter.data.copy_(saved.to(device=parameter.device, dtype=parameter.dtype))
-    optimizer.load_state_dict(state["optimizer"])
-    scheduler.load_state_dict(state["scheduler"])
-    restore_gradients(optimizer, parameters, state["gradients"])
-    torch.set_rng_state(state["torch_rng"])
-    torch.cuda.set_rng_state_all(state["cuda_rng"])
-    np.random.set_state(state["numpy_rng"])
-    random.setstate(state["python_rng"])
-    return (state["position"], state["progress"], state["record_bytes"],
-            state["skipped_bytes"])
 
 
 def input_token_length(cache_root: Path, row: dict) -> int:
@@ -170,7 +49,9 @@ def run(args: argparse.Namespace) -> None:
         raise ValueError("Frozen X03 config SHA changed")
     manifest_meta = json.loads(args.manifest_meta.read_text(encoding="utf-8"))
     info = manifest_meta["runs"][args.fold_name]
-    train_sha, val_sha = info["train_sha256"], sha256(args.val_manifest)
+    import hashlib
+    train_sha = hashlib.sha256("".join(s["sha256"] for s in info["epochs"]).encode()).hexdigest()
+    val_sha = sha256(args.val_manifest)
     epoch_rows=[]
     for spec in info["epochs"]:
         if sha256(Path(spec["path"]))!=spec["sha256"]:raise ValueError("Frozen epoch changed")
@@ -178,7 +59,7 @@ def run(args: argparse.Namespace) -> None:
     if len(epoch_rows)!=2 or any(len(rows)!=info["epoch_n"] for rows in epoch_rows):raise ValueError("Epoch coverage changed")
     if (manifest_meta["git"]["dirty"] or manifest_meta["subsets_sha256"] != SUBSET_SHA or
             manifest_meta["face_policy_sha256"] != FACE_SHA or
-            info["train_sha256"] != train_sha or info["val_sha256"] != val_sha):
+            info["val_sha256"] != val_sha):
         raise ValueError("Frozen Q manifest or provenance changed")
     train_rows, val_rows = [row for rows in epoch_rows for row in rows], read_jsonl(args.val_manifest)
     if (len(train_rows) != info["train_count"] or len(val_rows) != 700 or
@@ -203,6 +84,8 @@ def run(args: argparse.Namespace) -> None:
             "training_count": len(train_rows), "validation_count": len(val_rows),
             "cuda_allocator": "default",
             "resume_last": args.resume_last,"initialization":"base only; never X03 adapter",
+            "combined_epoch_sha256":train_sha,
+            "inherited_guarded_sha256":sha256(Path(sys.modules["emotioncore.x03.q_train_guarded"].__file__)),
             "epochs":info["epochs"],"MER_first_token_mask":list(MER_LABELS)}
     write_json_atomic(args.output_dir / "run_meta.json", meta)
     torch.manual_seed(SEED)
