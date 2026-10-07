@@ -13,6 +13,8 @@ def mer_target(values,truth,tokenizer):
     import torch
     if truth not in MER_LABELS:raise ValueError('MER label outside frozen six')
     answer=tokenizer(truth+'"}',add_special_tokens=False,return_tensors='pt').input_ids.to(values['input_ids'].device)
+    expected=tokenizer(truth,add_special_tokens=False).input_ids[0]
+    if int(answer[0,0])!=expected:raise ValueError('Suffix first token differs from frozen label token')
     end=torch.tensor([[tokenizer.convert_tokens_to_ids('<|im_end|>')]],dtype=answer.dtype,device=answer.device)
     answer=torch.cat((answer,end),dim=1);prompt=values['input_ids']
     values['input_ids']=torch.cat((prompt,answer),dim=1);values['attention_mask']=torch.ones_like(values['input_ids']);values['labels']=torch.cat((torch.full_like(prompt,-100),answer),dim=1)

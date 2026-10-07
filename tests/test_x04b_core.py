@@ -35,3 +35,31 @@ def test_et_original_loss_is_same_object_and_arguments():
         return SimpleNamespace(loss=expected)
     result,loss=forward_loss(thinker,values,'ET',[])
     assert loss is expected and torch.equal(loss,result.loss)
+
+def test_twofold_fits_only_opposite_fold_labels(monkeypatch):
+    import numpy as np
+    from emotioncore.x04b import analysis
+    calls=[]
+    def fit(logp,y,invalid,single):
+        calls.append(y.copy());return {}
+    monkeypatch.setattr(analysis,'fit_system',fit)
+    monkeypatch.setattr(analysis,'apply_system',lambda x,b,p,s:(np.ones((len(x),7))/7,np.ones((len(x),7))/7))
+    y=np.array([0,1,2,3]);folds=np.array([0,0,1,1])
+    analysis.twofold(np.zeros((4,1,7)),y,folds,np.zeros(4,dtype=bool),True)
+    assert calls[0].tolist()==[2,3] and calls[1].tolist()==[0,1]
+
+def test_et_loss_matches_original_full_vocab_ce_value_and_grad():
+    import torch
+    from types import SimpleNamespace
+    torch.manual_seed(1)
+    logits=torch.randn(1,7,30,requires_grad=True)
+    labels=torch.tensor([[-100,-100,-100,4,10,12,2]])
+    class Original:
+        def __call__(self,**kw):
+            loss=torch.nn.functional.cross_entropy(logits[:,:-1].reshape(-1,30).float(),kw['labels'][:,1:].reshape(-1),ignore_index=-100)
+            return SimpleNamespace(loss=loss,logits=logits)
+    thinker=Original();values={'labels':labels}
+    original=thinker(**values,use_cache=False,use_audio_in_video=False).loss
+    _,new=forward_loss(thinker,values,'ET',list(range(6)))
+    assert torch.equal(original,new)
+    assert torch.equal(torch.autograd.grad(original,logits,retain_graph=True)[0],torch.autograd.grad(new,logits)[0])
