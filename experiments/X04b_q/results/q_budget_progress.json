@@ -26,5 +26,33 @@
     "projected_total_gpu_h": 60.49075782140746,
     "limit_h": 70,
     "passed": true
+  },
+  {
+    "completed_model": "fold0_predictions",
+    "at": "2026-10-07T20:27:28.647502+00:00",
+    "charged_gpu_hours": 16.15373793593391,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 34.26220878166752,
+    "remaining_prediction_h": 1.6842576820674038,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 0.8888818756566615,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 60.67837956807248,
+    "limit_h": 70,
+    "passed": true
+  },
+  {
+    "completed_model": "fold1",
+    "at": "2026-10-08T11:19:42.021005+00:00",
+    "charged_gpu_hours": 31.024081134814768,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 18.696290290909186,
+    "remaining_prediction_h": 1.6842576820674038,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 0.8888818756566615,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 56.86962057804334,
+    "limit_h": 70,
+    "passed": true
   }
 ]
