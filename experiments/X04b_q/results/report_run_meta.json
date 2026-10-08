@@ -5,6 +5,7 @@
     "status": "",
     "full_diff": null
   },
-  "at": "2026-10-08T12:05:37.473412+00:00",
-  "report_sha256": "ed093a15f779f8f91e9737a2ec44838467a2ad00693607f0ef1cbf8f7d6d7058"
+  "at": "2026-10-08T13:08:39.214054+00:00",
+  "report_sha256": "5e40d4163486327be51347be01060e0229acb02e46a2a1bb3212619ca34b225f",
+  "stop_delivery_edit": "explicit stopped scope, P1/secondary tables and X05 handoff"
 }

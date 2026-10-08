@@ -1,0 +1,7 @@
+{
+  "metric": "twofold crossfit CV OP-N macro-F1 Q_AV mix-et",
+  "point_difference": -0.022585091918716715,
+  "threshold": -0.02,
+  "stop": true,
+  "no_target_labels": true
+}

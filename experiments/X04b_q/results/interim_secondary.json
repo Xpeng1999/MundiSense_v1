@@ -1,0 +1,38 @@
+{
+  "Q_AV": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.022585091918716715,
+    "left_minus_right_95": [
+      -0.02759458041481655,
+      -0.018866816124560537
+    ]
+  },
+  "Q_A": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.02785133652210736,
+    "left_minus_right_95": [
+      -0.0437653599660881,
+      -0.01632113438524861
+    ]
+  },
+  "H3": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.010232343385410458,
+    "left_minus_right_95": [
+      -0.01767520554928914,
+      0.00017061302743603957
+    ]
+  }
+}
