@@ -1,0 +1,14 @@
+{
+  "completed_model": "reviewer_continuation_preflight",
+  "at": "2026-10-10T04:44:54.995810+00:00",
+  "charged_gpu_hours": 32.40749243088086,
+  "observed_ratio_vs_initial": 1.0,
+  "remaining_training_h": 18.696290290909186,
+  "remaining_prediction_h": 0.8029395918126597,
+  "reserve_fraction": 0.2,
+  "diagnostic_reserve_h": 0.8888818756566615,
+  "load_reserve_h": 0.5,
+  "projected_total_gpu_h": 57.195450165803734,
+  "limit_h": 70,
+  "passed": true
+}

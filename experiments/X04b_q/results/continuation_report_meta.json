@@ -1,0 +1,12 @@
+{
+  "git": {
+    "commit": "229c5018a5f1371c180faf01a8a9baca1b6b3a7b",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "at": "2026-10-10T04:46:12.350821+00:00",
+  "report_sha256": "6a82f47b32d7a26fbb4334074f780e2d90fd8f133a9fead5c53ef404fbe50508",
+  "handoff_sha256": "245619aacdcfa988c9933fccc462adf4bf023a6f4c9bdbbc32c4cc02dcfe1fa2",
+  "analysis_complete": false
+}

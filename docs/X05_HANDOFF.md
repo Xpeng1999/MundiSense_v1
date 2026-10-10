@@ -38,8 +38,8 @@ CPU目标推理：`python -m emotioncore.x04.targets --arm D1 --encoder A3 --job
 
 ## X04b Q_mix
 
-2026-10-08：预登记徒劳停止，最终模型未训练，禁止把fold0/1 adapter当作已验收最终模型。Q-AV两折互拟合CV OP-N差−0.022585 < −0.02；累计GPU32.407492小时。等待reviewer，不自动续训。
+2026-10-10 reviewer授权续跑最终模型，旧徒劳停止统计量不再适用。当前状态：running。等待reviewer，不自行决定采用。
 
-入口：emotioncore.x04b.train / pipeline / analysis。冻结运行代码dc8d9da；服务器根/home/administrator/emotion-data/emotioncore_runs/X04b，派生产物/mnt/h/emotionAI/emotioncore_runs/X04b。fold0/1最佳adapter入口及SHA见experiments/X04b_q/results/fold0_summary.json、fold1_summary.json；原始概率仅服务器。
+仅复用fold0/1产物；P1同折内按说话人留一，P2和所有目标参数仍为两折合并OOF拟合。原两折互拟合与停止回执保留。新证据和源SHA见experiments/X04b_q/results/revised_*.json；最终adapter见final_summary.json（完成后）；逐句概率和媒体只在服务器。
 
-两折证据、参数及源SHA见interim_main_table.json、interim_primary.json、interim_secondary.json、interim_source_artifact_index.json。专家固定X04a D1，两边Q在同6533句/6说话人互为留出拟合。P2、ET-test、SIMS-valid及MER-test本轮未执行，无跨语料采用证据；Q_mix采用由reviewer裁定。
+入口：emotioncore.x04b.continue_run / analysis --within-fold-loso。服务器续跑账本/home/administrator/emotion-data/emotioncore_runs/X04b/continuation，派生产物/mnt/h/emotionAI/emotioncore_runs/X04b。训练总上限70GPU小时，含已用32.407492。方法教训：不将另一模型单折校准迁移作为决策依据；未来同模型其他说话人或不少于四折合并OOF拟合。

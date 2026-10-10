@@ -1,0 +1,112 @@
+{
+  "git": {
+    "commit": "ac2aab84555e2d6b5cc763e90ceb7001dcbdad7d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "started_at": "2026-10-10T04:44:54.990531+00:00",
+  "steps": [
+    {
+      "name": "precheck",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 400.0252476360183,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/precheck_attempt0.log",
+      "log_sha256": "d6d539d346cdefca8d5596e7b0fdf48d307966d08c6eafff2e2c6d3a82054ba1"
+    },
+    {
+      "name": "train_fold0",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 53253.175283877994,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/train_fold0_attempt0.log",
+      "log_sha256": "61c1cbb080840377e3fc6708ef4b78319ed0ad6473ac1a747c414bd176765b36"
+    },
+    {
+      "name": "predict_fold0",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 4500.25603784807,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/predict_fold0_attempt0.log",
+      "log_sha256": "75d6e5451775e2592c22fc3eab12ddfef9d2e99af199a95fb63f57372f6ef415"
+    },
+    {
+      "name": "train_fold1",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 53533.235515971086,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/train_fold1_attempt0.log",
+      "log_sha256": "7d0b127c449be717d7c3a2de1dc3dc98da32e5a99a6feb6b8d6dc9890d0ea396"
+    },
+    {
+      "name": "predict_fold1",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 4980.280665837927,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/predict_fold1_attempt0.log",
+      "log_sha256": "6830b444a61116b9d0a19c0a6afe92634b59fc0b6bcba242e66ac27ade50e75b"
+    },
+    {
+      "name": "futility_analysis",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 30.005966805969365,
+      "gpu": false,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/logs/futility_analysis_attempt0.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "revised_p1",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 40.00660212896764,
+      "gpu": false,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/revised_p1_attempt0.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "charged_gpu_hours": 32.40749243088086,
+  "status": "running",
+  "budget_projection": {
+    "completed_model": "reviewer_continuation_preflight",
+    "at": "2026-10-10T04:44:54.995810+00:00",
+    "charged_gpu_hours": 32.40749243088086,
+    "observed_ratio_vs_initial": 1.0,
+    "remaining_training_h": 18.696290290909186,
+    "remaining_prediction_h": 0.8029395918126597,
+    "reserve_fraction": 0.2,
+    "diagnostic_reserve_h": 0.8888818756566615,
+    "load_reserve_h": 0.5,
+    "projected_total_gpu_h": 57.195450165803734,
+    "limit_h": 70,
+    "passed": true
+  },
+  "active_step": "train_final",
+  "original_stop_sha256": "f73e1628dbd69d30c6eef86fa4819315050ec8e1d87ca2d7101659109e31fe39",
+  "revision": "X04B_CONTINUE_PROMPT 2026-10-10; final only; futility retired",
+  "active_started_at": "2026-10-10T04:45:35.109380+00:00",
+  "active_command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x04b.train",
+    "--fold-name",
+    "final",
+    "--manifest-meta",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/run_meta.json",
+    "--val-manifest",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_val.jsonl",
+    "--cache-root",
+    "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
+    "--output-dir",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final"
+  ],
+  "active_attempt": 0,
+  "child_pid": 1084914
+}
