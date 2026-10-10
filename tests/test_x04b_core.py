@@ -63,3 +63,23 @@ def test_et_loss_matches_original_full_vocab_ce_value_and_grad():
     _,new=forward_loss(thinker,values,'ET',list(range(6)))
     assert torch.equal(original,new)
     assert torch.equal(torch.autograd.grad(original,logits,retain_graph=True)[0],torch.autograd.grad(new,logits)[0])
+
+@pytest.mark.parametrize('single',[True,False])
+def test_loso_uses_only_same_model_other_speakers(monkeypatch,single):
+    import numpy as np
+    from emotioncore.x04b import analysis
+    # Distinct row/label sentinels expose any model, speaker or index leakage.
+    folds=np.repeat([0,1],6);speakers=np.repeat(np.array(['a','b','c','d','e','f']),2)
+    y=np.arange(12);logp=np.broadcast_to(np.arange(12)[:,None,None],(12,1 if single else 3,7)).copy();calls=[]
+    def fit(x,labels,bad,one):
+        calls.append((x[:,0,0].tolist(),labels.tolist()));return {'value':float(labels.sum())}
+    def apply(x,bad,params,one):return (np.full((len(x),7),params['value']),)*2
+    monkeypatch.setattr(analysis,'fit_system',fit);monkeypatch.setattr(analysis,'apply_system',apply)
+    a,n,params=analysis.within_fold_loso(logp,y,folds,speakers,np.zeros(12,bool),single)
+    for i,held in enumerate(sorted(set(speakers))):
+        mask=speakers==held;expected=np.where((folds==folds[mask][0])&~mask)[0].tolist()
+        assert calls[i]==(expected,expected)
+        changed=y.copy();changed[mask]=9999
+        _,changed_n,_=analysis.within_fold_loso(logp,changed,folds,speakers,np.zeros(12,bool),single)
+        assert np.array_equal(n[mask],changed_n[mask])
+        assert held not in params[i]['fit_speakers'] and len(params[i]['fit_speakers'])==2

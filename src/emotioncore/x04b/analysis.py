@@ -38,6 +38,22 @@ def twofold(logp,y,folds,invalid,single):
         params.append({'held_fold':held,'fit_fold':1-held,'fit_count':int(fit.sum()),'held_count':int(mask.sum()),**p})
     return a,n,params
 
+def within_fold_loso(logp,y,folds,speakers,invalid,single):
+    """Each input array is one Q version; each fold is one frozen Q model."""
+    if set(folds.tolist()) != {0,1}:raise ValueError('Expected folds0/1')
+    if len(set(speakers.tolist())) != 6:raise ValueError('Expected six speakers')
+    a=np.empty((len(y),7));n=np.empty_like(a);params=[]
+    for held in sorted(set(speakers.tolist())):
+        mask=speakers==held;model_folds=set(folds[mask].tolist())
+        if len(model_folds)!=1:raise ValueError('Speaker spans models/folds')
+        fold=next(iter(model_folds));fit=(folds==fold)&~mask
+        fit_speakers=sorted(set(speakers[fit].tolist()))
+        if len(fit_speakers)!=2:raise ValueError('Expected two other same-fold speakers')
+        p=fit_system(logp[fit],y[fit],invalid[fit],single)
+        a[mask],n[mask]=apply_system(logp[mask],invalid[mask],p,single)
+        params.append({'held_speaker':held,'model_fold':int(fold),'fit_speakers':fit_speakers,'fit_count':int(fit.sum()),'held_count':int(mask.sum()),**p})
+    return a,n,params
+
 def read_checked(spec,artifacts):
     path=Path(spec['path'])
     if sha256(path)!=spec['sha256']:raise ValueError('Frozen source SHA changed')
@@ -105,7 +121,7 @@ def paired_pearson(left,right):
 
 def run(args):
     git=git_provenance(Path.cwd());storage_gate();require_h(args.output);args.output.mkdir(parents=True,exist_ok=True)
-    meta={'git':git,'command':sys.argv,'started_at':dt.datetime.now(dt.timezone.utc).isoformat(),'interim':args.interim,'target_labels_used_for_fitting':False,'expert_recipe':'frozen X04a D1','folds':[0,1],'seed':SEED}
+    meta={'git':git,'command':sys.argv,'started_at':dt.datetime.now(dt.timezone.utc).isoformat(),'interim':args.interim,'p1_method':'within_fold_loso' if args.within_fold_loso else 'twofold','target_labels_used_for_fitting':False,'expert_recipe':'frozen X04a D1','folds':[0,1],'seed':SEED}
     write_json_atomic(args.output/'run_meta.json',meta);table={};artifacts={};paired={};sims={}
     et=read_jsonl(Path('experiments/X01_benchmark/results/et_utterances.jsonl'));foldspec=json.loads(Path('configs/folds_v1.json').read_text());hold={s:f['fold'] for f in foldspec['folds'][:2] for s in f['outer_holdout_speakers']};expected={r['utt_id']:r for r in et if r['speaker_id'] in hold}
     if len(expected)!=6533 or len(hold)!=6:raise ValueError('Frozen twofold cohort differs')
@@ -114,10 +130,13 @@ def run(args):
             records,raw,bad=stack(args,version,components,'oof',artifacts)
             if {r['utt_id'] for r in records}!=set(expected) or any(r['speaker_id']!=expected[r['utt_id']]['speaker_id'] or r['truth_M']!=expected[r['utt_id']]['labels']['M'] or r['fold']!=hold[r['speaker_id']] for r in records):raise ValueError('OOF label/speaker/fold leakage')
             y=np.array([LABELS.index(r['truth_M']) for r in records]);folds=np.array([r['fold'] for r in records]);single=len(components)==1
-            p=raw[...,:7]/raw[...,:7].sum(2,keepdims=True);lp=np.log(np.clip(p,1e-12,1));a,n,params=twofold(lp,y,folds,bad,single);final=fit_system(lp,y,bad,single)
+            p=raw[...,:7]/raw[...,:7].sum(2,keepdims=True);lp=np.log(np.clip(p,1e-12,1));a,n,params=(within_fold_loso(lp,y,folds,np.array([r['speaker_id'] for r in records]),bad,single) if args.within_fold_loso else twofold(lp,y,folds,bad,single));final=fit_system(lp,y,bad,single)
             key=version+'/'+name;output=args.output/key;output.mkdir(parents=True,exist_ok=True)
             item={'version':version,'system':name,'components':components,'cv':{'op_a':et_metrics(a,records,bad),'op_n':et_metrics(n,records,bad)},'parameters_oof':params,'parameters_final':final,'artifacts':{}}
             paired[key]=scored(n,records,bad)
+            if single:
+                item['raw_op_a']=et_metrics(p[:,0],records,bad)
+                paired[key+'/raw']=scored(p[:,0],records,bad)
             def save(split,rows,pa,pn,invalid):
                 out=[{**r,'op_a':aa.tolist(),'op_n':nn.tolist(),'forced_error':bool(b)} for r,aa,nn,b in zip(rows,pa,pn,invalid)]
                 path=output/(split+'.jsonl');write_rows(path,out);item['artifacts'][split]={'path':str(path),'sha256':sha256(path)};return out
@@ -140,13 +159,15 @@ def run(args):
     for name in SYSTEMS:
         result=paired_speakers(paired['Q_mix/'+name],paired['Q_et/'+name],seed=SEED)
         (primary if name=='H_ref' else secondary)[name]=result
+    raw_comparisons={name:paired_speakers(paired['Q_mix/'+name+'/raw'],paired['Q_et/'+name+'/raw'],seed=SEED) for name in ('Q_AV','Q_A')}
+    write_json_atomic(args.output/'raw_comparisons.json',raw_comparisons)
     futility=secondary['Q_AV']['difference']<-.02
-    write_json_atomic(args.output/'futility.json',{'metric':'twofold crossfit CV OP-N macro-F1 Q_AV mix-et','point_difference':secondary['Q_AV']['difference'],'threshold':-.02,'stop':futility,'no_target_labels':True})
+    write_json_atomic(args.output/'futility.json',{'metric':'twofold crossfit CV OP-N macro-F1 Q_AV mix-et','point_difference':secondary['Q_AV']['difference'],'threshold':-.02,'stop':futility and not args.within_fold_loso,'applicable':not args.within_fold_loso,'no_target_labels':True})
     if not args.interim:
         primary['P2']={name:paired_pearson(sims['Q_mix/'+name],sims['Q_et/'+name]) for name in ('H_ref','Q_AV')}
     for filename,value in [('main_table.json',table),('primary.json',primary),('secondary.json',secondary),('source_artifact_index.json',artifacts)]:write_json_atomic(args.output/filename,value)
     meta['ended_at']=dt.datetime.now(dt.timezone.utc).isoformat();meta['outputs']={p.name:sha256(p) for p in args.output.glob('*.json') if p.name!='run_meta.json'};write_json_atomic(args.output/'run_meta.json',meta)
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--interim',action='store_true');p.add_argument('--r3',type=Path,default=Path('/home/administrator/emotion-data/emotioncore_runs/X03/Q'));p.add_argument('--r4',type=Path,default=Path('/mnt/h/emotionAI/emotioncore_runs/X04a'));run(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--interim',action='store_true');p.add_argument('--within-fold-loso',action='store_true');p.add_argument('--r3',type=Path,default=Path('/home/administrator/emotion-data/emotioncore_runs/X03/Q'));p.add_argument('--r4',type=Path,default=Path('/mnt/h/emotionAI/emotioncore_runs/X04a'));run(p.parse_args())
 if __name__=='__main__':main()
