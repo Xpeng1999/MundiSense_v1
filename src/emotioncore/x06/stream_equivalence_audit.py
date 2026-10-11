@@ -42,8 +42,14 @@ def run():
                     cause = 'changed_stream_input_decision'
                 delta = {name: float(np.max(np.abs(np.asarray(p) - single[row['utt_id']]['component_probs'][name])))
                          for name, p in row['component_probs'].items()}
+                old_class = LABELS[old['label']] if old['label'] >= 0 else 'reject'
+                subtype = ('class_changed' if actual.get('unrejected_label') != old_class else 'threshold_crossed')
+                if cause != 'changed_stream_input_decision':
+                    subtype = 'gate_or_route'
                 details.append({'utt_id': row['utt_id'], 'system': system, 'expected_x05_r90': expected,
                     'actual': actual['label'], 'confidence': actual['confidence'], 'route': actual['route'],
+                    'original_confidence': old['confidence'], 'original_unrejected_label': old_class,
+                    'actual_unrejected_label': actual.get('unrejected_label'), 'decision_change': subtype,
                     'reason': actual['reason'], 'diagnostic_category': cause,
                     'without_multiface_only': no_multi['label'], 'without_all_gates': no_gates['label'],
                     'has_face': face, 'track_scores': scores,
