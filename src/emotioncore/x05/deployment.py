@@ -142,6 +142,7 @@ def target_inputs(ids,maps,components):
 
 def sims_report(p,pred,confidence,thresholds,labels,bad):
     s=p[:,1]-p[:,2:6].sum(1)
+    s=s.copy();s[bad]=-3/7  # joy minus four negative classes under uniform seven-class probabilities.
     def corr(keep):
         return float(pearsonr(labels[keep],s[keep]).statistic) if keep.sum()>2 and np.std(s[keep])>0 else None
     neutral=labels==0
@@ -149,7 +150,7 @@ def sims_report(p,pred,confidence,thresholds,labels,bad):
         'neutral_n':int(neutral.sum()),
         'neutral_non_neutral_rate':float(np.mean((pred[neutral]>0)&(~bad[neutral]))) if neutral.any() else None,
         'pearson_all_available':corr(~bad),'pearson_all_with_missing_uniform_scores':corr(np.ones(len(labels),bool)),
-        'pearson_score':'calibrated pre-OP-N p(joy)-p(sadness,anger,fear,disgust)',
+        'pearson_score':'calibrated pre-OP-N p(joy)-p(sadness,anger,fear,disgust); missing media explicitly assigned uniform seven-class score -3/7',
         'rejection':{}}
     for key,threshold in thresholds.items():
         keep=(confidence>=threshold)&(~bad)

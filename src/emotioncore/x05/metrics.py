@@ -112,18 +112,24 @@ def measure(y,p,pred,confidence,speakers,thresholds=None,bootstrap=True,label_na
 
 def selective_curve(y,pred,confidence):
     # All tied scores enter together, so ordering by utterance ID cannot improve risk.
-    order=np.argsort(-confidence,kind='stable'); sorted_conf=confidence[order]
+    available=np.flatnonzero(pred>=0)
+    if not len(available):
+        return {'aurc':None,'maximum_coverage':0.,'curve':{'coverage':[],'risk':[]},'macro_f1_curve':[]}
+    order=available[np.argsort(-confidence[available],kind='stable')]; sorted_conf=confidence[order]
     ends=np.r_[np.flatnonzero(np.diff(sorted_conf)!=0)+1,len(order)]
     errors=np.cumsum(pred[order]!=y[order]); risk=errors[ends-1]/ends
-    coverage=ends/len(y); aurc=float(np.sum(risk*np.diff(np.r_[0.,coverage])))
+    coverage=ends/len(y); area=float(np.sum(risk*np.diff(np.r_[0.,coverage])))
+    aurc=area/coverage[-1]
     points=[]
-    for target in np.linspace(.05,1,20):
+    for target in np.linspace(min(.05,coverage[-1]),coverage[-1],20):
         n=int(ends[np.searchsorted(coverage,target)])
         keep=order[:n]; m=classification(confusion(y[keep],pred[keep]))
         full=classification(confusion(y,np.where(confidence>=sorted_conf[n-1],pred,-1)))
         points.append({'coverage':n/len(y),'risk':float(np.mean(pred[keep]!=y[keep])),
             'accepted_macro_f1':float(m['macro_f1']),
             'reject_in_recall_macro_f1':float(full['macro_f1']), 'threshold':float(sorted_conf[n-1])})
-    display=np.unique(np.searchsorted(coverage,np.linspace(coverage[0],1,101)))
-    return {'aurc':aurc,'tie_policy':'accept all score ties together',
+    display=np.unique(np.searchsorted(coverage,np.linspace(coverage[0],coverage[-1],101)))
+    return {'aurc':aurc,'area_over_global_coverage':area,'maximum_coverage':float(coverage[-1]),
+            'normalization':'AURC is area divided by attainable maximum coverage; unavailable predictions never accepted',
+            'tie_policy':'accept all score ties together',
             'curve':{'coverage':coverage[display].tolist(),'risk':risk[display].tolist()},'macro_f1_curve':points}

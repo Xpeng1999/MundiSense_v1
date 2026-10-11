@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 from emotioncore.x05 import calibration as c
-from emotioncore.x05.metrics import confusion,classification,measure
+from emotioncore.x05.metrics import confusion,classification,measure,selective_curve
 from emotioncore.x05.gate import route
 
 
@@ -67,3 +67,10 @@ def test_calibrator_nll_and_metrics_finite():
     result=measure(y,p,pred,confidence,np.repeat(['a','b'],35),{'90':.5})
     assert result['bootstrap']['replicates']==2000
     assert 0<=result['rejection']['90']['coverage']<=1
+
+
+def test_risk_curve_never_accepts_unavailable_prediction():
+    result=selective_curve(np.array([0,1]),np.array([0,-1]),np.array([.7,.99]))
+    assert result['maximum_coverage']==.5
+    assert result['curve']['coverage'][-1]==.5
+    assert result['aurc']==0

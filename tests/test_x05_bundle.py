@@ -57,3 +57,26 @@ def test_inference_entry_points_cannot_select_sealed_test():
         source=(root/name).read_text()
         assert '--split' not in source and '--manifest' not in source
         assert 'sims_test' not in source and 'CH-SIMS/test' not in source
+
+
+def test_real_bundle_replays_reported_target_predictions():
+    from emotioncore.x05.common import ROOT,read,read_jsonl
+    from emotioncore.x05.deployment import target_maps
+    bundle_path=ROOT/'deployment/calibration_bundle_v1.json'
+    if not bundle_path.exists():pytest.skip('post-G deployment artifact not yet available')
+    b=Bundle(read(bundle_path));assert Bundle(json.loads(json.dumps(b.parameters))).parameters==b.parameters
+    ids,maps=target_maps('et_test',{})
+    missing=set(read('configs/x03_face_missing_policy.json')['face_missing_utt_ids'])
+    for name,params in b.parameters['systems'].items():
+        expected={r['utt_id']:r for r in read_jsonl(ROOT/f'deployment/{name}_et_test.jsonl')}
+        valid=[uid for uid in ids if uid not in missing and all(maps[c][uid].get('status')=='ok' for c in params['components'])][:30]
+        assert len(valid)==30
+        for uid in valid:
+            availability=dict(has_face=name!='H_A',face_count=0 if name=='H_A' else 1,
+                              has_speech=name!='H_V',full_system=name if name in ('H_ref','H3') else 'H_ref',
+                              rejection_point=None)
+            inputs={c:maps[c][uid]['probabilities'] for c in params['components']}
+            label,confidence,routing=b.apply(inputs,availability)
+            assert label==LABELS[expected[uid]['label']]
+            assert confidence==pytest.approx(expected[uid]['confidence'],abs=1e-12)
+            assert routing==name
