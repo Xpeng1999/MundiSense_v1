@@ -71,3 +71,16 @@ def test_service_decisions_preserve_frozen_bundle_formula():
         assert new['confidence'] == pytest.approx(old[1], abs=1e-12)
     visual = service.decide(probabilities, 'H3', has_speech=False, scores=[1.])
     assert visual['rejection_point'] == '80' and visual['reason'] == 'visual_only'
+
+
+def test_vad_silence_minimum_maximum_and_overlap_exclusion():
+    import numpy as np
+    from emotioncore.x06.vad import segments, mask_segments
+    p = np.r_[np.zeros(10), np.ones(40), np.zeros(20), np.ones(29), np.zeros(20)]
+    result = segments(p, .5, .2)
+    assert result == [{'start_s': .1, 'end_s': .5, 'decision_s': .7}]
+    forced = segments(np.ones(3100), .5, .2)
+    assert [round(x['end_s'] - x['start_s'], 5) for x in forced] == [15, 15, 1]
+    valid = np.ones(100, dtype=bool); valid[40:60] = False
+    detected = segments(np.ones(100), .5, .2, valid)
+    assert not mask_segments(detected, 100)[~valid].any()
