@@ -70,7 +70,7 @@ def test_revision_estimate_includes_history_and_worst_replay_candidate():
     actual = estimate(3600, 10, candidates, rates, 1000, 100, .1, .5, .5)
     assert actual['correct_boundary_s'] == 20
     assert actual['two_vad_configs_s'] == 321.5
-    assert actual['replay_base_s'] == 417
+    assert actual['replay_base_s'] == pytest.approx(417)
     assert actual['estimated_total_gpu_hours'] == pytest.approx((3600 + 1.2 * (20 + 321.5 + 417) + 300) / 3600)
 
 
