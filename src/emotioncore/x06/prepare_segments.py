@@ -78,7 +78,8 @@ def run():
     cuts = read(ROOT / 'cuts/summary.json')
     selected = [r for source in cuts['streams'].values() for r in rows(source['segments']['path'])]
     results = []
-    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as pool:
+    # Offline preparation only; real-time replay retains one causal producer.
+    with concurrent.futures.ProcessPoolExecutor(max_workers=16) as pool:
         for i, result in enumerate(pool.map(one, selected)):
             results.append(result)
             if (i + 1) % 25 == 0:
@@ -86,7 +87,7 @@ def run():
                 write_json_atomic(output / 'progress.json', {'done': i + 1, 'total': len(selected)})
     write_rows(output / 'inputs.jsonl', results)
     finish(output, meta, {'n': len(results), 'inputs': spec(output / 'inputs.jsonl'),
-                          'cuts': spec(ROOT / 'cuts/summary.json'), 'gpu_seconds': 0})
+                          'cuts': spec(ROOT / 'cuts/summary.json'), 'gpu_seconds': 0, 'cpu_workers': 16})
 
 
 if __name__ == '__main__':
