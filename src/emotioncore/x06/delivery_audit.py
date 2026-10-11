@@ -9,6 +9,8 @@ REQUIRED = (
     'preflight', 'oracle_inputs', 'equivalence_attempt2', 'equivalence_audit_v2',
     'aishell_train_parallel', 'aishell_test', 'streams', 'cuts', 'budget_recheck',
     'fmh_faces', 'segment_inputs', 'emotion_segments', 'smoothing',
+    'stream_oracle_budget', 'stream_oracle_inputs', 'stream_equivalence',
+    'fmh_stream_oracle_inputs', 'fmh_stream_oracle',
     'event_schedule_audit', 'live_cpu_probe_selected_attempt2',
     'realtime_H3', 'realtime_H_ref',
 )

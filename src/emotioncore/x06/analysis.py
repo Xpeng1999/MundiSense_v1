@@ -89,29 +89,18 @@ def choose_alpha(bundle, speech):
 
 
 def fmh_baseline(bundle):
-    components = {}
-    sources = {}
-    for name in ('Q_A', 'Q_AV', 'A3', 'V2', 'V1'):
-        path = R5 / (f'Q/mix_fmh/{name[2:]}.jsonl' if name.startswith('Q_') else f'heads/D1_fmhx/{name}/targets/fmh.jsonl')
-        components[name] = {r['utt_id']: r for r in rows(path)}
-        sources[name] = spec(path)
-    faces = {r['utt_id']: r['face'] for r in rows(ROOT / 'fmh_faces/faces.jsonl')}
-    missing = set(read('configs/x03_face_missing_policy.json')['face_missing_utt_ids'])
+    source = read(ROOT / 'fmh_stream_oracle/summary.json')['predictions']
+    if sha256(source['path']) != source['sha256']:
+        raise ValueError('STOP FMH correct-boundary prediction SHA changed')
+    fresh = {r['utt_id']: r for r in rows(source['path'])}
     out = {system: [] for system in ('H3', 'H_ref')}
     for speaker in sorted(FMH):
         for truth in truths(speaker):
-            uid = truth['utt_id']; probability = {}
-            for name, mapping in components.items():
-                p = np.asarray(mapping[uid]['probabilities'], dtype=float)
-                p /= p.sum()
-                if name in ('V1', 'V2') and uid in missing:
-                    p[:] = 1 / 7
-                probability[name] = p.tolist()
+            row = fresh[truth['utt_id']]
             for system in out:
-                result = apply(bundle, probability, system, has_face=uid not in missing,
-                               scores=faces[uid]['track_scores'])
-                out[system].append({'utt_id': uid, 'speaker_id': speaker, 'truth': truth['label'], **result})
-    return out, sources
+                out[system].append({'utt_id': truth['utt_id'], 'speaker_id': speaker,
+                    'truth': truth['label'], **row['systems'][system]})
+    return out, {'actual_stream_correct_boundaries': source}
 
 
 def run():
@@ -134,7 +123,7 @@ def run():
     fmh_original, baseline_sources = fmh_baseline(bundle)
     et_truth = {r['utt_id']: r['label'] for speaker in TEST for r in truths(speaker)}
     et_original = {system: [] for system in ('H3', 'H_ref')}
-    for row in rows(ROOT / 'equivalence_attempt2/predictions.jsonl'):
+    for row in rows(ROOT / 'stream_equivalence/predictions.jsonl'):
         for system in et_original:
             et_original[system].append({'utt_id': row['utt_id'], 'truth': et_truth[row['utt_id']], **row['systems'][system]})
     reports = {}

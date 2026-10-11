@@ -10,6 +10,7 @@ from emotioncore.x06.common import *
 
 TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
          'stream_equivalence': ['emotioncore.x06.equivalence', '--stream'],
+         'fmh_stream_oracle': ['emotioncore.x06.fmh_stream_oracle'],
          'emotion_segments': ['emotioncore.x06.emotion_segments'],
          'realtime_H3': ['emotioncore.x06.run', '--batch', '--system', 'H3'],
          'realtime_H_ref': ['emotioncore.x06.run', '--batch', '--system', 'H_ref'],
