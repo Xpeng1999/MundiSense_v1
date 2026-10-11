@@ -1,0 +1,261 @@
+{
+  "version": 1,
+  "labels": [
+    "neutral",
+    "joy",
+    "sadness",
+    "anger",
+    "fear",
+    "disgust",
+    "surprise"
+  ],
+  "systems": {
+    "H_ref": {
+      "components": [
+        "Q_A",
+        "Q_AV",
+        "A3",
+        "V2",
+        "V1"
+      ],
+      "fusion": [
+        0.23896673973507135,
+        0.3512185576532395,
+        0.3556906124807692,
+        0.2645862191327292,
+        0.16755352223956566,
+        0.16281407289250216,
+        -0.06991277998769616,
+        0.472823254940764,
+        -0.0484587838225827,
+        -0.26714629189283434,
+        -0.0767995100275279,
+        -0.17331879005674428
+      ],
+      "calibration": {
+        "method": "temperature",
+        "log_temperature": [
+          0.0
+        ],
+        "bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "neutral_bias": 0.005723404891951667,
+      "thresholds": {
+        "90": 0.4684078173153527,
+        "80": 0.5638589832277158
+      },
+      "neutral_curve_biases": {
+        "0.05": 1.3784805666929931,
+        "0.1": 0.5339095357665058,
+        "0.2": -0.30858960978339534,
+        "0.25": -0.6305548175694096
+      }
+    },
+    "H3": {
+      "components": [
+        "Q_AV",
+        "A3",
+        "V2"
+      ],
+      "fusion": [
+        0.5770008914370258,
+        0.3915035884862148,
+        0.29954267621091263,
+        0.1693695089489969,
+        -0.06000931392425823,
+        0.44856498495929875,
+        -0.006380110128494391,
+        -0.32182563969397143,
+        -0.060268193755194245,
+        -0.1694453524468793
+      ],
+      "calibration": {
+        "method": "temperature",
+        "log_temperature": [
+          0.0
+        ],
+        "bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "neutral_bias": -0.05949394307079792,
+      "thresholds": {
+        "90": 0.46168464188401026,
+        "80": 0.5692207376640663
+      },
+      "neutral_curve_biases": {
+        "0.05": 1.3209254052030646,
+        "0.1": 0.44909848595406365,
+        "0.2": -0.42680816034314417,
+        "0.25": -0.7093761077424454
+      }
+    },
+    "H_A": {
+      "components": [
+        "Q_A",
+        "A3"
+      ],
+      "fusion": [
+        0.5520242506177649,
+        0.5206548815624216,
+        0.27785871406017437,
+        -0.17609681981926234,
+        0.38301282692930166,
+        -0.03016730919560213,
+        -0.4884929864681275,
+        -0.1326221723838303,
+        0.16650682174621195
+      ],
+      "calibration": {
+        "method": "temperature",
+        "log_temperature": [
+          0.0
+        ],
+        "bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "neutral_bias": 0.15284261451713788,
+      "thresholds": {
+        "90": 0.43052284378416705,
+        "80": 0.5113849615620576
+      },
+      "neutral_curve_biases": {
+        "0.05": 1.2350190226146893,
+        "0.1": 0.5735187495108605,
+        "0.2": -0.17547336072867215,
+        "0.25": -0.4593021251098023
+      }
+    },
+    "H_V": {
+      "components": [
+        "Q_V",
+        "V2",
+        "V1"
+      ],
+      "fusion": [
+        0.20144620326124035,
+        0.4881178000813497,
+        0.28165717401096807,
+        0.8319203000615807,
+        0.42475527172061833,
+        -0.09174992362931422,
+        0.30194950839665624,
+        -0.6418990557017752,
+        -0.2635719329338564,
+        -0.5614134752873656
+      ],
+      "calibration": {
+        "method": "temperature",
+        "log_temperature": [
+          0.0
+        ],
+        "bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "neutral_bias": 0.2091611895932639,
+      "thresholds": {
+        "90": 0.37433151415579924,
+        "80": 0.433815749867887
+      },
+      "neutral_curve_biases": {
+        "0.05": 1.1535309685524646,
+        "0.1": 0.6379370114520939,
+        "0.2": -0.0786244618554307,
+        "0.25": -0.25032347066118843
+      }
+    }
+  },
+  "components": {
+    "A3": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/final_head.pt",
+      "sha256": "db96fb2e13240a859db77d21d62653f40a7bbf545780e1af00251222ea6da8ab"
+    },
+    "V2": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/final_head.pt",
+      "sha256": "3335b31f63c760c6a185c7fca78ca9ecad0ec6626f2b79483809552bc5999099"
+    },
+    "V1": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/final_head.pt",
+      "sha256": "c0fadade0fffd85ef022e27580661d1de3d57e7be8e192fde65c4b2fef648236"
+    },
+    "Q_A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final/best_adapter_eval8",
+      "sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+      "base_index": {
+        "path": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B/model.safetensors.index.json",
+        "sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2"
+      }
+    },
+    "Q_V": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final/best_adapter_eval8",
+      "sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+      "base_index": {
+        "path": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B/model.safetensors.index.json",
+        "sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2"
+      }
+    },
+    "Q_AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final/best_adapter_eval8",
+      "sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+      "base_index": {
+        "path": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B/model.safetensors.index.json",
+        "sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2"
+      }
+    }
+  },
+  "method_freeze_sha256": "8e29dd19beaa3401fb2103542b5333d392d89b9c3e9f819153c313e8fcbcebbe",
+  "method_freeze_commit": "755d7045265d7b95d75fc7f6ffaac41838e24f37",
+  "fitting_set": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/fitting_ids.jsonl",
+    "sha256": "931c433ef3cab429a6f55412e063637eeeec326e99389d394a9129393e9df774"
+  },
+  "fit_counts": {
+    "twofold_oof": 6533,
+    "fmh": 3266,
+    "speakers": 9
+  },
+  "fusion_calibration_fit": "twofold OOF plus all FMH",
+  "operating_fit": "all FMH only",
+  "experts": "D1_fmhx",
+  "gate_rules": {
+    "multiple_faces": "reject:ambiguous_multi_face if second_score >= 0.5 * target_score",
+    "second_to_target_score_threshold": 0.5,
+    "neither_modality": "reject:no_modalities",
+    "no_face": "H_A",
+    "no_speech": "H_V",
+    "both": "requested full system",
+    "face_quality_threshold": null,
+    "default_full_system": "H3",
+    "visual_only_rejection_point": "80"
+  },
+  "default_full_system": "H_ref",
+  "default_rejection_point": "90"
+}
