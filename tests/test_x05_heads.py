@@ -20,3 +20,14 @@ def test_training_membership_and_order():
 def test_training_rejects_et_test():
     with pytest.raises(ValueError,match='leakage'):
         select_training([row('t','02',split='test')],[],set())
+
+
+def test_actual_final_q_training_excludes_all_fmh():
+    from emotioncore.x05.common import R3,R4B,FMH,read_jsonl
+    paths=[R3/'Q/manifests/final_train.jsonl',R4B/'manifests/final_epoch0.jsonl',
+           R4B/'manifests/final_epoch1.jsonl']
+    if not all(p.exists() for p in paths):pytest.skip('server-only original training receipts')
+    for p in paths:
+        rows=[r for r in read_jsonl(p) if r.get('corpus','ET')=='ET']
+        assert len(rows)==13100
+        assert {r['speaker_id'] for r in rows}.isdisjoint(FMH)

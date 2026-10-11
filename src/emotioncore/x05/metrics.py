@@ -47,9 +47,10 @@ def reliability(bins):
              'accuracy':float(b[2]/b[0]) if b[0] else None} for k,b in enumerate(bins)]
 
 
-def measure(y,p,pred,confidence,speakers,thresholds=None,bootstrap=True):
+def measure(y,p,pred,confidence,speakers,thresholds=None,bootstrap=True,label_names=None):
     y=np.asarray(y); pred=np.asarray(pred); speakers=np.asarray(speakers)
     keys=sorted(set(speakers)); classes=p.shape[1]
+    label_names=list(LABELS[:classes]) if label_names is None else label_names
     matrices=[]; bins_a=[]; bins_n=[]; cbins=[]; sums=[]
     accepted={k:[] for k in (thresholds or {})}
     for speaker in keys:
@@ -72,8 +73,8 @@ def measure(y,p,pred,confidence,speakers,thresholds=None,bootstrap=True):
     out.update(n=len(y),speaker_count=len(keys),nll=float(sums[:,1].sum()/len(y)),
         brier=float(sums[:,2].sum()/len(y)),top_label_ece=float(ece(bins_a.sum(0))),
         selected_label_ece=float(ece(bins_n.sum(0))),
-        classwise_ece={LABELS[c]:float(ece(cbins.sum(0)[c])) for c in range(classes)},
-        per_class={LABELS[c]:{k:float(point[k][c]) for k in ('precision','recall','f1','support')}
+        classwise_ece={label_names[c]:float(ece(cbins.sum(0)[c])) for c in range(classes)},
+        per_class={label_names[c]:{k:float(point[k][c]) for k in ('precision','recall','f1','support')}
                    for c in range(classes)},confusion_with_reject_column=total.astype(int).tolist(),
         reliability={'op_a_top':reliability(bins_a.sum(0)),'op_n_selected':reliability(bins_n.sum(0))})
     if bootstrap:
