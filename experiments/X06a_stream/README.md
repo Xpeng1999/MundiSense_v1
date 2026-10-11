@@ -10,7 +10,7 @@ python -m emotioncore.x06.run --input /绝对路径/EmotionTalk片段.mp4 --syst
 
 此实验入口接受冻结清单中的 FMH 或 ET-test 片段，拒绝其余来源。相对 `--out` 保存在 X06a 的 `offline_runs/` 下；绝对输出路径也必须位于 X06a 根目录。事件文件和同名 `.run` 目录内的运行凭据不得覆盖。`--realtime` 开启按原时间戳的 1 倍回放，默认全速。
 
-正式顺序是：CPU 预检与流构造 → 正确切句等价性 → AISHELL-4 train 冻结 VAD → test 报告与七条流切分 → 实际段数预算复核 → CPU 媒体准备 → 分段情绪推理 → FMH 冻结 EMA → H3/H_ref 各自四条 ET-test 实时回放。VAD 冻结文件已提交为 `configs/x06_vad_freeze.json`，后续正式运行检查其 SHA。
+正式顺序是：CPU 预检与流构造 → 原始单句服务诊断 → AISHELL-4 train 冻结 VAD → test 报告与七条流切分 → 实际段数预算复核 → 实际流输入上的正确切句等价性 → FMH 正确切句和分段情绪推理 → FMH 冻结 EMA → H3/H_ref 各自四条 ET-test 实时回放。实际流等价性是后续 GPU 工作的硬性前置条件；原始单句诊断不能替代它。VAD 冻结文件已提交为 `configs/x06_vad_freeze.json`，后续正式运行检查其 SHA。
 
 GPU 任务必须经过 `emotioncore.x06.gpu_guard`，它锁定单个 GPU 作业、累计全部进程墙钟时间，并在 15 小时或存储门禁触发时终止任务。`emotioncore.x06.launch` 将单个受限 watchdog 与 SSH 会话分离，避免连接中断移除预算监控；不自动启动下一阶段。
 
