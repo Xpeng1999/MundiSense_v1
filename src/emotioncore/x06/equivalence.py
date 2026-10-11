@@ -13,6 +13,9 @@ def run(stream_input=False):
     output = ROOT / (task + os.environ.get('X06_RUN_SUFFIX', ''))
     meta = start(output)
     inputs_path = ROOT / ('stream_oracle_inputs' if stream_input else 'oracle_inputs') / 'inputs.jsonl'
+    declared_inputs = read(inputs_path.parent / 'summary.json')['inputs']
+    if spec(inputs_path) != declared_inputs:
+        raise ValueError('STOP correct-boundary input provenance changed')
     inputs = rows(inputs_path)
     assert len(inputs) == 1929
     parameters = read('configs/calibration_bundle_v1.json')['systems']
