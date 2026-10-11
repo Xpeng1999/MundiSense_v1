@@ -37,7 +37,11 @@ def producer(sources, config, output, messages, begin_event, realtime):
         begin_event.wait()
         for speaker, source in sources.items():
             timeline = read(source['timeline']['path'])
-            signal = Service.audio(source['audio']['path'])
+            audio_started = time.monotonic()
+            signal, sample_rate = sf.read(source['audio']['path'], dtype='float32')
+            if sample_rate != 16000 or signal.ndim != 1:
+                raise ValueError('STOP generated streams must be mono 16kHz')
+            audio_load_seconds = time.monotonic() - audio_started
             video = Video(timeline)
             machine = LiveEvents(config['threshold'], config['min_silence'])
             cache = {}; next_frame = 0; event_index = 0
@@ -130,7 +134,8 @@ def producer(sources, config, output, messages, begin_event, realtime):
                 video.close()
             messages.put({'kind': 'stream_finished', 'speaker_id': speaker,
                           'input_duration_s': timeline['duration_s'], 'events': event_index,
-                          'producer_wall_s': time.monotonic() - started, 'totals': totals})
+                          'producer_wall_s': time.monotonic() - started, 'totals': totals,
+                          'audio_load_seconds': audio_load_seconds})
         messages.put({'kind': 'done', 'resident_rss_before_exit': rss_tree(os.getpid())})
     except BaseException:
         messages.put({'kind': 'error', 'traceback': traceback.format_exc()})
@@ -145,7 +150,7 @@ def consume(sources, system, output, event_path, alpha, realtime=True):
     context = mp.get_context('spawn')
     messages = context.Queue(maxsize=2)
     begin_event = context.Event()
-    config = read(ROOT / 'aishell_train/freeze.json')['selected']
+    config = read(ROOT / 'aishell_train_parallel/freeze.json')['selected']
     child = context.Process(target=producer, args=(sources, config, output, messages, begin_event, realtime))
     child.start()
     service = None

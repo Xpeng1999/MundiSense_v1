@@ -77,6 +77,7 @@ class Service:
     def q_probability(self, form, signal, video):
         import cv2
         from emotioncore.x03.q_smoke import PREFIX, PROMPT, assert_modality_receipt
+        tic = time.monotonic()
         content, frames, fps = [], None, None
         if form in ('V', 'AV'):
             capture = cv2.VideoCapture(str(video))
@@ -93,6 +94,8 @@ class Service:
             if len(frames) != 8 or any(f.shape != (336, 336, 3) for f in frames):
                 raise ValueError('STOP invalid frozen Q visual input')
             content.append({'type': 'video', 'video': str(video)})
+        video_decode_s = time.monotonic() - tic
+        tic = time.monotonic()
         if form in ('A', 'AV'):
             content.append({'type': 'audio', 'audio': 'segment.wav'})
         content.append({'type': 'text', 'text': PROMPT})
@@ -107,9 +110,14 @@ class Service:
         values = self.processor(**args)
         assert_modality_receipt(form, set(values))
         values = {k: v.to('cuda:0') for k, v in values.items()}
+        self.torch.cuda.synchronize()
+        preprocess_s = time.monotonic() - tic
+        tic = time.monotonic()
         with self.torch.inference_mode():
             output = self.q(**values, use_cache=False, use_audio_in_video=False)
             p = output.logits[0, -1].float()[self.tokens].softmax(0).cpu().tolist()
+        self.last_q_timing = {'video_decode': video_decode_s, 'preprocess': preprocess_s,
+                              'forward': time.monotonic() - tic}
         del values, output
         return p
 
@@ -176,6 +184,7 @@ class Service:
                         output[name] = output['Q_A']
                     else:
                         output[name] = self.q_probability(effective, signal, item['q_video']['output'] if has_face else None)
+                        timing.update({name + '_' + key: value for key, value in self.last_q_timing.items()})
                 timing[name] = time.monotonic() - tic
         return output, has_face, timing
 

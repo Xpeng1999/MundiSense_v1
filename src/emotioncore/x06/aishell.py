@@ -49,7 +49,7 @@ def run(split):
         assert_tuning_source('aishell_train')
         configs = candidates()
     else:
-        configs = [read(ROOT / 'aishell_train/freeze.json')['selected']]
+        configs = [read(ROOT / 'aishell_train_parallel/freeze.json')['selected']]
     models = {name: Posterior(name) for name in sorted({c['model'] for c in configs})}
     states = [{'config': c, 'frame_counts': np.zeros(3, dtype=np.int64),
                'boundary_counts': np.zeros(3, dtype=np.int64), 'segment_count': 0,

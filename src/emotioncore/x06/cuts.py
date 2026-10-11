@@ -10,7 +10,7 @@ from emotioncore.x06.online_vad import posterior_chunks, Endpoints, silence_wind
 def run():
     output = ROOT / 'cuts'
     meta = start(output)
-    frozen = read(ROOT / 'aishell_train/freeze.json')['selected']
+    frozen = read(ROOT / 'aishell_train_parallel/freeze.json')['selected']
     model = Posterior(frozen['model'])
     streams = read(ROOT / 'streams/summary.json')['streams']
     result = {}
@@ -43,7 +43,7 @@ def run():
         result[speaker] = {'speech_segments': len(voice), 'silence_windows': len(silence),
                            'vad_cpu_s': elapsed, 'segments': spec(output / f'{speaker}.jsonl')}
         write_json_atomic(output / 'progress.json', result)
-    finish(output, meta, {'streams': result, 'vad_freeze': spec(ROOT / 'aishell_train/freeze.json'),
+    finish(output, meta, {'streams': result, 'vad_freeze': spec(ROOT / 'aishell_train_parallel/freeze.json'),
                           'label_reads': False, 'gpu_seconds': 0})
 
 
