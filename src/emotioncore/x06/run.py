@@ -6,6 +6,16 @@ from emotioncore.x06.streams import validate_input, render_audio
 from emotioncore.x06.live import consume
 
 
+def event_destination(value):
+    path = Path(value)
+    if not path.is_absolute():
+        path = ROOT / 'offline_runs' / path
+    path = path.resolve()
+    if not path.is_relative_to(ROOT.resolve()):
+        raise ValueError('STOP outputs must remain inside the new X06a run root')
+    return path
+
+
 def run(args):
     row = None if args.batch else validate_input(args.input)
     if args.batch:
@@ -14,10 +24,7 @@ def run(args):
         event_path = output / 'events.jsonl'
     else:
         task = 'offline'
-        event_path = Path(args.out)
-        if not event_path.is_absolute():
-            event_path = ROOT / 'offline_runs' / event_path
-        require_h(event_path)
+        event_path = event_destination(args.out)
         output = event_path.parent / (event_path.stem + '.run')
     if not os.environ.get('X06_GPU_GUARDED'):
         from emotioncore.x06.gpu_guard import run as guarded

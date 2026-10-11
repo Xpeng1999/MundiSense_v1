@@ -176,3 +176,12 @@ def test_video_sampling_excludes_exact_end_even_with_float_noise():
     from emotioncore.x06.prepare_segments import frame_index
     assert frame_index(21.6) == frame_index(2160 * .01) == 108
     assert frame_index(21.61) == 109
+
+
+def test_event_outputs_cannot_write_old_experiment_directories():
+    from emotioncore.x06.run import event_destination
+    from emotioncore.x06.common import ROOT
+    assert event_destination('events.jsonl') == ROOT / 'offline_runs/events.jsonl'
+    for path in ('/mnt/h/emotionAI/emotioncore_runs/X05/new.jsonl', '/tmp/events.jsonl', '../../X05/events.jsonl'):
+        with pytest.raises(ValueError, match='new X06a run root'):
+            event_destination(path)

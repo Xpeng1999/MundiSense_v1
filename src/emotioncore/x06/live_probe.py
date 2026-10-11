@@ -10,14 +10,15 @@ from emotioncore.x06.prepare_segments import frame_index
 
 
 def run():
-    output = ROOT / 'live_cpu_probe'
+    output = ROOT / 'live_cpu_probe_v2'
     meta = start(output)
     candidates = sorted((r for r in population() if r['speaker_id'] in FMH and
-                         20 <= r['mp4']['duration_s'] <= 30), key=lambda r: r['utt_id'])
+                         r['mp4']['duration_s'] <= 30), key=lambda r: (-r['mp4']['duration_s'], r['utt_id']))
     if not candidates:
         raise RuntimeError('No bounded FMH integration-test clip')
     row = candidates[0]
-    timeline = build_timelines([row])[row['speaker_id']]
+    selected = [r for r in candidates if r['speaker_id'] == row['speaker_id']][:2]
+    timeline = build_timelines(selected)[row['speaker_id']]
     timeline_path = output / 'timeline.json'
     write_json_atomic(timeline_path, timeline)
     audio = render_audio(timeline, output / 'source.wav')
@@ -62,7 +63,7 @@ def run():
     finally:
         if process.is_alive():
             process.terminate(); process.join(timeout=10)
-    finish(output, meta, {'source_utt_id': row['utt_id'], 'source_speaker': row['speaker_id'],
+    finish(output, meta, {'source_utt_ids': [r['utt_id'] for r in selected], 'source_speaker': row['speaker_id'],
                           'segments': verified, 'config': config, 'parameter_selection': False,
                           'purpose': 'online cached frames versus independent frozen face operations', 'gpu_seconds': 0})
 
