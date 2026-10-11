@@ -1,5 +1,7 @@
 # X06a 连续流原型
 
+**状态：S6 已触发 0.95 停止门禁，后续实验未运行。** 实际流检查处理 1,184/1,929 句后，H_ref 已有 97 处差异，其全体一致率乐观上界为 94.971488%。所有 GPU 入口均被停止状态阻断。完整结果、逐句差异和缺测项见 [REPORT.md](REPORT.md)，停止凭据见 [results/stop_delivery_audit.json](results/stop_delivery_audit.json)。以下入口和执行顺序描述实现接口，不表示已完成全部阶段或可在本轮直接续跑。
+
 协议快照在 `protocol/`；执行解释与兼容性问题在 `OPEN_QUESTIONS.md`。模型、融合、校准、中性偏置及拒识阈值均冻结。部署默认 H3，可选 H_ref；`calibration_bundle_v1.1.json` 仅改变 `gate_rules` 的字节区间。
 
 执行主机为 `wsl`，新产物根目录为 `/mnt/h/emotionAI/emotioncore_runs/X06a`。从干净的仓库根目录运行，Python 使用 `/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python`；`PYTHONPATH` 包含新根目录下的 `deps` 与仓库 `src`。依赖副本和模型缓存均留在 X06a 根目录，旧实验目录只读。

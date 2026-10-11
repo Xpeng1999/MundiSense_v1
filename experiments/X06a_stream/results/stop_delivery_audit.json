@@ -1,7 +1,7 @@
 {
   "source": {
-    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_delivery_audit/summary.json",
-    "sha256": "cf00a81b9c1a4bcc6c94546344b2faac62d1901c70361de985658c28f8e364e3"
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_delivery_audit_v2/summary.json",
+    "sha256": "10ed4c1efa642d852d0bd9f0573cfd1be42157109990cfbcd2f043ecc1ddd7c3"
   },
   "data": {
     "status": "STOP_equivalence",
@@ -186,14 +186,14 @@
           "sha256": "4b0c1180e3fcfd5b2546a5236b082c08bad4acb7d9c8c11125cbd139b2cfdf0a"
         }
       },
-      "unit_tests_final": {
+      "unit_tests_stop_guard": {
         "summary": {
-          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_final/summary.json",
-          "sha256": "7c9f82d81be64d0e8d149cff7359eaa8de87a9d8c3f66ce831556967c692ca52"
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_stop_guard/summary.json",
+          "sha256": "b06b79ebd18f8c61520a704e8d20513f94d6472b12d4910915be05c4831e4ecc"
         },
         "run_meta": {
-          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_final/run_meta.json",
-          "sha256": "fd782cac5addcc1a2d52c103141a7dfb620313b43505ca7ee6f67c19c1fa9108"
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_stop_guard/run_meta.json",
+          "sha256": "1b9384f2ef04f74f5b3203968c20417819dfe81cf8b192e6c6ff2e413c9d23df"
         }
       }
     },
@@ -260,16 +260,27 @@
       "experiments/X06a_stream/results/budget_recheck.json",
       "experiments/X06a_stream/results/cpu_integration.json",
       "experiments/X06a_stream/results/cuts.json",
+      "experiments/X06a_stream/results/dependency_repair.json",
       "experiments/X06a_stream/results/equivalence.json",
       "experiments/X06a_stream/results/equivalence_audit.json",
       "experiments/X06a_stream/results/event_schedule_audit.json",
+      "experiments/X06a_stream/results/fmh_faces.json",
       "experiments/X06a_stream/results/gpu_equivalence.json",
       "experiments/X06a_stream/results/gpu_initialization_failure.json",
+      "experiments/X06a_stream/results/gpu_stream_equivalence.json",
+      "experiments/X06a_stream/results/oracle_inputs.json",
       "experiments/X06a_stream/results/preflight.json",
       "experiments/X06a_stream/results/protocol_tests.json",
+      "experiments/X06a_stream/results/segment_inputs.json",
       "experiments/X06a_stream/results/step0.json",
+      "experiments/X06a_stream/results/stop_after_equivalence.json",
+      "experiments/X06a_stream/results/stop_delivery_audit.json",
+      "experiments/X06a_stream/results/stream_equivalence.json",
+      "experiments/X06a_stream/results/stream_equivalence_audit.json",
       "experiments/X06a_stream/results/stream_oracle_budget.json",
+      "experiments/X06a_stream/results/stream_oracle_inputs.json",
       "experiments/X06a_stream/results/streams.json",
+      "experiments/X06a_stream/results/vad_models.json",
       "experiments/X06a_stream/results/vad_test.json",
       "experiments/X06a_stream/results/vad_train.json",
       "src/emotioncore/x06/__init__.py",
