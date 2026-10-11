@@ -1,0 +1,82 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/event_schedule_audit/summary.json",
+    "sha256": "b1bc9264b24926c3d95c2d8c5666b01ed17e9ad7ea129a2b9ea6649b0faadeac"
+  },
+  "data": {
+    "streams": {
+      "10": {
+        "events": 262,
+        "speech": 261,
+        "silence_windows": 1,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/10_posterior.npy",
+          "sha256": "d563c86ccfb7f3abdd19cb2cc7abdf51711061c304e7e921145a2a384899c4a0"
+        }
+      },
+      "11": {
+        "events": 984,
+        "speech": 964,
+        "silence_windows": 20,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/11_posterior.npy",
+          "sha256": "433b51ee1b12d4e56589f0fb09be3c3691da999605cc1a51e42ed39f1a306d31"
+        }
+      },
+      "13": {
+        "events": 221,
+        "speech": 218,
+        "silence_windows": 3,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/13_posterior.npy",
+          "sha256": "ecdb28bcca998fb5d2f35bb3661f8e193ea890c13cff5a4a198d3a62fdb64b2b"
+        }
+      },
+      "20": {
+        "events": 325,
+        "speech": 317,
+        "silence_windows": 8,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/20_posterior.npy",
+          "sha256": "6bae85e59a22e7cc8f3e9f8a5a652a808fd423945cdb8ff9948324714a09f11a"
+        }
+      },
+      "21": {
+        "events": 378,
+        "speech": 367,
+        "silence_windows": 11,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/21_posterior.npy",
+          "sha256": "ed175d8d7fcff8b7030d49b711bb87aa5bdff6a652cf690fa98efd4fb0e275fa"
+        }
+      },
+      "02": {
+        "events": 245,
+        "speech": 244,
+        "silence_windows": 1,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/02_posterior.npy",
+          "sha256": "0615838d77d5e8022b578938b31e9b65a7d5ed339f8a6902271bc959c036b1a7"
+        }
+      },
+      "06": {
+        "events": 529,
+        "speech": 525,
+        "silence_windows": 4,
+        "schedule_identical": true,
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/06_posterior.npy",
+          "sha256": "ab37c2bcfdafc897de298fd982ef1bda56e7ea307eace79aa51ed72d92621783"
+        }
+      }
+    },
+    "gpu_seconds": 0,
+    "emotion_label_reads": false
+  }
+}

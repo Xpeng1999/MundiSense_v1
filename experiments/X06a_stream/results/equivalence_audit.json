@@ -1,7 +1,7 @@
 {
   "source": {
-    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit/summary.json",
-    "sha256": "83b169ce940a7921588e51e182a967a49e31ec8770d07fe12c1804e06826f8b4"
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/summary.json",
+    "sha256": "6fa01a85ee1b0089b72ac5f16497dac60adb91a4c04e61074992caff980f7246"
   },
   "data": {
     "n": 1929,
@@ -26,9 +26,14 @@
       "ambiguous_multi_face": 42
     },
     "details": {
-      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit/mismatches.json",
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/mismatches.json",
       "sha256": "ce55add17ae22d57a84c8cfd7bbfb16bd82745e7ada759a8be34d48b98305886"
     },
+    "counterfactual_disagreements": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/counterfactual_disagreements.json",
+      "sha256": "65dd1f7779e96cca0ba09248c7ecb6e8f17b609f119e246ee07e41af70fe662f"
+    },
+    "counterfactual_new_disagreements_not_in_primary": 2,
     "gpu_seconds": 0
   }
 }

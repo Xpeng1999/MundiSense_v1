@@ -1,7 +1,7 @@
 {
   "source": {
-    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_terminal_frame/summary.json",
-    "sha256": "eb3983e1f9d5c5a09880e026a9c467cf1f5a0e4c1dac5ecc448912a3c0abdfb6"
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_stream_oracle/summary.json",
+    "sha256": "e848addf87cd265d30d2701ea859d146900cdbcebaf062273950790a6031aa0e"
   },
   "data": {
     "command": [
@@ -10,7 +10,7 @@
       "pytest",
       "-q",
       "tests/test_x06_protocol.py",
-      "--junitxml=/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_terminal_frame/pytest.xml"
+      "--junitxml=/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_stream_oracle/pytest.xml"
     ],
     "returncode": 0,
     "totals": {
@@ -20,8 +20,8 @@
       "skipped": 0
     },
     "stdout": {
-      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_terminal_frame/pytest.txt",
-      "sha256": "1789c0850e94cf7b53cdcca740f274a7b2ff99e40daeaa1f9c42e23f4a966af8"
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_stream_oracle/pytest.txt",
+      "sha256": "210670e3d7583de4536ffb4afbfd0be714f8be0af4c2d5f756217172ba4d8f75"
     }
   }
 }
