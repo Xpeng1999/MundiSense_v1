@@ -8,3 +8,7 @@
 ## X04a
 
 本轮未覆盖细节及保守口径集中记录于 [experiments/X04a_data/OPEN_QUESTIONS.md](experiments/X04a_data/OPEN_QUESTIONS.md)，不扩大语料、训练或推理范围。
+
+## X05
+
+D1 fold 0 重拟合使用了 FMH 全部 3,266 句，与 X05 的专家回退假设冲突。已触发泄漏门禁并停止，详见 [experiments/X05_calib/OPEN_QUESTIONS.md](experiments/X05_calib/OPEN_QUESTIONS.md)。
