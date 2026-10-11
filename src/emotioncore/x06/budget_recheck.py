@@ -22,22 +22,29 @@ def run():
     qv = read(ROOT / 'preflight/summary.json')['q_rates']['V']['seconds_per_sentence']
     visual = qv + stages['V2'] + stages['V1']
     oracle = rows(ROOT / 'oracle_inputs/inputs.jsonl')
-    face = statistics.mean(p['face']['decode_seconds'] + p['face']['face_seconds']
-                           + (p['q_video'] or {}).get('elapsed_s', 0) for p in oracle)
+    frame_work = sum(p['face']['decode_seconds'] + p['face']['face_seconds'] for p in oracle)
+    frame_count = sum(p['face']['requested_frames'] for p in oracle)
+    per_frame = frame_work / frame_count
+    q_media = statistics.mean((p['q_video'] or {}).get('elapsed_s', 0) for p in oracle)
+    stream_frames = sum(__import__('math').ceil(read(ROOT / f'preflight/timeline_{s}.json')['duration_s'] * 5) for s in TEST)
     audio_duration = 2 * sum(read(ROOT / f'preflight/timeline_{s}.json')['duration_s'] for s in TEST)
     fullspeed = sum(c['speech_segments'] for c in counts.values()) * both
     fullspeed += sum(c['silence_windows'] for c in counts.values()) * visual
     et = counts['et_test']
-    real_service = et['speech_segments'] * (2 * face + stages['Q_AV'] + both
+    # Online 5fps tracking also processes silent/gap frames. Count the complete
+    # input stream, rather than scaling face work by VAD segment count.
+    real_service = 2 * stream_frames * per_frame
+    real_service += et['speech_segments'] * (2 * q_media + stages['Q_AV'] + both
                          + stages['A3'] + stages['V2'] + stages['V1'])
-    real_service += et['silence_windows'] * 2 * (face + visual)
+    real_service += et['silence_windows'] * 2 * (q_media + visual)
     remaining = (fullspeed + max(audio_duration, real_service)) * 1.2 + 300
     total = used + remaining
     summary = {'status': 'passed' if total <= MAX_GPU_SECONDS else 'STOP_budget_estimate',
                'used_gpu_hours': used / 3600, 'estimated_total_gpu_hours': total / 3600,
                'estimated_remaining_gpu_hours': remaining / 3600, 'limit_gpu_hours': 15,
                'counts': counts, 'measured_seconds_per_stage': stages, 'both_system_seconds': both,
-               'face_cpu_seconds_per_clip': face, 'fullspeed_s': fullspeed,
+               'face_cpu_seconds_per_5fps_frame': per_frame, 'et_stream_frames_per_system': stream_frames,
+               'q_media_seconds_per_segment': q_media, 'fullspeed_s': fullspeed,
                'realtime_input_s': audio_duration, 'realtime_serial_service_s': real_service,
                'reserve': '20% of future service/playback time plus 300s initialization',
                'cuts': spec(ROOT / 'cuts/summary.json'), 'equivalence': spec(ROOT / 'equivalence_attempt2/summary.json')}

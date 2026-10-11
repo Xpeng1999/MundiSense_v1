@@ -110,6 +110,7 @@ def producer(sources, config, output, messages, begin_event, realtime):
                         'wav': str(path), 'wav_sha256': sha256(path), 'duration_s': duration,
                         'face': face, 'q_video': q_video, 'endpoint_monotonic': endpoint,
                         'input_stream_started_monotonic': started,
+                        'input_schedule_lag_s': max(0., endpoint - started - event['decision_s']),
                         'timing_input': {'vad': vad_s, 'decode': decoded,
                             'face_detection_tracking': face['face_seconds'],
                             'after_endpoint_preparation': time.monotonic() - before}}
@@ -162,7 +163,7 @@ def consume(sources, system, output, event_path, alpha, realtime=True):
         baseline = rss_tree(os.getpid()); peak_rss = baseline
         service.torch.cuda.reset_peak_memory_stats()
         state = {}; latencies = []; streams = {}; count = 0
-        stages = {}; voice_latencies = []; visual_latencies = []
+        stages = {}; voice_latencies = []; visual_latencies = []; input_lags = []; schedule_to_write = []
         begin = time.monotonic(); begin_event.set()
         with event_path.open('w') as events, (output / 'latency_receipts.jsonl').open('w') as receipts:
             while True:
@@ -192,13 +193,16 @@ def consume(sources, system, output, event_path, alpha, realtime=True):
                 event = {k: item[k] for k in ('segment_id', 'speaker_id', 'source', 'start_s', 'end_s', 'decision_s', 'visual_only')}
                 event.update(timestamp=now(), system=system, alpha=alpha, **decision)
                 event.update(component_probs=component, has_face=face, track_scores=item['face']['track_scores'],
-                             endpoint_monotonic=item['endpoint_monotonic'], timing={**item['timing_input'], **timing})
+                             endpoint_monotonic=item['endpoint_monotonic'], input_schedule_lag_s=item['input_schedule_lag_s'],
+                             timing={**item['timing_input'], **timing})
                 events.write(json.dumps(event, ensure_ascii=False) + '\n'); events.flush()
                 written = time.monotonic()
                 latency = written - item['endpoint_monotonic']
                 receipts.write(json.dumps({'segment_id': item['segment_id'], 'endpoint_monotonic': item['endpoint_monotonic'],
                             'after_flush_monotonic': written, 'latency_s': latency}) + '\n'); receipts.flush()
                 latencies.append(latency)
+                input_lags.append(item['input_schedule_lag_s'])
+                schedule_to_write.append(written - item['input_stream_started_monotonic'] - item['decision_s'])
                 (voice_latencies if speech else visual_latencies).append(latency)
                 for name, seconds in event['timing'].items():
                     stages.setdefault(name, []).append(seconds)
@@ -218,6 +222,9 @@ def consume(sources, system, output, event_path, alpha, realtime=True):
         return {'system': system, 'alpha': alpha, 'realtime': realtime, 'events': count, 'streams': streams,
                 'latency_seconds': quantiles(latencies), 'speech_latency_seconds': quantiles(voice_latencies),
                 'visual_only_latency_seconds': quantiles(visual_latencies),
+                'input_schedule_lag_seconds': quantiles(input_lags),
+                'scheduled_vad_endpoint_to_write_seconds': quantiles(schedule_to_write),
+                'input_schedule_note': '1x source timestamps; if processing falls behind, all recorded frames remain available and no frames are dropped; backlog is reported separately',
                 'stage_seconds': {k: {**quantiles(v), 'total': sum(v)} for k, v in stages.items()},
                 'stage_note': 'decode/detection describe full segments including work before endpoints; after_endpoint_preparation and GPU/fusion overlap no earlier input work',
                 'wall_seconds': wall, 'input_seconds': duration, 'real_time_factor_wall_over_input': wall / duration,
