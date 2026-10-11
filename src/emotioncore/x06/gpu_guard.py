@@ -8,10 +8,14 @@ import sys
 import time
 from emotioncore.x06.common import *
 
-TASKS = {'equivalence': ['emotioncore.x06.equivalence']}
+TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
+         'emotion_segments': ['emotioncore.x06.emotion_segments'],
+         'realtime_H3': ['emotioncore.x06.run', '--batch', '--system', 'H3'],
+         'realtime_H_ref': ['emotioncore.x06.run', '--batch', '--system', 'H_ref'],
+         'offline': ['emotioncore.x06.run']}
 
 
-def run(task, attempt=1):
+def run(task, attempt=1, child_args=()):
     suffix = '' if attempt == 1 else f'_attempt{attempt}'
     output = ROOT / 'gpu_jobs' / (task + suffix)
     meta = start(output)
@@ -29,7 +33,9 @@ def run(task, attempt=1):
                 raise RuntimeError('STOP prior GPU job failed without a verified pre-inference repair')
     if read(ROOT / 'preflight/summary.json')['estimated_gpu_hours'] > 15:
         raise RuntimeError('STOP startup budget estimate')
-    command = [sys.executable, '-u', '-m', *TASKS[task]]
+    if child_args and task != 'offline':
+        raise ValueError('Only the bounded offline video entry takes input arguments')
+    command = [sys.executable, '-u', '-m', *TASKS[task], *child_args]
     meta.update(command_child=command, prior_charged_gpu_s=used)
     write_json_atomic(output / 'run_meta.json', meta)
     begin = time.monotonic(); problem = None

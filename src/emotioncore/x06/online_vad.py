@@ -86,6 +86,37 @@ class Endpoints:
         return self.emit(self.last + 1 if self.last is not None else self.index, self.index)
 
 
+class LiveEvents:
+    def __init__(self, threshold, min_silence):
+        self.voice = Endpoints(threshold, min_silence)
+        self.next_silence = 2.
+
+    def advance(self, p):
+        result = []
+        voice = self.voice.push(p)
+        if voice:
+            result.append(dict(voice, source='speech_segment', visual_only=False))
+            self.next_silence = voice['end_s'] + 2.
+        known_silent_until = (self.voice.start if self.voice.start is not None else self.voice.index) * STEP
+        while self.next_silence <= known_silent_until + 1e-9:
+            result.append({'start_s': self.next_silence - 2., 'end_s': self.next_silence,
+                           'decision_s': self.next_silence, 'source': 'silence_window', 'visual_only': True})
+            self.next_silence += 2.
+        return result
+
+    def finish(self, duration):
+        voice = self.voice.finish()
+        result = []
+        if voice:
+            result.append(dict(voice, source='speech_segment', visual_only=False))
+            self.next_silence = voice['end_s'] + 2.
+        while self.next_silence <= duration + 1e-9:
+            result.append({'start_s': self.next_silence - 2., 'end_s': self.next_silence,
+                           'decision_s': self.next_silence, 'source': 'silence_window', 'visual_only': True})
+            self.next_silence += 2.
+        return result
+
+
 def silence_windows(voice, duration):
     """Disjoint two-second windows wholly in VAD silence, after two silent seconds."""
     previous = 0.

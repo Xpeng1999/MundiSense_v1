@@ -110,7 +110,7 @@ def test_inference_input_allowlist_excludes_sealed_or_unregistered_media(monkeyp
 
 def test_online_endpoints_match_fullspeed_and_silence_is_disjoint():
     import numpy as np
-    from emotioncore.x06.online_vad import Endpoints, silence_windows
+    from emotioncore.x06.online_vad import Endpoints, LiveEvents, silence_windows
     from emotioncore.x06.vad import segments
     p = np.r_[np.zeros(250), np.ones(45), np.zeros(320), np.ones(1700), np.zeros(21)]
     online = Endpoints(.5, .2)
@@ -126,3 +126,53 @@ def test_online_endpoints_match_fullspeed_and_silence_is_disjoint():
     for window in silent:
         assert window['end_s'] - window['start_s'] == pytest.approx(2.)
         assert all(window['end_s'] <= v['start_s'] or window['start_s'] >= v['end_s'] for v in events)
+    causal = LiveEvents(.5, .2)
+    emitted = [event for value in p for event in causal.advance(value)] + causal.finish(len(p) / 100)
+    assert [{k: e[k] for k in ('start_s', 'end_s')} for e in emitted if e['visual_only']] == [
+        {k: e[k] for k in ('start_s', 'end_s')} for e in silent]
+
+
+def test_streaming_ema_zero_matches_frozen_service_and_gates_update_state():
+    from emotioncore.x06.decision import apply
+    from emotioncore.x06.service import Service
+    service = Service.__new__(Service)
+    service.bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    service.previous = {}
+    probabilities = {c: [.1, .3, .05, .2, .05, .1, .2]
+                     for p in service.bundle['systems'].values() for c in p['components']}
+    for name in ('H3', 'H_ref'):
+        for face, speech, scores in [(True, True, [1]), (True, True, [1, .5]),
+                                     (False, True, []), (True, False, [1]), (False, False, [])]:
+            a = service.decide(probabilities, name, has_face=face, has_speech=speech, scores=scores)
+            state = {}
+            b = apply(service.bundle, probabilities, name, has_face=face, speech=speech, scores=scores, state=state)
+            assert (a['label'], a['route'], a['reason']) == (b['label'], b['route'], b['reason'])
+            if a['route'] != 'reject':
+                assert a['confidence'] == pytest.approx(b['confidence'], abs=1e-12)
+            if speech:
+                assert ('', name) in state
+
+
+def test_ema_selection_cannot_access_et_labels(monkeypatch):
+    from emotioncore.x06 import analysis
+    from emotioncore.x06.common import FMH
+    bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    components = {c: [.1, .3, .05, .2, .05, .1, .2] for p in bundle['systems'].values() for c in p['components']}
+    seen = []
+    def label_reader(speaker):
+        assert speaker in FMH, 'ET-test labels accessed during tuning'
+        seen.append(speaker)
+        return [{'utt_id': speaker + '_truth', 'start_s': 0., 'end_s': 1., 'label': 'neutral'}]
+    monkeypatch.setattr(analysis, 'truths', label_reader)
+    records = [{'cohort': 'fmh', 'speaker_id': speaker, 'start_s': 0., 'end_s': 1.,
+                'component_probs': components, 'has_face': True, 'track_scores': [1.]} for speaker in FMH]
+    alpha, _ = analysis.choose_alpha(bundle, records)
+    assert alpha == 0. and set(seen) == set(FMH)
+    with pytest.raises(ValueError):
+        analysis.choose_alpha(bundle, [*records, dict(records[0], cohort='et_test', speaker_id='02')])
+
+
+def test_video_sampling_excludes_exact_end_even_with_float_noise():
+    from emotioncore.x06.prepare_segments import frame_index
+    assert frame_index(21.6) == frame_index(2160 * .01) == 108
+    assert frame_index(21.61) == 109

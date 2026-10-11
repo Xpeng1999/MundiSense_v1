@@ -13,6 +13,12 @@ from emotioncore.x06.streams import Video
 DETECTOR = '/home/administrator/projects/emotion/artifacts/perception_setup/weights/face_detection_yunet_2023mar.onnx'
 
 
+def frame_index(when):
+    # VAD boundaries are exact 10ms ticks; remove binary float representation
+    # noise at a coincident 200ms video boundary, without shifting any frame.
+    return math.ceil(when * 5 - 1e-9)
+
+
 def q_media(face, directory, segment_id, identity, duration):
     face.update(id=segment_id, input_sha256=identity)
     path = directory / 'face.json'
@@ -39,7 +45,7 @@ def one(segment):
     identity = hashlib.sha256((sha256(timeline_path) + json.dumps(segment, sort_keys=True)).encode()).hexdigest()
     video = Video(timeline)
     tracker = Tracker(detector())
-    first, last = math.ceil(segment['start_s'] * 5), math.ceil(segment['end_s'] * 5)
+    first, last = frame_index(segment['start_s']), frame_index(segment['end_s'])
     decode = 0.
     try:
         for index in range(first, last):
