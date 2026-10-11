@@ -1,0 +1,41 @@
+{
+  "artifacts": {
+    "fmh": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/fmh.jsonl",
+      "sha256": "8a11afd26f6fa460128ad20753bdc885d747febe638ff1d3c47238e62c8d1849",
+      "n": 3266,
+      "pack": {
+        "path": "/home/administrator/emotion-data/emotioncore_runs/X02/packs/A3/pack_meta.json",
+        "sha256": "59127691cd0113c4cd0cc152944ad4ec2655b90280040d4879de973ec37042a8"
+      }
+    },
+    "et_test": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/et_test.jsonl",
+      "sha256": "4ac85b2eb584e6efb0e33cc80ffea07f2bc9337e36245b15160a1fb55ae239da",
+      "n": 1929,
+      "pack": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/target_packs/et_test/A3/pack_meta.json",
+        "sha256": "4cdc59f55fb1ad2975f9f5c60178ebf6dac1e473fe90c4648b10f655d35f1961"
+      }
+    },
+    "mer_test": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/mer_test.jsonl",
+      "sha256": "e203767b2bf1a40f6d4565a3ac195d38e06b4954328a43623fa98de9aa36cd94",
+      "n": 572,
+      "pack": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/target_packs/mer_test/A3/pack_meta.json",
+        "sha256": "c214844050c515093f1c6ece141a77909abd692ffd08b906db29e7450107d8cb"
+      }
+    },
+    "sims_valid": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/sims_valid.jsonl",
+      "sha256": "27d1d76272fd4e6de1d94401972c3b099edc59e0ab66159c6deaf806f0904caf",
+      "n": 647,
+      "pack": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/target_packs/sims_valid/A3/pack_meta.json",
+        "sha256": "44f0d334a6634178acfd78cd2bf727851a5b6216399666299f216c6d087b986a"
+      }
+    }
+  },
+  "analysis_performed": false
+}

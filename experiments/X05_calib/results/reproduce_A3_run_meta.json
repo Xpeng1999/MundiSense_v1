@@ -1,0 +1,96 @@
+{
+  "git": {
+    "commit": "4b9a3940c236a758901e9c34cd2f1713246b6598",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/code/src/emotioncore/x05/heads.py",
+    "--encoder",
+    "A3",
+    "--reproduce"
+  ],
+  "started_at": "2026-10-11T03:20:15.801203+00:00",
+  "storage": {
+    "root_free_bytes": 112969809920,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730941870080
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "encoder": "A3",
+  "device": "cuda:0",
+  "arm": "D1_reproduction",
+  "seed": 20260928,
+  "final_config": {
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0,
+    "alpha": 0.5,
+    "validation": {
+      "macro_f1": 0.5534609150037147,
+      "uar": 0.5742348518091885
+    },
+    "best_epoch": 6
+  },
+  "original_results": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/results.json",
+    "sha256": "b7845f975cea886d68bf0a9f9d4e8f1a636424f284cf6464d32d9b65ad13d911"
+  },
+  "inputs": {
+    "et_pack": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X02/packs/A3/pack_meta.json",
+      "sha256": "59127691cd0113c4cd0cc152944ad4ec2655b90280040d4879de973ec37042a8"
+    },
+    "extra_pack": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/packs/A3/pack_meta.json",
+      "sha256": "a5e8f8b24fcc4d8fcc70adee39c340cdabf4d2e84c87fb587b282831439d0bb7"
+    },
+    "extra_manifest": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+      "sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3"
+    },
+    "dedup": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
+      "sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad"
+    },
+    "ET_count": 16366,
+    "MER_count": 9386,
+    "ET_speakers": [
+      "01",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "fmh_overlap": 3
+  },
+  "validation_used": false,
+  "hyperparameter_search": false,
+  "Q_training": false,
+  "original_training_source": {
+    "path": "src/emotioncore/x04/heads.py",
+    "sha256": "9216b8be1c07d5ea8fba7ea67e8b92a3acf3cf799c7a9889c668fdf6c6857701"
+  },
+  "ended_at": "2026-10-11T03:23:54.504868+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/reproduce_A3/summary.json",
+    "sha256": "0d338cb68653080ef7e0121e389a9de67cd82286d3563b92117129cc0f6a6807"
+  }
+}

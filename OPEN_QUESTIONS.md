@@ -8,3 +8,9 @@
 ## X04a
 
 本轮未覆盖细节及保守口径集中记录于 [experiments/X04a_data/OPEN_QUESTIONS.md](experiments/X04a_data/OPEN_QUESTIONS.md)，不扩大语料、训练或推理范围。
+
+## X05
+
+D1 fold 0 的历史 FMH 冲突已按修订 1 解决：A3 逐值复现通过，新增 D1_fmhx 三专家均排除 06/10/11。X05 计算、测试和执行方独立复算已完成，证据与参数包见 [交付索引](experiments/X05_calib/DELIVERY.md)，等待 reviewer 验收，PR 不合入。
+
+H_V 的 ET-test ECE 超过 0.05；MER-test H_V 缺既有 Q-V 概率；人脸质量五分位退化。详见 [X05 问题记录](experiments/X05_calib/OPEN_QUESTIONS.md) 与 [报告第 11 节](experiments/X05_calib/REPORT.md#11-给-reviewer-的问题)。

@@ -1,0 +1,30 @@
+{
+  "git": {
+    "commit": "b4336ab2af98afbc78a9232f7355634d1469a68d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/final_code/src/emotioncore/x05/diagnostics.py"
+  ],
+  "started_at": "2026-10-11T03:48:18.057815+00:00",
+  "storage": {
+    "root_free_bytes": 112967995392,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730520932352
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "ended_at": "2026-10-11T03:48:26.668520+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/diagnostics/summary.json",
+    "sha256": "8de8edd30fb7dd1c71c31f9723a88b9a4d196be4c14c3a1e2e20e7883655ae2f"
+  }
+}

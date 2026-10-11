@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "steps": [
+    {
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x05.deployment",
+        "--freeze-sha256",
+        "8e29dd19beaa3401fb2103542b5333d392d89b9c3e9f819153c313e8fcbcebbe"
+      ],
+      "returncode": 0,
+      "elapsed_s": 43.65273648803122
+    },
+    {
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x05.figures"
+      ],
+      "returncode": 0,
+      "elapsed_s": 10.768544052960351
+    },
+    {
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x05.verify",
+        "--name",
+        "final_tests"
+      ],
+      "returncode": 0,
+      "elapsed_s": 9.065376351820305
+    },
+    {
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x05.report"
+      ],
+      "returncode": 0,
+      "elapsed_s": 1.1200447641313076
+    }
+  ]
+}

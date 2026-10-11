@@ -1,0 +1,359 @@
+{
+  "server_root": "/mnt/h/emotionAI/emotioncore_runs/X05",
+  "files": [
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/calibration_bundle_v1.json",
+      "repository_path": "configs/calibration_bundle_v1.json",
+      "sha256": "94a0805b9775676209306187a3880595b7e7592af70aaec8d50f3b2a7968979a",
+      "bytes": 6826
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/report/REPORT.md",
+      "repository_path": "experiments/X05_calib/REPORT.md",
+      "sha256": "e30b97bdb6ec85904f9198f47dbf14bc682d6e9757c7233df556f7f8c3f722d3",
+      "bytes": 13934
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/classwise_ece.png",
+      "repository_path": "experiments/X05_calib/figures/classwise_ece.png",
+      "sha256": "572b1bb2c1414b60809be38ddc987b15befe1bf32b79bc6779382e920e553793",
+      "bytes": 93816
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/classwise_ece.svg",
+      "repository_path": "experiments/X05_calib/figures/classwise_ece.svg",
+      "sha256": "d9f7168574040119d97dccdff165ceaac5576defbdae27f0eb9edeb49791d94b",
+      "bytes": 31180
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/neutral_sensitivity.png",
+      "repository_path": "experiments/X05_calib/figures/neutral_sensitivity.png",
+      "sha256": "50d046fea84d329eb7db80ad7d2a221b912f5216c483bfe990569ec6940478a3",
+      "bytes": 142482
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/neutral_sensitivity.svg",
+      "repository_path": "experiments/X05_calib/figures/neutral_sensitivity.svg",
+      "sha256": "89780edc8390dddfc2aa3ec103478f9ec20f42136c9f17350417451e87b799ca",
+      "bytes": 43182
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_f1_coverage.png",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_f1_coverage.png",
+      "sha256": "c1b0253f5894e26ca9b3180c7f8270f1858c39d74ae98a629b2e5e4d3ebe94c5",
+      "bytes": 264990
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_f1_coverage.svg",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_f1_coverage.svg",
+      "sha256": "9a8e66d3bfb912176f4b0b5b56d788118cdb0af19f1fcd8e7ee1017ba8af5280",
+      "bytes": 58363
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_reliability.png",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_reliability.png",
+      "sha256": "d06ceff7b46632ec3ddc78a8640c4012a564fae16215527a9bce5ca50572bf4d",
+      "bytes": 328594
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_reliability.svg",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_reliability.svg",
+      "sha256": "288c3b6044c21dfa243204110244ac087ef81234e9e590818b5e4f278c5c414c",
+      "bytes": 71663
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_risk_coverage.png",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_risk_coverage.png",
+      "sha256": "4ef997fb972b328205fff02ba4cb7846bdee502270c5c5cd4b6a8a0a4e1a0a37",
+      "bytes": 276099
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_risk_coverage.svg",
+      "repository_path": "experiments/X05_calib/figures/q_et_oof_risk_coverage.svg",
+      "sha256": "677ca597ae148e266226cb26dd9f45b613b9b1821e4f3fcf6e3e7ebb9b8f107b",
+      "bytes": 74517
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_f1_coverage.png",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_f1_coverage.png",
+      "sha256": "1300d66fd45893804ed46ab42f50e509612b6fd7e2a617c95dda71de03ad0e6a",
+      "bytes": 275523
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_f1_coverage.svg",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_f1_coverage.svg",
+      "sha256": "c6de8d485a95e6087ad2f04e77b976c1c97808c29f01820172f5e64df41c4842",
+      "bytes": 58402
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_reliability.png",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_reliability.png",
+      "sha256": "7769bfb1a7918e3f68813fad0974a422ba86688c6698efda2820344dbf6ee1e2",
+      "bytes": 347367
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_reliability.svg",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_reliability.svg",
+      "sha256": "cbc77130249d50037ed9aa650e66d461dfa00b1e3610154320d8ec782ddbe40b",
+      "bytes": 71215
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_risk_coverage.png",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_risk_coverage.png",
+      "sha256": "0d8e4bc40f5c2fa79564754125eaf1233b4574694b54d3665a3948156f534542",
+      "bytes": 236347
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_risk_coverage.svg",
+      "repository_path": "experiments/X05_calib/figures/q_mix_fmh_risk_coverage.svg",
+      "sha256": "095c341465ecd6138de4513ad350a574dfd782c9090a06c2331d09ec534edcec",
+      "bytes": 61417
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_A3_run_meta.json",
+      "sha256": "ee5794d0b9f74ab724664644761b8c8ff540c65800f5e4b38593d45d7883e41b",
+      "bytes": 2796
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_A3_summary.json",
+      "sha256": "c0624f36d88deeba88a35a2e6dee3221dbfa88be5885b07ae7eda0cd8e5483f0",
+      "bytes": 2303
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_A3_targets_run_meta.json",
+      "sha256": "9f8c464c9031a39390dc847359d8a881a7af63915da270f5dd2ad0ff4f8aa881",
+      "bytes": 1259
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_A3_targets_summary.json",
+      "sha256": "2f0a0261c3272aa4a781f20214f767c99a34fd3343e0d2a2c74e07f976bd571a",
+      "bytes": 1757
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V1_run_meta.json",
+      "sha256": "0b2c42a6ed17eb103f8f15da9d7ed7a35ad52eb839019b614137594d304550a6",
+      "bytes": 2794
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V1_summary.json",
+      "sha256": "9d59c1b367efecf34d51fd7fa18ac558b565c76e3ad9e31ed7a661059ed35c56",
+      "bytes": 2304
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/targets/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V1_targets_run_meta.json",
+      "sha256": "d5e86eb9a24898184649aa1b0ebb49615e849d16d63cda7c29b9112f51a5dd2c",
+      "bytes": 1259
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/targets/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V1_targets_summary.json",
+      "sha256": "3aeda1f9bc2e0e4c63f4b7830aa21cabd042d962f6928f507c2052590c35053f",
+      "bytes": 1757
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V2_run_meta.json",
+      "sha256": "b10fe2acb2c247c94b1dbd24c6432bfcdeb89e5d42930e0fdb98354b86ea42e1",
+      "bytes": 2796
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V2_summary.json",
+      "sha256": "eb9b7d99150595ba159a324c9688c7ae34a581746c7ac78d1303189dde8c0cce",
+      "bytes": 2309
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/targets/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V2_targets_run_meta.json",
+      "sha256": "5f46310f7500934962d568d8bc3a90ba535d70993ebe63689bfea6d9830a0414",
+      "bytes": 1259
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/targets/summary.json",
+      "repository_path": "experiments/X05_calib/results/D1_fmhx_V2_targets_summary.json",
+      "sha256": "4e9487de0fda37c09ddd2cd8aac16865b2f589f193fabb78c1e85406d30bdcff",
+      "bytes": 1757
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/Q_et_fmh_run_meta.json",
+      "sha256": "e7abe75f0f371103c2e978ae78a87e9f97dce627ed2464b72228a2c0289ac896",
+      "bytes": 8677
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/summary.json",
+      "repository_path": "experiments/X05_calib/results/Q_et_fmh_summary.json",
+      "sha256": "80b86aafd72005db36ee3091e677752700021fa56cb5d4caa914d847da4c4cd2",
+      "bytes": 1048
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/mix_fmh/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/Q_mix_fmh_run_meta.json",
+      "sha256": "160d0ec7f5e7fe92584f0897ea746a24dd6c784a7963902149086b1cdc64c1ed",
+      "bytes": 8671
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/mix_fmh/summary.json",
+      "repository_path": "experiments/X05_calib/results/Q_mix_fmh_summary.json",
+      "sha256": "82d36eb77687b2e74c674bc98d7f93ceb77903335167521d244976bb2c44b1a1",
+      "bytes": 1051
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/delivery_audit/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/delivery_audit_run_meta.json",
+      "sha256": "159c839cddb4158e4f6a11766a0cd882a5e3f1932923da4905307735bee5d37b",
+      "bytes": 980
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/delivery_audit/summary.json",
+      "repository_path": "experiments/X05_calib/results/delivery_audit_summary.json",
+      "sha256": "fe1784e13b10ff021a11de465c951c0d82b6290f9d685943f23f7938c230dfb8",
+      "bytes": 2448
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/deployment_run_meta.json",
+      "sha256": "2956cb4317a34573fe53b96ca7237ef3ef9216e83b6ecb8b10df1ac5465a55fa",
+      "bytes": 1292
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/sources.json",
+      "repository_path": "experiments/X05_calib/results/deployment_sources.json",
+      "sha256": "8e5cc5ea18dc2b8d9e780b0429d9b9f6fdc6d57d91aee2a38279ad2cebe338db",
+      "bytes": 13299
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/summary.json",
+      "repository_path": "experiments/X05_calib/results/deployment_summary.json",
+      "sha256": "33a45e3ad77ed91625fbc55bd0fa22dc0ae4d8384c88ee00f68ddef0921c9bbf",
+      "bytes": 1349700
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/diagnostics/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/diagnostics_run_meta.json",
+      "sha256": "9a57798f89d5fa1bbfa6c61c12fef15a23f82c32b54f5273d0825ab05a417fd5",
+      "bytes": 983
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/diagnostics/summary.json",
+      "repository_path": "experiments/X05_calib/results/diagnostics_summary.json",
+      "sha256": "8de8edd30fb7dd1c71c31f9723a88b9a4d196be4c14c3a1e2e20e7883655ae2f",
+      "bytes": 198488
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/figures_run_meta.json",
+      "sha256": "6d16dfea4f6a7c29ed7bba766ee0d2e1f588878f6d4c89a05c0c3488efbb4e29",
+      "bytes": 975
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/summary.json",
+      "repository_path": "experiments/X05_calib/results/figures_summary.json",
+      "sha256": "470131eef9d1b6229f0d97d3d54ec924cbccf501da0b543a1ea58d7b9940de4c",
+      "bytes": 3332
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/final_tests/summary.json",
+      "repository_path": "experiments/X05_calib/results/final_tests.json",
+      "sha256": "37382b899441da6d7ac844e3d8785beb1d290d4e184499b03265235181022621",
+      "bytes": 954
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/final_tests/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/final_tests_run_meta.json",
+      "sha256": "92b2c712bad7c1379fe146ecb511aa51c4558d7dd69dbb2c8ba1d8811d5932da",
+      "bytes": 1011
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmh_q_et/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmh_q_et_run_meta.json",
+      "sha256": "3d54b5cb2572aa011dd83e6382b3715fa2e1d89d309b8831cc443188e05a389d",
+      "bytes": 1268
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmh_q_et/summary.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmh_q_et_summary.json",
+      "sha256": "d3f515815f0a2ba5f4930062d09825426b2b8c761d7c9f70149380bb9d743ca3",
+      "bytes": 230
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmh_q_mix/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmh_q_mix_run_meta.json",
+      "sha256": "cc5b069c11d9d6eeee9eca701bf4dc9382fd4a6431a07325146d510133a80953",
+      "bytes": 1267
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmh_q_mix/summary.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmh_q_mix_summary.json",
+      "sha256": "1e258209ca702126e15fa243e5157756b193399b2e11fc816396eb72638b7486",
+      "bytes": 233
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmhx_a3/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmhx_a3_run_meta.json",
+      "sha256": "c3805b2214154d2ed27dc9d3c38a2b3770e79cdd9a9b0de4dbf74f4891972614",
+      "bytes": 1259
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmhx_a3/summary.json",
+      "repository_path": "experiments/X05_calib/results/gpu_fmhx_a3_summary.json",
+      "sha256": "87c7813b6beb052b9a8f065f1584c346807a6f2ee16b9dfdfe005ecdd58d6a79",
+      "bytes": 233
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/reproduce_a3/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/gpu_reproduce_a3_run_meta.json",
+      "sha256": "e93a38320f79f028ff6badffe410d4ba359af6f48a8a0dc9f4b59dd2bec57c4b",
+      "bytes": 1258
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/reproduce_a3/summary.json",
+      "repository_path": "experiments/X05_calib/results/gpu_reproduce_a3_summary.json",
+      "sha256": "7e592a4d55c50c98360a2248abf8ace7d96c480329104c02d8211f16857ff20f",
+      "bytes": 234
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/post_g/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/post_g_run_meta.json",
+      "sha256": "35f56ac5f86f81bf6f10fef05619410952dbd6fecc1f303aa044cbb0f77ef203",
+      "bytes": 1126
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/post_g/summary.json",
+      "repository_path": "experiments/X05_calib/results/post_g_summary.json",
+      "sha256": "fabbc9c63b26fe9fb1556e2935161b11e1b15748b6b7b5addaa418a6345d6b11",
+      "bytes": 1168
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/report/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/report_run_meta.json",
+      "sha256": "d7a2f3e743b5a31ca42918ff71adb63ddc3e47da1bf4f34bee8afda1b944f7fa",
+      "bytes": 973
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/report/summary.json",
+      "repository_path": "experiments/X05_calib/results/report_summary.json",
+      "sha256": "2a70f27f141d844a4b25acc2cdab42ef743d938007c2dff000d6a5452323b726",
+      "bytes": 542
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/reproduce_A3/run_meta.json",
+      "repository_path": "experiments/X05_calib/results/reproduce_A3_run_meta.json",
+      "sha256": "2942f25c1557008b5f270f35adf62537624c7d1d2fe376df9bd8103f5eee1838",
+      "bytes": 2855
+    },
+    {
+      "server_path": "/mnt/h/emotionAI/emotioncore_runs/X05/reproduce_A3/summary.json",
+      "repository_path": "experiments/X05_calib/results/reproduce_A3_summary.json",
+      "sha256": "0d338cb68653080ef7e0121e389a9de67cd82286d3563b92117129cc0f6a6807",
+      "bytes": 2550
+    }
+  ]
+}

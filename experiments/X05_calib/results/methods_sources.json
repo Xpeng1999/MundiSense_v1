@@ -1,0 +1,74 @@
+{
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/A.jsonl",
+    "sha256": "3c2db247d3fc332d75252a51c52181fba0211c87238e8682bf3e483baaad9439"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/A.jsonl",
+    "sha256": "c7f16f46f331bce090926ebe5aa1bced6a0acec41c28fa93da9c2b52ed9b749b"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/A.jsonl",
+    "sha256": "b594199f580f69b2f3dcfcb296bc8522586db464f2f37d1848f121a03eb466db"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/A.jsonl",
+    "sha256": "ab665bed12e972966d0654daab95c2c226196b3bea76afadb9a0f2c7e8e27915"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/A.jsonl",
+    "sha256": "ab2c9c3b87d94c894f62f5adec61c5bbf4d4df6ed9b7a3580fdcb703c3b88cab"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/V.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/V.jsonl",
+    "sha256": "8a381af13ed66289095c16d4cd4928b1aff92385f6fbc4dbb8c8ab7d427c6042"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/V.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/V.jsonl",
+    "sha256": "7a0535e6035aef312ca9ec3da71324cd5441857d2c1a276b3662702a64570b0a"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/V.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/V.jsonl",
+    "sha256": "4663e3f73fe3d88b37edc45e0ac2df1f8f3444879cc511a66a27d540c75cf525"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/V.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/V.jsonl",
+    "sha256": "8ef51412e9a6d1e3365672faed7c4d7d16f8e1bc8fe76c5dc4d1e127248b7d94"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/V.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/V.jsonl",
+    "sha256": "db5f599819e79ff9ca957a715829004733ea0627d8c7843fd968dacfa69a6e94"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/AV.jsonl",
+    "sha256": "7408911e5fce4d589db1c366ac09b74b32840a09c0512d4242592aa9d493de62"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold1/AV.jsonl",
+    "sha256": "ff653ecb730c446d37535e2f7f552937f6a472ff9c8ff6cf0c30caa17094809f"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold2/AV.jsonl",
+    "sha256": "d0e3695f39261772009216857539ab61f55c7517968d2c4b053bbdf87d417089"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold3/AV.jsonl",
+    "sha256": "102afa3caa1e179b5a4819e6998748aa4e9a8ef184462e2460c11958aa74f6cb"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/AV.jsonl",
+    "sha256": "4aee4b03626497e24513c7cfe180b12917df187374a58f4e5e0a5720157e73fe"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/oof.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/oof.jsonl",
+    "sha256": "86065654edff0e1249d4a054eca3abbb7951f08d66a5caf7cd9a35a002adee28"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/oof.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/oof.jsonl",
+    "sha256": "b44e7d641923e4361de0abc892a4bdff5e98786d5974c103fbf07627b0845be9"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/oof.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/oof.jsonl",
+    "sha256": "93ea65a6edca19fe2cd9dbfa998509dc3e31f4b0949f1f48e5ad4cf2de238747"
+  }
+}

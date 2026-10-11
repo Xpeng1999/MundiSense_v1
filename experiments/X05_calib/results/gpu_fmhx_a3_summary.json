@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "problem": null,
+  "returncode": 0,
+  "charged_gpu_s": 174.14184914180078,
+  "total_charged_gpu_s": 401.8031892487779,
+  "accounting": "conservative full child wall time including load/CPU preparation"
+}

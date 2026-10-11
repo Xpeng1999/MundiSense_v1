@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_x05_heads.py",
+    "tests/test_x05_methods.py",
+    "tests/test_x05_bundle.py",
+    "tests/test_x04_heads.py",
+    "tests/test_x04_targets.py",
+    "tests/test_x03_fusion.py",
+    "tests/test_metrics.py",
+    "--junitxml=/mnt/h/emotionAI/emotioncore_runs/X05/final_tests/pytest.xml"
+  ],
+  "returncode": 0,
+  "totals": {
+    "tests": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2
+  },
+  "elapsed_s": 7.968003865098581,
+  "cuda_visible_devices": "",
+  "xml": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/final_tests/pytest.xml",
+    "sha256": "8daf38ecfeed82986630552d977b8fe81d89e8dc1735a0cc9240ab47c2c6561d"
+  },
+  "stdout": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/final_tests/pytest.txt",
+    "sha256": "3f0df10ab40b4620864f84969e3681843123241a458a4829fe33a0f904a60f7b"
+  }
+}

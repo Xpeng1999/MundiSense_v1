@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_reliability.png",
+      "sha256": "d06ceff7b46632ec3ddc78a8640c4012a564fae16215527a9bce5ca50572bf4d"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_reliability.svg",
+      "sha256": "288c3b6044c21dfa243204110244ac087ef81234e9e590818b5e4f278c5c414c"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_risk_coverage.png",
+      "sha256": "4ef997fb972b328205fff02ba4cb7846bdee502270c5c5cd4b6a8a0a4e1a0a37"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_risk_coverage.svg",
+      "sha256": "677ca597ae148e266226cb26dd9f45b613b9b1821e4f3fcf6e3e7ebb9b8f107b"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_f1_coverage.png",
+      "sha256": "c1b0253f5894e26ca9b3180c7f8270f1858c39d74ae98a629b2e5e4d3ebe94c5"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_et_oof_f1_coverage.svg",
+      "sha256": "9a8e66d3bfb912176f4b0b5b56d788118cdb0af19f1fcd8e7ee1017ba8af5280"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_reliability.png",
+      "sha256": "7769bfb1a7918e3f68813fad0974a422ba86688c6698efda2820344dbf6ee1e2"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_reliability.svg",
+      "sha256": "cbc77130249d50037ed9aa650e66d461dfa00b1e3610154320d8ec782ddbe40b"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_risk_coverage.png",
+      "sha256": "0d8e4bc40f5c2fa79564754125eaf1233b4574694b54d3665a3948156f534542"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_risk_coverage.svg",
+      "sha256": "095c341465ecd6138de4513ad350a574dfd782c9090a06c2331d09ec534edcec"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_f1_coverage.png",
+      "sha256": "1300d66fd45893804ed46ab42f50e509612b6fd7e2a617c95dda71de03ad0e6a"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/q_mix_fmh_f1_coverage.svg",
+      "sha256": "c6de8d485a95e6087ad2f04e77b976c1c97808c29f01820172f5e64df41c4842"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/neutral_sensitivity.png",
+      "sha256": "50d046fea84d329eb7db80ad7d2a221b912f5216c483bfe990569ec6940478a3"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/neutral_sensitivity.svg",
+      "sha256": "89780edc8390dddfc2aa3ec103478f9ec20f42136c9f17350417451e87b799ca"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/classwise_ece.png",
+      "sha256": "572b1bb2c1414b60809be38ddc987b15befe1bf32b79bc6779382e920e553793"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/figures/classwise_ece.svg",
+      "sha256": "d9f7168574040119d97dccdff165ceaac5576defbdae27f0eb9edeb49791d94b"
+    }
+  ],
+  "methods_source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/methods/summary.json",
+    "sha256": "061cff86b1d2aeca6de5e3690d3f7fb62742ba603679b4fb323eec44116628d8"
+  },
+  "deployment_source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/summary.json",
+    "sha256": "33a45e3ad77ed91625fbc55bd0fa22dc0ae4d8384c88ee00f68ddef0921c9bbf"
+  }
+}

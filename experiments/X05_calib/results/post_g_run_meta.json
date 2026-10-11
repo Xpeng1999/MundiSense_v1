@@ -1,0 +1,34 @@
+{
+  "git": {
+    "commit": "3b72decdb3f508c346396d05a76428ddd83648fe",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/final_code/src/emotioncore/x05/post_g.py"
+  ],
+  "started_at": "2026-10-11T03:50:02.531811+00:00",
+  "storage": {
+    "root_free_bytes": 112967991296,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730507366400
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "method_freeze": {
+    "path": "configs/x05_method_freeze.json",
+    "sha256": "8e29dd19beaa3401fb2103542b5333d392d89b9c3e9f819153c313e8fcbcebbe"
+  },
+  "ended_at": "2026-10-11T06:16:51.164037+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/post_g/summary.json",
+    "sha256": "fabbc9c63b26fe9fb1556e2935161b11e1b15748b6b7b5addaa418a6345d6b11"
+  }
+}
