@@ -9,7 +9,7 @@ from emotioncore.x06.service import Service
 def run():
     if os.environ.get('X06_GPU_GUARDED') != 'equivalence':
         raise RuntimeError('Use X06 GPU watchdog')
-    output = ROOT / 'equivalence'
+    output = ROOT / ('equivalence' + os.environ.get('X06_RUN_SUFFIX', ''))
     meta = start(output)
     inputs = rows(ROOT / 'oracle_inputs/inputs.jsonl')
     assert len(inputs) == 1929

@@ -11,22 +11,29 @@ from emotioncore.x06.common import *
 TASKS = {'equivalence': ['emotioncore.x06.equivalence']}
 
 
-def run(task):
-    output = ROOT / 'gpu_jobs' / task
+def run(task, attempt=1):
+    suffix = '' if attempt == 1 else f'_attempt{attempt}'
+    output = ROOT / 'gpu_jobs' / (task + suffix)
     meta = start(output)
     lock = (ROOT / 'gpu.lock').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    previous = [read(p) for p in (ROOT / 'gpu_jobs').glob('*/summary.json')]
+    paths = list((ROOT / 'gpu_jobs').glob('*/summary.json'))
+    previous = [read(p) for p in paths]
     used = sum(r['charged_gpu_s'] for r in previous)
-    if any(r['status'] != 'completed' for r in previous):
-        raise RuntimeError('STOP prior GPU job failed')
+    for path, result in zip(paths, previous):
+        if result['status'] != 'completed':
+            repair = read(ROOT / 'dependency_repair/summary.json')
+            if (repair['status'] != 'repaired_before_inference' or not repair['cpu_load_passed']
+                    or repair['failed_job'] != spec(path)
+                    or repair['failed_log'] != spec(path.parent / 'process.log')):
+                raise RuntimeError('STOP prior GPU job failed without a verified pre-inference repair')
     if read(ROOT / 'preflight/summary.json')['estimated_gpu_hours'] > 15:
         raise RuntimeError('STOP startup budget estimate')
     command = [sys.executable, '-u', '-m', *TASKS[task]]
     meta.update(command_child=command, prior_charged_gpu_s=used)
     write_json_atomic(output / 'run_meta.json', meta)
     begin = time.monotonic(); problem = None
-    env = {**os.environ, 'X06_GPU_GUARDED': task, 'PYTHONDONTWRITEBYTECODE': '1'}
+    env = {**os.environ, 'X06_GPU_GUARDED': task, 'X06_RUN_SUFFIX': suffix, 'PYTHONDONTWRITEBYTECODE': '1'}
     with (output / 'process.log').open('w') as log:
         child = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT,
                                  env=env, start_new_session=True)
@@ -59,4 +66,6 @@ def run(task):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('task', choices=TASKS)
-    run(parser.parse_args().task)
+    parser.add_argument('--attempt', type=int, choices=range(1, 10), default=1)
+    args = parser.parse_args()
+    run(args.task, args.attempt)
