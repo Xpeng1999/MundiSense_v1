@@ -61,6 +61,19 @@ def run(args):
             if sha256(source[kind]['path']) != source[kind]['sha256']:
                 raise ValueError('STOP stream provenance changed')
     result = consume(sources, args.system, output, event_path, alpha, realtime=args.batch or args.realtime)
+    if args.batch:
+        from emotioncore.x06.event_audit import signature
+        actual = rows(event_path)
+        schedules = {}
+        for speaker in sorted(TEST):
+            observed = [r for r in actual if r['speaker_id'] == speaker]
+            expected = rows(ROOT / f'cuts/{speaker}.jsonl')
+            if signature(observed) != signature(expected):
+                write_json_atomic(output / f'{speaker}_schedule_difference.json', {
+                    'actual': signature(observed), 'expected': signature(expected)})
+                raise AssertionError(f'Live replay event schedule differs for {speaker}')
+            schedules[speaker] = {'events': len(observed), 'matches_frozen_schedule': True}
+        result['actual_event_schedule_audit'] = schedules
     result.update(smoothing_freeze=spec(ROOT / 'smoothing/freeze.json'), training=False,
                   inference_replayed=False, bundle=spec('configs/calibration_bundle_v1.1.json'))
     finish(output, meta, result)
