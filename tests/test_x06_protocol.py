@@ -78,7 +78,8 @@ def test_vad_silence_minimum_maximum_and_overlap_exclusion():
     from emotioncore.x06.vad import segments, mask_segments
     p = np.r_[np.zeros(10), np.ones(40), np.zeros(20), np.ones(29), np.zeros(20)]
     result = segments(p, .5, .2)
-    assert result == [{'start_s': .1, 'end_s': .5, 'decision_s': .7}]
+    assert len(result) == 1
+    assert result[0] == pytest.approx({'start_s': .1, 'end_s': .5, 'decision_s': .7}, abs=1e-12)
     forced = segments(np.ones(3100), .5, .2)
     assert [round(x['end_s'] - x['start_s'], 5) for x in forced] == [15, 15, 1]
     valid = np.ones(100, dtype=bool); valid[40:60] = False
