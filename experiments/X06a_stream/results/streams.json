@@ -1,0 +1,110 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/summary.json",
+    "sha256": "66377d28ae46ee1a9108e08ad877f80b7d87e71e543b1def54ebbfbd1b5534a3"
+  },
+  "data": {
+    "streams": {
+      "10": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_10.json",
+          "sha256": "c9a62822583e2f345ed1c7cc11b585d593a31a1f7e93b56ff278437c8052a36c"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/10.wav",
+          "sha256": "3e13e098d32e2b10dc032a236bc344d0a80804889e19c99612517f30001bc532"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_10.json",
+          "sha256": "e537797d62043d69148e986e746fa663f04a6ae719aa62c19b0c3d903b0b46c6"
+        }
+      },
+      "11": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_11.json",
+          "sha256": "e66ea60112e467ca697f6abdc15863fc2d52054ff86613468d61ba0603189fcc"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/11.wav",
+          "sha256": "a2af5012aed56942a35b922a290ca56b4111f810f11c7623f7ee9b55c2be1032"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_11.json",
+          "sha256": "f20f105c2113b69b1245eeab84ec6e22328d4e006071937f4a26461df6f41bde"
+        }
+      },
+      "13": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_13.json",
+          "sha256": "61bec9529bba33289c6828223270c83060a092239217d72c19e70ad28fbc34a2"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/13.wav",
+          "sha256": "9456537274d2bcfb7a3425bb18ca02f182ddca657077318354a3bf819d58f672"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_13.json",
+          "sha256": "aa279b434786756d20d188b4e6c5fca858c503e8c4ec278ca621a502963e61c9"
+        }
+      },
+      "20": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_20.json",
+          "sha256": "a2f267daf7c44f14600b77bf45dfc02082e94bf030fa2aa5aef55fee2624948e"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/20.wav",
+          "sha256": "5b0c88cf0652631388831e80d702a4f017e8a67e9b5924ba27867ea711586197"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_20.json",
+          "sha256": "cf08880d3059377c51a4c368f56d646446a106ff94169690e52cf31d6b1ccf20"
+        }
+      },
+      "21": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_21.json",
+          "sha256": "255675bdcce52bc733e9cee925389bb369cd69ed818005c1cf50ac679706335b"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/21.wav",
+          "sha256": "ce5e846f5abae20eb3b2daac369d9963093fb10b41580726886b0263d3ccea34"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_21.json",
+          "sha256": "0274a8868bd4cd4cce682466fb87b8c08748ff79f7f8c201d2750a4b4d87eb17"
+        }
+      },
+      "02": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_02.json",
+          "sha256": "f2bcdaa922a750d31d46902dbe079328d6c1ea195bfe7dfedd926411109c1dfb"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/02.wav",
+          "sha256": "58fed1fb9452f2a294a182722e09ff83b08f11a92a6c67fe298c14d0459ff254"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_02.json",
+          "sha256": "5b59ba6a7099e197e7b8a92b781827640861c146f466fa582062c618cb488817"
+        }
+      },
+      "06": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_06.json",
+          "sha256": "26ff6a875efd3b296ad161315d644d95f699dfbacedec2594070577a52914dd3"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/06.wav",
+          "sha256": "92b4bbc58c7f36886b389e46cf7041c8d2647c546ad6dc5f69ab97aad30e096a"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_06.json",
+          "sha256": "588b495ed773ab83aa1b8333edd50a4a7ced9b587c08db3f92c5d8b953de892a"
+        }
+      }
+    },
+    "gpu_seconds": 0,
+    "video": "lazy original pixels; last frame held during synthetic gaps"
+  }
+}

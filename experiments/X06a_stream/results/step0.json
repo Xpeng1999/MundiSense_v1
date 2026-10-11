@@ -1,0 +1,12 @@
+{
+  "pull_request": "https://github.com/Xpeng1999/emotioncore-zh/pull/6",
+  "state": "MERGED",
+  "is_draft": false,
+  "accepted_head": "d2036fb24d2e10df21de151f4806d26d57ed7bbb",
+  "merge_commit": "801320bc75f87aae736ae529c47180e8289fba30",
+  "merged_at_utc": "2026-10-11T08:20:24Z",
+  "merged_at_shanghai": "2026-10-11T16:20:24+08:00",
+  "x06_branch": "x06-stream",
+  "x06_branch_start": "801320bc75f87aae736ae529c47180e8289fba30",
+  "x06_pull_request_merge_authorized": false
+}
