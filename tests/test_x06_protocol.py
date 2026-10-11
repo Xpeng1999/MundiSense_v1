@@ -39,6 +39,41 @@ def test_bundle_changes_only_gate_bytes():
         verify_only_gate_changed(original, revised.replace(b'"version": 1', b'"version": 2'))
 
 
+def test_revision_budget_stop_blocks_all_gpu_entries(tmp_path, monkeypatch):
+    from emotioncore.x06 import gpu_guard
+    stopped = tmp_path / 'revision_1_budget'
+    stopped.mkdir()
+    (stopped / 'summary.json').write_text(json.dumps({'status': 'STOP_budget_estimate'}))
+    monkeypatch.setattr(gpu_guard, 'ROOT', tmp_path)
+    monkeypatch.setattr(gpu_guard, 'start', lambda *_: pytest.fail('Budget stop created a GPU run'))
+    for task in gpu_guard.TASKS:
+        with pytest.raises(RuntimeError, match='revision-1 startup budget'):
+            gpu_guard.run(task)
+    assert not (tmp_path / 'gpu_jobs').exists()
+
+
+def test_revision_s6a_requires_identical_outputs():
+    from emotioncore.x06.revision_budget import check_s6a
+    summary = {'n': 1929, 'status': 'completed', 'systems': {
+        name: {'without_gate_mismatches': 0} for name in ('H3', 'H_ref')}}
+    check_s6a(summary)
+    summary['systems']['H3']['without_gate_mismatches'] = 1
+    with pytest.raises(RuntimeError, match='STOP S6a'):
+        check_s6a(summary)
+
+
+def test_revision_estimate_includes_history_and_worst_replay_candidate():
+    from emotioncore.x06.revision_budget import estimate
+    rates = {'both': 2., 'Q_AV': 1., 'A3': .1, 'V2': .1, 'V1': .1}
+    candidates = {'0.4': {'speech': 100, 'visual': 2, 'et_speech': 50, 'et_visual': 1},
+                  '0.8': {'speech': 60, 'visual': 1, 'et_speech': 30, 'et_visual': 1}}
+    actual = estimate(3600, 10, candidates, rates, 1000, 100, .1, .5, .5)
+    assert actual['correct_boundary_s'] == 20
+    assert actual['two_vad_configs_s'] == 321.5
+    assert actual['replay_base_s'] == 417
+    assert actual['estimated_total_gpu_hours'] == pytest.approx((3600 + 1.2 * (20 + 321.5 + 417) + 300) / 3600)
+
+
 @pytest.mark.parametrize('face,speech,scores,expected', [
     (True, True, [10], ('full', 'both_available')),
     (True, True, [10, 4.9], ('full', 'both_available')),

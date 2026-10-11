@@ -18,6 +18,9 @@ TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
 
 
 def run(task, attempt=1, child_args=()):
+    revision_budget = ROOT / 'revision_1_budget/summary.json'
+    if revision_budget.exists() and read(revision_budget)['status'] != 'passed':
+        raise RuntimeError('STOP revision-1 startup budget; no further GPU work')
     stopped = ROOT / 'stream_equivalence/summary.json'
     if stopped.exists() and read(stopped)['status'] == 'STOP_equivalence':
         raise RuntimeError('STOP actual-stream S6 equivalence failed; no further GPU work under this protocol')
