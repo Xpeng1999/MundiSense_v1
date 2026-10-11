@@ -26,5 +26,5 @@ def run(task):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('task', choices=('emotion_segments', 'realtime_H3', 'realtime_H_ref'))
+    parser.add_argument('task', choices=('stream_equivalence', 'emotion_segments', 'realtime_H3', 'realtime_H_ref'))
     run(parser.parse_args().task)

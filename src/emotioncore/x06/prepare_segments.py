@@ -35,10 +35,10 @@ def q_media(face, directory, segment_id, identity, duration):
         worker.close()
 
 
-def one(segment):
+def one(segment, output_name='segment_inputs'):
     import soundfile as sf
     speaker = segment['speaker_id']
-    directory = ROOT / 'segment_inputs' / segment['segment_id']
+    directory = ROOT / output_name / segment['segment_id']
     directory.mkdir(parents=True, exist_ok=False)
     timeline_path = ROOT / f'preflight/timeline_{speaker}.json'
     timeline = read(timeline_path)

@@ -9,6 +9,7 @@ import time
 from emotioncore.x06.common import *
 
 TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
+         'stream_equivalence': ['emotioncore.x06.equivalence', '--stream'],
          'emotion_segments': ['emotioncore.x06.emotion_segments'],
          'realtime_H3': ['emotioncore.x06.run', '--batch', '--system', 'H3'],
          'realtime_H_ref': ['emotioncore.x06.run', '--batch', '--system', 'H_ref'],
@@ -33,6 +34,13 @@ def run(task, attempt=1, child_args=()):
                 raise RuntimeError('STOP prior GPU job failed without a verified pre-inference repair')
     if read(ROOT / 'preflight/summary.json')['estimated_gpu_hours'] > 15:
         raise RuntimeError('STOP startup budget estimate')
+    if task not in ('equivalence',):
+        if read(ROOT / 'stream_oracle_budget/summary.json')['status'] != 'passed':
+            raise RuntimeError('STOP actual-stream verification budget has not passed')
+    if task not in ('equivalence', 'stream_equivalence'):
+        checked = read(ROOT / 'stream_equivalence/summary.json')
+        if checked['status'] != 'completed' or any(m['agreement'] < .95 for m in checked['systems'].values()):
+            raise RuntimeError('STOP actual-stream equivalence has not passed')
     if child_args and task != 'offline':
         raise ValueError('Only the bounded offline video entry takes input arguments')
     command = [sys.executable, '-u', '-m', *TASKS[task], *child_args]

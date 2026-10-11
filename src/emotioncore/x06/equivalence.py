@@ -6,12 +6,14 @@ from emotioncore.x06.common import *
 from emotioncore.x06.service import Service
 
 
-def run():
-    if os.environ.get('X06_GPU_GUARDED') != 'equivalence':
+def run(stream_input=False):
+    task = 'stream_equivalence' if stream_input else 'equivalence'
+    if os.environ.get('X06_GPU_GUARDED') != task:
         raise RuntimeError('Use X06 GPU watchdog')
-    output = ROOT / ('equivalence' + os.environ.get('X06_RUN_SUFFIX', ''))
+    output = ROOT / (task + os.environ.get('X06_RUN_SUFFIX', ''))
     meta = start(output)
-    inputs = rows(ROOT / 'oracle_inputs/inputs.jsonl')
+    inputs_path = ROOT / ('stream_oracle_inputs' if stream_input else 'oracle_inputs') / 'inputs.jsonl'
+    inputs = rows(inputs_path)
     assert len(inputs) == 1929
     parameters = read('configs/calibration_bundle_v1.json')['systems']
     references = {name: {r['utt_id']: r for r in rows(R5 / f'deployment/{name}_et_test.jsonl')}
@@ -55,10 +57,14 @@ def run():
                           'required_n': len(inputs), 'systems': metrics,
                           'predictions': spec(output / 'predictions.jsonl'),
                           'mismatch_details': spec(output / 'mismatches.json'),
+                          'inputs': spec(inputs_path),
+                          'input_scope': 'actual S1 streams' if stream_input else 'original individual clips',
                           'parameter_bundle': spec('configs/calibration_bundle_v1.1.json')})
     if failed:
         raise RuntimeError('STOP equivalence below 0.95; do not continue')
 
 
 if __name__ == '__main__':
-    run()
+    import argparse
+    parser = argparse.ArgumentParser(); parser.add_argument('--stream', action='store_true')
+    run(parser.parse_args().stream)
