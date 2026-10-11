@@ -1,0 +1,122 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_stop_audit/summary.json",
+    "sha256": "1fa03803d03e2d374f029542024482800d6ce0c64df6b73f03513c1c4f47e32b"
+  },
+  "data": {
+    "status": "STOP_budget_estimate",
+    "evidence": {
+      "revision_1_budget": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/summary.json",
+          "sha256": "16cd1fe7467a767904ddfb91bb21d863fe25cf79231b0b3aade3f85690089074"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/run_meta.json",
+          "sha256": "8b3c3702471d44f9a3331c87cd99e38167a41b8b24bebfe5e9c6553dbb127c0f"
+        }
+      },
+      "unit_tests_revision_1_budget": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision_1_budget/summary.json",
+          "sha256": "6ee123d465cff0e6cb9a1c4c8088fbb729ccd838c06aed7ddef222854e69c9a8"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision_1_budget/run_meta.json",
+          "sha256": "0f222d480f8e6986f5d62d3e0addd7cb5bea47d15b19c231ea0092ebb67e55dd"
+        }
+      },
+      "unit_tests_revision_1_budget_attempt2": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision_1_budget_attempt2/summary.json",
+          "sha256": "c510fc81e661b3dd1a64dd8177a0668896d9eaa2709750a71f5f98d8e1e8e4f4"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision_1_budget_attempt2/run_meta.json",
+          "sha256": "2fa61a6ed41a2ce8410bfa0d4170b905e947f9aaf6c99adc7fa670c8732db4b0"
+        }
+      },
+      "stop_delivery_audit_v2": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_delivery_audit_v2/summary.json",
+          "sha256": "10ed4c1efa642d852d0bd9f0573cfd1be42157109990cfbcd2f043ecc1ddd7c3"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_delivery_audit_v2/run_meta.json",
+          "sha256": "1cd6133206c0bf57529e0d81a6ced077ddffc36dd27560f0309751067e117163"
+        }
+      }
+    },
+    "estimated_total_gpu_hours": 20.233545393387352,
+    "limit_gpu_hours": 18,
+    "total_charged_gpu_hours": 1.1665185266035325,
+    "new_gpu_seconds": 0,
+    "gpu_ledger": [
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+          "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+        },
+        "status": "stopped",
+        "problem": "child_exit_1",
+        "returncode": 1,
+        "charged_gpu_s": 51.23421825002879,
+        "total_charged_gpu_s": 51.23421825002879,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+          "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+        },
+        "status": "completed",
+        "problem": null,
+        "returncode": 0,
+        "charged_gpu_s": 2144.709703995846,
+        "total_charged_gpu_s": 2195.943922245875,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+          "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+        },
+        "status": "stopped",
+        "problem": "child_exit_1",
+        "returncode": 1,
+        "charged_gpu_s": 2003.5227735268418,
+        "total_charged_gpu_s": 4199.466695772717,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      }
+    ],
+    "active_x06_processes": [],
+    "gpu_lock_available": true,
+    "downstream_runs_absent": [
+      "fmh_stream_oracle",
+      "emotion_segments",
+      "smoothing",
+      "realtime_H3",
+      "realtime_H_ref"
+    ],
+    "historical_artifacts_unchanged": true,
+    "bundle_only_gate_bytes_changed": true,
+    "frozen_paths_unchanged_from_b75a691": [
+      "src/emotioncore/x02",
+      "src/emotioncore/x03",
+      "src/emotioncore/x04",
+      "src/emotioncore/x05",
+      "src/emotioncore/x06/service.py",
+      "src/emotioncore/x06/equivalence.py",
+      "configs/calibration_bundle_v1.json",
+      "configs/calibration_bundle_v1.1.json",
+      "configs/x06_vad_freeze.json"
+    ],
+    "tests": {
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "gpu_seconds": 0
+  }
+}
