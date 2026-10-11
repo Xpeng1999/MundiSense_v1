@@ -12,7 +12,8 @@ def run():
     verify_only_gate_changed(Path('configs/calibration_bundle_v1.json').read_bytes(),
                              Path('configs/calibration_bundle_v1.1.json').read_bytes())
     original = rows(MANIFEST)
-    selected = [r for r in original if r['speaker_id'] in FMH | TEST]
+    selected = [r for r in original if r['speaker_id'] in FMH or
+                (r['speaker_id'] in TEST and r['official_split'] == 'test')]
     assert len(selected) == 5195
     assert all((r['speaker_id'] in TEST) == (r['official_split'] == 'test') for r in selected)
     timelines = build_timelines(selected)
