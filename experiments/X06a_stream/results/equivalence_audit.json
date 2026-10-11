@@ -1,0 +1,34 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit/summary.json",
+    "sha256": "83b169ce940a7921588e51e182a967a49e31ec8770d07fe12c1804e06826f8b4"
+  },
+  "data": {
+    "n": 1929,
+    "primary": {
+      "H3": {
+        "agreement": 0.9891135303265941,
+        "mismatches": 21,
+        "without_gate_mismatches": 0
+      },
+      "H_ref": {
+        "agreement": 0.9891135303265941,
+        "mismatches": 21,
+        "without_gate_mismatches": 0
+      }
+    },
+    "without_multiface_only_agreement": {
+      "H3": 0.9994815966822188,
+      "H_ref": 0.9994815966822188
+    },
+    "final_decision_implementation_matches_s6_labels": true,
+    "mismatch_reasons": {
+      "ambiguous_multi_face": 42
+    },
+    "details": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit/mismatches.json",
+      "sha256": "ce55add17ae22d57a84c8cfd7bbfb16bd82745e7ada759a8be34d48b98305886"
+    },
+    "gpu_seconds": 0
+  }
+}
