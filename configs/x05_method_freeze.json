@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "selection_population": "Q_et plus original D1, all five ET OOF folds only",
+  "selection": "per-system pooled leave-one-fold-out NLL; within 0.002 choose simpler a,b,c",
+  "candidate_order": [
+    "temperature",
+    "temperature_bias",
+    "class_temperature_bias"
+  ],
+  "selected_methods": {
+    "H_ref": "temperature",
+    "H3": "temperature",
+    "H_A": "temperature",
+    "H_V": "temperature",
+    "Q_A": "temperature",
+    "Q_V": "temperature",
+    "A3": "temperature_bias",
+    "V2": "class_temperature_bias"
+  },
+  "candidate_nll": {
+    "H_ref": {
+      "temperature": 0.7422407707103212,
+      "temperature_bias": 0.7422407707103212,
+      "class_temperature_bias": 0.7435400895698728
+    },
+    "H3": {
+      "temperature": 0.7473255432066838,
+      "temperature_bias": 0.7473255432066838,
+      "class_temperature_bias": 0.7485309932415899
+    },
+    "H_A": {
+      "temperature": 0.8719869987224399,
+      "temperature_bias": 0.8719870984200015,
+      "class_temperature_bias": 0.8719868662581053
+    },
+    "H_V": {
+      "temperature": 1.172242652321299,
+      "temperature_bias": 1.172242652321299,
+      "class_temperature_bias": 1.1715593738317585
+    },
+    "Q_A": {
+      "temperature": 0.9619663244959362,
+      "temperature_bias": 0.9640102242845191,
+      "class_temperature_bias": 0.9651598351706162
+    },
+    "Q_V": {
+      "temperature": 1.2707887071349202,
+      "temperature_bias": 1.2811429981033133,
+      "class_temperature_bias": 1.2814786872115445
+    },
+    "A3": {
+      "temperature": 1.100813876355043,
+      "temperature_bias": 0.9847987681898581,
+      "class_temperature_bias": 0.9850508915976978
+    },
+    "V2": {
+      "temperature": 1.3563743188950705,
+      "temperature_bias": 1.2122516118677564,
+      "class_temperature_bias": 1.2066885390897084
+    }
+  },
+  "confidence": "pre-OP-N calibrated probability of OP-N argmax label",
+  "neutral_target": 0.15,
+  "rejection_coverages": [
+    0.9,
+    0.8
+  ],
+  "rejection_ties": "accept >= empirical threshold, all ties included",
+  "ece_bins": 15,
+  "bootstrap": {
+    "unit": "speaker_id",
+    "replicates": 2000,
+    "seed": 20261011
+  },
+  "fusion": "unchanged X03 nonnegative log-probability fusion with centered biases, then separate calibration",
+  "fallback": "independent full parameter fit for H_A and H_V",
+  "missing_control": "full-system parameters; every component requiring the absent modality is uniform",
+  "quality": {
+    "scalar": "target_presence_fraction",
+    "quintiles": "empirical cutpoints, ties kept together"
+  },
+  "source_index": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/methods/sources.json",
+    "sha256": "4f4bba3c155248672c54a20d1eb2c26f742d2c256cb51a9db879dcf46fe67368"
+  },
+  "code_commit": "e1a90ce0f7faf4a959987b76566e080f1df798c0"
+}
