@@ -1,0 +1,28 @@
+{
+  "git": {
+    "commit": "61ae4bf1539be4ef97e88357ae8eaf57d569ab13",
+    "dirty": false,
+    "status": ""
+  },
+  "command": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "wsl",
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python -"
+  ],
+  "stdin_script": "experiments/X05_calib/audit_expert_fmh.py",
+  "stdin_sha256": "cb4b6798d4f1ade091bb74f80e6c092a55b46f72bfc95f6085826e2635006432",
+  "started_at": "2026-10-11T03:13:09.590796+00:00",
+  "purpose": "Read-only archival replay of already-triggered expert FMH leakage gate; no experiment launched",
+  "gpu_hours": 0,
+  "ended_at": "2026-10-11T03:13:11.388969+00:00",
+  "elapsed_s": 1.797943917,
+  "returncode": 2,
+  "stderr": "",
+  "gate_status": "STOP",
+  "evidence": {
+    "path": "experiments/X05_calib/results/expert_fmh_gate.json",
+    "sha256": "0b57974fde5307d2e049443a7015890059959fb066cf6be3e32513839c124690"
+  }
+}

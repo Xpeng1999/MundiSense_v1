@@ -1,0 +1,174 @@
+{
+  "status": "STOP",
+  "gate": "expert_fold0_fmh_training_disjointness",
+  "started_at": "2026-10-11T03:12:38.532143+00:00",
+  "ended_at": "2026-10-11T03:12:39.176376+00:00",
+  "fmh_speakers": [
+    "06",
+    "10",
+    "11"
+  ],
+  "expected_fmh_count": 3266,
+  "server_root_available_bytes": 112969814016,
+  "experts": [
+    {
+      "encoder": "A3",
+      "fold0_training_ids": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/fold0/training_ids.jsonl",
+        "sha256": "84fc069ad7c597626569639a2ea86ee3802d1f8d1adc074f79f598e77827bcf5"
+      },
+      "fold0_training_count": 22478,
+      "fmh_training_overlap_count": 3266,
+      "fmh_training_overlap_unique_ids": 3266,
+      "fmh_training_overlap_by_speaker": {
+        "06": 965,
+        "10": 553,
+        "11": 1748
+      },
+      "saved_pt_checkpoints": [
+        "final_head.pt"
+      ],
+      "fold0_files": [
+        "grid0.json",
+        "grid1.json",
+        "grid10.json",
+        "grid11.json",
+        "grid12.json",
+        "grid13.json",
+        "grid14.json",
+        "grid15.json",
+        "grid16.json",
+        "grid17.json",
+        "grid2.json",
+        "grid3.json",
+        "grid4.json",
+        "grid5.json",
+        "grid6.json",
+        "grid7.json",
+        "grid8.json",
+        "grid9.json",
+        "training_ids.jsonl"
+      ],
+      "final_checkpoint": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/final_head.pt",
+        "sha256": "eb76ef29a668ec4e1255e0ec8dfe2026b5efb44a2822842ac5eb0e4c53b8341c"
+      },
+      "results": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/results.json",
+        "sha256": "b7845f975cea886d68bf0a9f9d4e8f1a636424f284cf6464d32d9b65ad13d911"
+      },
+      "original_run_meta": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/run_meta.json",
+        "sha256": "2e6ad807f5872766f14c918657fba0a0c90595906043abd5caed58bbed7e6d4e"
+      }
+    },
+    {
+      "encoder": "V2",
+      "fold0_training_ids": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/fold0/training_ids.jsonl",
+        "sha256": "84fc069ad7c597626569639a2ea86ee3802d1f8d1adc074f79f598e77827bcf5"
+      },
+      "fold0_training_count": 22478,
+      "fmh_training_overlap_count": 3266,
+      "fmh_training_overlap_unique_ids": 3266,
+      "fmh_training_overlap_by_speaker": {
+        "06": 965,
+        "10": 553,
+        "11": 1748
+      },
+      "saved_pt_checkpoints": [
+        "final_head.pt"
+      ],
+      "fold0_files": [
+        "grid0.json",
+        "grid1.json",
+        "grid10.json",
+        "grid11.json",
+        "grid12.json",
+        "grid13.json",
+        "grid14.json",
+        "grid15.json",
+        "grid16.json",
+        "grid17.json",
+        "grid2.json",
+        "grid3.json",
+        "grid4.json",
+        "grid5.json",
+        "grid6.json",
+        "grid7.json",
+        "grid8.json",
+        "grid9.json",
+        "training_ids.jsonl"
+      ],
+      "final_checkpoint": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/final_head.pt",
+        "sha256": "0467cc7d3f838fa790527d36ad21ba73eaf65201604e8431d9a35855551011c1"
+      },
+      "results": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/results.json",
+        "sha256": "1ceadd5c994b0812fdd476ceee0e178bfdb5258979263500447f50f684f3f73d"
+      },
+      "original_run_meta": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/run_meta.json",
+        "sha256": "4c887658d421dc07b4864e0d4fc1c8360111bb990bb55550b02b5d998afaebf8"
+      }
+    },
+    {
+      "encoder": "V1",
+      "fold0_training_ids": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/fold0/training_ids.jsonl",
+        "sha256": "84fc069ad7c597626569639a2ea86ee3802d1f8d1adc074f79f598e77827bcf5"
+      },
+      "fold0_training_count": 22478,
+      "fmh_training_overlap_count": 3266,
+      "fmh_training_overlap_unique_ids": 3266,
+      "fmh_training_overlap_by_speaker": {
+        "06": 965,
+        "10": 553,
+        "11": 1748
+      },
+      "saved_pt_checkpoints": [
+        "final_head.pt"
+      ],
+      "fold0_files": [
+        "grid0.json",
+        "grid1.json",
+        "grid10.json",
+        "grid11.json",
+        "grid12.json",
+        "grid13.json",
+        "grid14.json",
+        "grid15.json",
+        "grid16.json",
+        "grid17.json",
+        "grid2.json",
+        "grid3.json",
+        "grid4.json",
+        "grid5.json",
+        "grid6.json",
+        "grid7.json",
+        "grid8.json",
+        "grid9.json",
+        "training_ids.jsonl"
+      ],
+      "final_checkpoint": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/final_head.pt",
+        "sha256": "c48b6003ee29ba89d05622f4e5fdd587a01ece1741a477f2aefb08156b6ae908"
+      },
+      "results": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/results.json",
+        "sha256": "69c9ca9f1a30569a2e82a523e4c5c5a2bfabd42d8b98d0470755869778cb666d"
+      },
+      "original_run_meta": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/run_meta.json",
+        "sha256": "48f8ed6fad01466d34ce44d5274bc9321af99e54272dcfb89fdc055cd4ef2425"
+      }
+    }
+  ],
+  "training_started": false,
+  "inference_started": false,
+  "method_selection_started": false,
+  "q_mix_analysis_started": false,
+  "gpu_hours": 0,
+  "read_only_replay": true
+}
