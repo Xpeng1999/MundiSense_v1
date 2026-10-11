@@ -52,3 +52,22 @@ def test_timelines_retain_original_durations_and_sorting():
         assert e['end_s'] - e['start_s'] == pytest.approx(durations[e['utt_id']], abs=1e-12)
     gap = timeline['entries'][1]
     assert gap['synthetic'] and .3 <= gap['end_s'] - gap['start_s'] <= 1.5
+
+
+def test_service_decisions_preserve_frozen_bundle_formula():
+    from emotioncore.x06.service import Service
+    from emotioncore.x05.bundle import Bundle
+    service = Service.__new__(Service)
+    service.bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    service.previous = {}
+    baseline = Bundle.load()
+    probabilities = {c: [.1, .3, .05, .2, .05, .1, .2]
+                     for p in service.bundle['systems'].values() for c in p['components']}
+    for system in ('H3', 'H_ref'):
+        old = baseline.apply(probabilities, dict(has_face=True, face_count=1, has_speech=True,
+                                                full_system=system, rejection_point='90'))
+        new = service.decide(probabilities, system, scores=[1.])
+        assert (new['label'], new['route']) == (old[0], old[2])
+        assert new['confidence'] == pytest.approx(old[1], abs=1e-12)
+    visual = service.decide(probabilities, 'H3', has_speech=False, scores=[1.])
+    assert visual['rejection_point'] == '80' and visual['reason'] == 'visual_only'
