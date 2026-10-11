@@ -1,0 +1,12 @@
+{
+  "A": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/A.jsonl",
+    "sha256": "3bbf02c5edc0714c69913f8d805daaee51313098ba9bec1bb652415214cf6ae5",
+    "n": 572
+  },
+  "AV": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/AV.jsonl",
+    "sha256": "75bd54ddbb4163c6e9ad43d3373ec56b55deaa551ceedd9edde5d07888f89a33",
+    "n": 572
+  }
+}

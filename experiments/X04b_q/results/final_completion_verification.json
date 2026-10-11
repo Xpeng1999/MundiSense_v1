@@ -1,0 +1,26 @@
+{
+  "ordered_manifest_receipts_equal": true,
+  "count": 35586,
+  "corpus_counts": {
+    "MER": 9386,
+    "ET": 26200
+  },
+  "validation_count": 8,
+  "all_validation_coverage": 1.0,
+  "summary_sha256": "3d3a389815d110a51dd4b0e567ccbae32fbcb88c354151d3fdc45e67b367fedc",
+  "run_meta_sha256": "3721b14f5c07e587d0b8d6915f0ae3de17eaa3598dc5237d677fea0c124dc87a",
+  "best_adapter_sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+  "last": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final/last_checkpoints/cursor_00035586_0f379f8e",
+    "position": 35586,
+    "state_sha256": "bb19659690b5b59135db106fee69bd9c47461d72dc3878c41acf09b7325aabb5",
+    "adapter_sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+    "train_manifest_sha256": "5f1e59d5a8b4b991962cc8f282e1739ec0647e5dc2c636c0f31001e66b13770e",
+    "val_manifest_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56"
+  },
+  "no_oom_skips": true,
+  "monitor_records": 88,
+  "peak_cuda_allocated_mib": 14059.55712890625,
+  "passed": true,
+  "checked_at": "2026-10-11T02:28:10.663826+00:00"
+}

@@ -19,6 +19,19 @@
     "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/AV.jsonl",
     "sha256": "4aee4b03626497e24513c7cfe180b12917df187374a58f4e5e0a5720157e73fe"
   },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/AV.jsonl",
+    "sha256": "951b5b9283ba8ab2375c4f8c30df282fd96f3fc4bf7477d6ca17d4005259b7c1"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/AV.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/AV.jsonl",
+    "sha256": "ccbf8575986ae21fa0b57b7ebba51d7e11abe4c07e178135e3d0aa9bab76a11a"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/AV.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/AV.jsonl",
+    "sha256": "1598077bbca3a30d0066ba406ef7cf89f13c2aa3bedb073828c301eac3e76738",
+    "n": 572
+  },
   "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/A.jsonl": {
     "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold0/A.jsonl",
     "sha256": "3c2db247d3fc332d75252a51c52181fba0211c87238e8682bf3e483baaad9439"
@@ -39,6 +52,19 @@
     "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_fold4/A.jsonl",
     "sha256": "ab2c9c3b87d94c894f62f5adec61c5bbf4d4df6ed9b7a3580fdcb703c3b88cab"
   },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_et_test/A.jsonl",
+    "sha256": "706be3204258dec2087cddc242e218e83d76e4870fe94580a155f2da980a6e2c"
+  },
+  "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/A.jsonl": {
+    "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/predict_final_sims_valid/A.jsonl",
+    "sha256": "545f69e272b097de3d31b8a759ee9fca47fee16a2e6c9db47c00cd8ee3454d22"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/A.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_predictions/A.jsonl",
+    "sha256": "01b0c62065e04431563303e560345661e97928c973276ab7dd55cbb741ed3b71",
+    "n": 572
+  },
   "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/oof.jsonl": {
     "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/oof.jsonl",
     "sha256": "86065654edff0e1249d4a054eca3abbb7951f08d66a5caf7cd9a35a002adee28"
@@ -50,6 +76,60 @@
   "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/oof.jsonl": {
     "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/oof.jsonl",
     "sha256": "93ea65a6edca19fe2cd9dbfa998509dc3e31f4b0949f1f48e5ad4cf2de238747"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/et_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/et_test.jsonl",
+    "sha256": "a21272d3e9bd54f8cc5c5cfe07ca019b116e5e8706f7e62884c92dc01f1d7d83",
+    "count": 1929,
+    "feature_available": 1929
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/et_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/et_test.jsonl",
+    "sha256": "c9ef4fd888ea2aefffaf4779ffaf97d7a2dc273381e9386603d5a142e1cbc359",
+    "count": 1929,
+    "feature_available": 1929
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/et_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/et_test.jsonl",
+    "sha256": "324819597093a02ba2d9299c807fb6703ccdcaafbbb2fb332ee84c00d1a97d52",
+    "count": 1929,
+    "feature_available": 1929
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/sims_valid.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/sims_valid.jsonl",
+    "sha256": "02ba7c15cd3815c9a9d04a7d23f7a9c361f5bd4113f22b986d60eb9b31b40542",
+    "count": 647,
+    "feature_available": 620
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/sims_valid.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/sims_valid.jsonl",
+    "sha256": "12832c94216aacf15189bc2fa4a49f61b422a2779004ada188a526ff7b8072c0",
+    "count": 647,
+    "feature_available": 620
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/sims_valid.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/sims_valid.jsonl",
+    "sha256": "b343abc58fecbb18458f6b9f462f519698e1dc80c0b5e8510218b9b7eaf8656a",
+    "count": 647,
+    "feature_available": 620
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/mer_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/A3/targets/mer_test.jsonl",
+    "sha256": "5d766e77fd1337f1c131a4fff82f6fe8e6d602162f0b319fe887606c0b971a3b",
+    "count": 572,
+    "feature_available": 572
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/mer_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V2/targets/mer_test.jsonl",
+    "sha256": "77ff602b4706a9816570715954ef491c5ebc78df93cd29952cec36391da4bb22",
+    "count": 572,
+    "feature_available": 572
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/mer_test.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/targets/mer_test.jsonl",
+    "sha256": "835a1de6b52eb220634bedcf842fc7d51bc99030e05845478c784895e17c56e6",
+    "count": 572,
+    "feature_available": 572
   },
   "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_fold0/AV.jsonl": {
     "n": 3274,
@@ -325,6 +405,168 @@
     "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_fold1/AV.jsonl",
     "sha256": "0f883c817ede3bdeeb96fee83b07f0e6b7b4ce354b045f604cb38ff531b1d7dc"
   },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/AV.jsonl": {
+    "n": 1929,
+    "uniform": 0,
+    "face_missing_fallback": 3,
+    "metrics": {
+      "n": 1929,
+      "valid": 1929,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.6236528096474024,
+      "uar": 0.6033403146997568,
+      "wa": 0.7174701918092276,
+      "neutral_false_positive_rate": 0.16604244694132334,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.7616875712656784,
+          "recall": 0.8339575530586767,
+          "f1": 0.7961859356376639
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.7744360902255639,
+          "recall": 0.8373983739837398,
+          "f1": 0.8046875
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.6435643564356436,
+          "recall": 0.5284552845528455,
+          "f1": 0.5803571428571428
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.6448598130841121,
+          "recall": 0.8141592920353983,
+          "f1": 0.7196870925684484
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.711340206185567,
+          "recall": 0.552,
+          "f1": 0.6216216216216216
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.48333333333333334,
+          "recall": 0.21641791044776118,
+          "f1": 0.29896907216494845
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.71,
+          "recall": 0.4409937888198758,
+          "f1": 0.5440613026819924
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 668,
+          "joy": 27,
+          "sadness": 21,
+          "anger": 56,
+          "fear": 7,
+          "disgust": 10,
+          "surprise": 12
+        },
+        "joy": {
+          "neutral": 32,
+          "joy": 206,
+          "sadness": 2,
+          "anger": 2,
+          "fear": 2,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "sadness": {
+          "neutral": 36,
+          "joy": 8,
+          "sadness": 65,
+          "anger": 9,
+          "fear": 3,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 30,
+          "joy": 4,
+          "sadness": 2,
+          "anger": 276,
+          "fear": 4,
+          "disgust": 14,
+          "surprise": 9
+        },
+        "fear": {
+          "neutral": 29,
+          "joy": 2,
+          "sadness": 5,
+          "anger": 14,
+          "fear": 69,
+          "disgust": 2,
+          "surprise": 4
+        },
+        "disgust": {
+          "neutral": 35,
+          "joy": 9,
+          "sadness": 4,
+          "anger": 51,
+          "fear": 4,
+          "disgust": 29,
+          "surprise": 2
+        },
+        "surprise": {
+          "neutral": 47,
+          "joy": 10,
+          "sadness": 2,
+          "anger": 20,
+          "fear": 8,
+          "disgust": 3,
+          "surprise": 71
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      }
+    },
+    "latency_p50_s": 0.6288142099510878,
+    "latency_p95_s": 0.7113425037823617,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/AV.jsonl",
+    "sha256": "80c207a018ad412ba2990ffeded5ba3a4e6bdaaf8c69b476bae0de2c71c58690"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/AV.jsonl": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 10,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.8049061292038496,
+      "spearman": 0.8039164666193417,
+      "acc_2_nonzero": 0.8414414414414414,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 467,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.6118346860166639,
+    "latency_p95_s": 0.6721152159618213,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/AV.jsonl",
+    "sha256": "cdd972d20a1d41c30cb73640adccc38bf5665faef30a2f8f73c00beaa6be2fc8"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/AV.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/AV.jsonl",
+    "sha256": "75bd54ddbb4163c6e9ad43d3373ec56b55deaa551ceedd9edde5d07888f89a33",
+    "n": 572
+  },
   "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_fold0/A.jsonl": {
     "n": 3274,
     "uniform": 0,
@@ -598,5 +840,167 @@
     "latency_p95_s": 0.4730586609453894,
     "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_fold1/A.jsonl",
     "sha256": "7c4273cf7c3a5960f07323bfb30a8e4bbe43f70db7f36745a2d99212401a7617"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/A.jsonl": {
+    "n": 1929,
+    "uniform": 0,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 1929,
+      "valid": 1929,
+      "failures": 0,
+      "coverage": 1.0,
+      "macro_f1": 0.5689729159789527,
+      "uar": 0.5640792140339003,
+      "wa": 0.6438569206842923,
+      "neutral_false_positive_rate": 0.3146067415730337,
+      "per_class": {
+        "neutral": {
+          "support": 801,
+          "precision": 0.75,
+          "recall": 0.6853932584269663,
+          "f1": 0.7162426614481409
+        },
+        "joy": {
+          "support": 246,
+          "precision": 0.4845360824742268,
+          "recall": 0.7642276422764228,
+          "f1": 0.5930599369085174
+        },
+        "sadness": {
+          "support": 123,
+          "precision": 0.6448598130841121,
+          "recall": 0.5609756097560976,
+          "f1": 0.6000000000000001
+        },
+        "anger": {
+          "support": 339,
+          "precision": 0.6142241379310345,
+          "recall": 0.8407079646017699,
+          "f1": 0.709838107098381
+        },
+        "fear": {
+          "support": 125,
+          "precision": 0.673469387755102,
+          "recall": 0.528,
+          "f1": 0.5919282511210762
+        },
+        "disgust": {
+          "support": 134,
+          "precision": 0.55,
+          "recall": 0.2462686567164179,
+          "f1": 0.3402061855670103
+        },
+        "surprise": {
+          "support": 161,
+          "precision": 0.65,
+          "recall": 0.32298136645962733,
+          "f1": 0.43153526970954353
+        }
+      },
+      "confusion": {
+        "neutral": {
+          "neutral": 549,
+          "joy": 126,
+          "sadness": 24,
+          "anger": 73,
+          "fear": 4,
+          "disgust": 12,
+          "surprise": 13
+        },
+        "joy": {
+          "neutral": 42,
+          "joy": 188,
+          "sadness": 4,
+          "anger": 3,
+          "fear": 5,
+          "disgust": 1,
+          "surprise": 3
+        },
+        "sadness": {
+          "neutral": 27,
+          "joy": 13,
+          "sadness": 69,
+          "anger": 9,
+          "fear": 3,
+          "disgust": 1,
+          "surprise": 1
+        },
+        "anger": {
+          "neutral": 23,
+          "joy": 10,
+          "sadness": 0,
+          "anger": 285,
+          "fear": 5,
+          "disgust": 10,
+          "surprise": 6
+        },
+        "fear": {
+          "neutral": 15,
+          "joy": 21,
+          "sadness": 5,
+          "anger": 14,
+          "fear": 66,
+          "disgust": 2,
+          "surprise": 2
+        },
+        "disgust": {
+          "neutral": 27,
+          "joy": 7,
+          "sadness": 3,
+          "anger": 58,
+          "fear": 3,
+          "disgust": 33,
+          "surprise": 3
+        },
+        "surprise": {
+          "neutral": 49,
+          "joy": 23,
+          "sadness": 2,
+          "anger": 22,
+          "fear": 12,
+          "disgust": 1,
+          "surprise": 52
+        }
+      },
+      "invalid_by_true": {
+        "neutral": 0,
+        "joy": 0,
+        "sadness": 0,
+        "anger": 0,
+        "fear": 0,
+        "disgust": 0,
+        "surprise": 0
+      }
+    },
+    "latency_p50_s": 0.3897764200810343,
+    "latency_p95_s": 0.4468423306010663,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/A.jsonl",
+    "sha256": "a6344ef9c9813e1a83e281cc6765657cffc9ae6e527e69281791265788a60da3"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/A.jsonl": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.7578355615111718,
+      "spearman": 0.7586344140013678,
+      "acc_2_nonzero": 0.8072072072072072,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 448,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.3657581938896328,
+    "latency_p95_s": 0.40852661605458707,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/A.jsonl",
+    "sha256": "6c95248f443e8be7dd75a8e4ff5c63cf65293ae45a112fffe2f0ba95c0c34115"
+  },
+  "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/A.jsonl": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/A.jsonl",
+    "sha256": "3bbf02c5edc0714c69913f8d805daaee51313098ba9bec1bb652415214cf6ae5",
+    "n": 572
   }
 }

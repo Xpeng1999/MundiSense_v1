@@ -1,0 +1,39 @@
+{
+  "analysis_sha256": "e003ba60b0da83b8a56247bd0b2e1ce8221d16497d55e198c8a3bbb3609a0494",
+  "analysis_outputs_and_source_sha_verified": true,
+  "revised_p1_and_target_parameters_unchanged": true,
+  "all_8_systems_all_4_cohorts_exact_coverage": true,
+  "independent_p2_bootstrap_equal": true,
+  "p2": {
+    "H_ref": {
+      "n": 620,
+      "excluded_joint_failures": 27,
+      "unit": "utterance",
+      "seed": 20261007,
+      "replicates": 2000,
+      "difference": 0.018666768694910574,
+      "difference_95": [
+        0.0102186721067476,
+        0.02679478326476998
+      ]
+    },
+    "Q_AV": {
+      "n": 620,
+      "excluded_joint_failures": 27,
+      "unit": "utterance",
+      "seed": 20261007,
+      "replicates": 2000,
+      "difference": 0.04523736292473857,
+      "difference_95": [
+        0.028754138170467,
+        0.061448208360358705
+      ]
+    }
+  },
+  "original_stop_unchanged": true,
+  "all_steps_first_attempt": true,
+  "charged_gpu_hours": 51.61415682296944,
+  "budget_all_passed": true,
+  "passed": true,
+  "checked_at": "2026-10-11T02:28:13.775519+00:00"
+}

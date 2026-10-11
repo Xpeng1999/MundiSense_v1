@@ -1,12 +1,12 @@
 {
   "git": {
-    "commit": "229c5018a5f1371c180faf01a8a9baca1b6b3a7b",
+    "commit": "a9454ec52f6c410eafc723b7d1b2c014a9d3e023",
     "dirty": false,
     "status": "",
     "full_diff": null
   },
-  "at": "2026-10-10T04:46:12.350821+00:00",
-  "report_sha256": "6a82f47b32d7a26fbb4334074f780e2d90fd8f133a9fead5c53ef404fbe50508",
-  "handoff_sha256": "245619aacdcfa988c9933fccc462adf4bf023a6f4c9bdbbc32c4cc02dcfe1fa2",
-  "analysis_complete": false
+  "at": "2026-10-11T02:28:48.678510+00:00",
+  "report_sha256": "10ef66db80673738ca5cf1850de935f36e4fde28bb71b1e24c42370284162e3a",
+  "handoff_sha256": "6e9430d72854d57e2ce6379b0d274a5263a84c912ce9d2f37c5559ea490681fe",
+  "analysis_complete": true
 }

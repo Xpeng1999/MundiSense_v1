@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-11T02:30:48.726648+00:00",
+  "aggregate_hashes_verified_before_receipt": 51,
+  "report_sections": 11,
+  "report_sha256": "10ef66db80673738ca5cf1850de935f36e4fde28bb71b1e24c42370284162e3a",
+  "handoff_sha256": "6e9430d72854d57e2ce6379b0d274a5263a84c912ce9d2f37c5559ea490681fe",
+  "privacy_no_media_text_features_or_per_utterance_probabilities": true,
+  "original_files_byte_unchanged": [
+    "interim_main_table.json",
+    "interim_primary.json",
+    "interim_secondary.json",
+    "interim_run_meta.json",
+    "interim_source_artifact_index.json",
+    "futility.json",
+    "pipeline_stop.json",
+    "fold0_summary.json",
+    "fold1_summary.json",
+    "prediction_verification.json",
+    "precheck.json"
+  ],
+  "original_reference": "d4404f4",
+  "final_cpu_audit_script_sha256": "6fb55d146f1246217f255da0fc8866f5cdeb2c293d8f8c27114685b20a3b12a6",
+  "verification_receipts": {
+    "final_completion_verification.json": "65756fa7da8f3da866f74a696a8d35548a4d349676874bc262b53dda63c2a7b5",
+    "final_prediction_verification.json": "894cf027cece42d9164bc4673707066441a3f0567f21492a2e0bd2bada119444",
+    "final_analysis_verification.json": "e2b2819472cb2d890c5d3289bfb2e7e3ca949733ccd57a1fe7ab38480238d188"
+  },
+  "test_receipts": {
+    "tests.json": "294b56acab3563f39450da64be776079a3d30cfa6afc4d0ef61703dfe14cb858",
+    "continue_tests.json": "d32134f3e4158f87dd47201b879249cc359242bd092b25eb11bb7165a9193513"
+  },
+  "gpu_hours": 51.61415682296944,
+  "pr": 5,
+  "adoption_decision": "reviewer only"
+}

@@ -1,0 +1,36 @@
+{
+  "git": {
+    "commit": "ac2aab84555e2d6b5cc763e90ceb7001dcbdad7d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/continue_code/src/emotioncore/x04b/predict_mer.py",
+    "--adapter",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final/best_adapter_eval8",
+    "--adapter-sha256",
+    "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+    "--output-dir",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test"
+  ],
+  "started_at": "2026-10-10T23:47:37.912369+00:00",
+  "adapter_sha256": "67c5d689952fe78b736dc628c7ddf7d883203b00ad4d3361e22260fe3c0794f3",
+  "training": false,
+  "classes": [
+    "neutral",
+    "joy",
+    "sadness",
+    "anger",
+    "surprise",
+    "worried"
+  ],
+  "ended_at": "2026-10-10T23:57:51.630986+00:00",
+  "summary_sha256": "7fe7de7c6bf8305edf2b35e22f1047d3540a72285f38ca9a9cdd985c5309c5a4",
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  }
+}

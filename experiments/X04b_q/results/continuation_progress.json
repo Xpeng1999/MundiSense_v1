@@ -69,44 +69,84 @@
       "gpu": false,
       "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/revised_p1_attempt0.log",
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "train_final",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 64773.71734079404,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/train_final_attempt0.log",
+      "log_sha256": "f7c9ff7b3e945f726e9975e7861852e6f7c0fe06dec12da55bc8fc830c401d1b"
+    },
+    {
+      "name": "predict_final_et_test",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 2820.1672441130504,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/predict_final_et_test_attempt0.log",
+      "log_sha256": "8b6a1f09241ee759dba0f4ea0bee547875d075677a236671aefbaf4660bff932"
+    },
+    {
+      "name": "predict_final_sims_valid",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 920.0592123398092,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/predict_final_sims_valid_attempt0.log",
+      "log_sha256": "ea9f9c88affbaa9053f002f8c643778e9bfd26034024e325fd1e15b91100ec33"
+    },
+    {
+      "name": "predict_final_mer",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 630.0480142720044,
+      "gpu": true,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/predict_final_mer_attempt0.log",
+      "log_sha256": "3b62525294bcc925cb8da44c82b62bdc46170c58af51c870c5668407191c443e"
+    },
+    {
+      "name": "revised_final_analysis",
+      "attempt": 0,
+      "returncode": 0,
+      "elapsed_s": 40.00687389401719,
+      "gpu": false,
+      "log": "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation/logs/revised_final_analysis_attempt0.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
-  "charged_gpu_hours": 32.40749243088086,
-  "status": "running",
+  "charged_gpu_hours": 51.61415682296944,
+  "status": "complete",
   "budget_projection": {
-    "completed_model": "reviewer_continuation_preflight",
-    "at": "2026-10-10T04:44:54.995810+00:00",
-    "charged_gpu_hours": 32.40749243088086,
+    "completed_model": "final_predictions",
+    "at": "2026-10-10T23:57:59.479559+00:00",
+    "charged_gpu_hours": 51.61415682296944,
     "observed_ratio_vs_initial": 1.0,
-    "remaining_training_h": 18.696290290909186,
-    "remaining_prediction_h": 0.8029395918126597,
+    "remaining_training_h": 0.0,
+    "remaining_prediction_h": 0.0,
     "reserve_fraction": 0.2,
     "diagnostic_reserve_h": 0.8888818756566615,
     "load_reserve_h": 0.5,
-    "projected_total_gpu_h": 57.195450165803734,
+    "projected_total_gpu_h": 53.003038698626106,
     "limit_h": 70,
     "passed": true
   },
-  "active_step": "train_final",
+  "active_step": null,
   "original_stop_sha256": "f73e1628dbd69d30c6eef86fa4819315050ec8e1d87ca2d7101659109e31fe39",
   "revision": "X04B_CONTINUE_PROMPT 2026-10-10; final only; futility retired",
-  "active_started_at": "2026-10-10T04:45:35.109380+00:00",
+  "active_started_at": "2026-10-10T23:57:59.482130+00:00",
   "active_command": [
     "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
     "-u",
     "-m",
-    "emotioncore.x04b.train",
-    "--fold-name",
-    "final",
-    "--manifest-meta",
-    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/run_meta.json",
-    "--val-manifest",
-    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_val.jsonl",
-    "--cache-root",
-    "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
-    "--output-dir",
-    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/final"
+    "emotioncore.x04b.analysis",
+    "--root",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/analysis_revised",
+    "--within-fold-loso"
   ],
   "active_attempt": 0,
-  "child_pid": 1084914
+  "ended_at": "2026-10-10T23:58:39.493059+00:00"
 }
