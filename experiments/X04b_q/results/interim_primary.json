@@ -1,0 +1,14 @@
+{
+  "H_ref": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.006087206000842338,
+    "left_minus_right_95": [
+      -0.014891275553208572,
+      0.006478477403623781
+    ]
+  }
+}

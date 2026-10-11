@@ -1,0 +1,254 @@
+{
+  "git": {
+    "commit": "e7b1f4f50c701ad3725281de0b55eb68944b02ae",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/preflight_code/src/emotioncore/x04b/prepare.py",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests"
+  ],
+  "created_at": "2026-10-07T04:11:19.195776+00:00",
+  "folds_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+  "subsets_sha256": "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "runs": {
+    "fold0": {
+      "epochs": [
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold0_epoch0.jsonl",
+          "sha256": "18d9aa882db733f63f40d82376e89b5a356971b954da051dd2fcaeaa7a5d9a29",
+          "n": 14519,
+          "ET_n": 9826,
+          "MER_n": 4693,
+          "MER_seed": 20261007,
+          "MER_classes": {
+            "sadness": 828,
+            "anger": 1076,
+            "joy": 914,
+            "worried": 540,
+            "neutral": 1140,
+            "surprise": 195
+          },
+          "assigned_forms": {
+            "AV": 8712,
+            "V": 2903,
+            "A": 2904
+          },
+          "fallbacks": 60
+        },
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold0_epoch1.jsonl",
+          "sha256": "03fd1d84a4884cd6b1b2205334618ff34e4303eb4d48a9e0b20171592c9f562e",
+          "n": 14519,
+          "ET_n": 9826,
+          "MER_n": 4693,
+          "MER_seed": 20261008,
+          "MER_classes": {
+            "joy": 914,
+            "neutral": 1140,
+            "anger": 1076,
+            "sadness": 828,
+            "worried": 540,
+            "surprise": 195
+          },
+          "assigned_forms": {
+            "AV": 8712,
+            "A": 2904,
+            "V": 2903
+          },
+          "fallbacks": 62
+        }
+      ],
+      "epoch_n": 14519,
+      "train_count": 29038,
+      "train_sha256": "18d9aa882db733f63f40d82376e89b5a356971b954da051dd2fcaeaa7a5d9a2903fd1d84a4884cd6b1b2205334618ff34e4303eb4d48a9e0b20171592c9f562e",
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_val.jsonl",
+      "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+      "val_count": 700,
+      "ET_source": {
+        "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_train.jsonl",
+        "train_sha256": "94260ad7b6f71587e4e15deae8e4fc0fdd5b2b8a44cd2098e66ff68cd852d923",
+        "train_count": 9826,
+        "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_val.jsonl",
+        "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+        "val_count": 700,
+        "assigned_counts": {
+          "A": 1965,
+          "V": 1965,
+          "AV": 5896
+        },
+        "face_missing_fallback_train": 15
+      }
+    },
+    "fold1": {
+      "epochs": [
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold1_epoch0.jsonl",
+          "sha256": "9cd0c055a4603d843fd37674e470254e22a1a2a54ccc0e1dda78f717b67dec05",
+          "n": 14526,
+          "ET_n": 9833,
+          "MER_n": 4693,
+          "MER_seed": 20261007,
+          "MER_classes": {
+            "sadness": 828,
+            "worried": 540,
+            "joy": 914,
+            "anger": 1076,
+            "surprise": 195,
+            "neutral": 1140
+          },
+          "assigned_forms": {
+            "AV": 8716,
+            "A": 2906,
+            "V": 2904
+          },
+          "fallbacks": 63
+        },
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold1_epoch1.jsonl",
+          "sha256": "e08852994a36c1a3176a7a19df0ee5bcc9e36780875accd458686295baf8290d",
+          "n": 14526,
+          "ET_n": 9833,
+          "MER_n": 4693,
+          "MER_seed": 20261008,
+          "MER_classes": {
+            "sadness": 828,
+            "neutral": 1140,
+            "surprise": 195,
+            "worried": 540,
+            "anger": 1076,
+            "joy": 914
+          },
+          "assigned_forms": {
+            "AV": 8716,
+            "V": 2904,
+            "A": 2906
+          },
+          "fallbacks": 65
+        }
+      ],
+      "epoch_n": 14526,
+      "train_count": 29052,
+      "train_sha256": "9cd0c055a4603d843fd37674e470254e22a1a2a54ccc0e1dda78f717b67dec05e08852994a36c1a3176a7a19df0ee5bcc9e36780875accd458686295baf8290d",
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold1_val.jsonl",
+      "val_sha256": "075bfa7bc21e89356a4ed334deb5d3fa8e1ea6824fe137d118395f5a53a4a2d8",
+      "val_count": 700,
+      "ET_source": {
+        "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold1_train.jsonl",
+        "train_sha256": "ef7fee726d3792e5e2f138fb30eb8ad6932639bc46a58f0e8f30ffe0887566c7",
+        "train_count": 9833,
+        "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold1_val.jsonl",
+        "val_sha256": "075bfa7bc21e89356a4ed334deb5d3fa8e1ea6824fe137d118395f5a53a4a2d8",
+        "val_count": 700,
+        "assigned_counts": {
+          "A": 1967,
+          "V": 1966,
+          "AV": 5900
+        },
+        "face_missing_fallback_train": 18
+      }
+    },
+    "final": {
+      "epochs": [
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch0.jsonl",
+          "sha256": "1e2fd0944afa9ce3aeddd76416bf579d87b0370a78f9046a50e8e0b63a626b36",
+          "n": 17793,
+          "ET_n": 13100,
+          "MER_n": 4693,
+          "MER_seed": 20261007,
+          "MER_classes": {
+            "neutral": 1140,
+            "worried": 540,
+            "sadness": 828,
+            "joy": 914,
+            "anger": 1076,
+            "surprise": 195
+          },
+          "assigned_forms": {
+            "AV": 10676,
+            "A": 3559,
+            "V": 3558
+          },
+          "fallbacks": 69
+        },
+        {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch1.jsonl",
+          "sha256": "d6d11cf3c025e674f992c97b83f961709f80d10a2895eabf97913c1afefc1740",
+          "n": 17793,
+          "ET_n": 13100,
+          "MER_n": 4693,
+          "MER_seed": 20261008,
+          "MER_classes": {
+            "sadness": 828,
+            "joy": 914,
+            "neutral": 1140,
+            "worried": 540,
+            "anger": 1076,
+            "surprise": 195
+          },
+          "assigned_forms": {
+            "AV": 10676,
+            "V": 3558,
+            "A": 3559
+          },
+          "fallbacks": 71
+        }
+      ],
+      "epoch_n": 17793,
+      "train_count": 35586,
+      "train_sha256": "1e2fd0944afa9ce3aeddd76416bf579d87b0370a78f9046a50e8e0b63a626b36d6d11cf3c025e674f992c97b83f961709f80d10a2895eabf97913c1afefc1740",
+      "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_val.jsonl",
+      "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+      "val_count": 700,
+      "ET_source": {
+        "train_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_train.jsonl",
+        "train_sha256": "0ef313f34d5ffb434c1a01569910d36d25639390c7ce6b3735d16a61bfbc4632",
+        "train_count": 13100,
+        "val_path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_val.jsonl",
+        "val_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+        "val_count": 700,
+        "assigned_counts": {
+          "A": 2620,
+          "V": 2620,
+          "AV": 7860
+        },
+        "face_missing_fallback_train": 24
+      }
+    }
+  },
+  "MER_source": {
+    "train_A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_A.jsonl",
+      "sha256": "f738627e187f3ab4444f08b7383ab56e88e272eb6f3badc5b5a33dd03731130d",
+      "n": 9386
+    },
+    "train_V": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_V.jsonl",
+      "sha256": "7332ac954de271dcf4e0981cd5e1a48740faeb1ed9f0bd9aac63604dbf6be606",
+      "n": 9386
+    },
+    "train_AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/train_AV.jsonl",
+      "sha256": "4320e75c8ba13ac2a728b98a631b2e74be6d53fe4608ce34c1a9883dee78f68d",
+      "n": 9386
+    },
+    "test_A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/test_A.jsonl",
+      "sha256": "3f5d57bae1acaf44935019537c48af6dcd7ce48ac64cb9bd14d8b33c38fa2b82",
+      "n": 572
+    },
+    "test_AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/Q_media/manifests/test_AV.jsonl",
+      "sha256": "4dd9af7d3c6af941f04a721e2d93220391e72dc4998bfc4c1d2ecda94d0ff335",
+      "n": 572
+    }
+  },
+  "initialization": "base only",
+  "epoch_indexing": "zero based: seeds 20261007,20261008",
+  "stratification": "largest remainder, class-name tie break, exact4693",
+  "shuffle": "X03 seed formula after concatenating frozen ET and sorted sampled MER"
+}

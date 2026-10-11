@@ -1,0 +1,11 @@
+{
+  "git": {
+    "commit": "2d73ab6f9de5b512b39513754ee4f79fa0928e11",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "at": "2026-10-08T13:08:39.214054+00:00",
+  "report_sha256": "5e40d4163486327be51347be01060e0229acb02e46a2a1bb3212619ca34b225f",
+  "stop_delivery_edit": "explicit stopped scope, P1/secondary tables and X05 handoff"
+}

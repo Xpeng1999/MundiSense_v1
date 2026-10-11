@@ -1,0 +1,129 @@
+{
+  "et_test": {
+    "n": 1929,
+    "summary_sha256": "2f8f1bbebb3263e59f64c98ba8bd04c4cb3dd7d2c5d1ee1c5268087933969ae2",
+    "run_meta_sha256": "f73df263f8c356f57093e6c3d80547d4e7b3bcc5f77dd6032e40e949756c2d40",
+    "forms": {
+      "A": {
+        "n": 1929,
+        "unique_ids": 1929,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "a6344ef9c9813e1a83e281cc6765657cffc9ae6e527e69281791265788a60da3",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/A.jsonl",
+        "uniform": 0,
+        "face_missing_fallback": 0,
+        "statuses": {
+          "ok": 1929
+        }
+      },
+      "V": {
+        "n": 1929,
+        "unique_ids": 1929,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "a99205165b0fe22e5d1f90269404b8340c4a3f88428a113557cce330cbf65e91",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/V.jsonl",
+        "uniform": 3,
+        "face_missing_fallback": 0,
+        "statuses": {
+          "ok": 1926,
+          "face_missing": 3
+        }
+      },
+      "AV": {
+        "n": 1929,
+        "unique_ids": 1929,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "80c207a018ad412ba2990ffeded5ba3a4e6bdaaf8c69b476bae0de2c71c58690",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/AV.jsonl",
+        "uniform": 0,
+        "face_missing_fallback": 3,
+        "statuses": {
+          "ok": 1926,
+          "face_missing_fallback": 3
+        }
+      }
+    }
+  },
+  "sims_valid": {
+    "n": 647,
+    "summary_sha256": "d0ef30fd81cecf4fefa6c1b7396ebfb6e634cbc3d6cd21e75b453bedb3a3c8a1",
+    "run_meta_sha256": "a417497bf30eb91b74cb8a61d52d3324ccd88b8ac37bd9984f90ef1361b3c8ff",
+    "forms": {
+      "A": {
+        "n": 647,
+        "unique_ids": 647,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "6c95248f443e8be7dd75a8e4ff5c63cf65293ae45a112fffe2f0ba95c0c34115",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/A.jsonl",
+        "uniform": 27,
+        "face_missing_fallback": 0,
+        "statuses": {
+          "ok": 620,
+          "missing_media": 27
+        }
+      },
+      "V": {
+        "n": 647,
+        "unique_ids": 647,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "c6b7b5faf88140d2f2cc68a1dee153b174621246ad8f9627fade8ad53b74d78b",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/V.jsonl",
+        "uniform": 37,
+        "face_missing_fallback": 0,
+        "statuses": {
+          "face_missing": 10,
+          "ok": 610,
+          "missing_media": 27
+        }
+      },
+      "AV": {
+        "n": 647,
+        "unique_ids": 647,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "cdd972d20a1d41c30cb73640adccc38bf5665faef30a2f8f73c00beaa6be2fc8",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/AV.jsonl",
+        "uniform": 27,
+        "face_missing_fallback": 10,
+        "statuses": {
+          "face_missing_fallback": 10,
+          "ok": 610,
+          "missing_media": 27
+        }
+      }
+    }
+  },
+  "mer_test": {
+    "n": 572,
+    "summary_sha256": "7fe7de7c6bf8305edf2b35e22f1047d3540a72285f38ca9a9cdd985c5309c5a4",
+    "run_meta_sha256": "80af75fc1607d7ae2a019b62b5df2e781b51bfffca3c2037fd17c1c9d10a8eb2",
+    "forms": {
+      "A": {
+        "n": 572,
+        "unique_ids": 572,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "3bbf02c5edc0714c69913f8d805daaee51313098ba9bec1bb652415214cf6ae5",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/A.jsonl",
+        "uniform": 0,
+        "face_missing_fallback": 0,
+        "statuses": {
+          "ok": 572
+        }
+      },
+      "AV": {
+        "n": 572,
+        "unique_ids": 572,
+        "ordered_manifest_ids_equal": true,
+        "sha256": "75bd54ddbb4163c6e9ad43d3373ec56b55deaa551ceedd9edde5d07888f89a33",
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_mer_test/AV.jsonl",
+        "uniform": 0,
+        "face_missing_fallback": 5,
+        "statuses": {
+          "ok": 567,
+          "face_missing_fallback": 5
+        }
+      }
+    }
+  },
+  "passed": true,
+  "checked_at": "2026-10-11T02:28:10.990278+00:00"
+}

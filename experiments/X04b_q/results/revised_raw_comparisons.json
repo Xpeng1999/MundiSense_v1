@@ -1,0 +1,26 @@
+{
+  "Q_AV": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.005225681464120391,
+    "left_minus_right_95": [
+      -0.014087457376469992,
+      0.0028208305105232867
+    ]
+  },
+  "Q_A": {
+    "n": 6533,
+    "unit": "speaker_id",
+    "speaker_count": 6,
+    "seed": 20261007,
+    "replicates": 2000,
+    "difference": -0.0004689090380558536,
+    "left_minus_right_95": [
+      -0.00826053948703446,
+      0.007605509799600396
+    ]
+  }
+}

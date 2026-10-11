@@ -1,0 +1,63 @@
+{
+  "A": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.7578355615111718,
+      "spearman": 0.7586344140013678,
+      "acc_2_nonzero": 0.8072072072072072,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 448,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.3657581938896328,
+    "latency_p95_s": 0.40852661605458707,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/A.jsonl",
+    "sha256": "6c95248f443e8be7dd75a8e4ff5c63cf65293ae45a112fffe2f0ba95c0c34115"
+  },
+  "V": {
+    "n": 647,
+    "uniform": 37,
+    "face_missing_fallback": 0,
+    "metrics": {
+      "n": 647,
+      "valid": 610,
+      "coverage": 0.9428129829984544,
+      "pearson": 0.6412827961958495,
+      "spearman": 0.6173288094716823,
+      "acc_2_nonzero": 0.7531531531531531,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 418,
+      "correlation_denominator": 610
+    },
+    "latency_p50_s": 0.42315300391055644,
+    "latency_p95_s": 0.4575085376389324,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/V.jsonl",
+    "sha256": "c6b7b5faf88140d2f2cc68a1dee153b174621246ad8f9627fade8ad53b74d78b"
+  },
+  "AV": {
+    "n": 647,
+    "uniform": 27,
+    "face_missing_fallback": 10,
+    "metrics": {
+      "n": 647,
+      "valid": 620,
+      "coverage": 0.9582689335394127,
+      "pearson": 0.8049061292038496,
+      "spearman": 0.8039164666193417,
+      "acc_2_nonzero": 0.8414414414414414,
+      "nonzero_denominator": 555,
+      "nonzero_correct": 467,
+      "correlation_denominator": 620
+    },
+    "latency_p50_s": 0.6118346860166639,
+    "latency_p95_s": 0.6721152159618213,
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_sims_valid/AV.jsonl",
+    "sha256": "cdd972d20a1d41c30cb73640adccc38bf5665faef30a2f8f73c00beaa6be2fc8"
+  },
+  "peak_cuda_allocated_mib": 8798.5595703125
+}

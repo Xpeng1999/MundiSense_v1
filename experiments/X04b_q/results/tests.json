@@ -1,0 +1,17 @@
+{
+  "git_commit": "dc8d9da",
+  "at": "2026-10-07T04:16:42.008031+00:00",
+  "tests": 18,
+  "passed": 18,
+  "failed": 0,
+  "xml_path": "/mnt/h/emotionAI/emotioncore_runs/X04b/tests_ready.xml",
+  "xml_sha256": "918143820fe97ef498a4b0d6a8e1f18b7c8f6e638d2c620678745d1dbcede94a",
+  "required_cases": [
+    "MER first-token masked zero gradient",
+    "ET loss and gradient torch.equal",
+    "opposite-fold labels only",
+    "training source exclusion",
+    "stratified half reproducibility",
+    "X03 last state restore/retry/default allocator"
+  ]
+}

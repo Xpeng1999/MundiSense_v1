@@ -1,0 +1,26 @@
+{
+  "git": {
+    "commit": "dc8d9da5a3c1b7be5b6e673a33d4826f9d1abcf8",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/ready_code/src/emotioncore/x04b/precheck.py",
+    "--root",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/precheck"
+  ],
+  "started_at": "2026-10-07T04:23:57.069755+00:00",
+  "selection_sha256": "4dede0637a95611870e1b1df8faa0ff3d938a2ad634d892f4a978ab50752a833",
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  },
+  "cuda_allocator": "default",
+  "ended_at": "2026-10-07T04:24:49.839215+00:00",
+  "summary_sha256": "e35087572f9e8b8edaa7b83f5c613bd7269ad686dd83cad1de9938f2f9490c4c"
+}

@@ -1,0 +1,96 @@
+{
+  "runs": {
+    "fold0": {
+      "training_validation_h": 15.560794873864843,
+      "prediction_h": 0.8853744791328725,
+      "epochs": [
+        {
+          "epoch": 0,
+          "ET_training_s": 15216.554686213825,
+          "MER_training_s": 8841.026204607668,
+          "MER_extrapolated": 10,
+          "manifest_sha256": "18d9aa882db733f63f40d82376e89b5a356971b954da051dd2fcaeaa7a5d9a29"
+        },
+        {
+          "epoch": 1,
+          "ET_training_s": 15216.554686213809,
+          "MER_training_s": 8855.035605531979,
+          "MER_extrapolated": 9,
+          "manifest_sha256": "03fd1d84a4884cd6b1b2205334618ff34e4303eb4d48a9e0b20171592c9f562e"
+        }
+      ],
+      "epoch_n": 14519,
+      "validation_n": 700,
+      "validation_calls": 8
+    },
+    "fold1": {
+      "training_validation_h": 15.56591849075833,
+      "prediction_h": 0.8813180902547441,
+      "epochs": [
+        {
+          "epoch": 0,
+          "ET_training_s": 15225.619281993828,
+          "MER_training_s": 8841.026204607666,
+          "MER_extrapolated": 10,
+          "manifest_sha256": "9cd0c055a4603d843fd37674e470254e22a1a2a54ccc0e1dda78f717b67dec05"
+        },
+        {
+          "epoch": 1,
+          "ET_training_s": 15225.619281993813,
+          "MER_training_s": 8855.03560553197,
+          "MER_extrapolated": 9,
+          "manifest_sha256": "e08852994a36c1a3176a7a19df0ee5bcc9e36780875accd458686295baf8290d"
+        }
+      ],
+      "epoch_n": 14526,
+      "validation_n": 700,
+      "validation_calls": 8
+    },
+    "final": {
+      "training_validation_h": 18.696290290909186,
+      "prediction_h": 0.8029395918126597,
+      "epochs": [
+        {
+          "epoch": 0,
+          "ET_training_s": 20283.388909303605,
+          "MER_training_s": 8841.02620460767,
+          "MER_extrapolated": 10,
+          "manifest_sha256": "1e2fd0944afa9ce3aeddd76416bf579d87b0370a78f9046a50e8e0b63a626b36"
+        },
+        {
+          "epoch": 1,
+          "ET_training_s": 20283.388909303554,
+          "MER_training_s": 8855.035605531972,
+          "MER_extrapolated": 9,
+          "manifest_sha256": "d6d11cf3c025e674f992c97b83f961709f80d10a2895eabf97913c1afefc1740"
+        }
+      ],
+      "epoch_n": 17793,
+      "validation_n": 700,
+      "validation_calls": 8
+    }
+  },
+  "gpu_limit_hours": 70,
+  "reserve_fraction": 0.2,
+  "load_checkpoint_reserve_h": 0.5,
+  "diagnostic_reserve_h": 1,
+  "total_projection_gpu_hours": 64.37116298007916,
+  "passed": true,
+  "observed_ratio": 1.1138891667227602,
+  "method": "X03 ET form means; exact frozen MER50% class/form selections with monotone upper envelope and quadratic extrapolation; observed checkpointed actual/benchmark ratio",
+  "sources": {
+    "benchmark": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/gc_step_benchmark/summary.json",
+      "sha256": "c245a1cc392c2f7aaf39a969a15954e66af24f41c1a59d77992fd98ea7f3ea2b"
+    },
+    "X04a_budget": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/budget_estimate/x04b_budget.json",
+      "sha256": "d42fae262f7cb850555a42dbae76085f811affe3cacbb0126480b7168def0d73"
+    },
+    "manifests": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/run_meta.json",
+      "sha256": "b41edb62e30ac376410b7336ff8325a7e83c503389a90e3e76e5bb53659a4224"
+    }
+  },
+  "limitation": "No new Q training measurements; MER masked first-token loss overhead unmeasured and covered by 20% reserve. Recompute from every completed model."
+}

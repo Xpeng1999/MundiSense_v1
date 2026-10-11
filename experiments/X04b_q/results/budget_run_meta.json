@@ -1,0 +1,18 @@
+{
+  "git": {
+    "commit": "e7b1f4f50c701ad3725281de0b55eb68944b02ae",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/preflight_code/src/emotioncore/x04b/budget.py",
+    "--manifests",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/preflight"
+  ],
+  "ended_at": "2026-10-07T04:13:18.203593+00:00",
+  "learned_inference": false,
+  "sha256": "d37595391f473b0501148e8fe430a654bdcb9c5fa730dca064e114afc2e697f3"
+}

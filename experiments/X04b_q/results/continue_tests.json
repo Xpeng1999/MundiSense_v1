@@ -1,0 +1,13 @@
+{
+  "git_commit": "ac2aab8",
+  "passed": 8,
+  "failed": 0,
+  "xml_path": "/mnt/h/emotionAI/emotioncore_runs/X04b/continue_tests.xml",
+  "xml_sha256": "7056557aafaea772b203cb7fbb7774d25859445c072f8bdf7af05dbb94863f06",
+  "new_tests": [
+    "same-fold speaker holdout excludes held labels",
+    "same-model row provenance sentinel",
+    "held-label perturbation leaves held predictions unchanged"
+  ],
+  "wall_seconds": 4.1
+}

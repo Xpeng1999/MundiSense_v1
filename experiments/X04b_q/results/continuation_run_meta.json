@@ -1,0 +1,23 @@
+{
+  "git": {
+    "commit": "ac2aab84555e2d6b5cc763e90ceb7001dcbdad7d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/continue_code/src/emotioncore/x04b/continue_run.py",
+    "--root",
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation",
+    "--original",
+    "/home/administrator/emotion-data/emotioncore_runs/X04b",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b"
+  ],
+  "started_at": "2026-10-10T04:44:54.990531+00:00",
+  "gpu_limit_hours": 70.0,
+  "prior_gpu_hours": 32.40749243088086,
+  "original_stop_sha256": "f73e1628dbd69d30c6eef86fa4819315050ec8e1d87ca2d7101659109e31fe39",
+  "cuda_allocator": "default",
+  "ulimit_n": 65536
+}

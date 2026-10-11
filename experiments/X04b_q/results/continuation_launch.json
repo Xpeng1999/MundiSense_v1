@@ -1,0 +1,17 @@
+{
+  "pid": 1084595,
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x04b.continue_run",
+    "--root",
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/continuation",
+    "--original",
+    "/home/administrator/emotion-data/emotioncore_runs/X04b",
+    "--derived",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b"
+  ],
+  "at": "2026-10-10T04:44:54.496205+00:00",
+  "code": "ac2aab8"
+}

@@ -1,0 +1,35 @@
+{
+  "git": {
+    "commit": "ac2aab84555e2d6b5cc763e90ceb7001dcbdad7d",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/continue_code/src/emotioncore/x04b/analysis.py",
+    "--root",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q",
+    "--output",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/analysis_revised",
+    "--within-fold-loso"
+  ],
+  "started_at": "2026-10-10T23:58:00.305058+00:00",
+  "interim": false,
+  "p1_method": "within_fold_loso",
+  "target_labels_used_for_fitting": false,
+  "expert_recipe": "frozen X04a D1",
+  "folds": [
+    0,
+    1
+  ],
+  "seed": 20261007,
+  "ended_at": "2026-10-10T23:58:36.887543+00:00",
+  "outputs": {
+    "futility.json": "17e87d62a22ddb564defcd9fa5738307c3da860b6715891e448dc7c2fc4062da",
+    "main_table.json": "0f987425dd3a6aa970b84dbaf59515c7397d324f7f705ffcce8453e6b9501a7f",
+    "primary.json": "1baf640a44264854743150bb6326fbca9110107ac7954db32ddafbaf512618ca",
+    "raw_comparisons.json": "92166996ff65fd4631321a45a769355b4e29aa729be9e033b593578529de09a5",
+    "secondary.json": "376a74e3572354cf23c8c25e6a40a63963deb5b95e84e5746baa4aa5bfdd8a60",
+    "source_artifact_index.json": "fca410f98ded9b27613ea5ffbe9eb56f2f540ec2a1961f722a64b41b1bf6661d"
+  }
+}

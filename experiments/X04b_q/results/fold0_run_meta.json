@@ -1,0 +1,113 @@
+{
+  "git": {
+    "commit": "dc8d9da5a3c1b7be5b6e673a33d4826f9d1abcf8",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X04b/ready_code/src/emotioncore/x04b/train.py",
+    "--fold-name",
+    "fold0",
+    "--manifest-meta",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/run_meta.json",
+    "--val-manifest",
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/fold0_val.jsonl",
+    "--cache-root",
+    "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
+    "--output-dir",
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/fold0"
+  ],
+  "started_at": "2026-10-07T04:25:57.655322+00:00",
+  "fold_name": "fold0",
+  "train_manifest_sha256": "e545692c96369028e9ba0902c63707a9612e03d1d59b5e451136a30b8ccd129c",
+  "val_manifest_sha256": "0b5a43b9d0483f1a7850e291098c0d65309e768d93570f97dba1e182fab05b56",
+  "subsets_sha256": "be2cd442346cfa978e22bea8ab2ae3776d52187b2581fe93e377fc4fb58d3cfd",
+  "face_policy_sha256": "ce65415b5f7129b62ef5edc7eda5b20874ed88931f5a7cc295c276b8b704b77c",
+  "model_index_sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2",
+  "seed": 20260929,
+  "max_epochs": 2,
+  "effective_batch": 8,
+  "learning_rate": 5e-05,
+  "warmup_ratio": 0.05,
+  "training_count": 29038,
+  "validation_count": 700,
+  "cuda_allocator": "default",
+  "resume_last": false,
+  "initialization": "base only; never X03 adapter",
+  "combined_epoch_sha256": "e545692c96369028e9ba0902c63707a9612e03d1d59b5e451136a30b8ccd129c",
+  "inherited_guarded_sha256": "c200efb64693ccbedce419d1a6b0db31cc549c90f86c9d26a7c04f84e4c86d46",
+  "epochs": [
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold0_epoch0.jsonl",
+      "sha256": "18d9aa882db733f63f40d82376e89b5a356971b954da051dd2fcaeaa7a5d9a29",
+      "n": 14519,
+      "ET_n": 9826,
+      "MER_n": 4693,
+      "MER_seed": 20261007,
+      "MER_classes": {
+        "sadness": 828,
+        "anger": 1076,
+        "joy": 914,
+        "worried": 540,
+        "neutral": 1140,
+        "surprise": 195
+      },
+      "assigned_forms": {
+        "AV": 8712,
+        "V": 2903,
+        "A": 2904
+      },
+      "fallbacks": 60
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/fold0_epoch1.jsonl",
+      "sha256": "03fd1d84a4884cd6b1b2205334618ff34e4303eb4d48a9e0b20171592c9f562e",
+      "n": 14519,
+      "ET_n": 9826,
+      "MER_n": 4693,
+      "MER_seed": 20261008,
+      "MER_classes": {
+        "joy": 914,
+        "neutral": 1140,
+        "anger": 1076,
+        "sadness": 828,
+        "worried": 540,
+        "surprise": 195
+      },
+      "assigned_forms": {
+        "AV": 8712,
+        "A": 2904,
+        "V": 2903
+      },
+      "fallbacks": 62
+    }
+  ],
+  "MER_first_token_mask": [
+    "neutral",
+    "joy",
+    "sadness",
+    "anger",
+    "surprise",
+    "worried"
+  ],
+  "first_token_ids": {
+    "neutral": 59568,
+    "joy": 4123,
+    "sadness": 82114,
+    "anger": 4003,
+    "fear": 69,
+    "disgust": 4243,
+    "surprise": 19784,
+    "other": 1575,
+    "worried": 49710
+  },
+  "gradient_checkpointing": {
+    "llm": true,
+    "vision": true,
+    "audio": true,
+    "use_reentrant": false
+  },
+  "ended_at": "2026-10-07T19:12:23.315524+00:00",
+  "summary_sha256": "5aa3681bb526a7cda3f45267108b016d77db037e7221a79c6e59fb237dfc8e64"
+}
