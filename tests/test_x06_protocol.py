@@ -85,3 +85,44 @@ def test_vad_silence_minimum_maximum_and_overlap_exclusion():
     valid = np.ones(100, dtype=bool); valid[40:60] = False
     detected = segments(np.ones(100), .5, .2, valid)
     assert not mask_segments(detected, 100)[~valid].any()
+
+
+def test_uncovered_truth_is_reject_and_counts_as_false_negative():
+    from emotioncore.x06.aggregate import truth_decision, metrics, components_for_truth
+    truth = {'start_s': 2., 'end_s': 4.}
+    actual = truth_decision(truth, [], lambda _: pytest.fail('No covered component exists'))
+    assert actual['label'] == 'reject'
+    assert metrics(['neutral'], [actual['label']])['n'] == 1
+    assert metrics(['neutral'], [actual['label']])['class_f1']['neutral'] == 0
+    segments = [{'start_s': 1., 'end_s': 3., 'component_probs': {'A': [1., 0.]}},
+                {'start_s': 3., 'end_s': 5., 'component_probs': {'A': [0., 1.]}}]
+    assert components_for_truth(truth, segments)['A'] == [.5, .5]
+
+
+def test_inference_input_allowlist_excludes_sealed_or_unregistered_media(monkeypatch):
+    from emotioncore.x06 import streams
+    monkeypatch.setattr(streams, 'population', lambda: [])
+    for path in ('/data/CH-SIMS/test/sample.mp4', '/data/MER/test/sample.mp4',
+                 '/tmp/unregistered.mp4'):
+        with pytest.raises(ValueError, match='outside the X06'):
+            streams.validate_input(path)
+
+
+def test_online_endpoints_match_fullspeed_and_silence_is_disjoint():
+    import numpy as np
+    from emotioncore.x06.online_vad import Endpoints, silence_windows
+    from emotioncore.x06.vad import segments
+    p = np.r_[np.zeros(250), np.ones(45), np.zeros(320), np.ones(1700), np.zeros(21)]
+    online = Endpoints(.5, .2)
+    events = []
+    for value in p:
+        event = online.push(value)
+        if event:
+            events.append(event)
+    if online.finish():
+        events.append(online.finish())
+    assert events == segments(p, .5, .2)
+    silent = silence_windows(events, len(p) / 100)
+    for window in silent:
+        assert window['end_s'] - window['start_s'] == pytest.approx(2.)
+        assert all(window['end_s'] <= v['start_s'] or window['start_s'] >= v['end_s'] for v in events)
