@@ -1,0 +1,174 @@
+{
+  "git": {
+    "commit": "e1a90ce0f7faf4a959987b76566e080f1df798c0",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/methods_code/src/emotioncore/x05/q_fmh.py",
+    "--version",
+    "et"
+  ],
+  "started_at": "2026-10-11T03:28:57.329298+00:00",
+  "storage": {
+    "root_free_bytes": 112969789440,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730844221440
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "version": "et",
+  "adapter": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/final/best_adapter_eval8",
+  "adapter_sha256": "427ebc148d447ba03dc747429323b440b10cbb8b4b8876247f48f71573d2d5a4",
+  "sources": {
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_A.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_A.jsonl",
+      "sha256": "4b2285dce503b2357b1dd8bd1bd249ab08d3c8d4387d1bc326acdb805c093afb",
+      "n": 3274,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_A.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_A.jsonl",
+      "sha256": "d13fe3bf3c53eb3089bdd63a65db357d70431e06088b1ad3fc69b487a54e939e",
+      "n": 3259,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_A.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_A.jsonl",
+      "sha256": "19230686ba6b6e0aee49eb89bec42b63dac3ae9772729639a5f8a696d4b9f09f",
+      "n": 3294,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_A.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_A.jsonl",
+      "sha256": "18ebaeb8606a314f5ba4e129b0938ee15f43a765e31f5b098929b74c9408bfa5",
+      "n": 3312,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_A.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_A.jsonl",
+      "sha256": "711a08ed7fe076b99f02ad3dfef3e2e474459141a9f55e47f542ce18cd576b19",
+      "n": 3227,
+      "uniform": 0,
+      "face_missing_fallback": 0
+    },
+    "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/A_manifest.jsonl": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/A_manifest.jsonl",
+      "sha256": "183337f575ace8d6164ba12e3a8cce9ad8b5541af7c82c9fd2d49180972c4d6f"
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_V.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_V.jsonl",
+      "sha256": "aec2232fea71f3ebb8dec6782aede24c9ba0c63a9620448e0067876a4ec06ecc",
+      "n": 3274,
+      "uniform": 13,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_V.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_V.jsonl",
+      "sha256": "42bdb0904b0aa0274321859f650224fee7ed0a9b087b92f0224765bff64bf5dc",
+      "n": 3259,
+      "uniform": 4,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_V.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_V.jsonl",
+      "sha256": "131aa1bf674f61d9db11dd63ce225ebe4852673804c739d8988e59d5cef81539",
+      "n": 3294,
+      "uniform": 6,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_V.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_V.jsonl",
+      "sha256": "53e7bb5055fa628ab3fae87144c257e445482200b5698bcd58f32ec0f907da6b",
+      "n": 3312,
+      "uniform": 7,
+      "face_missing_fallback": 0
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_V.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_V.jsonl",
+      "sha256": "9dd9553aeb86e5648623620dfcbc4b4dec471e6223f2aa2f8f4bbc5235ce415c",
+      "n": 3227,
+      "uniform": 10,
+      "face_missing_fallback": 0
+    },
+    "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/V_manifest.jsonl": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/V_manifest.jsonl",
+      "sha256": "8b2f9c521a0a2835e4fc1dc6ebb21d2e11348311e1572ad1e5aba3432fb45de3"
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_AV.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold0_AV.jsonl",
+      "sha256": "c0ba3815cf237f9a3c8135e38723a489c3b40c290406ba0d686e981b1745b4ef",
+      "n": 3274,
+      "uniform": 0,
+      "face_missing_fallback": 13
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_AV.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold1_AV.jsonl",
+      "sha256": "e573c81b8c979dd24d8f7517cd6b47ffbe7a2dba6cf5ad4bd10d3a432acc7dec",
+      "n": 3259,
+      "uniform": 0,
+      "face_missing_fallback": 4
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_AV.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold2_AV.jsonl",
+      "sha256": "c35e2dd20c2aa40cfdc89b8db96810891cc9465e7a32cd4e37fc0546f3044bc8",
+      "n": 3294,
+      "uniform": 0,
+      "face_missing_fallback": 6
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_AV.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold3_AV.jsonl",
+      "sha256": "14e4e49cafac13657fe999bc5f99fdc4f59f236b1911d8ab9bf390314a4fc15d",
+      "n": 3312,
+      "uniform": 0,
+      "face_missing_fallback": 7
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_AV.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/inference_manifests/fold4_AV.jsonl",
+      "sha256": "6c5140c318bcb76d75b1dd19f679f67a3b86a3a94a8b72e645272bdd9bedff73",
+      "n": 3227,
+      "uniform": 0,
+      "face_missing_fallback": 10
+    },
+    "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/AV_manifest.jsonl": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/AV_manifest.jsonl",
+      "sha256": "25ba1d06988232051b70534eb65570dd5a1afb151b189ec36064da4747d113f7"
+    },
+    "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_train.jsonl": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X03/Q/manifests/final_train.jsonl",
+      "sha256": "0ef313f34d5ffb434c1a01569910d36d25639390c7ce6b3735d16a61bfbc4632"
+    },
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch0.jsonl": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch0.jsonl",
+      "sha256": "1e2fd0944afa9ce3aeddd76416bf579d87b0370a78f9046a50e8e0b63a626b36"
+    },
+    "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch1.jsonl": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch1.jsonl",
+      "sha256": "d6d11cf3c025e674f992c97b83f961709f80d10a2895eabf97913c1afefc1740"
+    }
+  },
+  "training": false,
+  "analysis": false,
+  "base_index": {
+    "path": "/home/administrator/projects/emotion/omni_models/Qwen2.5-Omni-7B/model.safetensors.index.json",
+    "sha256": "5428b3927da9f3bd525967db81936642e4e068afc3f8f2dfaf2a9066c9bef8e2"
+  },
+  "cache_root": "/mnt/h/emotionAI/emotioncore_models/X03/q_inputs",
+  "settings": "identical X04b final target inference; first-token seven-class scores",
+  "ended_at": "2026-10-11T04:54:41.009940+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/summary.json",
+    "sha256": "80b86aafd72005db36ee3091e677752700021fa56cb5d4caa914d847da4c4cd2"
+  }
+}

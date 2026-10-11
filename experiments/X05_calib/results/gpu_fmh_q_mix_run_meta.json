@@ -1,0 +1,41 @@
+{
+  "git": {
+    "commit": "e1a90ce0f7faf4a959987b76566e080f1df798c0",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/methods_code/src/emotioncore/x05/gpu_guard.py",
+    "fmh_q_mix"
+  ],
+  "started_at": "2026-10-11T04:54:45.573781+00:00",
+  "storage": {
+    "root_free_bytes": 112967921664,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730489409536
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "prior_charged_gpu_s": 5557.6819031958,
+  "command_child": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x05.q_fmh",
+    "--version",
+    "mix"
+  ],
+  "remaining_gpu_s": 12442.3180968042,
+  "ended_at": "2026-10-11T06:15:36.868424+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/gpu_jobs/fmh_q_mix/summary.json",
+    "sha256": "1e258209ca702126e15fa243e5157756b193399b2e11fc816396eb72638b7486"
+  }
+}

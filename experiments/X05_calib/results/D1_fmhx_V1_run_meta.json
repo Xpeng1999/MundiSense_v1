@@ -1,0 +1,92 @@
+{
+  "git": {
+    "commit": "4b9a3940c236a758901e9c34cd2f1713246b6598",
+    "dirty": false,
+    "status": "",
+    "full_diff": null
+  },
+  "command": [
+    "/mnt/h/emotionAI/emotioncore_runs/X05/code/src/emotioncore/x05/heads.py",
+    "--encoder",
+    "V1"
+  ],
+  "started_at": "2026-10-11T03:24:25.858192+00:00",
+  "storage": {
+    "root_free_bytes": 112969793536,
+    "root_min_bytes": 80000000000,
+    "h_free_bytes": 91730938068992
+  },
+  "protocol": {
+    "path": "experiments/X05_calib/protocol/X05_PROMPT.md",
+    "sha256": "9f7b0d7a7b7f90aeedc853d7201d5b213d82fec1cd3002a71d184d1286573d53"
+  },
+  "revision": {
+    "path": "experiments/X05_calib/protocol/X05_REVISION_1.md",
+    "sha256": "39ca03c151811f077985e777ce8e97cf25d89b2f34ad497df99ab044d203c4c1"
+  },
+  "encoder": "V1",
+  "device": "cpu",
+  "arm": "D1_fmhx",
+  "seed": 20260928,
+  "final_config": {
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "alpha": 0.25,
+    "validation": {
+      "macro_f1": 0.3953878190618295,
+      "uar": 0.42960447212788716
+    },
+    "best_epoch": 4
+  },
+  "original_results": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/heads/D1/V1/results.json",
+    "sha256": "69c9ca9f1a30569a2e82a523e4c5c5a2bfabd42d8b98d0470755869778cb666d"
+  },
+  "inputs": {
+    "et_pack": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X02/packs/V1/pack_meta.json",
+      "sha256": "317ff507ebb46942d6da0777101372d78b7b43c85db1262335437f7614ac1ca6"
+    },
+    "extra_pack": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/packs/V1/pack_meta.json",
+      "sha256": "71e854d37c6721fbfb5a10dc6094b707c3d1f6806b07d5ab45291d70fdad6239"
+    },
+    "extra_manifest": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+      "sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3"
+    },
+    "dedup": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
+      "sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad"
+    },
+    "ET_count": 13100,
+    "MER_count": 9386,
+    "ET_speakers": [
+      "01",
+      "05",
+      "07",
+      "08",
+      "09",
+      "12",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "fmh_overlap": 0
+  },
+  "validation_used": false,
+  "hyperparameter_search": false,
+  "Q_training": false,
+  "original_training_source": {
+    "path": "src/emotioncore/x04/heads.py",
+    "sha256": "9216b8be1c07d5ea8fba7ea67e8b92a3acf3cf799c7a9889c668fdf6c6857701"
+  },
+  "ended_at": "2026-10-11T03:24:54.840832+00:00",
+  "summary": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/summary.json",
+    "sha256": "9d59c1b367efecf34d51fd7fa18ac558b565c76e3ad9e31ed7a661059ed35c56"
+  }
+}

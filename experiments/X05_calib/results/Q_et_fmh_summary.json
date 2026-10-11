@@ -1,0 +1,37 @@
+{
+  "forms": {
+    "A": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/A.jsonl",
+      "sha256": "382b43a4be7aad864be335e9b8ebf0c70b7e02c8f8f0665e3220b88dd656ce5c",
+      "n": 3266,
+      "uniform": 0
+    },
+    "V": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/V.jsonl",
+      "sha256": "0f807a6525d19ef319e23554c29c2451d704ddba186e1f5ad574ec073dcd7276",
+      "n": 3266,
+      "uniform": 9
+    },
+    "AV": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X05/Q/et_fmh/AV.jsonl",
+      "sha256": "e666c84150d07b5c127270cb983c5a6ccafe95f6c3407d34087cafaadd09d380",
+      "n": 3266,
+      "uniform": 0
+    }
+  },
+  "analysis_performed": false,
+  "oom_skips": 0,
+  "inference_elapsed_s": 5072.560815935954,
+  "model_settings": {
+    "target_modules": 240,
+    "visual_target_modules": 128,
+    "llm_trainable_parameters": 10092544,
+    "vision_trainable_parameters": 2621440,
+    "gradient_checkpointing": {
+      "llm": true,
+      "vision": true,
+      "audio": true,
+      "use_reentrant": false
+    }
+  }
+}

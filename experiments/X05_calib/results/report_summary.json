@@ -1,0 +1,15 @@
+{
+  "report": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/report/REPORT.md",
+    "sha256": "e30b97bdb6ec85904f9198f47dbf14bc682d6e9757c7233df556f7f8c3f722d3"
+  },
+  "gpu_hours": 2.8913655379310432,
+  "reviewer_flags": [
+    "H_V / ET-test / selected_label_ece = 0.0621 > 0.05。",
+    "H_V / ET-test / top_label_ece = 0.0610 > 0.05。"
+  ],
+  "bundle": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/calibration_bundle_v1.json",
+    "sha256": "94a0805b9775676209306187a3880595b7e7592af70aaec8d50f3b2a7968979a"
+  }
+}

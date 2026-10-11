@@ -2,6 +2,8 @@
 
 本接口的最终可用状态以 X05 reviewer 验收为准。参数文件为 `configs/calibration_bundle_v1.json`，配套不可变方法文件为 `configs/x05_method_freeze.json`。部署专家全部使用 D1_fmhx；Q 使用 X04b 最终 Q_mix。模型、头、拟合集和方法文件的 SHA-256 均在参数包中。
 
+本次交付参数包 SHA-256 为 `94a0805b9775676209306187a3880595b7e7592af70aaec8d50f3b2a7968979a`。文件已入库；交付证据索引见 [X05 DELIVERY](../experiments/X05_calib/DELIVERY.md)。
+
 ## 调用
 
 从仓库根目录设置 `PYTHONPATH=src`。CPU 参数应用依赖现有锁定环境的 NumPy / SciPy，不会加载 Q 或专家模型。
@@ -50,5 +52,6 @@ label, confidence, route = bundle.apply(component_probs, availability)
 - FMH 的 700 句曾用于 Q checkpoint 选择；排除这部分的描述性结果另列。FMH LOSO 只有三名说话人。
 - ET-test、MER-test、SIMS-valid 仅报告，不拟合；CH-SIMS test 没有推理入口。
 - MER-test 缺既有 Q-V 概率，H_V 在该语料没有本轮迁移结果。
+- H_V 在 ET-test 的所选标签 ECE 为 0.0621、top-label ECE 为 0.0610，已提交 reviewer 判断；不依据目标集结果修改参数。
 
 详细数值、ECE 超限项、专家对照及计算口径见 `experiments/X05_calib/REPORT.md` 和对应 results JSON。不要在 X06 使用目标集标签调整这份参数包。

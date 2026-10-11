@@ -1,0 +1,92 @@
+{
+  "training": {
+    "best_epoch": 6,
+    "validation": null,
+    "epochs_executed": 6,
+    "history": [],
+    "class_counts": {
+      "ET": [
+        4453,
+        2619,
+        786,
+        2522,
+        618,
+        985,
+        1117,
+        0
+      ],
+      "MER": [
+        2280,
+        1827,
+        1657,
+        2151,
+        0,
+        0,
+        390,
+        1081
+      ]
+    },
+    "elapsed_s": 55.88759281509556,
+    "train_seconds": 53.984349010977894,
+    "validation_seconds": 0.0,
+    "valid_train_n": 22486,
+    "validation_n": 0,
+    "train_batches": 1056,
+    "validation_batches": 0
+  },
+  "checkpoint": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/final_head.pt",
+    "sha256": "db96fb2e13240a859db77d21d62653f40a7bbf545780e1af00251222ea6da8ab"
+  },
+  "training_ids": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/training_ids.jsonl",
+    "sha256": "c5847ee71fd928745a6d937aea050656c31a264234f662a1a36e3304482dd8d6"
+  },
+  "inputs": {
+    "et_pack": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X02/packs/A3/pack_meta.json",
+      "sha256": "59127691cd0113c4cd0cc152944ad4ec2655b90280040d4879de973ec37042a8"
+    },
+    "extra_pack": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/packs/A3/pack_meta.json",
+      "sha256": "a5e8f8b24fcc4d8fcc70adee39c340cdabf4d2e84c87fb587b282831439d0bb7"
+    },
+    "extra_manifest": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/all_features.jsonl",
+      "sha256": "ae039b3c2e4dc8608082c15d5513aef084aa4233ba77d0433244f4b0a44395d3"
+    },
+    "dedup": {
+      "path": "/home/administrator/emotion-data/emotioncore_runs/X04a/preflight_v3/dedup/dedup_report.json",
+      "sha256": "8a5cae7b3e9b0b5da7b9a4032341311090b094d80044586b26d30611100960ad"
+    },
+    "ET_count": 13100,
+    "MER_count": 9386,
+    "ET_speakers": [
+      "01",
+      "05",
+      "07",
+      "08",
+      "09",
+      "12",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "fmh_overlap": 0
+  },
+  "config": {
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0,
+    "alpha": 0.5,
+    "validation": {
+      "macro_f1": 0.5534609150037147,
+      "uar": 0.5742348518091885
+    },
+    "best_epoch": 6
+  },
+  "seed": 20260928,
+  "passed": true
+}

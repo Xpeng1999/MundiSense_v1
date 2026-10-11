@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "coverage_and_training": {
+    "et_A": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "et_V": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "et_AV": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "mix_A": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "mix_V": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "mix_AV": {
+      "n": 3266,
+      "exact_ids_labels_speakers": true,
+      "modality_receipts": true
+    },
+    "A3": {
+      "training_count": 22486,
+      "fmh_intersection": 0,
+      "no_validation": true,
+      "checkpoint_sha_verified": true
+    },
+    "V2": {
+      "training_count": 22486,
+      "fmh_intersection": 0,
+      "no_validation": true,
+      "checkpoint_sha_verified": true
+    },
+    "V1": {
+      "training_count": 22486,
+      "fmh_intersection": 0,
+      "no_validation": true,
+      "checkpoint_sha_verified": true
+    }
+  },
+  "fmh_independent_recalculation": {
+    "H_ref": {
+      "macro_f1": 0.6798204155994354,
+      "uar": 0.6542453930998751,
+      "wa": 0.756582976117575,
+      "neutral_false_positive_rate": 0.1471301535974131
+    },
+    "H3": {
+      "macro_f1": 0.6791227819553772,
+      "uar": 0.6561905066725534,
+      "wa": 0.7562767911818739,
+      "neutral_false_positive_rate": 0.15198059822150364
+    },
+    "H_A": {
+      "macro_f1": 0.6249266755421703,
+      "uar": 0.5943995183643126,
+      "wa": 0.7164727495407226,
+      "neutral_false_positive_rate": 0.14955537590945836
+    },
+    "H_V": {
+      "macro_f1": 0.4082358761725618,
+      "uar": 0.42469762998972166,
+      "wa": 0.6031843233312921,
+      "neutral_false_positive_rate": 0.16248989490703314
+    }
+  },
+  "freeze_committed_before_q_mix_analysis": true,
+  "freeze_commit_time": "2026-10-11T11:32:49+08:00",
+  "fitting_n": 9799,
+  "fitting_speakers": 9,
+  "gpu_hours": 2.8913655379310432,
+  "X04a_and_frozen_split_sources_unchanged": true,
+  "bundle": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/calibration_bundle_v1.json",
+    "sha256": "94a0805b9775676209306187a3880595b7e7592af70aaec8d50f3b2a7968979a"
+  },
+  "final_tests": {
+    "tests": 35,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2
+  }
+}
