@@ -1,0 +1,24 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/dependency_repair/summary.json",
+    "sha256": "22ac758f35c15e2e2819eb0064067ae71f197efd01539b25745144fab269db9a"
+  },
+  "data": {
+    "status": "repaired_before_inference",
+    "failed_job": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+      "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+    },
+    "failed_log": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/process.log",
+      "sha256": "c29df340d9ec429f45aed91b2923c6c1f2adf6cbe0d434acd65fad69acb5ef1a"
+    },
+    "cpu_load_passed": true,
+    "inventory": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/dependency_repair/files.json",
+      "sha256": "45acdedeef7400a6d2b1aa87436f13c2705be5796ab56fe69bfc6b2cec55b99c"
+    },
+    "charged_gpu_s_retained": 51.23421825002879,
+    "frozen_environment_modified": false
+  }
+}

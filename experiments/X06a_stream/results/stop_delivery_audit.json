@@ -1,0 +1,325 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_delivery_audit/summary.json",
+    "sha256": "cf00a81b9c1a4bcc6c94546344b2faac62d1901c70361de985658c28f8e364e3"
+  },
+  "data": {
+    "status": "STOP_equivalence",
+    "evidence": {
+      "preflight": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/summary.json",
+          "sha256": "911d163b449f668af346363a65e673491c85e9d7de29953ad0fcc873c089eee4"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/run_meta.json",
+          "sha256": "802524d4061a6f7b9356ea6a2df54b3c9935fdede3e4d50e37df31ec25f80b6d"
+        }
+      },
+      "streams": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/summary.json",
+          "sha256": "66377d28ae46ee1a9108e08ad877f80b7d87e71e543b1def54ebbfbd1b5534a3"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/run_meta.json",
+          "sha256": "c81e74819b0142c623e954b5fc3fbab1d145a2fb6f05c4cf0fc4e373c128aa92"
+        }
+      },
+      "oracle_inputs": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/oracle_inputs/summary.json",
+          "sha256": "ef051198175de8c756a8c6e5f428708e26a511d89a03660c6d8581adf9aea0fb"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/oracle_inputs/run_meta.json",
+          "sha256": "5c9508249d1ef5cf85734f2a13add30caaa016c6c2273d5d9c3d2a19694c4090"
+        }
+      },
+      "equivalence_attempt2": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_attempt2/summary.json",
+          "sha256": "2a63cc7740fbf13dffb3167eddb8add80579886159d24acfed60db0e7ec4376b"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_attempt2/run_meta.json",
+          "sha256": "49619165a5250c099dcc67000245c52394c4115e618b0625b8a87e9c3ea646cb"
+        }
+      },
+      "equivalence_audit_v2": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/summary.json",
+          "sha256": "6fa01a85ee1b0089b72ac5f16497dac60adb91a4c04e61074992caff980f7246"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/run_meta.json",
+          "sha256": "c15df2c2ca7573ccb1f7b9546aa505bfe744df0c373504823ef6855d4ceef8c5"
+        }
+      },
+      "stream_oracle_inputs": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/summary.json",
+          "sha256": "2459c895f2be4b56b3140ddc82fcc226523bfd44d49b00d27efadc5847da1ffe"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/run_meta.json",
+          "sha256": "4c883b33f23504331ec37d52e6e13894929b1795c7e47038d34f4d40e29b5ee6"
+        }
+      },
+      "stream_equivalence": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/summary.json",
+          "sha256": "7041bb133406bfc5880c57536cb4d6845faa1c2039c0449b0bb4e02cfa773e87"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/run_meta.json",
+          "sha256": "d3ab48c80053a68c3b76295fe9b57cd41866141419e04908a5e5c16cabb57d6b"
+        }
+      },
+      "stream_equivalence_audit": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence_audit/summary.json",
+          "sha256": "38243f51d95c422acb04f33133831e209acdf493505aa22f66771eaf1ca5ea55"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence_audit/run_meta.json",
+          "sha256": "46ca8617fd17c216330e74ffb632f5a5a4d799d3d24462245f7bbebdf4a61f6d"
+        }
+      },
+      "stop_after_equivalence": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_after_equivalence/summary.json",
+          "sha256": "f4fbc49026a97074931d10678fc77f0f9b73ac38d403363f059891020d22064b"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_after_equivalence/run_meta.json",
+          "sha256": "89d61fe40b7b448d16b22d141786e6cf904d198811d10bf8848ea35302279e37"
+        }
+      },
+      "fmh_faces": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_faces/summary.json",
+          "sha256": "b0d1ce7c4efbcf13756ed5582dec8b3210e3b363dd6f2b47c361d9de094e74a5"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_faces/run_meta.json",
+          "sha256": "e38b02d4c6118ede7b71c85ce8db9dc8ade775787f2ab15d24fc5e857a45abea"
+        }
+      },
+      "segment_inputs": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/segment_inputs/summary.json",
+          "sha256": "4f225d2628393cc8e21bb1c99f598e2a4fe1d4a50236ff3b0f981af3d1c0fc9d"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/segment_inputs/run_meta.json",
+          "sha256": "a93be1fa0e3c4c7bc3c909a8b94b4ac3575c0266cfc70ac21f3ca029547cea84"
+        }
+      },
+      "cuts": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/summary.json",
+          "sha256": "6953b6686d77b5c7da27671f1b6d727c9b233a1c846ea3c687e8304f3cfc2cc3"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/run_meta.json",
+          "sha256": "282469b33ec624b80a79b0b3a64bae4df86bb4cbc1f7823545ff1ad4d43029fa"
+        }
+      },
+      "aishell_train_parallel": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_train_parallel/summary.json",
+          "sha256": "4fee8e3ee681ee70d2c309f2acc45510b961436a70efa8daa8bcadc26ab227a1"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_train_parallel/run_meta.json",
+          "sha256": "d14899e924a1be82745acbea98898a8c3fc40ab46d1a3aa74b82c1d0b95f323e"
+        }
+      },
+      "aishell_test": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/summary.json",
+          "sha256": "a11e44a296da43bf8352fbad48da130877f5001d6011a0e756bf94c7efada462"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/run_meta.json",
+          "sha256": "1e4dcff8fe2318bddc922f727f41bbee393293fcaeabac35f564598a087f784e"
+        }
+      },
+      "budget_recheck": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/budget_recheck/summary.json",
+          "sha256": "91e4365374cf4a1588785fa4552e8dc38d8c7d11394273573092fb00b9af6abe"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/budget_recheck/run_meta.json",
+          "sha256": "28b326e1fb2c54d9bd98c6f60ab11688198cf1b69615f0415116541bd2ff8ee0"
+        }
+      },
+      "stream_oracle_budget": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_budget/summary.json",
+          "sha256": "010db121791263bfff69a5c46c33b610f903ae60157095535c58db7aeceed9ac"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_budget/run_meta.json",
+          "sha256": "1c4e9d00117ed1d3431fbad79bba2d618c698c1629a4c507efc594c8fd2b5c87"
+        }
+      },
+      "event_schedule_audit": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/event_schedule_audit/summary.json",
+          "sha256": "b1bc9264b24926c3d95c2d8c5666b01ed17e9ad7ea129a2b9ea6649b0faadeac"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/event_schedule_audit/run_meta.json",
+          "sha256": "fdfffe42ba60d93c94aae7510f1ee0058596d3a688bfbc96a91c62573b05b1f3"
+        }
+      },
+      "live_cpu_probe_selected_attempt2": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/live_cpu_probe_selected_attempt2/summary.json",
+          "sha256": "533f79f347f30c526ef6956c081c544271e96d159f1599098154bdbbd0c5d874"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/live_cpu_probe_selected_attempt2/run_meta.json",
+          "sha256": "4b0c1180e3fcfd5b2546a5236b082c08bad4acb7d9c8c11125cbd139b2cfdf0a"
+        }
+      },
+      "unit_tests_final": {
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_final/summary.json",
+          "sha256": "7c9f82d81be64d0e8d149cff7359eaa8de87a9d8c3f66ce831556967c692ca52"
+        },
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_final/run_meta.json",
+          "sha256": "fd782cac5addcc1a2d52c103141a7dfb620313b43505ca7ee6f67c19c1fa9108"
+        }
+      }
+    },
+    "gpu_ledger": [
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+          "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+        },
+        "status": "stopped",
+        "problem": "child_exit_1",
+        "returncode": 1,
+        "charged_gpu_s": 51.23421825002879,
+        "total_charged_gpu_s": 51.23421825002879,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+          "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+        },
+        "status": "completed",
+        "problem": null,
+        "returncode": 0,
+        "charged_gpu_s": 2144.709703995846,
+        "total_charged_gpu_s": 2195.943922245875,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+          "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+        },
+        "status": "stopped",
+        "problem": "child_exit_1",
+        "returncode": 1,
+        "charged_gpu_s": 2003.5227735268418,
+        "total_charged_gpu_s": 4199.466695772717,
+        "accounting": "full child wall time, including initialization, CPU work and playback waits"
+      }
+    ],
+    "total_charged_gpu_seconds": 4199.466695772717,
+    "total_charged_gpu_hours": 1.1665185266035325,
+    "budget_hours": 15,
+    "active_x06_processes": [],
+    "downstream_runs_absent": [
+      "fmh_stream_oracle",
+      "emotion_segments",
+      "smoothing",
+      "realtime_H3",
+      "realtime_H_ref"
+    ],
+    "bundle_only_gate_bytes_changed": true,
+    "frozen_code_changed": false,
+    "changed_paths": [
+      "configs/calibration_bundle_v1.1.json",
+      "configs/x06_vad_freeze.json",
+      "docs/X06B_HANDOFF.md",
+      "experiments/X06a_stream/OPEN_QUESTIONS.md",
+      "experiments/X06a_stream/README.md",
+      "experiments/X06a_stream/REPORT.md",
+      "experiments/X06a_stream/protocol/X05_REVIEW.md",
+      "experiments/X06a_stream/protocol/X06A_PROMPT.md",
+      "experiments/X06a_stream/results/budget_recheck.json",
+      "experiments/X06a_stream/results/cpu_integration.json",
+      "experiments/X06a_stream/results/cuts.json",
+      "experiments/X06a_stream/results/equivalence.json",
+      "experiments/X06a_stream/results/equivalence_audit.json",
+      "experiments/X06a_stream/results/event_schedule_audit.json",
+      "experiments/X06a_stream/results/gpu_equivalence.json",
+      "experiments/X06a_stream/results/gpu_initialization_failure.json",
+      "experiments/X06a_stream/results/preflight.json",
+      "experiments/X06a_stream/results/protocol_tests.json",
+      "experiments/X06a_stream/results/step0.json",
+      "experiments/X06a_stream/results/stream_oracle_budget.json",
+      "experiments/X06a_stream/results/streams.json",
+      "experiments/X06a_stream/results/vad_test.json",
+      "experiments/X06a_stream/results/vad_train.json",
+      "src/emotioncore/x06/__init__.py",
+      "src/emotioncore/x06/aggregate.py",
+      "src/emotioncore/x06/aishell.py",
+      "src/emotioncore/x06/aishell_parallel.py",
+      "src/emotioncore/x06/analysis.py",
+      "src/emotioncore/x06/budget_recheck.py",
+      "src/emotioncore/x06/common.py",
+      "src/emotioncore/x06/cpu_schedule.py",
+      "src/emotioncore/x06/cuts.py",
+      "src/emotioncore/x06/decision.py",
+      "src/emotioncore/x06/delivery_audit.py",
+      "src/emotioncore/x06/emotion_segments.py",
+      "src/emotioncore/x06/equivalence.py",
+      "src/emotioncore/x06/equivalence_audit.py",
+      "src/emotioncore/x06/event_audit.py",
+      "src/emotioncore/x06/face.py",
+      "src/emotioncore/x06/fmh_stream_oracle.py",
+      "src/emotioncore/x06/gate.py",
+      "src/emotioncore/x06/gpu_guard.py",
+      "src/emotioncore/x06/launch.py",
+      "src/emotioncore/x06/live.py",
+      "src/emotioncore/x06/live_probe.py",
+      "src/emotioncore/x06/online_vad.py",
+      "src/emotioncore/x06/preflight.py",
+      "src/emotioncore/x06/prepare_fmh_faces.py",
+      "src/emotioncore/x06/prepare_oracle.py",
+      "src/emotioncore/x06/prepare_segments.py",
+      "src/emotioncore/x06/prepare_stream_oracle.py",
+      "src/emotioncore/x06/repair_dependency.py",
+      "src/emotioncore/x06/run.py",
+      "src/emotioncore/x06/service.py",
+      "src/emotioncore/x06/setup_vad.py",
+      "src/emotioncore/x06/simulator.py",
+      "src/emotioncore/x06/stop_delivery_audit.py",
+      "src/emotioncore/x06/stop_dependency.py",
+      "src/emotioncore/x06/stream_equivalence_audit.py",
+      "src/emotioncore/x06/stream_oracle_budget.py",
+      "src/emotioncore/x06/streams.py",
+      "src/emotioncore/x06/vad.py",
+      "src/emotioncore/x06/vad_models.py",
+      "src/emotioncore/x06/vad_probe.py",
+      "src/emotioncore/x06/verify.py",
+      "tests/test_x06_protocol.py"
+    ],
+    "face_source": {
+      "path": "src/emotioncore/x02/face.py",
+      "sha256": "e4f0994f5e70feeb7274487934fa311f21ac40f1e160ec2647cac7570301b02f"
+    },
+    "gpu_seconds": 0
+  }
+}

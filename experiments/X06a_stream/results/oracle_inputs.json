@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/oracle_inputs/summary.json",
+    "sha256": "ef051198175de8c756a8c6e5f428708e26a511d89a03660c6d8581adf9aea0fb"
+  },
+  "data": {
+    "n": 1929,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/oracle_inputs/inputs.jsonl",
+      "sha256": "577d1c6d5f802c6fa5b6faeff5746f6c95de065aa68d774e664586f1e9eb7693"
+    },
+    "availability_differences": [],
+    "face_pipeline_source": {
+      "path": "src/emotioncore/x02/face.py",
+      "sha256": "e4f0994f5e70feeb7274487934fa311f21ac40f1e160ec2647cac7570301b02f"
+    },
+    "gpu_seconds": 0
+  }
+}

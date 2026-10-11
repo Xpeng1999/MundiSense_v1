@@ -1,0 +1,50 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/vad_models/summary.json",
+    "sha256": "ad7f241625e231d5363a6e4d317ebc1ce7655c17cd13a2f633e3276d67106010"
+  },
+  "data": {
+    "fsmn": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master",
+    "silero": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/silero_vad/data/silero_vad.jit",
+    "artifacts": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/.gitattributes",
+        "sha256": "f3d04437c926962476701a7939d22f21400b4eb0bdd31a15f0012576f2d00932"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/README.md",
+        "sha256": "42377011603a186fc2bae41a5cc5e548ebf98d8ec307bbae9dd405f82567f543"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/am.mvn",
+        "sha256": "6820fef9687708c4fc3fab2530179c8fcea6262daa25514380056cd8f6eb1754"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/config.yaml",
+        "sha256": "486861ca26ddb79081663b6179cb204c6bfae71c52f04aafc48a9e9d8dde1e93"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/configuration.json",
+        "sha256": "7bce8867e37d55c3dd8f672695ced18077a2be199ea529a5d432d5350fc0acba"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/example/vad_example.wav",
+        "sha256": "a7431f0169ef76ef630c945a1d2c3675d8c8c2df2ae4a6b16f8a88ba1bccfbbb"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/fig/struct.png",
+        "sha256": "c745bcc2fd4952fb1fe5a0f7f9fdabda510c3771e7a47dd22be605e26db4ee2c"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cache/modelscope/models/iic--speech_fsmn_vad_zh-cn-16k-common-pytorch/snapshots/master/model.pt",
+        "sha256": "b3be75be477f0780277f3bae0fe489f48718f585f3a6e45d7dd1fbb1a4255fc5"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/silero_vad/data/silero_vad.jit",
+        "sha256": "e1122837f4154c511485fe0b9c64455f7b929c96fbb8d79fbdb336383ebd3720"
+      }
+    ],
+    "training": false,
+    "device": "cpu"
+  }
+}

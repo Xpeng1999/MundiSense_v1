@@ -1,0 +1,21 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stop_after_equivalence/summary.json",
+    "sha256": "f4fbc49026a97074931d10678fc77f0f9b73ac38d403363f059891020d22064b"
+  },
+  "data": {
+    "trigger": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/summary.json",
+      "sha256": "7041bb133406bfc5880c57536cb4d6845faa1c2039c0449b0bb4e02cfa773e87"
+    },
+    "terminated_dependent_pids": [],
+    "dependent_summary": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/segment_inputs/summary.json",
+      "sha256": "4f225d2628393cc8e21bb1c99f598e2a4fe1d4a50236ff3b0f981af3d1c0fc9d"
+    },
+    "gpu_seconds": 0,
+    "continued_emotion_inference": false,
+    "smoothing_selected": false,
+    "realtime_runs_started": false
+  }
+}

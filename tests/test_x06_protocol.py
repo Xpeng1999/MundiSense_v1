@@ -15,6 +15,19 @@ def test_only_training_sources_can_tune():
             assert_tuning_source(source, speakers)
 
 
+def test_s6_stop_blocks_every_gpu_entry_before_any_run_is_created(tmp_path, monkeypatch):
+    from emotioncore.x06 import gpu_guard
+    stopped = tmp_path / 'stream_equivalence'
+    stopped.mkdir()
+    (stopped / 'summary.json').write_text(json.dumps({'status': 'STOP_equivalence'}))
+    monkeypatch.setattr(gpu_guard, 'ROOT', tmp_path)
+    monkeypatch.setattr(gpu_guard, 'start', lambda *_: pytest.fail('Stopped task created a new GPU run'))
+    for task in gpu_guard.TASKS:
+        with pytest.raises(RuntimeError, match='no further GPU work'):
+            gpu_guard.run(task)
+    assert not (tmp_path / 'gpu_jobs').exists()
+
+
 def test_bundle_changes_only_gate_bytes():
     original = Path('configs/calibration_bundle_v1.json').read_bytes()
     revised = upgraded_bytes(original)

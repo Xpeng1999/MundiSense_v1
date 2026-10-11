@@ -1,0 +1,47 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence_audit/summary.json",
+    "sha256": "38243f51d95c422acb04f33133831e209acdf493505aa22f66771eaf1ca5ea55"
+  },
+  "data": {
+    "status": "STOP_equivalence",
+    "processed": 1184,
+    "planned": 1929,
+    "systems": {
+      "H3": {
+        "processed_prefix_agreement": 0.9222972972972973,
+        "mismatches": 92,
+        "optimistic_full_population_agreement": 0.9523068947641264,
+        "complete_population_agreement": null,
+        "diagnostic_categories": {
+          "changed_stream_input_decision": 90,
+          "recovered_when_only_multiface_gate_removed": 2
+        },
+        "without_multiface_mismatches": 90,
+        "without_all_gates_mismatches": 90
+      },
+      "H_ref": {
+        "processed_prefix_agreement": 0.9180743243243243,
+        "mismatches": 97,
+        "optimistic_full_population_agreement": 0.9497148781752203,
+        "complete_population_agreement": null,
+        "diagnostic_categories": {
+          "changed_stream_input_decision": 95,
+          "recovered_when_only_multiface_gate_removed": 2
+        },
+        "without_multiface_mismatches": 95,
+        "without_all_gates_mismatches": 95
+      }
+    },
+    "details": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence_audit/mismatches.json",
+      "sha256": "e1b513929791cdcfd233b6f8d93e16c57167adb542094917fdeefb3f28c88fb7"
+    },
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/summary.json",
+      "sha256": "7041bb133406bfc5880c57536cb4d6845faa1c2039c0449b0bb4e02cfa773e87"
+    },
+    "interpretation": "Changed-input categories locate decision differences but do not causally separate waveform alignment from video sampling; no test-driven parameter changes",
+    "gpu_seconds": 0
+  }
+}

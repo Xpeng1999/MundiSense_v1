@@ -7,8 +7,8 @@ from emotioncore.x06.common import *
 from emotioncore.x06.gate import verify_only_gate_changed
 
 
-def run():
-    output = ROOT / 'stop_delivery_audit'
+def run(name='stop_delivery_audit', tests_name='unit_tests_final'):
+    output = ROOT / name
     meta = start(output)
     trigger = read(ROOT / 'stream_equivalence/summary.json')
     if trigger['status'] != 'STOP_equivalence':
@@ -38,7 +38,7 @@ def run():
     names = ('preflight', 'streams', 'oracle_inputs', 'equivalence_attempt2', 'equivalence_audit_v2',
         'stream_oracle_inputs', 'stream_equivalence', 'stream_equivalence_audit', 'stop_after_equivalence',
         'fmh_faces', 'segment_inputs', 'cuts', 'aishell_train_parallel', 'aishell_test', 'budget_recheck',
-        'stream_oracle_budget', 'event_schedule_audit', 'live_cpu_probe_selected_attempt2', 'unit_tests_final')
+        'stream_oracle_budget', 'event_schedule_audit', 'live_cpu_probe_selected_attempt2', tests_name)
     evidence = {}
     for name in names:
         path = ROOT / name
@@ -59,4 +59,9 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--name', default='stop_delivery_audit')
+    parser.add_argument('--tests-name', default='unit_tests_final')
+    args = parser.parse_args()
+    run(args.name, args.tests_name)
