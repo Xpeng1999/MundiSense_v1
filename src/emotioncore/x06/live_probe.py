@@ -10,8 +10,9 @@ from emotioncore.x06.face import Tracker, detector
 from emotioncore.x06.prepare_segments import frame_index
 
 
-def run(selected=False):
-    output = ROOT / ('live_cpu_probe_selected' if selected else 'live_cpu_probe_v2')
+def run(selected=False, attempt=1):
+    name = 'live_cpu_probe_selected' if selected else 'live_cpu_probe_v2'
+    output = ROOT / (name if attempt == 1 else f'{name}_attempt{attempt}')
     meta = start(output)
     candidates = sorted((r for r in population() if r['speaker_id'] in FMH and
                          r['mp4']['duration_s'] <= 30), key=lambda r: (-r['mp4']['duration_s'], r['utt_id']))
@@ -71,4 +72,6 @@ def run(selected=False):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--selected-vad', action='store_true')
-    run(parser.parse_args().selected_vad)
+    parser.add_argument('--attempt', type=int, choices=range(1, 10), default=1)
+    args = parser.parse_args()
+    run(args.selected_vad, args.attempt)

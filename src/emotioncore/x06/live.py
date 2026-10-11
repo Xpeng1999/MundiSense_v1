@@ -136,7 +136,8 @@ def producer(sources, config, output, messages, begin_event, realtime):
             messages.put({'kind': 'stream_finished', 'speaker_id': speaker,
                           'input_duration_s': timeline['duration_s'], 'events': event_index,
                           'producer_wall_s': time.monotonic() - started, 'totals': totals,
-                          'audio_load_seconds': audio_load_seconds})
+                          'audio_load_seconds': audio_load_seconds,
+                          'source_terminal_frame_clamps': video.terminal_frame_clamps})
         messages.put({'kind': 'done', 'resident_rss_before_exit': rss_tree(os.getpid())})
     except BaseException:
         messages.put({'kind': 'error', 'traceback': traceback.format_exc()})

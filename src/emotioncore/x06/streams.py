@@ -63,6 +63,7 @@ class Video:
         self.reader = None
         self.path = None
         self.duration = timeline['duration_s']
+        self.terminal_frame_clamps = 0
 
     def frame(self, when):
         import cv2
@@ -79,7 +80,19 @@ class Video:
         if gap:
             self.reader.set(cv2.CAP_PROP_POS_FRAMES, max(0, int(self.reader.get(cv2.CAP_PROP_FRAME_COUNT)) - 1))
         else:
-            self.reader.set(cv2.CAP_PROP_POS_MSEC, max(0, when - entry['start_s']) * 1000)
+            offset = max(0, when - entry['start_s'])
+            fps = float(self.reader.get(cv2.CAP_PROP_FPS))
+            count = int(self.reader.get(cv2.CAP_PROP_FRAME_COUNT))
+            if fps <= 0 or count <= 0:
+                raise RuntimeError('Invalid virtual-source video timing')
+            last_presentation = (count - 1) / fps
+            # The final native frame remains displayed until the clip ends.
+            # OpenCV's nearest-frame seek can otherwise round a valid display
+            # time to frame_count, beyond EOF, on an offset global 5fps grid.
+            if offset > last_presentation:
+                offset = last_presentation
+                self.terminal_frame_clamps += 1
+            self.reader.set(cv2.CAP_PROP_POS_MSEC, offset * 1000)
         ok, frame = self.reader.read()
         if not ok:
             raise RuntimeError(f'Cannot decode stream frame: {path} at {when}')

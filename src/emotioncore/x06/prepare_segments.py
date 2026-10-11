@@ -57,6 +57,7 @@ def one(segment):
         video.close()
     face = tracker.finish(directory / 'face')
     face['decode_seconds'] = decode
+    face['source_terminal_frame_clamps'] = video.terminal_frame_clamps
     duration = segment['end_s'] - segment['start_s']
     q_video = q_media(face, directory, segment['segment_id'], identity, duration)
     wav_path = directory / 'segment.wav'

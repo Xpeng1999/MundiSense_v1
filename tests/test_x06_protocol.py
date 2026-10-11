@@ -185,3 +185,26 @@ def test_event_outputs_cannot_write_old_experiment_directories():
     for path in ('/mnt/h/emotionAI/emotioncore_runs/X05/new.jsonl', '/tmp/events.jsonl', '../../X05/events.jsonl'):
         with pytest.raises(ValueError, match='new X06a run root'):
             event_destination(path)
+
+
+def test_virtual_source_retains_terminal_native_frame_until_clip_end(monkeypatch):
+    import sys
+    from types import SimpleNamespace
+    from emotioncore.x06.streams import Video
+    class Capture:
+        def __init__(self, path):
+            self.position = 0
+        def get(self, key):
+            return 30. if key == 1 else 535.
+        def set(self, key, value):
+            self.position = value
+        def read(self):
+            return (self.position <= 17800.000001, 'terminal-frame')
+        def release(self):
+            pass
+    monkeypatch.setitem(sys.modules, 'cv2', SimpleNamespace(VideoCapture=Capture, CAP_PROP_FPS=1,
+                        CAP_PROP_FRAME_COUNT=2, CAP_PROP_POS_MSEC=3, CAP_PROP_POS_FRAMES=4))
+    video = Video({'duration_s': 17.834, 'entries': [{'kind': 'utterance', 'start_s': 0.,
+                  'end_s': 17.834, 'video': {'path': 'test.mp4'}}]})
+    assert video.frame(17.8294) == 'terminal-frame'
+    assert video.terminal_frame_clamps == 1
