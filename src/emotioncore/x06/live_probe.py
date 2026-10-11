@@ -1,5 +1,6 @@
 """CPU pipeline integration check on one deterministically selected FMH clip."""
 import multiprocessing as mp
+import argparse
 import queue
 from emotioncore.x06.common import *
 from emotioncore.x06.live import producer
@@ -9,8 +10,8 @@ from emotioncore.x06.face import Tracker, detector
 from emotioncore.x06.prepare_segments import frame_index
 
 
-def run():
-    output = ROOT / 'live_cpu_probe_v2'
+def run(selected=False):
+    output = ROOT / ('live_cpu_probe_selected' if selected else 'live_cpu_probe_v2')
     meta = start(output)
     candidates = sorted((r for r in population() if r['speaker_id'] in FMH and
                          r['mp4']['duration_s'] <= 30), key=lambda r: (-r['mp4']['duration_s'], r['utt_id']))
@@ -25,7 +26,7 @@ def run():
     sources = {row['speaker_id']: {'timeline': spec(timeline_path), 'audio': audio['audio']}}
     context = mp.get_context('spawn')
     messages = context.Queue(maxsize=2); begin = context.Event()
-    config = {'model': 'silero', 'threshold': .5, 'min_silence': .2}
+    config = read('configs/x06_vad_freeze.json')['selected'] if selected else {'model': 'silero', 'threshold': .5, 'min_silence': .2}
     process = context.Process(target=producer, args=(sources, config, output, messages, begin, False))
     process.start()
     verified = []
@@ -69,4 +70,5 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser(); parser.add_argument('--selected-vad', action='store_true')
+    run(parser.parse_args().selected_vad)

@@ -4,6 +4,7 @@ import datetime as dt
 import hashlib
 import json
 import sys
+import importlib.metadata
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x04.prepare import storage_gate, require_h
 
@@ -66,6 +67,18 @@ def start(output):
             'protocol': spec('experiments/X06a_stream/protocol/X06A_PROMPT.md'),
             'review': spec('experiments/X06a_stream/protocol/X05_REVIEW.md'),
             'bundle_v1': spec('configs/calibration_bundle_v1.json')}
+    frozen_vad = Path('configs/x06_vad_freeze.json')
+    if frozen_vad.exists():
+        if sha256(frozen_vad) != sha256(ROOT / 'aishell_train_parallel/freeze.json'):
+            raise ValueError('STOP VAD parameters differ from the committed train-only freeze')
+        meta['vad_freeze'] = spec(frozen_vad)
+    meta['python'] = sys.version.split()[0]
+    meta['packages'] = {}
+    for name in ('numpy', 'torch', 'transformers', 'opencv-python', 'opencv-python-headless', 'timm', 'silero-vad', 'funasr'):
+        try:
+            meta['packages'][name] = importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:
+            pass
     write_json_atomic(output / 'run_meta.json', meta)
     return meta
 
