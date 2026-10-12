@@ -1,8 +1,8 @@
 # X06a 连续流原型
 
-**状态：按修订 2 续跑。** 启动预算已通过：预计累计 15.865932 GPU 小时，包含历史 1.166519 小时和原余量规则，上限仍为 18 小时。H3 的 S7 保留全部四条 ET-test 流；H_ref 仅说话人 21。当前从 ET-test 剩余 745 句开始，之后依次执行 FMH S6b、两种 S2、S3、S5 和 S7。每阶段结束按实耗重算，任何停止条件触发都不启动下一阶段。
+**状态：修订 2 执行中，尚未全部交付。** ET-test 1,929 句与 FMH 3,266 句正确切句已完成；FMH H3 S6b OP-N Δ=0.008625，95% CI [-0.001436, 0.018895]。已完成 GPU 作业累计 2.283623 / 18 小时。S7 范围为 H3 四条 ET-test 流、H_ref 仅说话人 21。当前事实和未完成项目以 [REPORT.md](REPORT.md) 为准。
 
-启动凭据：[revision_2_budget_startup.json](results/revision_2_budget_startup.json)。前两次停止报告完整保存在 [REPORT_BEFORE_REVISION_1.md](REPORT_BEFORE_REVISION_1.md) 与 [REPORT_BEFORE_REVISION_2.md](REPORT_BEFORE_REVISION_2.md)。`REPORT.md` 将随阶段交付更新，不能把历史停止或尚未测得的项目当作当前最终验收结论。PR #7 保持 Draft、不合入。
+启动凭据：[revision_2_budget_startup.json](results/revision_2_budget_startup.json)。前两次停止报告完整保存在 [REPORT_BEFORE_REVISION_1.md](REPORT_BEFORE_REVISION_1.md) 与 [REPORT_BEFORE_REVISION_2.md](REPORT_BEFORE_REVISION_2.md)。`REPORT.md` 按当前完成凭据更新；历史停止和未测项目均不记为当前验收通过。PR #7 保持 Draft、不合入。
 
 协议快照在 `protocol/`；执行解释与兼容性问题在 `OPEN_QUESTIONS.md`。模型、融合、校准、中性偏置及拒识阈值均冻结。部署默认 H3，可选 H_ref；`calibration_bundle_v1.1.json` 仅改变 `gate_rules` 的字节区间。
 

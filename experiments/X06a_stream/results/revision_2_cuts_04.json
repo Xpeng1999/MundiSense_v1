@@ -1,0 +1,105 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/summary.json",
+    "sha256": "461117c0d5f662b59d0ca77702c795be8200e2e13c3fe40e6628e2fd7b2783f8"
+  },
+  "data": {
+    "streams": {
+      "02": {
+        "speech_segments": 373,
+        "silence_windows": 4,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/02.jsonl",
+          "sha256": "2f6d023a301da7bc0802864aa78c9d2f8f035b7e3d089cf9035d75955c15a940"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/02_posterior.npy",
+          "sha256": "0615838d77d5e8022b578938b31e9b65a7d5ed339f8a6902271bc959c036b1a7"
+        },
+        "schedule_identical": true
+      },
+      "06": {
+        "speech_segments": 839,
+        "silence_windows": 6,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/06.jsonl",
+          "sha256": "f69be271a8cac544d66385c0ec75dd8a0bb24003e2ae6fb5ad875a0f274f8574"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/06_posterior.npy",
+          "sha256": "ab37c2bcfdafc897de298fd982ef1bda56e7ea307eace79aa51ed72d92621783"
+        },
+        "schedule_identical": true
+      },
+      "10": {
+        "speech_segments": 459,
+        "silence_windows": 1,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/10.jsonl",
+          "sha256": "c67e170928047bd1079628214cf2c5eb69702a156ea0e564de05915b6708df6d"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/10_posterior.npy",
+          "sha256": "d563c86ccfb7f3abdd19cb2cc7abdf51711061c304e7e921145a2a384899c4a0"
+        },
+        "schedule_identical": true
+      },
+      "11": {
+        "speech_segments": 1644,
+        "silence_windows": 32,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/11.jsonl",
+          "sha256": "252b88377abc3f7459b2a1d2904c69c9127e9eb6fc3b4fb95a4452c0a3bab690"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/11_posterior.npy",
+          "sha256": "433b51ee1b12d4e56589f0fb09be3c3691da999605cc1a51e42ed39f1a306d31"
+        },
+        "schedule_identical": true
+      },
+      "13": {
+        "speech_segments": 381,
+        "silence_windows": 6,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/13.jsonl",
+          "sha256": "6af7ad165282b5249eea725266b8ff05e3d3fbe4d2573fea2e2d44f4f7637525"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/13_posterior.npy",
+          "sha256": "ecdb28bcca998fb5d2f35bb3661f8e193ea890c13cff5a4a198d3a62fdb64b2b"
+        },
+        "schedule_identical": true
+      },
+      "20": {
+        "speech_segments": 532,
+        "silence_windows": 10,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/20.jsonl",
+          "sha256": "54196a9d9982f429b05a0d5c909628be15c6c6b2a6c6f3d50e5a207358757517"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/20_posterior.npy",
+          "sha256": "6bae85e59a22e7cc8f3e9f8a5a652a808fd423945cdb8ff9948324714a09f11a"
+        },
+        "schedule_identical": true
+      },
+      "21": {
+        "speech_segments": 614,
+        "silence_windows": 13,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/cuts_04/21.jsonl",
+          "sha256": "e0b1d7fa74234753730f426fbd3d779e445bca19a7aeacda4acdadc20674d6d0"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/21_posterior.npy",
+          "sha256": "ed175d8d7fcff8b7030d49b711bb87aa5bdff6a652cf690fa98efd4fb0e275fa"
+        },
+        "schedule_identical": true
+      }
+    },
+    "min_silence": 0.4,
+    "label_reads": false,
+    "model_inference": false,
+    "gpu_seconds": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/fmh_stream_oracle/summary.json",
+    "sha256": "c5b13ecf90f9da12c4ab3974d83720031bcc554f1931491a72d21d9fab9e5020"
+  },
+  "data": {
+    "status": "completed",
+    "problem": null,
+    "returncode": 0,
+    "charged_gpu_s": 3229.901044388069,
+    "total_charged_gpu_s": 8221.043267812813,
+    "accounting": "full child wall time, including initialization, CPU work and playback waits"
+  }
+}

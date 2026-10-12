@@ -1,0 +1,27 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision2_ready/summary.json",
+    "sha256": "7e3a0689c9c4fd68c681e379109ee872d0bb5cb0968dc23d9a4ca72a82d2b148"
+  },
+  "data": {
+    "command": [
+      "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_x06_protocol.py",
+      "--junitxml=/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision2_ready/pytest.xml"
+    ],
+    "returncode": 0,
+    "totals": {
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "stdout": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/unit_tests_revision2_ready/pytest.txt",
+      "sha256": "2fcb6128f01858fdec0ee83523b4190d30ab2acfb14d4135153b9d2cafb980c1"
+    }
+  }
+}
