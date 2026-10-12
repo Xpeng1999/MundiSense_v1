@@ -1,4 +1,4 @@
-"""Fifteen-hour shared full-process wall-time budget for X06a inference only."""
+"""Eighteen-hour shared full-process wall-time budget for X06a inference only."""
 import argparse
 import fcntl
 import os
@@ -8,7 +8,10 @@ import sys
 import time
 from emotioncore.x06.common import *
 
-TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
+TASKS = {'rev2_et': ['emotioncore.x06.resume_et'],
+         'rev2_s2_04': ['emotioncore.x06.segments_revision2', '--silence', '0.4'],
+         'rev2_s2_08': ['emotioncore.x06.segments_revision2', '--silence', '0.8'],
+         'equivalence': ['emotioncore.x06.equivalence'],
          'stream_equivalence': ['emotioncore.x06.equivalence', '--stream'],
          'fmh_stream_oracle': ['emotioncore.x06.fmh_stream_oracle'],
          'emotion_segments': ['emotioncore.x06.emotion_segments'],
@@ -18,12 +21,18 @@ TASKS = {'equivalence': ['emotioncore.x06.equivalence'],
 
 
 def run(task, attempt=1, child_args=()):
-    revision_budget = ROOT / 'revision_1_budget/summary.json'
-    if revision_budget.exists() and read(revision_budget)['status'] != 'passed':
-        raise RuntimeError('STOP revision-1 startup budget; no further GPU work')
-    stopped = ROOT / 'stream_equivalence/summary.json'
-    if stopped.exists() and read(stopped)['status'] == 'STOP_equivalence':
-        raise RuntimeError('STOP actual-stream S6 equivalence failed; no further GPU work under this protocol')
+    revised = (ROOT / 'revision2/budget_current.json').exists()
+    if revised:
+        from emotioncore.x06.revision2 import entry_gate
+        entry_gate(task)
+    else:
+        revision_budget = ROOT / 'revision_1_budget/summary.json'
+        if revision_budget.exists() and read(revision_budget)['status'] != 'passed':
+            raise RuntimeError('STOP revision-1 startup budget; no further GPU work')
+        stopped = ROOT / 'stream_equivalence/summary.json'
+        if stopped.exists() and read(stopped)['status'] == 'STOP_equivalence':
+            raise RuntimeError('STOP historical S6; no further GPU work without authorized revision')
+        raise RuntimeError('STOP revision-2 startup budget required; no further GPU work')
     suffix = '' if attempt == 1 else f'_attempt{attempt}'
     output = ROOT / 'gpu_jobs' / (task + suffix)
     meta = start(output)
@@ -34,20 +43,17 @@ def run(task, attempt=1, child_args=()):
     used = sum(r['charged_gpu_s'] for r in previous)
     for path, result in zip(paths, previous):
         if result['status'] != 'completed':
+            from emotioncore.x06.revision_budget import HISTORICAL
+            if (path == ROOT / 'gpu_jobs/stream_equivalence/summary.json'
+                    and sha256(path) == HISTORICAL['gpu_jobs/stream_equivalence/summary.json']):
+                continue  # authorized by revisions 1/2; historical failure remains charged
             repair = read(ROOT / 'dependency_repair/summary.json')
             if (repair['status'] != 'repaired_before_inference' or not repair['cpu_load_passed']
                     or repair['failed_job'] != spec(path)
                     or repair['failed_log'] != spec(path.parent / 'process.log')):
                 raise RuntimeError('STOP prior GPU job failed without a verified pre-inference repair')
-    if read(ROOT / 'preflight/summary.json')['estimated_gpu_hours'] > 15:
-        raise RuntimeError('STOP startup budget estimate')
-    if task not in ('equivalence',):
-        if read(ROOT / 'stream_oracle_budget/summary.json')['status'] != 'passed':
-            raise RuntimeError('STOP actual-stream verification budget has not passed')
-    if task not in ('equivalence', 'stream_equivalence'):
-        checked = read(ROOT / 'stream_equivalence/summary.json')
-        if checked['status'] != 'completed' or any(m['agreement'] < .95 for m in checked['systems'].values()):
-            raise RuntimeError('STOP actual-stream equivalence has not passed')
+    if used >= MAX_GPU_SECONDS:
+        raise RuntimeError('STOP eighteen-hour GPU deadline')
     if child_args and task != 'offline':
         raise ValueError('Only the bounded offline video entry takes input arguments')
     command = [sys.executable, '-u', '-m', *TASKS[task], *child_args]
@@ -62,7 +68,7 @@ def run(task, attempt=1, child_args=()):
             while child.poll() is None:
                 elapsed = time.monotonic() - begin
                 if elapsed + used >= MAX_GPU_SECONDS:
-                    raise RuntimeError('STOP fifteen-hour GPU deadline')
+                    raise RuntimeError('STOP eighteen-hour GPU deadline')
                 storage_gate()
                 write_json_atomic(output / 'progress.json', {'at': now(), 'pid': child.pid,
                                   'charged_gpu_s': elapsed, 'total_charged_gpu_s': used + elapsed})

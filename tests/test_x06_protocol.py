@@ -256,3 +256,37 @@ def test_virtual_source_retains_terminal_native_frame_until_clip_end(monkeypatch
                   'end_s': 17.834, 'video': {'path': 'test.mp4'}}]})
     assert video.frame(17.8294) == 'terminal-frame'
     assert video.terminal_frame_clamps == 1
+
+
+def test_revision2_replay_scope_preserves_original_formula():
+    from emotioncore.x06.budget_revision2 import replay_cost
+    from emotioncore.x06.revision_budget import estimate
+    rates = {'both': 2., 'Q_AV': 1., 'A3': .1, 'V2': .2, 'V1': .3}
+    c = {'speech': 20, 'visual': 3, 'et_speech': 20, 'et_visual': 3}
+    summed = sum(replay_cost(s, c, 1000, 10, rates, .2, .5, .6)['serial_service_s']
+                 for s in ('H3', 'H_ref'))
+    old = estimate(0, 0, {'0.4': c}, rates, 1000, 10, .2, .5, .6)
+    assert summed == pytest.approx(old['replay_candidates']['0.4']['serial_service_s'])
+    reduced = replay_cost('H_ref', {'speech': 5, 'visual': 1}, 250, 3, rates, .2, .5, .6)
+    assert reduced['serial_service_s'] < summed / 2
+
+
+def test_revision2_et_remainder_cannot_repeat_or_replace_prefix():
+    from emotioncore.x06.resume_et import remaining
+    inputs = [{'utt_id': str(i)} for i in range(1929)]
+    prefix = inputs[:1184]
+    assert remaining(inputs, prefix) == inputs[1184:]
+    with pytest.raises(ValueError, match='prefix mismatch'):
+        remaining(inputs, [prefix[1], *prefix[1:]])
+
+
+def test_revision2_s6b_ci_failure_is_not_a_stop_but_large_drop_is():
+    from emotioncore.x06.revision2 import s6b_gate
+    summary = {'cohort': 'fmh', 'n': 3266, 'systems': {'H3': {'op_n': {'delta': -.03, 'ci95': [-.06, -.01]}}}}
+    s6b_gate(summary)
+    summary['systems']['H3']['op_n']['delta'] = -.051
+    with pytest.raises(RuntimeError, match='point estimate'):
+        s6b_gate(summary)
+    summary['cohort'] = 'et_test'
+    with pytest.raises(RuntimeError, match='FMH'):
+        s6b_gate(summary)

@@ -21,6 +21,7 @@ TEST = frozenset(('02', '13', '20', '21'))
 BUNDLE_SHA = '94a0805b9775676209306187a3880595b7e7592af70aaec8d50f3b2a7968979a'
 MAX_GPU_SECONDS = 18 * 3600  # X06A_REVISION_1, including every historical GPU job
 REVISION_SHA = '0f0cfbe879b04be7ac750e51228214b5923f5db64924b834441a7771a2540fc1'
+REVISION_2_SHA = '58287378b00854c4246d5523920022c5842f5eeb84fe9ab6f4c4785047935820'
 SEED = 20261011
 
 
@@ -72,6 +73,10 @@ def start(output):
     if sha256(revision) != REVISION_SHA:
         raise ValueError('STOP X06a reviewer revision changed')
     meta['revision_1'] = spec(revision)
+    revision2 = Path('experiments/X06a_stream/protocol/X06A_REVISION_2.md')
+    if sha256(revision2) != REVISION_2_SHA:
+        raise ValueError('STOP X06a reviewer revision 2 changed')
+    meta['revision_2'] = spec(revision2)
     frozen_vad = Path('configs/x06_vad_freeze.json')
     if frozen_vad.exists():
         if sha256(frozen_vad) != sha256(ROOT / 'aishell_train_parallel/freeze.json'):
