@@ -333,3 +333,20 @@ def test_revision2_sequence_rechecks_budget_after_every_stage_and_never_replays(
     ordered = [stage[0] for stage in plan[::2]]
     assert ordered.index('fmh') < ordered.index('s6b_fmh') < ordered.index('s2_04') < ordered.index('s2_08')
     assert ordered[-3:] == ['s2', 's3', 's5']
+
+
+@pytest.mark.parametrize('failed_stage', ['budget_before_s7', 'audit_H3', 'budget_after_H3'])
+def test_s7_driver_never_starts_reference_after_failed_gate(tmp_path, monkeypatch, failed_stage):
+    from types import SimpleNamespace
+    from emotioncore.x06 import s7_revision2 as driver
+    calls = []
+    def command(args, **kwargs):
+        stage = list(driver.steps())[len(calls)][0]
+        calls.append(stage)
+        return SimpleNamespace(returncode=1 if stage == failed_stage else 0)
+    monkeypatch.setattr(driver.subprocess, 'run', command)
+    records, problem = driver.execute(tmp_path)
+    assert problem == failed_stage
+    assert calls[-1] == failed_stage
+    assert 'realtime_H_ref' not in calls
+    assert records[-1]['returncode'] == 1
