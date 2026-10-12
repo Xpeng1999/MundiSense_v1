@@ -5,7 +5,7 @@
 - 状态：修订 2 执行中，尚未全部交付；PR #7 保持 Draft、不合入。
 - S6a 历史同输入诊断 H3/H_ref 均为 1.000；FMH S6b H3 OP-N Δ=0.008625，95% CI [-0.001436, 0.018895]。
 - ET-test 1,929 句已齐全，原 1,184 句逐字节复用；FMH 3,266 句正确切句已完成。
-- GPU 已完成作业累计 2.283623 / 18 小时，包含历史失败初始化和实时等待。
+- GPU 已完成作业累计 3.694901 / 18 小时，包含历史失败初始化和实时等待。
 - S2 两种静音的情绪评估与选择尚未完成；FSMN、阈值 0.3 冻结。
 - S5 尚未完成，没有将未运行记为 α=0。
 - S7：H3 四条 ET-test 流；H_ref 仅说话人 21，其尾部延迟分位数只作参考。
@@ -183,6 +183,7 @@ S7 尚未完成，实时延迟、稳定性和在线瓶颈排序未测；全速�
 | startup | 1.166519 | 15.865932 | passed | [凭据](results/revision_2_budget_startup.json) |
 | after_et | 1.386428 | 12.988897 | passed | [凭据](results/revision_2_budget_after_et.json) |
 | after_fmh | 2.283623 | 12.517702 | passed | [凭据](results/revision_2_budget_after_fmh.json) |
+| after_s2_04 | 3.694901 | 12.383979 | passed | [凭据](results/revision_2_budget_after_s2_04.json) |
 
 ## 10. 异常
 
