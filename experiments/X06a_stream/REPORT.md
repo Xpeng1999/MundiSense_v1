@@ -40,7 +40,7 @@
 
 启动凭据 [凭据](results/revision_2_budget_startup.json)；ET 续推 [凭据](results/revision_2_et_remaining.json)；FMH 正确切句 [凭据](results/revision_2_fmh_stream_oracle.json)。
 
-X06 协议测试：29 项，失败 0、错误 0、跳过 0。覆盖调参来源隔离、参数包逐字节约束、多脸边界、时间轴、未覆盖句拒识、禁止数据入口及修订的预算/顺序门禁。[凭据](results/revision_2_unit_tests_revision2_ready.json)。
+X06 协议测试：32 项，失败 0、错误 0、跳过 0。覆盖调参来源隔离、参数包逐字节约束、多脸边界、时间轴、未覆盖句拒识、禁止数据入口及修订的预算/顺序门禁。[凭据](results/revision_2_unit_tests_revision2_s7_driver.json)。
 
 ## 4. 连续流构造与局限
 
