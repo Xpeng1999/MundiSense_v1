@@ -1,0 +1,128 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/budget_startup/summary.json",
+    "sha256": "13b6267f37b96afe5e1b6e1f615b31b13990a3997686be0cd0feded42be2df6e"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "startup",
+    "used_gpu_s": 4199.466695772717,
+    "used_gpu_hours": 1.1665185266035325,
+    "remaining_correct_boundary_n": 4011,
+    "correct_boundary_s": 6787.271828223111,
+    "remaining_vad_configs_s": 13159.53304786789,
+    "replay_candidates": {
+      "0.4": {
+        "systems": {
+          "H3": {
+            "serial_service_s": 17870.20232299045,
+            "input_s": 10755.076951155384,
+            "base_s": 17870.20232299045,
+            "speakers": [
+              "02",
+              "13",
+              "20",
+              "21"
+            ],
+            "counts": {
+              "speech": 1900,
+              "visual": 33
+            },
+            "frames": 53777
+          },
+          "H_ref": {
+            "serial_service_s": 6031.232910098387,
+            "input_s": 3362.155951870812,
+            "base_s": 6031.232910098387,
+            "speakers": [
+              "21"
+            ],
+            "counts": {
+              "speech": 614,
+              "visual": 13
+            },
+            "frames": 16811
+          }
+        },
+        "base_s": 23901.43523308884
+      },
+      "0.8": {
+        "systems": {
+          "H3": {
+            "serial_service_s": 16605.832284149255,
+            "input_s": 10755.076951155384,
+            "base_s": 16605.832284149255,
+            "speakers": [
+              "02",
+              "13",
+              "20",
+              "21"
+            ],
+            "counts": {
+              "speech": 1146,
+              "visual": 23
+            },
+            "frames": 53777
+          },
+          "H_ref": {
+            "serial_service_s": 5454.2457976432515,
+            "input_s": 3362.155951870812,
+            "base_s": 5454.2457976432515,
+            "speakers": [
+              "21"
+            ],
+            "counts": {
+              "speech": 367,
+              "visual": 11
+            },
+            "frames": 16811
+          }
+        },
+        "base_s": 22060.078081792508
+      }
+    },
+    "replay_base_s": 23901.43523308884,
+    "future_base_s": 43848.24010917984,
+    "reserve_s": 9069.648021835968,
+    "estimated_total_gpu_hours": 15.865931896330144,
+    "limit_gpu_hours": 18,
+    "rates_s": {
+      "Q_A": 0.4916911081781035,
+      "Q_AV": 0.8554385776560348,
+      "A3": 0.04969176543680668,
+      "V2": 0.061922910479699715,
+      "V1": 0.05991594673773884,
+      "audio_decode": 0.0244719486400828,
+      "both": 1.6921645046679408
+    },
+    "rate_source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/predictions.jsonl",
+      "sha256": "e82eba38aeefcb9bd0c87a5d9a13a5f69dc3c89c3934d0dc8d571df3577d3d7d"
+    },
+    "replay_rate_source": null,
+    "face_seconds_per_frame": 0.2728845762892829,
+    "media_seconds_per_segment": 0.6342560025021345,
+    "selected_min_silence": null,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+        "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+        "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+        "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+      }
+    ],
+    "prior_budget": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/summary.json",
+      "sha256": "16cd1fe7467a767904ddfb91bb21d863fe25cf79231b0b3aade3f85690089074"
+    },
+    "reserve_rule": "20% of remaining work plus 300s; zero after all work completed",
+    "gpu_seconds": 0,
+    "emotion_labels_read_for_selection": false
+  }
+}
