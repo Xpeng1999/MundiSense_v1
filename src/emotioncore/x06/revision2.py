@@ -56,6 +56,8 @@ def current_budget():
 
 def entry_gate(task):
     authorize()
+    if (REV / 's6a_runtime_stop.json').exists():
+        raise RuntimeError('STOP S6a identical-input runtime discrepancy')
     current_budget()
     if task in ('equivalence', 'stream_equivalence', 'emotion_segments'):
         raise RuntimeError('Historical entry is immutable; use revision-2 entries')
@@ -76,6 +78,8 @@ def entry_gate(task):
             raise RuntimeError('STOP S3 report must precede replay')
     if task == 'realtime_H_ref' and not done('realtime_H3'):
         raise RuntimeError('STOP all four H3 streams must precede H_ref speaker 21')
+    if task == 'realtime_H_ref' and read(REV / 'live_audit_H3/summary.json')['status'] != 'completed':
+        raise RuntimeError('STOP H3 live audit has not completed')
 
 
 def selected_vad():
