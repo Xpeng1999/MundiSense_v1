@@ -5,7 +5,7 @@
 - 状态：修订 2 执行中，尚未全部交付；PR #7 保持 Draft、不合入。
 - S6a 历史同输入诊断 H3/H_ref 均为 1.000；FMH S6b H3 OP-N Δ=0.008625，95% CI [-0.001436, 0.018895]。
 - ET-test 1,929 句已齐全，原 1,184 句逐字节复用；FMH 3,266 句正确切句已完成。
-- GPU 已完成作业累计 4.605242 / 18 小时，包含历史失败初始化和实时等待。
+- GPU 已完成作业累计 4.619324 / 18 小时，包含历史失败初始化和实时等待。
 - S2 选择最短静音 0.4 秒；FMH H3 VAD−正确切句 F1 差 -0.045210，**未达到** ≥−0.03 验收条件。
 - S5 选择 α=0.0；偏置与拒识阈值未重拟合。
 - S7：H3 四条 ET-test 流；H_ref 仅说话人 21，其尾部延迟分位数只作参考。
@@ -30,7 +30,7 @@
 | S1 | 完成 | 3 条 FMH、4 条 ET-test，共 5,195 句 |
 | S2 | 完成 | 两种最短静音均评估，FMH H3 选择 |
 | S3 | 完成 | 事件级和真值句级触发率分别报告 |
-| S4 | 服务已实现 | 离线入口、实时事件与模型常驻；集成凭据见第 9 节 |
+| S4 | 服务已实现 | 离线入口、实时事件与模型常驻；集成凭据见本节，回放见第 9 节 |
 | S5 | 完成 | FMH 选择；ET-test 只报告 |
 | S6a | 历史诊断通过 | 原 1,929 句无守门一致率 1.000，不重跑 |
 | S6b | 完成 | FMH 门槛及完整 ET-test 报告 |
@@ -40,7 +40,11 @@
 
 启动凭据 [凭据](results/revision_2_budget_startup.json)；ET 续推 [凭据](results/revision_2_et_remaining.json)；FMH 正确切句 [凭据](results/revision_2_fmh_stream_oracle.json)。
 
-X06 协议测试：32 项，失败 0、错误 0、跳过 0。覆盖调参来源隔离、参数包逐字节约束、多脸边界、时间轴、未覆盖句拒识、禁止数据入口及修订的预算/顺序门禁。[凭据](results/revision_2_unit_tests_revision2_s7_driver.json)。
+两个 FMH 冻结文件已在 `144adbb` 提交，S7 使用该干净提交；原始选择回执与文件 SHA 保留。
+
+S4 离线入口已用清单中按 utt_id 排序的第一条 FMH 原始片段完成集成验证，生成 1 个事件；其 GPU 墙钟计入统一账本。这是入口验证，不参与方法选择或主指标，也不替代 S7 实时延迟。[凭据](results/revision_2_offline_runs_s4_smoke_fmh.run.json)。
+
+X06 协议测试：32 项，失败 0、错误 0、跳过 0。覆盖调参来源隔离、参数包逐字节约束、多脸边界、时间轴、未覆盖句拒识、禁止数据入口及修订的预算/顺序门禁。[凭据](results/revision_2_unit_tests_revision2_final.json)。
 
 ## 4. 连续流构造与局限
 
@@ -230,6 +234,8 @@ S7 尚未完成，实时延迟、稳定性和在线瓶颈排序未测；全速�
 | after_s2 | 4.605242 | 12.318853 | passed | [凭据](results/revision_2_budget_after_s2.json) |
 | after_s3 | 4.605242 | 12.318853 | passed | [凭据](results/revision_2_budget_after_s3.json) |
 | after_s5 | 4.605242 | 12.318853 | passed | [凭据](results/revision_2_budget_after_s5.json) |
+| after_offline | 4.619324 | 12.332935 | passed | [凭据](results/revision_2_budget_after_offline.json) |
+| before_s7 | 4.619324 | 12.332935 | passed | [凭据](results/revision_2_budget_before_s7.json) |
 
 ## 10. 异常
 

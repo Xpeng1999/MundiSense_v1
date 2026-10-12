@@ -1,0 +1,28 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/offline_smoke_launch/summary.json",
+    "sha256": "c648487d256a7cc2ffb71260803a9b9c2c3d07aba70bc9d8479977d832ca84e9"
+  },
+  "data": {
+    "status": "dispatched",
+    "pid": 1992640,
+    "command": [
+      "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+      "-u",
+      "-m",
+      "emotioncore.x06.run",
+      "--input",
+      "/home/administrator/emotion-data/emotionAI_processed/phase1_v1/emotiontalk/Multimodal/mp4/G00005/G00005_03/G00005_03_06/G00005_03_06_003.mp4",
+      "--system",
+      "H3",
+      "--out",
+      "/mnt/h/emotionAI/emotioncore_runs/X06a/offline_runs/s4_smoke_fmh.jsonl"
+    ],
+    "utt_id": "G00005_03_06_003",
+    "source": {
+      "path": "/home/administrator/emotion-data/emotionAI_processed/phase1_v1/emotiontalk/Multimodal/mp4/G00005/G00005_03/G00005_03_06/G00005_03_06_003.mp4",
+      "sha256": "f75c0d0afb7ab7e1fd370ee4851963d0dded5213b53aa159472e12c6d38596ea"
+    },
+    "selection": "first FMH utterance sorted by utt_id; integration only, excluded from main metrics"
+  }
+}
