@@ -290,3 +290,34 @@ def test_revision2_s6b_ci_failure_is_not_a_stop_but_large_drop_is():
     summary['cohort'] = 'et_test'
     with pytest.raises(RuntimeError, match='FMH'):
         s6b_gate(summary)
+
+
+def test_revision2_paired_bootstrap_preserves_pairs_and_reject_denominator():
+    import numpy as np
+    from emotioncore.x06.s6b import paired, macro_f1
+    y = np.tile(np.arange(7), 5)
+    old = {'op_n': y.copy(), 'r90': y.copy()}
+    assert macro_f1(y, np.full(len(y), -1)) == 0.
+    same = paired(y, old, old, iterations=100)
+    assert same['op_n']['delta'] == 0. and same['op_n']['ci95'] == [0., 0.]
+    newer = {'op_n': y.copy(), 'r90': np.full(len(y), -1)}
+    result = paired(y, old, newer, iterations=100)
+    assert result == paired(y, old, newer, iterations=100)
+    assert result['r90']['delta'] == -1. and result['coverage']['delta'] == -1.
+
+
+def test_revision2_silence_selection_only_reads_fmh_labels(monkeypatch):
+    from emotioncore.x06 import analysis
+    from emotioncore.x06.analyze_revision2 import choose_silence
+    from emotioncore.x06.common import FMH
+    bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    components = {c: [.1, .3, .05, .2, .05, .1, .2] for p in bundle['systems'].values() for c in p['components']}
+    def reader(s):
+        assert s in FMH
+        return [{'utt_id': s, 'start_s': 0., 'end_s': 1., 'label': 'neutral'}]
+    monkeypatch.setattr(analysis, 'truths', reader)
+    records = [{'speaker_id': s, 'cohort': 'fmh', 'start_s': 0., 'end_s': 1.,
+                'component_probs': components, 'has_face': True, 'track_scores': [1.]} for s in FMH]
+    assert choose_silence(bundle, {.4: records, .8: records})[0] == .4
+    with pytest.raises(ValueError):
+        choose_silence(bundle, {.4: [*records, dict(records[0], cohort='et_test', speaker_id='21')], .8: records})

@@ -152,7 +152,8 @@ def consume(sources, system, output, event_path, alpha, realtime=True):
     context = mp.get_context('spawn')
     messages = context.Queue(maxsize=2)
     begin_event = context.Event()
-    config = read(ROOT / 'aishell_train_parallel/freeze.json')['selected']
+    from emotioncore.x06.revision2 import selected_vad
+    config = selected_vad()
     child = context.Process(target=producer, args=(sources, config, output, messages, begin_event, realtime))
     child.start()
     service = None

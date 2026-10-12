@@ -48,7 +48,7 @@ def run(stage):
         live = read(ROOT / 'realtime_H3/summary.json')
         # Later delivery stages can use measured H3 producer costs when present.
         replay_rate_source = spec(ROOT / 'realtime_H3/summary.json')
-        streams = live.get('streams', [])
+        streams = list(live.get('streams', {}).values())
         if isinstance(streams, list) and streams and all('totals' in s for s in streams):
             frames_all = sum(math.ceil(s['input_duration_s'] * 5) for s in streams)
             face = sum(s['totals']['decode'] + s['totals']['face_detection'] for s in streams) / frames_all
