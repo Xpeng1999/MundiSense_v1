@@ -321,3 +321,15 @@ def test_revision2_silence_selection_only_reads_fmh_labels(monkeypatch):
     assert choose_silence(bundle, {.4: records, .8: records})[0] == .4
     with pytest.raises(ValueError):
         choose_silence(bundle, {.4: [*records, dict(records[0], cohort='et_test', speaker_id='21')], .8: records})
+
+
+def test_revision2_sequence_rechecks_budget_after_every_stage_and_never_replays():
+    from emotioncore.x06.pre_s7 import steps
+    plan = list(steps())
+    assert len(plan) % 2 == 0
+    for stage, budget in zip(plan[::2], plan[1::2]):
+        assert budget == ('budget_after_' + stage[0], 'budget_revision2', ['--stage', 'after_' + stage[0]])
+    assert not any('realtime_' in str(stage) for stage in plan)
+    ordered = [stage[0] for stage in plan[::2]]
+    assert ordered.index('fmh') < ordered.index('s6b_fmh') < ordered.index('s2_04') < ordered.index('s2_08')
+    assert ordered[-3:] == ['s2', 's3', 's5']
