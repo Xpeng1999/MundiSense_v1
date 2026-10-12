@@ -6,7 +6,7 @@ import subprocess
 import numpy as np
 import psutil
 from emotioncore.x06.common import *
-from emotioncore.x06.revision2 import REV, authorize, checked, ledger, done
+from emotioncore.x06.revision2 import REV, authorize, checked, ledger, done, current_budget, s6b_gate
 from emotioncore.x06.gate import verify_only_gate_changed
 from emotioncore.x06.live import quantiles
 
@@ -64,8 +64,14 @@ def run(name, stopped=False):
         assert combined[:len(old)] == old and len(rows(REV / 'et_remaining/predictions.jsonl')) == 1929
     comparison = None
     if not stopped:
+        current_budget()
+        s6b_gate(read(REV / 's6b_fmh/summary.json'))
+        if (REV / 's6a_runtime_stop.json').exists():
+            raise RuntimeError('STOP S6a runtime failure cannot be a complete delivery')
         for task in ('rev2_et', 'fmh_stream_oracle', 'rev2_s2_04', 'rev2_s2_08', 'realtime_H3', 'realtime_H_ref'):
             assert done(task), task
+        for system in ('H3', 'H_ref'):
+            assert read(REV / f'live_audit_{system}/summary.json')['status'] == 'completed', system
         for server, committed in [('s2/freeze.json', 'x06_silence_freeze.json'), ('s5/freeze.json', 'x06_smoothing_freeze.json')]:
             assert sha256(REV / server) == sha256(Path('configs') / committed)
         h3 = read(ROOT / 'realtime_H3/summary.json'); ref = read(ROOT / 'realtime_H_ref/summary.json')
