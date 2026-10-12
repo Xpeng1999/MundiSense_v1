@@ -1,0 +1,125 @@
+{
+  "model": "fsmn",
+  "threshold": 0.3,
+  "min_silence": 0.4,
+  "selection_system": "H3",
+  "metric": "S2 macro-F1, OP-R90 and gates, rejects in denominator",
+  "rule": "FMH only; within 0.005 select 0.4 seconds",
+  "fmh_speakers": [
+    "06",
+    "10",
+    "11"
+  ],
+  "candidates": {
+    "0.4": {
+      "n": 3266,
+      "macro_f1": 0.615542614496378,
+      "class_f1": {
+        "neutral": 0.707105719237435,
+        "joy": 0.7536496350364964,
+        "sadness": 0.78419452887538,
+        "anger": 0.8027210884353742,
+        "fear": 0.5570776255707762,
+        "disgust": 0.28852459016393445,
+        "surprise": 0.4155251141552511
+      },
+      "accepted": 2752,
+      "coverage": 0.842620943049602,
+      "neutral_false_positive_rate": 0.19078415521422798,
+      "accepted_metrics": {
+        "n": 2752,
+        "macro_f1": 0.6796416473686906,
+        "class_f1": {
+          "neutral": 0.7687235044747998,
+          "joy": 0.804284323271665,
+          "sadness": 0.821656050955414,
+          "anger": 0.8475658419792498,
+          "fear": 0.6354166666666666,
+          "disgust": 0.3728813559322034,
+          "surprise": 0.5069637883008357
+        },
+        "accepted": 2752,
+        "coverage": 1.0,
+        "neutral_false_positive_rate": 0.22433460076045628
+      },
+      "ambiguous_multi_face_n": 150,
+      "ambiguous_multi_face_rate": 0.04592774035517452,
+      "vad_truth_coverage": 1.0,
+      "vad_duration_coverage": 0.9622257507473877,
+      "uncovered_truth_n": 0,
+      "truth_split_fraction": 0.15554194733619106,
+      "merged_vad_segment_fraction": 0.2522093813732155,
+      "vad_speech_segments": 2942
+    },
+    "0.8": {
+      "n": 3266,
+      "macro_f1": 0.5796977347012404,
+      "class_f1": {
+        "neutral": 0.5991189427312775,
+        "joy": 0.673702726473175,
+        "sadness": 0.8142076502732241,
+        "anger": 0.7725190839694657,
+        "fear": 0.5761316872427984,
+        "disgust": 0.2598187311178248,
+        "surprise": 0.3623853211009174
+      },
+      "accepted": 2600,
+      "coverage": 0.7960808328230251,
+      "neutral_false_positive_rate": 0.2950687146321746,
+      "accepted_metrics": {
+        "n": 2600,
+        "macro_f1": 0.648681637164165,
+        "class_f1": {
+          "neutral": 0.6864834548513741,
+          "joy": 0.7365384615384616,
+          "sadness": 0.8370786516853933,
+          "anger": 0.8391376451077943,
+          "fear": 0.6422018348623854,
+          "disgust": 0.344,
+          "surprise": 0.4553314121037464
+        },
+        "accepted": 2600,
+        "coverage": 1.0,
+        "neutral_false_positive_rate": 0.3735926305015353
+      },
+      "ambiguous_multi_face_n": 235,
+      "ambiguous_multi_face_rate": 0.07195345988977342,
+      "vad_truth_coverage": 1.0,
+      "vad_duration_coverage": 0.9822938789088171,
+      "uncovered_truth_n": 0,
+      "truth_split_fraction": 0.18524188609920392,
+      "merged_vad_segment_fraction": 0.644,
+      "vad_speech_segments": 1750
+    }
+  },
+  "frozen_at": "2026-10-12T07:27:42.138044+00:00",
+  "selection_sources": {
+    "0.4": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/predictions.jsonl",
+      "sha256": "f7e59bf74831c8debf363dcc9f49e62545176a200dc8a44f18e1ea2515408626"
+    },
+    "0.8": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_08/predictions.jsonl",
+      "sha256": "835a2dd5d08f489b3ec0255eb3a66b459253c6ca24a2ddfe09761c0d68f76ea3"
+    }
+  },
+  "selection_label_sources": [
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_06.json",
+      "sha256": "588b495ed773ab83aa1b8333edd50a4a7ced9b587c08db3f92c5d8b953de892a"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_10.json",
+      "sha256": "e537797d62043d69148e986e746fa663f04a6ae719aa62c19b0c3d903b0b46c6"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_11.json",
+      "sha256": "f20f105c2113b69b1245eeab84ec6e22328d4e006071937f4a26461df6f41bde"
+    }
+  ],
+  "original_vad_freeze": {
+    "path": "configs/x06_vad_freeze.json",
+    "sha256": "43cb46bc84417b9bff5cb20c7ab1edaa370ee98ccfaa21cfae4150d637cd6714"
+  },
+  "fitted_parameters_changed": false
+}

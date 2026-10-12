@@ -1,0 +1,203 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s3/summary.json",
+    "sha256": "936915b95e422c32a94f3948c09c21cd401e69a5110228f667e2e116087df374"
+  },
+  "data": {
+    "min_silence": 0.4,
+    "reports": {
+      "fmh": {
+        "speech_events": 2942,
+        "ambiguous_multi_face_events": 99,
+        "event_trigger_rate": 0.033650577838205305,
+        "trigger_details": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s3/fmh_triggers.jsonl",
+          "sha256": "019b052b72e100b5a43e15e53d31cc3e5a2997ac745846cd3eb8046e0b4479f3"
+        },
+        "truth_metrics": {
+          "H3": {
+            "n": 3266,
+            "macro_f1": 0.615542614496378,
+            "class_f1": {
+              "neutral": 0.707105719237435,
+              "joy": 0.7536496350364964,
+              "sadness": 0.78419452887538,
+              "anger": 0.8027210884353742,
+              "fear": 0.5570776255707762,
+              "disgust": 0.28852459016393445,
+              "surprise": 0.4155251141552511
+            },
+            "accepted": 2752,
+            "coverage": 0.842620943049602,
+            "neutral_false_positive_rate": 0.19078415521422798,
+            "accepted_metrics": {
+              "n": 2752,
+              "macro_f1": 0.6796416473686906,
+              "class_f1": {
+                "neutral": 0.7687235044747998,
+                "joy": 0.804284323271665,
+                "sadness": 0.821656050955414,
+                "anger": 0.8475658419792498,
+                "fear": 0.6354166666666666,
+                "disgust": 0.3728813559322034,
+                "surprise": 0.5069637883008357
+              },
+              "accepted": 2752,
+              "coverage": 1.0,
+              "neutral_false_positive_rate": 0.22433460076045628
+            },
+            "ambiguous_multi_face_n": 150,
+            "ambiguous_multi_face_rate": 0.04592774035517452,
+            "vad_truth_coverage": 1.0,
+            "vad_duration_coverage": 0.9622257507473877,
+            "uncovered_truth_n": 0,
+            "truth_split_fraction": 0.15554194733619106,
+            "merged_vad_segment_fraction": 0.2522093813732155,
+            "vad_speech_segments": 2942,
+            "macro_f1_minus_correct_boundaries": -0.04521039481224687
+          },
+          "H_ref": {
+            "n": 3266,
+            "macro_f1": 0.6102885862027729,
+            "class_f1": {
+              "neutral": 0.7030356357237132,
+              "joy": 0.7533875338753387,
+              "sadness": 0.7820895522388059,
+              "anger": 0.8063300678221552,
+              "fear": 0.5504587155963303,
+              "disgust": 0.273972602739726,
+              "surprise": 0.40274599542334094
+            },
+            "accepted": 2723,
+            "coverage": 0.8337415799142682,
+            "neutral_false_positive_rate": 0.19563459983831852,
+            "accepted_metrics": {
+              "n": 2723,
+              "macro_f1": 0.6797320807119771,
+              "class_f1": {
+                "neutral": 0.7693789118921521,
+                "joy": 0.801923076923077,
+                "sadness": 0.8264984227129337,
+                "anger": 0.8512330946698489,
+                "fear": 0.6349206349206349,
+                "disgust": 0.3755868544600939,
+                "surprise": 0.4985835694050991
+              },
+              "accepted": 2723,
+              "coverage": 1.0,
+              "neutral_false_positive_rate": 0.23246878001921228
+            },
+            "ambiguous_multi_face_n": 150,
+            "ambiguous_multi_face_rate": 0.04592774035517452,
+            "vad_truth_coverage": 1.0,
+            "vad_duration_coverage": 0.9622257507473877,
+            "uncovered_truth_n": 0,
+            "truth_split_fraction": 0.15554194733619106,
+            "merged_vad_segment_fraction": 0.2522093813732155,
+            "vad_speech_segments": 2942,
+            "macro_f1_minus_correct_boundaries": -0.04949221375202506
+          }
+        }
+      },
+      "et_test": {
+        "speech_events": 1900,
+        "ambiguous_multi_face_events": 29,
+        "event_trigger_rate": 0.015263157894736841,
+        "trigger_details": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s3/et_test_triggers.jsonl",
+          "sha256": "c8119c13f9da3d8852e0012304f5f527911adec9f9a533d477ac2bb861cdf718"
+        },
+        "truth_metrics": {
+          "H3": {
+            "n": 1929,
+            "macro_f1": 0.5927548232546409,
+            "class_f1": {
+              "neutral": 0.7513157894736842,
+              "joy": 0.7650727650727651,
+              "sadness": 0.5026737967914439,
+              "anger": 0.7280575539568346,
+              "fear": 0.6060606060606061,
+              "disgust": 0.3235294117647059,
+              "surprise": 0.47257383966244726
+            },
+            "accepted": 1626,
+            "coverage": 0.8429237947122862,
+            "neutral_false_positive_rate": 0.13607990012484394,
+            "accepted_metrics": {
+              "n": 1626,
+              "macro_f1": 0.6568635464285822,
+              "class_f1": {
+                "neutral": 0.8162973552537527,
+                "joy": 0.8087912087912088,
+                "sadness": 0.5562130177514792,
+                "anger": 0.7643504531722054,
+                "fear": 0.6862745098039216,
+                "disgust": 0.39759036144578314,
+                "surprise": 0.5685279187817259
+              },
+              "accepted": 1626,
+              "coverage": 1.0,
+              "neutral_false_positive_rate": 0.16029411764705884
+            },
+            "ambiguous_multi_face_n": 44,
+            "ambiguous_multi_face_rate": 0.02280974598237429,
+            "vad_truth_coverage": 1.0,
+            "vad_duration_coverage": 0.9512276610820483,
+            "uncovered_truth_n": 0,
+            "truth_split_fraction": 0.2011404872991187,
+            "merged_vad_segment_fraction": 0.22631578947368422,
+            "vad_speech_segments": 1900,
+            "macro_f1_minus_correct_boundaries": -0.05072802484088934
+          },
+          "H_ref": {
+            "n": 1929,
+            "macro_f1": 0.5905031795905644,
+            "class_f1": {
+              "neutral": 0.7509881422924901,
+              "joy": 0.7741935483870968,
+              "sadness": 0.4842105263157895,
+              "anger": 0.7277856135401974,
+              "fear": 0.6260869565217392,
+              "disgust": 0.30612244897959184,
+              "surprise": 0.4641350210970464
+            },
+            "accepted": 1647,
+            "coverage": 0.8538102643856921,
+            "neutral_false_positive_rate": 0.14232209737827714,
+            "accepted_metrics": {
+              "n": 1647,
+              "macro_f1": 0.6493789610345823,
+              "class_f1": {
+                "neutral": 0.8137044967880086,
+                "joy": 0.803347280334728,
+                "sadness": 0.5257142857142857,
+                "anger": 0.7565982404692082,
+                "fear": 0.7024390243902439,
+                "disgust": 0.379746835443038,
+                "surprise": 0.5641025641025641
+              },
+              "accepted": 1647,
+              "coverage": 1.0,
+              "neutral_false_positive_rate": 0.16666666666666666
+            },
+            "ambiguous_multi_face_n": 44,
+            "ambiguous_multi_face_rate": 0.02280974598237429,
+            "vad_truth_coverage": 1.0,
+            "vad_duration_coverage": 0.9512276610820483,
+            "uncovered_truth_n": 0,
+            "truth_split_fraction": 0.2011404872991187,
+            "merged_vad_segment_fraction": 0.22631578947368422,
+            "vad_speech_segments": 1900,
+            "macro_f1_minus_correct_boundaries": -0.046442852796355294
+          }
+        }
+      }
+    },
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/predictions.jsonl",
+      "sha256": "f7e59bf74831c8debf363dcc9f49e62545176a200dc8a44f18e1ea2515408626"
+    },
+    "gate_rule_changed": false,
+    "gpu_seconds": 0
+  }
+}
