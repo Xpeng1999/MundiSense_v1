@@ -1,0 +1,95 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/budget_after_H_ref/summary.json",
+    "sha256": "a40b01f7bbf7ddfedf0e6dd588d3e0125c670b6cb638b2505a6aa2158786289e"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_H_ref",
+    "used_gpu_s": 36041.93084499845,
+    "used_gpu_hours": 10.011647456944015,
+    "remaining_correct_boundary_n": 0,
+    "correct_boundary_s": 0.0,
+    "remaining_vad_configs_s": 0,
+    "replay_candidates": {
+      "0.4": {
+        "systems": {},
+        "base_s": 0
+      }
+    },
+    "replay_base_s": 0,
+    "future_base_s": 0.0,
+    "reserve_s": 0.0,
+    "estimated_total_gpu_hours": 10.011647456944015,
+    "limit_gpu_hours": 18,
+    "rates_s": {
+      "Q_A": 0.31374339625511743,
+      "Q_AV": 0.5613014119756806,
+      "A3": 0.03501520926012903,
+      "V2": 0.043461210984352634,
+      "V1": 0.043246704901953904,
+      "audio_decode": 0.015948065097409595,
+      "both": 1.1131890210910331
+    },
+    "rate_source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_08/predictions.jsonl",
+      "sha256": "835a2dd5d08f489b3ec0255eb3a66b459253c6ca24a2ddfe09761c0d68f76ea3"
+    },
+    "replay_rate_source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/summary.json",
+      "sha256": "7050c48868634e038ff1c8edecebfd252c571bc59a2cf9e3ab48237d9edeea13"
+    },
+    "face_seconds_per_frame": 0.2399546707210574,
+    "media_seconds_per_segment": 0.6342560025021345,
+    "selected_min_silence": 0.4,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+        "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+        "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/fmh_stream_oracle/summary.json",
+        "sha256": "c5b13ecf90f9da12c4ab3974d83720031bcc554f1931491a72d21d9fab9e5020"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/offline/summary.json",
+        "sha256": "b7b460ad71450742965b3e2d22897b35172c9b4d5862b704baf3f9320abc20cb"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/realtime_H3/summary.json",
+        "sha256": "1643864035b85127c73b2fc7fc299651d3380032adfc62ded78c16f9d4891ff2"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/realtime_H_ref/summary.json",
+        "sha256": "3eeeb7cd0be2f1f278e5c9305ccbcf993fedeac3989e029dc68d77cc89a21e64"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_et/summary.json",
+        "sha256": "9d8076894b388425ea4596b8411bbc5d2ff4756cfb7850674db93aa0bf12262b"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_s2_04/summary.json",
+        "sha256": "99fa52313223090cfb448c33fb62ecf31d8e76436c1012b77d4a42a7fab232fd"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_s2_08/summary.json",
+        "sha256": "11fc4f835b8adaeed6fbc3cce43912e0cb6fbaade421627a2ebe50f9d0ae3303"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+        "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+      }
+    ],
+    "prior_budget": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/summary.json",
+      "sha256": "16cd1fe7467a767904ddfb91bb21d863fe25cf79231b0b3aade3f85690089074"
+    },
+    "reserve_rule": "20% of remaining work plus 300s; zero after all work completed",
+    "gpu_seconds": 0,
+    "emotion_labels_read_for_selection": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/live_audit_H3_retry/summary.json",
+    "sha256": "551c8d48920029ea01e26d5f979a113e09922adc4acf09879270fa0785ce6ed2"
+  },
+  "data": {
+    "status": "completed",
+    "system": "H3",
+    "n": 1933,
+    "input_equal_n": 1933,
+    "ungated_label_agreement": 1.0,
+    "final_label_agreement": 1.0,
+    "max_absolute_probability_difference": {
+      "A3": 0.0,
+      "V2": 0.0,
+      "Q_AV": 0.0,
+      "V1": 0.0,
+      "Q_V": 0.0,
+      "Q_A": 0.0
+    },
+    "checked": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/live_audit_H3_retry/checked.jsonl",
+      "sha256": "07ae8137b80165b077a5d06466ebf615d32848301a10130cb35efac147ffd2a1"
+    },
+    "differences": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/live_audit_H3_retry/differences.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "live": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/events.jsonl",
+      "sha256": "c6597d03bea52a6d5596d2ed8af4217769d8428069ab69a97acdd0afa854d30a"
+    },
+    "fullspeed": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/predictions.jsonl",
+      "sha256": "f7e59bf74831c8debf363dcc9f49e62545176a200dc8a44f18e1ea2515408626"
+    },
+    "gpu_seconds": 0
+  }
+}

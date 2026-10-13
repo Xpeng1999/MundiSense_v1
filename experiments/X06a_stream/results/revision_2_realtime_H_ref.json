@@ -1,0 +1,226 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H_ref/summary.json",
+    "sha256": "d4bad4d79e2fbe0308d3fed13a45ca56fae5298ad5d84ee75940143ee557ea9e"
+  },
+  "data": {
+    "system": "H_ref",
+    "alpha": 0.0,
+    "realtime": true,
+    "events": 627,
+    "streams": {
+      "21": {
+        "kind": "stream_finished",
+        "speaker_id": "21",
+        "input_duration_s": 3362.155951870812,
+        "events": 627,
+        "producer_wall_s": 4658.033203623956,
+        "totals": {
+          "vad": 23.115771317621693,
+          "decode": 1319.3109920849092,
+          "face_detection": 2781.8711913775187
+        },
+        "audio_load_seconds": 1.0310772890225053,
+        "source_terminal_frame_clamps": 416
+      }
+    },
+    "latency_seconds": {
+      "p50": 1.9508641110733151,
+      "p95": 2.139664399111643,
+      "p99": 2.2245092712203043
+    },
+    "speech_latency_seconds": {
+      "p50": 1.9538698398973793,
+      "p95": 2.140942385583185,
+      "p99": 2.22594333865447
+    },
+    "visual_only_latency_seconds": {
+      "p50": 1.3433032978791744,
+      "p95": 1.5032259793020781,
+      "p99": 1.6191692286916075
+    },
+    "input_schedule_lag_seconds": {
+      "p50": 690.9738543698284,
+      "p95": 1240.4180536457,
+      "p99": 1287.5823477549789
+    },
+    "scheduled_vad_endpoint_to_write_seconds": {
+      "p50": 693.1330604689381,
+      "p95": 1242.4389923624124,
+      "p99": 1289.4134490920446
+    },
+    "input_schedule_note": "1x source timestamps; if processing falls behind, all recorded frames remain available and no frames are dropped; backlog is reported separately",
+    "stage_seconds": {
+      "vad": {
+        "p50": 0.006793600041419268,
+        "p95": 0.007755119982175529,
+        "p99": 0.012975361817516387,
+        "total": 4.3525599031709135
+      },
+      "decode": {
+        "p50": 1.1178562000859529,
+        "p95": 5.197797862393781,
+        "p99": 6.608869043169544,
+        "total": 1121.0098490375094
+      },
+      "face_detection_tracking": {
+        "p50": 2.8806555222254246,
+        "p95": 10.465597531502128,
+        "p99": 12.781417829031126,
+        "total": 2500.7391108446755
+      },
+      "after_endpoint_preparation": {
+        "p50": 0.8408933030441403,
+        "p95": 0.9303341093705967,
+        "p99": 1.0215558310691268,
+        "total": 525.9129223471973
+      },
+      "audio_decode": {
+        "p50": 0.008198099909350276,
+        "p95": 0.012182910367846488,
+        "p99": 0.016032550651580095,
+        "total": 5.4742229983676225
+      },
+      "A3": {
+        "p50": 0.0434260000474751,
+        "p95": 0.134265875373967,
+        "p99": 0.14330205746693536,
+        "total": 40.02937868563458
+      },
+      "V2": {
+        "p50": 0.046898600179702044,
+        "p95": 0.13332020919770002,
+        "p99": 0.152326939785853,
+        "total": 42.09711429011077
+      },
+      "V1": {
+        "p50": 0.04714770196005702,
+        "p95": 0.0543535788776353,
+        "p99": 0.06072703409940003,
+        "total": 29.123603395186365
+      },
+      "Q_A_video_decode": {
+        "p50": 8.998904377222061e-07,
+        "p95": 1.100124791264534e-06,
+        "p99": 1.200009137392044e-06,
+        "total": 0.0006825986783951521
+      },
+      "Q_A_preprocess": {
+        "p50": 0.13191279966849834,
+        "p95": 0.1555425252998248,
+        "p99": 0.1703379203658551,
+        "total": 80.7175824760925
+      },
+      "Q_A_forward": {
+        "p50": 0.19330839905887842,
+        "p95": 0.21373163863318045,
+        "p99": 0.23749830446438863,
+        "total": 118.28245755587704
+      },
+      "Q_A": {
+        "p50": 0.32586030196398497,
+        "p95": 0.3593220297712833,
+        "p99": 0.39074388523120435,
+        "total": 199.06056092842482
+      },
+      "Q_AV_video_decode": {
+        "p50": 0.034803248941898346,
+        "p95": 0.047725404798984516,
+        "p99": 0.05501354795647784,
+        "total": 22.43166407290846
+      },
+      "Q_AV_preprocess": {
+        "p50": 0.13997059292159975,
+        "p95": 0.16053276369348168,
+        "p99": 0.1736161009711213,
+        "total": 83.97067278204486
+      },
+      "Q_AV_forward": {
+        "p50": 0.3814669494749978,
+        "p95": 0.42280730594648047,
+        "p99": 0.4374775079381652,
+        "total": 235.50898431334645
+      },
+      "Q_AV": {
+        "p50": 0.562424247036688,
+        "p95": 0.6137919298256748,
+        "p99": 0.6443052715435621,
+        "total": 343.2448528651148
+      },
+      "fusion": {
+        "p50": 0.0007544001564383507,
+        "p95": 0.0009627199964597818,
+        "p99": 0.0012404061062261467,
+        "total": 0.4748829952441156
+      },
+      "Q_V_video_decode": {
+        "p50": 0.03386550000868738,
+        "p95": 0.03835189957171678,
+        "p99": 0.039273979999125,
+        "total": 0.44220799021422863
+      },
+      "Q_V_preprocess": {
+        "p50": 0.011164899915456772,
+        "p95": 0.01659740009345114,
+        "p99": 0.016636039996519685,
+        "total": 0.16288529755547643
+      },
+      "Q_V_forward": {
+        "p50": 0.29090004693716764,
+        "p95": 0.3317569746170193,
+        "p99": 0.3334627453330904,
+        "total": 3.8725219112820923
+      },
+      "Q_V": {
+        "p50": 0.3402400999329984,
+        "p95": 0.3766922342125326,
+        "p99": 0.3767623565439135,
+        "total": 4.479943897807971
+      }
+    },
+    "stage_note": "decode/detection describe full segments including work before endpoints; after_endpoint_preparation and GPU/fusion overlap no earlier input work",
+    "wall_seconds": 4659.975684297038,
+    "input_seconds": 3362.155951870812,
+    "real_time_factor_wall_over_input": 1.3860081896867626,
+    "rss_baseline_bytes": 2499502080,
+    "rss_end_bytes": 8344981504,
+    "rss_sampled_peak_bytes": 8421556224,
+    "rss_end_growth": 2.3386575553479836,
+    "rss_peak_growth": 2.369293545056782,
+    "rss_scope": "consumer and live descendants; baseline after both model loads before input; final includes producer resident RSS immediately before exit; peak sampled per event or one-second queue wait",
+    "gpu_peak_allocated_bytes": 12240628224,
+    "gpu_peak_reserved_bytes": 13178503168,
+    "events_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H_ref/events.jsonl",
+      "sha256": "c923984b72c4a29ac3d8d0e5d6cd92b5c1be8fdf96eb50ead76c4820a4ed4ab3"
+    },
+    "latency_receipts": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H_ref/latency_receipts.jsonl",
+      "sha256": "ad8ea32200eb4ae9e005acf0b24df128908b78c0ccb8793fae6dd8a9a633b4c8"
+    },
+    "actual_event_schedule_audit": {
+      "21": {
+        "events": 627,
+        "matches_frozen_schedule": true
+      }
+    },
+    "smoothing_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s5/freeze.json",
+      "sha256": "464c745193b50181e59f9c1dca2ef2412d6a1af8d3911a708a0fe4c476adc531"
+    },
+    "silence_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/freeze.json",
+      "sha256": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14"
+    },
+    "replay_speakers": [
+      "21"
+    ],
+    "stability_gate_applies": false,
+    "training": false,
+    "inference_replayed": false,
+    "bundle": {
+      "path": "configs/calibration_bundle_v1.1.json",
+      "sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7"
+    }
+  }
+}
