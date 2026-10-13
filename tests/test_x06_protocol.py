@@ -350,3 +350,27 @@ def test_s7_driver_never_starts_reference_after_failed_gate(tmp_path, monkeypatc
     assert calls[-1] == failed_stage
     assert 'realtime_H_ref' not in calls
     assert records[-1]['returncode'] == 1
+
+
+@pytest.mark.parametrize('left,right,expected', [
+    ({'status': 'failed'}, {'status': 'failed'}, True),
+    ({'status': 'failed'}, {'status': 'ok', 'output': 'video'}, False),
+    (None, {'status': 'failed'}, False),
+    ({'status': 'ok', 'output': 'a'}, {'status': 'ok', 'output': 'b'}, False),
+])
+def test_live_audit_handles_absent_q_video_without_masking_input_changes(monkeypatch, left, right, expected):
+    import numpy as np
+    from emotioncore.x06 import live_audit_revision2 as audit
+    monkeypatch.setattr(audit, 'sha256', lambda _: 'sha')
+    monkeypatch.setattr(audit.Service, 'audio', lambda _: np.zeros(3))
+    monkeypatch.setattr(audit, 'video_pixels', lambda path: (1, path))
+    base = {'wav': 'wav', 'wav_sha256': 'sha', 'face': {'crop_paths': [], 'track_scores': []}}
+    assert audit.inputs_equal(dict(base, q_video=left), dict(base, q_video=right))['q_video_pixels'] is expected
+
+
+def test_pending_live_audit_retry_cannot_fall_back_to_old_success(tmp_path, monkeypatch):
+    from emotioncore.x06 import revision2
+    monkeypatch.setattr(revision2, 'REV', tmp_path)
+    (tmp_path / 'live_audit_H3_retry').mkdir()
+    with pytest.raises(FileNotFoundError):
+        revision2.live_audit_summary('H3')

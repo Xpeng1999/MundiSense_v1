@@ -35,6 +35,12 @@ def done(task):
     return path.exists() and read(path)['status'] == 'completed'
 
 
+def live_audit_summary(system):
+    retry = REV / ('live_audit_' + system + '_retry')
+    directory = retry if retry.exists() else REV / ('live_audit_' + system)
+    return read(checked(read(directory / 'run_meta.json')['summary']))
+
+
 def s6b_gate(summary):
     if summary['cohort'] != 'fmh' or summary['n'] != 3266:
         raise RuntimeError('STOP S6b requires all FMH utterances')
@@ -78,7 +84,7 @@ def entry_gate(task):
             raise RuntimeError('STOP S3 report must precede replay')
     if task == 'realtime_H_ref' and not done('realtime_H3'):
         raise RuntimeError('STOP all four H3 streams must precede H_ref speaker 21')
-    if task == 'realtime_H_ref' and read(REV / 'live_audit_H3/summary.json')['status'] != 'completed':
+    if task == 'realtime_H_ref' and live_audit_summary('H3')['status'] != 'completed':
         raise RuntimeError('STOP H3 live audit has not completed')
 
 

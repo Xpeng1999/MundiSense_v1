@@ -31,13 +31,17 @@ def inputs_equal(a, b):
     qa, qb = a.get('q_video'), b.get('q_video')
     video = qa is None and qb is None
     if qa is not None and qb is not None:
-        video = qa['status'] == qb['status'] and video_pixels(qa['output']) == video_pixels(qb['output'])
+        # Failed media receipts intentionally have no output. Service consumes
+        # no Q video in this case; never treat a successful/missing pair as equal.
+        video = qa['status'] == qb['status']
+        if video and qa['status'] == 'ok':
+            video = video_pixels(qa['output']) == video_pixels(qb['output'])
     return {'audio_samples': audio, 'expert_crop_bytes': crops, 'q_video_pixels': video,
             'track_scores': a['face']['track_scores'] == b['face']['track_scores']}
 
 
-def run(system):
-    output = REV / ('live_audit_' + system); meta = start(output)
+def run(system, retry=False):
+    output = REV / ('live_audit_' + system + ('_retry' if retry else '')); meta = start(output)
     silence = selected_vad()['min_silence']; key = '04' if silence == .4 else '08'
     full_source = read(REV / ('emotion_' + key) / 'summary.json')['predictions']
     full = {r['segment_id']: r for r in rows(checked(full_source))}
@@ -86,4 +90,5 @@ def run(system):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('system', choices=('H3', 'H_ref'))
-    run(parser.parse_args().system)
+    parser.add_argument('--retry', action='store_true')
+    args = parser.parse_args(); run(args.system, args.retry)
