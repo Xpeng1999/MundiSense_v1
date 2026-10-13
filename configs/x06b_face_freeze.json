@@ -1,0 +1,88 @@
+{
+  "selected_scale": 0.5,
+  "detector": "YuNet unchanged",
+  "workers": 8,
+  "max_pending_frames": 16,
+  "source_speakers": [
+    "06",
+    "10",
+    "11"
+  ],
+  "candidates": [
+    {
+      "scale": 0.5,
+      "cohort": "fmh",
+      "speakers": [
+        "06",
+        "10",
+        "11"
+      ],
+      "elapsed_s": 603.594046551967,
+      "media_s": 17093.657100334025,
+      "throughput": 0.035310995359803504,
+      "frames": 85470,
+      "decode_seconds": 580.4586804539431,
+      "detector_work_seconds": 3522.6977435394656,
+      "frames_file": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/frames.jsonl",
+        "sha256": "2620bc1773b3ed710206327fa3214f0b71fc2621e15773b3b2fbf1aaef0ae81a"
+      },
+      "gpu_seconds": 0,
+      "includes_output_receipt_io": true,
+      "iou_median": 0.9009352465905055,
+      "iou_ge_07_fraction": 0.9947146372905191,
+      "iou_frame_denominator": 85330,
+      "both_target_absent_frames": 140
+    },
+    {
+      "scale": 0.3333333333333333,
+      "cohort": "fmh",
+      "speakers": [
+        "06",
+        "10",
+        "11"
+      ],
+      "elapsed_s": 567.1941715299617,
+      "media_s": 17093.657100334025,
+      "throughput": 0.03318155782584865,
+      "frames": 85470,
+      "decode_seconds": 557.6507658271585,
+      "detector_work_seconds": 1736.9360904225614,
+      "frames_file": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_third/frames.jsonl",
+        "sha256": "1ee6bde22472351636177eef636cf4d3acc87d20dd060a399a87ca0460552cca"
+      },
+      "gpu_seconds": 0,
+      "includes_output_receipt_io": true,
+      "iou_median": 0.886893255729364,
+      "iou_ge_07_fraction": 0.9941518411738509,
+      "iou_frame_denominator": 85326,
+      "both_target_absent_frames": 144
+    }
+  ],
+  "reference": {
+    "scale": 1.0,
+    "cohort": "fmh",
+    "speakers": [
+      "06",
+      "10",
+      "11"
+    ],
+    "elapsed_s": 2022.450705525931,
+    "media_s": 17093.657100334025,
+    "throughput": 0.11831585796151313,
+    "frames": 85470,
+    "decode_seconds": 602.4532400406897,
+    "detector_work_seconds": 16163.414577521617,
+    "frames_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_reference/frames.jsonl",
+      "sha256": "78b8512da2fd7068326375cf4212e6dc74b747938c57e9d3991a9633dbb72cac"
+    },
+    "gpu_seconds": 0,
+    "includes_output_receipt_io": true
+  },
+  "registration": {
+    "path": "configs/x06b_registration.json",
+    "sha256": "ed130e23687df7e027d76a0cdd973c95ba63eff8b173fab76673bb40d3ebf41e"
+  }
+}
