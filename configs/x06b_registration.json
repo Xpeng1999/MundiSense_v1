@@ -1,0 +1,33 @@
+{
+  "seed": 20261013,
+  "base_commit": "381d87bb63a1a1579bf9835fa600db11ac72135e",
+  "frozen_sha256": {
+    "configs/calibration_bundle_v1.1.json": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7",
+    "configs/x06_vad_freeze.json": "43cb46bc84417b9bff5cb20c7ab1edaa370ee98ccfaa21cfae4150d637cd6714",
+    "configs/x06_silence_freeze.json": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14",
+    "configs/x06_smoothing_freeze.json": "464c745193b50181e59f9c1dca2ef2412d6a1af8d3911a708a0fe4c476adc531",
+    "experiments/X06b_realtime/protocol/X06A_REVIEW.md": "c8ebec25ed8c09fc63ad68dc3f37403866a5c16a75431c25af5ceb831d0d0664",
+    "experiments/X06b_realtime/protocol/X06B_PROMPT.md": "f8ac4a1be449bd93764a6625c4bf9a3db0f2e31e4cd335b7933476395f2bfc0d"
+  },
+  "system": "H3",
+  "gpu_limit_hours": 14,
+  "face_scales": [
+    0.5,
+    0.3333333333333333
+  ],
+  "detector_workers": 8,
+  "max_pending_frames": 16,
+  "selection": {
+    "throughput_max": 0.5,
+    "criterion": "maximum_fraction_iou_ge_0.7",
+    "tie": "larger_scale"
+  },
+  "iou_denominator": "union of frame indices where either target track has a box; absent box scores zero; both absent excluded and separately counted",
+  "target_track_windows": "original X06a FMH truth utterances and each synthetic gap separately; all global 5fps frames included",
+  "throughput": "candidate decode-and-detection pipeline elapsed wall / all FMH media duration, including startup/drain; excludes separate original-detector reference pass and agreement analysis",
+  "decode": "sequential native-frame grab, retrieve only globally requested 5fps frames; original resolution; nearest native frame with last-frame clamp; gaps hold terminal source frame",
+  "budget": {
+    "future_margin": 0.2,
+    "initialization_reserve_seconds": 300
+  }
+}
