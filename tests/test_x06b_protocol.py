@@ -55,3 +55,64 @@ def test_box_rescaling_with_rounded_dimensions(monkeypatch):
     monkeypatch.setattr(detect._LOCAL,'detector',Detector(),raising=False)
     boxes,_=detect.detect(np.zeros((101,200,3),dtype=np.uint8),1/3)
     assert boxes[0]==pytest.approx([20,10.1,40,20.2])
+
+
+def test_incremental_crop_matches_x02_original_resolution_and_releases(tmp_path):
+    import cv2,numpy as np
+    from emotioncore.x06b.face import Tracker
+    from emotioncore.x06.face import Tracker as Old
+    from emotioncore.x02 import face as x02
+    frame=np.random.default_rng(13).integers(0,256,(100,200,3),dtype=np.uint8)
+    boxes=[[40,20,30,40]]
+    new=Tracker(tmp_path/'new');new.add(frame,0,boxes)
+    assert new.resident_frame_count==0 and not hasattr(new,'encoded')
+    result=new.finish();assert new.closed and not new.tracks and not new.paths
+    old=Old(None);x02.add_detections(old.tracks,0,boxes)
+    old.encoded[0]=cv2.imencode('.jpg',frame,[cv2.IMWRITE_JPEG_QUALITY,78])[1].tobytes();old.requested=1
+    expected=old.finish(tmp_path/'old')
+    assert Path(result['crop_paths'][0]).read_bytes()==Path(expected['crop_paths'][0]).read_bytes()
+    assert Path(result['whole_paths'][0]).read_bytes()==Path(expected['whole_paths'][0]).read_bytes()
+    with pytest.raises(RuntimeError):new.add(frame,1,boxes)
+
+
+def test_detector_pipeline_queue_has_finite_frame_bound(monkeypatch):
+    from emotioncore.x06b import detect
+    produced=consumed=0
+    def frames():
+        nonlocal produced
+        for i in range(100):
+            produced+=1;assert produced-consumed<=4
+            yield i,object()
+    monkeypatch.setattr(detect,'detect',lambda frame,scale:([],0))
+    for item,frame,boxes,seconds in detect.pipeline(frames(),.5,workers=2,capacity=4):consumed+=1
+    assert consumed==100
+
+
+def test_lowest_energy_window_is_interior_not_edges():
+    import numpy as np
+    from emotioncore.x06b.dialogue_streams import lowest_rms
+    x=np.r_[np.ones(1600),np.zeros(1600),np.ones(1600)]
+    assert lowest_rms(x)==0.
+    assert lowest_rms(np.ones(10))==1.
+
+
+def test_r3_bootstrap_is_paired_and_reproducible():
+    import numpy as np
+    from emotioncore.x06b.r3_analysis import paired
+    y=np.tile(np.arange(7),3);a={'op_n':y,'r90':y}
+    r=paired(y,a,a,iterations=50)
+    assert r==paired(y,a,a,iterations=50)
+    assert r['op_n']['ci95']==[0.,0.]
+    b={'op_n':y,'r90':np.full(len(y),-1)}
+    assert paired(y,a,b,iterations=50)['r90']['delta']==-1.
+
+
+def test_r4_averaging_mixed_face_routes_does_not_require_h_ref():
+    from emotioncore.x06b.r4_analysis import score
+    bundle=json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    p=[.1,.3,.05,.2,.05,.1,.2]
+    segments=[{'start_s':0.,'end_s':1.,'has_face':True,'track_scores':[1.],
+               'component_probs':{'Q_AV':p,'V2':p,'A3':p}},
+              {'start_s':1.,'end_s':2.,'has_face':False,'track_scores':[],
+               'component_probs':{'Q_AV':p,'Q_A':p,'V2':[1/7]*7,'A3':p}}]
+    assert 'label' in score(bundle,{'start_s':0.,'end_s':2.},segments)

@@ -2,6 +2,7 @@
 import threading, time
 from concurrent.futures import ThreadPoolExecutor
 from collections import deque
+from contextlib import nullcontext
 from emotioncore.x06.face import detector
 
 _LOCAL=threading.local()
@@ -17,11 +18,11 @@ def detect(frame, scale):
     return boxes,time.monotonic()-tic
 
 
-def pipeline(frames, scale, workers=8, capacity=16):
+def pipeline(frames, scale, workers=8, capacity=16, executor=None):
     """Yield in input order; at most capacity full-resolution frames in flight."""
     if workers<1 or capacity<workers: raise ValueError('invalid queue bounds')
     pending=deque()
-    with ThreadPoolExecutor(max_workers=workers) as pool:
+    with (nullcontext(executor) if executor is not None else ThreadPoolExecutor(max_workers=workers)) as pool:
         for item,frame in frames:
             pending.append((item,frame,pool.submit(detect,frame,scale)))
             if len(pending)>=capacity:
