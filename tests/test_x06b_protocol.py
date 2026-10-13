@@ -116,3 +116,44 @@ def test_r4_averaging_mixed_face_routes_does_not_require_h_ref():
               {'start_s':1.,'end_s':2.,'has_face':False,'track_scores':[],
                'component_probs':{'Q_AV':p,'Q_A':p,'V2':[1/7]*7,'A3':p}}]
     assert 'label' in score(bundle,{'start_s':0.,'end_s':2.},segments)
+
+
+def test_live_window_bank_releases_frames_and_matches_incremental_window(tmp_path):
+    import numpy as np
+    from emotioncore.x06b.realtime import WindowBank
+    bank=WindowBank(tmp_path);pixels=np.zeros((20,20,3),dtype=np.uint8)
+    for i in range(5):bank.add(i,pixels,[])
+    bank.update(('speech',0.),.6)
+    bank.prune({('speech',0.)},.6)
+    assert list(bank.frames)==[3,4]
+    for i in range(5,10):bank.add(i,pixels,[])
+    face=bank.finish(('speech',0.),1.6)
+    assert face['decoded_frames']==8
+    bank.prune(set(),2.)
+    assert not bank.frames and not bank.tracks and bank.high_water<=10
+
+
+def test_live_window_bank_refuses_to_hide_missing_frames(tmp_path):
+    import numpy as np
+    from emotioncore.x06b.realtime import WindowBank
+    bank=WindowBank(tmp_path);bank.add(1,np.zeros((20,20,3),dtype=np.uint8),[])
+    with pytest.raises(RuntimeError,match='missed'):bank.update(('speech',0.),.4)
+
+
+def test_budget_preserves_r4_new_correct_boundary_control():
+    from emotioncore.x06b.preflight import estimate
+    d={'06':{'entries':[{'kind':'utterance','duration_s':2.},{'kind':'gap','start_s':2.,'end_s':8.}]}}
+    result=estimate(1,d,{'both':2.,'Q_A':.3,'V1':.1},10.,.5)
+    assert result['stage_gpu_seconds']['R3_correct']==pytest.approx(1.6)
+    assert result['stage_gpu_seconds']['R4_correct_on_dialogue']==pytest.approx(1.6)
+    assert result['metadata_gap_windows']==3
+
+
+def test_stage_failure_cannot_launch_later_gpu(tmp_path,monkeypatch):
+    from types import SimpleNamespace
+    from emotioncore.x06b import stages
+    calls=[];monkeypatch.setattr(stages,'no_stop',lambda:None)
+    def invoke(cmd,**kwargs):calls.append(cmd);return SimpleNamespace(returncode=1)
+    monkeypatch.setattr(stages.subprocess,'run',invoke)
+    records,failed=stages.execute(tmp_path,[('r3_analysis','fmh'),('gpu_guard','r3_et_test')])
+    assert len(calls)==1 and failed=='r3_analysis_fmh'
