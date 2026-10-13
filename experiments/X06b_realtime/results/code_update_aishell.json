@@ -1,0 +1,30 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_aishell/summary.json",
+    "sha256": "1139e4f31bc8f2796caf662cf53813b0f72c3e4a10c0f433831c701e1fe10793"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_aishell/run_meta.json",
+    "sha256": "e94bd044d7c6b29af8e85f55f7d7c62ff393ece012a27c12b0d35a0da4718ea5"
+  },
+  "data": {
+    "status": "completed",
+    "previous_commit": "49599c7443942d5f7bcc910ec28c8eb64a94996e",
+    "changed_paths": [
+      "docs/X07_HANDOFF.md",
+      "experiments/X06b_realtime/README.md",
+      "experiments/X06b_realtime/REPORT.md",
+      "experiments/X06b_realtime/results/budget_after_r2.json",
+      "experiments/X06b_realtime/results/cpu_integration.json",
+      "experiments/X06b_realtime/results/stages_launch.json",
+      "experiments/X06b_realtime/results/unit_tests_frozen.json",
+      "src/emotioncore/x06b/aishell_test.py",
+      "tests/test_x06b_protocol.py"
+    ],
+    "driver_pid": 1736793,
+    "active_stage": "prepare_r3_fmh",
+    "active_stage_source_unchanged": true,
+    "reason": "Legacy AISHELL sources.json has no posterior receipt field; compatibility fix before that stage, with historical metric verification",
+    "gpu_seconds": 0
+  }
+}

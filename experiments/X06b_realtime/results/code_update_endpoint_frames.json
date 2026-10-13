@@ -1,0 +1,23 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_endpoint_frames/summary.json",
+    "sha256": "1e5ac1791f7cfea451fff582c3990825ac5c461d2626701e17d117c4ac425574"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_endpoint_frames/run_meta.json",
+    "sha256": "8d9be359adb780ecade969b2ae5ad63f3e429f6dfa572301b3a5c61daacdbbff"
+  },
+  "data": {
+    "status": "completed",
+    "previous_commit": "aef4c0f0f00042a854e6e893d066f27a0e1d103a",
+    "changed_paths": [
+      "src/emotioncore/x06b/realtime.py",
+      "tests/test_x06b_protocol.py"
+    ],
+    "driver_pid": 1736793,
+    "active_stage": "prepare_r3_fmh",
+    "active_stage_source_unchanged": true,
+    "reason": "Use existing integer frame_index grid to retain frames at floating-point-coincident VAD endpoints; confirmed by full causal producer regression including visual windows and 15-second maximum",
+    "gpu_seconds": 0
+  }
+}

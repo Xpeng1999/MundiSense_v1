@@ -25,7 +25,7 @@ PR #7 在 2026-10-13 03:12:42 UTC（北京时间 11:12:42）完成合入，merge
 | R5 | 未完成 |
 | 最终审计 | 未完成 |
 
-CPU 测试回执：[凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_frozen.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
+CPU 测试回执：[凭据](results/unit_tests_aishell_compat.json), [凭据](results/unit_tests_endpoint_frames.json), [凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_frozen.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
 
 FMH 前3句 CPU 集成：2 个事件，在线/全速 VAD 时序一致；原/新解码像素相同 62/62 帧，原始帧暂存高水位 6。[凭据](results/cpu_integration.json)
 
@@ -79,6 +79,10 @@ GPU计费按子进程完整墙钟，包含模型加载、CPU等待与实时等�
 X06a 历史停止、审计故障与未达标结果保留。X06b 不覆盖任何既有产物；未更换 GPU 检测器、训练或重拟合。
 
 当前尚未记录阶段驱动完成；事实以已完成回执为准。
+
+后续 AISHELL 入口兼容旧清单未记录后验字段的格式，使用原命名路径并复核旧配置帧/边界指标；不选择阈值。 两项均在相关阶段运行前修复，当前 R3 准备代码未变；短暂暂停调度期间 CPU 准备继续。[凭据](results/code_update_aishell.json)
+
+实时帧释放统一使用原整数帧网格，避免浮点端点提前删除下一静默窗口需要的帧；回归覆盖静默窗口与15秒强制切句。 两项均在相关阶段运行前修复，当前 R3 准备代码未变；短暂暂停调度期间 CPU 准备继续。[凭据](results/code_update_endpoint_frames.json)
 
 ## 11. 给 reviewer 的问题
 
