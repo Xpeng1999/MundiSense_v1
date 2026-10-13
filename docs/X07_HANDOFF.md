@@ -1,8 +1,6 @@
 # X07 交接：X06b 配置、入口与边界
 
-当前状态：**因旧 ET-test 汇总格式兼容缺陷停止，等待技术性恢复确认**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
-
-R3 FMH 分析达到非劣条件，ET-test 1,929 句推理已完成。GPU 实耗 0.962119 / 14 小时；R4、R5、曲线和最终审计未运行。`has_face` 格式兼容修复 `85c773d` 在隔离副本通过 62 项 CPU 测试，尚未部署到 eval_code。停止回执和失败溯源原样保留，恢复前需确认 [恢复边界](../experiments/X06b_realtime/STOP_RECOVERY.md)。现有一次性入口不得重新启动已执行阶段。
+当前状态：**执行中，尚未全部交付**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
 
 ## 固定部署配置
 
@@ -43,3 +41,5 @@ R4 对话时序流假设其他说话人的声音没有进入目标麦克风；�
 延迟以输出写出为终点，分别从实际 VAD 判定、计划 VAD 端点和真值句结束计算。一个真值句分成多事件时取最后贡献事件；未覆盖句单列。墙钟含末事件排空，GPU 总账另含初始化。内存基线固定为输入启动后第600秒首次采样，结束时补回生产者退出前 RSS；X06a 的基线口径不同，不能直接相减。
 
 当前入口面向登记的实验流，并非任意视频上传服务。后续阶段不得隐式改动模型、校准、VAD 或人脸配置，也不得根据 ET-test 结果选参。
+
+本轮已依 X06B_RESUME.md 获授权恢复。旧 ET-test 报表异常与原 STOP、失败 run_meta 保留；CPU 重试目录为 r3_analysis_et_test_retry1，恢复回执为 resume_authorization，续跑驱动为 stages_resume1。无需且不得重复启动原一次性驱动或重跑 R2/R3。后续顺序为 R4 → AISHELL-4 → R5 → 曲线 → 最终审计。新停止仍会拦截；恢复入口也只允许启动一次。详见 [恢复记录](../experiments/X06b_realtime/STOP_RECOVERY.md)。

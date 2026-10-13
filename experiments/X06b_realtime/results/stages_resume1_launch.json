@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1_launch/summary.json",
+    "sha256": "5055f39af2ef93b4c41bd419b8147efe38d6054979051999c1c331ca67bc6b14"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1_launch/run_meta.json",
+    "sha256": "cfcfa7ad4e84e5128fb86a81f430471eb8c7980dc1e1246a7b6c9a0bc91495af"
+  },
+  "data": {
+    "status": "dispatched",
+    "pid": 146620,
+    "authorization": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/summary.json",
+      "sha256": "988e070df9fb8f42e625180bc95d46394025fb9679c4673bb411642ed68f1ab7"
+    },
+    "gpu_seconds": 0
+  }
+}

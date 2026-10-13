@@ -2,14 +2,11 @@
 
 ## 1. 摘要
 
-- 状态：2026-10-13 14:35（北京时间）因旧 ET-test 汇总格式兼容缺陷停止；PR #8 保持 Draft、未合入。
+- 状态：执行中，尚未全部交付；PR #8 不合入。
 - GPU 实耗 0.962119 / 14 小时；不训练、不重新拟合，只测 H3。
 - v1.1、FSMN/0.3/0.4 秒与 α=0 冻结，旧目录只读。
 - R2 选中检测比例 0.5；吞吐比 0.035311。
 - R3 FMH OP-N Δ=-0.005144，95% CI [-0.011781240570322375, 0.0016558892232379546]；达到非劣验收条件。
-
-- ET-test 1,929 句推理完成，正式 R3 汇总未完成；R4、R5、曲线和最终审计未运行。
-- 修复 `85c773d` 的 62 项 CPU 测试通过；未部署、未恢复，等待技术性恢复确认。
 
 ## 2. 第 0 步
 
@@ -17,24 +14,23 @@ PR #7 在 2026-10-13 03:12:42 UTC（北京时间 11:12:42）完成合入，merge
 
 ## 3. 完成情况与偏离
 
-依据 [X06A_REVIEW.md](protocol/X06A_REVIEW.md) 与 [X06B_PROMPT.md](protocol/X06B_PROMPT.md)，当前状态：**阶段停止，未全部完成**。X06a 的切句损失与内存增长保留为历史，在本轮规定场景重测。执行口径在模型输出前登记于 [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)。
+依据 [X06A_REVIEW.md](protocol/X06A_REVIEW.md) 与 [X06B_PROMPT.md](protocol/X06B_PROMPT.md)，当前状态：**执行中，尚未全部交付**。X06a 的切句损失与内存增长保留为历史，在本轮规定场景重测。执行口径在模型输出前登记于 [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md)。
 
 人脸选择只读 FMH；ET-test 只报告；MER-test、SIMS-valid 不使用，CH-SIMS test 零推理。没有训练、重新拟合、VAD 参数调整或 GPU 检测器替换。全部新产物在 H 盘 X06b 目录，X06a 及更早目录只读。
 
 | 阶段 | 状态 |
 | --- | --- |
 | R2 | completed |
-| R3 FMH | 3,266 句及配对分析完成，非劣条件达到 |
-| R3 ET-test | 1,929 句推理完成；CPU 汇总异常，未生成正式分析摘要 |
-| R4（含 AISHELL-4 CPU 补测） | 未启动 |
-| R5、曲线 | 未启动 |
+| R3 | 完成 |
+| R4 | 未完成 |
+| R5 | 未完成 |
 | 最终审计 | 未完成 |
 
-CPU 测试回执：[凭据](results/unit_tests_aishell_compat.json), [凭据](results/unit_tests_endpoint_frames.json), [凭据](results/unit_tests_et_schema_fix.json), [凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_frozen.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
+CPU 测试回执：[凭据](results/unit_tests_aishell_compat.json), [凭据](results/unit_tests_endpoint_frames.json), [凭据](results/unit_tests_et_schema_fix.json), [凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_frozen.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_resume_control.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
 
 FMH 前3句 CPU 集成：2 个事件，在线/全速 VAD 时序一致；原/新解码像素相同 62/62 帧，原始帧暂存高水位 6。[凭据](results/cpu_integration.json)
 
-此次偏离仅为执行代码的旧格式兼容缺陷；修复未改变实验设计、选择规则、指标或阈值。停止后只核对既有产物并运行隔离 CPU 回归，未重跑推理。最新 CPU 回归为 **62 passed in 2.88s**，包含旧格式恢复、重复/错配 ID、缺失输入字段与冲突标志的拒绝测试。[测试回执](results/unit_tests_et_schema_fix.json)
+2026-10-13 的 [X06B_RESUME.md](protocol/X06B_RESUME.md) 授权恢复旧 ET-test 报表格式异常。原 STOP、失败日志、未结束 run_meta 和部分产物保留；恢复回执引用其 SHA 和授权原文。ET-test 在独立 CPU 重试目录复用已有推理，未重跑 R2/R3。恢复顺序为 R4 → AISHELL-4 CPU 补测 → R5 → 曲线 → 最终审计。[凭据](results/resume_authorization.json)
 
 ## 4. 管线改造与 R2 选型
 
@@ -59,14 +55,15 @@ R2 完整 FMH 06/10/11 流测量，吞吐为解码与检测流水线实际墙钟
 | --- | --- | --- | --- | --- | --- |
 | fmh | op_n | 0.701785 | 0.696641 | -0.005144 | [-0.011781240570322375, 0.0016558892232379546] |
 | fmh | r90 | 0.668878 | 0.668132 | -0.000746 | [-0.007612054018429617, 0.006611757286739232] |
+| et_test | op_n | 0.656062 | 0.645131 | -0.010931 | [-0.020633542296055095, -0.002120145407578171] |
+| et_test | r90 | 0.644436 | 0.641794 | -0.002643 | [-0.010879021242659487, 0.004803881582786166] |
 
 | 集合 | 旧覆盖 | 新覆盖 | 覆盖差 | Q-AV argmax一致率 | V2 argmax一致率 | 旧/新无脸句 |
 | --- | --- | --- | --- | --- | --- | --- |
 | fmh | 90.263% | 89.988% | -0.002756 | 95.989% | 90.968% | 7/4 |
+| et_test | 88.543% | 88.491% | -0.000518 | 95.645% | 92.068% | 4/0 |
 
-FMH OP-N 区间下界≥−0.02为验收，点估计<−0.05立即停止。ET-test只报告；原始配对记录及输入 SHA 留在服务器。[凭据](results/r3_analysis_fmh.json)
-
-ET-test 的 [推理回执](results/r3_et_test.json) 确认 1,929 句全部完成。旧、新预测和原输入各有 1,929 个唯一且一致的 ID，H3 分量概率均完整。旧预测均未保存 `has_face`；按原 Service 的输入规则可恢复旧无脸句数 4，新记录无脸句数 0。此为只读故障定位计数，正式 R3 ET-test 分析摘要尚未生成，未将失败阶段的部分配对文件视为完成结果。[停止诊断](results/stop_diagnosis_20261013.json)
+FMH OP-N 区间下界≥−0.02为验收，点估计<−0.05立即停止。ET-test只报告；原始配对记录及输入 SHA 留在服务器。[凭据](results/r3_analysis_fmh.json), [凭据](results/r3_analysis_et_test_retry1.json)
 
 ## 6. R4 对话时序流与切句
 
@@ -94,23 +91,19 @@ R5 以输入启动后第600秒首次采样为基线，记录消费者及子进�
 
 GPU计费按子进程完整墙钟，包含模型加载、CPU等待与实时等待；每个阶段后按实耗重估，超限就不启动下一阶段。计费与当前运行状态以服务器回执为准。
 
-停止时正式 GPU 总账为 **0.962119 / 14 小时**：FMH 2,157.239581 秒，ET-test 1,306.389186 秒，均正常返回。最后预算预测 **10.572962 小时**，预算门禁通过；停止原因是 CPU 汇总异常。停止后无实验进程。
-
-[FMH GPU 回执](results/gpu_jobs_r3_fmh.json)、[ET-test GPU 回执](results/gpu_jobs_r3_et_test.json)、[最后预算](results/budget_after_gpu_r3_et_test.json)。
+已完成 GPU 子进程累计 0.962119 / 14 小时；恢复的 CPU 汇总不增加 GPU 用时。
 
 ## 10. 异常
 
 X06a 历史停止、审计故障与未达标结果保留。X06b 不覆盖任何既有产物；未更换 GPU 检测器、训练或重拟合。
 
-2026-10-13 06:35:07 UTC（北京时间 14:35:07），`r3_analysis_et_test` 在统计旧无脸句数时抛出 `KeyError: has_face`。X06a 的 FMH 预测写入了该字段，ET-test 的旧格式没有；X06b 汇总代码错误地假定两者相同。这是执行代码缺陷，未触发 FMH F1 或 GPU 预算门槛。[阶段回执](results/stages.json)、[原始 STOP / 日志 / 元数据快照与诊断](results/stop_diagnosis_20261013.json)。
-
-原 STOP.json、失败日志、未完成的 run_meta 和部分 paired.jsonl 原样保留。该阶段没有 ended_at 或 summary.json，故不运行要求全部溯源结束的最终交付审计，也不补写虚假的成功回执。
-
-修复 `85c773d` 从 SHA 校验通过的原输入恢复旧 Service 的人脸标志，逐句核对唯一 ID；已有标志必须与输入一致。只增加报表字段的兼容性与来源记录，不改概率、模型、拟合参数或统计规则。隔离 check_code 的 62 项 CPU 测试通过；eval_code 仍为 `4c47c6a`，没有部署该修复或启动后续实验。技术性恢复范围见 [STOP_RECOVERY.md](STOP_RECOVERY.md)。
+当前尚未记录阶段驱动完成；事实以已完成回执为准。
 
 后续 AISHELL 入口兼容旧清单未记录后验字段的格式，使用原命名路径并复核旧配置帧/边界指标；不选择阈值。 两项均在相关阶段运行前修复，当前 R3 准备代码未变；短暂暂停调度期间 CPU 准备继续。[凭据](results/code_update_aishell.json)
 
 实时帧释放统一使用原整数帧网格，避免浮点端点提前删除下一静默窗口需要的帧；回归覆盖静默窗口与15秒强制切句。 两项均在相关阶段运行前修复，当前 R3 准备代码未变；短暂暂停调度期间 CPU 准备继续。[凭据](results/code_update_endpoint_frames.json)
+
+历史停止：2026-10-13 14:35:07（北京时间），旧 ET-test 结果未存 has_face，报表统计无脸句数时 KeyError。修复 85c773d 从已校验原输入恢复描述性标志，不改概率或指标。原失败证据及独立成功重试分别保留；新 STOP 仍阻止运行。见 [停止诊断](results/stop_diagnosis_20261013.json)、[恢复范围](STOP_RECOVERY.md)及[凭据](results/resume_authorization.json)。 70 项 CPU 回归通过，覆盖恢复授权 SHA、证据不变、新停止拦截、历史失败审计及不重复推理。[凭据](results/unit_tests_resume_control.json)
 
 ## 11. 给 reviewer 的问题
 
@@ -118,6 +111,4 @@ X06a 历史停止、审计故障与未达标结果保留。X06b 不覆盖任何�
 | --- | --- | --- | --- |
 | R3 FMH | OP-N CI下界≥−0.02 | -0.011781 | True |
 
-状态：阶段停止，未全部完成。ET-test不参与选择。结果不好仍按原协议呈现，不改门槛或标签；PR #8 保持未合入，最终验收由 reviewer 判断。
-
-需要 user / reviewer 确认上述技术性恢复：保留历史失败证据，以独立重试目录补做 CPU 汇总并重新核验预算，再从首个未执行阶段继续；不重跑已完成推理，不改变科学协议。当前阶段维持停止。
+状态：执行中，尚未全部交付。ET-test不参与选择。结果不好仍按原协议呈现，不改门槛或标签；PR #8 保持未合入，最终验收由 reviewer 判断。
