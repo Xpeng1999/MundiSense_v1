@@ -43,3 +43,5 @@ R4 对话时序流假设其他说话人的声音没有进入目标麦克风；�
 当前入口面向登记的实验流，并非任意视频上传服务。后续阶段不得隐式改动模型、校准、VAD 或人脸配置，也不得根据 ET-test 结果选参。
 
 本轮已依 X06B_RESUME.md 获授权恢复。旧 ET-test 报表异常与原 STOP、失败 run_meta 保留；CPU 重试目录为 r3_analysis_et_test_retry1，恢复回执为 resume_authorization，续跑驱动为 stages_resume1。无需且不得重复启动原一次性驱动或重跑 R2/R3。后续顺序为 R4 → AISHELL-4 → R5 → 曲线 → 最终审计。新停止仍会拦截；恢复入口也只允许启动一次。详见 [恢复记录](../experiments/X06b_realtime/STOP_RECOVERY.md)。
+
+R4 当前已完成新对话流及两集合正确切句推理（FMH 3,266 句、ET-test 1,929 句）。冻结 VAD 产生 FMH 3,602 个语音段与 7,278 个静默窗口，ET-test 2,229 个语音段与 4,144 个静默窗口；情绪 VAD 推理与正式 R4 差值尚未全部完成。详见报告及相应回执。
