@@ -29,6 +29,8 @@ def steps():
         yield 'budget','after_analysis_r4_'+cohort
     yield 'gpu_guard','r5'
     yield 'budget','after_r5'
+    yield 'curves',
+    yield 'budget','after_curves'
 
 
 def execute(out,stage_plan):
