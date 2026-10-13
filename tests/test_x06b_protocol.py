@@ -107,6 +107,30 @@ def test_r3_bootstrap_is_paired_and_reproducible():
     assert paired(y,a,b,iterations=50)['r90']['delta']==-1.
 
 
+def test_r3_legacy_face_metadata_comes_from_original_inputs_without_mutation():
+    from emotioncore.x06b.r3_analysis import original_face_flags
+    predictions=[{'utt_id':'b'},{'utt_id':'a'},{'utt_id':'c','has_face':False}]
+    inputs=[{'utt_id':'a','q_video':{'status':'ok'}},
+            {'utt_id':'b','q_video':None},{'utt_id':'c','q_video':{'status':'no_face'}}]
+    before=json.dumps([predictions,inputs],sort_keys=True)
+    assert original_face_flags(predictions,inputs)=={'a':True,'b':False,'c':False}
+    assert json.dumps([predictions,inputs],sort_keys=True)==before
+
+
+@pytest.mark.parametrize('predictions,inputs',[
+    ([{'utt_id':'a'}],[{'utt_id':'b','q_video':None}]),
+    ([{'utt_id':'a'},{'utt_id':'a'}],[{'utt_id':'a','q_video':None}]),
+    ([{'utt_id':'a'}],[{'utt_id':'a','q_video':None},{'utt_id':'a','q_video':None}]),
+    ([{'utt_id':'a'}],[{'utt_id':'a'}]),
+    ([{'utt_id':'a'}],[{'utt_id':'a','q_video':{}}]),
+    ([{'utt_id':'a','has_face':True}],[{'utt_id':'a','q_video':None}]),
+])
+def test_r3_legacy_face_metadata_rejects_incomplete_or_conflicting_sources(predictions,inputs):
+    from emotioncore.x06b.r3_analysis import original_face_flags
+    with pytest.raises(RuntimeError,match='STOP face'):
+        original_face_flags(predictions,inputs)
+
+
 def test_r4_averaging_mixed_face_routes_does_not_require_h_ref():
     from emotioncore.x06b.r4_analysis import score
     bundle=json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
