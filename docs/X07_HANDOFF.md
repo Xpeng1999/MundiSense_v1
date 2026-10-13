@@ -1,3 +1,17 @@
+# X07 交接：X06b 部署配置与边界（执行中）
+
+X06b 尚未完成，当前文档不代表可验收的最终部署配置。冻结模型为 X04b Q_mix best_adapter_eval8、X05 D1_fmhx；参数包为 calibration_bundle_v1.1.json；VAD 为 FSMN / 0.3 / 最短静音0.4秒，α=0。默认只测H3。人脸配置必须来自 FMH 的 R2 选择，待 configs/x06b_face_freeze.json 提交后才可运行后续阶段。
+
+阶段全速入口由 emotioncore.x06b.gpu_guard 执行 r3_fmh / r3_et_test / r4_correct_* / r4_vad_*；实时入口为 gpu_guard r5。完整顺序由 emotioncore.x06b.stages --launch 驱动，各阶段须满足冻结、数据范围和预算依赖，不可绕过 watchdog 直接调用 infer 或 realtime。
+
+运行仅允许本轮登记的 FMH、ET-test 流，非通用外部视频服务。旧目录只读，所有新输入缓存、事件和回执存 X06b。当前 GPU 上限14小时，不训练或重拟合。不得把 ET-test 结果用于选择人脸参数。
+
+R4 对话时序流只渲染目标说话人的媒体，假设其他人的声音未进入目标麦克风；保留原 X06a 短停顿流作最坏参考。裁剪始终来自原分辨率帧，YuNet仅缩小检测输入；关联、排序、多脸与质量规则不变。
+
+以下为 X06a 已验收的历史基线，X06b 最终结果以 experiments/X06b_realtime/REPORT.md 为准；本轮完成后更新本文件的部署配置和测量结果。
+
+---
+
 # X06b 交接：连续流与人脸管线接口
 
 X06a 修订 2 的全部测量与最终交付审计已完成，等待 reviewer 验收。ET-test 1,929 句与 FMH 3,266 句正确切句齐全，原 1,184 句逐字节复用。FMH H3 S6b OP-N macro-F1 差 +0.008625，95% CI [−0.001436, +0.018895]，达到区间下界 ≥−0.02 条件。最短静音选中 0.4 秒、α=0；FSMN / 0.3 与全部拟合参数保持冻结。
