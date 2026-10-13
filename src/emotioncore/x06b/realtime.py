@@ -43,7 +43,7 @@ class WindowBank:
             if index/5<retain_from:del self.frames[index]
 
 
-def producer(sources,config,out,messages,begin):
+def producer(sources,config,out,messages,begin,realtime=True):
     import soundfile as sf
     try:
         vad=Posterior('fsmn');messages.put({'kind':'ready'});begin.wait()
@@ -53,7 +53,8 @@ def producer(sources,config,out,messages,begin):
                 assert sr==16000 and signal.ndim==1
                 video=Video(timeline);machine=LiveEvents(.3,.4);bank=WindowBank(out/'crops'/speaker)
                 started=time.monotonic();next_frame=event_number=0;totals={'decode':0.,'detection_work':0.,'vad':0.}
-                def wait_until(when):time.sleep(max(0.,started+when-time.monotonic()))
+                def wait_until(when):
+                    if realtime:time.sleep(max(0.,started+when-time.monotonic()))
                 def feed(when):
                     nonlocal next_frame
                     def frames():

@@ -5,6 +5,7 @@ from emotioncore.x06b.prepare import frozen_face
 
 
 def steps():
+    yield 'cpu_integration',
     yield 'budget','after_r2'
     for cohort in ['fmh','et_test']:
         yield 'prepare','r3',cohort
