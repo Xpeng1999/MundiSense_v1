@@ -44,4 +44,4 @@ R4 对话时序流假设其他说话人的声音没有进入目标麦克风；�
 
 本轮已依 X06B_RESUME.md 获授权恢复。旧 ET-test 报表异常与原 STOP、失败 run_meta 保留；CPU 重试目录为 r3_analysis_et_test_retry1，恢复回执为 resume_authorization，续跑驱动为 stages_resume1。无需且不得重复启动原一次性驱动或重跑 R2/R3。后续顺序为 R4 → AISHELL-4 → R5 → 曲线 → 最终审计。新停止仍会拦截；恢复入口也只允许启动一次。详见 [恢复记录](../experiments/X06b_realtime/STOP_RECOVERY.md)。
 
-R4 当前已完成新对话流及两集合正确切句推理（FMH 3,266 句、ET-test 1,929 句）。冻结 VAD 产生 FMH 3,602 个语音段与 7,278 个静默窗口，ET-test 2,229 个语音段与 4,144 个静默窗口；情绪 VAD 推理与正式 R4 差值尚未全部完成。详见报告及相应回执。
+R4 的 FMH 3,266 句与 ET-test 1,929 句正确切句推理已完成；FMH 全部 10,880 个 VAD 事件也已完成。当前 ET-test VAD 输入准备进行中，R4 正式差值尚未完成。已结束 GPU 子进程累计 3.577370 小时，最新总预算预测 9.763181 / 14 小时。
