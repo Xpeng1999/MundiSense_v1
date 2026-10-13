@@ -27,7 +27,7 @@ def run():
         def put(self,value):self.values.append(value)
     messages=Messages();ready=threading.Event();ready.set()
     producer(sources,config,out,messages,ready,realtime=False)
-    fresh=[m['item'] for m in messages.values() if m['kind']=='segment']
+    fresh=[m['item'] for m in messages.values if m['kind']=='segment']
     model=Posterior('fsmn');machine=LiveEvents(.3,.4);expected=[]
     for chunk in posterior_chunks(model,signal):
         for p in chunk['probabilities']:expected.extend(machine.advance(p))
@@ -35,7 +35,7 @@ def run():
     keys=['start_s','end_s','decision_s','source','visual_only']
     assert [{k:r[k] for k in keys} for r in fresh]==[{k:r[k] for k in keys} for r in expected]
     assert fresh and all(Path(r['wav']).exists() for r in fresh)
-    stream=[m for m in messages.values() if m['kind']=='stream_finished'][0]
+    stream=[m for m in messages.values if m['kind']=='stream_finished'][0]
     assert stream['raw_frame_high_water']<=32
     (out/'inputs.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in fresh))
     finish(out,meta,{'status':'completed','cohort':'fmh','speaker':'06','utterances':3,'events':len(fresh),
