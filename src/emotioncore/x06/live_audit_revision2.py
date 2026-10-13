@@ -40,7 +40,37 @@ def inputs_equal(a, b):
             'track_scores': a['face']['track_scores'] == b['face']['track_scores']}
 
 
+def close_failed_audit(system):
+    """Close the crashed CPU attempt without losing its original metadata."""
+    original = REV / ('live_audit_' + system)
+    previous = read(original / 'run_meta.json')
+    if previous.get('ended_at'):
+        assert read(checked(previous['summary']))['status'] == 'failed'
+        return
+    driver = read(REV / 's7_driver/summary.json')
+    assert driver['status'] == 'stopped' and driver['problem_stage'] == 'audit_' + system
+    stage = driver['stages'][-1]
+    assert stage['returncode'] != 0
+    log = Path(checked(stage['log'])).read_text()
+    assert "KeyError: 'output'" in log and 'inputs_equal' in log
+    recovery = REV / ('audit_failure_recovery_' + system)
+    meta = start(recovery)
+    snapshot = recovery / 'original_run_meta.json'
+    snapshot.write_bytes((original / 'run_meta.json').read_bytes())
+    summary = {'status': 'failed', 'system': system, 'gpu_seconds': 0,
+        'error': "KeyError: 'output' in CPU inputs_equal audit",
+        'failure_observed_at': stage['ended_at'], 'closed_at': now(),
+        'original_run_meta': spec(snapshot), 'driver': spec(REV / 's7_driver/summary.json'),
+        'log': stage['log'], 'note': 'Recovered bookkeeping only; original metadata preserved verbatim; no successful audit claimed'}
+    write_json_atomic(original / 'summary.json', summary)
+    previous.update(ended_at=stage['ended_at'], summary=spec(original / 'summary.json'))
+    write_json_atomic(original / 'run_meta.json', previous)
+    finish(recovery, meta, summary)
+
+
 def run(system, retry=False):
+    if retry:
+        close_failed_audit(system)
     output = REV / ('live_audit_' + system + ('_retry' if retry else '')); meta = start(output)
     silence = selected_vad()['min_silence']; key = '04' if silence == .4 else '08'
     full_source = read(REV / ('emotion_' + key) / 'summary.json')['predictions']
