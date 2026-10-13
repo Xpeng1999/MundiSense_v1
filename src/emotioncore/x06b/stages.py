@@ -50,6 +50,8 @@ def run():
     if failed:
         if not (ROOT/'STOP.json').exists():stop('execution',failed,spec(out/'summary.json'))
         raise RuntimeError('STOP '+failed)
+    from emotioncore.x06b.delivery import run as audit
+    audit()
 
 
 def launch():
