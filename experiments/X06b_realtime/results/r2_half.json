@@ -1,0 +1,31 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/summary.json",
+    "sha256": "911246db32922a4e9edf0b171a566547517e104ab970d3bb5306d104179ee3e6"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/run_meta.json",
+    "sha256": "a76b23043030b458811684b9f6e4cfa40e90ca1c3f3ae6c3e73a3499bb748683"
+  },
+  "data": {
+    "scale": 0.5,
+    "cohort": "fmh",
+    "speakers": [
+      "06",
+      "10",
+      "11"
+    ],
+    "elapsed_s": 603.594046551967,
+    "media_s": 17093.657100334025,
+    "throughput": 0.035310995359803504,
+    "frames": 85470,
+    "decode_seconds": 580.4586804539431,
+    "detector_work_seconds": 3522.6977435394656,
+    "frames_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/frames.jsonl",
+      "sha256": "2620bc1773b3ed710206327fa3214f0b71fc2621e15773b3b2fbf1aaef0ae81a"
+    },
+    "gpu_seconds": 0,
+    "includes_output_receipt_io": true
+  }
+}

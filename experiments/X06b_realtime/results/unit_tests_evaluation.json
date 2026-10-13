@@ -1,0 +1,18 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation/summary.json",
+    "sha256": "cfd62754b46496108729cf8df299d24ae5e9171e1547287db50583b363169d07"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation/run_meta.json",
+    "sha256": "4d8f147354d2b0a79c3748dc1ab2a36f07d7f50e7ad0ee0b5a4f0a202d13e0e0"
+  },
+  "data": {
+    "returncode": 0,
+    "stdout": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation/pytest.txt",
+      "sha256": "8fc3464c750eff1aa57062990e96e0198e5462d45eac1209748d290476cecb31"
+    },
+    "gpu_seconds": 0
+  }
+}
