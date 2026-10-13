@@ -37,8 +37,14 @@ def paired(y,a,b,seed=20261013,iterations=2000):
     return result
 
 
-def run(cohort):
-    no_stop();out,meta=start('r3_analysis_'+cohort)
+def run(cohort,retry_authorized=False):
+    no_stop();task='r3_analysis_'+cohort
+    if retry_authorized:
+        from emotioncore.x06b.recovery import validated_authorization,analysis_task
+        validated_authorization()
+        if cohort!='et_test':raise RuntimeError('STOP retry authorized for ET-test summary only')
+        task=analysis_task(cohort)
+    out,meta=start(task)
     path=OLD/('fmh_stream_oracle' if cohort=='fmh' else 'revision2/et_remaining')/'summary.json'
     old_summary=read(path);old_source=old_summary['predictions'];new_source=read(ROOT/f'r3_{cohort}/summary.json')['predictions']
     old_records=rows(checked(old_source));old_inputs=old_summary['inputs']
@@ -63,4 +69,5 @@ def run(cohort):
     if status!='completed':stop('R3',status,spec(out/'summary.json'));raise RuntimeError(status)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('cohort',choices=['fmh','et_test']);run(p.parse_args().cohort)
+    p=argparse.ArgumentParser();p.add_argument('cohort',choices=['fmh','et_test'])
+    p.add_argument('--retry-authorized',action='store_true');a=p.parse_args();run(a.cohort,a.retry_authorized)

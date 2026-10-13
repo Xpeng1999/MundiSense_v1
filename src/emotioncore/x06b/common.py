@@ -51,11 +51,20 @@ def checked(receipt):
 
 
 def no_stop():
-    if (ROOT/'STOP.json').exists(): raise RuntimeError('STOP receipt present; no further experiments')
+    if list((ROOT/'stops').glob('*.json')):
+        raise RuntimeError('STOP newer receipt present; no further experiments')
+    if (ROOT/'STOP.json').exists():
+        from emotioncore.x06b.recovery import validated_authorization
+        validated_authorization()
 
 
 def stop(stage, reason, evidence):
-    write_json_atomic(ROOT/'STOP.json', {'status':'stopped','stage':stage,'reason':reason,'at':now(),'evidence':evidence})
+    path=ROOT/'STOP.json'
+    if path.exists():
+        import uuid
+        directory=ROOT/'stops';directory.mkdir(exist_ok=True)
+        path=directory/(uuid.uuid4().hex+'.json')
+    write_json_atomic(path, {'status':'stopped','stage':stage,'reason':reason,'at':now(),'evidence':evidence})
 
 
 def source_timeline(speaker):

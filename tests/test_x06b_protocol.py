@@ -233,3 +233,73 @@ def test_live_producer_retains_coincident_endpoint_frames_and_silence_windows(tm
     assert any(r['visual_only'] for r in actual)
     assert any(r['end_s']-r['start_s']==15. for r in actual)
     assert max(m['raw_frame_high_water'] for m in messages.values if m['kind']=='stream_finished')<=32
+
+
+@pytest.fixture
+def recovery_evidence(tmp_path,monkeypatch):
+    from emotioncore.x06b import common,recovery
+    monkeypatch.setattr(common,'ROOT',tmp_path)
+    monkeypatch.setattr(recovery,'PLAN',tmp_path/'resume_plan.json')
+    def write(path,data):
+        path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(data));return common.spec(path)
+    stop=write(tmp_path/'STOP.json',{'status':'stopped','reason':'r3_analysis_et_test'})
+    approval=tmp_path/'approval.md';approval.write_text('explicit recovery approval')
+    failed=write(tmp_path/'r3_analysis_et_test/run_meta.json',{'git':{'dirty':False},'started_at':'earlier'})
+    log=tmp_path/'failure.log';log.write_text('KeyError: has_face')
+    record={'stage':'r3_analysis_et_test','returncode':1,'ended_at':'stopped','log':common.spec(log)}
+    driver=write(tmp_path/'stages/summary.json',{'status':'stopped','failed_stage':'r3_analysis_et_test','stages':[record]})
+    plan={'approval_snapshot':common.spec(approval),'approval_original_file':common.spec(approval),
+          'gpu_limit_hours':14,'no_gpu_reinference':True,'historical_stop':stop,
+          'preserved':[stop,failed,driver,common.spec(log)],'failed_run_meta':failed,
+          'failed_stage_summary':driver,'failed_stage':'r3_analysis_et_test','retry_output':'r3_analysis_et_test_retry1'}
+    write(recovery.PLAN,plan)
+    receipt=write(tmp_path/'resume_authorization/summary.json',{'status':'authorized','registration':common.spec(recovery.PLAN),'historical_stop':stop})
+    write(tmp_path/'resume_authorization/run_meta.json',{'git':{'dirty':False},'ended_at':'authorized','summary':receipt})
+    return common,recovery,plan
+
+
+def test_recovery_preserves_original_stop_and_every_new_stop_blocks(recovery_evidence):
+    c,recovery,plan=recovery_evidence
+    original=(c.ROOT/'STOP.json').read_bytes();c.no_stop()
+    c.stop('budget','new failure',{'path':'budget.json','sha256':'x'})
+    assert (c.ROOT/'STOP.json').read_bytes()==original
+    assert len(list((c.ROOT/'stops').glob('*.json')))==1
+    with pytest.raises(RuntimeError,match='newer receipt'):c.no_stop()
+
+
+@pytest.mark.parametrize('target',['approval.md','STOP.json','failure.log','r3_analysis_et_test/run_meta.json'])
+def test_recovery_rejects_changed_authorization_or_preserved_evidence(recovery_evidence,target):
+    c,recovery,plan=recovery_evidence
+    with (c.ROOT/target).open('a') as stream:stream.write('\nchanged')
+    with pytest.raises(RuntimeError,match='SHA changed'):c.no_stop()
+
+
+def test_recovery_requires_completed_receipt(recovery_evidence):
+    c,recovery,plan=recovery_evidence
+    p=c.ROOT/'resume_authorization/run_meta.json';data=json.loads(p.read_text());del data['ended_at'];p.write_text(json.dumps(data))
+    with pytest.raises(RuntimeError,match='provenance'):c.no_stop()
+    p.unlink()
+    with pytest.raises(RuntimeError,match='without completed'):c.no_stop()
+
+
+def test_delivery_distinguishes_exact_historical_failure_from_success_and_other_incomplete(recovery_evidence):
+    from emotioncore.x06b.delivery import provenance_record
+    c,recovery,plan=recovery_evidence;history=recovery.historical_failure()
+    p=Path(plan['failed_run_meta']['path']);before=p.read_bytes()
+    assert provenance_record(p,history)['status']=='historical_failed'
+    assert p.read_bytes()==before and 'ended_at' not in json.loads(before)
+    other=c.ROOT/'another_run_meta.json';other.write_bytes(before)
+    with pytest.raises(RuntimeError,match='incomplete provenance'):provenance_record(other,history)
+    assert recovery.analysis_task('et_test')=='r3_analysis_et_test_retry1'
+    assert recovery.analysis_task('fmh')=='r3_analysis_fmh'
+
+
+def test_resume_plan_never_repeats_r2_r3_gpu_and_preserves_authorized_order():
+    from emotioncore.x06b.resume import steps
+    plan=list(steps())
+    assert plan[0]==('r3_analysis','et_test','--retry-authorized')
+    assert plan[1]==('budget','after_retry_r3_et_test')
+    gpu=[s[1] for s in plan if s[0]=='gpu_guard']
+    assert gpu==['r4_correct_fmh','r4_correct_et_test','r4_vad_fmh','r4_vad_et_test','r5']
+    assert not any(s[0]=='r2' or (s[0]=='prepare' and s[1]=='r3') for s in plan)
+    assert plan.index(('r4_analysis','et_test'))<plan.index(('aishell_test',))<plan.index(('gpu_guard','r5'))
