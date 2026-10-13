@@ -1,0 +1,27 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/audit_failure_recovery_H3/summary.json",
+    "sha256": "ce6ca830259832165c255828ce3a25916ec970a0e1389d0482e39914e6d4e54c"
+  },
+  "data": {
+    "status": "failed",
+    "system": "H3",
+    "gpu_seconds": 0,
+    "error": "KeyError: 'output' in CPU inputs_equal audit",
+    "failure_observed_at": "2026-10-12T11:42:03.301478+00:00",
+    "closed_at": "2026-10-13T00:54:07.869543+00:00",
+    "original_run_meta": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/audit_failure_recovery_H3/original_run_meta.json",
+      "sha256": "ba6d4d0e763d8bdb5cfbb61a82db31a8a26a20cbe8961dd6d1c45a6693cca4a5"
+    },
+    "driver": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/summary.json",
+      "sha256": "e072a7cb2f7b33cf89ac37633355a8c3f14eb8bc7bd95d0d08e4aa05f59b1e27"
+    },
+    "log": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/audit_H3.log",
+      "sha256": "3ec77ef71544959b81456680cf4d0d931107177f68d2e0a390b3097a3789d007"
+    },
+    "note": "Recovered bookkeeping only; original metadata preserved verbatim; no successful audit claimed"
+  }
+}

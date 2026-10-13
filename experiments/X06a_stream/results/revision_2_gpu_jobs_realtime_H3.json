@@ -1,0 +1,14 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/realtime_H3/summary.json",
+    "sha256": "1643864035b85127c73b2fc7fc299651d3380032adfc62ded78c16f9d4891ff2"
+  },
+  "data": {
+    "status": "completed",
+    "problem": null,
+    "returncode": 0,
+    "charged_gpu_s": 14692.64446602785,
+    "total_charged_gpu_s": 31322.210631584283,
+    "accounting": "full child wall time, including initialization, CPU work and playback waits"
+  }
+}

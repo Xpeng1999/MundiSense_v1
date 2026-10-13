@@ -1,0 +1,283 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/summary.json",
+    "sha256": "7050c48868634e038ff1c8edecebfd252c571bc59a2cf9e3ab48237d9edeea13"
+  },
+  "data": {
+    "system": "H3",
+    "alpha": 0.0,
+    "realtime": true,
+    "events": 1933,
+    "streams": {
+      "02": {
+        "kind": "stream_finished",
+        "speaker_id": "02",
+        "input_duration_s": 2439.138163496447,
+        "events": 377,
+        "producer_wall_s": 3208.2990877230186,
+        "totals": {
+          "vad": 17.188047581119463,
+          "decode": 931.5989469259512,
+          "face_detection": 1913.456470724428
+        },
+        "audio_load_seconds": 0.5256161978468299,
+        "source_terminal_frame_clamps": 271
+      },
+      "13": {
+        "kind": "stream_finished",
+        "speaker_id": "13",
+        "input_duration_s": 1954.469008055148,
+        "events": 387,
+        "producer_wall_s": 2677.52853023191,
+        "totals": {
+          "vad": 13.763923050137237,
+          "decode": 723.0938471946865,
+          "face_detection": 1610.5670876624063
+        },
+        "audio_load_seconds": 0.5258009000681341,
+        "source_terminal_frame_clamps": 257
+      },
+      "20": {
+        "kind": "stream_finished",
+        "speaker_id": "20",
+        "input_duration_s": 2999.313827732979,
+        "events": 542,
+        "producer_wall_s": 4143.61060854001,
+        "totals": {
+          "vad": 21.166387791978195,
+          "decode": 1187.604397875024,
+          "face_detection": 2471.247871988453
+        },
+        "audio_load_seconds": 0.9300578159745783,
+        "source_terminal_frame_clamps": 344
+      },
+      "21": {
+        "kind": "stream_finished",
+        "speaker_id": "21",
+        "input_duration_s": 3362.155951870812,
+        "events": 627,
+        "producer_wall_s": 4620.652797596995,
+        "totals": {
+          "vad": 23.79380724625662,
+          "decode": 1293.8029096936807,
+          "face_detection": 2772.670795301674
+        },
+        "audio_load_seconds": 1.404466507025063,
+        "source_terminal_frame_clamps": 416
+      }
+    },
+    "latency_seconds": {
+      "p50": 1.5851973448880017,
+      "p95": 1.7577058831695467,
+      "p99": 1.8251909632422034
+    },
+    "speech_latency_seconds": {
+      "p50": 1.5893840425414965,
+      "p95": 1.7583763676113449,
+      "p99": 1.8274027017550543
+    },
+    "visual_only_latency_seconds": {
+      "p50": 1.3225841028615832,
+      "p95": 1.4436660742852836,
+      "p99": 1.507386693218723
+    },
+    "input_schedule_lag_seconds": {
+      "p50": 529.1129649860784,
+      "p95": 1118.260137626374,
+      "p99": 1230.3281610061977
+    },
+    "scheduled_vad_endpoint_to_write_seconds": {
+      "p50": 530.6953188380039,
+      "p95": 1119.8373452831374,
+      "p99": 1231.8921542682783
+    },
+    "input_schedule_note": "1x source timestamps; if processing falls behind, all recorded frames remain available and no frames are dropped; backlog is reported separately",
+    "stage_seconds": {
+      "vad": {
+        "p50": 0.006997399963438511,
+        "p95": 0.007640999974682927,
+        "p99": 0.009926820229738965,
+        "total": 13.651898546610028
+      },
+      "decode": {
+        "p50": 1.1132942952681333,
+        "p95": 5.504943040851499,
+        "p99": 6.673045617593453,
+        "total": 3529.58762198803
+      },
+      "face_detection_tracking": {
+        "p50": 2.9966723120305687,
+        "p95": 11.360467139072707,
+        "p99": 12.673754721656442,
+        "total": 7921.355341209564
+      },
+      "after_endpoint_preparation": {
+        "p50": 0.8461400070227683,
+        "p95": 0.9266207504551858,
+        "p99": 0.9752512401062995,
+        "total": 1622.7083010876086
+      },
+      "audio_decode": {
+        "p50": 0.008386200992390513,
+        "p95": 0.013530240068212152,
+        "p99": 0.019722124012187137,
+        "total": 17.33388744527474
+      },
+      "A3": {
+        "p50": 0.04609114944469184,
+        "p95": 0.13869222900830208,
+        "p99": 0.14753516450757162,
+        "total": 124.84040485834703
+      },
+      "V2": {
+        "p50": 0.04704510059673339,
+        "p95": 0.13197155960369855,
+        "p99": 0.1564215192431584,
+        "total": 134.25182253238745
+      },
+      "Q_AV_video_decode": {
+        "p50": 0.03335290006361902,
+        "p95": 0.03995363912545144,
+        "p99": 0.04988239802885798,
+        "total": 64.49703442165628
+      },
+      "Q_AV_preprocess": {
+        "p50": 0.12116051116026938,
+        "p95": 0.146245089918375,
+        "p99": 0.1579928411403671,
+        "total": 230.85835938574746
+      },
+      "Q_AV_forward": {
+        "p50": 0.39244010485708714,
+        "p95": 0.4328488981351256,
+        "p99": 0.4581664226669817,
+        "total": 751.2918437933549
+      },
+      "Q_AV": {
+        "p50": 0.5509943091310561,
+        "p95": 0.6032913198694587,
+        "p99": 0.6360360008710995,
+        "total": 1050.183822249528
+      },
+      "fusion": {
+        "p50": 0.0007878001779317856,
+        "p95": 0.0009734799154102801,
+        "p99": 0.001133736055344344,
+        "total": 1.5168640338815749
+      },
+      "V1": {
+        "p50": 0.04797150008380413,
+        "p95": 0.06136953998357057,
+        "p99": 0.08492875601164995,
+        "total": 1.660544109530747
+      },
+      "Q_V_video_decode": {
+        "p50": 0.033074998995289207,
+        "p95": 0.04231120008043945,
+        "p99": 0.046787527874112125,
+        "total": 1.1236265080515295
+      },
+      "Q_V_preprocess": {
+        "p50": 0.009801300009712577,
+        "p95": 0.012017580540850758,
+        "p99": 0.013713152790442109,
+        "total": 0.3330109028611332
+      },
+      "Q_V_forward": {
+        "p50": 0.29824399994686246,
+        "p95": 0.33201223905198274,
+        "p99": 0.34733800910413265,
+        "total": 9.911787066608667
+      },
+      "Q_V": {
+        "p50": 0.34092172305099666,
+        "p95": 0.3780248990282416,
+        "p99": 0.4012096570525318,
+        "total": 11.373247678391635
+      },
+      "Q_A_video_decode": {
+        "p50": 6.00004568696022e-07,
+        "p95": 7.80029222369194e-07,
+        "p99": 7.960107177495957e-07,
+        "total": 3.100140020251274e-06
+      },
+      "Q_A_preprocess": {
+        "p50": 0.10656340094283223,
+        "p95": 0.1254989777226001,
+        "p99": 0.12711491328664123,
+        "total": 0.531831598142162
+      },
+      "Q_A_forward": {
+        "p50": 0.21631109900772572,
+        "p95": 0.27931956048123535,
+        "p99": 0.28956007218919694,
+        "total": 1.1405821980442852
+      },
+      "Q_A": {
+        "p50": 0.3301906920969486,
+        "p95": 0.3881152610760182,
+        "p99": 0.3966217728983611,
+        "total": 1.6726625959854573
+      }
+    },
+    "stage_note": "decode/detection describe full segments including work before endpoints; after_endpoint_preparation and GPU/fusion overlap no earlier input work",
+    "wall_seconds": 14654.15108380909,
+    "input_seconds": 10755.076951155384,
+    "real_time_factor_wall_over_input": 1.3625333552108934,
+    "rss_baseline_bytes": 2517766144,
+    "rss_end_bytes": 5713719296,
+    "rss_sampled_peak_bytes": 5842161664,
+    "rss_end_growth": 1.2693606034921725,
+    "rss_peak_growth": 1.3203750189120027,
+    "rss_scope": "consumer and live descendants; baseline after both model loads before input; final includes producer resident RSS immediately before exit; peak sampled per event or one-second queue wait",
+    "gpu_peak_allocated_bytes": 12240492032,
+    "gpu_peak_reserved_bytes": 15378415616,
+    "events_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/events.jsonl",
+      "sha256": "c6597d03bea52a6d5596d2ed8af4217769d8428069ab69a97acdd0afa854d30a"
+    },
+    "latency_receipts": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/latency_receipts.jsonl",
+      "sha256": "ba97f343d24977711d0408f0222189f71266ea81b06aaf0781074fd513c4789b"
+    },
+    "actual_event_schedule_audit": {
+      "02": {
+        "events": 377,
+        "matches_frozen_schedule": true
+      },
+      "13": {
+        "events": 387,
+        "matches_frozen_schedule": true
+      },
+      "20": {
+        "events": 542,
+        "matches_frozen_schedule": true
+      },
+      "21": {
+        "events": 627,
+        "matches_frozen_schedule": true
+      }
+    },
+    "smoothing_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s5/freeze.json",
+      "sha256": "464c745193b50181e59f9c1dca2ef2412d6a1af8d3911a708a0fe4c476adc531"
+    },
+    "silence_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/freeze.json",
+      "sha256": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14"
+    },
+    "replay_speakers": [
+      "02",
+      "13",
+      "20",
+      "21"
+    ],
+    "stability_gate_applies": true,
+    "training": false,
+    "inference_replayed": false,
+    "bundle": {
+      "path": "configs/calibration_bundle_v1.1.json",
+      "sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7"
+    }
+  }
+}

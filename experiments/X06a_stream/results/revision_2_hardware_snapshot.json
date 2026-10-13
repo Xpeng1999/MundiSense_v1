@@ -1,0 +1,33 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/hardware_snapshot/summary.json",
+    "sha256": "1151144a361041eb0ee0dde7c664688ff1e23db7c050b5f3eece604dcb724fbd"
+  },
+  "data": {
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "cpu": {
+      "Architecture": "x86_64",
+      "CPU(s)": "128",
+      "Model name": "AMD EPYC 9374F 32-Core Processor",
+      "Thread(s) per core": "2",
+      "Core(s) per socket": "64",
+      "Socket(s)": "1"
+    },
+    "cpu_affinity_count": 128,
+    "memory_total_bytes": 101048688640,
+    "gpu_name_capacity_driver": "NVIDIA GeForce RTX 5090, 32607 MiB, 610.88",
+    "source_commands": [
+      [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,driver_version",
+        "--format=csv,noheader"
+      ],
+      [
+        "lscpu",
+        "--json"
+      ]
+    ],
+    "gpu_seconds": 0,
+    "measurement": "read-only hardware inventory during S7; no model calls"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/summary.json",
+    "sha256": "e072a7cb2f7b33cf89ac37633355a8c3f14eb8bc7bd95d0d08e4aa05f59b1e27"
+  },
+  "data": {
+    "status": "stopped",
+    "problem_stage": "audit_H3",
+    "stages": [
+      {
+        "stage": "budget_before_s7",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06.budget_revision2",
+          "--stage",
+          "before_s7"
+        ],
+        "started_at": "2026-10-12T07:32:25.604478+00:00",
+        "ended_at": "2026-10-12T07:32:27.559107+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/budget_before_s7.log",
+          "sha256": "f2c46913dc032818e3783bc5ab76b7de12b029aef61469686b1423ad4e7a1bb2"
+        }
+      },
+      {
+        "stage": "realtime_H3",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06.gpu_guard",
+          "realtime_H3"
+        ],
+        "started_at": "2026-10-12T07:32:27.563579+00:00",
+        "ended_at": "2026-10-12T11:37:22.045899+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/realtime_H3.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "audit_H3",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06.live_audit_revision2",
+          "H3"
+        ],
+        "started_at": "2026-10-12T11:37:22.047756+00:00",
+        "ended_at": "2026-10-12T11:42:03.301478+00:00",
+        "returncode": 1,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_driver/audit_H3.log",
+          "sha256": "3ec77ef71544959b81456680cf4d0d931107177f68d2e0a390b3097a3789d007"
+        }
+      }
+    ],
+    "next_step": "final provenance audit after this driver exits; collect results and report"
+  }
+}
