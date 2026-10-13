@@ -52,11 +52,12 @@ def producer(sources,config,out,messages,begin,realtime=True):
                 timeline=read(checked(source['timeline']));signal,sr=sf.read(checked(source['audio']),dtype='float32')
                 assert sr==16000 and signal.ndim==1
                 video=Video(timeline);machine=LiveEvents(.3,.4);bank=WindowBank(out/'crops'/speaker)
-                started=time.monotonic();next_frame=event_number=0;totals={'decode':0.,'detection_work':0.,'vad':0.}
+                started=time.monotonic();next_frame=event_number=0;totals={'decode':0.,'detection_work':0.,'decode_detection_wall':0.,'vad':0.}
                 def wait_until(when):
                     if realtime:time.sleep(max(0.,started+when-time.monotonic()))
                 def feed(when):
                     nonlocal next_frame
+                    pipeline_started=time.monotonic()
                     def frames():
                         nonlocal next_frame
                         while next_frame/5<min(when,timeline['duration_s']):
@@ -64,6 +65,7 @@ def producer(sources,config,out,messages,begin,realtime=True):
                             next_frame+=1;yield i,frame
                     for i,frame,boxes,seconds in pipeline(frames(),config['selected_scale'],executor=detector_pool):
                         bank.add(i,frame,boxes);totals['detection_work']+=seconds
+                    totals['decode_detection_wall']+=time.monotonic()-pipeline_started
                 def window_key(e):return ('visual' if e['visual_only'] else 'speech',e['start_s'])
                 def dispatch(events,windows,available,vad_seconds):
                     nonlocal event_number
