@@ -59,7 +59,8 @@ def run():
 def launch():
     frozen_face();out,meta=start('stages_launch')
     with (out/'driver.log').open('w') as log:
-        child=subprocess.Popen([sys.executable,'-u','-m','emotioncore.x06b.stages'],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env=dict(os.environ))
+        child=subprocess.Popen([sys.executable,'-u','-m','emotioncore.x06b.stages'],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env={**os.environ,'HF_HOME':str(ROOT/'cache/hf'),'XDG_CACHE_HOME':str(ROOT/'cache'),
+            'TORCH_HOME':str(ROOT/'cache/torch'),'TRITON_CACHE_DIR':str(ROOT/'cache/triton'),'MODELSCOPE_CACHE':str(ROOT/'cache/modelscope')})
     finish(out,meta,{'status':'dispatched','pid':child.pid,'gpu_seconds':0});print(child.pid)
 
 if __name__=='__main__':

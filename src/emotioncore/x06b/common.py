@@ -1,6 +1,6 @@
 """Immutable X06b authority and isolated H-drive provenance."""
 from pathlib import Path
-import json, datetime, hashlib, sys
+import json, datetime, hashlib, sys, importlib.metadata
 from emotioncore.x02.runtime import git_provenance, write_json_atomic
 from emotioncore.x04.prepare import storage_gate, require_h
 from emotioncore.x06.common import read, rows, sha256, spec, now, FMH, TEST, MEDIA, MANIFEST
@@ -30,6 +30,10 @@ def start(name):
     meta = {'started_at': now(), 'git': git, 'command': sys.argv, 'storage': storage,
             'registration': spec(REG), 'frozen_sha256': registered['frozen_sha256'],
             'python': sys.version, 'training': False}
+    meta['packages']={}
+    for name in ('numpy','torch','transformers','opencv-python','opencv-python-headless','timm','funasr','soundfile'):
+        try:meta['packages'][name]=importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:pass
     write_json_atomic(output / 'run_meta.json', meta)
     return output, meta
 
