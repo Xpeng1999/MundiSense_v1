@@ -15,6 +15,13 @@ def run():
     with sf.SoundFile(OLD/'streams/06.wav') as f:signal=f.read(round(end*16000),dtype='float32')
     sf.write(out/'audio.wav',signal,16000,subtype='FLOAT')
     sources={'06':{'timeline':spec(out/'timeline.json'),'audio':spec(out/'audio.wav')}}
+    from emotioncore.x06.streams import Video as PreviousVideo
+    from emotioncore.x06b.video import Video as NewVideo
+    old_video,new_video=PreviousVideo(tiny),NewVideo(tiny);equal=total=0
+    try:
+        for i in range(__import__('math').ceil(end*5)):
+            equal+=int(np.array_equal(old_video.frame(i/5),new_video.frame(i/5)));total+=1
+    finally:old_video.close();new_video.close()
     class Messages:
         def __init__(self):self.values=[]
         def put(self,value):self.values.append(value)
@@ -32,7 +39,7 @@ def run():
     assert stream['raw_frame_high_water']<=32
     (out/'inputs.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in fresh))
     finish(out,meta,{'status':'completed','cohort':'fmh','speaker':'06','utterances':3,'events':len(fresh),
-        'event_schedule_equal':True,'raw_frame_high_water':stream['raw_frame_high_water'],'duration_s':end,
+        'old_new_decoder_equal_frames':equal,'decoder_compared_frames':total,'event_schedule_equal':True,'raw_frame_high_water':stream['raw_frame_high_water'],'duration_s':end,
         'inputs':spec(out/'inputs.jsonl'),'gpu_seconds':0,'emotion_inference':False})
 
 if __name__=='__main__':run()
