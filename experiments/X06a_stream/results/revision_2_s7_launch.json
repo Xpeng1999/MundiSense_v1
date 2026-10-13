@@ -1,0 +1,16 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s7_launch/summary.json",
+    "sha256": "2b252fd005783ab382958d3c6cb56688a423e47b0c1a053d486e442035f48700"
+  },
+  "data": {
+    "pid": 1994500,
+    "command": [
+      "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+      "-u",
+      "-m",
+      "emotioncore.x06.s7_revision2"
+    ],
+    "status": "dispatched"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/live_cpu_probe_selected_attempt2/summary.json",
+    "sha256": "533f79f347f30c526ef6956c081c544271e96d159f1599098154bdbbd0c5d874"
+  },
+  "data": {
+    "source_utt_ids": [
+      "G00011_48_06_011",
+      "G00005_47_06_019"
+    ],
+    "source_speaker": "06",
+    "segments": [
+      {
+        "segment_id": "06_00000",
+        "source": "speech_segment",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      },
+      {
+        "segment_id": "06_00001",
+        "source": "speech_segment",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      },
+      {
+        "segment_id": "06_00002",
+        "source": "silence_window",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      },
+      {
+        "segment_id": "06_00003",
+        "source": "speech_segment",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      },
+      {
+        "segment_id": "06_00004",
+        "source": "speech_segment",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      },
+      {
+        "segment_id": "06_00005",
+        "source": "speech_segment",
+        "face_status": "ok",
+        "crop_bytes_identical": true
+      }
+    ],
+    "config": {
+      "model": "fsmn",
+      "threshold": 0.3,
+      "min_silence": 0.8
+    },
+    "parameter_selection": false,
+    "purpose": "online cached frames versus independent frozen face operations",
+    "gpu_seconds": 0
+  }
+}

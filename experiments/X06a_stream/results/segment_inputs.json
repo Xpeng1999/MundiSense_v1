@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/segment_inputs/summary.json",
+    "sha256": "4f225d2628393cc8e21bb1c99f598e2a4fe1d4a50236ff3b0f981af3d1c0fc9d"
+  },
+  "data": {
+    "n": 2944,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/segment_inputs/inputs.jsonl",
+      "sha256": "e074458bab97f0e2b03bca38888413d4b38f997f9cf779045afae32b94bcd593"
+    },
+    "cuts": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/summary.json",
+      "sha256": "6953b6686d77b5c7da27671f1b6d727c9b233a1c846ea3c687e8304f3cfc2cc3"
+    },
+    "gpu_seconds": 0,
+    "cpu_workers": 16
+  }
+}

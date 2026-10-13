@@ -1,0 +1,14 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_faces/summary.json",
+    "sha256": "b0d1ce7c4efbcf13756ed5582dec8b3210e3b363dd6f2b47c361d9de094e74a5"
+  },
+  "data": {
+    "n": 3266,
+    "faces": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_faces/faces.jsonl",
+      "sha256": "8adfca572864a6e7d40e404a621084de9633ec490329eb2d834e02c6a22cfbef"
+    },
+    "gpu_seconds": 0
+  }
+}

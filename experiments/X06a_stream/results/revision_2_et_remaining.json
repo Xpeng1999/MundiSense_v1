@@ -1,0 +1,35 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/summary.json",
+    "sha256": "b60cb2e6e81915dccaa8d61742ec58dc0f5ac25623fed672008a92100dae7182"
+  },
+  "data": {
+    "status": "completed",
+    "n": 1929,
+    "inferred_n": 745,
+    "reused_n": 1184,
+    "new_predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/new_predictions.jsonl",
+      "sha256": "03a5c6b10a6d9859d0221d2a04e2ea8e736cba6bc57adb64830475df4986b223"
+    },
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/predictions.jsonl",
+      "sha256": "6b00361f602cc4d950b5667ddd2fee48b5e9ff77f4e1bf066f828ee414d6d675"
+    },
+    "reused_prefix": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/predictions.jsonl",
+      "sha256": "e82eba38aeefcb9bd0c87a5d9a13a5f69dc3c89c3934d0dc8d571df3577d3d7d"
+    },
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/inputs.jsonl",
+      "sha256": "49ce9bec28204cf7145e774e46149d3f44cf5e633d627a4513ed6ac5c10650eb"
+    },
+    "old_prefix_bytes_identical": true,
+    "training": false,
+    "report_only": true,
+    "service": {
+      "path": "src/emotioncore/x06/service.py",
+      "sha256": "55e09af2ae23d02e4d1da84fb26ce9b6f249b5d82f2dbd1ef9724f6758cba1dd"
+    }
+  }
+}

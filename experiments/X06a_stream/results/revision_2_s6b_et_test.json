@@ -1,0 +1,203 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s6b_et_test/summary.json",
+    "sha256": "a1a7818fcef66066ac684418837a8d85114535620c7af7d50d21ce507662d8d0"
+  },
+  "data": {
+    "cohort": "et_test",
+    "n": 1929,
+    "systems": {
+      "H3": {
+        "op_n": {
+          "offline_macro_f1": 0.6598057005715641,
+          "stream_macro_f1": 0.6560618445043093,
+          "delta": -0.0037438560672548027,
+          "ci95": [
+            -0.015104935930020953,
+            0.007989298972940876
+          ],
+          "label_agreement": 0.9486780715396579
+        },
+        "r90": {
+          "offline_macro_f1": 0.6436368173737893,
+          "stream_macro_f1": 0.6444362541744354,
+          "delta": 0.0007994368006460917,
+          "ci95": [
+            -0.011863337292389132,
+            0.012898159079955276
+          ],
+          "label_agreement": 0.931052358735096
+        },
+        "coverage": {
+          "offline": 0.8812856402280974,
+          "stream": 0.8854328667703474,
+          "delta": 0.004147226542249971,
+          "ci95": [
+            -0.0062208398133748455,
+            0.014515292897874565
+          ]
+        },
+        "one_component_replaced": {
+          "Q_AV": {
+            "op_n": {
+              "agreement_with_offline": 0.9580093312597201,
+              "macro_f1_delta": 0.0010008614465703003
+            },
+            "r90": {
+              "agreement_with_offline": 0.942457231726283,
+              "macro_f1_delta": 0.000859425641813294
+            }
+          },
+          "A3": {
+            "op_n": {
+              "agreement_with_offline": 0.9761534473820632,
+              "macro_f1_delta": -0.009590846591011615
+            },
+            "r90": {
+              "agreement_with_offline": 0.9745982374287195,
+              "macro_f1_delta": 0.0031920743360634996
+            }
+          },
+          "V2": {
+            "op_n": {
+              "agreement_with_offline": 0.9875583203732504,
+              "macro_f1_delta": -0.0007830730760157723
+            },
+            "r90": {
+              "agreement_with_offline": 0.9771902540176257,
+              "macro_f1_delta": 0.003649769533555336
+            }
+          }
+        }
+      },
+      "H_ref": {
+        "op_n": {
+          "offline_macro_f1": 0.654228709407683,
+          "stream_macro_f1": 0.6539218954781957,
+          "delta": -0.0003068139294872818,
+          "ci95": [
+            -0.011755269126930487,
+            0.011146253352234434
+          ],
+          "label_agreement": 0.9569725246241576
+        },
+        "r90": {
+          "offline_macro_f1": 0.6376003244927935,
+          "stream_macro_f1": 0.6379584535224554,
+          "delta": 0.0003581290296619244,
+          "ci95": [
+            -0.010512973107080364,
+            0.011465870312516918
+          ],
+          "label_agreement": 0.9294971487817522
+        },
+        "coverage": {
+          "offline": 0.8755832037325039,
+          "stream": 0.8880248833592534,
+          "delta": 0.01244167962674958,
+          "ci95": [
+            0.0010368066355624928,
+            0.023846552617936667
+          ]
+        },
+        "one_component_replaced": {
+          "Q_A": {
+            "op_n": {
+              "agreement_with_offline": 0.9839294971487818,
+              "macro_f1_delta": 0.005266025767914462
+            },
+            "r90": {
+              "agreement_with_offline": 0.9761534473820632,
+              "macro_f1_delta": -0.0009105501327836274
+            }
+          },
+          "Q_AV": {
+            "op_n": {
+              "agreement_with_offline": 0.9720062208398134,
+              "macro_f1_delta": 0.005788507269158805
+            },
+            "r90": {
+              "agreement_with_offline": 0.9574909279419388,
+              "macro_f1_delta": -0.0014241699886765602
+            }
+          },
+          "A3": {
+            "op_n": {
+              "agreement_with_offline": 0.9834110938310006,
+              "macro_f1_delta": -0.001040074233383037
+            },
+            "r90": {
+              "agreement_with_offline": 0.9678589942975635,
+              "macro_f1_delta": 0.0046157388270380295
+            }
+          },
+          "V2": {
+            "op_n": {
+              "agreement_with_offline": 0.9865215137376879,
+              "macro_f1_delta": -0.0037820686380485302
+            },
+            "r90": {
+              "agreement_with_offline": 0.9766718506998445,
+              "macro_f1_delta": -0.0034007621822039757
+            }
+          },
+          "V1": {
+            "op_n": {
+              "agreement_with_offline": 0.9901503369621566,
+              "macro_f1_delta": -0.003766334879211297
+            },
+            "r90": {
+              "agreement_with_offline": 0.9834110938310006,
+              "macro_f1_delta": -0.004206852917584714
+            }
+          }
+        }
+      }
+    },
+    "bootstrap": {
+      "unit": "paired utterance",
+      "iterations": 2000,
+      "seed": 20261011,
+      "interval": "95% percentile"
+    },
+    "multiface_and_modality_gates": false,
+    "parameters_refitted": false,
+    "gpu_seconds": 0,
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/predictions.jsonl",
+      "sha256": "6b00361f602cc4d950b5667ddd2fee48b5e9ff77f4e1bf066f828ee414d6d675"
+    },
+    "offline_sources": {
+      "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/A.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/A.jsonl",
+        "sha256": "a6344ef9c9813e1a83e281cc6765657cffc9ae6e527e69281791265788a60da3"
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/V.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/V.jsonl",
+        "sha256": "a99205165b0fe22e5d1f90269404b8340c4a3f88428a113557cce330cbf65e91"
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/AV.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/Q/predict_final_et_test/AV.jsonl",
+        "sha256": "80c207a018ad412ba2990ffeded5ba3a4e6bdaaf8c69b476bae0de2c71c58690"
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/et_test.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/targets/et_test.jsonl",
+        "sha256": "4ac85b2eb584e6efb0e33cc80ffea07f2bc9337e36245b15160a1fb55ae239da"
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/targets/et_test.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/targets/et_test.jsonl",
+        "sha256": "b44c15a33b0eace5863a8745540463e9417798cf164b26a83c2445d8c683c02f"
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/targets/et_test.jsonl": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/targets/et_test.jsonl",
+        "sha256": "7b48d31a1f2b26e1df55e903cb100d300e16181a2e87faf565b1e44ec422d80f"
+      }
+    },
+    "paired": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s6b_et_test/paired.jsonl",
+      "sha256": "02f685e18760b3550b95f0f74b109754c7dd358bb44f1c21a849daad99185d50"
+    },
+    "h3_fmh_ci_acceptance": null,
+    "status": "completed"
+  }
+}

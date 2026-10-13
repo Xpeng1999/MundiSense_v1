@@ -1,0 +1,488 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_train_parallel/summary.json",
+    "sha256": "4fee8e3ee681ee70d2c309f2acc45510b961436a70efa8daa8bcadc26ab227a1"
+  },
+  "data": {
+    "split": "train",
+    "recordings": 130,
+    "channel": 0,
+    "results": [
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.3,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.9902929622082957,
+          "recall": 0.6677904298524121,
+          "f1": 0.7976778080998759,
+          "tp": 14647342,
+          "fp": 143576,
+          "fn": 7286698
+        },
+        "boundary": {
+          "precision": 0.40023518541850406,
+          "recall": 0.44554224002244075,
+          "f1": 0.42167519653102464,
+          "tp": 57180,
+          "fp": 85686,
+          "fn": 71158
+        },
+        "segment_count": 71433,
+        "mean_segment_s": 2.0706001427911476,
+        "mean_endpoint_delay_s": 0.16290943961474405
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.3,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.9857203901513756,
+          "recall": 0.7034814379840649,
+          "f1": 0.821022077958944,
+          "tp": 15430190,
+          "fp": 223529,
+          "fn": 6503850
+        },
+        "boundary": {
+          "precision": 0.465138075637235,
+          "recall": 0.37509545107450637,
+          "f1": 0.41529210807826356,
+          "tp": 48139,
+          "fp": 55355,
+          "fn": 80199
+        },
+        "segment_count": 51747,
+        "mean_segment_s": 3.0250486018513163,
+        "mean_endpoint_delay_s": 0.2776458538659247
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.3,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9738722375337867,
+          "recall": 0.7501870152511804,
+          "f1": 0.8475187914003582,
+          "tp": 16454632,
+          "fp": 441457,
+          "fn": 5479408
+        },
+        "boundary": {
+          "precision": 0.5092899242211619,
+          "recall": 0.28278452212127353,
+          "f1": 0.3636509383861562,
+          "tp": 36292,
+          "fp": 34968,
+          "fn": 92046
+        },
+        "segment_count": 35630,
+        "mean_segment_s": 4.742096267190569,
+        "mean_endpoint_delay_s": 0.3706213864720744
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.5,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.992725463739571,
+          "recall": 0.6023734341689903,
+          "f1": 0.7497860446946263,
+          "tp": 13212483,
+          "fp": 96819,
+          "fn": 8721557
+        },
+        "boundary": {
+          "precision": 0.3382831844116697,
+          "recall": 0.39175458554753856,
+          "f1": 0.36306063647720627,
+          "tp": 50277,
+          "fp": 98347,
+          "fn": 78061
+        },
+        "segment_count": 74312,
+        "mean_segment_s": 1.7910030681451174,
+        "mean_endpoint_delay_s": 0.17053813650554436
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.5,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.9891266076271079,
+          "recall": 0.6408946094745883,
+          "f1": 0.7778130790754602,
+          "tp": 14057408,
+          "fp": 154532,
+          "fn": 7876632
+        },
+        "boundary": {
+          "precision": 0.3993765283455601,
+          "recall": 0.333416447194128,
+          "f1": 0.36342789196534736,
+          "tp": 42790,
+          "fp": 64352,
+          "fn": 85548
+        },
+        "segment_count": 53571,
+        "mean_segment_s": 2.652916690000187,
+        "mean_endpoint_delay_s": 0.29906180582777997
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.5,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9785234821704241,
+          "recall": 0.6942875548690528,
+          "f1": 0.8122575243410739,
+          "tp": 15228531,
+          "fp": 334234,
+          "fn": 6705509
+        },
+        "boundary": {
+          "precision": 0.44306039893988003,
+          "recall": 0.24749489628948557,
+          "f1": 0.31758553802467654,
+          "tp": 31763,
+          "fp": 39927,
+          "fn": 96575
+        },
+        "segment_count": 35845,
+        "mean_segment_s": 4.34168363788534,
+        "mean_endpoint_delay_s": 0.4215441484167948
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.7,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.9945560627011292,
+          "recall": 0.5329034687636204,
+          "f1": 0.6939658495372082,
+          "tp": 11688726,
+          "fp": 63981,
+          "fn": 10245314
+        },
+        "boundary": {
+          "precision": 0.28395219059372734,
+          "recall": 0.32987112156960524,
+          "f1": 0.30519410301697725,
+          "tp": 42335,
+          "fp": 106757,
+          "fn": 86003
+        },
+        "segment_count": 74546,
+        "mean_segment_s": 1.576571110455289,
+        "mean_endpoint_delay_s": 0.17645185523032797
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.7,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.9917457385561211,
+          "recall": 0.5738836529886879,
+          "f1": 0.7270515874985881,
+          "tp": 12587587,
+          "fp": 104766,
+          "fn": 9346453
+        },
+        "boundary": {
+          "precision": 0.33893588396822766,
+          "recall": 0.28660256510152876,
+          "f1": 0.31058008950434857,
+          "tp": 36782,
+          "fp": 71740,
+          "fn": 91556
+        },
+        "segment_count": 54261,
+        "mean_segment_s": 2.3391299460017323,
+        "mean_endpoint_delay_s": 0.3168892943366326
+      },
+      {
+        "config": {
+          "model": "silero",
+          "threshold": 0.7,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9820638611585161,
+          "recall": 0.6330449383697668,
+          "f1": 0.7698435630390252,
+          "tp": 13885233,
+          "fp": 253596,
+          "fn": 8048807
+        },
+        "boundary": {
+          "precision": 0.37939402440735026,
+          "recall": 0.21074818058564104,
+          "f1": 0.2709740116616908,
+          "tp": 27047,
+          "fp": 44243,
+          "fn": 101291
+        },
+        "segment_count": 35645,
+        "mean_segment_s": 3.966567260485341,
+        "mean_endpoint_delay_s": 0.46888567821573923
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.3,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.9589992315428674,
+          "recall": 0.8999772955643375,
+          "f1": 0.9285512993488756,
+          "tp": 19740138,
+          "fp": 843964,
+          "fn": 2193902
+        },
+        "boundary": {
+          "precision": 0.5404426734919434,
+          "recall": 0.5791425766335769,
+          "f1": 0.5591237691167731,
+          "tp": 74326,
+          "fp": 63202,
+          "fn": 54012
+        },
+        "segment_count": 68764,
+        "mean_segment_s": 2.993441626432437,
+        "mean_endpoint_delay_s": 0.14031309987784343
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.3,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.9409308380501791,
+          "recall": 0.9399123918803832,
+          "f1": 0.9404213392292218,
+          "tp": 20616076,
+          "fp": 1294223,
+          "fn": 1317964
+        },
+        "boundary": {
+          "precision": 0.6154282529508948,
+          "recall": 0.4818292321837647,
+          "f1": 0.5404954199007063,
+          "tp": 61837,
+          "fp": 38641,
+          "fn": 66501
+        },
+        "segment_count": 50239,
+        "mean_segment_s": 4.361213200899701,
+        "mean_endpoint_delay_s": 0.20814884850414994
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.3,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9217778769262895,
+          "recall": 0.9720500646483731,
+          "f1": 0.9462467262074823,
+          "tp": 21320985,
+          "fp": 1809300,
+          "fn": 613055
+        },
+        "boundary": {
+          "precision": 0.6946303335296322,
+          "recall": 0.4044008789290779,
+          "f1": 0.5111940666029726,
+          "tp": 51900,
+          "fp": 22816,
+          "fn": 76438
+        },
+        "segment_count": 37358,
+        "mean_segment_s": 6.191521227046416,
+        "mean_endpoint_delay_s": 0.19679774077841436
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.5,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.9790793840751154,
+          "recall": 0.8023108829928276,
+          "f1": 0.8819247075491283,
+          "tp": 17597919,
+          "fp": 376026,
+          "fn": 4336121
+        },
+        "boundary": {
+          "precision": 0.46207147609304194,
+          "recall": 0.5736414779722295,
+          "f1": 0.5118471550141832,
+          "tp": 73620,
+          "fp": 85706,
+          "fn": 54718
+        },
+        "segment_count": 79663,
+        "mean_segment_s": 2.256247567879694,
+        "mean_endpoint_delay_s": 0.15931222775943638
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.5,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.9644563506098609,
+          "recall": 0.8593124203293147,
+          "f1": 0.9088535061577473,
+          "tp": 18848193,
+          "fp": 694623,
+          "fn": 3085847
+        },
+        "boundary": {
+          "precision": 0.5300637640729302,
+          "recall": 0.4974598326294628,
+          "f1": 0.5132445273371867,
+          "tp": 63843,
+          "fp": 56601,
+          "fn": 64495
+        },
+        "segment_count": 60222,
+        "mean_segment_s": 3.24512902261632,
+        "mean_endpoint_delay_s": 0.2695499983394771
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.5,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9432971658248405,
+          "recall": 0.9188105337639577,
+          "f1": 0.9308928507421377,
+          "tp": 20153227,
+          "fp": 1211437,
+          "fn": 1780813
+        },
+        "boundary": {
+          "precision": 0.6166172810240607,
+          "recall": 0.40536707756081597,
+          "f1": 0.48915884686988736,
+          "tp": 52024,
+          "fp": 32346,
+          "fn": 76314
+        },
+        "segment_count": 42185,
+        "mean_segment_s": 5.06451677136423,
+        "mean_endpoint_delay_s": 0.3404200545217498
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.7,
+          "min_silence": 0.2
+        },
+        "frame": {
+          "precision": 0.9899277131673305,
+          "recall": 0.6916447676761782,
+          "f1": 0.8143310276419141,
+          "tp": 15170564,
+          "fp": 154357,
+          "fn": 6763476
+        },
+        "boundary": {
+          "precision": 0.3760083869362806,
+          "recall": 0.49465473982764263,
+          "f1": 0.42724751995477367,
+          "tp": 63483,
+          "fp": 105351,
+          "fn": 64855
+        },
+        "segment_count": 84417,
+        "mean_segment_s": 1.8153832758804496,
+        "mean_endpoint_delay_s": 0.17054609853465538
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.7,
+          "min_silence": 0.4
+        },
+        "frame": {
+          "precision": 0.982094742295669,
+          "recall": 0.7483392024451492,
+          "f1": 0.849428547571856,
+          "tp": 16414102,
+          "fp": 299257,
+          "fn": 5519938
+        },
+        "boundary": {
+          "precision": 0.4403348974146656,
+          "recall": 0.4475058049837149,
+          "f1": 0.4438913922230896,
+          "tp": 57432,
+          "fp": 72996,
+          "fn": 70906
+        },
+        "segment_count": 65214,
+        "mean_segment_s": 2.5628483147790373,
+        "mean_endpoint_delay_s": 0.30450332750636394
+      },
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.7,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.9658655210923853,
+          "recall": 0.8243217847692446,
+          "f1": 0.8894979732980985,
+          "tp": 18080707,
+          "fp": 638987,
+          "fn": 3853333
+        },
+        "boundary": {
+          "precision": 0.5146104603057092,
+          "recall": 0.36830868487899143,
+          "f1": 0.4293382987419955,
+          "tp": 47268,
+          "fp": 44584,
+          "fn": 81070
+        },
+        "segment_count": 45926,
+        "mean_segment_s": 4.07605582894221,
+        "mean_endpoint_delay_s": 0.4533484300831778
+      }
+    ],
+    "sources": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_train_parallel/sources.json",
+      "sha256": "7670029bbf0b2b38a9396d8712f6ceb4ccfe950c9245e4ad740f674563d43e50"
+    },
+    "gpu_seconds": 0,
+    "workers": 8,
+    "reused_completed_prefix": 35
+  }
+}

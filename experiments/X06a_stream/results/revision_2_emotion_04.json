@@ -1,0 +1,21 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/summary.json",
+    "sha256": "69172e86ad96285d3fb07fff9b7aa386c21fdd35dba13f50ed22c46662d1c61a"
+  },
+  "data": {
+    "status": "completed",
+    "n": 4914,
+    "min_silence": 0.4,
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/predictions.jsonl",
+      "sha256": "f7e59bf74831c8debf363dcc9f49e62545176a200dc8a44f18e1ea2515408626"
+    },
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/inputs_04/inputs.jsonl",
+      "sha256": "086089171b67c8b5143f3cc6f28adabfcf682bcfbe2e5f892bdbbee56c9fc234"
+    },
+    "training": false,
+    "component_sharing": "common forwards shared only within H3/H_ref for this configuration"
+  }
+}

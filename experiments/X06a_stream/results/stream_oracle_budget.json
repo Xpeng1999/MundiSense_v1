@@ -1,0 +1,19 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_budget/summary.json",
+    "sha256": "010db121791263bfff69a5c46c33b610f903ae60157095535c58db7aeceed9ac"
+  },
+  "data": {
+    "status": "passed",
+    "estimated_total_gpu_hours": 14.689532589569762,
+    "additional_gpu_hours": 1.9419763110866461,
+    "previous_estimate": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/budget_recheck/summary.json",
+      "sha256": "91e4365374cf4a1588785fa4552e8dc38d8c7d11394273573092fb00b9af6abe"
+    },
+    "additional_correct_boundary_sentences": 5195,
+    "limit_gpu_hours": 15,
+    "reason": "Original-clip service equivalence did not cover S1 waveform alignment and global video sampling",
+    "gpu_seconds": 0
+  }
+}

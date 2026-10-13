@@ -1,0 +1,167 @@
+{
+  "alpha": 0.0,
+  "selection_system": "H3",
+  "applied_systems": [
+    "H3",
+    "H_ref"
+  ],
+  "rule": "FMH S5 macro-F1; within 0.005 select smaller alpha",
+  "fmh_speakers": [
+    "06",
+    "10",
+    "11"
+  ],
+  "min_silence": 0.4,
+  "candidates": {
+    "0.0": {
+      "n": 3266,
+      "macro_f1": 0.6119613141820619,
+      "class_f1": {
+        "neutral": 0.7087840761575076,
+        "joy": 0.7536496350364964,
+        "sadness": 0.7630769230769231,
+        "anger": 0.8027210884353742,
+        "fear": 0.5570776255707762,
+        "disgust": 0.28289473684210525,
+        "surprise": 0.4155251141552511
+      },
+      "accepted": 2750,
+      "coverage": 0.8420085731781997,
+      "neutral_false_positive_rate": 0.19240097008892482,
+      "accepted_metrics": {
+        "n": 2750,
+        "macro_f1": 0.6773350184378008,
+        "class_f1": {
+          "neutral": 0.7686532144533083,
+          "joy": 0.804284323271665,
+          "sadness": 0.8,
+          "anger": 0.8475658419792498,
+          "fear": 0.6387434554973822,
+          "disgust": 0.3722943722943723,
+          "surprise": 0.5098039215686274
+        },
+        "accepted": 2750,
+        "coverage": 1.0,
+        "neutral_false_positive_rate": 0.2251655629139073
+      },
+      "ambiguous_multi_face_n": 150,
+      "ambiguous_multi_face_rate": 0.04592774035517452,
+      "vad_truth_coverage": 1.0,
+      "vad_duration_coverage": 0.9622257507473877,
+      "uncovered_truth_n": 0,
+      "truth_split_fraction": 0.15554194733619106,
+      "merged_vad_segment_fraction": 0.2522093813732155,
+      "vad_speech_segments": 2942,
+      "label_flip_rate_including_reject": 0.46580469547465125,
+      "label_flip_rate_adjacent_accepted": 0.33947841726618705
+    },
+    "0.2": {
+      "n": 3266,
+      "macro_f1": 0.60298215321324,
+      "class_f1": {
+        "neutral": 0.7044569450454349,
+        "joy": 0.7583025830258303,
+        "sadness": 0.7654320987654321,
+        "anger": 0.8221709006928406,
+        "fear": 0.5607476635514018,
+        "disgust": 0.23655913978494625,
+        "surprise": 0.37320574162679426
+      },
+      "accepted": 2663,
+      "coverage": 0.8153704837721985,
+      "neutral_false_positive_rate": 0.15925626515763944,
+      "accepted_metrics": {
+        "n": 2663,
+        "macro_f1": 0.6794826950575091,
+        "class_f1": {
+          "neutral": 0.7808153477218226,
+          "joy": 0.8122529644268774,
+          "sadness": 0.8104575163398693,
+          "anger": 0.8704156479217604,
+          "fear": 0.6521739130434783,
+          "disgust": 0.3350253807106599,
+          "surprise": 0.49523809523809526
+        },
+        "accepted": 2663,
+        "coverage": 1.0,
+        "neutral_false_positive_rate": 0.19485657764589515
+      },
+      "ambiguous_multi_face_n": 150,
+      "ambiguous_multi_face_rate": 0.04592774035517452,
+      "vad_truth_coverage": 1.0,
+      "vad_duration_coverage": 0.9622257507473877,
+      "uncovered_truth_n": 0,
+      "truth_split_fraction": 0.15554194733619106,
+      "merged_vad_segment_fraction": 0.2522093813732155,
+      "vad_speech_segments": 2942,
+      "label_flip_rate_including_reject": 0.42055120789384143,
+      "label_flip_rate_adjacent_accepted": 0.27131417804992936
+    },
+    "0.4": {
+      "n": 3266,
+      "macro_f1": 0.5899598953731411,
+      "class_f1": {
+        "neutral": 0.6938775510204082,
+        "joy": 0.7490566037735849,
+        "sadness": 0.7725856697819314,
+        "anger": 0.838659392049883,
+        "fear": 0.5714285714285714,
+        "disgust": 0.17898832684824903,
+        "surprise": 0.3251231527093596
+      },
+      "accepted": 2567,
+      "coverage": 0.7859767299448868,
+      "neutral_false_positive_rate": 0.13257881972514146,
+      "accepted_metrics": {
+        "n": 2567,
+        "macro_f1": 0.6782693583573183,
+        "class_f1": {
+          "neutral": 0.787580088713652,
+          "joy": 0.8085539714867617,
+          "sadness": 0.8184818481848185,
+          "anger": 0.8914664457332229,
+          "fear": 0.6904761904761905,
+          "disgust": 0.2929936305732484,
+          "surprise": 0.4583333333333333
+        },
+        "accepted": 2567,
+        "coverage": 1.0,
+        "neutral_false_positive_rate": 0.1703011422637591
+      },
+      "ambiguous_multi_face_n": 150,
+      "ambiguous_multi_face_rate": 0.04592774035517452,
+      "vad_truth_coverage": 1.0,
+      "vad_duration_coverage": 0.9622257507473877,
+      "uncovered_truth_n": 0,
+      "truth_split_fraction": 0.15554194733619106,
+      "merged_vad_segment_fraction": 0.2522093813732155,
+      "vad_speech_segments": 2942,
+      "label_flip_rate_including_reject": 0.3671316774413066,
+      "label_flip_rate_adjacent_accepted": 0.1909722222222222
+    }
+  },
+  "frozen_at": "2026-10-12T07:28:12.851773+00:00",
+  "selection_label_sources": [
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_06.json",
+      "sha256": "588b495ed773ab83aa1b8333edd50a4a7ced9b587c08db3f92c5d8b953de892a"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_10.json",
+      "sha256": "e537797d62043d69148e986e746fa663f04a6ae719aa62c19b0c3d903b0b46c6"
+    },
+    {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_11.json",
+      "sha256": "f20f105c2113b69b1245eeab84ec6e22328d4e006071937f4a26461df6f41bde"
+    }
+  ],
+  "neutral_bias_and_thresholds_refitted": false,
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_04/predictions.jsonl",
+    "sha256": "f7e59bf74831c8debf363dcc9f49e62545176a200dc8a44f18e1ea2515408626"
+  },
+  "silence_freeze": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/freeze.json",
+    "sha256": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/summary.json",
+    "sha256": "2459c895f2be4b56b3140ddc82fcc226523bfd44d49b00d27efadc5847da1ffe"
+  },
+  "data": {
+    "n": 1929,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/inputs.jsonl",
+      "sha256": "49ce9bec28204cf7145e774e46149d3f44cf5e633d627a4513ed6ac5c10650eb"
+    },
+    "gpu_seconds": 0,
+    "input_scope": "actual S1 waveform and global 5fps frames, correct original utterance intervals",
+    "parameters_selected": false,
+    "emotion_labels_read_for_selection": false
+  }
+}

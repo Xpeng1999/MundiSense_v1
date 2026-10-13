@@ -1,0 +1,47 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/summary.json",
+    "sha256": "a11e44a296da43bf8352fbad48da130877f5001d6011a0e756bf94c7efada462"
+  },
+  "data": {
+    "split": "test",
+    "recordings": 20,
+    "channel": 0,
+    "results": [
+      {
+        "config": {
+          "model": "fsmn",
+          "threshold": 0.3,
+          "min_silence": 0.8
+        },
+        "frame": {
+          "precision": 0.940461643919091,
+          "recall": 0.9756001957833467,
+          "f1": 0.9577087178738263,
+          "tp": 3842936,
+          "fp": 243287,
+          "fn": 96112
+        },
+        "boundary": {
+          "precision": 0.553883149269683,
+          "recall": 0.313773965691221,
+          "f1": 0.4006055140427725,
+          "tp": 6219,
+          "fp": 5009,
+          "fn": 13601
+        },
+        "segment_count": 5614,
+        "mean_segment_s": 7.278630210188812,
+        "mean_endpoint_delay_s": 0.2582614891343077
+      }
+    ],
+    "inference_seconds": {
+      "fsmn": 219.8806668005418
+    },
+    "sources": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/sources.json",
+      "sha256": "b5a672f313f58f34529ba33d044c72e58ac0e06dc34d1b3970c5bc8970328998"
+    },
+    "gpu_seconds": 0
+  }
+}

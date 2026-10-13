@@ -1,0 +1,20 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_stream_oracle/summary.json",
+    "sha256": "47753730bfd3b8a021c9aee16e1a697e9ddacfdff31334a7583362eecefdfade"
+  },
+  "data": {
+    "n": 3266,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_stream_oracle_inputs/inputs.jsonl",
+      "sha256": "65fe92f453dff5f10a9ff993578c671487bcdb3099bae1a809f3345a7ab99fb5"
+    },
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_stream_oracle/predictions.jsonl",
+      "sha256": "af6c73268d312c8467ac61287e4a2413b2d7f35cf6e98862711b078812d82198"
+    },
+    "training": false,
+    "parameters_selected": false,
+    "input_scope": "actual S1 streams"
+  }
+}

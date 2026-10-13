@@ -1,0 +1,39 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/summary.json",
+    "sha256": "6fa01a85ee1b0089b72ac5f16497dac60adb91a4c04e61074992caff980f7246"
+  },
+  "data": {
+    "n": 1929,
+    "primary": {
+      "H3": {
+        "agreement": 0.9891135303265941,
+        "mismatches": 21,
+        "without_gate_mismatches": 0
+      },
+      "H_ref": {
+        "agreement": 0.9891135303265941,
+        "mismatches": 21,
+        "without_gate_mismatches": 0
+      }
+    },
+    "without_multiface_only_agreement": {
+      "H3": 0.9994815966822188,
+      "H_ref": 0.9994815966822188
+    },
+    "final_decision_implementation_matches_s6_labels": true,
+    "mismatch_reasons": {
+      "ambiguous_multi_face": 42
+    },
+    "details": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/mismatches.json",
+      "sha256": "ce55add17ae22d57a84c8cfd7bbfb16bd82745e7ada759a8be34d48b98305886"
+    },
+    "counterfactual_disagreements": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_audit_v2/counterfactual_disagreements.json",
+      "sha256": "65dd1f7779e96cca0ba09248c7ecb6e8f17b609f119e246ee07e41af70fe662f"
+    },
+    "counterfactual_new_disagreements_not_in_primary": 2,
+    "gpu_seconds": 0
+  }
+}

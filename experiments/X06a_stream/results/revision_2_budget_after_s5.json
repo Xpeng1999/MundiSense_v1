@@ -1,0 +1,110 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/budget_after_s5/summary.json",
+    "sha256": "51b191212ea6b3310b46b38cd199bfd502ca26ad476eb124e67aacefddee662c"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_s5",
+    "used_gpu_s": 16578.87090843264,
+    "used_gpu_hours": 4.6052419190090665,
+    "remaining_correct_boundary_n": 0,
+    "correct_boundary_s": 0.0,
+    "remaining_vad_configs_s": 0,
+    "replay_candidates": {
+      "0.4": {
+        "systems": {
+          "H3": {
+            "serial_service_s": 17215.548141869014,
+            "input_s": 10755.076951155384,
+            "base_s": 17215.548141869014,
+            "speakers": [
+              "02",
+              "13",
+              "20",
+              "21"
+            ],
+            "counts": {
+              "speech": 1900,
+              "visual": 33
+            },
+            "frames": 53777
+          },
+          "H_ref": {
+            "serial_service_s": 5675.285260944862,
+            "input_s": 3362.155951870812,
+            "base_s": 5675.285260944862,
+            "speakers": [
+              "21"
+            ],
+            "counts": {
+              "speech": 614,
+              "visual": 13
+            },
+            "frames": 16811
+          }
+        },
+        "base_s": 22890.833402813878
+      }
+    },
+    "replay_base_s": 22890.833402813878,
+    "future_base_s": 22890.833402813878,
+    "reserve_s": 4878.166680562776,
+    "estimated_total_gpu_hours": 12.318853053280359,
+    "limit_gpu_hours": 18,
+    "rates_s": {
+      "Q_A": 0.31374339625511743,
+      "Q_AV": 0.5613014119756806,
+      "A3": 0.03501520926012903,
+      "V2": 0.043461210984352634,
+      "V1": 0.043246704901953904,
+      "audio_decode": 0.015948065097409595,
+      "both": 1.1131890210910331
+    },
+    "rate_source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/emotion_08/predictions.jsonl",
+      "sha256": "835a2dd5d08f489b3ec0255eb3a66b459253c6ca24a2ddfe09761c0d68f76ea3"
+    },
+    "replay_rate_source": null,
+    "face_seconds_per_frame": 0.2728845762892829,
+    "media_seconds_per_segment": 0.6342560025021345,
+    "selected_min_silence": 0.4,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+        "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+        "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/fmh_stream_oracle/summary.json",
+        "sha256": "c5b13ecf90f9da12c4ab3974d83720031bcc554f1931491a72d21d9fab9e5020"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_et/summary.json",
+        "sha256": "9d8076894b388425ea4596b8411bbc5d2ff4756cfb7850674db93aa0bf12262b"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_s2_04/summary.json",
+        "sha256": "99fa52313223090cfb448c33fb62ecf31d8e76436c1012b77d4a42a7fab232fd"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_s2_08/summary.json",
+        "sha256": "11fc4f835b8adaeed6fbc3cce43912e0cb6fbaade421627a2ebe50f9d0ae3303"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+        "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+      }
+    ],
+    "prior_budget": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/summary.json",
+      "sha256": "16cd1fe7467a767904ddfb91bb21d863fe25cf79231b0b3aade3f85690089074"
+    },
+    "reserve_rule": "20% of remaining work plus 300s; zero after all work completed",
+    "gpu_seconds": 0,
+    "emotion_labels_read_for_selection": false
+  }
+}

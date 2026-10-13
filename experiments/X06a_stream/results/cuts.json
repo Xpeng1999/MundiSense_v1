@@ -1,0 +1,79 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/summary.json",
+    "sha256": "6953b6686d77b5c7da27671f1b6d727c9b233a1c846ea3c687e8304f3cfc2cc3"
+  },
+  "data": {
+    "streams": {
+      "10": {
+        "speech_segments": 261,
+        "silence_windows": 1,
+        "vad_cpu_s": 13.860396376112476,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/10.jsonl",
+          "sha256": "ce495b8c296b089021746ac3ca420468fe741a4ac0ca03e5376e1fc5ba46e404"
+        }
+      },
+      "11": {
+        "speech_segments": 964,
+        "silence_windows": 20,
+        "vad_cpu_s": 47.99609756539576,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/11.jsonl",
+          "sha256": "2f789ddb7bf64774efbfbb67c73e8cf2f6da07e13f1eea19dd712078d824dd84"
+        }
+      },
+      "13": {
+        "speech_segments": 218,
+        "silence_windows": 3,
+        "vad_cpu_s": 9.39198611327447,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/13.jsonl",
+          "sha256": "26f9e9aba3fd360bd3c0a5048235c1e1ad9a47cda7688563094f36cebd93f219"
+        }
+      },
+      "20": {
+        "speech_segments": 317,
+        "silence_windows": 8,
+        "vad_cpu_s": 14.413574469974265,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/20.jsonl",
+          "sha256": "35b9a1fda9aec29d5785952b97c4d3e2e74dacd71ab7eb66a315938c6d078a40"
+        }
+      },
+      "21": {
+        "speech_segments": 367,
+        "silence_windows": 11,
+        "vad_cpu_s": 17.68784407596104,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/21.jsonl",
+          "sha256": "5cd42860aabb2554ab35d8ce05d8bae426dffa07514fa1f6c4cfc794cc8fd131"
+        }
+      },
+      "02": {
+        "speech_segments": 244,
+        "silence_windows": 1,
+        "vad_cpu_s": 12.516209799796343,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/02.jsonl",
+          "sha256": "c1954e12a911fb6f18a8416f919553a7129a7ed769bda2341229f8d0f0ee2901"
+        }
+      },
+      "06": {
+        "speech_segments": 525,
+        "silence_windows": 4,
+        "vad_cpu_s": 26.152122787432745,
+        "segments": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/06.jsonl",
+          "sha256": "6dd1408c224e175b369b2bae495937c01546caa8430895dff9b14c6d56314642"
+        }
+      }
+    },
+    "vad_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_train_parallel/freeze.json",
+      "sha256": "43cb46bc84417b9bff5cb20c7ab1edaa370ee98ccfaa21cfae4150d637cd6714"
+    },
+    "label_reads": false,
+    "gpu_seconds": 0
+  }
+}

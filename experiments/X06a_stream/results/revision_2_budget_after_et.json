@@ -1,0 +1,132 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/budget_after_et/summary.json",
+    "sha256": "2c779ca8fc8863e40f87e14f37cfff2930d4cf83cc6248df029cbea63eb371b4"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_et",
+    "used_gpu_s": 4991.142223424744,
+    "used_gpu_hours": 1.3864283953957621,
+    "remaining_correct_boundary_n": 3266,
+    "correct_boundary_s": 3470.620501089289,
+    "remaining_vad_configs_s": 8283.940623879422,
+    "replay_candidates": {
+      "0.4": {
+        "systems": {
+          "H3": {
+            "serial_service_s": 17158.613155377774,
+            "input_s": 10755.076951155384,
+            "base_s": 17158.613155377774,
+            "speakers": [
+              "02",
+              "13",
+              "20",
+              "21"
+            ],
+            "counts": {
+              "speech": 1900,
+              "visual": 33
+            },
+            "frames": 53777
+          },
+          "H_ref": {
+            "serial_service_s": 5644.232957682577,
+            "input_s": 3362.155951870812,
+            "base_s": 5644.232957682577,
+            "speakers": [
+              "21"
+            ],
+            "counts": {
+              "speech": 614,
+              "visual": 13
+            },
+            "frames": 16811
+          }
+        },
+        "base_s": 22802.84611306035
+      },
+      "0.8": {
+        "systems": {
+          "H3": {
+            "serial_service_s": 16176.517568254825,
+            "input_s": 10755.076951155384,
+            "base_s": 16176.517568254825,
+            "speakers": [
+              "02",
+              "13",
+              "20",
+              "21"
+            ],
+            "counts": {
+              "speech": 1146,
+              "visual": 23
+            },
+            "frames": 53777
+          },
+          "H_ref": {
+            "serial_service_s": 5222.809211904694,
+            "input_s": 3362.155951870812,
+            "base_s": 5222.809211904694,
+            "speakers": [
+              "21"
+            ],
+            "counts": {
+              "speech": 367,
+              "visual": 11
+            },
+            "frames": 16811
+          }
+        },
+        "base_s": 21399.32678015952
+      }
+    },
+    "replay_base_s": 22802.84611306035,
+    "future_base_s": 34557.40723802906,
+    "reserve_s": 7211.481447605813,
+    "estimated_total_gpu_hours": 12.988897474738781,
+    "limit_gpu_hours": 18,
+    "rates_s": {
+      "Q_A": 0.31119471969733004,
+      "Q_AV": 0.5369061287164363,
+      "A3": 0.03119750317504892,
+      "V2": 0.042596198332139706,
+      "V1": 0.04238884805751677,
+      "audio_decode": 0.0075351665327763,
+      "both": 1.0626517149691639
+    },
+    "rate_source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/new_predictions.jsonl",
+      "sha256": "03a5c6b10a6d9859d0221d2a04e2ea8e736cba6bc57adb64830475df4986b223"
+    },
+    "replay_rate_source": null,
+    "face_seconds_per_frame": 0.2728845762892829,
+    "media_seconds_per_segment": 0.6342560025021345,
+    "selected_min_silence": null,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence/summary.json",
+        "sha256": "ec76e8172c9f541981b9616e18998f5e4dc050318aa70dc32bfd41afef9c8a29"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/equivalence_attempt2/summary.json",
+        "sha256": "a0685bf2b32c0b68d9c9f72fb28a00585748f12c5dacb823425bab55ff7c2e8a"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/rev2_et/summary.json",
+        "sha256": "9d8076894b388425ea4596b8411bbc5d2ff4756cfb7850674db93aa0bf12262b"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/gpu_jobs/stream_equivalence/summary.json",
+        "sha256": "21b2bf416dcde926f0a56016ddd018fd03a91d077a14c1ae1e750701fd2d7af2"
+      }
+    ],
+    "prior_budget": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision_1_budget/summary.json",
+      "sha256": "16cd1fe7467a767904ddfb91bb21d863fe25cf79231b0b3aade3f85690089074"
+    },
+    "reserve_rule": "20% of remaining work plus 300s; zero after all work completed",
+    "gpu_seconds": 0,
+    "emotion_labels_read_for_selection": false
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/offline_runs/s4_smoke_fmh.run/summary.json",
+    "sha256": "c5023b18203690092442dd00a21679ff4060b9c43321ef8bbc5c9f5d1cd906aa"
+  },
+  "data": {
+    "system": "H3",
+    "alpha": 0.0,
+    "realtime": false,
+    "events": 1,
+    "streams": {
+      "06": {
+        "kind": "stream_finished",
+        "speaker_id": "06",
+        "input_duration_s": 4.578,
+        "events": 1,
+        "producer_wall_s": 6.184242019895464,
+        "totals": {
+          "vad": 0.05850470205768943,
+          "decode": 1.314589424058795,
+          "face_detection": 3.9505422627553344
+        },
+        "audio_load_seconds": 0.005688400007784367,
+        "source_terminal_frame_clamps": 0
+      }
+    },
+    "latency_seconds": {
+      "p50": 2.8841070039197803,
+      "p95": 2.8841070039197803,
+      "p99": 2.8841070039197803
+    },
+    "speech_latency_seconds": {
+      "p50": 2.8841070039197803,
+      "p95": 2.8841070039197803,
+      "p99": 2.8841070039197803
+    },
+    "visual_only_latency_seconds": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "input_schedule_lag_seconds": {
+      "p50": 0.7450022889114916,
+      "p95": 0.7450022889114916,
+      "p99": 0.7450022889114916
+    },
+    "scheduled_vad_endpoint_to_write_seconds": {
+      "p50": 3.629109292831272,
+      "p95": 3.629109292831272,
+      "p99": 3.629109292831272
+    },
+    "input_schedule_note": "1x source timestamps; if processing falls behind, all recorded frames remain available and no frames are dropped; backlog is reported separately",
+    "stage_seconds": {
+      "vad": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "total": 0.0
+      },
+      "decode": {
+        "p50": 1.314589424058795,
+        "p95": 1.314589424058795,
+        "p99": 1.314589424058795,
+        "total": 1.314589424058795
+      },
+      "face_detection_tracking": {
+        "p50": 4.117618168704212,
+        "p95": 4.117618168704212,
+        "p99": 4.117618168704212,
+        "total": 4.117618168704212
+      },
+      "after_endpoint_preparation": {
+        "p50": 0.8456206298433244,
+        "p95": 0.8456206298433244,
+        "p99": 0.8456206298433244,
+        "total": 0.8456206298433244
+      },
+      "audio_decode": {
+        "p50": 0.007581701036542654,
+        "p95": 0.007581701036542654,
+        "p99": 0.007581701036542654,
+        "total": 0.007581701036542654
+      },
+      "A3": {
+        "p50": 0.6628564239945263,
+        "p95": 0.6628564239945263,
+        "p99": 0.6628564239945263,
+        "total": 0.6628564239945263
+      },
+      "V2": {
+        "p50": 0.12830790504813194,
+        "p95": 0.12830790504813194,
+        "p99": 0.12830790504813194,
+        "total": 0.12830790504813194
+      },
+      "Q_AV_video_decode": {
+        "p50": 0.0518569010309875,
+        "p95": 0.0518569010309875,
+        "p99": 0.0518569010309875,
+        "total": 0.0518569010309875
+      },
+      "Q_AV_preprocess": {
+        "p50": 0.1707612071186304,
+        "p95": 0.1707612071186304,
+        "p99": 0.1707612071186304,
+        "total": 0.1707612071186304
+      },
+      "Q_AV_forward": {
+        "p50": 0.9544508340768516,
+        "p95": 0.9544508340768516,
+        "p99": 0.9544508340768516,
+        "total": 0.9544508340768516
+      },
+      "Q_AV": {
+        "p50": 1.177155741956085,
+        "p95": 1.177155741956085,
+        "p99": 1.177155741956085,
+        "total": 1.177155741956085
+      },
+      "fusion": {
+        "p50": 0.0009006001055240631,
+        "p95": 0.0009006001055240631,
+        "p99": 0.0009006001055240631,
+        "total": 0.0009006001055240631
+      }
+    },
+    "stage_note": "decode/detection describe full segments including work before endpoints; after_endpoint_preparation and GPU/fusion overlap no earlier input work",
+    "wall_seconds": 8.225642893929034,
+    "input_seconds": 4.578,
+    "real_time_factor_wall_over_input": 1.7967765168040704,
+    "rss_baseline_bytes": 2519564288,
+    "rss_end_bytes": 4131958784,
+    "rss_sampled_peak_bytes": 4131958784,
+    "rss_end_growth": 0.6399497340390943,
+    "rss_peak_growth": 0.6399497340390943,
+    "rss_scope": "consumer and live descendants; baseline after both model loads before input; final includes producer resident RSS immediately before exit; peak sampled per event or one-second queue wait",
+    "gpu_peak_allocated_bytes": 12071015424,
+    "gpu_peak_reserved_bytes": 12736004096,
+    "events_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/offline_runs/s4_smoke_fmh.jsonl",
+      "sha256": "49f8989ec08885837645015fe30c6061b87d48433c8b4df85477fe53bc99787a"
+    },
+    "latency_receipts": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/offline_runs/s4_smoke_fmh.run/latency_receipts.jsonl",
+      "sha256": "736fb3715903652afa87711b9d4ea84400e89d805c5e967e6b6d260b9e682de8"
+    },
+    "smoothing_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s5/freeze.json",
+      "sha256": "464c745193b50181e59f9c1dca2ef2412d6a1af8d3911a708a0fe4c476adc531"
+    },
+    "silence_freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/freeze.json",
+      "sha256": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14"
+    },
+    "replay_speakers": [
+      "06"
+    ],
+    "stability_gate_applies": false,
+    "training": false,
+    "inference_replayed": false,
+    "bundle": {
+      "path": "configs/calibration_bundle_v1.1.json",
+      "sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "selected": {
+    "model": "fsmn",
+    "threshold": 0.3,
+    "min_silence": 0.8
+  },
+  "training_source": "AISHELL-4 train only",
+  "selection": "highest 10ms speech F1; within 0.005 prefer smaller minimum silence and lower endpoint delay",
+  "exact_tie": "threshold closest to 0.5, then model name",
+  "min_speech_s": 0.3,
+  "max_speech_s": 15,
+  "postprocessing": "shared registered probability-threshold state machine; overlap resets state",
+  "model_artifacts": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/vad_models/summary.json",
+    "sha256": "ad7f241625e231d5363a6e4d317ebc1ce7655c17cd13a2f633e3276d67106010"
+  }
+}

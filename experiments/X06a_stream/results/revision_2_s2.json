@@ -1,0 +1,556 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/summary.json",
+    "sha256": "68bc0d81b960506dd5f7840c3f228b21a8f2bf885b424044cbddcae5ddbd03ae"
+  },
+  "data": {
+    "min_silence": 0.4,
+    "freeze": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/freeze.json",
+      "sha256": "04d99e40dee28b4164faa5dad82bc50c45a93d01b22e2fe38f395e5f3f5bea14"
+    },
+    "reports": {
+      "0.4": {
+        "fmh": {
+          "H3": {
+            "metrics": {
+              "n": 3266,
+              "macro_f1": 0.615542614496378,
+              "class_f1": {
+                "neutral": 0.707105719237435,
+                "joy": 0.7536496350364964,
+                "sadness": 0.78419452887538,
+                "anger": 0.8027210884353742,
+                "fear": 0.5570776255707762,
+                "disgust": 0.28852459016393445,
+                "surprise": 0.4155251141552511
+              },
+              "accepted": 2752,
+              "coverage": 0.842620943049602,
+              "neutral_false_positive_rate": 0.19078415521422798,
+              "accepted_metrics": {
+                "n": 2752,
+                "macro_f1": 0.6796416473686906,
+                "class_f1": {
+                  "neutral": 0.7687235044747998,
+                  "joy": 0.804284323271665,
+                  "sadness": 0.821656050955414,
+                  "anger": 0.8475658419792498,
+                  "fear": 0.6354166666666666,
+                  "disgust": 0.3728813559322034,
+                  "surprise": 0.5069637883008357
+                },
+                "accepted": 2752,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.22433460076045628
+              },
+              "ambiguous_multi_face_n": 150,
+              "ambiguous_multi_face_rate": 0.04592774035517452,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9622257507473877,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.15554194733619106,
+              "merged_vad_segment_fraction": 0.2522093813732155,
+              "vad_speech_segments": 2942,
+              "macro_f1_minus_correct_boundaries": -0.04521039481224687
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.4_fmh_H3.jsonl",
+              "sha256": "32a0e3707cd2eaacef11d0c5b8342a2d446d354eb874a0ac05bd0ab9c5cd5a1d"
+            }
+          },
+          "H_ref": {
+            "metrics": {
+              "n": 3266,
+              "macro_f1": 0.6102885862027729,
+              "class_f1": {
+                "neutral": 0.7030356357237132,
+                "joy": 0.7533875338753387,
+                "sadness": 0.7820895522388059,
+                "anger": 0.8063300678221552,
+                "fear": 0.5504587155963303,
+                "disgust": 0.273972602739726,
+                "surprise": 0.40274599542334094
+              },
+              "accepted": 2723,
+              "coverage": 0.8337415799142682,
+              "neutral_false_positive_rate": 0.19563459983831852,
+              "accepted_metrics": {
+                "n": 2723,
+                "macro_f1": 0.6797320807119771,
+                "class_f1": {
+                  "neutral": 0.7693789118921521,
+                  "joy": 0.801923076923077,
+                  "sadness": 0.8264984227129337,
+                  "anger": 0.8512330946698489,
+                  "fear": 0.6349206349206349,
+                  "disgust": 0.3755868544600939,
+                  "surprise": 0.4985835694050991
+                },
+                "accepted": 2723,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.23246878001921228
+              },
+              "ambiguous_multi_face_n": 150,
+              "ambiguous_multi_face_rate": 0.04592774035517452,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9622257507473877,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.15554194733619106,
+              "merged_vad_segment_fraction": 0.2522093813732155,
+              "vad_speech_segments": 2942,
+              "macro_f1_minus_correct_boundaries": -0.04949221375202506
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.4_fmh_H_ref.jsonl",
+              "sha256": "ded37cd10907dbb2d02a03326569a933116e95cf6c47a491332a12122d295c41"
+            }
+          }
+        },
+        "et_test": {
+          "H3": {
+            "metrics": {
+              "n": 1929,
+              "macro_f1": 0.5927548232546409,
+              "class_f1": {
+                "neutral": 0.7513157894736842,
+                "joy": 0.7650727650727651,
+                "sadness": 0.5026737967914439,
+                "anger": 0.7280575539568346,
+                "fear": 0.6060606060606061,
+                "disgust": 0.3235294117647059,
+                "surprise": 0.47257383966244726
+              },
+              "accepted": 1626,
+              "coverage": 0.8429237947122862,
+              "neutral_false_positive_rate": 0.13607990012484394,
+              "accepted_metrics": {
+                "n": 1626,
+                "macro_f1": 0.6568635464285822,
+                "class_f1": {
+                  "neutral": 0.8162973552537527,
+                  "joy": 0.8087912087912088,
+                  "sadness": 0.5562130177514792,
+                  "anger": 0.7643504531722054,
+                  "fear": 0.6862745098039216,
+                  "disgust": 0.39759036144578314,
+                  "surprise": 0.5685279187817259
+                },
+                "accepted": 1626,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.16029411764705884
+              },
+              "ambiguous_multi_face_n": 44,
+              "ambiguous_multi_face_rate": 0.02280974598237429,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9512276610820483,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.2011404872991187,
+              "merged_vad_segment_fraction": 0.22631578947368422,
+              "vad_speech_segments": 1900,
+              "macro_f1_minus_correct_boundaries": -0.05072802484088934
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.4_et_test_H3.jsonl",
+              "sha256": "fa120aee9ac9ad7fe3c65dc9c1569151f7110cc0605ecdf7b1ce6f078b4e5931"
+            }
+          },
+          "H_ref": {
+            "metrics": {
+              "n": 1929,
+              "macro_f1": 0.5905031795905644,
+              "class_f1": {
+                "neutral": 0.7509881422924901,
+                "joy": 0.7741935483870968,
+                "sadness": 0.4842105263157895,
+                "anger": 0.7277856135401974,
+                "fear": 0.6260869565217392,
+                "disgust": 0.30612244897959184,
+                "surprise": 0.4641350210970464
+              },
+              "accepted": 1647,
+              "coverage": 0.8538102643856921,
+              "neutral_false_positive_rate": 0.14232209737827714,
+              "accepted_metrics": {
+                "n": 1647,
+                "macro_f1": 0.6493789610345823,
+                "class_f1": {
+                  "neutral": 0.8137044967880086,
+                  "joy": 0.803347280334728,
+                  "sadness": 0.5257142857142857,
+                  "anger": 0.7565982404692082,
+                  "fear": 0.7024390243902439,
+                  "disgust": 0.379746835443038,
+                  "surprise": 0.5641025641025641
+                },
+                "accepted": 1647,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.16666666666666666
+              },
+              "ambiguous_multi_face_n": 44,
+              "ambiguous_multi_face_rate": 0.02280974598237429,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9512276610820483,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.2011404872991187,
+              "merged_vad_segment_fraction": 0.22631578947368422,
+              "vad_speech_segments": 1900,
+              "macro_f1_minus_correct_boundaries": -0.046442852796355294
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.4_et_test_H_ref.jsonl",
+              "sha256": "7de75f7335ae851a874b034470cf8d8089c3ad8fe6c7c707c119850f29ffd570"
+            }
+          }
+        }
+      },
+      "0.8": {
+        "fmh": {
+          "H3": {
+            "metrics": {
+              "n": 3266,
+              "macro_f1": 0.5796977347012404,
+              "class_f1": {
+                "neutral": 0.5991189427312775,
+                "joy": 0.673702726473175,
+                "sadness": 0.8142076502732241,
+                "anger": 0.7725190839694657,
+                "fear": 0.5761316872427984,
+                "disgust": 0.2598187311178248,
+                "surprise": 0.3623853211009174
+              },
+              "accepted": 2600,
+              "coverage": 0.7960808328230251,
+              "neutral_false_positive_rate": 0.2950687146321746,
+              "accepted_metrics": {
+                "n": 2600,
+                "macro_f1": 0.648681637164165,
+                "class_f1": {
+                  "neutral": 0.6864834548513741,
+                  "joy": 0.7365384615384616,
+                  "sadness": 0.8370786516853933,
+                  "anger": 0.8391376451077943,
+                  "fear": 0.6422018348623854,
+                  "disgust": 0.344,
+                  "surprise": 0.4553314121037464
+                },
+                "accepted": 2600,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.3735926305015353
+              },
+              "ambiguous_multi_face_n": 235,
+              "ambiguous_multi_face_rate": 0.07195345988977342,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9822938789088171,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.18524188609920392,
+              "merged_vad_segment_fraction": 0.644,
+              "vad_speech_segments": 1750,
+              "macro_f1_minus_correct_boundaries": -0.08105527460738449
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.8_fmh_H3.jsonl",
+              "sha256": "ffee1d05a48802bf821e3a0f9c38c26575544709d3186681e0384ccfd5505f2f"
+            }
+          },
+          "H_ref": {
+            "metrics": {
+              "n": 3266,
+              "macro_f1": 0.5811961680636611,
+              "class_f1": {
+                "neutral": 0.5900990099009901,
+                "joy": 0.6794092093831451,
+                "sadness": 0.8053333333333333,
+                "anger": 0.774885145482389,
+                "fear": 0.5726141078838174,
+                "disgust": 0.2865853658536585,
+                "surprise": 0.35944700460829493
+              },
+              "accepted": 2589,
+              "coverage": 0.7927127985303123,
+              "neutral_false_positive_rate": 0.2910266774454325,
+              "accepted_metrics": {
+                "n": 2589,
+                "macro_f1": 0.6511632117236885,
+                "class_f1": {
+                  "neutral": 0.6854514088556641,
+                  "joy": 0.7391304347826086,
+                  "sadness": 0.8228882833787466,
+                  "anger": 0.8412302576891105,
+                  "fear": 0.6448598130841121,
+                  "disgust": 0.3657587548638132,
+                  "surprise": 0.4588235294117647
+                },
+                "accepted": 2589,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.37656903765690375
+              },
+              "ambiguous_multi_face_n": 235,
+              "ambiguous_multi_face_rate": 0.07195345988977342,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9822938789088171,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.18524188609920392,
+              "merged_vad_segment_fraction": 0.644,
+              "vad_speech_segments": 1750,
+              "macro_f1_minus_correct_boundaries": -0.07858463189113685
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.8_fmh_H_ref.jsonl",
+              "sha256": "94156d80ba9c12b6fd73e23f4ecc236097332346efbaa1e1793facb5a7e6865a"
+            }
+          }
+        },
+        "et_test": {
+          "H3": {
+            "metrics": {
+              "n": 1929,
+              "macro_f1": 0.5671921766282721,
+              "class_f1": {
+                "neutral": 0.6922519913106444,
+                "joy": 0.7023809523809523,
+                "sadness": 0.5508474576271186,
+                "anger": 0.7174515235457064,
+                "fear": 0.5714285714285714,
+                "disgust": 0.30042918454935624,
+                "surprise": 0.43555555555555553
+              },
+              "accepted": 1624,
+              "coverage": 0.8418869880767237,
+              "neutral_false_positive_rate": 0.23470661672908863,
+              "accepted_metrics": {
+                "n": 1624,
+                "macro_f1": 0.621602195722506,
+                "class_f1": {
+                  "neutral": 0.7672552166934189,
+                  "joy": 0.7375,
+                  "sadness": 0.5803571428571429,
+                  "anger": 0.7496382054992764,
+                  "fear": 0.6343612334801763,
+                  "disgust": 0.37433155080213903,
+                  "surprise": 0.5077720207253886
+                },
+                "accepted": 1624,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.2822822822822823
+              },
+              "ambiguous_multi_face_n": 32,
+              "ambiguous_multi_face_rate": 0.01658890616899948,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9742523104248475,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.1980300673924313,
+              "merged_vad_segment_fraction": 0.599476439790576,
+              "vad_speech_segments": 1146,
+              "macro_f1_minus_correct_boundaries": -0.0762906714672581
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.8_et_test_H3.jsonl",
+              "sha256": "a9ce5b2b5d6d9cc4459705ee85c773cf53169b0c123eccf5d901422468e54a35"
+            }
+          },
+          "H_ref": {
+            "metrics": {
+              "n": 1929,
+              "macro_f1": 0.5713618403755426,
+              "class_f1": {
+                "neutral": 0.6905109489051094,
+                "joy": 0.714859437751004,
+                "sadness": 0.5461847389558233,
+                "anger": 0.7209944751381215,
+                "fear": 0.5991902834008097,
+                "disgust": 0.2922374429223744,
+                "surprise": 0.43555555555555553
+              },
+              "accepted": 1603,
+              "coverage": 0.8310005184033178,
+              "neutral_false_positive_rate": 0.2222222222222222,
+              "accepted_metrics": {
+                "n": 1603,
+                "macro_f1": 0.6295946014036702,
+                "class_f1": {
+                  "neutral": 0.7754098360655738,
+                  "joy": 0.7526427061310782,
+                  "sadness": 0.5811965811965812,
+                  "anger": 0.7565217391304347,
+                  "fear": 0.6636771300448431,
+                  "disgust": 0.3699421965317919,
+                  "surprise": 0.5077720207253886
+                },
+                "accepted": 1603,
+                "coverage": 1.0,
+                "neutral_false_positive_rate": 0.27342549923195086
+              },
+              "ambiguous_multi_face_n": 32,
+              "ambiguous_multi_face_rate": 0.01658890616899948,
+              "vad_truth_coverage": 1.0,
+              "vad_duration_coverage": 0.9742523104248475,
+              "uncovered_truth_n": 0,
+              "truth_split_fraction": 0.1980300673924313,
+              "merged_vad_segment_fraction": 0.599476439790576,
+              "vad_speech_segments": 1146,
+              "macro_f1_minus_correct_boundaries": -0.06558419201137711
+            },
+            "predictions": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/s2/0.8_et_test_H_ref.jsonl",
+              "sha256": "580e063f1ab17245effba72ae5be02eba4ff96c8a0da4af032c0e9150b05dbc7"
+            }
+          }
+        }
+      }
+    },
+    "correct_boundaries": {
+      "fmh": {
+        "H3": {
+          "n": 3266,
+          "macro_f1": 0.6607530093086249,
+          "class_f1": {
+            "neutral": 0.7770188830855765,
+            "joy": 0.8197343453510436,
+            "sadness": 0.8441926345609065,
+            "anger": 0.8404009252120278,
+            "fear": 0.5608465608465608,
+            "disgust": 0.2968197879858657,
+            "surprise": 0.48625792811839325
+          },
+          "accepted": 2872,
+          "coverage": 0.8793631353337416,
+          "neutral_false_positive_rate": 0.10913500404203719,
+          "accepted_metrics": {
+            "n": 2872,
+            "macro_f1": 0.7157253521753791,
+            "class_f1": {
+              "neutral": 0.8215802888700084,
+              "joy": 0.8597014925373134,
+              "sadness": 0.861271676300578,
+              "anger": 0.8769106999195495,
+              "fear": 0.654320987654321,
+              "disgust": 0.37668161434977576,
+              "surprise": 0.559610705596107
+            },
+            "accepted": 2872,
+            "coverage": 1.0,
+            "neutral_false_positive_rate": 0.12250453720508167
+          },
+          "ambiguous_multi_face_n": 80,
+          "ambiguous_multi_face_rate": 0.02449479485609308
+        },
+        "H_ref": {
+          "n": 3266,
+          "macro_f1": 0.659780799954798,
+          "class_f1": {
+            "neutral": 0.7705451586655818,
+            "joy": 0.812962962962963,
+            "sadness": 0.8547486033519553,
+            "anger": 0.8445475638051044,
+            "fear": 0.5833333333333334,
+            "disgust": 0.2888086642599278,
+            "surprise": 0.463519313304721
+          },
+          "accepted": 2858,
+          "coverage": 0.8750765462339253,
+          "neutral_false_positive_rate": 0.12449474535165723,
+          "accepted_metrics": {
+            "n": 2858,
+            "macro_f1": 0.7180561468235103,
+            "class_f1": {
+              "neutral": 0.8156761412575366,
+              "joy": 0.8507751937984496,
+              "sadness": 0.8693181818181818,
+              "anger": 0.8820678513731826,
+              "fear": 0.6871165644171779,
+              "disgust": 0.37735849056603776,
+              "surprise": 0.5440806045340051
+            },
+            "accepted": 2858,
+            "coverage": 1.0,
+            "neutral_false_positive_rate": 0.13987284287011809
+          },
+          "ambiguous_multi_face_n": 80,
+          "ambiguous_multi_face_rate": 0.02449479485609308
+        }
+      },
+      "et_test": {
+        "H3": {
+          "n": 1929,
+          "macro_f1": 0.6434828480955302,
+          "class_f1": {
+            "neutral": 0.7909604519774012,
+            "joy": 0.8034188034188035,
+            "sadness": 0.6266094420600858,
+            "anger": 0.763744427934621,
+            "fear": 0.6407766990291263,
+            "disgust": 0.3582089552238806,
+            "surprise": 0.5206611570247934
+          },
+          "accepted": 1687,
+          "coverage": 0.8745463970969414,
+          "neutral_false_positive_rate": 0.10861423220973783,
+          "accepted_metrics": {
+            "n": 1687,
+            "macro_f1": 0.7007921992029189,
+            "class_f1": {
+              "neutral": 0.8349900596421471,
+              "joy": 0.8355555555555556,
+              "sadness": 0.6606334841628959,
+              "anger": 0.8006230529595015,
+              "fear": 0.717391304347826,
+              "disgust": 0.44171779141104295,
+              "surprise": 0.6146341463414634
+            },
+            "accepted": 1687,
+            "coverage": 1.0,
+            "neutral_false_positive_rate": 0.12133891213389121
+          },
+          "ambiguous_multi_face_n": 22,
+          "ambiguous_multi_face_rate": 0.011404872991187144
+        },
+        "H_ref": {
+          "n": 1929,
+          "macro_f1": 0.6369460323869197,
+          "class_f1": {
+            "neutral": 0.7791878172588832,
+            "joy": 0.8067226890756303,
+            "sadness": 0.6212765957446809,
+            "anger": 0.7558823529411764,
+            "fear": 0.6213592233009708,
+            "disgust": 0.35,
+            "surprise": 0.5241935483870968
+          },
+          "accepted": 1692,
+          "coverage": 0.8771384136858476,
+          "neutral_false_positive_rate": 0.12109862671660425,
+          "accepted_metrics": {
+            "n": 1692,
+            "macro_f1": 0.6898835109677556,
+            "class_f1": {
+              "neutral": 0.8263795423956931,
+              "joy": 0.8275862068965517,
+              "sadness": 0.6517857142857143,
+              "anger": 0.7932098765432098,
+              "fear": 0.6956521739130435,
+              "disgust": 0.42424242424242425,
+              "surprise": 0.6103286384976526
+            },
+            "accepted": 1692,
+            "coverage": 1.0,
+            "neutral_false_positive_rate": 0.13642756680731363
+          },
+          "ambiguous_multi_face_n": 22,
+          "ambiguous_multi_face_rate": 0.011404872991187144
+        }
+      }
+    },
+    "baseline_sources": {
+      "fmh": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_stream_oracle/predictions.jsonl",
+        "sha256": "af6c73268d312c8467ac61287e4a2413b2d7f35cf6e98862711b078812d82198"
+      },
+      "et_test": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/predictions.jsonl",
+        "sha256": "6b00361f602cc4d950b5667ddd2fee48b5e9ff77f4e1bf066f828ee414d6d675"
+      }
+    },
+    "gpu_seconds": 0
+  }
+}

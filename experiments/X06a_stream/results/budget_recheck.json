@@ -1,0 +1,47 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/budget_recheck/summary.json",
+    "sha256": "91e4365374cf4a1588785fa4552e8dc38d8c7d11394273573092fb00b9af6abe"
+  },
+  "data": {
+    "status": "passed",
+    "used_gpu_hours": 0.6099844228460763,
+    "estimated_total_gpu_hours": 12.747556278483117,
+    "estimated_remaining_gpu_hours": 12.13757185563704,
+    "limit_gpu_hours": 15,
+    "counts": {
+      "fmh": {
+        "speech_segments": 1750,
+        "silence_windows": 25
+      },
+      "et_test": {
+        "speech_segments": 1146,
+        "silence_windows": 23
+      }
+    },
+    "measured_seconds_per_stage": {
+      "Q_A": 0.3286708718036123,
+      "Q_AV": 0.5704637999937736,
+      "A3": 0.032423139970914734,
+      "V2": 0.04270847173450643,
+      "V1": 0.042120594060566986,
+      "audio_decode": 0.011720060725358908
+    },
+    "both_system_seconds": 1.1118246262290545,
+    "face_cpu_seconds_per_5fps_frame": 0.2728845762892829,
+    "et_stream_frames_per_system": 53777,
+    "q_media_seconds_per_segment": 0.6342560025021345,
+    "fullspeed_s": 3244.2932918700144,
+    "realtime_input_s": 21510.153902310773,
+    "realtime_serial_service_s": 32918.422275041106,
+    "reserve": "20% of future service/playback time plus 300s initialization",
+    "cuts": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/cuts/summary.json",
+      "sha256": "6953b6686d77b5c7da27671f1b6d727c9b233a1c846ea3c687e8304f3cfc2cc3"
+    },
+    "equivalence": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/equivalence_attempt2/summary.json",
+      "sha256": "2a63cc7740fbf13dffb3167eddb8add80579886159d24acfed60db0e7ec4376b"
+    }
+  }
+}

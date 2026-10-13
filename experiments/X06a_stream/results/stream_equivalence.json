@@ -1,0 +1,40 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/summary.json",
+    "sha256": "7041bb133406bfc5880c57536cb4d6845faa1c2039c0449b0bb4e02cfa773e87"
+  },
+  "data": {
+    "status": "STOP_equivalence",
+    "n": 1184,
+    "required_n": 1929,
+    "systems": {
+      "H3": {
+        "agreement": 0.9222972972972973,
+        "mismatches": 92,
+        "without_gate_mismatches": 90
+      },
+      "H_ref": {
+        "agreement": 0.9180743243243243,
+        "mismatches": 97,
+        "without_gate_mismatches": 95
+      }
+    },
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/predictions.jsonl",
+      "sha256": "e82eba38aeefcb9bd0c87a5d9a13a5f69dc3c89c3934d0dc8d571df3577d3d7d"
+    },
+    "mismatch_details": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_equivalence/mismatches.json",
+      "sha256": "3e4a73546da6e77e915f7a70dbf321c1ab661253f2344bc19fa1a400d6d054af"
+    },
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/inputs.jsonl",
+      "sha256": "49ce9bec28204cf7145e774e46149d3f44cf5e633d627a4513ed6ac5c10650eb"
+    },
+    "input_scope": "actual S1 streams",
+    "parameter_bundle": {
+      "path": "configs/calibration_bundle_v1.1.json",
+      "sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7"
+    }
+  }
+}

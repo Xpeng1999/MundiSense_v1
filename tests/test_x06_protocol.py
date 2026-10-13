@@ -1,0 +1,394 @@
+import json
+from pathlib import Path
+import pytest
+from emotioncore.x06.common import assert_tuning_source
+from emotioncore.x06.gate import route, upgraded_bytes, verify_only_gate_changed
+from emotioncore.x06.simulator import build_timelines
+
+
+def test_only_training_sources_can_tune():
+    assert_tuning_source('fmh', ['06', '10', '11'])
+    assert_tuning_source('aishell_train')
+    for source, speakers in [('et_test', ['02']), ('fmh', ['06', '02']),
+                             ('aishell_test', None), ('sims_valid', None)]:
+        with pytest.raises(ValueError):
+            assert_tuning_source(source, speakers)
+
+
+def test_s6_stop_blocks_every_gpu_entry_before_any_run_is_created(tmp_path, monkeypatch):
+    from emotioncore.x06 import gpu_guard
+    stopped = tmp_path / 'stream_equivalence'
+    stopped.mkdir()
+    (stopped / 'summary.json').write_text(json.dumps({'status': 'STOP_equivalence'}))
+    monkeypatch.setattr(gpu_guard, 'ROOT', tmp_path)
+    monkeypatch.setattr(gpu_guard, 'start', lambda *_: pytest.fail('Stopped task created a new GPU run'))
+    for task in gpu_guard.TASKS:
+        with pytest.raises(RuntimeError, match='no further GPU work'):
+            gpu_guard.run(task)
+    assert not (tmp_path / 'gpu_jobs').exists()
+
+
+def test_bundle_changes_only_gate_bytes():
+    original = Path('configs/calibration_bundle_v1.json').read_bytes()
+    revised = upgraded_bytes(original)
+    verify_only_gate_changed(original, revised)
+    a, b = json.loads(original), json.loads(revised)
+    del a['gate_rules'], b['gate_rules']
+    assert a == b
+    with pytest.raises(ValueError):
+        verify_only_gate_changed(original, revised.replace(b'"version": 1', b'"version": 2'))
+
+
+def test_revision_budget_stop_blocks_all_gpu_entries(tmp_path, monkeypatch):
+    from emotioncore.x06 import gpu_guard
+    stopped = tmp_path / 'revision_1_budget'
+    stopped.mkdir()
+    (stopped / 'summary.json').write_text(json.dumps({'status': 'STOP_budget_estimate'}))
+    monkeypatch.setattr(gpu_guard, 'ROOT', tmp_path)
+    monkeypatch.setattr(gpu_guard, 'start', lambda *_: pytest.fail('Budget stop created a GPU run'))
+    for task in gpu_guard.TASKS:
+        with pytest.raises(RuntimeError, match='revision-1 startup budget'):
+            gpu_guard.run(task)
+    assert not (tmp_path / 'gpu_jobs').exists()
+
+
+def test_revision_s6a_requires_identical_outputs():
+    from emotioncore.x06.revision_budget import check_s6a
+    summary = {'n': 1929, 'status': 'completed', 'systems': {
+        name: {'without_gate_mismatches': 0} for name in ('H3', 'H_ref')}}
+    check_s6a(summary)
+    summary['systems']['H3']['without_gate_mismatches'] = 1
+    with pytest.raises(RuntimeError, match='STOP S6a'):
+        check_s6a(summary)
+
+
+def test_revision_estimate_includes_history_and_worst_replay_candidate():
+    from emotioncore.x06.revision_budget import estimate
+    rates = {'both': 2., 'Q_AV': 1., 'A3': .1, 'V2': .1, 'V1': .1}
+    candidates = {'0.4': {'speech': 100, 'visual': 2, 'et_speech': 50, 'et_visual': 1},
+                  '0.8': {'speech': 60, 'visual': 1, 'et_speech': 30, 'et_visual': 1}}
+    actual = estimate(3600, 10, candidates, rates, 1000, 100, .1, .5, .5)
+    assert actual['correct_boundary_s'] == 20
+    assert actual['two_vad_configs_s'] == 321.5
+    assert actual['replay_base_s'] == pytest.approx(417)
+    assert actual['estimated_total_gpu_hours'] == pytest.approx((3600 + 1.2 * (20 + 321.5 + 417) + 300) / 3600)
+
+
+@pytest.mark.parametrize('face,speech,scores,expected', [
+    (True, True, [10], ('full', 'both_available')),
+    (True, True, [10, 4.9], ('full', 'both_available')),
+    (True, True, [10, 5], ('reject', 'ambiguous_multi_face')),
+    (False, True, [], ('H_A', 'no_face')),
+    (False, False, [], ('reject', 'no_modalities')),
+    (True, False, [10], ('H_V', 'visual_only')),
+])
+def test_gate_boundary(face, speech, scores, expected):
+    assert route(face, speech, scores) == expected
+
+
+def test_timelines_retain_original_durations_and_sorting():
+    records = [{'utt_id': uid, 'speaker_id': '06', 'group': 'G01', 'dialogue': '01',
+                'mp4': {'duration_s': duration}, 'wav': {'duration_s': duration - .1},
+                'labels': {'M': 'neutral'}}
+               for uid, duration in [('G01_01_06_002', 1.234567), ('G01_01_06_001', 2.345678)]]
+    timeline = build_timelines(records)['06']
+    assert timeline == build_timelines(records)['06']
+    utterances = [e for e in timeline['entries'] if e['kind'] == 'utterance']
+    assert [e['utt_id'] for e in utterances] == sorted(r['utt_id'] for r in records)
+    durations = {r['utt_id']: r['mp4']['duration_s'] for r in records}
+    for e in utterances:
+        assert e['end_s'] - e['start_s'] == pytest.approx(durations[e['utt_id']], abs=1e-12)
+    gap = timeline['entries'][1]
+    assert gap['synthetic'] and .3 <= gap['end_s'] - gap['start_s'] <= 1.5
+
+
+def test_service_decisions_preserve_frozen_bundle_formula():
+    from emotioncore.x06.service import Service
+    from emotioncore.x05.bundle import Bundle
+    service = Service.__new__(Service)
+    service.bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    service.previous = {}
+    baseline = Bundle.load()
+    probabilities = {c: [.1, .3, .05, .2, .05, .1, .2]
+                     for p in service.bundle['systems'].values() for c in p['components']}
+    for system in ('H3', 'H_ref'):
+        old = baseline.apply(probabilities, dict(has_face=True, face_count=1, has_speech=True,
+                                                full_system=system, rejection_point='90'))
+        new = service.decide(probabilities, system, scores=[1.])
+        assert (new['label'], new['route']) == (old[0], old[2])
+        assert new['confidence'] == pytest.approx(old[1], abs=1e-12)
+    visual = service.decide(probabilities, 'H3', has_speech=False, scores=[1.])
+    assert visual['rejection_point'] == '80' and visual['reason'] == 'visual_only'
+
+
+def test_vad_silence_minimum_maximum_and_overlap_exclusion():
+    import numpy as np
+    from emotioncore.x06.vad import segments, mask_segments
+    p = np.r_[np.zeros(10), np.ones(40), np.zeros(20), np.ones(29), np.zeros(20)]
+    result = segments(p, .5, .2)
+    assert len(result) == 1
+    assert result[0] == pytest.approx({'start_s': .1, 'end_s': .5, 'decision_s': .7}, abs=1e-12)
+    forced = segments(np.ones(3100), .5, .2)
+    assert [round(x['end_s'] - x['start_s'], 5) for x in forced] == [15, 15, 1]
+    valid = np.ones(100, dtype=bool); valid[40:60] = False
+    detected = segments(np.ones(100), .5, .2, valid)
+    assert not mask_segments(detected, 100)[~valid].any()
+
+
+def test_uncovered_truth_is_reject_and_counts_as_false_negative():
+    from emotioncore.x06.aggregate import truth_decision, metrics, components_for_truth
+    truth = {'start_s': 2., 'end_s': 4.}
+    actual = truth_decision(truth, [], lambda _: pytest.fail('No covered component exists'))
+    assert actual['label'] == 'reject'
+    assert metrics(['neutral'], [actual['label']])['n'] == 1
+    assert metrics(['neutral'], [actual['label']])['class_f1']['neutral'] == 0
+    segments = [{'start_s': 1., 'end_s': 3., 'component_probs': {'A': [1., 0.]}},
+                {'start_s': 3., 'end_s': 5., 'component_probs': {'A': [0., 1.]}}]
+    assert components_for_truth(truth, segments)['A'] == [.5, .5]
+
+
+def test_inference_input_allowlist_excludes_sealed_or_unregistered_media(monkeypatch):
+    from emotioncore.x06 import streams
+    monkeypatch.setattr(streams, 'population', lambda: [])
+    for path in ('/data/CH-SIMS/test/sample.mp4', '/data/MER/test/sample.mp4',
+                 '/tmp/unregistered.mp4'):
+        with pytest.raises(ValueError, match='outside the X06'):
+            streams.validate_input(path)
+
+
+def test_online_endpoints_match_fullspeed_and_silence_is_disjoint():
+    import numpy as np
+    from emotioncore.x06.online_vad import Endpoints, LiveEvents, silence_windows
+    from emotioncore.x06.vad import segments
+    p = np.r_[np.zeros(250), np.ones(45), np.zeros(320), np.ones(1700), np.zeros(21)]
+    online = Endpoints(.5, .2)
+    events = []
+    for value in p:
+        event = online.push(value)
+        if event:
+            events.append(event)
+    if online.finish():
+        events.append(online.finish())
+    assert events == segments(p, .5, .2)
+    silent = silence_windows(events, len(p) / 100)
+    for window in silent:
+        assert window['end_s'] - window['start_s'] == pytest.approx(2.)
+        assert all(window['end_s'] <= v['start_s'] or window['start_s'] >= v['end_s'] for v in events)
+    causal = LiveEvents(.5, .2)
+    emitted = [event for value in p for event in causal.advance(value)] + causal.finish(len(p) / 100)
+    assert [{k: e[k] for k in ('start_s', 'end_s')} for e in emitted if e['visual_only']] == [
+        {k: e[k] for k in ('start_s', 'end_s')} for e in silent]
+
+
+def test_streaming_ema_zero_matches_frozen_service_and_gates_update_state():
+    from emotioncore.x06.decision import apply
+    from emotioncore.x06.service import Service
+    service = Service.__new__(Service)
+    service.bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    service.previous = {}
+    probabilities = {c: [.1, .3, .05, .2, .05, .1, .2]
+                     for p in service.bundle['systems'].values() for c in p['components']}
+    for name in ('H3', 'H_ref'):
+        for face, speech, scores in [(True, True, [1]), (True, True, [1, .5]),
+                                     (False, True, []), (True, False, [1]), (False, False, [])]:
+            a = service.decide(probabilities, name, has_face=face, has_speech=speech, scores=scores)
+            state = {}
+            b = apply(service.bundle, probabilities, name, has_face=face, speech=speech, scores=scores, state=state)
+            assert (a['label'], a['route'], a['reason']) == (b['label'], b['route'], b['reason'])
+            if a['route'] != 'reject':
+                assert a['confidence'] == pytest.approx(b['confidence'], abs=1e-12)
+            if speech:
+                assert ('', name) in state
+
+
+def test_ema_selection_cannot_access_et_labels(monkeypatch):
+    from emotioncore.x06 import analysis
+    from emotioncore.x06.common import FMH
+    bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    components = {c: [.1, .3, .05, .2, .05, .1, .2] for p in bundle['systems'].values() for c in p['components']}
+    seen = []
+    def label_reader(speaker):
+        assert speaker in FMH, 'ET-test labels accessed during tuning'
+        seen.append(speaker)
+        return [{'utt_id': speaker + '_truth', 'start_s': 0., 'end_s': 1., 'label': 'neutral'}]
+    monkeypatch.setattr(analysis, 'truths', label_reader)
+    records = [{'cohort': 'fmh', 'speaker_id': speaker, 'start_s': 0., 'end_s': 1.,
+                'component_probs': components, 'has_face': True, 'track_scores': [1.]} for speaker in FMH]
+    alpha, _ = analysis.choose_alpha(bundle, records)
+    assert alpha == 0. and set(seen) == set(FMH)
+    with pytest.raises(ValueError):
+        analysis.choose_alpha(bundle, [*records, dict(records[0], cohort='et_test', speaker_id='02')])
+
+
+def test_video_sampling_excludes_exact_end_even_with_float_noise():
+    from emotioncore.x06.prepare_segments import frame_index
+    assert frame_index(21.6) == frame_index(2160 * .01) == 108
+    assert frame_index(21.61) == 109
+
+
+def test_event_outputs_cannot_write_old_experiment_directories():
+    from emotioncore.x06.run import event_destination
+    from emotioncore.x06.common import ROOT
+    assert event_destination('events.jsonl') == ROOT / 'offline_runs/events.jsonl'
+    for path in ('/mnt/h/emotionAI/emotioncore_runs/X05/new.jsonl', '/tmp/events.jsonl', '../../X05/events.jsonl'):
+        with pytest.raises(ValueError, match='new X06a run root'):
+            event_destination(path)
+
+
+def test_virtual_source_retains_terminal_native_frame_until_clip_end(monkeypatch):
+    import sys
+    from types import SimpleNamespace
+    from emotioncore.x06.streams import Video
+    class Capture:
+        def __init__(self, path):
+            self.position = 0
+        def get(self, key):
+            return 30. if key == 1 else 535.
+        def set(self, key, value):
+            self.position = value
+        def read(self):
+            return (self.position <= 17800.000001, 'terminal-frame')
+        def release(self):
+            pass
+    monkeypatch.setitem(sys.modules, 'cv2', SimpleNamespace(VideoCapture=Capture, CAP_PROP_FPS=1,
+                        CAP_PROP_FRAME_COUNT=2, CAP_PROP_POS_MSEC=3, CAP_PROP_POS_FRAMES=4))
+    video = Video({'duration_s': 17.834, 'entries': [{'kind': 'utterance', 'start_s': 0.,
+                  'end_s': 17.834, 'video': {'path': 'test.mp4'}}]})
+    assert video.frame(17.8294) == 'terminal-frame'
+    assert video.terminal_frame_clamps == 1
+
+
+def test_revision2_replay_scope_preserves_original_formula():
+    from emotioncore.x06.budget_revision2 import replay_cost
+    from emotioncore.x06.revision_budget import estimate
+    rates = {'both': 2., 'Q_AV': 1., 'A3': .1, 'V2': .2, 'V1': .3}
+    c = {'speech': 20, 'visual': 3, 'et_speech': 20, 'et_visual': 3}
+    summed = sum(replay_cost(s, c, 1000, 10, rates, .2, .5, .6)['serial_service_s']
+                 for s in ('H3', 'H_ref'))
+    old = estimate(0, 0, {'0.4': c}, rates, 1000, 10, .2, .5, .6)
+    assert summed == pytest.approx(old['replay_candidates']['0.4']['serial_service_s'])
+    reduced = replay_cost('H_ref', {'speech': 5, 'visual': 1}, 250, 3, rates, .2, .5, .6)
+    assert reduced['serial_service_s'] < summed / 2
+
+
+def test_revision2_et_remainder_cannot_repeat_or_replace_prefix():
+    from emotioncore.x06.resume_et import remaining
+    inputs = [{'utt_id': str(i)} for i in range(1929)]
+    prefix = inputs[:1184]
+    assert remaining(inputs, prefix) == inputs[1184:]
+    with pytest.raises(ValueError, match='prefix mismatch'):
+        remaining(inputs, [prefix[1], *prefix[1:]])
+
+
+def test_revision2_s6b_ci_failure_is_not_a_stop_but_large_drop_is():
+    from emotioncore.x06.revision2 import s6b_gate
+    summary = {'cohort': 'fmh', 'n': 3266, 'systems': {'H3': {'op_n': {'delta': -.03, 'ci95': [-.06, -.01]}}}}
+    s6b_gate(summary)
+    summary['systems']['H3']['op_n']['delta'] = -.051
+    with pytest.raises(RuntimeError, match='point estimate'):
+        s6b_gate(summary)
+    summary['cohort'] = 'et_test'
+    with pytest.raises(RuntimeError, match='FMH'):
+        s6b_gate(summary)
+
+
+def test_revision2_paired_bootstrap_preserves_pairs_and_reject_denominator():
+    import numpy as np
+    from emotioncore.x06.s6b import paired, macro_f1
+    y = np.tile(np.arange(7), 5)
+    old = {'op_n': y.copy(), 'r90': y.copy()}
+    assert macro_f1(y, np.full(len(y), -1)) == 0.
+    same = paired(y, old, old, iterations=100)
+    assert same['op_n']['delta'] == 0. and same['op_n']['ci95'] == [0., 0.]
+    newer = {'op_n': y.copy(), 'r90': np.full(len(y), -1)}
+    result = paired(y, old, newer, iterations=100)
+    assert result == paired(y, old, newer, iterations=100)
+    assert result['r90']['delta'] == -1. and result['coverage']['delta'] == -1.
+
+
+def test_revision2_silence_selection_only_reads_fmh_labels(monkeypatch):
+    from emotioncore.x06 import analysis
+    from emotioncore.x06.analyze_revision2 import choose_silence
+    from emotioncore.x06.common import FMH
+    bundle = json.loads(Path('configs/calibration_bundle_v1.1.json').read_text())
+    components = {c: [.1, .3, .05, .2, .05, .1, .2] for p in bundle['systems'].values() for c in p['components']}
+    def reader(s):
+        assert s in FMH
+        return [{'utt_id': s, 'start_s': 0., 'end_s': 1., 'label': 'neutral'}]
+    monkeypatch.setattr(analysis, 'truths', reader)
+    records = [{'speaker_id': s, 'cohort': 'fmh', 'start_s': 0., 'end_s': 1.,
+                'component_probs': components, 'has_face': True, 'track_scores': [1.]} for s in FMH]
+    assert choose_silence(bundle, {.4: records, .8: records})[0] == .4
+    with pytest.raises(ValueError):
+        choose_silence(bundle, {.4: [*records, dict(records[0], cohort='et_test', speaker_id='21')], .8: records})
+
+
+def test_revision2_sequence_rechecks_budget_after_every_stage_and_never_replays():
+    from emotioncore.x06.pre_s7 import steps
+    plan = list(steps())
+    assert len(plan) % 2 == 0
+    for stage, budget in zip(plan[::2], plan[1::2]):
+        assert budget == ('budget_after_' + stage[0], 'budget_revision2', ['--stage', 'after_' + stage[0]])
+    assert not any('realtime_' in str(stage) for stage in plan)
+    ordered = [stage[0] for stage in plan[::2]]
+    assert ordered.index('fmh') < ordered.index('s6b_fmh') < ordered.index('s2_04') < ordered.index('s2_08')
+    assert ordered[-3:] == ['s2', 's3', 's5']
+
+
+@pytest.mark.parametrize('failed_stage', ['budget_before_s7', 'audit_H3', 'budget_after_H3'])
+def test_s7_driver_never_starts_reference_after_failed_gate(tmp_path, monkeypatch, failed_stage):
+    from types import SimpleNamespace
+    from emotioncore.x06 import s7_revision2 as driver
+    calls = []
+    def command(args, **kwargs):
+        stage = list(driver.steps())[len(calls)][0]
+        calls.append(stage)
+        return SimpleNamespace(returncode=1 if stage == failed_stage else 0)
+    monkeypatch.setattr(driver.subprocess, 'run', command)
+    records, problem = driver.execute(tmp_path)
+    assert problem == failed_stage
+    assert calls[-1] == failed_stage
+    assert 'realtime_H_ref' not in calls
+    assert records[-1]['returncode'] == 1
+
+
+@pytest.mark.parametrize('left,right,expected', [
+    ({'status': 'failed'}, {'status': 'failed'}, True),
+    ({'status': 'failed'}, {'status': 'ok', 'output': 'video'}, False),
+    (None, {'status': 'failed'}, False),
+    ({'status': 'ok', 'output': 'a'}, {'status': 'ok', 'output': 'b'}, False),
+])
+def test_live_audit_handles_absent_q_video_without_masking_input_changes(monkeypatch, left, right, expected):
+    import numpy as np
+    from emotioncore.x06 import live_audit_revision2 as audit
+    monkeypatch.setattr(audit, 'sha256', lambda _: 'sha')
+    monkeypatch.setattr(audit.Service, 'audio', lambda _: np.zeros(3))
+    monkeypatch.setattr(audit, 'video_pixels', lambda path: (1, path))
+    base = {'wav': 'wav', 'wav_sha256': 'sha', 'face': {'crop_paths': [], 'track_scores': []}}
+    assert audit.inputs_equal(dict(base, q_video=left), dict(base, q_video=right))['q_video_pixels'] is expected
+
+
+def test_pending_live_audit_retry_cannot_fall_back_to_old_success(tmp_path, monkeypatch):
+    from emotioncore.x06 import revision2
+    monkeypatch.setattr(revision2, 'REV', tmp_path)
+    (tmp_path / 'live_audit_H3_retry').mkdir()
+    with pytest.raises(FileNotFoundError):
+        revision2.live_audit_summary('H3')
+
+
+@pytest.mark.parametrize('failed_stage', ['audit_H3_retry', 'budget_after_H3'])
+def test_s7_recovery_never_replays_h3_or_crosses_a_failed_gate(tmp_path, monkeypatch, failed_stage):
+    from types import SimpleNamespace
+    from emotioncore.x06 import s7_revision2 as driver
+    names = ['audit_H3_retry', 'budget_after_H3', 'realtime_H_ref', 'audit_H_ref', 'budget_after_H_ref']
+    calls = []
+    def command(args, **kwargs):
+        stage = names[len(calls)]
+        calls.append(stage)
+        if stage == 'audit_H3_retry':
+            assert args[-2:] == ['H3', '--retry']
+        return SimpleNamespace(returncode=int(stage == failed_stage))
+    monkeypatch.setattr(driver.subprocess, 'run', command)
+    records, problem = driver.execute(tmp_path, resume_audit=True)
+    assert calls[-1] == problem == failed_stage
+    assert 'realtime_H_ref' not in calls and 'realtime_H3' not in calls
