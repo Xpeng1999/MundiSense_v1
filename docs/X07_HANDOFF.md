@@ -1,6 +1,6 @@
 # X07 交接：X06b 部署配置与边界（执行中）
 
-X06b 尚未完成，当前文档不代表可验收的最终部署配置。冻结模型为 X04b Q_mix best_adapter_eval8、X05 D1_fmhx；参数包为 calibration_bundle_v1.1.json；VAD 为 FSMN / 0.3 / 最短静音0.4秒，α=0。默认只测H3。人脸配置必须来自 FMH 的 R2 选择，待 configs/x06b_face_freeze.json 提交后才可运行后续阶段。
+X06b 尚未完成，当前文档不代表可验收的最终部署配置。冻结模型为 X04b Q_mix best_adapter_eval8、X05 D1_fmhx；参数包为 calibration_bundle_v1.1.json；VAD 为 FSMN / 0.3 / 最短静音0.4秒，α=0。默认只测H3。R2 在 FMH 上选中 YuNet 检测输入 1/2、8 个检测线程、16 帧在途上界；裁剪仍取原分辨率。人脸配置已在 `958da60` 提交为 configs/x06b_face_freeze.json，之后才启动 R3–R5。
 
 阶段全速入口由 emotioncore.x06b.gpu_guard 执行 r3_fmh / r3_et_test / r4_correct_* / r4_vad_*；实时入口为 gpu_guard r5。完整顺序由 emotioncore.x06b.stages --launch 驱动，各阶段须满足冻结、数据范围和预算依赖，不可绕过 watchdog 直接调用 infer 或 realtime。
 

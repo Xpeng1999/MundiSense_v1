@@ -25,7 +25,9 @@ PR #7 在 2026-10-13 03:12:42 UTC（北京时间 11:12:42）完成合入，merge
 | R5 | 未完成 |
 | 最终审计 | 未完成 |
 
-CPU 测试回执：[凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
+CPU 测试回执：[凭据](results/unit_tests_evaluation.json), [凭据](results/unit_tests_frozen.json), [凭据](results/unit_tests_pre_freeze.json), [凭据](results/unit_tests_stages.json), [凭据](results/unit_tests_startup.json)。
+
+FMH 前3句 CPU 集成：2 个事件，在线/全速 VAD 时序一致；原/新解码像素相同 62/62 帧，原始帧暂存高水位 6。[凭据](results/cpu_integration.json)
 
 ## 4. 管线改造与 R2 选型
 

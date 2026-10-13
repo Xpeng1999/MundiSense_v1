@@ -1,0 +1,31 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r2/summary.json",
+    "sha256": "8194cd8aa1a112386a70160b8e3dfe5b76f5e7834d5486215102da0e45ea7b54"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r2/run_meta.json",
+    "sha256": "fe823e0eb250d0771fded5cec185f624d668f219a4afc0f595b4a9fa3dd36482"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_r2",
+    "used_gpu_hours": 0.0,
+    "future_gpu_seconds": {
+      "r3_fmh": 2469.745672504319,
+      "r3_et_test": 1458.707716552612,
+      "r4_correct_fmh": 2469.745672504319,
+      "r4_correct_et_test": 1458.707716552612,
+      "r4_vad_fmh": 6950.080826517553,
+      "r4_vad_et_test": 4104.931388350386,
+      "r5": 14692.64446602785
+    },
+    "reserve_seconds": 7020.912691801931,
+    "estimated_total_gpu_hours": 11.28485448633655,
+    "limit_gpu_hours": 14,
+    "ledger": [],
+    "r4_exact_counts": false,
+    "speech_seconds_per_event": 0.7561989199339617,
+    "gpu_seconds": 0
+  }
+}
