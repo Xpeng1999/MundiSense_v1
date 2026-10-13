@@ -157,3 +157,16 @@ def test_stage_failure_cannot_launch_later_gpu(tmp_path,monkeypatch):
     monkeypatch.setattr(stages.subprocess,'run',invoke)
     records,failed=stages.execute(tmp_path,[('r3_analysis','fmh'),('gpu_guard','r3_et_test')])
     assert len(calls)==1 and failed=='r3_analysis_fmh'
+
+
+def test_legacy_aishell_cache_path_and_explicit_hash_validation(tmp_path):
+    import hashlib
+    from emotioncore.x06b.aishell_test import posterior_source
+    item={'rttm':{'path':'/dataset/TextGrid/L_R003S01C02.rttm'}}
+    expected=tmp_path/'posteriors/L_R003S01C02_fsmn.npz'
+    assert posterior_source(item,tmp_path)==expected
+    expected.parent.mkdir();expected.write_bytes(b'posterior')
+    item['posteriors']={'fsmn':{'path':str(expected),'sha256':hashlib.sha256(b'posterior').hexdigest()}}
+    assert posterior_source(item,tmp_path)==expected
+    expected.write_bytes(b'changed')
+    with pytest.raises(RuntimeError,match='SHA changed'):posterior_source(item,tmp_path)
