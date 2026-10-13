@@ -170,3 +170,42 @@ def test_legacy_aishell_cache_path_and_explicit_hash_validation(tmp_path):
     assert posterior_source(item,tmp_path)==expected
     expected.write_bytes(b'changed')
     with pytest.raises(RuntimeError,match='SHA changed'):posterior_source(item,tmp_path)
+
+
+def test_live_producer_retains_coincident_endpoint_frames_and_silence_windows(tmp_path,monkeypatch):
+    import numpy as np,soundfile as sf,threading
+    from emotioncore.x06b import realtime
+    from emotioncore.x06.online_vad import LiveEvents
+    # 2.8 is a 5fps boundary; 280*.01 rounds slightly above 14/5.
+    # Its following visual window needs frame 14 after the VAD delay.
+    probability=np.zeros(3000,dtype=np.float32)
+    probability[100:280]=1;probability[600:2500]=1
+    class Video:
+        def __init__(self,t):pass
+        def frame(self,t):return np.zeros((20,20,3),dtype=np.uint8)
+        def close(self):pass
+    class Messages:
+        def __init__(self):self.values=[]
+        def put(self,value):self.values.append(value)
+    def chunks(*args,**kwargs):
+        for i in range(0,len(probability),100):
+            yield {'available_s':(i+100)/100,'probabilities':probability[i:i+100],'vad_seconds':0.}
+    monkeypatch.setattr(realtime,'Video',Video)
+    monkeypatch.setattr(realtime,'Posterior',lambda name:None)
+    monkeypatch.setattr(realtime,'posterior_chunks',chunks)
+    monkeypatch.setattr(realtime,'checked',lambda value:value)
+    monkeypatch.setattr(realtime,'read',lambda p:{'duration_s':30.})
+    monkeypatch.setattr(sf,'read',lambda *args,**kwargs:(np.zeros(480000,dtype=np.float32),16000))
+    monkeypatch.setattr(realtime,'pipeline',lambda frames,*args,**kwargs:((i,f,[],0.) for i,f in frames))
+    monkeypatch.setattr(realtime,'make_item',lambda event,face,*args:{**event,'face':face})
+    messages=Messages();ready=threading.Event();ready.set()
+    realtime.producer({'02':{'timeline':{'sha256':'test'},'audio':'test'}},{'selected_scale':.5},tmp_path,messages,ready,False)
+    expected=[];machine=LiveEvents(.3,.4)
+    for p in probability:expected.extend(machine.advance(p))
+    expected.extend(machine.finish(30.))
+    keys=['start_s','end_s','decision_s','source','visual_only']
+    actual=[m['item'] for m in messages.values if m['kind']=='segment']
+    assert [{k:r[k] for k in keys} for r in actual]==expected
+    assert any(r['visual_only'] for r in actual)
+    assert any(r['end_s']-r['start_s']==15. for r in actual)
+    assert max(m['raw_frame_high_water'] for m in messages.values if m['kind']=='stream_finished')<=32

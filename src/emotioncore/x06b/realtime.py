@@ -40,7 +40,7 @@ class WindowBank:
             if key not in keep:
                 track,_=self.tracks.pop(key);track.tracks.clear();track.paths.clear();track.closed=True
         for index in list(self.frames):
-            if index/5<retain_from:del self.frames[index]
+            if index<frame_index(retain_from):del self.frames[index]
 
 
 def producer(sources,config,out,messages,begin,realtime=True):
