@@ -374,3 +374,21 @@ def test_pending_live_audit_retry_cannot_fall_back_to_old_success(tmp_path, monk
     (tmp_path / 'live_audit_H3_retry').mkdir()
     with pytest.raises(FileNotFoundError):
         revision2.live_audit_summary('H3')
+
+
+@pytest.mark.parametrize('failed_stage', ['audit_H3_retry', 'budget_after_H3'])
+def test_s7_recovery_never_replays_h3_or_crosses_a_failed_gate(tmp_path, monkeypatch, failed_stage):
+    from types import SimpleNamespace
+    from emotioncore.x06 import s7_revision2 as driver
+    names = ['audit_H3_retry', 'budget_after_H3', 'realtime_H_ref', 'audit_H_ref', 'budget_after_H_ref']
+    calls = []
+    def command(args, **kwargs):
+        stage = names[len(calls)]
+        calls.append(stage)
+        if stage == 'audit_H3_retry':
+            assert args[-2:] == ['H3', '--retry']
+        return SimpleNamespace(returncode=int(stage == failed_stage))
+    monkeypatch.setattr(driver.subprocess, 'run', command)
+    records, problem = driver.execute(tmp_path, resume_audit=True)
+    assert calls[-1] == problem == failed_stage
+    assert 'realtime_H_ref' not in calls and 'realtime_H3' not in calls
