@@ -1,0 +1,38 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_et_test/summary.json",
+    "sha256": "5905e7d49abe8f1d423eb8d7538be656080f5a6924e2e3c89fcd1b480b3d89e7"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_et_test/run_meta.json",
+    "sha256": "0010c7ccfd8616467be08c9a82aa792b3525c48ad48c890e6ac682717456445f"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_gpu_r3_et_test",
+    "used_gpu_hours": 0.9621191016930647,
+    "future_gpu_seconds": {
+      "r4_correct_fmh": 2157.239580505993,
+      "r4_correct_et_test": 1274.1320118787694,
+      "r4_vad_fmh": 6575.073516119563,
+      "r4_vad_et_test": 3883.440542741775,
+      "r5": 14692.64446602785
+    },
+    "reserve_seconds": 6016.50602345479,
+    "estimated_total_gpu_hours": 10.572962474117714,
+    "limit_gpu_hours": 14,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/summary.json",
+        "sha256": "99ca9d47277fe63ada90b17c3211c74ca36191912b0fcbcdf804fe57c4eff5fd"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/summary.json",
+        "sha256": "5c788adb3c79423703a8ac54b51e351fa6445d72b1f72c36f749b07856907d0b"
+      }
+    ],
+    "r4_exact_counts": false,
+    "speech_seconds_per_event": 0.6605142622492325,
+    "gpu_seconds": 0
+  }
+}

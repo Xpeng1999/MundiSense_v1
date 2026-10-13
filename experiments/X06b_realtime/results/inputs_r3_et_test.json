@@ -1,0 +1,24 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test/summary.json",
+    "sha256": "e93ba76265f2e8e353ec4cc4328eee3333ebee6c13276a33aee0c573e3907bf9"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test/run_meta.json",
+    "sha256": "a06351a965cee46854db18ee22bbe577df6d29b2e83e19082147b420fa52e01d"
+  },
+  "data": {
+    "kind": "r3",
+    "cohort": "et_test",
+    "n": 1929,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test/inputs.jsonl",
+      "sha256": "a8b372b1501316fb03991b2622233a2c33fa0bd6402a80604ec71e54203fc5c8"
+    },
+    "face_freeze": {
+      "path": "configs/x06b_face_freeze.json",
+      "sha256": "5617c5ae119af1ef491ab0b404350a05afe16b3261d48bec56b9013c7ae5aafa"
+    },
+    "gpu_seconds": 0
+  }
+}

@@ -1,6 +1,8 @@
 # X07 交接：X06b 配置、入口与边界
 
-当前状态：**执行中，尚未全部交付**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
+当前状态：**因旧 ET-test 汇总格式兼容缺陷停止，等待技术性恢复确认**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
+
+R3 FMH 分析达到非劣条件，ET-test 1,929 句推理已完成。GPU 实耗 0.962119 / 14 小时；R4、R5、曲线和最终审计未运行。`has_face` 格式兼容修复 `85c773d` 在隔离副本通过 62 项 CPU 测试，尚未部署到 eval_code。停止回执和失败溯源原样保留，恢复前需确认 [恢复边界](../experiments/X06b_realtime/STOP_RECOVERY.md)。现有一次性入口不得重新启动已执行阶段。
 
 ## 固定部署配置
 
