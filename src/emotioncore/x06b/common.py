@@ -56,4 +56,6 @@ def stop(stage, reason, evidence):
 
 def source_timeline(speaker):
     if speaker not in FMH | TEST: raise RuntimeError('STOP unregistered population')
-    return read(OLD / f'preflight/timeline_{speaker}.json')
+    receipt = read('experiments/X06a_stream/results/streams.json')
+    checked(receipt['source'])
+    return read(checked(receipt['data']['streams'][speaker]['timeline']))

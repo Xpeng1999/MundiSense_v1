@@ -161,7 +161,7 @@ def run():
         scheduled=quantiles([r['scheduled_latency_s'] for r in voice]);lagq=quantiles(lags);beforeq=quantiles(firsthalf);afterq=quantiles(secondhalf)
         summary={'status':'completed','system':'H3','events':len(events),'speech_events':len(voice),'streams':streams,'wall_s':wall,'media_s':duration,'wall_over_media':wall/duration,
             'latency_from_vad':quantiles([r['latency_s'] for r in voice]),'latency_from_scheduled_vad':scheduled,'latency_from_truth_end':quantiles(truth_delays),
-            'uncovered_truth_ids':uncovered,'truth_delay_rule':'last overlapping event write; uncovered separately counted, not assigned zero',
+            'truth_delay_n':len(truth_delays),'uncovered_truth_ids':uncovered,'truth_delay_rule':'last overlapping event write; uncovered separately counted, not assigned zero',
             'input_lag':{**lagq,'max':max(lags)},'first_half_lag':beforeq,'second_half_lag':afterq,
             'rss_at_10min':baseline,'rss_10min_sample_s':after10[0]['elapsed_s'],'rss_end':end_rss,'rss_after_10min_peak':peak,
             'rss_end_growth_after_10min':end_rss/baseline-1,'rss_peak_growth_after_10min':peak/baseline-1,

@@ -50,6 +50,12 @@ def run(kind,cohort):
         for speaker in speakers:
             tpath=OLD/f'preflight/timeline_{speaker}.json' if kind=='r3' else ROOT/f'preflight/dialogue_{speaker}.json'
             apath=OLD/f'streams/{speaker}.wav' if kind=='r3' else ROOT/f'dialogue_streams/{speaker}.wav'
+            if kind=='r3':
+                sources=read('experiments/X06a_stream/results/streams.json')['data']['streams'][speaker]
+                assert checked(sources['timeline'])==tpath and checked(sources['audio'])==apath
+            else:
+                sources=read(ROOT/'dialogue_streams/summary.json')['streams'][speaker]
+                assert checked(sources['timeline'])==tpath and checked(sources['audio'])==apath
             timeline=read(tpath);signal,sr=sf.read(apath,dtype='float32');assert sr==16000 and signal.ndim==1
             events=events_for(speaker,kind,timeline);cursor=0;tracker=None;video=Video(timeline)
             def frames():
