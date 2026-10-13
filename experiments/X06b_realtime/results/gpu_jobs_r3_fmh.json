@@ -1,0 +1,28 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/summary.json",
+    "sha256": "5c788adb3c79423703a8ac54b51e351fa6445d72b1f72c36f749b07856907d0b"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/run_meta.json",
+    "sha256": "e042444648a891fe9f50cbb4f095f58d141038e45f700e55025eb5ad41969e10"
+  },
+  "data": {
+    "status": "completed",
+    "returncode": 0,
+    "failure": null,
+    "charged_gpu_s": 2157.239580505993,
+    "command": [
+      "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+      "-u",
+      "-m",
+      "emotioncore.x06b.infer",
+      "r3",
+      "fmh"
+    ],
+    "log": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/child.log",
+      "sha256": "058213ae66e4a0ef9ec7e0e9ac8209b9e2809668140e1e0bd9040287b596d308"
+    }
+  }
+}
