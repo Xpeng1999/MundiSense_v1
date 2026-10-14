@@ -14,3 +14,8 @@
 D1 fold 0 的历史 FMH 冲突已按修订 1 解决：A3 逐值复现通过，新增 D1_fmhx 三专家均排除 06/10/11。X05 计算、测试和执行方独立复算已完成，证据与参数包见 [交付索引](experiments/X05_calib/DELIVERY.md)，等待 reviewer 验收，PR 不合入。
 
 H_V 的 ET-test ECE 超过 0.05；MER-test H_V 缺既有 Q-V 概率；人脸质量五分位退化。详见 [X05 问题记录](experiments/X05_calib/OPEN_QUESTIONS.md) 与 [报告第 11 节](experiments/X05_calib/REPORT.md#11-给-reviewer-的问题)。
+
+
+## X07：冻结后标签读取自检停止（2026-10-14）
+
+L1 `6d9d07c` 后自查发现 valid 指标脚本会先读取整份 meta.csv 的 label 列再筛选 valid。已在执行该脚本和任何 GPU 推理前停止；原协议及代码不变，SIMS-test 未打开。标签隔离补丁只在独立审阅副本中测试，需明确授权新的冻结版本后才可应用并恢复。详情见 [X07 停止与修正提案](experiments/X07_lockbox/STOP_RECOVERY.md)。
