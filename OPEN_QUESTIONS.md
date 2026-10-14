@@ -19,3 +19,7 @@ H_V 的 ET-test ECE 超过 0.05；MER-test H_V 缺既有 Q-V 概率；人脸质�
 ## X07：冻结后标签读取自检停止（2026-10-14）
 
 L1 `6d9d07c` 后自查发现 valid 指标脚本会先读取整份 meta.csv 的 label 列再筛选 valid。已在执行该脚本和任何 GPU 推理前停止；原协议及代码不变，SIMS-test 未打开。标签隔离补丁只在独立审阅副本中测试，需明确授权新的冻结版本后才可应用并恢复。详情见 [X07 停止与修正提案](experiments/X07_lockbox/STOP_RECOVERY.md)。
+
+## X07 修订 1：执行交付（2026-10-14）
+
+上述 v1 停止已获 [X07 修订 1](experiments/X07_lockbox/protocol/X07_REVISION_1.md) 授权。v2 协议独立提交后完成 L2、L3、L4，模型与科学定义未变；v1 原件保留。H3 test Pearson 0.792257，视频整群 95% 区间 [0.756380, 0.828748]，Acc-2 0.818880，达到三项预登记数值门槛，最终验收由 reviewer 判断。固定 OP-R90 覆盖率为 62.379%，不得据此改阈值。首次 timm 路径缺失发生在任何预测前，恢复同版本依赖后续跑，完整证据见 [报告](experiments/X07_lockbox/REPORT.md)。PR #9 保持草稿、未合入。

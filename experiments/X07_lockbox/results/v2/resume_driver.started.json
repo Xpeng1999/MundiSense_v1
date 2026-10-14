@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-14T05:36:58.252029+00:00",
+  "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+  "recovery": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/dependency_recovery.json",
+    "sha256": "e1925fc582de1c723c3321980e17972891a895f7cc03bf619972de961ec60314",
+    "bytes": 122429
+  },
+  "launcher": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/infra_resume_1.py",
+    "sha256": "8735cf2c4e543d3587613d5a4b578fea145425deac8575579960308becbfa883",
+    "bytes": 1669
+  },
+  "environment_pythonpath": "src:/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps"
+}
