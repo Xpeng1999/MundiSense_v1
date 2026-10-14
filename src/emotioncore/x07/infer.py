@@ -76,6 +76,9 @@ def run(split,resume_reason=None):
         else:
             if sha(item['wav'])!=item['wav_sha256']:
                 raise RuntimeError('STOP audio input changed')
+            q=item.get('q_video')
+            if q and q['status']=='ok' and sha(q['output'])!=q['output_sha256']:
+                raise RuntimeError('STOP Q input video changed')
             # H_V + compare_both requests the union of all three frozen systems.
             # Shared A3/V2/V1 and Q-A/Q-AV/Q-V execute at most once per complete clip.
             components,has_face,timing=service.components(item,'H_V',has_speech=True,compare_both=True)

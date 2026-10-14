@@ -20,7 +20,7 @@ def run(split,resume_reason=None):
             if job['status']=='running':
                 raise RuntimeError('STOP unclosed GPU receipt; account for its elapsed time before resume')
             used+=job['charged_seconds']
-        if used>=LIMIT:
+        if used>=LIMIT-12:
             stop('budget','GPU four-hour budget exhausted');raise RuntimeError('STOP GPU budget')
         out=ROOT/'gpu_jobs'/f'{split}_{time.time_ns()}'
         out.mkdir(parents=True,exist_ok=False)
@@ -40,8 +40,8 @@ def run(split,resume_reason=None):
             try:
                 while child.poll() is None:
                     elapsed=time.monotonic()-begin
-                    if used+elapsed>=LIMIT:
-                        stop('budget','GPU four-hour limit reached');raise RuntimeError('GPU budget reached')
+                    if used+elapsed>=LIMIT-12:
+                        stop('budget','GPU four-hour budget stopping with 12-second termination reserve');raise RuntimeError('GPU budget reached')
                     try:
                         storage_gate()
                     except Exception as exc:
@@ -53,7 +53,7 @@ def run(split,resume_reason=None):
                 failure=repr(exc)
                 os.killpg(child.pid,signal.SIGTERM)
                 try:
-                    child.wait(timeout=10)
+                    child.wait(timeout=5)
                 except subprocess.TimeoutExpired:
                     os.killpg(child.pid,signal.SIGKILL);child.wait()
         receipt.update(status='completed' if child.returncode==0 and failure is None else 'failed',

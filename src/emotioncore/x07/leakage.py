@@ -44,6 +44,8 @@ def run():
     protocol,_=authority()
     inv=protocol['inventory']; sources=inv['leakage_sources']
     try:
+        for item in protocol['training_provenance'].values():
+            checked(item['source'])
         if set(sources)!=set(REQUIRED):
             raise RuntimeError('STOP missing leakage source')
         test=set(inv['splits']['test']['ids']); data={}; checks={}

@@ -63,7 +63,8 @@ def one(task):
         if face['status']=='failed':
             raise RuntimeError('STOP face preparation unexpectedly failed')
         q=q_media(face,directory,uid,info['sha256'],duration)
-        if q is not None and q['status']!='ok':
+        if (q is not None and q['status']!='ok'
+                and 'No X02 crop passed the fixed face size/confidence filter' not in q.get('error','')):
             raise RuntimeError('STOP Q media preparation failed')
         result.update(status='ok',utt_id=uid,duration_s=duration,wav=str(wav),wav_sha256=sha(wav),
                       face=face,q_video=q,source_sha256=info['sha256'])
