@@ -1,0 +1,533 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/summary.json",
+    "sha256": "e61bc414125c8d11561bb631e319c1c654a4e9fb07645d9667f146410c7ffeb5"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/run_meta.json",
+    "sha256": "1d4690aab2d84870212cf67613c49a311708a70d8114fb10719b92ea460f4fb6"
+  },
+  "data": {
+    "status": "completed",
+    "failed_stage": null,
+    "stages": [
+      {
+        "stage": "r3_analysis_et_test_--retry-authorized",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.r3_analysis",
+          "et_test",
+          "--retry-authorized"
+        ],
+        "started_at": "2026-10-13T07:24:53.798103+00:00",
+        "ended_at": "2026-10-13T07:24:57.847801+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/00_r3_analysis_et_test_--retry-authorized.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_retry_r3_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_retry_r3_et_test"
+        ],
+        "started_at": "2026-10-13T07:24:57.883558+00:00",
+        "ended_at": "2026-10-13T07:24:59.331915+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/01_budget_after_retry_r3_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "dialogue_streams",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.dialogue_streams"
+        ],
+        "started_at": "2026-10-13T07:24:59.362960+00:00",
+        "ended_at": "2026-10-13T07:32:16.919449+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/02_dialogue_streams.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_dialogue_streams",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_dialogue_streams"
+        ],
+        "started_at": "2026-10-13T07:32:16.949084+00:00",
+        "ended_at": "2026-10-13T07:32:18.570970+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/03_budget_after_dialogue_streams.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "prepare_r4_correct_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.prepare",
+          "r4_correct",
+          "fmh"
+        ],
+        "started_at": "2026-10-13T07:32:18.604649+00:00",
+        "ended_at": "2026-10-13T08:27:40.728884+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/04_prepare_r4_correct_fmh.log",
+          "sha256": "a22fb299c6a956d667ac95e818ee06910769b025fc42dc9d3ce8192e956ba702"
+        }
+      },
+      {
+        "stage": "budget_after_inputs_r4_correct_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_inputs_r4_correct_fmh"
+        ],
+        "started_at": "2026-10-13T08:27:40.766560+00:00",
+        "ended_at": "2026-10-13T08:27:42.303587+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/05_budget_after_inputs_r4_correct_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "gpu_guard_r4_correct_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.gpu_guard",
+          "r4_correct_fmh"
+        ],
+        "started_at": "2026-10-13T08:27:42.334198+00:00",
+        "ended_at": "2026-10-13T09:04:17.246698+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/06_gpu_guard_r4_correct_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_gpu_r4_correct_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_gpu_r4_correct_fmh"
+        ],
+        "started_at": "2026-10-13T09:04:17.358292+00:00",
+        "ended_at": "2026-10-13T09:04:19.194496+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/07_budget_after_gpu_r4_correct_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "prepare_r4_correct_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.prepare",
+          "r4_correct",
+          "et_test"
+        ],
+        "started_at": "2026-10-13T09:04:19.226372+00:00",
+        "ended_at": "2026-10-13T09:37:15.726034+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/08_prepare_r4_correct_et_test.log",
+          "sha256": "2ac7f31c8e82d7c3b576bd935dea224ee8d8f77e4bd8e931d51eaa4c1f955042"
+        }
+      },
+      {
+        "stage": "budget_after_inputs_r4_correct_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_inputs_r4_correct_et_test"
+        ],
+        "started_at": "2026-10-13T09:37:15.764902+00:00",
+        "ended_at": "2026-10-13T09:37:17.309276+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/09_budget_after_inputs_r4_correct_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "gpu_guard_r4_correct_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.gpu_guard",
+          "r4_correct_et_test"
+        ],
+        "started_at": "2026-10-13T09:37:17.340861+00:00",
+        "ended_at": "2026-10-13T09:59:16.442853+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/10_gpu_guard_r4_correct_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_gpu_r4_correct_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_gpu_r4_correct_et_test"
+        ],
+        "started_at": "2026-10-13T09:59:16.476579+00:00",
+        "ended_at": "2026-10-13T09:59:17.998887+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/11_budget_after_gpu_r4_correct_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "prepare_r4_vad_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.prepare",
+          "r4_vad",
+          "fmh"
+        ],
+        "started_at": "2026-10-13T09:59:18.032713+00:00",
+        "ended_at": "2026-10-13T11:38:07.187558+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/12_prepare_r4_vad_fmh.log",
+          "sha256": "c627e5c2835db3ed2149b7876de1d81cba63ae53e8150039744a7af0b610f14d"
+        }
+      },
+      {
+        "stage": "budget_after_inputs_r4_vad_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_inputs_r4_vad_fmh"
+        ],
+        "started_at": "2026-10-13T11:38:07.304615+00:00",
+        "ended_at": "2026-10-13T11:38:09.166251+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/13_budget_after_inputs_r4_vad_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "gpu_guard_r4_vad_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.gpu_guard",
+          "r4_vad_fmh"
+        ],
+        "started_at": "2026-10-13T11:38:09.197573+00:00",
+        "ended_at": "2026-10-13T13:16:38.268273+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/14_gpu_guard_r4_vad_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_gpu_r4_vad_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_gpu_r4_vad_fmh"
+        ],
+        "started_at": "2026-10-13T13:16:38.304622+00:00",
+        "ended_at": "2026-10-13T13:16:39.916569+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/15_budget_after_gpu_r4_vad_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "prepare_r4_vad_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.prepare",
+          "r4_vad",
+          "et_test"
+        ],
+        "started_at": "2026-10-13T13:16:39.947152+00:00",
+        "ended_at": "2026-10-13T14:14:12.528082+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/16_prepare_r4_vad_et_test.log",
+          "sha256": "3459649e2499ad25ac3847cef1286e89ef51e53cc6f50e5da20d294d90195409"
+        }
+      },
+      {
+        "stage": "budget_after_inputs_r4_vad_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_inputs_r4_vad_et_test"
+        ],
+        "started_at": "2026-10-13T14:14:12.562779+00:00",
+        "ended_at": "2026-10-13T14:14:14.115126+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/17_budget_after_inputs_r4_vad_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "gpu_guard_r4_vad_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.gpu_guard",
+          "r4_vad_et_test"
+        ],
+        "started_at": "2026-10-13T14:14:14.145475+00:00",
+        "ended_at": "2026-10-13T15:10:35.258517+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/18_gpu_guard_r4_vad_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_gpu_r4_vad_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_gpu_r4_vad_et_test"
+        ],
+        "started_at": "2026-10-13T15:10:35.291221+00:00",
+        "ended_at": "2026-10-13T15:10:36.857440+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/19_budget_after_gpu_r4_vad_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "r4_analysis_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.r4_analysis",
+          "fmh"
+        ],
+        "started_at": "2026-10-13T15:10:36.890062+00:00",
+        "ended_at": "2026-10-13T15:10:44.110217+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/20_r4_analysis_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_analysis_r4_fmh",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_analysis_r4_fmh"
+        ],
+        "started_at": "2026-10-13T15:10:44.142219+00:00",
+        "ended_at": "2026-10-13T15:10:45.669899+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/21_budget_after_analysis_r4_fmh.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "r4_analysis_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.r4_analysis",
+          "et_test"
+        ],
+        "started_at": "2026-10-13T15:10:45.699111+00:00",
+        "ended_at": "2026-10-13T15:10:49.547858+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/22_r4_analysis_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_analysis_r4_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_analysis_r4_et_test"
+        ],
+        "started_at": "2026-10-13T15:10:49.583636+00:00",
+        "ended_at": "2026-10-13T15:10:51.134001+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/23_budget_after_analysis_r4_et_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "aishell_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.aishell_test"
+        ],
+        "started_at": "2026-10-13T15:10:51.163878+00:00",
+        "ended_at": "2026-10-13T15:10:57.060026+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/24_aishell_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_aishell_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_aishell_test"
+        ],
+        "started_at": "2026-10-13T15:10:57.093738+00:00",
+        "ended_at": "2026-10-13T15:10:58.625082+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/25_budget_after_aishell_test.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "gpu_guard_r5",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.gpu_guard",
+          "r5"
+        ],
+        "started_at": "2026-10-13T15:10:58.661897+00:00",
+        "ended_at": "2026-10-13T18:11:13.821191+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/26_gpu_guard_r5.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_r5",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_r5"
+        ],
+        "started_at": "2026-10-13T18:11:13.863556+00:00",
+        "ended_at": "2026-10-13T18:11:15.441533+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/27_budget_after_r5.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "curves",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.curves"
+        ],
+        "started_at": "2026-10-13T18:11:15.471822+00:00",
+        "ended_at": "2026-10-13T18:11:20.286903+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/28_curves.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "stage": "budget_after_curves",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.budget",
+          "after_curves"
+        ],
+        "started_at": "2026-10-13T18:11:20.323305+00:00",
+        "ended_at": "2026-10-13T18:11:21.895062+00:00",
+        "returncode": 0,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/29_budget_after_curves.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    ],
+    "authorization": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/summary.json",
+      "sha256": "988e070df9fb8f42e625180bc95d46394025fb9679c4673bb411642ed68f1ab7"
+    },
+    "gpu_seconds": 0
+  }
+}

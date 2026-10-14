@@ -1,0 +1,56 @@
+{
+  "check_type": "read_only_final_collection_verification",
+  "remote": {
+    "checked_at": "2026-10-14T03:42:12.397692+00:00",
+    "verified_server_files": 146,
+    "delivery_ended_at": "2026-10-13T18:11:24.215651+00:00",
+    "execution_git": {
+      "commit": "277462b14ad329f0a32ee7fa2e26a5d6cd16b52c",
+      "dirty": false,
+      "status": "",
+      "full_diff": null
+    },
+    "new_stops": [],
+    "active_processes": []
+  },
+  "server_audit": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/delivery_audit/summary.json",
+    "sha256": "b13174235ddaeefb6d5d594729baef6f00c77dd87e3e06f38087951541097761"
+  },
+  "original_stop": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/STOP.json",
+    "sha256": "c170b38c7ffd5b3f319e80e7ffee9d49143bf0cc40439e77f2ef023665a123a6"
+  },
+  "historical_metadata_unchanged": true,
+  "verified_local_plots": {
+    "experiments/X06b_realtime/figures/backlog.png": "66588ee6ca60e47aa95b76e8a810eb1a75acdbd431d25076dac823e34c11e3a4",
+    "experiments/X06b_realtime/figures/memory.png": "22fedf99990766e7671bc8f30fcdfea6703e8965d415c9a69560f9080c59d37e"
+  },
+  "face_freeze_sha256": "5617c5ae119af1ef491ab0b404350a05afe16b3261d48bec56b9013c7ae5aafa",
+  "frozen_paths_unchanged": [
+    "src/emotioncore/x02",
+    "src/emotioncore/x03",
+    "src/emotioncore/x04",
+    "src/emotioncore/x05",
+    "src/emotioncore/x06",
+    "configs/calibration_bundle_v1.1.json",
+    "configs/x06_vad_freeze.json",
+    "configs/x06_silence_freeze.json",
+    "configs/x06_smoothing_freeze.json"
+  ],
+  "source_tests_configs_unchanged_since_execution": "277462b",
+  "gpu_jobs_completed": 7,
+  "gpu_hours": 7.51931819043756,
+  "gpu_limit_hours": 14,
+  "r3_fmh_acceptance": true,
+  "r4_fmh_acceptance": true,
+  "r5_acceptance": {
+    "wall": false,
+    "lag": true,
+    "scheduled_latency": false,
+    "memory": false
+  },
+  "report_sections": 11,
+  "relative_document_links_exist": true,
+  "no_inference_or_experiment_rerun": true
+}

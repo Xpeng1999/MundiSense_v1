@@ -1,6 +1,8 @@
 # X07 交接：X06b 配置、入口与边界
 
-当前状态：**执行中，尚未全部交付**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
+当前状态：**全部测量与交付审计完成，等待 reviewer 验收**。PR #8 保持未合入；测量完成与 reviewer 验收分别判断。完整结果见 [X06b 报告](../experiments/X06b_realtime/REPORT.md)。X06a 有条件通过，PR #7 已合入 main；历史未达标及停止回执保存在 [X06a 报告](../experiments/X06a_stream/REPORT.md)。
+
+服务器最终审计于 2026-10-14 02:11:24（北京时间）完成，累计 GPU 7.519318 / 14 小时。**R5 的墙钟比、计划端点延迟和内存增长均未达到原门槛**；不能将下列配置视为已获实时部署验收。PR #8 保持 Draft，下一阶段工作范围等待 reviewer 确认。[最终审计凭据](../experiments/X06b_realtime/results/delivery_audit.json)。
 
 ## 固定部署配置
 
@@ -35,6 +37,9 @@ GPU 上限 14 小时，按子进程完整墙钟计费，包含初始化、CPU等
 ## 测量与已知局限
 
 - R3 FMH OP-N F1 差 -0.005144，95% CI [-0.011781240570322375, 0.0016558892232379546]；非劣条件达到：True。
+- R4 FMH VAD−正确切句 F1 -0.015382；≥−0.03 条件达到：True。
+- R5 墙钟/媒体 1.001054；积压 P95 0.998267 秒；计划端点延迟 P50/P95 2.213491/2.804833 秒。
+- 第10分钟到结束 RSS 增长 11.038%；各项条件是否达到见报告，不把完成回放表述为已获实时验收。
 
 R4 对话时序流假设其他说话人的声音没有进入目标麦克风；其他句子只提供间隔时长，不渲染或推理。拼接流仍不能替代自然连续录音。X06a 短停顿流保留为最坏参考。
 
@@ -42,6 +47,4 @@ R4 对话时序流假设其他说话人的声音没有进入目标麦克风；�
 
 当前入口面向登记的实验流，并非任意视频上传服务。后续阶段不得隐式改动模型、校准、VAD 或人脸配置，也不得根据 ET-test 结果选参。
 
-本轮已依 X06B_RESUME.md 获授权恢复。旧 ET-test 报表异常与原 STOP、失败 run_meta 保留；CPU 重试目录为 r3_analysis_et_test_retry1，恢复回执为 resume_authorization，续跑驱动为 stages_resume1。无需且不得重复启动原一次性驱动或重跑 R2/R3。后续顺序为 R4 → AISHELL-4 → R5 → 曲线 → 最终审计。新停止仍会拦截；恢复入口也只允许启动一次。详见 [恢复记录](../experiments/X06b_realtime/STOP_RECOVERY.md)。
-
-R4 的 FMH 3,266 句与 ET-test 1,929 句正确切句推理已完成；FMH 全部 10,880 个 VAD 事件也已完成。当前 ET-test VAD 输入准备进行中，R4 正式差值尚未完成。已结束 GPU 子进程累计 3.577370 小时，最新总预算预测 9.763181 / 14 小时。
+本轮已依 X06B_RESUME.md 获授权恢复并完成。旧 ET-test 报表异常与原 STOP、失败 run_meta 保留；CPU 重试目录为 r3_analysis_et_test_retry1，恢复回执为 resume_authorization，续跑驱动为 stages_resume1。无需且不得重复启动原一次性驱动或重跑 R2/R3。R4 → AISHELL-4 → R5 → 曲线 → 最终审计均已完成。新停止仍会拦截；恢复入口也只允许启动一次。详见 [恢复记录](../experiments/X06b_realtime/STOP_RECOVERY.md)。

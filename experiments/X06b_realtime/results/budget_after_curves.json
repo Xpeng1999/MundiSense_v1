@@ -1,0 +1,52 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_curves/summary.json",
+    "sha256": "8db38166116c8fcb49d9f331524d1ed0dc15afba182c97f95ae9916e970baca7"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_curves/run_meta.json",
+    "sha256": "d61cb6cfef6e10a993b1dd80ad7920918c312d47b50da7d92fc0d446e31f09f8"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_curves",
+    "used_gpu_hours": 7.51931819043756,
+    "future_gpu_seconds": {},
+    "reserve_seconds": 0.0,
+    "estimated_total_gpu_hours": 7.51931819043756,
+    "limit_gpu_hours": 14,
+    "ledger": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/summary.json",
+        "sha256": "99ca9d47277fe63ada90b17c3211c74ca36191912b0fcbcdf804fe57c4eff5fd"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/summary.json",
+        "sha256": "5c788adb3c79423703a8ac54b51e351fa6445d72b1f72c36f749b07856907d0b"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test/summary.json",
+        "sha256": "514afc6bf7eb5c8a8326c1106ed959f6ed6b87e57643e55f2d4248e583208d4f"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh/summary.json",
+        "sha256": "31a7bf51a4763ecf0bad9af7258490451ea523c9d4d6154a0bc3a4e2770c5a1f"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test/summary.json",
+        "sha256": "dc6bcfad92e978581cb99fd84325a738f73f3190808c6156da7aacbb821d5efb"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh/summary.json",
+        "sha256": "590b8b99c5623e7f5cf32826d5f5d865d5d29d13fee4bf72173adaab1bb6b703"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5/summary.json",
+        "sha256": "8be784ba7d1c3dd62e26263575ff5ecdb2eb280cbc5eb69f533a7c9b73e213f6"
+      }
+    ],
+    "r4_exact_counts": true,
+    "speech_seconds_per_event": 0.6712527895067257,
+    "gpu_seconds": 0
+  }
+}

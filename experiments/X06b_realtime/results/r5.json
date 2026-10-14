@@ -1,0 +1,317 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/summary.json",
+    "sha256": "142865589fe20ccae4242c13c5b6e6fe48deea516d18e3d6617abb674151be86"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/run_meta.json",
+    "sha256": "749838e112a54b0464dad63fe0dfc6860c5b393f4a9ecf1c1d43b722a9d29b2e"
+  },
+  "data": {
+    "status": "completed",
+    "system": "H3",
+    "events": 1933,
+    "speech_events": 1900,
+    "streams": {
+      "02": {
+        "kind": "stream_finished",
+        "speaker_id": "02",
+        "events": 377,
+        "duration_s": 2439.138163496447,
+        "wall_s": 2440.0181065839715,
+        "totals": {
+          "decode": 73.66546200495213,
+          "detection_work": 466.4682095167227,
+          "decode_detection_wall": 177.17157564871013,
+          "vad": 16.970345676876605
+        },
+        "raw_frame_high_water": 7
+      },
+      "13": {
+        "kind": "stream_finished",
+        "speaker_id": "13",
+        "events": 387,
+        "duration_s": 1954.469008055148,
+        "wall_s": 1955.8669075490907,
+        "totals": {
+          "decode": 55.294859238900244,
+          "detection_work": 395.46288338233717,
+          "decode_detection_wall": 141.8399823999498,
+          "vad": 13.746527335373685
+        },
+        "raw_frame_high_water": 7
+      },
+      "20": {
+        "kind": "stream_finished",
+        "speaker_id": "20",
+        "events": 542,
+        "duration_s": 2999.313827732979,
+        "wall_s": 3000.1175184887834,
+        "totals": {
+          "decode": 83.33764388854615,
+          "detection_work": 598.9779121410102,
+          "decode_detection_wall": 216.547703335993,
+          "vad": 20.755955218337476
+        },
+        "raw_frame_high_water": 7
+      },
+      "21": {
+        "kind": "stream_finished",
+        "speaker_id": "21",
+        "events": 627,
+        "duration_s": 3362.155951870812,
+        "wall_s": 3363.6233731920365,
+        "totals": {
+          "decode": 93.19255162635818,
+          "detection_work": 668.9403686136939,
+          "decode_detection_wall": 238.98080932884477,
+          "vad": 23.701752259163186
+        },
+        "raw_frame_high_water": 7
+      }
+    },
+    "wall_s": 10766.415479823947,
+    "media_s": 10755.076951155384,
+    "wall_over_media": 1.0010542489579626,
+    "latency_from_vad": {
+      "p50": 1.658512569614686,
+      "p95": 1.8697662837337703,
+      "p99": 1.940905330751557
+    },
+    "latency_from_scheduled_vad": {
+      "p50": 2.2134912589891087,
+      "p95": 2.804833221433716,
+      "p99": 2.922685977772148
+    },
+    "latency_from_truth_end": {
+      "p50": 3.107788691745327,
+      "p95": 11.016996491352003,
+      "p99": 14.064942029799933
+    },
+    "truth_delay_n": 1929,
+    "uncovered_truth_ids": [],
+    "truth_delay_rule": "last overlapping event write; uncovered separately counted, not assigned zero",
+    "input_lag": {
+      "p50": 0.5677655939384749,
+      "p95": 0.9982665740046741,
+      "p99": 1.035924429288034,
+      "max": 1.0415404019597645
+    },
+    "first_half_lag": {
+      "p50": 0.5765560729707886,
+      "p95": 1.0068196399603038,
+      "p99": 1.0366466780190968
+    },
+    "second_half_lag": {
+      "p50": 0.5672056674397936,
+      "p95": 0.9972643702149071,
+      "p99": 1.0280302053713057
+    },
+    "rss_at_10min": 5208313856,
+    "rss_10min_sample_s": 601.2076443419792,
+    "rss_end": 5783212032,
+    "rss_after_10min_peak": 6159912960,
+    "rss_end_growth_after_10min": 0.11038086257757196,
+    "rss_peak_growth_after_10min": 0.18270771123052687,
+    "gpu_peak_allocated_bytes": 12240492032,
+    "gpu_peak_reserved_bytes": 15378415616,
+    "events_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/events.jsonl",
+      "sha256": "88d2ed799330654d604fa04b8aabc7cfc3e66767e0e5715cf0670a792ec1b64c"
+    },
+    "latency_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/latency.jsonl",
+      "sha256": "e499d2ea779ace11a7591a56f0fc1e2beab10e77ba4b1b440d03118b84c746b7"
+    },
+    "memory_file": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/memory.jsonl",
+      "sha256": "7f2cb7b65eb225007693bd55e1c1ab3e06532b28e553b8fd47dcdef325f638df"
+    },
+    "stage_seconds": {
+      "fusion": {
+        "p50": 0.0007686000317335129,
+        "p95": 0.000952019589021802,
+        "p99": 0.001532676145434381,
+        "total": 1.4722333268728107
+      },
+      "Q_V_video_decode": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.031225000414997366,
+        "total": 1.0666502607055008
+      },
+      "Q_V_preprocess": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.009408967709168794,
+        "total": 0.3263223175890744
+      },
+      "audio_decode": {
+        "p50": 0.007298300974071026,
+        "p95": 0.011371599044650791,
+        "p99": 0.014645336484536533,
+        "total": 14.919920894317329
+      },
+      "Q_AV_preprocess": {
+        "p50": 0.12982319481670856,
+        "p95": 0.14955793460831046,
+        "p99": 0.16097352144308388,
+        "total": 241.02310870587826
+      },
+      "Q_V": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.3320623670704664,
+        "total": 10.971575949108228
+      },
+      "V2": {
+        "p50": 0.04533519991673529,
+        "p95": 0.11309687518514693,
+        "p99": 0.137062461161986,
+        "total": 114.78093709563836
+      },
+      "V1": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.04630299740470954,
+        "total": 1.5495238814037293
+      },
+      "A3": {
+        "p50": 0.03333030082285404,
+        "p95": 0.13664671722799537,
+        "p99": 0.146904118321836,
+        "total": 110.80397855350748
+      },
+      "Q_A_preprocess": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "total": 0.11904670298099518
+      },
+      "incremental_tracking_crop": {
+        "p50": 0.5338762865867466,
+        "p95": 2.118715645931661,
+        "p99": 2.420211866721511,
+        "total": 1444.9781602129806
+      },
+      "Q_AV_video_decode": {
+        "p50": 0.03259070008061826,
+        "p95": 0.03851982066407798,
+        "p99": 0.0439518947247416,
+        "total": 62.69654058362357
+      },
+      "Q_AV_forward": {
+        "p50": 0.3858205978758633,
+        "p95": 0.42833266207017,
+        "p99": 0.4492539684660733,
+        "total": 742.8758134585805
+      },
+      "Q_A": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "total": 0.31907440698705614
+      },
+      "Q_AV": {
+        "p50": 0.5510075460188091,
+        "p95": 0.5964438539464026,
+        "p99": 0.6212904583290221,
+        "total": 1048.3337900524493
+      },
+      "Q_A_video_decode": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "total": 6.00004568696022e-07
+      },
+      "Q_A_forward": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.0,
+        "total": 0.19999090395867825
+      },
+      "after_endpoint_preparation": {
+        "p50": 0.6775214180815965,
+        "p95": 0.7265463215764612,
+        "p99": 0.7564320360589774,
+        "total": 1302.2403893372975
+      },
+      "vad": {
+        "p50": 0.006897100014612079,
+        "p95": 0.008499700063839554,
+        "p99": 0.012150250449776653,
+        "total": 13.491668082308024
+      },
+      "Q_V_forward": {
+        "p50": 0.0,
+        "p95": 0.0,
+        "p99": 0.2918149905558677,
+        "total": 9.573763370513916
+      }
+    },
+    "acceptance": {
+      "wall": false,
+      "lag": true,
+      "scheduled_latency": false,
+      "memory": false
+    },
+    "sources": {
+      "02": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_02.json",
+          "sha256": "f2bcdaa922a750d31d46902dbe079328d6c1ea195bfe7dfedd926411109c1dfb"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/02.wav",
+          "sha256": "58fed1fb9452f2a294a182722e09ff83b08f11a92a6c67fe298c14d0459ff254"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_02.json",
+          "sha256": "5b59ba6a7099e197e7b8a92b781827640861c146f466fa582062c618cb488817"
+        }
+      },
+      "13": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_13.json",
+          "sha256": "61bec9529bba33289c6828223270c83060a092239217d72c19e70ad28fbc34a2"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/13.wav",
+          "sha256": "9456537274d2bcfb7a3425bb18ca02f182ddca657077318354a3bf819d58f672"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_13.json",
+          "sha256": "aa279b434786756d20d188b4e6c5fca858c503e8c4ec278ca621a502963e61c9"
+        }
+      },
+      "20": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_20.json",
+          "sha256": "a2f267daf7c44f14600b77bf45dfc02082e94bf030fa2aa5aef55fee2624948e"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/20.wav",
+          "sha256": "5b0c88cf0652631388831e80d702a4f017e8a67e9b5924ba27867ea711586197"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_20.json",
+          "sha256": "cf08880d3059377c51a4c368f56d646446a106ff94169690e52cf31d6b1ccf20"
+        }
+      },
+      "21": {
+        "receipt": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/receipt_21.json",
+          "sha256": "255675bdcce52bc733e9cee925389bb369cd69ed818005c1cf50ac679706335b"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/streams/21.wav",
+          "sha256": "ce5e846f5abae20eb3b2daac369d9963093fb10b41580726886b0263d3ccea34"
+        },
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_21.json",
+          "sha256": "0274a8868bd4cd4cce682466fb87b8c08748ff79f7f8c201d2750a4b4d87eb17"
+        }
+      }
+    }
+  }
+}
