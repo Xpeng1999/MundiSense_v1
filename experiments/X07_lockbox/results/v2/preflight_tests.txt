@@ -1,0 +1,10 @@
+X07 Revision 1 CPU preflight
+Code commit: 25b260d
+Host: wsl; X02 existing venv; no GPU inference or dataset labels
+Command: PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python -m pytest -q -p no:cacheprovider tests/test_x07_lockbox.py tests/test_x06_protocol.py tests/test_x06b_protocol.py tests/test_x05_bundle.py
+
+........................................................................ [ 63%]
+.........................................                                [100%]
+113 passed in 4.44s
+
+Includes identity-set / physical-line failures before metric lock; SHA and L2 receipt mismatch before lock; both split label sentinels; unchanged scientific protocol definitions; existing inference, calibration and face/VAD safeguards.
