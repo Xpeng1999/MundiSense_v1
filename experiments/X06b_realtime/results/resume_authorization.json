@@ -1,0 +1,97 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/summary.json",
+    "sha256": "988e070df9fb8f42e625180bc95d46394025fb9679c4673bb411642ed68f1ab7"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/run_meta.json",
+    "sha256": "31ee3962a5a92bee5c6f957f82bbc1922845a71e696b0693958acfcb23fe7819"
+  },
+  "data": {
+    "status": "authorized",
+    "registration": {
+      "path": "configs/x06b_resume_20261013.json",
+      "sha256": "5366e68e926b71b98d0ab59eb9f9c30399416377616e9ac1cf78fd822760da8c"
+    },
+    "approval_original_file": {
+      "path": "/Users/pengby/Desktop/Pengby/Start-up/emotionAI/projects/roadmap_v2/X06B_RESUME.md",
+      "sha256": "cd79ec9461fc0b8b828e1faab310af24b0b99892fb36407deff4479b615a97b5"
+    },
+    "approval_snapshot": {
+      "path": "experiments/X06b_realtime/protocol/X06B_RESUME.md",
+      "sha256": "cd79ec9461fc0b8b828e1faab310af24b0b99892fb36407deff4479b615a97b5"
+    },
+    "historical_stop": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/STOP.json",
+      "sha256": "c170b38c7ffd5b3f319e80e7ffee9d49143bf0cc40439e77f2ef023665a123a6"
+    },
+    "preserved": [
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/STOP.json",
+        "sha256": "c170b38c7ffd5b3f319e80e7ffee9d49143bf0cc40439e77f2ef023665a123a6"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/summary.json",
+        "sha256": "200ecfc3aa525d22f2adccba48fc5217b7693493d0f5713fbec32876d617eacc"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/run_meta.json",
+        "sha256": "f6a0ccdd320aa469dd8018c3dd5a64b0a653c81ab0d5063631947de039e10227"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/12_r3_analysis_et_test.log",
+        "sha256": "76e8c478d503fb5869b51dc23bed2d2dab26d7dd1392520e5310f23fe64532c3"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch/driver.log",
+        "sha256": "0d9663742adff800b62edc9e3f96944394ce72c4f1ba9bd785ad80b5d2ebe52c"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test/run_meta.json",
+        "sha256": "42eb9d3af37b3ed4bef3f8cc8f83badb8af6df3526c53c68d2fd8c9d690bb9ee"
+      },
+      {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test/paired.jsonl",
+        "sha256": "17fd1c0b7447833083d26d4a484d6e1a2a07ab954c7f66a3c2c1b7f6479b4817"
+      }
+    ],
+    "reused_sources": {
+      "old_inputs_source": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/stream_oracle_inputs/inputs.jsonl",
+        "sha256": "49ce9bec28204cf7145e774e46149d3f44cf5e633d627a4513ed6ac5c10650eb"
+      },
+      "old_predictions_source": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/revision2/et_remaining/predictions.jsonl",
+        "sha256": "6b00361f602cc4d950b5667ddd2fee48b5e9ff77f4e1bf066f828ee414d6d675"
+      },
+      "new_predictions_source": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_et_test/predictions.jsonl",
+        "sha256": "4994b61516973118fdb926558e097f110312dad5dc48e103ff351881c00b4fc8"
+      }
+    },
+    "retry_output": "r3_analysis_et_test_retry1",
+    "gpu_hours_before_recovery": 0.9621191016930647,
+    "gpu_limit_hours": 14,
+    "gpu_seconds": 0,
+    "authorization_scope": "X06b legacy ET-test descriptive face-count reporting recovery only",
+    "remaining_order": [
+      "R3 ET-test CPU summary retry",
+      "budget",
+      "R4",
+      "AISHELL-4 CPU report",
+      "R5",
+      "curves",
+      "final audit"
+    ],
+    "recovery_control_tests": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_resume_control/summary.json",
+      "sha256": "353d79133863ee5b99fcd2b57b5a2eb08e7ee5da397b3c44c3786772827cc170"
+    },
+    "reporting_fix_tests": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_et_schema_fix/summary.json",
+      "sha256": "8421c0d9f484338bf4321331affbe0b9b54c97310731a09f281bb32f69043dc8"
+    },
+    "new_stops_remain_blocking": true,
+    "no_gpu_reinference": true
+  }
+}

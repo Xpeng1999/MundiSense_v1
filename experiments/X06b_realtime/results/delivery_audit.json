@@ -1,0 +1,964 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/delivery_audit/summary.json",
+    "sha256": "b13174235ddaeefb6d5d594729baef6f00c77dd87e3e06f38087951541097761"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/delivery_audit/run_meta.json",
+    "sha256": "f7295db3044087dc67ae7e26bce0b3c21efff8f235103b0d528ec21d39ddeda8"
+  },
+  "data": {
+    "status": "complete_delivery",
+    "gpu_hours": 7.51931819043756,
+    "gpu_limit_hours": 14,
+    "gpu_ledger": [
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/summary.json",
+          "sha256": "99ca9d47277fe63ada90b17c3211c74ca36191912b0fcbcdf804fe57c4eff5fd"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 1306.3891855890397,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r3",
+          "et_test"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/child.log",
+          "sha256": "95f686bb8206607908ae008989af61fa9c0585d4572cc6a219a4a487c07ddf54"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/summary.json",
+          "sha256": "5c788adb3c79423703a8ac54b51e351fa6445d72b1f72c36f749b07856907d0b"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 2157.239580505993,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r3",
+          "fmh"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/child.log",
+          "sha256": "058213ae66e4a0ef9ec7e0e9ac8209b9e2809668140e1e0bd9040287b596d308"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test/summary.json",
+          "sha256": "514afc6bf7eb5c8a8326c1106ed959f6ed6b87e57643e55f2d4248e583208d4f"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 1316.3848444470204,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r4_correct",
+          "et_test"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test/child.log",
+          "sha256": "6ae27df379dafba2051c5f882b47500a07de4a4168c942abd9a29f125cf7c367"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh/summary.json",
+          "sha256": "31a7bf51a4763ecf0bad9af7258490451ea523c9d4d6154a0bc3a4e2770c5a1f"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 2192.3116105289664,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r4_correct",
+          "fmh"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh/child.log",
+          "sha256": "4df43af3b6350ceaf7296a942741d3b38a438f287036de10e5c733d2dad35311"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test/summary.json",
+          "sha256": "dc6bcfad92e978581cb99fd84325a738f73f3190808c6156da7aacbb821d5efb"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 3378.520950342994,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r4_vad",
+          "et_test"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test/child.log",
+          "sha256": "c02a534b0cff07e1dfe1f826c93f55815ac8c01de34dd4b3c4758a57e5a15a76"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh/summary.json",
+          "sha256": "590b8b99c5623e7f5cf32826d5f5d865d5d29d13fee4bf72173adaab1bb6b703"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 5906.2072675151285,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.infer",
+          "r4_vad",
+          "fmh"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh/child.log",
+          "sha256": "1353c954db05c9172e23a4a3a3aa7f5c7580eb99da3ecbba5332c5183e264bda"
+        }
+      },
+      {
+        "source": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5/summary.json",
+          "sha256": "8be784ba7d1c3dd62e26263575ff5ecdb2eb280cbc5eb69f533a7c9b73e213f6"
+        },
+        "status": "completed",
+        "returncode": 0,
+        "failure": null,
+        "charged_gpu_s": 10812.492046646075,
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.realtime"
+        ],
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5/child.log",
+          "sha256": "cffa3483306fb333101e8efb6491545c228ab76def826705dd9f9e3daf850976"
+        }
+      }
+    ],
+    "frozen_paths_unchanged": [
+      "src/emotioncore/x02",
+      "src/emotioncore/x03",
+      "src/emotioncore/x04",
+      "src/emotioncore/x05",
+      "src/emotioncore/x06",
+      "configs/calibration_bundle_v1.1.json",
+      "configs/x06_vad_freeze.json",
+      "configs/x06_silence_freeze.json",
+      "configs/x06_smoothing_freeze.json"
+    ],
+    "evidence": {
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/aishell_test_04": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/aishell_test_04/run_meta.json",
+          "sha256": "0c296cca3c72b86aad1ba83935246339becabe41abba506df39ffb29ace3118e"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/aishell_test_04/summary.json",
+          "sha256": "be479b88caf2cc938cf249df6e7e6fc6efdbe0bc81f80952c67662189485838f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_aishell_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_aishell_test/run_meta.json",
+          "sha256": "8e78170e2a94448ab128be1b0de2e9b193f988fffa99a56c73d7b746059f5c30"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_aishell_test/summary.json",
+          "sha256": "502fd6c733f4497e51eca5afa1cc37fde84de5007a76618cf65ea33c728848c2"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r3_fmh/run_meta.json",
+          "sha256": "ca0966ba864edfed9b585f04f1c62e851dbd1b405dc8c09336330b22da3ee92a"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r3_fmh/summary.json",
+          "sha256": "9ea37da93c3c1d1a28cbf92e5f6473010605369b28b0357d1fd69565d22feca3"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_et_test/run_meta.json",
+          "sha256": "93aab230070fc2770fd6e4c35ecda8e2ec69d2b4e52e60391a644e374b722e0f"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_et_test/summary.json",
+          "sha256": "ea634a2f83c17adf6ea8115833417905845c4284885ebf824321b59c84032a33"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_fmh/run_meta.json",
+          "sha256": "5d9fa748c395c884765eb6c8052177541c9260628e3d2f9a1cd8a56c0b96dc12"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_analysis_r4_fmh/summary.json",
+          "sha256": "0377aee0c77d57d75800e9fba591cb4569390b8e2d5d98c1142e4e219b1c9224"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_curves": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_curves/run_meta.json",
+          "sha256": "d61cb6cfef6e10a993b1dd80ad7920918c312d47b50da7d92fc0d446e31f09f8"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_curves/summary.json",
+          "sha256": "8db38166116c8fcb49d9f331524d1ed0dc15afba182c97f95ae9916e970baca7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_dialogue_streams": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_dialogue_streams/run_meta.json",
+          "sha256": "f51af534af397955f6c803f43e4960f0ce024e826ea4e2641bbd1a472bdcfc17"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_dialogue_streams/summary.json",
+          "sha256": "2188a425c281c1886cb6ed0d8d643fbe5999dff19d5ca4e848927828b642cffb"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_et_test/run_meta.json",
+          "sha256": "0010c7ccfd8616467be08c9a82aa792b3525c48ad48c890e6ac682717456445f"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_et_test/summary.json",
+          "sha256": "5905e7d49abe8f1d423eb8d7538be656080f5a6924e2e3c89fcd1b480b3d89e7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_fmh/run_meta.json",
+          "sha256": "cc300250b4acbd84258954fdad80b76847ac23c44513db811212ebb4a11ff140"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r3_fmh/summary.json",
+          "sha256": "814fc93fc0dc33be8ad8349d979df36c00e4222acbd23202b4f62b19c2d74e1a"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_et_test/run_meta.json",
+          "sha256": "10aa4c9824b6766cbebe50efa07466b6dd33eb0ea12222dd453882ae715d2d9f"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_et_test/summary.json",
+          "sha256": "ff9740c5a496ffa848f091f4622f3c4bf52117d26d109b2ffbbb7501d19d0d6b"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_fmh/run_meta.json",
+          "sha256": "57879b98d30ff8d65472e350186689e4f51ef8e8fdcf785203144eaa82754ac4"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_correct_fmh/summary.json",
+          "sha256": "f6701debabd30e3310906b2e49a9d634894039f7d13bad8a7156e82187da2641"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_et_test/run_meta.json",
+          "sha256": "7478592baedaf70decbdfee6ae65ed081bc7c52fff481d14c09c0b126c03066c"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_et_test/summary.json",
+          "sha256": "9aa65275862fd92f38199a5689df37bd11ad1362efce57630d41530ae414a372"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_fmh/run_meta.json",
+          "sha256": "88f9198b56b5ef436c8eeee0a46f505b31a2876f7cef049390a8573704887a30"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_gpu_r4_vad_fmh/summary.json",
+          "sha256": "117d5e83a9a46536b16e4241f8b1b43b70ed7b256f49bf77822b6c8b2e61fb60"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_et_test/run_meta.json",
+          "sha256": "6d32a3e22445bc4b435c82e07c02f7159db5779eef26be7da6b5a73ec7f5c10c"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_et_test/summary.json",
+          "sha256": "0ac2bd7a8d60c7449d8803394f31074b8694b108ffc804e6b34c4dcf688d5796"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_fmh/run_meta.json",
+          "sha256": "164420a06075e27b02adcd329460157b8311b793ee674c1a9bc1087ea9c1f148"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_fmh/summary.json",
+          "sha256": "27d8a783c6fa8d179465a280e6c15281665d67f43a16422caf69456201dcbe79"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_et_test/run_meta.json",
+          "sha256": "d710f2f755ced311a5fed0a767ae111c2f5f869ad679d58efcb383bce19a8b15"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_et_test/summary.json",
+          "sha256": "f96794fc47e200a80c7ab1a8022349758f59e21753448f2635515d510c6032b1"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_fmh/run_meta.json",
+          "sha256": "f72efd58074e35c70884699c14e3fb038a6bd49896900355faec3c34f2ab79fb"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_correct_fmh/summary.json",
+          "sha256": "3666180a29df5d6b1c340d392701c7ea08f95df3340c7f892a7e3d8cf470d037"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_et_test/run_meta.json",
+          "sha256": "a19de04bcfc4f892acc8590f90fa55dea52ca4d2bf5e31265445fec69e8b9bf1"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_et_test/summary.json",
+          "sha256": "897dd8a5efddede5edfd25e368f910fa039600f0e8cb433a00a88b78a57df5bb"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_fmh/run_meta.json",
+          "sha256": "92bc88b583687f77520186c1268baa7f02d27301db3e8c9d5d416062ae9e8282"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r4_vad_fmh/summary.json",
+          "sha256": "207ac7e9eb0dda7d795c76ac0ca01732d1ee1f51258a9ab9a7930e5f22db8017"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r2": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r2/run_meta.json",
+          "sha256": "fe823e0eb250d0771fded5cec185f624d668f219a4afc0f595b4a9fa3dd36482"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r2/summary.json",
+          "sha256": "8194cd8aa1a112386a70160b8e3dfe5b76f5e7834d5486215102da0e45ea7b54"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r5": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r5/run_meta.json",
+          "sha256": "d3b05630580fa20fb082b5f19ae491a232901569c7c497fa52049819a0908001"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_r5/summary.json",
+          "sha256": "4c28ebf2626f7f21d8362d96f40847dc3621075076c097a5abbfc9d106b5529f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_retry_r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_retry_r3_et_test/run_meta.json",
+          "sha256": "a59120605fcecd8da2431cf09aa71a7e64aa298e01812cf52859d823ecd4a920"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_retry_r3_et_test/summary.json",
+          "sha256": "f641735e258779e082992570e5ecd6fcfe51c4935754abb3e826720f613002aa"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_aishell": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_aishell/run_meta.json",
+          "sha256": "e94bd044d7c6b29af8e85f55f7d7c62ff393ece012a27c12b0d35a0da4718ea5"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_aishell/summary.json",
+          "sha256": "1139e4f31bc8f2796caf662cf53813b0f72c3e4a10c0f433831c701e1fe10793"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_endpoint_frames": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_endpoint_frames/run_meta.json",
+          "sha256": "8d9be359adb780ecade969b2ae5ad63f3e429f6dfa572301b3a5c61daacdbbff"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/code_update_endpoint_frames/summary.json",
+          "sha256": "1e5ac1791f7cfea451fff582c3990825ac5c461d2626701e17d117c4ac425574"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/cpu_integration": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/cpu_integration/run_meta.json",
+          "sha256": "a9dbc353733b9768ba2b2d72c34f2b010c5bf4390592921e4bf60030e2d42dce"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/cpu_integration/summary.json",
+          "sha256": "cabe8624490357f5c9b9defd9724b2aacc30c597f4f00d3f1ab1184412843479"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/curves": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/run_meta.json",
+          "sha256": "ae438662d11b61b2f599f9a6942c2ef2765de8f1015fb90ba3e0499e0c9103a1"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/summary.json",
+          "sha256": "b2d56048e43d2a7922e9ddf64099d95ac4f53b6479e286ffd935c070e8f18910"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/run_meta.json",
+          "sha256": "1e2fffced48546711d91f80398f41fd6d2f8b00be143fa4934071cf64703a6f5"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/summary.json",
+          "sha256": "474db47a91a1e339a67127c6f319d5c58170a14f4831052203ce06966336fd2d"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/run_meta.json",
+          "sha256": "23e872a6088091a66960abf398d0c81ece22d84e9492e49c159bbb315c04e47e"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_et_test/summary.json",
+          "sha256": "99ca9d47277fe63ada90b17c3211c74ca36191912b0fcbcdf804fe57c4eff5fd"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/run_meta.json",
+          "sha256": "e042444648a891fe9f50cbb4f095f58d141038e45f700e55025eb5ad41969e10"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r3_fmh/summary.json",
+          "sha256": "5c788adb3c79423703a8ac54b51e351fa6445d72b1f72c36f749b07856907d0b"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test/run_meta.json",
+          "sha256": "f9edeeab19e2ebfb0f32f1fba831e15358aaa4e46962f7619f53cd274296a670"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_et_test/summary.json",
+          "sha256": "514afc6bf7eb5c8a8326c1106ed959f6ed6b87e57643e55f2d4248e583208d4f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh/run_meta.json",
+          "sha256": "829f37a96034e2c337d97f10345bf93e32db58b17547691e57dc751474a3fc6f"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_correct_fmh/summary.json",
+          "sha256": "31a7bf51a4763ecf0bad9af7258490451ea523c9d4d6154a0bc3a4e2770c5a1f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test/run_meta.json",
+          "sha256": "a31d0e3aac898fcb9ad692baf58166f0d1c4ac6372572a94c62592a8f3df1816"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_et_test/summary.json",
+          "sha256": "dc6bcfad92e978581cb99fd84325a738f73f3190808c6156da7aacbb821d5efb"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh/run_meta.json",
+          "sha256": "ef9148105ff673aeb3b0b3a49051413d108f89baa68d922361f9c74a021279c2"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r4_vad_fmh/summary.json",
+          "sha256": "590b8b99c5623e7f5cf32826d5f5d865d5d29d13fee4bf72173adaab1bb6b703"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5/run_meta.json",
+          "sha256": "62f9fc95bbc1906317f6b097a4a9940cf36ab203234bd712b6dc553104f58f76"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/gpu_jobs/r5/summary.json",
+          "sha256": "8be784ba7d1c3dd62e26263575ff5ecdb2eb280cbc5eb69f533a7c9b73e213f6"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test/run_meta.json",
+          "sha256": "a06351a965cee46854db18ee22bbe577df6d29b2e83e19082147b420fa52e01d"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_et_test/summary.json",
+          "sha256": "e93ba76265f2e8e353ec4cc4328eee3333ebee6c13276a33aee0c573e3907bf9"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_fmh/run_meta.json",
+          "sha256": "8af11339dd3e900666cf137c0d3b3b6fd20cd6cf792d80bd5b72df5b9a38d3d3"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r3_fmh/summary.json",
+          "sha256": "0bdfd473857c039ef89e3861f62fa9800ed6a0f3f9fb9bdf992dbdcf5671b772"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_et_test/run_meta.json",
+          "sha256": "5f337c8750d737657affe4c60c950cf75577f2d2b119f783d697a49813d8b986"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_et_test/summary.json",
+          "sha256": "968b32947b5e3df44edb341690845724cb723d0dca33fceccdf7bef1adbd0143"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_fmh/run_meta.json",
+          "sha256": "04cf3a4b0d24fc3a9aa2f96952ff3e9a8cb0b6405e6f6f4b37332d00858712f9"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_correct_fmh/summary.json",
+          "sha256": "3d150e9d0cf5f4a02ae36d70f4f6b7460b1f6b6f4b3f0864a63856302747c293"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_et_test/run_meta.json",
+          "sha256": "e91fa44b8fd991b4dba1f5da2d92e1830fad5831d3bdf999664cd8ba003c5415"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_et_test/summary.json",
+          "sha256": "c23aa530ab1ad1977a3dae862d5d31766daaf989fe770b5b9b6e92ddb8011c0e"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_fmh/run_meta.json",
+          "sha256": "9f2a7d45b4de09af4f72f6470e19827008c49f19b4853fc9dcee4d8bfd1473e9"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_fmh/summary.json",
+          "sha256": "d1be6adc5ae9c3d77096e38c33e7263ffa354bd2d37d339daa67f77355e22bdf"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/run_meta.json",
+          "sha256": "a1fd366fcc782244a110a64549a79af380a4ccf9d90f985bd67c840c08e0d22d"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/summary.json",
+          "sha256": "b80362b57891a4c814611c693ebab66211e6002f51e5116b69cf5b70733f7784"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r2": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2/run_meta.json",
+          "sha256": "87469d1903f4502a983550059b693c27fe377e34ee3ce9df66c47d0a056213fd"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2/summary.json",
+          "sha256": "c70915729f3a066bb17e748815770dad7a9b2861f908f4da77fa985010202684"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/run_meta.json",
+          "sha256": "a76b23043030b458811684b9f6e4cfa40e90ca1c3f3ae6c3e73a3499bb748683"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_half/summary.json",
+          "sha256": "911246db32922a4e9edf0b171a566547517e104ab970d3bb5306d104179ee3e6"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_launch": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_launch/run_meta.json",
+          "sha256": "2bb222d596fda76fbd3e811afaa832d9abe60867238de757b57682a7742d5931"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_launch/summary.json",
+          "sha256": "8119dd59a39f17b89c200650653824ce971924a69ce91559fa48a04cec8a41f1"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_reference": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_reference/run_meta.json",
+          "sha256": "b629c1867744a3424ab94382ac2d953123f121feb7f00142119c8a72a0bfa43a"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_reference/summary.json",
+          "sha256": "99dcdffa40b0bcd6052707238b17d499c46de7a121c321852f84f2867f943836"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_third": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_third/run_meta.json",
+          "sha256": "2645b6a5a9c089098d2e0f36db13733490aefea2faa05cc93adbdd794ae88241"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r2_third/summary.json",
+          "sha256": "a2706da81eefa8216ef237635d3bd9528a0139c8b1bad4a91f6be6f4c1b2587d"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test": {
+        "status": "historical_failed",
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test/run_meta.json",
+          "sha256": "42eb9d3af37b3ed4bef3f8cc8f83badb8af6df3526c53c68d2fd8c9d690bb9ee"
+        },
+        "driver_summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/summary.json",
+          "sha256": "200ecfc3aa525d22f2adccba48fc5217b7693493d0f5713fbec32876d617eacc"
+        },
+        "exit_record": {
+          "stage": "r3_analysis_et_test",
+          "command": [
+            "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+            "-u",
+            "-m",
+            "emotioncore.x06b.r3_analysis",
+            "et_test"
+          ],
+          "started_at": "2026-10-13T06:35:03.812287+00:00",
+          "ended_at": "2026-10-13T06:35:07.584955+00:00",
+          "returncode": 1,
+          "log": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/12_r3_analysis_et_test.log",
+            "sha256": "76e8c478d503fb5869b51dc23bed2d2dab26d7dd1392520e5310f23fe64532c3"
+          }
+        },
+        "retry_output": "r3_analysis_et_test_retry1",
+        "original_metadata_unchanged": true
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test_retry1": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test_retry1/run_meta.json",
+          "sha256": "fac4f8e6e303dd33f96ad32ac05460969ce69c430a03f851d45f553247aa5962"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test_retry1/summary.json",
+          "sha256": "4bfe66598fa894f666cc362fa79907ace4e0eb14189ad8ec8a5f49c2c6a0a4fd"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh/run_meta.json",
+          "sha256": "7e878588fd5e6796c2274bb92c45e229b24d85294cd17046347b9d34ed839ff5"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh/summary.json",
+          "sha256": "1a43887b201575ce02bd96b2132f5c3596ca14b3ced12a4dd244ad89ec318a4b"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_et_test/run_meta.json",
+          "sha256": "f8de67d36fdcb465cf004dc8b28bffcca9f6ca9ee41a541c9ced51cb12279841"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_et_test/summary.json",
+          "sha256": "ed4f5144d3f610820c28559900581a6e42259ca05cc070948df9c5f21276e2de"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_fmh/run_meta.json",
+          "sha256": "f54a8cc05e55b7a59b0e4851ebdd0d797c728f2daecddb6ac53ae3d187562128"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_fmh/summary.json",
+          "sha256": "a9cfd7e4bf7d6200a8026c93d7e4c8512933177fe934ff3cb47976614862b794"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_et_test/run_meta.json",
+          "sha256": "d3eaadda814f5a0b642984c1f9044f8790b6aba1dd31b93b1764404bbc7a80f9"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_et_test/summary.json",
+          "sha256": "cef76b0926faf76cf0f77047fa6c0d27e55b9fc16d0a69ca41d4c46e997d0427"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh/run_meta.json",
+          "sha256": "8455b6d5c37825f81239c7e1408ad418628ad03504ab1d610e7204922b75fbcf"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh/summary.json",
+          "sha256": "90ab9006f0d887d33581517a764d39b44425806a5f286af79348a32bcce25ba7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_et_test/run_meta.json",
+          "sha256": "27bdc91c49869ac0321f86d87f2dd084e8e424a35b78f44948b8f1f877eab638"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_et_test/summary.json",
+          "sha256": "5df9a03bebdff211efaedafcaa57f870a0804e35c66959b2657ed3b0c49cee5c"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_fmh/run_meta.json",
+          "sha256": "4a4d34d4857b41976416fb866d6fd7d8972d6306f5b12e4d9a333c2460527ceb"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_fmh/summary.json",
+          "sha256": "ee255dcade714b1c5778a28a6a0997181312577782ace25838b060cb9ecd270a"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_et_test": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_et_test/run_meta.json",
+          "sha256": "38c35087e45d6fabee76c745ce3ea79dcd49c522b413fc2dd467aeda6faa0931"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_et_test/summary.json",
+          "sha256": "d5f5c461eae5fb7d7eb61f04d69ea947e8d71403a54b9c5a8d999b298a17bb1f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/run_meta.json",
+          "sha256": "bbf58de89f9acb3b7bcd798bcb5cdf68291b785f4c77219b76096ecf1ba891cb"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/summary.json",
+          "sha256": "9117d1ea09ce29d79e2e624fc0a79a899ae786ef99dc3a755ea1f3e835f5e704"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/r5": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/run_meta.json",
+          "sha256": "749838e112a54b0464dad63fe0dfc6860c5b393f4a9ecf1c1d43b722a9d29b2e"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/summary.json",
+          "sha256": "142865589fe20ccae4242c13c5b6e6fe48deea516d18e3d6617abb674151be86"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/run_meta.json",
+          "sha256": "31ee3962a5a92bee5c6f957f82bbc1922845a71e696b0693958acfcb23fe7819"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/summary.json",
+          "sha256": "988e070df9fb8f42e625180bc95d46394025fb9679c4673bb411642ed68f1ab7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/stages": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/run_meta.json",
+          "sha256": "f6a0ccdd320aa469dd8018c3dd5a64b0a653c81ab0d5063631947de039e10227"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/summary.json",
+          "sha256": "200ecfc3aa525d22f2adccba48fc5217b7693493d0f5713fbec32876d617eacc"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch/run_meta.json",
+          "sha256": "4fc693ec953ce5829fd33969a20917eeae66c17053d1bb75d674f99c88795e0d"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch/summary.json",
+          "sha256": "1c73d67c58ed3780e87469ddf2d2d70027e9999edca78e8a42cbc6b5cda45fb7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/run_meta.json",
+          "sha256": "1d4690aab2d84870212cf67613c49a311708a70d8114fb10719b92ea460f4fb6"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1/summary.json",
+          "sha256": "e61bc414125c8d11561bb631e319c1c654a4e9fb07645d9667f146410c7ffeb5"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1_launch": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1_launch/run_meta.json",
+          "sha256": "cfcfa7ad4e84e5128fb86a81f430471eb8c7980dc1e1246a7b6c9a0bc91495af"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_resume1_launch/summary.json",
+          "sha256": "5055f39af2ef93b4c41bd419b8147efe38d6054979051999c1c331ca67bc6b14"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_aishell_compat": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_aishell_compat/run_meta.json",
+          "sha256": "23426150bdc02b27e70481ffa59791fd8cdce5ba9c754fe0b31214d22285d86f"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_aishell_compat/summary.json",
+          "sha256": "7ccfb8dae52164f25316e21856e519304f7be9714577504170af42bdc14e64b7"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_endpoint_frames": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_endpoint_frames/run_meta.json",
+          "sha256": "2f87c7f3a94a4f1f479195fef71eb2711c0fd9bed7f92e795ed1a49b3fed1e61"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_endpoint_frames/summary.json",
+          "sha256": "c63c49e17b4860cbb2651d5a7369271e90ff57f7d71d7f67fab7614bcfd105d3"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_et_schema_fix": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_et_schema_fix/run_meta.json",
+          "sha256": "62157845ce60a44080acfbc515f39112dbd8a857a34fab9e4f6c143a3252f9c4"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_et_schema_fix/summary.json",
+          "sha256": "8421c0d9f484338bf4321331affbe0b9b54c97310731a09f281bb32f69043dc8"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation/run_meta.json",
+          "sha256": "4d8f147354d2b0a79c3748dc1ab2a36f07d7f50e7ad0ee0b5a4f0a202d13e0e0"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_evaluation/summary.json",
+          "sha256": "cfd62754b46496108729cf8df299d24ae5e9171e1547287db50583b363169d07"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_frozen": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_frozen/run_meta.json",
+          "sha256": "84e6ffd114819a0e684b9fcaf126edea15a4d58dfc254303361745ea47a5e9f1"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_frozen/summary.json",
+          "sha256": "d00e22e070785da972d58b3b7cbdf21d278bda996dedaad9811873eb4582fb82"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_pre_freeze": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_pre_freeze/run_meta.json",
+          "sha256": "39927a83b8e7697b96b5f2928fae1a2345a5bba2261903a04f7585dc85b6c24e"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_pre_freeze/summary.json",
+          "sha256": "11fdb82d7a9f5b79d0e6b5ebbe4d5c392e714e18d21440a9886d8311f9898834"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_resume_control": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_resume_control/run_meta.json",
+          "sha256": "34032d8014201c88bba3d518d0b843df405c169bb1daeed05b5b801c99a3b495"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_resume_control/summary.json",
+          "sha256": "353d79133863ee5b99fcd2b57b5a2eb08e7ee5da397b3c44c3786772827cc170"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_stages": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_stages/run_meta.json",
+          "sha256": "ed43dc8193735b8e4c8c14e88af516e49ded43165f0ba9407dc2f14bf1f4a844"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_stages/summary.json",
+          "sha256": "5b9cd2683fc7871c6ca5c62c6e88aaef7a744a1ac51cc7ef1d026cd19cfeba4f"
+        }
+      },
+      "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_startup": {
+        "run_meta": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_startup/run_meta.json",
+          "sha256": "a847b109379704eb123386a805cdd2a602186de90ab99568dc42a2a2f1f83a8d"
+        },
+        "summary": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/unit_tests_startup/summary.json",
+          "sha256": "a1e3b6b20744ed13e1407aa9c3be5a0c35e96a5650b8646e910a8262c8181c11"
+        }
+      }
+    },
+    "active_processes": [],
+    "r5_schedule_identical_to_x06a": true,
+    "stop_receipt": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/STOP.json",
+      "sha256": "c170b38c7ffd5b3f319e80e7ffee9d49143bf0cc40439e77f2ef023665a123a6"
+    },
+    "historical_failure": {
+      "status": "historical_failed",
+      "run_meta": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_et_test/run_meta.json",
+        "sha256": "42eb9d3af37b3ed4bef3f8cc8f83badb8af6df3526c53c68d2fd8c9d690bb9ee"
+      },
+      "driver_summary": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/summary.json",
+        "sha256": "200ecfc3aa525d22f2adccba48fc5217b7693493d0f5713fbec32876d617eacc"
+      },
+      "exit_record": {
+        "stage": "r3_analysis_et_test",
+        "command": [
+          "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+          "-u",
+          "-m",
+          "emotioncore.x06b.r3_analysis",
+          "et_test"
+        ],
+        "started_at": "2026-10-13T06:35:03.812287+00:00",
+        "ended_at": "2026-10-13T06:35:07.584955+00:00",
+        "returncode": 1,
+        "log": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages/12_r3_analysis_et_test.log",
+          "sha256": "76e8c478d503fb5869b51dc23bed2d2dab26d7dd1392520e5310f23fe64532c3"
+        }
+      },
+      "retry_output": "r3_analysis_et_test_retry1",
+      "original_metadata_unchanged": true
+    },
+    "recovery_authorization": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/resume_authorization/summary.json",
+      "sha256": "988e070df9fb8f42e625180bc95d46394025fb9679c4673bb411642ed68f1ab7"
+    },
+    "gpu_seconds": 0,
+    "acceptance_is_separate": true
+  }
+}

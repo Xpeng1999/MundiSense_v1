@@ -1,0 +1,85 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/summary.json",
+    "sha256": "b2d56048e43d2a7922e9ddf64099d95ac4f53b6479e286ffd935c070e8f18910"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/run_meta.json",
+    "sha256": "ae438662d11b61b2f599f9a6942c2ef2765de8f1015fb90ba3e0499e0c9103a1"
+  },
+  "data": {
+    "status": "completed",
+    "plots": {
+      "backlog": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/backlog.png",
+        "sha256": "66588ee6ca60e47aa95b76e8a810eb1a75acdbd431d25076dac823e34c11e3a4"
+      },
+      "memory": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/curves/memory.png",
+        "sha256": "22fedf99990766e7671bc8f30fcdfea6703e8965d415c9a69560f9080c59d37e"
+      }
+    },
+    "old_comparison": {
+      "latency_from_vad": {
+        "p50": 1.5893840425414965,
+        "p95": 1.7583763676113449,
+        "p99": 1.8274027017550543
+      },
+      "latency_from_scheduled_vad": {
+        "p50": 526.968022287474,
+        "p95": 1113.3238632671648,
+        "p99": 1227.9917824169092
+      },
+      "latency_from_truth_end": {
+        "p50": 509.1424328522296,
+        "p95": 1054.507741840547,
+        "p99": 1188.036576804762
+      },
+      "truth_delay_n": 1929,
+      "uncovered_truth_ids": [],
+      "maximum_input_lag_s": 1258.0038595069477
+    },
+    "sources": {
+      "old_events": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/events.jsonl",
+        "sha256": "c6597d03bea52a6d5596d2ed8af4217769d8428069ab69a97acdd0afa854d30a"
+      },
+      "old_receipts": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/latency_receipts.jsonl",
+        "sha256": "ba97f343d24977711d0408f0222189f71266ea81b06aaf0781074fd513c4789b"
+      },
+      "old_start_inputs": {
+        "02": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/inputs/02_00000/input.json",
+          "sha256": "d2fe95ac2f1d8998a1b48c2fe1fe8a6dab7d4cc3af9de5402dd5102b4d2decac"
+        },
+        "13": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/inputs/13_00000/input.json",
+          "sha256": "570af855b098b31eabbb0b08566b95b2e5609ce71132149d389c89ebd22685d3"
+        },
+        "20": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/inputs/20_00000/input.json",
+          "sha256": "a11dae41a8786f9bd11475de4fb840a7cec302646e437d2c402626f63fe00b5e"
+        },
+        "21": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/realtime_H3/inputs/21_00000/input.json",
+          "sha256": "0f16286988dbec4b5c4f52f532ad67006c6739682f99eedc657c8b6b87f08f4b"
+        }
+      },
+      "new_latency": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/latency.jsonl",
+        "sha256": "e499d2ea779ace11a7591a56f0fc1e2beab10e77ba4b1b440d03118b84c746b7"
+      },
+      "memory": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/memory.jsonl",
+        "sha256": "7f2cb7b65eb225007693bd55e1c1ab3e06532b28e553b8fd47dcdef325f638df"
+      }
+    },
+    "gpu_seconds": 0,
+    "notes": [
+      "Backlog panels have separate linear y scales; every event plotted, no smoothing",
+      "Memory includes producer RSS at exit; X06a has no matching 10-minute-baseline curve",
+      "Curves are report-only; no parameter selection or fitting"
+    ]
+  }
+}

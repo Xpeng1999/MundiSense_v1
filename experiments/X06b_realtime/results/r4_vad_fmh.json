@@ -1,0 +1,24 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/summary.json",
+    "sha256": "9117d1ea09ce29d79e2e624fc0a79a899ae786ef99dc3a755ea1f3e835f5e704"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/run_meta.json",
+    "sha256": "bbf58de89f9acb3b7bcd798bcb5cdf68291b785f4c77219b76096ecf1ba891cb"
+  },
+  "data": {
+    "status": "completed",
+    "n": 10880,
+    "inputs": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/inputs_r4_vad_fmh/inputs.jsonl",
+      "sha256": "a005d1a886c48578732de82c203e4a50710b30a81e0cb0804b3a8c3337a0d4b3"
+    },
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/predictions.jsonl",
+      "sha256": "51738e09f3eb7a62e2aea875e88f8546ef00ba1b6886ed85558d32ff31746a54"
+    },
+    "system": "H3",
+    "parameters_refitted": false
+  }
+}

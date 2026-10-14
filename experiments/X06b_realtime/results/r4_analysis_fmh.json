@@ -1,0 +1,181 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh/summary.json",
+    "sha256": "90ab9006f0d887d33581517a764d39b44425806a5f286af79348a32bcce25ba7"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh/run_meta.json",
+    "sha256": "8455b6d5c37825f81239c7e1408ad418628ad03504ab1d610e7204922b75fbcf"
+  },
+  "data": {
+    "status": "completed",
+    "cohort": "fmh",
+    "n": 3266,
+    "correct_boundaries": {
+      "n": 3266,
+      "macro_f1": 0.6662402305954063,
+      "class_f1": {
+        "neutral": 0.7798238590872698,
+        "joy": 0.825964252116651,
+        "sadness": 0.8547486033519553,
+        "anger": 0.854119425547997,
+        "fear": 0.5759162303664922,
+        "disgust": 0.2857142857142857,
+        "surprise": 0.48739495798319327
+      },
+      "accepted": 2930,
+      "coverage": 0.8971218616044091,
+      "neutral_false_positive_rate": 0.11802748585286985
+    },
+    "vad": {
+      "n": 3266,
+      "macro_f1": 0.6508580735361207,
+      "class_f1": {
+        "neutral": 0.746742671009772,
+        "joy": 0.8040665434380776,
+        "sadness": 0.7915407854984894,
+        "anger": 0.853008377760853,
+        "fear": 0.5612244897959183,
+        "disgust": 0.3108108108108108,
+        "surprise": 0.4886128364389234
+      },
+      "accepted": 2891,
+      "coverage": 0.8851806491120637,
+      "neutral_false_positive_rate": 0.14874696847210994
+    },
+    "vad_minus_correct_macro_f1": -0.015382157059285584,
+    "acceptance": true,
+    "groups": {
+      "uncovered": {
+        "n": 0,
+        "fraction": 0.0,
+        "metrics": {
+          "n": 0,
+          "macro_f1": 0.0,
+          "class_f1": {
+            "neutral": 0.0,
+            "joy": 0.0,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "fear": 0.0,
+            "disgust": 0.0,
+            "surprise": 0.0
+          },
+          "accepted": 0,
+          "coverage": 0.0,
+          "neutral_false_positive_rate": 0.0
+        }
+      },
+      "one_to_one": {
+        "n": 2316,
+        "fraction": 0.7091243110838946,
+        "metrics": {
+          "n": 2316,
+          "macro_f1": 0.6774158047345363,
+          "class_f1": {
+            "neutral": 0.7690387016229713,
+            "joy": 0.838479809976247,
+            "sadness": 0.8188976377952756,
+            "anger": 0.8723021582733813,
+            "fear": 0.5714285714285714,
+            "disgust": 0.3300970873786408,
+            "surprise": 0.5416666666666666
+          },
+          "accepted": 2083,
+          "coverage": 0.8993955094991365,
+          "neutral_false_positive_rate": 0.1373762376237624
+        }
+      },
+      "merged_only": {
+        "n": 504,
+        "fraction": 0.1543172075933864,
+        "metrics": {
+          "n": 504,
+          "macro_f1": 0.6078629978384864,
+          "class_f1": {
+            "neutral": 0.6986899563318777,
+            "joy": 0.7329192546583851,
+            "sadness": 0.8125,
+            "anger": 0.816,
+            "fear": 0.5789473684210527,
+            "disgust": 0.37037037037037035,
+            "surprise": 0.24561403508771928
+          },
+          "accepted": 421,
+          "coverage": 0.8353174603174603,
+          "neutral_false_positive_rate": 0.2140077821011673
+        }
+      },
+      "split_only": {
+        "n": 295,
+        "fraction": 0.09032455603184324,
+        "metrics": {
+          "n": 295,
+          "macro_f1": 0.5210099754925729,
+          "class_f1": {
+            "neutral": 0.6724890829694323,
+            "joy": 0.6666666666666666,
+            "sadness": 0.7692307692307693,
+            "anger": 0.5614035087719298,
+            "fear": 0.47619047619047616,
+            "disgust": 0.14814814814814814,
+            "surprise": 0.35294117647058826
+          },
+          "accepted": 251,
+          "coverage": 0.8508474576271187,
+          "neutral_false_positive_rate": 0.0851063829787234
+        }
+      },
+      "merged_and_split": {
+        "n": 151,
+        "fraction": 0.04623392529087569,
+        "metrics": {
+          "n": 151,
+          "macro_f1": 0.5167920770873246,
+          "class_f1": {
+            "neutral": 0.7664670658682635,
+            "joy": 0.45161290322580644,
+            "sadness": 0.7619047619047619,
+            "anger": 0.8421052631578947,
+            "fear": 0.5454545454545454,
+            "disgust": 0.0,
+            "surprise": 0.25
+          },
+          "accepted": 136,
+          "coverage": 0.9006622516556292,
+          "neutral_false_positive_rate": 0.1282051282051282
+        }
+      }
+    },
+    "split_merge_replaced_with_correct": {
+      "n": 3266,
+      "macro_f1": 0.6737833495891951,
+      "class_f1": {
+        "neutral": 0.7784090909090909,
+        "joy": 0.8250701590271281,
+        "sadness": 0.848314606741573,
+        "anger": 0.8567119155354449,
+        "fear": 0.5654450261780105,
+        "disgust": 0.31833910034602075,
+        "surprise": 0.5241935483870968
+      },
+      "accepted": 2925,
+      "coverage": 0.8955909369259032,
+      "neutral_false_positive_rate": 0.12611156022635409
+    },
+    "paired": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_analysis_fmh/paired.jsonl",
+      "sha256": "0dd863614cb0f06ecee8db47ff125421731ac03f83543d9e5e77cfc54e2a9967"
+    },
+    "predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_vad_fmh/predictions.jsonl",
+      "sha256": "51738e09f3eb7a62e2aea875e88f8546ef00ba1b6886ed85558d32ff31746a54"
+    },
+    "correct_predictions": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r4_correct_fmh/predictions.jsonl",
+      "sha256": "d789c0c87f0e5ae99e95e5ae1fb4c39b6251571b813fece0f7a219700d5b80eb"
+    },
+    "gpu_seconds": 0,
+    "limitation": "Other speakers provide gap duration only; their sound is assumed absent from the target microphone"
+  }
+}

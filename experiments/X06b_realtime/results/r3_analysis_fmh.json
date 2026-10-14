@@ -1,0 +1,69 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh/summary.json",
+    "sha256": "1a43887b201575ce02bd96b2132f5c3596ca14b3ced12a4dd244ad89ec318a4b"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh/run_meta.json",
+    "sha256": "7e878588fd5e6796c2274bb92c45e229b24d85294cd17046347b9d34ed839ff5"
+  },
+  "data": {
+    "status": "completed",
+    "cohort": "fmh",
+    "n": 3266,
+    "op_n": {
+      "old_macro_f1": 0.7017847570325552,
+      "new_macro_f1": 0.6966408415058509,
+      "delta": -0.005143915526704235,
+      "ci95": [
+        -0.011781240570322375,
+        0.0016558892232379546
+      ]
+    },
+    "r90": {
+      "old_macro_f1": 0.6688779031620106,
+      "new_macro_f1": 0.6681323624434883,
+      "delta": -0.0007455407185222862,
+      "ci95": [
+        -0.007612054018429617,
+        0.006611757286739232
+      ]
+    },
+    "coverage": {
+      "old": 0.90263319044703,
+      "new": 0.8998775260257196,
+      "delta": -0.0027556644213104775,
+      "ci95": [
+        -0.009185548071034888,
+        0.003980404164115159
+      ]
+    },
+    "component_argmax_agreement": {
+      "Q_AV": 0.9598897734231476,
+      "V2": 0.9096754439681568
+    },
+    "old_no_face_n": 7,
+    "new_no_face_n": 4,
+    "bootstrap": {
+      "seed": 20261013,
+      "iterations": 2000,
+      "unit": "paired utterance",
+      "ci": "95% percentile"
+    },
+    "ci_acceptance": true,
+    "modality_and_multiface_gates": false,
+    "paired": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_analysis_fmh/paired.jsonl",
+      "sha256": "39f36e2983c20df73ee7b48f0014105107d2cb82c899bf2ee4a860abf1e7904e"
+    },
+    "old": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/fmh_stream_oracle/predictions.jsonl",
+      "sha256": "af6c73268d312c8467ac61287e4a2413b2d7f35cf6e98862711b078812d82198"
+    },
+    "new": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_fmh/predictions.jsonl",
+      "sha256": "6f99a107a18946aa836810507e4c47fd0fc9813b088a3a975fd7c3b4808fafe8"
+    },
+    "gpu_seconds": 0
+  }
+}

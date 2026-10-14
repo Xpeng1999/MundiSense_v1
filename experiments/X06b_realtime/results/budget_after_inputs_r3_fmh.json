@@ -1,0 +1,31 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_fmh/summary.json",
+    "sha256": "27d8a783c6fa8d179465a280e6c15281665d67f43a16422caf69456201dcbe79"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/budget_after_inputs_r3_fmh/run_meta.json",
+    "sha256": "164420a06075e27b02adcd329460157b8311b793ee674c1a9bc1087ea9c1f148"
+  },
+  "data": {
+    "status": "passed",
+    "stage": "after_inputs_r3_fmh",
+    "used_gpu_hours": 0.0,
+    "future_gpu_seconds": {
+      "r3_fmh": 2469.745672504319,
+      "r3_et_test": 1458.707716552612,
+      "r4_correct_fmh": 2469.745672504319,
+      "r4_correct_et_test": 1458.707716552612,
+      "r4_vad_fmh": 6950.080826517553,
+      "r4_vad_et_test": 4104.931388350386,
+      "r5": 14692.64446602785
+    },
+    "reserve_seconds": 7020.912691801931,
+    "estimated_total_gpu_hours": 11.28485448633655,
+    "limit_gpu_hours": 14,
+    "ledger": [],
+    "r4_exact_counts": false,
+    "speech_seconds_per_event": 0.7561989199339617,
+    "gpu_seconds": 0
+  }
+}

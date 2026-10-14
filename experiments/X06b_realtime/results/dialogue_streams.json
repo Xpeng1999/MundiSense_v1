@@ -1,0 +1,183 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/summary.json",
+    "sha256": "474db47a91a1e339a67127c6f319d5c58170a14f4831052203ce06966336fd2d"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/run_meta.json",
+    "sha256": "1e2fffced48546711d91f80398f41fd6d2f8b00be143fa4934071cf64703a6f5"
+  },
+  "data": {
+    "status": "completed",
+    "streams": {
+      "02": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_02.json",
+          "sha256": "157331d5f34a3c91fd70c854b7d5af85e361aba9bfa5f81986237fd743f64a02"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/02.wav",
+          "sha256": "b1f794669eac6c5b097404e98ffd2cd31a58aac289fb0343fb7d3a7d59a43b54"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/02_events.jsonl",
+          "sha256": "460421dd04bc529de5a066e46df458e4df4a5f7ac050d0bd6acc293956bc76e1"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/02_posterior.npy",
+          "sha256": "741838525f6303d70120052de53b71b935a067cc441fdc5dfe456b6fff557090"
+        },
+        "speech": 449,
+        "visual": 791
+      },
+      "06": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_06.json",
+          "sha256": "23ca31fdcd5ec92490782ce1740f978fde94cfb3a1407825cf57c3d5e111e3ef"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/06.wav",
+          "sha256": "fa71c016a642b323567f27a8da88a8831acfd81d5996b8a3cbe7086494991dcb"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/06_events.jsonl",
+          "sha256": "bbb04029199ec9bb3b6869ad001d4815d51110c3ed35faaf6f756b81b0005807"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/06_posterior.npy",
+          "sha256": "c9c8b22e7bb5c5585a275ab7a0538f01a28b8de79f61364b02e78a60b02d517c"
+        },
+        "speech": 1045,
+        "visual": 2631
+      },
+      "10": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_10.json",
+          "sha256": "a349d06dac238021ea30eea9f2d8dc3458e5e533f0ef369d13827d4f2202de77"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/10.wav",
+          "sha256": "0c24a8b617724d4168663408150d55e496d20c98a9898d84161594d8a131ca88"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/10_events.jsonl",
+          "sha256": "3d5cbaa474c3d85a58a028f9308e3481cc8bf86338c9a9522a6be45cff8b8b96"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/10_posterior.npy",
+          "sha256": "8d24709099af531b0f43fafdb2ee3f480183e042f02dbabaf10f07079454e774"
+        },
+        "speech": 575,
+        "visual": 1145
+      },
+      "11": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_11.json",
+          "sha256": "f975df55199675efd82f5353f3e51ea727cb03e743555c8e0aad2f4473ed564e"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/11.wav",
+          "sha256": "446c3d1e211a60483be8761dca0f1a9bd28f4a46bb18784198e363987989412d"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/11_events.jsonl",
+          "sha256": "03bb06e5f54fe64d4fc3b47274462514f39542ba9ae646684b1f6f5f20ea8c87"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/11_posterior.npy",
+          "sha256": "07b5617b8a80f880283e53f509d0751e6696215773108fedfde0e18e3f06be13"
+        },
+        "speech": 1982,
+        "visual": 3502
+      },
+      "13": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_13.json",
+          "sha256": "bc76b4d6c73da486ffb36bb3d7efcf24ce230941a5ef6327f94108178596ab89"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/13.wav",
+          "sha256": "619f4d154fd16aec3949064b6d19830d40c64338b28cb973b4571b8c271a7a44"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/13_events.jsonl",
+          "sha256": "56d212ee14d8bf516f61c3e2f573555740e027e97f67d5b05a8c12e41e437aeb"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/13_posterior.npy",
+          "sha256": "d41d38b4aaa0f97a1bb3ece94f0862eafa05c2b976b4e52f5003be59915b6fd8"
+        },
+        "speech": 455,
+        "visual": 979
+      },
+      "20": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_20.json",
+          "sha256": "484b4ba93a08d6e3b5037c80cb530e613f980c8fd3a5f4ff99655509362bd291"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/20.wav",
+          "sha256": "caa6580a1ca74f34c44ebb9060f7be62185cbf1df63cb4a8827ed7e7333bf01c"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/20_events.jsonl",
+          "sha256": "6ee8683793aefe943ea78203efd01c5097f51dbe75c34f0e31fb6777a23d5a95"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/20_posterior.npy",
+          "sha256": "dcf7becf72ced4f2ad1dbe763c5a103a9c6180a82472c34c563db750638efdc3"
+        },
+        "speech": 621,
+        "visual": 1213
+      },
+      "21": {
+        "timeline": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/preflight/dialogue_21.json",
+          "sha256": "e84971152c0a2f121167562e2286ac090ab5374c72939d6321f06fcbee8e18d0"
+        },
+        "audio": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/21.wav",
+          "sha256": "7928f127caab4fceeb2e8cab3496333415d6e95b5945da073a512491a2471ccb"
+        },
+        "events": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/21_events.jsonl",
+          "sha256": "3f1935f6e595d00d0f43cbb4cd48a146bdaf11b672370a1d283ff53855491950"
+        },
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/dialogue_streams/21_posterior.npy",
+          "sha256": "2914959761a52b1f725655b981cce4bb80f76525776be4574bf1d6922be1b268"
+        },
+        "speech": 704,
+        "visual": 1161
+      }
+    },
+    "counts": {
+      "fmh": {
+        "speech": 3602,
+        "visual": 7278
+      },
+      "et_test": {
+        "speech": 2229,
+        "visual": 4144
+      }
+    },
+    "vad": {
+      "model": "fsmn",
+      "threshold": 0.3,
+      "min_silence": 0.4
+    },
+    "gpu_seconds": 0
+  },
+  "projection": {
+    "omitted_per_utterance_arrays": {
+      "data.streams.02.noise_levels": 413,
+      "data.streams.06.noise_levels": 964,
+      "data.streams.10.noise_levels": 552,
+      "data.streams.11.noise_levels": 1747,
+      "data.streams.13.noise_levels": 378,
+      "data.streams.20.noise_levels": 524,
+      "data.streams.21.noise_levels": 610
+    },
+    "full_data_location": "source.path with source.sha256; original server summary retained"
+  }
+}

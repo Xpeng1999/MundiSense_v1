@@ -1,0 +1,15 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch/summary.json",
+    "sha256": "1c73d67c58ed3780e87469ddf2d2d70027e9999edca78e8a42cbc6b5cda45fb7"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/stages_launch/run_meta.json",
+    "sha256": "4fc693ec953ce5829fd33969a20917eeae66c17053d1bb75d674f99c88795e0d"
+  },
+  "data": {
+    "status": "dispatched",
+    "pid": 1736793,
+    "gpu_seconds": 0
+  }
+}

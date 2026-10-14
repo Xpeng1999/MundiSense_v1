@@ -1,0 +1,248 @@
+{
+  "source": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/aishell_test_04/summary.json",
+    "sha256": "be479b88caf2cc938cf249df6e7e6fc6efdbe0bc81f80952c67662189485838f"
+  },
+  "run_meta": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/aishell_test_04/run_meta.json",
+    "sha256": "0c296cca3c72b86aad1ba83935246339becabe41abba506df39ffb29ace3118e"
+  },
+  "data": {
+    "status": "completed",
+    "split": "test",
+    "config": {
+      "model": "fsmn",
+      "threshold": 0.3,
+      "min_silence": 0.4
+    },
+    "frame": {
+      "precision": 0.9634856817613301,
+      "recall": 0.9445708709312504,
+      "f1": 0.9539345238659895,
+      "tp": 3720710,
+      "fp": 141008,
+      "fn": 218338
+    },
+    "boundary": {
+      "precision": 0.5483318533553215,
+      "recall": 0.436175580221998,
+      "f1": 0.4858652278986118,
+      "tp": 8645,
+      "fp": 7121,
+      "fn": 11175
+    },
+    "mean_segment_s": 4.898792337942408,
+    "segment_count": 7883,
+    "sources": [
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R003S01C02_fsmn.npz",
+          "sha256": "135f70c442abbb8bad3150ebebba4a2b79d844c5f210fcd5dfaee91516d3cb2b"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R003S01C02.rttm",
+          "sha256": "9dfd301c5b96f60813aaddec2549edc007851699917d9326e4db7e13c6b05ed9"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R003S02C02_fsmn.npz",
+          "sha256": "af3eb9155c496d78de6e9951629f5c7a3e5edb7d2cff7ee63d0ec351eba5329e"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R003S02C02.rttm",
+          "sha256": "6df8cefdfc191794dcb6f55e1b96cc952fa1af5787bbe5c6d53945551f602361"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R003S03C02_fsmn.npz",
+          "sha256": "64cf5caa456037cd504983c0959b8c3923ac88b0dfc363f619e2fe53f9f8c90e"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R003S03C02.rttm",
+          "sha256": "8bbbf4bb17752167dd9a63d2cc24cc84dd2c1dc40ed70a3204f75eda070186ad"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R003S04C02_fsmn.npz",
+          "sha256": "f14e7c10658702e3be08163f4444258ceea13de764ae5729827fceb56037f1fc"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R003S04C02.rttm",
+          "sha256": "3f9ff9e710f39a359f673bac69ad83aedf708b7fa794922b2d251b48ed739a62"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R004S01C01_fsmn.npz",
+          "sha256": "b829514eab9296061e78c26556b6e62f82a04ed9c2cb1fef714af7f826a7714f"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R004S01C01.rttm",
+          "sha256": "480f09905c8e57a2e1d9124eab14099c84afbd65f92c4c99aabd59257b0a5e5f"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R004S02C01_fsmn.npz",
+          "sha256": "7e570c0618a2aae01d48660778b2f4541736809bdff21c8f775a6b4e6afa1308"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R004S02C01.rttm",
+          "sha256": "e5f4e9fc9051b8e13e3bec00795ceeae140d35b2325ef2b0b8750a06b4fa863e"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R004S03C01_fsmn.npz",
+          "sha256": "1f16ef16603588103f69e4d66267cce6523a9b37fd6e4dad678637dcf091ef14"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R004S03C01.rttm",
+          "sha256": "aec0a2e68b1266d8046aee9c8f118c8fe5ee3a042b57d7b112e55ec484c33393"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/L_R004S06C01_fsmn.npz",
+          "sha256": "19e9aaddcf0e743cd10a22cfd7e8cb968e6c5f18197d683ec4db07752a76461b"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/L_R004S06C01.rttm",
+          "sha256": "c2db37cecb9b967683f1f8f536e9bb7c5d382c1a62f85b7f5f3c8ff3de530c56"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/M_R003S01C01_fsmn.npz",
+          "sha256": "9d635c6a6ebf117bfbdd406a2b0f9a543c94929d80bd25d4aa4e5cb771ec5485"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/M_R003S01C01.rttm",
+          "sha256": "bf67a4df2f2d2ae78cccfeefc47ca4244db043e6bbc7a44f83dc9b3d3ee3af57"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/M_R003S02C01_fsmn.npz",
+          "sha256": "be9cf96bcb9347a367429357e2677ff0a2d6a110e65accaed85e9ea0c0e6cf6e"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/M_R003S02C01.rttm",
+          "sha256": "ce8fc5537380706bfa734f351161e0cd2f72f377c192e6bed09e607064daa547"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/M_R003S04C01_fsmn.npz",
+          "sha256": "4d04ed5f1e8a3dce66345b50f7c6c873f817dd41175dc993120f2df4c682e921"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/M_R003S04C01.rttm",
+          "sha256": "727f19e572ee924b4aaaa9bf8865cb0590353f2f21b9af7c8cb6720c1c89e0cc"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/M_R003S05C01_fsmn.npz",
+          "sha256": "dcfade2c4f45313c7697a9b4a00f9e5d0cab22bcdf95da405fb00bd75458cb34"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/M_R003S05C01.rttm",
+          "sha256": "f670715485d14aab15b1ff7538610e3b0c4c707c718159e5e9f146d517ca3f17"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R003S01C01_fsmn.npz",
+          "sha256": "0a25a367d57eb9bdd69d3fb301fb278abd5775f7ac7964a07751a847d091637e"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R003S01C01.rttm",
+          "sha256": "1fe23bd4aef6575bfe61f0bc4875bc54fb39044ec013c6383546217ccf3e56e5"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R003S02C01_fsmn.npz",
+          "sha256": "db98ce4093508b4d4f0e6a5b654fdcb9a4c3bfc83387749f9425a878409470d3"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R003S02C01.rttm",
+          "sha256": "11b8d1169691a2a516a2b57d2b5490b0418c2e82d06aa1e4a24054964b2567f7"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R003S03C01_fsmn.npz",
+          "sha256": "55ddccbd7a672aef490e84cbb6dcab58133271164c5949cd9a8e4cd9012420fe"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R003S03C01.rttm",
+          "sha256": "406beae6b002c9ac04f6ad2db7f7125e577133bef7b1f34be050bfbf11cdf2e1"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R003S04C01_fsmn.npz",
+          "sha256": "8a2a6cc66d683fe601bb8c02f4b05506b517858cda1f724ad4ad1debfd12867b"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R003S04C01.rttm",
+          "sha256": "44d6ddbe9cd88ffb6ac4d94ea2d0721ae5eac69b7afe76b7dd70ae2290b76b15"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R004S01C01_fsmn.npz",
+          "sha256": "21e1565521a06baeccb8011a5b27391fb7a7168a09929a487eeadbb78b0f65fc"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R004S01C01.rttm",
+          "sha256": "637717fa070944580ebc8495589d0527a9c6c4c136b5f558b205c0d5d3b0fbea"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R004S02C01_fsmn.npz",
+          "sha256": "4480ce71bde0e196a07e299ed4a98045869ea27dcbced830928534fbe3057313"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R004S02C01.rttm",
+          "sha256": "ce86adb7400b992b8d73f0caecabb395913347def3cae0f39d30968498f8e3f1"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R004S03C01_fsmn.npz",
+          "sha256": "630f363fbf9b4a2a05adf4f72de4a4b5ad305d6ba6b829f1d00a7a369b6de2a0"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R004S03C01.rttm",
+          "sha256": "b7143654509a06fd7477df62233577e3c74ec47ebbcb95bb0300d5916b27bb2f"
+        }
+      },
+      {
+        "posterior": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/posteriors/S_R004S04C01_fsmn.npz",
+          "sha256": "4f5e3ad5b24797377c551788672435fbca07b5aaaa2615a9ba337794ebee688c"
+        },
+        "rttm": {
+          "path": "/home/administrator/emotion-data/emotionAI_dataset/AISHELL-4/test/TextGrid/S_R004S04C01.rttm",
+          "sha256": "2fd83b79e0c92154522c5b1929a5101eacc162b8a5e185b191f05ff8bd128894"
+        }
+      }
+    ],
+    "gpu_seconds": 0,
+    "parameters_selected": false,
+    "reused_frozen_posteriors": true,
+    "historical_metrics_reproduced": true,
+    "historical_summary": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/aishell_test/summary.json",
+      "sha256": "a11e44a296da43bf8352fbad48da130877f5001d6011a0e756bf94c7efada462"
+    },
+    "legacy_cache_hashes_recorded_at_read": true
+  }
+}
