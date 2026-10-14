@@ -7,6 +7,7 @@ from emotioncore.x07.common import committed_protocol,verify_precedes,load_compl
 from emotioncore.x07.inventory import ids_sha,spec
 from emotioncore.x07.leakage import REQUIRED,assert_source,assert_exclusions
 from emotioncore.x07.metrics import sentiment,compute
+from emotioncore.x07.identity import check_identity
 from emotioncore.eval.metrics import LABELS,sims_metrics
 
 def command(repo,*args):
@@ -94,13 +95,15 @@ def test_metric_entrypoint_refuses_early_and_second_label_read(tmp_path,monkeypa
     uid='video_1__01'; directory=tmp_path/'test';directory.mkdir()
     config={'inventory':{'splits':{'test':{'ids':[uid]}},'meta_csv':spec(meta)},
             'bootstrap':{'repetitions':2,'seed':20261014}}
+    write_new(tmp_path/'leakage.json',{'identity_checks':{'test':check_identity(spec(meta),'test',[uid])}})
     monkeypatch.setattr(metrics,'ROOT',tmp_path);monkeypatch.setattr(metrics,'PROTOCOL',protocol)
     monkeypatch.setattr(metrics,'authority',lambda:(config,{'commit':'frozen','commit_unix':0}))
     monkeypatch.setattr(metrics,'stage_gate',lambda split:None)
     calls=[]
     original=pd.read_csv
     def read_once(*args,**kwargs):
-        calls.append('labels');return original(*args,**kwargs)
+        if 'label' in kwargs.get('usecols',[]): calls.append('labels')
+        return original(*args,**kwargs)
     monkeypatch.setattr(pd,'read_csv',read_once)
     monkeypatch.setattr(metrics,'compute',lambda *a,**kw:{'H3':{'pearson_available':1.}})
     with pytest.raises(RuntimeError):metrics.run('test')
@@ -137,3 +140,68 @@ def test_decisions_preserve_frozen_h3_and_secondary_parameters():
         assert got['H_V']['available']==face
     assert json.dumps(bundle,sort_keys=True)==before
     assert not unavailable('decode_failed')['accepted_r90']
+
+
+@pytest.mark.parametrize('split',['valid','test'])
+def test_proposed_loader_never_parses_other_split_label(tmp_path,split):
+    from emotioncore.x07.metrics import labels_for_split
+    opposite='test' if split=='valid' else 'valid'
+    path=tmp_path/'meta.csv'
+    path.write_text(f'video_id,clip_id,mode,label\nvideo_1,01,{split},0.6\nvideo_2,02,{opposite},FORBIDDEN_LABEL_MUST_NOT_PARSE\n')
+    identity=check_identity(spec(path),split,['video_1__01'])
+    assert labels_for_split(path,identity)=={'video_1__01':.6}
+    with pytest.raises(RuntimeError):check_identity(spec(path),split,['wrong__id'])
+
+def test_proposed_loader_rejects_multiline_before_labels(tmp_path):
+    path=tmp_path/'meta.csv'
+    path.write_text('video_id,clip_id,mode,label,text\nvideo_1,01,valid,0.6,"two\nlines"\n')
+    with pytest.raises(RuntimeError,match='physical line'):
+        check_identity(spec(path),'valid',['video_1__01'])
+
+
+@pytest.mark.parametrize('failure',['id_set','physical_lines','receipt_mismatch','meta_sha'])
+def test_identity_failure_never_claims_metric_lock(tmp_path,monkeypatch,failure):
+    from emotioncore.x07 import metrics
+    import pandas as pd
+    uid='video_1__01'; directory=tmp_path/'test';directory.mkdir()
+    protocol=tmp_path/'protocol.json';protocol.write_text('{}')
+    meta=tmp_path/'meta.csv'
+    meta.write_text('video_id,clip_id,mode,label,text\nvideo_1,01,test,0.5,single\n')
+    identity=check_identity(spec(meta),'test',[uid])
+    if failure=='id_set':
+        meta.write_text('video_id,clip_id,mode,label,text\nvideo_2,01,test,FORBIDDEN,single\n')
+    elif failure=='physical_lines':
+        meta.write_text('video_id,clip_id,mode,label,text\nvideo_1,01,test,FORBIDDEN,"two\nlines"\n')
+    elif failure=='receipt_mismatch':
+        identity['record_count']+=1
+    config={'inventory':{'splits':{'test':{'ids':[uid]}},'meta_csv':spec(meta)}}
+    if failure=='meta_sha':
+        meta.write_text(meta.read_text()+'\n')
+    write_new(tmp_path/'leakage.json',{'identity_checks':{'test':identity}})
+    pred=directory/'pred.json';write_new(pred,{'id':uid})
+    write_new(directory/'complete.json',{'ids_sha256':ids_sha([uid]),'n':1,'predictions':{uid:spec(pred)},
+        'protocol_sha256':spec(protocol)['sha256'],'first_inference_at':'2026-10-14T00:00:00+00:00'})
+    monkeypatch.setattr(metrics,'ROOT',tmp_path);monkeypatch.setattr(metrics,'PROTOCOL',protocol)
+    monkeypatch.setattr(metrics,'authority',lambda:(config,{'commit':'frozen','commit_unix':0}))
+    monkeypatch.setattr(metrics,'stage_gate',lambda split:None)
+    original=pd.read_csv
+    def identities_only(*a,**kw):
+        assert kw['usecols']==['video_id','clip_id','mode']
+        return original(*a,**kw)
+    monkeypatch.setattr(pd,'read_csv',identities_only)
+    with pytest.raises(RuntimeError):metrics.run('test')
+    assert not (directory/'metrics.started.json').exists()
+    assert not (directory/'metrics.json').exists()
+
+
+def test_v2_freeze_preserves_all_scientific_definitions():
+    from emotioncore.x07.freeze_v2 import build,V1,V1_SHA
+    assert spec(V1)['sha256']==V1_SHA
+    v1=json.loads(V1.read_text());before=json.dumps(v1,sort_keys=True)
+    v2=build(v1,'new-code',{'new.py':'new-sha'},'later',{'authorization':'revision-1'})
+    changed={k for k in v1 if v1[k]!=v2[k]}
+    assert changed=={'version','registered_at','code_commit','code_sha256','execution'}
+    assert set(v2)-set(v1)=={'revision'}
+    assert {k for k in v1['execution'] if v1['execution'][k]!=v2['execution'][k]}=={'labels'}
+    assert set(v2['execution'])-set(v1['execution'])=={'root','protocol'}
+    assert json.dumps(v1,sort_keys=True)==before

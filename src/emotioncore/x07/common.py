@@ -6,8 +6,8 @@ import subprocess
 from pathlib import Path
 from emotioncore.x07.inventory import sha, spec, ids_sha
 
-ROOT = Path('/mnt/h/emotionAI/emotioncore_runs/X07')
-PROTOCOL = Path('configs/x07_lockbox_protocol.json')
+ROOT = Path('/mnt/h/emotionAI/emotioncore_runs/X07_v2')
+PROTOCOL = Path('configs/x07_lockbox_protocol_v2.json')
 SYSTEMS = ('H3', 'H_A', 'H_V')
 
 def now():

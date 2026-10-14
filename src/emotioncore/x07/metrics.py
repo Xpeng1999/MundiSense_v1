@@ -3,6 +3,7 @@ import argparse
 import numpy as np
 from scipy.stats import rankdata
 from emotioncore.x07.common import *
+from emotioncore.x07.identity import check_identity
 
 def sentiment(p):
     p=np.asarray(p,dtype=float)
@@ -59,6 +60,14 @@ def compute(rows,labels,repetitions=2000,seed=20261014):
             'bootstrap_valid_replicates':{k:len(v) for k,v in series.items()}}
     return result
 
+def labels_for_split(path, identity):
+    """After the exclusive lock, parse only the prechecked split's labels."""
+    import pandas as pd
+    selected=set(identity['selected_lines'])
+    skip=[i for i in range(1,identity['physical_line_count']) if i not in selected]
+    frame=pd.read_csv(path,usecols=['label'],dtype={'label':float},skiprows=skip)
+    return dict(zip(identity['ordered_ids'],frame['label'].tolist(),strict=True))
+
 def run(split):
     protocol,receipt=authority()
     stage_gate(split)
@@ -68,19 +77,18 @@ def run(split):
     if done['protocol_sha256']!=sha(PROTOCOL):
         raise RuntimeError('STOP inference protocol mismatch')
     verify_precedes(receipt,done['first_inference_at'])
+    source=protocol['inventory']['meta_csv']
+    identity=check_identity(source,split,ids)
+    if identity!=read(ROOT/'leakage.json')['identity_checks'][split]:
+        raise RuntimeError('STOP pre-lock identity check differs from L2 receipt')
     claim_metrics(directory)
     # This is deliberately below the completion AND exclusive-once guards.
-    import pandas as pd
-    source=protocol['inventory']['meta_csv']; checked(source)
-    df=pd.read_csv(source['path'],usecols=['video_id','clip_id','mode','label'],dtype={'video_id':str,'clip_id':str})
-    selected=df[df['mode']==split]
-    labels={f'{r.video_id}__{r.clip_id}':float(r.label) for r in selected.itertuples()}
-    if set(labels)!=set(ids):
-        raise RuntimeError('STOP metric population mismatch')
+    labels=labels_for_split(source['path'],identity)
     begin=now()
     systems=compute(rows,labels,protocol['bootstrap']['repetitions'],protocol['bootstrap']['seed'])
     result={'split':split,'protocol_sha256':sha(PROTOCOL),'protocol_commit':receipt['commit'],
         'inference_completion':spec(directory/'complete.json'),'labels_source':source,
+        'identity_check':identity,
         'started_at':begin,'ended_at':now(),'systems':systems,'bootstrap':protocol['bootstrap']}
     if split=='valid':
         value=systems['H3']['pearson_available']

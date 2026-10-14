@@ -1,6 +1,7 @@
 """L2 assertions, independently checked for every requested training source."""
 import re
 from emotioncore.x07.common import *
+from emotioncore.x07.identity import check_identity
 
 REQUIRED = ('Q_epoch0','Q_epoch1','D1_A3','D1_V2','D1_V1','calibration','MER_dedup')
 
@@ -44,6 +45,8 @@ def run():
     protocol,_=authority()
     inv=protocol['inventory']; sources=inv['leakage_sources']
     try:
+        identity_checks={split:check_identity(inv['meta_csv'],split,inv['splits'][split]['ids'])
+                         for split in ('valid','test')}
         for item in protocol['training_provenance'].values():
             checked(item['source'])
         if set(sources)!=set(REQUIRED):
@@ -55,7 +58,8 @@ def run():
             checks[name]={**assert_source(data[name],test),'source':sources[name]}
         duplicates=assert_exclusions(read(checked(inv['dedup_report'])),data['MER_dedup'],data,test)
         write_new(ROOT/'leakage.json',{'status':'passed','at':now(),'protocol_sha256':sha(PROTOCOL),
-            'checks':checks,'suspected_duplicates':duplicates,'test_count':len(test)})
+            'checks':checks,'suspected_duplicates':duplicates,'test_count':len(test),
+            'identity_checks':identity_checks})
     except Exception as exc:
         stop('L2',exc)
         raise
