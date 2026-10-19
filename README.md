@@ -1,60 +1,74 @@
-# emotioncore
+# EmotionCore by Mundiscope
 
-X01 registers Chinese emotion data, freezes Benchmark v1, audits leakage, and re-evaluates the existing Qwen2.5-Omni-7B base and checkpoint-5265 adapter. It does not train a model or run inference on the CH-SIMS v2 test lock-box.
+**Audio-visual emotion perception. A first sense for human interaction.**
 
-## Server paths and environment
+EmotionCore is Mundiscope's current research prototype for the **Sense** layer of **Sense → Remember → Express**. It brings voice and facial expression together to estimate observable emotional expression, while exposing confidence, fallback and abstention behavior.
 
-Edit only `configs/paths.server.yaml` for a different host. All absolute paths, including the read-only legacy project, source datasets, processed media, model, adapter, derived-data root, and X01 run root, are there. `configs/x01.yaml` freezes media limits and evaluation parameters.
+> Research preview · October 2026 · Chinese-language, single-person scope
 
-On the X01 server, reproduce the independent Python 3.11 environment from the audited legacy package tree without writing to the legacy directory:
+| Release material | Status |
+| --- | --- |
+| Demo film | Coming soon — after review |
+| English technical report | Coming soon — after review |
 
-```bash
-python3.11 -m venv .venv
-legacy_root=$(awk '$1 == "legacy_root:" {print $2}' configs/paths.server.yaml)
-rsync -a --exclude='__pycache__/' "$legacy_root/.venv/lib/python3.11/site-packages/" .venv/lib/python3.11/site-packages/
-python3 - <<'PY'
-from pathlib import Path
-import shutil
-for metadata in Path('.venv/lib/python3.11/site-packages').glob('setuptools-*.dist-info'):
-    if metadata.name != 'setuptools-78.1.0.dist-info':
-        shutil.rmtree(metadata)
-PY
-PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src .venv/bin/python -m emotioncore.utils.environment \
-  --paths configs/paths.server.yaml --verify-current \
-  --output experiments/X01_benchmark/results/new_venv_verification.json
-```
+## What the prototype does
 
-The lock was copied from the legacy `preflight_v2/requirements.actual.lock.txt`. `new_venv_verification.json` records zero version mismatches across all 296 locked packages, the separate interpreter and package path, and successful CUDA detection on the RTX 5090. The copied package set contains a pre-existing `gradio`/`starlette` constraint conflict, so dependency resolving `pip install -r requirements.lock.txt` is not the verified setup path. No package was installed into the old environment. The running X01 D2 evaluation was started consistently with the legacy interpreter before the new environment was fully provisioned; a fresh run can use the new `.venv`.
+- Combines a Qwen2.5-Omni-based audio-visual model with speech and facial-expression specialists. The default H3 path fuses Q_AV, A3 and V2 probabilities using frozen parameters.
+- Produces seven expression categories: **neutral, joy, sadness, anger, fear, disgust and surprise**, with confidence and configured rejection rules.
+- Falls back to audio when no face is available, and rejects ambiguous multi-face inputs rather than assigning an emotion to an unverified speaker.
+- Segments speech and emits timestamped events through a streaming prototype evaluated on recorded-stream replay.
 
-### X01 D2 code provenance (review condition)
+This estimates visible and audible expression. It is not a measurement of private thoughts or a clinical diagnosis.
 
-All 16 D2 `run_meta.json` receipts record Git commit `2a5d7d2a62a3486831e4a9b94d5f513ff792d490` and `dirty: true`. The final X01 review commit is `c47e9e281db04bca2459aed1223fb1797bbd5bcf`. The recorded commit does not identify the exact uncommitted source present when each process started; X01 did not save a runtime diff, so that exact state cannot be reconstructed from Git alone.
+## Selected results
 
-`git diff 2a5d7d2a62a3 c47e9e2 -- src/` changes 10 files (950 insertions, 29 deletions). The model scorer `src/emotioncore/models/qwen_omni.py` is unchanged. In the D2 runner, the later code adds a 300-second `SIGALRM` per sample and reads the same media limits from `configs/x01.yaml` instead of hardcoded values. The timeout was added during resumptions; it did not forcibly interrupt one native preprocessing stall, which is recorded as a failed receipt. Other source changes add media and face audits, metrics and reporting, the pipeline entry point, and environment and legacy snapshot checks. This commit comparison is a summary of recorded revisions, not proof that all resumed samples used identical uncommitted code.
+| Evaluation | Result | Scope |
+| --- | --- | --- |
+| CH-SIMS v2 test sentiment | Pearson **0.792**; video-cluster 95% CI **0.756–0.829** | 976 media-available clips out of 1,034; all-clip Pearson **0.761** |
+| EmotionTalk test, seven classes | Macro-F1 **0.645** | 1,929 utterances; H3 OP-N, without threshold rejection |
+| Automatic speech segmentation | Macro-F1 **0.624**; coverage **87.66%** | EmotionTalk R4 dialogue-duration streams, 1,929 utterances |
+| Three-hour stream replay | Utterance-to-final-output **3.11 s P50 / 11.02 s P95** | Annotated utterance end → last overlapping event output; RTX 5090 32 GB workstation |
 
-## Reproduce X01
+Correlation, macro-F1 and latency describe different tasks. They are not interchangeable accuracy measures.
 
-From the repository root, one command runs extraction (if needed), both manifest builders, benchmark split generation, four-level leak checks, D3, all D2 conditions with resume, and metric analysis:
+At the fixed OP-R90 operating point, EmotionTalk macro-F1 is **0.642** at **88.5%** coverage; rejected cases remain in the F1 denominator. CH-SIMS v2 test coverage is **62.4%** (645/1,034), with accepted-clip Pearson **0.810**. “R90” names the development-calibrated operating point, not a coverage guarantee for new domains. The EmotionTalk complete-utterance comparison does not apply the multi-face gate.
 
-```bash
-PYTHONPATH=src .venv/bin/python -m emotioncore.eval.run_all --paths configs/paths.server.yaml --config configs/x01.yaml
-```
+X07 results are documented on the lock-box branch; inclusion here does not merge that experiment branch. Planned VAD endpoint-to-output latency is **2.21 s P50 / 2.80 s P95**. The longer utterance-to-final-output time above includes waiting for merged/split speech segments and is not time to first feedback or a natural-user latency benchmark. The stream replay has wall-clock/media ratio **1.001**, backlog P95 **0.998 s**, and approximately **11%** process-memory growth before stabilization. These results do not establish live-device performance or long-duration deployment readiness.
 
-Add `--with-face-audit` to run the CPU YuNet audit after D2. The face audit can also run independently with `PYTHONPATH=src .venv/bin/python -m emotioncore.data.face_audit --config configs/paths.server.yaml --results experiments/X01_benchmark/results --output experiments/X01_benchmark/results/face_audit.json`.
+For the recorded methodology and limitations, see the [system card](https://github.com/Xpeng1999/emotioncore-zh/blob/71a1f99404c80e621ba4d660333ca48b1299d31c/docs/SYSTEM_CARD.md), [X06b stream evaluation](experiments/X06b_realtime/REPORT.md), and [X07 lock-box evaluation](https://github.com/Xpeng1999/emotioncore-zh/blob/71a1f99404c80e621ba4d660333ca48b1299d31c/experiments/X07_lockbox/REPORT.md).
 
-The D2 runner refuses to start unless D3 passed all 40 comparisons and ET-test/ET-val are clean at all four leakage levels. Each of the 16 model × dataset × condition runs resumes by sample ID, writes each prediction atomically under the server X01 run root, and stores its own `run_meta.json`. The repository contains only transcript-free manifests and aggregate results; per-sample predictions remain on the server.
+## The Mundiscope direction
 
-The face audit also resumes from atomic per-clip receipts under the server X01 run root; its repository JSON contains aggregate frame and speaker counts. The CH-SIMS media audit fully decodes present audio/video streams to a null sink, including test lock-box media, without running model inference on test.
+| Stage | Direction | Status |
+| --- | --- | --- |
+| **Sense** | Audio-visual emotion perception with uncertainty and timestamped outputs | Current research prototype |
+| **Remember** | Consent-aware interaction memory that retains useful context over time | Future direction |
+| **Express** | Abstract response interfaces, leaving physical behavior to each robot | Future direction |
 
-## Focused commands
+Mundiscope aims to provide a perception and memory layer for embodied intelligence. EmotionCore represents the current sensing milestone. Persistent memory, pose and touch sensing, robotics SDKs, hardware integration and robot behavior are not established by this preview.
 
-```bash
-PYTHONPATH=src .venv/bin/python -m emotioncore.tools.leakage_check --train TRAIN_AV.jsonl TRAIN_AUDIO.jsonl --eval EVAL.jsonl --output leakage.json
-PYTHONPATH=src .venv/bin/python -m pytest -q
-PYTHONPATH=src .venv/bin/python experiments/X01_benchmark/validate_delivery.py \
-  --paths configs/paths.server.yaml --results experiments/X01_benchmark/results \
-  --report experiments/X01_benchmark/REPORT.md \
-  --output experiments/X01_benchmark/results/delivery_validation.json
-```
+## Scope and availability
 
-See `docs/BENCHMARK_v1.md` for frozen cohorts, labels, and metrics; data cards for audit detail; and `experiments/X01_benchmark/REPORT.md` for results and deviations.
+Current evaluation covers Chinese-language recorded data and stream replay, within a single-person scope. Real-device and real-user performance and multi-person interaction remain to be evaluated. Visual quality, occlusion, absent media and domain shift can affect outputs and coverage.
+
+The current research assets carry upstream non-commercial restrictions. This preview does not release training data, pretrained assets, model weights, an upload service or a commercial SDK. Rights to datasets, pretrained models and recorded footage remain with their respective owners and licensors.
+
+Demo and report links will be added after review. No download links are active yet.
+
+## Repository guide
+
+| Material | Location |
+| --- | --- |
+| Original X01 setup, reproduction and provenance | [X01 reproduction](docs/X01_REPRODUCTION.md) |
+| Frozen benchmark definition | [Benchmark v1.1](docs/BENCHMARK_v1.1.md) |
+| Data sources and restrictions | [Data registry](docs/DATA_REGISTRY.md) |
+| Non-technical system summary | [System card](https://github.com/Xpeng1999/emotioncore-zh/blob/71a1f99404c80e621ba4d660333ca48b1299d31c/docs/SYSTEM_CARD.md) |
+| Streaming handoff and frozen configuration | [X07 handoff](docs/X07_HANDOFF.md) |
+| Static project overview | [HTML source](docs/index.html) — download and open locally |
+
+This is the research repository. Historical experiment reports retain their original protocols and review status. Run commands only within the documented environment and experiment scope.
+
+---
+
+**MUNDISCOPE · 洞悉尘世**  
+*See into what's felt.*
