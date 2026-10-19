@@ -1,0 +1,127 @@
+[
+  {
+    "part": "intro",
+    "title": "MundiSense v1",
+    "start_s": 0,
+    "end_s": 5.0,
+    "duration_s": 5.0
+  },
+  {
+    "part": "0",
+    "title": "平静 · EmotionTalk",
+    "start_s": 5.0,
+    "end_s": 15.3,
+    "duration_s": 10.3,
+    "id": "G00015_49_21_004",
+    "source_sha256": "dcf28c39a66d211f1eb7a097740bc02a410732fd888b32aab8a79b3c61d07d99",
+    "source_duration_s": 3.66034,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "1",
+    "title": "喜悦 · EmotionTalk",
+    "start_s": 15.3,
+    "end_s": 25.466667,
+    "duration_s": 10.166666666666666,
+    "id": "G00015_47_20_014",
+    "source_sha256": "50cfd17ec2e42192335e493cfc2fd85151302f3f476416c3fe6c4c69c9bd7296",
+    "source_duration_s": 3.532993,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "2",
+    "title": "悲伤 · EmotionTalk",
+    "start_s": 25.466667,
+    "end_s": 37.466667,
+    "duration_s": 12.0,
+    "id": "G00003_30_02_009",
+    "source_sha256": "e7dd0cb36732d9ba5fc4a48e0eec02bd669f774427d04bff4b89f5c42a77c025",
+    "source_duration_s": 5.366667,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "3",
+    "title": "愤怒 · EmotionTalk",
+    "start_s": 37.466667,
+    "end_s": 47.566667,
+    "duration_s": 10.1,
+    "id": "G00003_22_13_018",
+    "source_sha256": "4cfa76e6c638331586ffef9b033a917bc2f1f6741f5c53e4007b5364aa3784a4",
+    "source_duration_s": 3.466667,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "4",
+    "title": "恐惧 · EmotionTalk",
+    "start_s": 47.566667,
+    "end_s": 57.266667,
+    "duration_s": 9.7,
+    "id": "G00015_18_20_001",
+    "source_sha256": "1c9a40f2a848b5d1ddaed3d61671bd6d32d65dc9b2ab24e49159cba89835f998",
+    "source_duration_s": 3.076032,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "5",
+    "title": "惊讶 · EmotionTalk",
+    "start_s": 57.266667,
+    "end_s": 67.133333,
+    "duration_s": 9.866666666666667,
+    "id": "G00003_25_02_014",
+    "source_sha256": "f084de5c73a788db3541aaf73c4130d847ee3bf90519241ab713546fbcbf9c30",
+    "source_duration_s": 3.227574,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "bridge",
+    "title": "从对话，到影视",
+    "start_s": 67.133333,
+    "end_s": 70.133333,
+    "duration_s": 3.0
+  },
+  {
+    "part": "6",
+    "title": "音画互补 · CH-SIMS v2",
+    "start_s": 70.133333,
+    "end_s": 82.7,
+    "duration_s": 12.566666666666666,
+    "id": "aqgy3_0003__00007",
+    "source_sha256": "0eee49e57b1a57e310a8a5af38456e014bc7298649b66bfe259eb24c2c698cda",
+    "source_duration_s": 2.92,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "7",
+    "title": "多人歧义 · CH-SIMS v2",
+    "start_s": 82.7,
+    "end_s": 95.666667,
+    "duration_s": 12.966666666666667,
+    "id": "aqgy3_0001__00005",
+    "source_sha256": "9228826421fa97b8a7d5d4744c6dbdc4e6327262b639bc335047c2c16918771e",
+    "source_duration_s": 3.32,
+    "lead_s": 0.4,
+    "original_speed": true,
+    "display_timing": "Editorial stages; not inference timestamps"
+  },
+  {
+    "part": "outro",
+    "title": "EmotionTalk · 完整评测",
+    "start_s": 95.666667,
+    "end_s": 104.166667,
+    "duration_s": 8.5
+  }
+]

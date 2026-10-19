@@ -1,0 +1,228 @@
+{
+  "audit": "Existing R5 output only; no inference, no server writes",
+  "source_domain": "X06a short-gap ET-test concatenations, not X06b R4 dialogue-duration streams",
+  "rule": "Truth complete at write of last overlapping speech event; this is not first feedback or natural user latency",
+  "decomposition": "Per truth: total delay = last event decision_s minus truth end + last event scheduled_latency_s. Quantiles do not add.",
+  "sources": {
+    "latency": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r5/latency.jsonl",
+      "sha256": "e499d2ea779ace11a7591a56f0fc1e2beab10e77ba4b1b440d03118b84c746b7"
+    },
+    "02": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_02.json",
+      "sha256": "5b59ba6a7099e197e7b8a92b781827640861c146f466fa582062c618cb488817"
+    },
+    "13": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_13.json",
+      "sha256": "aa279b434786756d20d188b4e6c5fca858c503e8c4ec278ca621a502963e61c9"
+    },
+    "20": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_20.json",
+      "sha256": "cf08880d3059377c51a4c368f56d646446a106ff94169690e52cf31d6b1ccf20"
+    },
+    "21": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/preflight/timeline_21.json",
+      "sha256": "0274a8868bd4cd4cce682466fb87b8c08748ff79f7f8c201d2750a4b4d87eb17"
+    }
+  },
+  "events": 1933,
+  "speech_events": 1900,
+  "silent_events": 33,
+  "all": {
+    "n": 1929,
+    "truth_complete_delay": {
+      "n": 1929,
+      "p50": 3.107788691745327,
+      "p95": 11.016996491352003,
+      "p99": 14.064942029799933,
+      "max": 16.876429986054973,
+      "min": 1.4516108548914417,
+      "mean": 4.211683158314764
+    },
+    "endpoint_after_truth": {
+      "n": 1929,
+      "p50": 0.6494534971504322,
+      "p95": 8.666103438212028,
+      "p99": 11.822959667282548,
+      "max": 14.148436583593764,
+      "min": -0.11029250380852318,
+      "mean": 1.94749884457619
+    },
+    "scheduled_latency_for_last_event": {
+      "n": 1929,
+      "p50": 2.2543555099050536,
+      "p95": 2.8373007360751217,
+      "p99": 2.954475350009998,
+      "max": 4.011189345931634,
+      "min": 1.4454385878702851,
+      "mean": 2.2641843137385735
+    },
+    "delay_gt5_count": 417,
+    "delay_gt10_count": 129,
+    "last_event_15s_count": 135,
+    "last_reject_count": 256
+  },
+  "category_counts": {
+    "one_to_one": 811,
+    "merged_and_split": 203,
+    "merged_only": 730,
+    "split_only": 185
+  },
+  "by_category": {
+    "merged_and_split": {
+      "n": 203,
+      "truth_complete_delay": {
+        "n": 203,
+        "p50": 3.3765811611275467,
+        "p95": 12.39007724986488,
+        "p99": 15.550351817883106,
+        "max": 16.28489870367224,
+        "min": 2.147494452809724,
+        "mean": 4.988788185998247
+      },
+      "endpoint_after_truth": {
+        "n": 203,
+        "p50": 0.8794524000019237,
+        "p95": 9.890098381772388,
+        "p99": 13.512668528211753,
+        "max": 14.148436583593764,
+        "min": 0.4325897157873442,
+        "mean": 2.718771718084219
+      },
+      "scheduled_latency_for_last_event": {
+        "n": 203,
+        "p50": 2.2500474018510204,
+        "p95": 2.834646981202104,
+        "p99": 2.899111417779495,
+        "max": 3.123288022810584,
+        "min": 1.583731580022686,
+        "mean": 2.2700164679140293
+      },
+      "delay_gt5_count": 68,
+      "delay_gt10_count": 23,
+      "last_event_15s_count": 7,
+      "last_reject_count": 23
+    },
+    "merged_only": {
+      "n": 730,
+      "truth_complete_delay": {
+        "n": 730,
+        "p50": 4.8125511012524385,
+        "p95": 12.89723774340932,
+        "p99": 15.611844962341603,
+        "max": 16.876429986054973,
+        "min": 1.7798993102061331,
+        "mean": 5.846207232373882
+      },
+      "endpoint_after_truth": {
+        "n": 730,
+        "p50": 2.4755743863100292,
+        "p95": 10.533984664140533,
+        "p99": 13.187242656939318,
+        "max": 14.122388141905049,
+        "min": -0.11029250380852318,
+        "mean": 3.522425526551372
+      },
+      "scheduled_latency_for_last_event": {
+        "n": 730,
+        "p50": 2.325869444087175,
+        "p95": 2.8492424924713986,
+        "p99": 2.9643731614659465,
+        "max": 3.123288022810584,
+        "min": 1.583731580022686,
+        "mean": 2.3237817058225128
+      },
+      "delay_gt5_count": 349,
+      "delay_gt10_count": 106,
+      "last_event_15s_count": 128,
+      "last_reject_count": 116
+    },
+    "one_to_one": {
+      "n": 811,
+      "truth_complete_delay": {
+        "n": 811,
+        "p50": 2.8499625910643545,
+        "p95": 3.5125554733024273,
+        "p99": 3.773397483062802,
+        "max": 4.858189345931635,
+        "min": 1.4516108548914417,
+        "mean": 2.872983641474023
+      },
+      "endpoint_after_truth": {
+        "n": 811,
+        "p50": 0.6047982534632865,
+        "p95": 0.8727029087291385,
+        "p99": 1.0113515609451376,
+        "max": 1.1758571361729082,
+        "min": 0.0018365035530223395,
+        "mean": 0.6432983031164224
+      },
+      "scheduled_latency_for_last_event": {
+        "n": 811,
+        "p50": 2.220341720990831,
+        "p95": 2.8028672186192125,
+        "p99": 2.954492174248185,
+        "max": 4.011189345931634,
+        "min": 1.4454385878702851,
+        "mean": 2.229685338357601
+      },
+      "delay_gt5_count": 0,
+      "delay_gt10_count": 0,
+      "last_event_15s_count": 0,
+      "last_reject_count": 101
+    },
+    "split_only": {
+      "n": 185,
+      "truth_complete_delay": {
+        "n": 185,
+        "p50": 2.7169080121116167,
+        "p95": 3.390445109559755,
+        "p99": 3.5685845783164853,
+        "max": 3.653718570372803,
+        "min": 2.056677368263081,
+        "mean": 2.7777935014224875
+      },
+      "endpoint_after_truth": {
+        "n": 185,
+        "p50": 0.5750148972219904,
+        "p95": 0.8591573700241496,
+        "p99": 0.9614215101184709,
+        "max": 1.0539561093457905,
+        "min": -0.025236079048170268,
+        "mean": 0.603940833548393
+      },
+      "scheduled_latency_for_last_event": {
+        "n": 185,
+        "p50": 2.1402159371132257,
+        "p95": 2.7687136539815125,
+        "p99": 2.846493399652263,
+        "max": 2.915711352108019,
+        "min": 1.5319888670370005,
+        "mean": 2.173852667874094
+      },
+      "delay_gt5_count": 0,
+      "delay_gt10_count": 0,
+      "last_event_15s_count": 0,
+      "last_reject_count": 16
+    }
+  },
+  "tail_gt5_by_category": {
+    "merged_and_split": 68,
+    "merged_only": 349
+  },
+  "tail_gt10_by_category": {
+    "merged_only": 106,
+    "merged_and_split": 23
+  },
+  "event_duration": {
+    "n": 1900,
+    "p50": 3.5299999999999727,
+    "p95": 13.641500000000086,
+    "p99": 15.0,
+    "max": 15.000000000000014,
+    "min": 0.30999999999994543,
+    "mean": 4.857447368421055
+  },
+  "events_at_15s": 76,
+  "decomposition_max_error_s": 8.881784197001252e-16
+}

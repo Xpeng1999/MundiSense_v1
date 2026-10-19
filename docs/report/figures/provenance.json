@@ -1,0 +1,10 @@
+{
+  "source": "single_person_demo_v1/public/data/summary.json",
+  "source_sha256": "c923fb72a4e2721d533c3728f0368bf0f5a66d718cd6078ca059182ec74443b8",
+  "figures": {
+    "lockbox": "x07.systems.*.pearson_available and intervals.pearson_available.ci95; per-system available n",
+    "segmentation": "r4.data.correct_boundaries.class_f1 and r4.data.vad.class_f1; all 1929 utterances",
+    "architecture": "Conceptual system diagram; validated against technical_report evidence, not a learned attention architecture"
+  },
+  "numeric_figures": "Generated directly from source JSON, not image generation."
+}

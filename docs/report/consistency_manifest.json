@@ -1,0 +1,71 @@
+{
+  "status": "agent_checked_human_review_pending",
+  "numeric_records": [
+    {
+      "id": "N001",
+      "name": "R3 OP-N F1",
+      "source_value": 0.6451310989244031,
+      "source_id": "E04"
+    },
+    {
+      "id": "N002",
+      "name": "R3 R90 F1",
+      "source_value": 0.641793544818042,
+      "source_id": "E04"
+    },
+    {
+      "id": "N003",
+      "name": "R3 R90 coverage",
+      "source_value": 0.8849144634525661,
+      "source_id": "E04"
+    },
+    {
+      "id": "N004",
+      "name": "R4 correct F1",
+      "source_value": 0.6487357444810378,
+      "source_id": "E05"
+    },
+    {
+      "id": "N005",
+      "name": "R4 VAD F1",
+      "source_value": 0.6240271073443443,
+      "source_id": "E05"
+    },
+    {
+      "id": "N006",
+      "name": "R4 coverage",
+      "source_value": 0.8766200103680664,
+      "source_id": "E05"
+    },
+    {
+      "id": "N007",
+      "name": "X07 H3 Pearson",
+      "source_value": 0.7922571642540811,
+      "source_id": "E24"
+    },
+    {
+      "id": "N008",
+      "name": "X07 H_A Pearson",
+      "source_value": 0.7631167843348632,
+      "source_id": "E24"
+    },
+    {
+      "id": "N009",
+      "name": "X07 H_V Pearson",
+      "source_value": 0.6527926320739424,
+      "source_id": "E24"
+    },
+    {
+      "id": "N010",
+      "name": "X07 Acc-2",
+      "source_value": 0.818880351262349,
+      "source_id": "E24"
+    },
+    {
+      "id": "N011",
+      "name": "X07 accepted coverage",
+      "source_value": 0.6237911025145068,
+      "source_id": "E24"
+    }
+  ]
+}

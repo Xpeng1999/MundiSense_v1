@@ -1,0 +1,140 @@
+{
+  "checked_at_utc": "2026-10-19T15:59:12.272261+00:00",
+  "mode": "full",
+  "read_only": true,
+  "records_count": 8,
+  "inputs": [
+    {
+      "id": "G00015_49_21_004",
+      "sha256": "dcf28c39a66d211f1eb7a097740bc02a410732fd888b32aab8a79b3c61d07d99",
+      "duration_s": 3.66034,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "neutral",
+      "module_tops": {
+        "A3": "neutral",
+        "V2": "neutral",
+        "Q": "neutral"
+      }
+    },
+    {
+      "id": "G00015_47_20_014",
+      "sha256": "50cfd17ec2e42192335e493cfc2fd85151302f3f476416c3fe6c4c69c9bd7296",
+      "duration_s": 3.532993,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "joy",
+      "module_tops": {
+        "A3": "joy",
+        "V2": "joy",
+        "Q": "joy"
+      }
+    },
+    {
+      "id": "G00003_30_02_009",
+      "sha256": "e7dd0cb36732d9ba5fc4a48e0eec02bd669f774427d04bff4b89f5c42a77c025",
+      "duration_s": 5.366667,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "sadness",
+      "module_tops": {
+        "A3": "sadness",
+        "V2": "sadness",
+        "Q": "sadness"
+      }
+    },
+    {
+      "id": "G00003_22_13_018",
+      "sha256": "4cfa76e6c638331586ffef9b033a917bc2f1f6741f5c53e4007b5364aa3784a4",
+      "duration_s": 3.466667,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "anger",
+      "module_tops": {
+        "A3": "anger",
+        "V2": "fear",
+        "Q": "anger"
+      }
+    },
+    {
+      "id": "G00015_18_20_001",
+      "sha256": "1c9a40f2a848b5d1ddaed3d61671bd6d32d65dc9b2ab24e49159cba89835f998",
+      "duration_s": 3.076032,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "fear",
+      "module_tops": {
+        "A3": "fear",
+        "V2": "anger",
+        "Q": "fear"
+      }
+    },
+    {
+      "id": "G00003_25_02_014",
+      "sha256": "f084de5c73a788db3541aaf73c4130d847ee3bf90519241ab713546fbcbf9c30",
+      "duration_s": 3.227574,
+      "size": [
+        1080,
+        1920
+      ],
+      "final_label": "surprise",
+      "module_tops": {
+        "A3": "surprise",
+        "V2": "fear",
+        "Q": "surprise"
+      }
+    },
+    {
+      "id": "aqgy3_0003__00007",
+      "sha256": "0eee49e57b1a57e310a8a5af38456e014bc7298649b66bfe259eb24c2c698cda",
+      "duration_s": 2.92,
+      "size": [
+        480,
+        270
+      ],
+      "final_label": "joy",
+      "module_tops": {
+        "A3": "neutral",
+        "V2": "joy",
+        "Q": "joy"
+      }
+    },
+    {
+      "id": "aqgy3_0001__00005",
+      "sha256": "9228826421fa97b8a7d5d4744c6dbdc4e6327262b639bc335047c2c16918771e",
+      "duration_s": 3.32,
+      "size": [
+        480,
+        270
+      ],
+      "final_label": "reject",
+      "module_tops": {
+        "A3": "neutral",
+        "V2": "neutral",
+        "Q": "neutral"
+      }
+    }
+  ],
+  "saved_records": "matched",
+  "seven_class_truth_for_sims": false,
+  "status": "passed",
+  "full_decode": "passed",
+  "chapters_count": 11,
+  "video_frames": 3125,
+  "expected_duration_s": 104.16666666666666,
+  "container_duration_s": 104.166667,
+  "mean_audio_db": -23.4,
+  "output_sha256": "435c76433beb413e89beafc8006721d2a9c1cfdc8d87ce148ff051f5bbb0c95c",
+  "output_bytes": 37725227,
+  "video_unchanged_by_validation": true
+}

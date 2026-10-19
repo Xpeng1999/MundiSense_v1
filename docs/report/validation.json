@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "checks": 212,
+  "failures": [],
+  "report_sha256": "f542a9c6a60ada939561748adec530351e229a795e2aeea43b221fd87b1283f2",
+  "verification_scope": "Local file integrity, headline structured metrics, per-class transcription, references, figure existence and required disclosures. No model inference, experiment rerun or independent human scientific verification."
+}

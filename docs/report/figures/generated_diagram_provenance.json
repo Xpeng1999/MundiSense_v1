@@ -1,0 +1,42 @@
+[
+  {
+    "file": "figures/S1_h3_architecture.png",
+    "sha256": "b1aa49b07ee85c4f54a601d234b9b34c1edd0ca15b09b48f818bb069ac973c68",
+    "copy_identical": true,
+    "source": "User-provided generated diagram",
+    "transformation": "None; copied byte-for-byte",
+    "evidence_kind": "functional schematic, not empirical data"
+  },
+  {
+    "file": "figures/S2_routing_abstention.png",
+    "sha256": "cc4f51e0de459de2f026e3dddcf82d6503535e2571761fcbf1ccb67b3ac629fa",
+    "copy_identical": true,
+    "source": "User-provided generated diagram",
+    "transformation": "None; copied byte-for-byte",
+    "evidence_kind": "functional schematic, not empirical data"
+  },
+  {
+    "file": "figures/S3_evaluation_protocol.png",
+    "sha256": "4717e26d24b77be47bf4fa1b36c80ab411beb5bce14639bbfaaac835504d18d5",
+    "copy_identical": true,
+    "source": "User-provided generated diagram",
+    "transformation": "None; copied byte-for-byte",
+    "evidence_kind": "functional schematic, not empirical data"
+  },
+  {
+    "file": "figures/S4_segmentation_timing.png",
+    "sha256": "48b895ca2b2550f64d9000051f2cd8347d9c5045da7324712f7b3ab6a746be55",
+    "copy_identical": true,
+    "source": "User-provided generated diagram",
+    "transformation": "None; copied byte-for-byte",
+    "evidence_kind": "functional schematic, not empirical data"
+  },
+  {
+    "file": "figures/S5_mundiscope_scope.png",
+    "sha256": "d663ea3ab2c8bfb75192e49cb806833f7145cec0085682c8787f8dcdd8d3c1ab",
+    "copy_identical": true,
+    "source": "User-provided generated diagram",
+    "transformation": "None; copied byte-for-byte",
+    "evidence_kind": "functional schematic, not empirical data"
+  }
+]

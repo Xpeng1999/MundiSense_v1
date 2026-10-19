@@ -1,0 +1,1429 @@
+{
+  "model": "MundiSense v1",
+  "publication": "local_review_only",
+  "no_new_inference": true,
+  "based_on": "archive_before_sims/build_mundisense.py",
+  "design": "Inherited dark 3D schematic with saved module outputs",
+  "animation": "Nodes, topology, layer count and stage timing are illustrative, not internal activations",
+  "timing": "Module durations copied from saved records. Sum excludes face preprocessing and stream waiting; not end-to-end latency.",
+  "records": [
+    {
+      "id": "G00015_49_21_004",
+      "truth": "neutral",
+      "label": "neutral",
+      "probs": [
+        0.9805982304201308,
+        0.0019976590610174387,
+        0.00358213020730647,
+        0.00043653307900165907,
+        0.0013500851771629247,
+        0.004663773547240155,
+        0.007371588508140551
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          0.8496618866920471,
+          0.012245788238942623,
+          0.010005449876189232,
+          0.0014772656140848994,
+          0.005363441072404385,
+          0.050650108605623245,
+          0.07059603929519653
+        ],
+        "V2": [
+          0.7613110542297363,
+          0.01621318981051445,
+          0.06843957304954529,
+          0.010464937426149845,
+          0.042440254241228104,
+          0.04683207720518112,
+          0.054298993200063705
+        ],
+        "Q": [
+          0.9766401052474976,
+          0.004128801170736551,
+          0.002555243903771043,
+          0.0014212758978828788,
+          0.003501923056319356,
+          0.003950504586100578,
+          0.007802130188792944
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.006815000204369426,
+        "A3": 0.02721909899264574,
+        "V2": 0.04313259990885854,
+        "Q_AV_video_decode": 0.03146049892529845,
+        "Q_AV_preprocess": 0.0963313989341259,
+        "Q_AV_forward": 0.38654449698515236,
+        "Q_AV": 0.5144772951025516
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "neutral",
+      "candidate_label": "neutral"
+    },
+    {
+      "id": "G00015_47_20_014",
+      "truth": "joy",
+      "label": "joy",
+      "probs": [
+        0.0008307216783975543,
+        0.9980643176190299,
+        0.000850811837406628,
+        8.252113514868668e-06,
+        3.700582223733049e-05,
+        0.00014328082114999007,
+        6.561010826375372e-05
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          0.003049975959584117,
+          0.8449422121047974,
+          0.142422154545784,
+          0.00029060582164675,
+          0.005878441501408815,
+          0.002245117211714387,
+          0.0011714297579601407
+        ],
+        "V2": [
+          0.0021574206184595823,
+          0.9956750869750977,
+          4.613322380464524e-05,
+          8.681284816702828e-05,
+          5.4858326620887965e-05,
+          0.0012677457416430116,
+          0.0007120078662410378
+        ],
+        "Q": [
+          0.0033724475651979446,
+          0.9946159720420837,
+          0.0011750981211662292,
+          4.03790436394047e-05,
+          0.00015503421309404075,
+          0.00038736549322493374,
+          0.0002536079555284232
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.007250499911606312,
+        "A3": 0.025367400143295527,
+        "V2": 0.04308470105752349,
+        "Q_AV_video_decode": 0.03797729988582432,
+        "Q_AV_preprocess": 0.1460182019509375,
+        "Q_AV_forward": 0.346379203023389,
+        "Q_AV": 0.5305181050207466
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "joy",
+      "candidate_label": "joy"
+    },
+    {
+      "id": "G00003_30_02_009",
+      "truth": "sadness",
+      "label": "sadness",
+      "probs": [
+        9.439028763054458e-05,
+        3.3387123750438153e-06,
+        0.9997547857453366,
+        1.6748241760448886e-05,
+        4.511002603650774e-05,
+        8.375071319458396e-05,
+        1.8762736661852462e-06
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          6.840054993517697e-05,
+          2.7302708986098878e-05,
+          0.9996007084846497,
+          2.2822134724265197e-06,
+          0.00022922408243175596,
+          6.422481965273619e-05,
+          7.848240784369409e-06
+        ],
+        "V2": [
+          0.0006372233619913459,
+          2.1022266082582064e-05,
+          0.9934161305427551,
+          0.00042980184662155807,
+          0.001412070938386023,
+          0.00400327006354928,
+          8.048873132793233e-05
+        ],
+        "Q": [
+          0.005152610130608082,
+          0.00025652654585428536,
+          0.9866728782653809,
+          0.00430104648694396,
+          0.0009778229286894202,
+          0.002506578341126442,
+          0.00013256282545626163
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.008637499995529652,
+        "A3": 0.02501439698971808,
+        "V2": 0.04432059591636062,
+        "Q_AV_video_decode": 0.030515698017552495,
+        "Q_AV_preprocess": 0.12767418893054128,
+        "Q_AV_forward": 0.39731766609475017,
+        "Q_AV": 0.5667672520503402
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "sadness",
+      "candidate_label": "sadness"
+    },
+    {
+      "id": "G00003_22_13_018",
+      "truth": "anger",
+      "label": "anger",
+      "probs": [
+        8.242506005420088e-05,
+        3.743699958916482e-05,
+        1.2799320414511295e-05,
+        0.9979976420989994,
+        0.0009218386209965217,
+        0.00046113506477896783,
+        0.00048672283516721434
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          0.00016873957065399736,
+          0.00016367906937375665,
+          1.2325211173447315e-05,
+          0.9973160028457642,
+          0.0001412578421877697,
+          0.0003277540672570467,
+          0.0018702537054196
+        ],
+        "V2": [
+          0.00802211370319128,
+          0.0036679012700915337,
+          0.0011982439318671823,
+          0.08988317847251892,
+          0.5188404321670532,
+          0.021766608580946922,
+          0.35662153363227844
+        ],
+        "Q": [
+          7.835404539946467e-05,
+          4.5507968025049195e-05,
+          3.032600216101855e-05,
+          0.9973258972167969,
+          0.0015611754497513175,
+          0.0008753426373004913,
+          8.343632362084463e-05
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.0052594998851418495,
+        "A3": 0.0191597999073565,
+        "V2": 0.04050910100340843,
+        "Q_AV_video_decode": 0.028790900018066168,
+        "Q_AV_preprocess": 0.15870630298741162,
+        "Q_AV_forward": 0.35521200811490417,
+        "Q_AV": 0.5428472110070288
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "anger",
+      "candidate_label": "anger"
+    },
+    {
+      "id": "G00015_18_20_001",
+      "truth": "fear",
+      "label": "fear",
+      "probs": [
+        0.06506055935685491,
+        0.003771402648051541,
+        0.0042356107434985595,
+        0.00500951682493916,
+        0.9026153225636899,
+        0.008302153570570287,
+        0.011005434292395573
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          0.013385652564466,
+          0.006760200951248407,
+          0.0023663160391151905,
+          0.0009338592644780874,
+          0.9571706652641296,
+          0.009147468023002148,
+          0.0102358004078269
+        ],
+        "V2": [
+          0.2157621681690216,
+          0.0291249118745327,
+          0.0017197870183736086,
+          0.32324108481407166,
+          0.09840384125709534,
+          0.21824492514133453,
+          0.1135033443570137
+        ],
+        "Q": [
+          0.04982132092118263,
+          0.0023951937910169363,
+          0.010743772611021996,
+          0.003920342773199081,
+          0.9235259890556335,
+          0.0026930966414511204,
+          0.006900214124470949
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.005160199943929911,
+        "A3": 0.02819510013796389,
+        "V2": 0.042819398920983076,
+        "Q_AV_video_decode": 0.031085300026461482,
+        "Q_AV_preprocess": 0.12592110014520586,
+        "Q_AV_forward": 0.3848880981095135,
+        "Q_AV": 0.5526239979080856
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "fear",
+      "candidate_label": "fear"
+    },
+    {
+      "id": "G00003_25_02_014",
+      "truth": "surprise",
+      "label": "surprise",
+      "probs": [
+        0.007269303655370438,
+        0.0004519331855205476,
+        0.0007774726132021757,
+        0.032525503352762365,
+        0.08033741857626797,
+        0.012062529426388519,
+        0.866575839190488
+      ],
+      "accepted": true,
+      "comp": {
+        "A3": [
+          0.0028390539810061455,
+          0.0021311137825250626,
+          3.51973321812693e-05,
+          0.005088288802653551,
+          0.06204655021429062,
+          0.009368378669023514,
+          0.9184913635253906
+        ],
+        "V2": [
+          0.019789041951298714,
+          0.0003795514639932662,
+          0.05056753382086754,
+          0.3142492473125458,
+          0.4415280520915985,
+          0.10376233607530594,
+          0.0697241872549057
+        ],
+        "Q": [
+          0.012179337441921234,
+          0.0013911925489082932,
+          0.0018843092257156968,
+          0.035509783774614334,
+          0.045156415551900864,
+          0.008208642713725567,
+          0.8956702947616577
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.005786800989881158,
+        "A3": 0.025013702921569347,
+        "V2": 0.04257180611602962,
+        "Q_AV_video_decode": 0.03417860483750701,
+        "Q_AV_preprocess": 0.15476532094180584,
+        "Q_AV_forward": 0.391405853908509,
+        "Q_AV": 0.5804781799670309
+      },
+      "dataset": "EmotionTalk",
+      "final_label": "surprise",
+      "candidate_label": "surprise"
+    },
+    {
+      "id": "aqgy3_0003__00007",
+      "dataset": "CH-SIMS v2 / test",
+      "evidence_run": "X07_v2",
+      "model_version": "X06b 冻结 / Q_mix + D1_fmhx / v1.1",
+      "truth": null,
+      "truth_type": "valence",
+      "valence_truth": 0.4,
+      "truth_seven_class_available": false,
+      "label": "joy",
+      "candidate_label": "joy",
+      "probs": [
+        0.2665382996730378,
+        0.503442562423868,
+        0.16368288962379487,
+        0.017827395450080774,
+        0.003680846781902778,
+        0.028657648765473498,
+        0.016170357281842154
+      ],
+      "accepted": true,
+      "confidence": 0.503442562423868,
+      "route": "H3",
+      "reason": "both_available",
+      "has_face": true,
+      "comp": {
+        "A3": [
+          0.258905291557312,
+          0.23194564878940582,
+          0.1681673228740692,
+          0.074341781437397,
+          0.03202508017420769,
+          0.11979508399963379,
+          0.11481977999210358
+        ],
+        "V2": [
+          0.17914539575576782,
+          0.5003172159194946,
+          0.020583756268024445,
+          0.021412933245301247,
+          0.08917701989412308,
+          0.11407351493835449,
+          0.07529015094041824
+        ],
+        "Q": [
+          0.19515499472618103,
+          0.5527632832527161,
+          0.21292069554328918,
+          0.017117921262979507,
+          0.001621733419597149,
+          0.012988059781491756,
+          0.007433341816067696
+        ]
+      },
+      "components": {
+        "A3": [
+          0.258905291557312,
+          0.23194564878940582,
+          0.1681673228740692,
+          0.074341781437397,
+          0.03202508017420769,
+          0.11979508399963379,
+          0.11481977999210358
+        ],
+        "V2": [
+          0.17914539575576782,
+          0.5003172159194946,
+          0.020583756268024445,
+          0.021412933245301247,
+          0.08917701989412308,
+          0.11407351493835449,
+          0.07529015094041824
+        ],
+        "V1": [
+          0.1248888224363327,
+          0.3916916847229004,
+          0.008009248413145542,
+          0.13880017399787903,
+          0.0030669993720948696,
+          0.31522151827812195,
+          0.01832154206931591
+        ],
+        "Q_A": [
+          0.09698111563920975,
+          0.05830429494380951,
+          0.8091851472854614,
+          0.017445825040340424,
+          0.0021037471015006304,
+          0.012248745188117027,
+          0.0037310670595616102
+        ],
+        "Q_AV": [
+          0.19515499472618103,
+          0.5527632832527161,
+          0.21292069554328918,
+          0.017117921262979507,
+          0.001621733419597149,
+          0.012988059781491756,
+          0.007433341816067696
+        ],
+        "Q_V": [
+          0.13290181756019592,
+          0.7841218709945679,
+          0.006293827667832375,
+          0.04004411771893501,
+          0.005526533350348473,
+          0.01562170684337616,
+          0.015490133315324783
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.00799679709598422,
+        "A3": 0.030009187990799546,
+        "V2": 0.04370878194458783,
+        "V1": 0.0436653820797801,
+        "Q_A_video_decode": 1.00000761449337e-06,
+        "Q_A_preprocess": 0.10935995588079095,
+        "Q_A_forward": 0.19598941993899643,
+        "Q_A": 0.3053926760330796,
+        "Q_AV_video_decode": 0.030640287091955543,
+        "Q_AV_preprocess": 0.11109655490145087,
+        "Q_AV_forward": 0.3856981440912932,
+        "Q_AV": 0.5275511851068586,
+        "Q_V_video_decode": 0.03118598787114024,
+        "Q_V_preprocess": 0.009899695869535208,
+        "Q_V_forward": 0.31033027404919267,
+        "Q_V": 0.3515424581710249
+      },
+      "timing_h3_component_sum_s": 0.6092659521382302,
+      "prediction_record_elapsed_s": 1.3554284488782287,
+      "prediction_completed_at_utc": "2026-10-14T06:00:37.159005+00:00",
+      "module_start_timestamps_s": null,
+      "module_end_timestamps_s": null,
+      "stream_output_timestamp_s": null,
+      "timing_scope": "Saved module elapsed measurements. The H3 component sum includes audio_decode+A3+V2+Q_AV only; excludes input preparation, V1, Q_A and Q_V. X07 prediction elapsed_s covers the full recorded multi-route evaluation. Neither is natural-device or streaming response latency. Animation timing is editorial, not recovered module start timestamps.",
+      "systems": {
+        "H3": {
+          "probabilities": [
+            0.2665382996730378,
+            0.503442562423868,
+            0.16368288962379487,
+            0.017827395450080774,
+            0.003680846781902778,
+            0.028657648765473498,
+            0.016170357281842154
+          ],
+          "available": true,
+          "accepted_r90": true,
+          "op_n": 1,
+          "confidence": 0.503442562423868,
+          "reason": "both_available",
+          "route": "H3",
+          "valence": 0.2895937818026161
+        },
+        "H_A": {
+          "probabilities": [
+            0.21179074681954116,
+            0.09591861619601015,
+            0.6062027870700049,
+            0.03153045811077552,
+            0.004000485135449602,
+            0.030014191881488402,
+            0.020542714786730507
+          ],
+          "available": true,
+          "accepted_r90": true,
+          "op_n": 2,
+          "confidence": 0.6062027870700049,
+          "route": "H_A",
+          "reason": "single_modality",
+          "valence": -0.5758293060017081
+        },
+        "H_V": {
+          "probabilities": [
+            0.2710873144303597,
+            0.5876320136743535,
+            0.009342274018759736,
+            0.04577300805287918,
+            0.008194708905037486,
+            0.06132092745222941,
+            0.01664975346638103
+          ],
+          "available": true,
+          "accepted_r90": true,
+          "op_n": 1,
+          "confidence": 0.5876320136743535,
+          "route": "H_V",
+          "reason": "single_modality",
+          "valence": 0.46300109524544764
+        }
+      },
+      "face_gate_evidence": {
+        "tracks": 1,
+        "multi_face_frames": 0,
+        "decoded_frames": 15,
+        "target_track": 0,
+        "target_score": 83785.66298892497,
+        "track_scores": [
+          83785.66298892497
+        ],
+        "second_to_target_score_ratio": null
+      },
+      "source_media_local": "single_person_demo_v1/public/media/aqgy3_0003__00007.mp4",
+      "source_media_remote": "/home/administrator/emotion-data/emotioncore_derived/chsims_v2/raw/Raw/aqgy3_0003/00007.mp4",
+      "source_export_sha256": "0eee49e57b1a57e310a8a5af38456e014bc7298649b66bfe259eb24c2c698cda",
+      "source_original_sha256": "72f280fd849b1373f44f2bbc546853479c4bb20a73d5b67aca5743f8c3145ff9",
+      "duration_s": 2.92,
+      "video_width": 480,
+      "video_height": 270,
+      "fps": "25/1",
+      "has_audio": true,
+      "provenance": {
+        "case_catalog_path": "single_person_demo_v1/public/data/cases.json",
+        "case_catalog_sha256": "494b0b9ea333487e92f0bed4c375dadbbacb0750a13139deb0df648beee48c49",
+        "prediction": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy3_0003__00007.json",
+          "sha256": "5f92cdfe4a1584d7ee65aaf25567e5184058a8ba3882b6ad7000dab0c4db5e65",
+          "bytes": 3638,
+          "record": {
+            "id": "aqgy3_0003__00007",
+            "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+            "input": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/input.json",
+              "sha256": "6635cf4d2076618fdd2e2f2031cba55d41900b4d28723ccf4bafc0c8518d44ac",
+              "bytes": 4211
+            },
+            "systems": {
+              "H3": {
+                "probabilities": [
+                  0.2665382996730378,
+                  0.503442562423868,
+                  0.16368288962379487,
+                  0.017827395450080774,
+                  0.003680846781902778,
+                  0.028657648765473498,
+                  0.016170357281842154
+                ],
+                "available": true,
+                "accepted_r90": true,
+                "op_n": 1,
+                "confidence": 0.503442562423868,
+                "reason": "both_available",
+                "route": "H3"
+              },
+              "H_A": {
+                "probabilities": [
+                  0.21179074681954116,
+                  0.09591861619601015,
+                  0.6062027870700049,
+                  0.03153045811077552,
+                  0.004000485135449602,
+                  0.030014191881488402,
+                  0.020542714786730507
+                ],
+                "available": true,
+                "accepted_r90": true,
+                "op_n": 2,
+                "confidence": 0.6062027870700049,
+                "route": "H_A",
+                "reason": "single_modality"
+              },
+              "H_V": {
+                "probabilities": [
+                  0.2710873144303597,
+                  0.5876320136743535,
+                  0.009342274018759736,
+                  0.04577300805287918,
+                  0.008194708905037486,
+                  0.06132092745222941,
+                  0.01664975346638103
+                ],
+                "available": true,
+                "accepted_r90": true,
+                "op_n": 1,
+                "confidence": 0.5876320136743535,
+                "route": "H_V",
+                "reason": "single_modality"
+              }
+            },
+            "components": {
+              "A3": [
+                0.258905291557312,
+                0.23194564878940582,
+                0.1681673228740692,
+                0.074341781437397,
+                0.03202508017420769,
+                0.11979508399963379,
+                0.11481977999210358
+              ],
+              "V2": [
+                0.17914539575576782,
+                0.5003172159194946,
+                0.020583756268024445,
+                0.021412933245301247,
+                0.08917701989412308,
+                0.11407351493835449,
+                0.07529015094041824
+              ],
+              "V1": [
+                0.1248888224363327,
+                0.3916916847229004,
+                0.008009248413145542,
+                0.13880017399787903,
+                0.0030669993720948696,
+                0.31522151827812195,
+                0.01832154206931591
+              ],
+              "Q_A": [
+                0.09698111563920975,
+                0.05830429494380951,
+                0.8091851472854614,
+                0.017445825040340424,
+                0.0021037471015006304,
+                0.012248745188117027,
+                0.0037310670595616102
+              ],
+              "Q_AV": [
+                0.19515499472618103,
+                0.5527632832527161,
+                0.21292069554328918,
+                0.017117921262979507,
+                0.001621733419597149,
+                0.012988059781491756,
+                0.007433341816067696
+              ],
+              "Q_V": [
+                0.13290181756019592,
+                0.7841218709945679,
+                0.006293827667832375,
+                0.04004411771893501,
+                0.005526533350348473,
+                0.01562170684337616,
+                0.015490133315324783
+              ]
+            },
+            "has_face": true,
+            "timing": {
+              "audio_decode": 0.00799679709598422,
+              "A3": 0.030009187990799546,
+              "V2": 0.04370878194458783,
+              "V1": 0.0436653820797801,
+              "Q_A_video_decode": 1.00000761449337e-06,
+              "Q_A_preprocess": 0.10935995588079095,
+              "Q_A_forward": 0.19598941993899643,
+              "Q_A": 0.3053926760330796,
+              "Q_AV_video_decode": 0.030640287091955543,
+              "Q_AV_preprocess": 0.11109655490145087,
+              "Q_AV_forward": 0.3856981440912932,
+              "Q_AV": 0.5275511851068586,
+              "Q_V_video_decode": 0.03118598787114024,
+              "Q_V_preprocess": 0.009899695869535208,
+              "Q_V_forward": 0.31033027404919267,
+              "Q_V": 0.3515424581710249
+            },
+            "completed_at": "2026-10-14T06:00:37.159005+00:00",
+            "elapsed_s": 1.3554284488782287
+          }
+        },
+        "input": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/input.json",
+          "sha256": "6635cf4d2076618fdd2e2f2031cba55d41900b4d28723ccf4bafc0c8518d44ac",
+          "bytes": 4211,
+          "record": {
+            "id": "aqgy3_0003__00007",
+            "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+            "media_path": "/home/administrator/emotion-data/emotioncore_derived/chsims_v2/raw/Raw/aqgy3_0003/00007.mp4",
+            "started_at": "2026-10-14T05:52:11.535242+00:00",
+            "status": "ok",
+            "utt_id": "aqgy3_0003__00007",
+            "duration_s": 2.92,
+            "wav": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/segment.wav",
+            "wav_sha256": "3d919b5ea71a6be1e4f4419ea448dcfd9c805381ea87810a332eebe4f5e37b4d",
+            "face": {
+              "status": "ok",
+              "requested_frames": 15,
+              "decoded_frames": 15,
+              "track_scores": [
+                83785.66298892497
+              ],
+              "tracks": 1,
+              "multi_face_frames": 0,
+              "crop_paths": [
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000000.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000002.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000004.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000006.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000008.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000010.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000012.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/track_0000/crop_000014.jpg"
+              ],
+              "whole_paths": [
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000000.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000002.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000004.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000006.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000008.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000010.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000012.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/face/whole_000014.jpg"
+              ],
+              "face_seconds": 0.780934798065573,
+              "target_track": 0,
+              "target_score": 83785.66298892497,
+              "target_presence_fraction": 1.0,
+              "id": "aqgy3_0003__00007",
+              "input_sha256": "72f280fd849b1373f44f2bbc546853479c4bb20a73d5b67aca5743f8c3145ff9"
+            },
+            "q_video": {
+              "status": "ok",
+              "output": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0003__00007/q_video.mp4",
+              "output_sha256": "9899f9f06984ff2801a64442ff76779fdda19e3e67cd2a0ea2412a9db23f8a79",
+              "encoded_frames": 8,
+              "pixels_per_frame": 112896,
+              "fps": 2.73972602739726,
+              "available_crops": 8,
+              "accepted_crops": 8,
+              "desired_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10,
+                12,
+                14
+              ],
+              "selected_frame_indices": [
+                0,
+                2,
+                4,
+                6,
+                8,
+                10,
+                12,
+                14
+              ],
+              "source_crop_sha256": {
+                "0": "447e5a521b505a0100022823608215ad88499617fd0f6ca95d30c680b552d7e1",
+                "2": "ba89918ff137cfdbd465e17238a98ff27de1f396d178677967ce03b0ae8588de",
+                "4": "6cbc02c51c01e7bfbfe75481d46aa3a38c2ca63af6cc653b4ad775eee1bbb2b7",
+                "6": "e504b463d5079110fdd43d4f6233bf5076db1a25f86ac22fcac04f5cff2e83c7",
+                "8": "913129c6347618b55f26dfed271940e8d9e9c3a4dbf73671099bc77abc90cb1e",
+                "10": "d072a564f1fcbcf2e66fd7a932c051d320bb0da25e51ca6fe130291f5849ede7",
+                "12": "c9b2527173543afabdf30002dc16b43cc5ed6095ab64219034419d78a5b63f13",
+                "14": "c989ff3e174d1e9b4f9a9c8f9843d74768e6dd74549bc06716440603bc7b5938"
+              },
+              "elapsed_s": 0.902256797067821
+            },
+            "source_sha256": "72f280fd849b1373f44f2bbc546853479c4bb20a73d5b67aca5743f8c3145ff9",
+            "ended_at": "2026-10-14T05:52:14.626732+00:00",
+            "elapsed_s": 3.091490990947932
+          }
+        }
+      },
+      "display_notes": [
+        "Do not display a seven-class ground-truth label or correctness checkmark. The only annotation is valence.",
+        "label and candidate_label are the pre-gate class used for coloring; final_label is the emitted decision. Show final_label=reject when accepted=false.",
+        "Preserve the widescreen footage with contain/pad; do not stretch to the portrait ET viewport.",
+        "A3, V2 and Q are the true component distributions; H_A and H_V are different fused routes, not component aliases."
+      ],
+      "final_label": "joy",
+      "clip_local": "demo_v2/clips/aqgy3_0003__00007.mp4",
+      "clip_sha256": "0eee49e57b1a57e310a8a5af38456e014bc7298649b66bfe259eb24c2c698cda"
+    },
+    {
+      "id": "aqgy3_0001__00005",
+      "dataset": "CH-SIMS v2 / test",
+      "evidence_run": "X07_v2",
+      "model_version": "X06b 冻结 / Q_mix + D1_fmhx / v1.1",
+      "truth": null,
+      "truth_type": "valence",
+      "valence_truth": 0.0,
+      "truth_seven_class_available": false,
+      "label": "neutral",
+      "candidate_label": "neutral",
+      "probs": [
+        0.9145082751280776,
+        0.008998918233283625,
+        0.0022468965153877416,
+        0.0465427050267371,
+        0.0007233804841222983,
+        0.023804791827553795,
+        0.0031750327848377685
+      ],
+      "accepted": false,
+      "confidence": 0.9145082751280776,
+      "route": "reject",
+      "reason": "ambiguous_multi_face",
+      "has_face": true,
+      "comp": {
+        "A3": [
+          0.6276887655258179,
+          0.169988214969635,
+          0.003267754567787051,
+          0.12671057879924774,
+          0.0020515795331448317,
+          0.025000786408782005,
+          0.04529241472482681
+        ],
+        "V2": [
+          0.4034947454929352,
+          0.007915371097624302,
+          0.04830033332109451,
+          0.04227026179432869,
+          0.2974901795387268,
+          0.15371015667915344,
+          0.04681884124875069
+        ],
+        "Q": [
+          0.8872075080871582,
+          0.00819677859544754,
+          0.0017504439456388354,
+          0.06591754406690598,
+          0.0004980136873200536,
+          0.03484164550900459,
+          0.0015880803111940622
+        ]
+      },
+      "components": {
+        "A3": [
+          0.6276887655258179,
+          0.169988214969635,
+          0.003267754567787051,
+          0.12671057879924774,
+          0.0020515795331448317,
+          0.025000786408782005,
+          0.04529241472482681
+        ],
+        "V2": [
+          0.4034947454929352,
+          0.007915371097624302,
+          0.04830033332109451,
+          0.04227026179432869,
+          0.2974901795387268,
+          0.15371015667915344,
+          0.04681884124875069
+        ],
+        "V1": [
+          0.5890671610832214,
+          0.015723511576652527,
+          0.23282530903816223,
+          0.03486494719982147,
+          0.031957563012838364,
+          0.08733384311199188,
+          0.008227672427892685
+        ],
+        "Q_A": [
+          0.6467804908752441,
+          0.19499708712100983,
+          0.0012918830616399646,
+          0.10302766412496567,
+          0.0006137933232821524,
+          0.04954242333769798,
+          0.003746564034372568
+        ],
+        "Q_AV": [
+          0.8872075080871582,
+          0.00819677859544754,
+          0.0017504439456388354,
+          0.06591754406690598,
+          0.0004980136873200536,
+          0.03484164550900459,
+          0.0015880803111940622
+        ],
+        "Q_V": [
+          0.6074082255363464,
+          0.006704334169626236,
+          0.09384787082672119,
+          0.24642828106880188,
+          0.008642460219562054,
+          0.02550688199698925,
+          0.011462005786597729
+        ]
+      },
+      "timing": {
+        "audio_decode": 0.13107841298915446,
+        "A3": 0.5627098539844155,
+        "V2": 0.09452830883674324,
+        "V1": 0.09545450890436769,
+        "Q_A_video_decode": 7.00121745467186e-07,
+        "Q_A_preprocess": 0.1307797129265964,
+        "Q_A_forward": 0.6026960578747094,
+        "Q_A": 0.7335241709370166,
+        "Q_AV_video_decode": 0.043263904051855206,
+        "Q_AV_preprocess": 0.13942501391284168,
+        "Q_AV_forward": 1.1759644800331444,
+        "Q_AV": 1.3587353981565684,
+        "Q_V_video_decode": 0.03415619512088597,
+        "Q_V_preprocess": 0.009905498009175062,
+        "Q_V_forward": 0.29233335913158953,
+        "Q_V": 0.33650645217858255
+      },
+      "timing_h3_component_sum_s": 2.1470519739668816,
+      "prediction_record_elapsed_s": 3.3819634129758924,
+      "prediction_completed_at_utc": "2026-10-14T06:00:26.092390+00:00",
+      "module_start_timestamps_s": null,
+      "module_end_timestamps_s": null,
+      "stream_output_timestamp_s": null,
+      "timing_scope": "Saved module elapsed measurements. The H3 component sum includes audio_decode+A3+V2+Q_AV only; excludes input preparation, V1, Q_A and Q_V. X07 prediction elapsed_s covers the full recorded multi-route evaluation. Neither is natural-device or streaming response latency. Animation timing is editorial, not recovered module start timestamps.",
+      "systems": {
+        "H3": {
+          "probabilities": [
+            0.9145082751280776,
+            0.008998918233283625,
+            0.0022468965153877416,
+            0.0465427050267371,
+            0.0007233804841222983,
+            0.023804791827553795,
+            0.0031750327848377685
+          ],
+          "available": true,
+          "accepted_r90": false,
+          "op_n": 0,
+          "confidence": 0.9145082751280776,
+          "reason": "ambiguous_multi_face",
+          "route": "reject",
+          "valence": -0.06431885562051733
+        },
+        "H_A": {
+          "probabilities": [
+            0.7530600469049697,
+            0.12498085512588497,
+            0.0017513647574934805,
+            0.08726287184308469,
+            0.00038125493770666213,
+            0.022584721296514506,
+            0.00997888513434593
+          ],
+          "available": true,
+          "accepted_r90": true,
+          "op_n": 0,
+          "confidence": 0.7530600469049697,
+          "route": "H_A",
+          "reason": "single_modality",
+          "valence": 0.013000642291085635
+        },
+        "H_V": {
+          "probabilities": [
+            0.7841694547220529,
+            0.011135479771412216,
+            0.05839091176735373,
+            0.057709960606272794,
+            0.028921850543761694,
+            0.050490731117049825,
+            0.00918161147209685
+          ],
+          "available": true,
+          "accepted_r90": false,
+          "op_n": 0,
+          "confidence": 0.7841694547220529,
+          "route": "H_V",
+          "reason": "ambiguous_multi_face",
+          "valence": -0.18437797426302582
+        }
+      },
+      "face_gate_evidence": {
+        "tracks": 2,
+        "multi_face_frames": 15,
+        "decoded_frames": 17,
+        "target_track": 0,
+        "target_score": 116191.92516023967,
+        "track_scores": [
+          116191.92516023967,
+          69162.43533541528
+        ],
+        "second_to_target_score_ratio": 0.5952430449881413
+      },
+      "source_media_local": "single_person_demo_v1/public/media/aqgy3_0001__00005.mp4",
+      "source_media_remote": "/home/administrator/emotion-data/emotioncore_derived/chsims_v2/raw/Raw/aqgy3_0001/00005.mp4",
+      "source_export_sha256": "9228826421fa97b8a7d5d4744c6dbdc4e6327262b639bc335047c2c16918771e",
+      "source_original_sha256": "50c78df23aff01bf591de5c686643fbc6fc5e3b6d5f2e67e3cd6d92b73f29842",
+      "duration_s": 3.32,
+      "video_width": 480,
+      "video_height": 270,
+      "fps": "25/1",
+      "has_audio": true,
+      "provenance": {
+        "case_catalog_path": "single_person_demo_v1/public/data/cases.json",
+        "case_catalog_sha256": "494b0b9ea333487e92f0bed4c375dadbbacb0750a13139deb0df648beee48c49",
+        "prediction": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy3_0001__00005.json",
+          "sha256": "79725c55b00f52de8156af74c61122748ee7f4f48bf9ed2180c2335befbd6306",
+          "bytes": 3671,
+          "record": {
+            "id": "aqgy3_0001__00005",
+            "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+            "input": {
+              "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/input.json",
+              "sha256": "2700ef6878b844e83d51c621ac5ddb6261468b34beb71a37cfce620335c08a8d",
+              "bytes": 4244
+            },
+            "systems": {
+              "H3": {
+                "probabilities": [
+                  0.9145082751280776,
+                  0.008998918233283625,
+                  0.0022468965153877416,
+                  0.0465427050267371,
+                  0.0007233804841222983,
+                  0.023804791827553795,
+                  0.0031750327848377685
+                ],
+                "available": true,
+                "accepted_r90": false,
+                "op_n": 0,
+                "confidence": 0.9145082751280776,
+                "reason": "ambiguous_multi_face",
+                "route": "reject"
+              },
+              "H_A": {
+                "probabilities": [
+                  0.7530600469049697,
+                  0.12498085512588497,
+                  0.0017513647574934805,
+                  0.08726287184308469,
+                  0.00038125493770666213,
+                  0.022584721296514506,
+                  0.00997888513434593
+                ],
+                "available": true,
+                "accepted_r90": true,
+                "op_n": 0,
+                "confidence": 0.7530600469049697,
+                "route": "H_A",
+                "reason": "single_modality"
+              },
+              "H_V": {
+                "probabilities": [
+                  0.7841694547220529,
+                  0.011135479771412216,
+                  0.05839091176735373,
+                  0.057709960606272794,
+                  0.028921850543761694,
+                  0.050490731117049825,
+                  0.00918161147209685
+                ],
+                "available": true,
+                "accepted_r90": false,
+                "op_n": 0,
+                "confidence": 0.7841694547220529,
+                "route": "H_V",
+                "reason": "ambiguous_multi_face"
+              }
+            },
+            "components": {
+              "A3": [
+                0.6276887655258179,
+                0.169988214969635,
+                0.003267754567787051,
+                0.12671057879924774,
+                0.0020515795331448317,
+                0.025000786408782005,
+                0.04529241472482681
+              ],
+              "V2": [
+                0.4034947454929352,
+                0.007915371097624302,
+                0.04830033332109451,
+                0.04227026179432869,
+                0.2974901795387268,
+                0.15371015667915344,
+                0.04681884124875069
+              ],
+              "V1": [
+                0.5890671610832214,
+                0.015723511576652527,
+                0.23282530903816223,
+                0.03486494719982147,
+                0.031957563012838364,
+                0.08733384311199188,
+                0.008227672427892685
+              ],
+              "Q_A": [
+                0.6467804908752441,
+                0.19499708712100983,
+                0.0012918830616399646,
+                0.10302766412496567,
+                0.0006137933232821524,
+                0.04954242333769798,
+                0.003746564034372568
+              ],
+              "Q_AV": [
+                0.8872075080871582,
+                0.00819677859544754,
+                0.0017504439456388354,
+                0.06591754406690598,
+                0.0004980136873200536,
+                0.03484164550900459,
+                0.0015880803111940622
+              ],
+              "Q_V": [
+                0.6074082255363464,
+                0.006704334169626236,
+                0.09384787082672119,
+                0.24642828106880188,
+                0.008642460219562054,
+                0.02550688199698925,
+                0.011462005786597729
+              ]
+            },
+            "has_face": true,
+            "timing": {
+              "audio_decode": 0.13107841298915446,
+              "A3": 0.5627098539844155,
+              "V2": 0.09452830883674324,
+              "V1": 0.09545450890436769,
+              "Q_A_video_decode": 7.00121745467186e-07,
+              "Q_A_preprocess": 0.1307797129265964,
+              "Q_A_forward": 0.6026960578747094,
+              "Q_A": 0.7335241709370166,
+              "Q_AV_video_decode": 0.043263904051855206,
+              "Q_AV_preprocess": 0.13942501391284168,
+              "Q_AV_forward": 1.1759644800331444,
+              "Q_AV": 1.3587353981565684,
+              "Q_V_video_decode": 0.03415619512088597,
+              "Q_V_preprocess": 0.009905498009175062,
+              "Q_V_forward": 0.29233335913158953,
+              "Q_V": 0.33650645217858255
+            },
+            "completed_at": "2026-10-14T06:00:26.092390+00:00",
+            "elapsed_s": 3.3819634129758924
+          }
+        },
+        "input": {
+          "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/input.json",
+          "sha256": "2700ef6878b844e83d51c621ac5ddb6261468b34beb71a37cfce620335c08a8d",
+          "bytes": 4244,
+          "record": {
+            "id": "aqgy3_0001__00005",
+            "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+            "media_path": "/home/administrator/emotion-data/emotioncore_derived/chsims_v2/raw/Raw/aqgy3_0001/00005.mp4",
+            "started_at": "2026-10-14T05:52:08.971746+00:00",
+            "status": "ok",
+            "utt_id": "aqgy3_0001__00005",
+            "duration_s": 3.32,
+            "wav": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/segment.wav",
+            "wav_sha256": "6b5a2c9276cc536572f7475eec4fd48f952e4811f6a15250bf48f335491bc12a",
+            "face": {
+              "status": "ok",
+              "requested_frames": 17,
+              "decoded_frames": 17,
+              "track_scores": [
+                116191.92516023967,
+                69162.43533541528
+              ],
+              "tracks": 2,
+              "multi_face_frames": 15,
+              "crop_paths": [
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000000.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000002.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000005.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000007.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000009.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000011.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000014.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/track_0000/crop_000016.jpg"
+              ],
+              "whole_paths": [
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000000.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000002.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000005.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000007.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000009.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000011.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000014.jpg",
+                "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/face/whole_000016.jpg"
+              ],
+              "face_seconds": 0.9930962976068258,
+              "target_track": 0,
+              "target_score": 116191.92516023967,
+              "target_presence_fraction": 1.0,
+              "id": "aqgy3_0001__00005",
+              "input_sha256": "50c78df23aff01bf591de5c686643fbc6fc5e3b6d5f2e67e3cd6d92b73f29842"
+            },
+            "q_video": {
+              "status": "ok",
+              "output": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/inputs/aqgy3_0001__00005/q_video.mp4",
+              "output_sha256": "cc52d7d4c1f284bf9619e9afefb7e4f2374265f554d92aaa08ef726a32798fbb",
+              "encoded_frames": 8,
+              "pixels_per_frame": 112896,
+              "fps": 2.4096385542168677,
+              "available_crops": 8,
+              "accepted_crops": 8,
+              "desired_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                9,
+                11,
+                14,
+                16
+              ],
+              "selected_frame_indices": [
+                0,
+                2,
+                5,
+                7,
+                9,
+                11,
+                14,
+                16
+              ],
+              "source_crop_sha256": {
+                "0": "b194b0ffc081adc1f9937b2a37eba8d219f868664d585d12553091003b0cc9b3",
+                "2": "fa918209b4c6a20c234ca2b4a51631cee11e24da55352da911a5afd41b35386a",
+                "5": "42355036763edceb1f67f13de2254cca092aac0ee3632c687b95d7c794353e5f",
+                "7": "e2c7136db1fa62f0b992a3c31a4bff156a130635812800dbc6758eeca95e819f",
+                "9": "74ca250046024966c81590597953706b0bfb3c6ad232b680f88fa1720c3c772b",
+                "11": "70ff0e2f536ae3b0455677d2c2aab52b1cdf22525aca67c20f80b880f62a3936",
+                "14": "250dd408dbb25ce0cc6688f17e2e2ecec21124cd34658eecc03f1e56af3aae15",
+                "16": "8b4ded26a3db3b90cf4f6dcca29bafadc30cd06033168037950bf3832300c8b2"
+              },
+              "elapsed_s": 0.9147576971445233
+            },
+            "source_sha256": "50c78df23aff01bf591de5c686643fbc6fc5e3b6d5f2e67e3cd6d92b73f29842",
+            "ended_at": "2026-10-14T05:52:12.456139+00:00",
+            "elapsed_s": 3.4843199900351465
+          }
+        }
+      },
+      "display_notes": [
+        "Do not display a seven-class ground-truth label or correctness checkmark. The only annotation is valence.",
+        "label and candidate_label are the pre-gate class used for coloring; final_label is the emitted decision. Show final_label=reject when accepted=false.",
+        "Preserve the widescreen footage with contain/pad; do not stretch to the portrait ET viewport.",
+        "A3, V2 and Q are the true component distributions; H_A and H_V are different fused routes, not component aliases."
+      ],
+      "final_label": "reject",
+      "clip_local": "demo_v2/clips/aqgy3_0001__00005.mp4",
+      "clip_sha256": "9228826421fa97b8a7d5d4744c6dbdc4e6327262b639bc335047c2c16918771e"
+    }
+  ],
+  "chapters": [
+    {
+      "part": "intro",
+      "title": "MundiSense v1",
+      "start_s": 0,
+      "end_s": 5.0,
+      "duration_s": 5.0
+    },
+    {
+      "part": "0",
+      "title": "平静 · EmotionTalk",
+      "start_s": 5.0,
+      "end_s": 15.3,
+      "duration_s": 10.3,
+      "id": "G00015_49_21_004",
+      "source_sha256": "dcf28c39a66d211f1eb7a097740bc02a410732fd888b32aab8a79b3c61d07d99",
+      "source_duration_s": 3.66034,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "1",
+      "title": "喜悦 · EmotionTalk",
+      "start_s": 15.3,
+      "end_s": 25.466667,
+      "duration_s": 10.166666666666666,
+      "id": "G00015_47_20_014",
+      "source_sha256": "50cfd17ec2e42192335e493cfc2fd85151302f3f476416c3fe6c4c69c9bd7296",
+      "source_duration_s": 3.532993,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "2",
+      "title": "悲伤 · EmotionTalk",
+      "start_s": 25.466667,
+      "end_s": 37.466667,
+      "duration_s": 12.0,
+      "id": "G00003_30_02_009",
+      "source_sha256": "e7dd0cb36732d9ba5fc4a48e0eec02bd669f774427d04bff4b89f5c42a77c025",
+      "source_duration_s": 5.366667,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "3",
+      "title": "愤怒 · EmotionTalk",
+      "start_s": 37.466667,
+      "end_s": 47.566667,
+      "duration_s": 10.1,
+      "id": "G00003_22_13_018",
+      "source_sha256": "4cfa76e6c638331586ffef9b033a917bc2f1f6741f5c53e4007b5364aa3784a4",
+      "source_duration_s": 3.466667,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "4",
+      "title": "恐惧 · EmotionTalk",
+      "start_s": 47.566667,
+      "end_s": 57.266667,
+      "duration_s": 9.7,
+      "id": "G00015_18_20_001",
+      "source_sha256": "1c9a40f2a848b5d1ddaed3d61671bd6d32d65dc9b2ab24e49159cba89835f998",
+      "source_duration_s": 3.076032,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "5",
+      "title": "惊讶 · EmotionTalk",
+      "start_s": 57.266667,
+      "end_s": 67.133333,
+      "duration_s": 9.866666666666667,
+      "id": "G00003_25_02_014",
+      "source_sha256": "f084de5c73a788db3541aaf73c4130d847ee3bf90519241ab713546fbcbf9c30",
+      "source_duration_s": 3.227574,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "bridge",
+      "title": "从对话，到影视",
+      "start_s": 67.133333,
+      "end_s": 70.133333,
+      "duration_s": 3.0
+    },
+    {
+      "part": "6",
+      "title": "音画互补 · CH-SIMS v2",
+      "start_s": 70.133333,
+      "end_s": 82.7,
+      "duration_s": 12.566666666666666,
+      "id": "aqgy3_0003__00007",
+      "source_sha256": "0eee49e57b1a57e310a8a5af38456e014bc7298649b66bfe259eb24c2c698cda",
+      "source_duration_s": 2.92,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "7",
+      "title": "多人歧义 · CH-SIMS v2",
+      "start_s": 82.7,
+      "end_s": 95.666667,
+      "duration_s": 12.966666666666667,
+      "id": "aqgy3_0001__00005",
+      "source_sha256": "9228826421fa97b8a7d5d4744c6dbdc4e6327262b639bc335047c2c16918771e",
+      "source_duration_s": 3.32,
+      "lead_s": 0.4,
+      "original_speed": true,
+      "display_timing": "Editorial stages; not inference timestamps"
+    },
+    {
+      "part": "outro",
+      "title": "EmotionTalk · 完整评测",
+      "start_s": 95.666667,
+      "end_s": 104.166667,
+      "duration_s": 8.5
+    }
+  ],
+  "class_f1": {
+    "neutral": 0.7990012484394506,
+    "joy": 0.8208333333333333,
+    "sadness": 0.6297872340425532,
+    "anger": 0.7648809523809523,
+    "fear": 0.6384976525821596,
+    "disgust": 0.3434343434343434,
+    "surprise": 0.5447154471544715
+  },
+  "macro_f1": 0.6487357444810378,
+  "accuracy": 0.6931052358735096,
+  "n": 1929,
+  "metric_scope": "EmotionTalk R4 correct-boundary full cohort; CH-SIMS cases excluded",
+  "output_sha256": "435c76433beb413e89beafc8006721d2a9c1cfdc8d87ce148ff051f5bbb0c95c",
+  "output_duration_s": 104.166667,
+  "source_sha256": {
+    "build_mundisense.py": "9550efecf1cd9778afab4472e95f32ca24a4f7af1f41f5b6c50be9c633036960",
+    "build_demo.py": "9fab3d8622a744ea52f2d96a48c22b55768d04365f971eec2eb535ed9a7ad5fe",
+    "_src/sims_cases.json": "dcaa697393c0240ac41e688e2341d837048a7ebbb9ffd5392bb5f9f9c9ea4fe8",
+    "_src/r4_correct_et_test_predictions.jsonl": "778273bb0bf032688dca4378335df505e5bad85d55618239e71e8510a1f5c135",
+    "_src/r4_analysis_et_test_paired.jsonl": "f5aaba9779dba70e6a8a1ececbdd0166fa0f99adfdb7c37304f4d5067b6d0ad7",
+    "_src/r4_analysis_et_test_summary.json": "cef76b0926faf76cf0f77047fa6c0d27e55b9fc16d0a69ca41d4c46e997d0427"
+  }
+}

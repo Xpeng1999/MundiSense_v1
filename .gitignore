@@ -30,3 +30,6 @@ __pycache__/
 **/run_meta.json
 experiments/X01_benchmark/results/face_progress.json
 **/*.log
+
+# Authorized MundiSense v1 release film
+!/docs/demo/MundiSense_v1_demo.mp4

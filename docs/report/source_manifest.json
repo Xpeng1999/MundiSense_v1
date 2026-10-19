@@ -1,0 +1,1661 @@
+{
+  "document_id": "mundisense-v1-release-20261020",
+  "status": "public_release",
+  "scope": "Technical report, illustrative figures, deterministic result plots and recorded-output demonstration. No new experiment or model weights.",
+  "evidence_note": "Publication authorization does not convert automated evidence checks into an independent scientific review. Snapshot hashes are distinct from retained-source hashes.",
+  "sources": [
+    {
+      "id": "E01",
+      "title": "Current system scope and authoritative takeover review",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/SINGLE_PERSON_REVIEW_2026-10-15.md",
+      "bytes": 10278,
+      "locators": [
+        {
+          "anchor": "## 1.",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 2.",
+          "lines": [
+            15
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 3.",
+          "lines": [
+            27
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 4.",
+          "lines": [
+            58
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "2307b2862e5351ca12045c3a0bf36bb965665ed689d66e88762c4b51073063b9",
+      "path": "evidence/E01.md",
+      "sha256": "2307b2862e5351ca12045c3a0bf36bb965665ed689d66e88762c4b51073063b9",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E02",
+      "title": "Current runtime, stream construction, metrics, timing and missed gates",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X06b_realtime/REPORT.md",
+      "bytes": 15820,
+      "locators": [
+        {
+          "anchor": "## 4.",
+          "lines": [
+            45
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 5.",
+          "lines": [
+            60
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 6.",
+          "lines": [
+            78
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 7.",
+          "lines": [
+            119
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 8.",
+          "lines": [
+            147
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 9.",
+          "lines": [
+            164
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 11.",
+          "lines": [
+            228
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "1f2e51fc1a242c840a84f82cbdb0804e3749a78798af8a00f82699fb410a1881",
+      "path": "evidence/E02.md",
+      "sha256": "1f2e51fc1a242c840a84f82cbdb0804e3749a78798af8a00f82699fb410a1881",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E03",
+      "title": "Accepted lockbox review and coverage decomposition",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/X07_REVIEW.md",
+      "bytes": 6231,
+      "locators": [
+        {
+          "anchor": "## 1.",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 2.",
+          "lines": [
+            18
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 4.",
+          "lines": [
+            37
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 5.",
+          "lines": [
+            54
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "ea0f788d3233275d1a328ab19d3d14ef43f7ec50dc43f4a7e71f62d48807c106",
+      "path": "evidence/E03.md",
+      "sha256": "ea0f788d3233275d1a328ab19d3d14ef43f7ec50dc43f4a7e71f62d48807c106",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E04",
+      "title": "R3 current clip metrics and paired differences",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X06b_realtime/results/r3_analysis_et_test_retry1.json",
+      "bytes": 2417,
+      "locators": [
+        {
+          "anchor": "\"n\": 1929",
+          "lines": [
+            13
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"op_n\"",
+          "lines": [
+            14
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"r90\"",
+          "lines": [
+            23
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"coverage\"",
+          "lines": [
+            32
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"modality_and_multiface_gates\"",
+          "lines": [
+            59
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "9dc1aafb9966867a74590ed1c82618e0007ef3dab77da97a46e779711c60b9be",
+      "path": "evidence/E04.json",
+      "sha256": "9dc1aafb9966867a74590ed1c82618e0007ef3dab77da97a46e779711c60b9be",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E05",
+      "title": "R4 same-stream correct boundaries vs VAD",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X06b_realtime/results/r4_analysis_et_test.json",
+      "bytes": 5792,
+      "locators": [
+        {
+          "anchor": "\"n\": 1929",
+          "lines": [
+            13,
+            15,
+            31,
+            151
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"correct_boundaries\"",
+          "lines": [
+            14
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"vad\"",
+          "lines": [
+            30
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"groups\"",
+          "lines": [
+            48
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "5b4de0b3c919072bcad2a339c462b4f537db19274152c0eae5018b986702dca6",
+      "path": "evidence/E05.json",
+      "sha256": "5b4de0b3c919072bcad2a339c462b4f537db19274152c0eae5018b986702dca6",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E06",
+      "title": "Frozen benchmark definitions and MER amendment",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/docs/BENCHMARK_v1.1.md",
+      "bytes": 3652,
+      "locators": [
+        {
+          "anchor": "## Cohorts",
+          "lines": [
+            3
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## Seven-class",
+          "lines": [
+            12
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## SIMS-valid",
+          "lines": [
+            18
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## X04a",
+          "lines": [
+            28
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "16ac6572f7454ce3fd4c821c96cc474a6fa88324771ffd2bcb1d0bd60d27e061",
+      "path": "evidence/E06.md",
+      "sha256": "16ac6572f7454ce3fd4c821c96cc474a6fa88324771ffd2bcb1d0bd60d27e061",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E07",
+      "title": "Architecture comparison, Q recipe and out-of-fold fitting",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X03_fusion/REPORT.md",
+      "bytes": 27732,
+      "locators": [
+        {
+          "anchor": "## 4.",
+          "lines": [
+            29
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 6.",
+          "lines": [
+            58
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 7.",
+          "lines": [
+            130
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 8.",
+          "lines": [
+            143
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "568b7ac9d7c9a6caf1fdf44d5d8b45d2abb932e1d8f449a31d49d4aec6870b4b",
+      "path": "evidence/E07.md",
+      "sha256": "568b7ac9d7c9a6caf1fdf44d5d8b45d2abb932e1d8f449a31d49d4aec6870b4b",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E08",
+      "title": "Final Q_mix training and recipe-selection deviations",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X04b_q/REPORT.md",
+      "bytes": 9168,
+      "locators": [
+        {
+          "anchor": "## 3.",
+          "lines": [
+            11
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 4.",
+          "lines": [
+            17
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 5.",
+          "lines": [
+            29
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 6.",
+          "lines": [
+            54
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 9.",
+          "lines": [
+            139
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "10ef66db80673738ca5cf1850de935f36e4fde28bb71b1e24c42370284162e3a",
+      "path": "evidence/E08.md",
+      "sha256": "10ef66db80673738ca5cf1850de935f36e4fde28bb71b1e24c42370284162e3a",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E09",
+      "title": "Deployment heads, calibration methods, confidence and fitting partitions",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X05_calib/REPORT.md",
+      "bytes": 13934,
+      "locators": [
+        {
+          "anchor": "## 3.",
+          "lines": [
+            25
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 4.",
+          "lines": [
+            35
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 5.",
+          "lines": [
+            54
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 7.",
+          "lines": [
+            120
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 8.",
+          "lines": [
+            153
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "e30b97bdb6ec85904f9198f47dbf14bc682d6e9757c7233df556f7f8c3f722d3",
+      "path": "evidence/E09.md",
+      "sha256": "e30b97bdb6ec85904f9198f47dbf14bc682d6e9757c7233df556f7f8c3f722d3",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E10",
+      "title": "Frozen fusion, thresholds, route settings and artifact hashes",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/configs/calibration_bundle_v1.1.json",
+      "bytes": 6993,
+      "locators": [
+        {
+          "anchor": "\"H3\"",
+          "lines": [
+            62,
+            256
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"H_A\"",
+          "lines": [
+            107,
+            252
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"H_V\"",
+          "lines": [
+            150,
+            253
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"fit_counts\"",
+          "lines": [
+            240
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"gate_rules\"",
+          "lines": [
+            248
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"default_full_system\"",
+          "lines": [
+            256,
+            259
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7",
+      "path": "evidence/E10.json",
+      "sha256": "e73befc23e833b25fdd26d0784368fedf14afc6aef86c0378865f0958455a5f7",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E11",
+      "title": "Lockbox protocol, metrics, hardware and failures",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X07_lockbox/REPORT.md",
+      "bytes": 17827,
+      "locators": [
+        {
+          "anchor": "## 4.",
+          "lines": [
+            34
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 5.",
+          "lines": [
+            65
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 6.",
+          "lines": [
+            85
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 7.",
+          "lines": [
+            111
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 8.",
+          "lines": [
+            122
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 9.",
+          "lines": [
+            225
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 10.",
+          "lines": [
+            241
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "702fd05c8080e93a7293d06e60a5916fedd9ce487106169c0a17aafb6fda025d",
+      "path": "evidence/E11.md",
+      "sha256": "702fd05c8080e93a7293d06e60a5916fedd9ce487106169c0a17aafb6fda025d",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E12",
+      "title": "Final runtime selection and acceptance with limitations",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/X06B_REVIEW.md",
+      "bytes": 3619,
+      "locators": [
+        {
+          "anchor": "## 1.",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 2.",
+          "lines": [
+            18
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 3.",
+          "lines": [
+            32
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "ae30b2cf0b14f3c5f7dc04da5280023141a8af607ac9ae4eb4c9b31cbeff6c13",
+      "path": "evidence/E12.md",
+      "sha256": "ae30b2cf0b14f3c5f7dc04da5280023141a8af607ac9ae4eb4c9b31cbeff6c13",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E13",
+      "title": "R5 independent completion-delay stratification",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/reviewer_audit/takeover_runtime_audit.json",
+      "bytes": 6885,
+      "locators": [
+        {
+          "anchor": "\"source_domain\"",
+          "lines": [
+            3
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"rule\"",
+          "lines": [
+            4
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"all\"",
+          "lines": [
+            31
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"by_category\"",
+          "lines": [
+            71
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "9ce38d05eae31217db4da63caaebe6d362696b390c2d33450a7fe3b035891d9f",
+      "path": "evidence/E13.json",
+      "sha256": "9ce38d05eae31217db4da63caaebe6d362696b390c2d33450a7fe3b035891d9f",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E14",
+      "title": "Resident components, first-token inference and default H3 serving",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x06/service.py",
+      "bytes": 11832,
+      "locators": [
+        {
+          "anchor": "class Service",
+          "lines": [
+            12
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def q_probability",
+          "lines": [
+            77
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def components",
+          "lines": [
+            124
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "55e09af2ae23d02e4d1da84fb26ce9b6f249b5d82f2dbd1ef9724f6758cba1dd",
+      "path": "evidence/E14.py",
+      "sha256": "55e09af2ae23d02e4d1da84fb26ce9b6f249b5d82f2dbd1ef9724f6758cba1dd",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E15",
+      "title": "Eight-class head and corpus-masked loss",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x04/heads.py",
+      "bytes": 23214,
+      "locators": [
+        {
+          "anchor": "LABELS8",
+          "lines": [
+            19,
+            189
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def build_model",
+          "lines": [
+            25
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def masked_ce",
+          "lines": [
+            48
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "9216b8be1c07d5ea8fba7ea67e8b92a3acf3cf799c7a9889c668fdf6c6857701",
+      "path": "evidence/E15.py",
+      "sha256": "9216b8be1c07d5ea8fba7ea67e8b92a3acf3cf799c7a9889c668fdf6c6857701",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E16",
+      "title": "Frozen modality and ambiguous-face route implementation",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x06/gate.py",
+      "bytes": 2429,
+      "locators": [
+        {
+          "anchor": "def route",
+          "lines": [
+            53
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "14bdabfdfa36474a750394923fb7d54701e546c0ba13d542191df7464c13df64",
+      "path": "evidence/E16.py",
+      "sha256": "14bdabfdfa36474a750394923fb7d54701e546c0ba13d542191df7464c13df64",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E17",
+      "title": "Nonnegative log-probability fusion and neutral bias implementation",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x03/fusion.py",
+      "bytes": 16261,
+      "locators": [
+        {
+          "anchor": "def fit_fusion",
+          "lines": [
+            37
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def fusion_logits",
+          "lines": [
+            55
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def fit_neutral_bias",
+          "lines": [
+            79
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "9d65369bc00ff4e5df200cfd4f6ddd97dbe85feb5a48b690d6ca5e0fb3f020e0",
+      "path": "evidence/E17.py",
+      "sha256": "9d65369bc00ff4e5df200cfd4f6ddd97dbe85feb5a48b690d6ca5e0fb3f020e0",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E18",
+      "title": "Official label support, speaker overlap, annotation disagreement",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/docs/DATA_CARD_emotiontalk.md",
+      "bytes": 5699,
+      "locators": [
+        {
+          "anchor": "## Official split",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## Annotation agreement",
+          "lines": [
+            41
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "9a00d24463d18da64bf97bb75779a2a880714abd2a67a8e780865bafc464d672",
+      "path": "evidence/E18.md",
+      "sha256": "9a00d24463d18da64bf97bb75779a2a880714abd2a67a8e780865bafc464d672",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E19",
+      "title": "Frozen speaker exclusions and development partitions",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/configs/folds_v1.json",
+      "bytes": 3369,
+      "locators": [
+        {
+          "anchor": "\"excluded_speakers\"",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"cv_pool_count\"",
+          "lines": [
+            31
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"folds\"",
+          "lines": [
+            53
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+      "path": "evidence/E19.json",
+      "sha256": "85564e8a22e6aa76775061de6d2e322ba80d10c1fe77d11edef4863d8b5791ce",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E20",
+      "title": "Native labels, deduplication and retained use restrictions",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/docs/DATA_CARD_mer2026.md",
+      "bytes": 2186,
+      "locators": [
+        {
+          "anchor": "去重后的训练集",
+          "lines": [
+            8
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "只用 MER2026",
+          "lines": [
+            10
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "许可证据",
+          "lines": [
+            23
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "f3590e5905c53dcf3b3a137e4d52595fb0644d0cb74898abfe2d007f89daa984",
+      "path": "evidence/E20.md",
+      "sha256": "f3590e5905c53dcf3b3a137e4d52595fb0644d0cb74898abfe2d007f89daa984",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E21",
+      "title": "Valid/test source identity overlap",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/reviewer_audit/takeover_x07_identity_overlap.json",
+      "bytes": 2490,
+      "locators": [
+        {
+          "anchor": "shared",
+          "lines": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "6d5557fc5a7f787e1cc214f530bf4969da8d44cdb1c1d3edc635f2f94b8b7202",
+      "path": "evidence/E21.json",
+      "sha256": "6d5557fc5a7f787e1cc214f530bf4969da8d44cdb1c1d3edc635f2f94b8b7202",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E22",
+      "title": "Guarded Q_mix training inherits X03 recipe",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x04b/train.py",
+      "bytes": 20349,
+      "locators": [
+        {
+          "anchor": "from emotioncore.x03.q_train",
+          "lines": [
+            25,
+            29
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "initialization",
+          "lines": [
+            86
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "117c6592b3c8229a05170559bc54315d06cf603514790b66ba7a0741e36b6fde",
+      "path": "evidence/E22.py",
+      "sha256": "117c6592b3c8229a05170559bc54315d06cf603514790b66ba7a0741e36b6fde",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E23",
+      "title": "Exploratory precision/recall, coarse remapping and strong-valence strata",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "roadmap_v2/reviewer_audit/coarse_emotion_20261017_notes.md",
+      "bytes": 6623,
+      "locators": [
+        {
+          "anchor": "## 全部测试句",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 原输出",
+          "lines": [
+            30
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 强效价",
+          "lines": [
+            57
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "e071daf09c6ad32c1c2108cabc6948c9b4e780a4ba8341b54718b050b8e40428",
+      "path": "evidence/E23.md",
+      "sha256": "e071daf09c6ad32c1c2108cabc6948c9b4e780a4ba8341b54718b050b8e40428",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E24",
+      "title": "Lockbox structured point estimates and intervals",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/experiments/X07_lockbox/results/v2/test_metrics.json",
+      "bytes": 45064,
+      "locators": [
+        {
+          "anchor": "\"systems\"",
+          "lines": [
+            2103
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"H3\"",
+          "lines": [
+            2104
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"H_A\"",
+          "lines": [
+            2158
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"H_V\"",
+          "lines": [
+            2212
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"bootstrap\"",
+          "lines": [
+            2267
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "a6449c942c7c403d448caebd0d33d343350457cbd585ef04589c15ce28f19991",
+      "path": "evidence/E24.json",
+      "sha256": "a6449c942c7c403d448caebd0d33d343350457cbd585ef04589c15ce28f19991",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E25",
+      "title": "Original curated playback collection and honest timing semantics",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "single_person_demo_v1/README.md",
+      "bytes": 3967,
+      "locators": [
+        {
+          "anchor": "## 内容与证据",
+          "lines": [
+            14
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 时间与标签语义",
+          "lines": [
+            26
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 已知边界",
+          "lines": [
+            38
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "fa61ddd5db37787bbda6325d9f2d0ef62e7eb32dbac734714d6a8a546c398bd2",
+      "path": "evidence/E25.md",
+      "sha256": "f7277bdfe1da759394370189840d1a51adb32baf164cdbd818a3b2c7f06c19f1",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E26",
+      "title": "Historical X01 dirty-source provenance limitation",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/docs/X01_REPRODUCTION.md",
+      "bytes": 5558,
+      "locators": [
+        {
+          "anchor": "### X01 D2 code provenance",
+          "lines": [
+            35
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "429ce546259da1eb43a265aeaa99bf212c93e7f005fdfe784bdde9f0a57216e2",
+      "path": "evidence/E26.md",
+      "sha256": "429ce546259da1eb43a265aeaa99bf212c93e7f005fdfe784bdde9f0a57216e2",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E27",
+      "title": "Mundiscope positioning and future Sense → Remember → Express direction",
+      "type": "local_primary_or_project_audit",
+      "bytes": 17377357,
+      "locators": [
+        {
+          "anchor": "PPTX slide 1: brand; slide 2: reusable module; slide 14: Sense—Remember—Express",
+          "location_kind": "pptx_slide"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "3bc71c820f07fba8d418b1da7f503926f635ca573b07db17640a773b2ee85792",
+      "distribution": "Project positioning brief; original business-plan deck is not distributed."
+    },
+    {
+      "id": "E28",
+      "title": "Delivered eight-case MundiSense v1 replay: records and editorial timing",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "demo_v2/build_ms/used_records.json",
+      "bytes": 51904,
+      "locators": [
+        {
+          "anchor": "\"model\"",
+          "lines": [
+            2
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"animation\"",
+          "lines": [
+            7
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"timing\"",
+          "lines": [
+            8,
+            53,
+            109,
+            165,
+            221,
+            277,
+            333,
+            456,
+            682,
+            921,
+            1148
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"records\"",
+          "lines": [
+            9
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "67e93a7631b4b978041181e339bb991fd30061221370e1e4351e7b04c6e0f4f8",
+      "path": "evidence/E28.json",
+      "sha256": "37ae57dd5c771c7b2839f435353a2e873c378f550bab8f2bf74e559515068a50",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E29",
+      "title": "Temporal attention and four-layer mixture head details",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x02/head_h2.py",
+      "bytes": 14112,
+      "locators": [
+        {
+          "anchor": "DROPOUT",
+          "lines": [
+            22,
+            36,
+            167
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "class AttentionHead",
+          "lines": [
+            28
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "def forward",
+          "lines": [
+            38
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "6f3a1ed5c28b13791ac1a4e9ff069b9109bb28ed48677b0a23ca32617775e116",
+      "path": "evidence/E29.py",
+      "sha256": "6f3a1ed5c28b13791ac1a4e9ff069b9109bb28ed48677b0a23ca32617775e116",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E30",
+      "title": "Exact specialist backbone identities",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x02/download_models.py",
+      "bytes": 6130,
+      "locators": [
+        {
+          "anchor": "MODELS =",
+          "lines": [
+            16
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"A3\"",
+          "lines": [
+            17
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"V2\"",
+          "lines": [
+            19
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "46068ff1c2f447d110e56722b34c5a1d0ab9cb1165bbbdac44dd2798b9370efd",
+      "path": "evidence/E30.py",
+      "sha256": "46068ff1c2f447d110e56722b34c5a1d0ab9cb1165bbbdac44dd2798b9370efd",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E31",
+      "title": "Quantization, LoRA ranks, AdamW configuration",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x03/q_smoke.py",
+      "bytes": 17412,
+      "locators": [
+        {
+          "anchor": "def model_and_optimizer",
+          "lines": [
+            116
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "LoraConfig",
+          "lines": [
+            118,
+            146
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "AdamW",
+          "lines": [
+            175
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "98b398f0c8d1dcf048199ba09fd47e55d0b39257b31e4d8cee74bd898a461a55",
+      "path": "evidence/E31.py",
+      "sha256": "98b398f0c8d1dcf048199ba09fd47e55d0b39257b31e4d8cee74bd898a461a55",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E32",
+      "title": "Inherited learning rate and schedule",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "emotioncore-zh/src/emotioncore/x03/q_train.py",
+      "bytes": 15937,
+      "locators": [
+        {
+          "anchor": "LR =",
+          "lines": [
+            25
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "WARMUP_RATIO",
+          "lines": [
+            26,
+            158,
+            175
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "cos",
+          "lines": [
+            181
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "060767ca252bf0fbcc477c27d37ca4ed5e79c5fae3e761d87d158d3f049d1f58",
+      "path": "evidence/E32.py",
+      "sha256": "060767ca252bf0fbcc477c27d37ca4ed5e79c5fae3e761d87d158d3f049d1f58",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E33",
+      "title": "Delivered 104.167-second video probe, record match and full decode check",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "demo_v2/build_ms/verification.json",
+      "bytes": 3285,
+      "locators": [
+        {
+          "anchor": "\"full_decode\"",
+          "lines": [
+            131
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"records_count\"",
+          "lines": [
+            5
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"video_frames\"",
+          "lines": [
+            133
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"container_duration_s\"",
+          "lines": [
+            135
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "77bca0e8dd819271ce4288b731579c84f0a0db893e9bb4d6de3fd829d7d31300",
+      "path": "evidence/E33.json",
+      "sha256": "77bca0e8dd819271ce4288b731579c84f0a0db893e9bb4d6de3fd829d7d31300",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E34",
+      "title": "Five user-supplied scientific schematics copied without image modification",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "mundiscope_release_20261019/report/figures/generated_diagram_provenance.json",
+      "bytes": 1665,
+      "locators": [
+        {
+          "anchor": "\"file\"",
+          "lines": [
+            3,
+            11,
+            19,
+            27,
+            35
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "\"copy_identical\"",
+          "lines": [
+            5,
+            13,
+            21,
+            29,
+            37
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "e12898214e4b2837efad9eb13d57a3abb50263124340b9c61112ffe7f7df0c73",
+      "path": "evidence/E34.json",
+      "sha256": "e12898214e4b2837efad9eb13d57a3abb50263124340b9c61112ffe7f7df0c73",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "E35",
+      "title": "MundiSense v1 demonstration composition and timing caveats",
+      "type": "local_primary_or_project_audit",
+      "project_relative_path": "demo_v2/README.md",
+      "bytes": 3221,
+      "locators": [
+        {
+          "anchor": "## 沿用与新增",
+          "lines": [
+            5
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 口径",
+          "lines": [
+            30
+          ],
+          "status": "found"
+        },
+        {
+          "anchor": "## 文件与复现",
+          "lines": [
+            38
+          ],
+          "status": "found"
+        }
+      ],
+      "inspection_status": "read_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      },
+      "retained_source_sha256": "1d8827a3d6c3d1a12b981a4e8741425292adca749bfb78ef67edaca5f3d814fe",
+      "path": "evidence/E35.md",
+      "sha256": "dda724498895565324de338c11cbdd955cc7a6c500ca64f716f44b76bc0ae7e6",
+      "distribution": "Public evidence snapshot; local workstation path prefixes normalized. Retained source hash records the original."
+    },
+    {
+      "id": "R1",
+      "title": "Qwen2.5-Omni Technical Report",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2503.20215",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R2",
+      "title": "HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2106.07447",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R3",
+      "title": "Learning Transferable Visual Models From Natural Language Supervision",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2103.00020",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R4",
+      "title": "EmotionTalk: An Interactive Chinese Multimodal Emotion Dataset With Rich Annotations",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2505.23018",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R5",
+      "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R6",
+      "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2305.14314",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R7",
+      "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2609.00065",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    },
+    {
+      "id": "R8",
+      "title": "Make Acoustic and Visual Cues Matter: CH-SIMS v2.0 Dataset and AV-Mixup Consistent Module",
+      "type": "external_primary_reference",
+      "url": "https://arxiv.org/abs/2209.02604",
+      "locator": "Title, author list, submission history, abstract",
+      "accessed": "2026-10-19",
+      "inspection_status": "page_opened_by_agent",
+      "human_verification": {
+        "status": "pending",
+        "verifier": null,
+        "verified_at": null
+      }
+    }
+  ]
+}
