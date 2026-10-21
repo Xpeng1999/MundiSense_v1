@@ -241,6 +241,70 @@
     "docs/assets/brand/mundisense-v1-banner.png": {
       "sha256": "6b771db9fbd2905d3242135d9a759942f7b950c8b2b7e7463f7039513ddc8c8e",
       "bytes": 1276110
+    },
+    "docs/media/case0.jpg": {
+      "sha256": "cd74b101d4cd087e513af15d65ae326e7510d8560063638ef89da83f0d464031",
+      "bytes": 33264
+    },
+    "docs/media/case0.mp4": {
+      "sha256": "77aa14ff2267d0daa82d9d9107b88be27c14e4e7cc9584cce97c06f3f883b0b1",
+      "bytes": 32317
+    },
+    "docs/media/case1.jpg": {
+      "sha256": "2f8fd4bfec512cdc427a8c3df676d757606700892c24175000c412e68444c7cd",
+      "bytes": 36443
+    },
+    "docs/media/case1.mp4": {
+      "sha256": "5555ea9c0f6c512f1dcde0af9ac39821ca00e7c44e4d95933ce1afcab7481ec4",
+      "bytes": 57416
+    },
+    "docs/media/case2.jpg": {
+      "sha256": "979f0edfe0f0d1736c983f1ea23ff51586a942f069e9317af6a3a7b35bf6dc6e",
+      "bytes": 31970
+    },
+    "docs/media/case2.mp4": {
+      "sha256": "933f1be1227e312ff945d08f6537e4475d847d843855021e1d329d78d8371ffe",
+      "bytes": 29049
+    },
+    "docs/media/case3.jpg": {
+      "sha256": "ca5d5aeecda7d6b1709992ca53692b5104094e10e40cfd966f8abab76eaa37d6",
+      "bytes": 29726
+    },
+    "docs/media/case3.mp4": {
+      "sha256": "f7abd909b1ed20f007a91a59aaf389a15abf7a22e557c8cdfe95b7a57c91a8ff",
+      "bytes": 47186
+    },
+    "docs/media/case4.jpg": {
+      "sha256": "898b539d9a666f492510e123fe9171932533dff209d26b1216ce9e04d020f518",
+      "bytes": 33763
+    },
+    "docs/media/case4.mp4": {
+      "sha256": "f7f4290f23842ae91d0aca6b046bef669207c52db5ebaedf67eb7c264600e79d",
+      "bytes": 58279
+    },
+    "docs/media/case5.jpg": {
+      "sha256": "c3db25c0961d7b7f314226fb4a1c62a1eba3b7f0fb18a825a00733d4760fb673",
+      "bytes": 32804
+    },
+    "docs/media/case5.mp4": {
+      "sha256": "6917a8916fd578f7549be605fc9868b85496158c22beaa2e548f0a3da68b0af0",
+      "bytes": 34069
+    },
+    "docs/media/case6.jpg": {
+      "sha256": "0836e4013b4864699d8ecb0aa3c8aa60fb6572456baa1339ab6a2ed8c4869687",
+      "bytes": 28831
+    },
+    "docs/media/case6.mp4": {
+      "sha256": "b55b502df35062ae5bf12309f0e1c8e9cdf9596db09751d926031e242255abc5",
+      "bytes": 53283
+    },
+    "docs/media/case7.jpg": {
+      "sha256": "16d10c52396ab3f6ccae0b95e07d9a696d1d44b581bef83f1a966175a97e9194",
+      "bytes": 18324
+    },
+    "docs/media/case7.mp4": {
+      "sha256": "8611df28bfa69d9100e06e1ffac6138f026a956d5ded204723399db28326738c",
+      "bytes": 35721
     }
   }
 }
