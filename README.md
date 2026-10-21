@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/brand/mundiscope-logo.png" alt="Mundiscope logo" width="96">
+
 # MundiSense v1
 
 **Audio-visual emotion perception by Mundiscope · 洞悉尘世**
@@ -8,7 +10,7 @@ Voice, facial expression, and room for uncertainty.
 
 [Project page](https://xpeng1999.github.io/MundiSense_v1/) · [Watch the demo](https://xpeng1999.github.io/MundiSense_v1/#demo) · [Technical report — PDF](docs/report/MundiSense_v1_Technical_Report.pdf) · [Read online](https://xpeng1999.github.io/MundiSense_v1/report/technical_report.html)
 
-[![MundiSense v1 demo: original footage, saved module outputs and a schematic of the H3 system](docs/demo/MundiSense_v1_cover.png)](https://xpeng1999.github.io/MundiSense_v1/#demo)
+[![MundiSense v1 — audio-visual emotion perception by Mundiscope](docs/assets/brand/mundisense-v1-banner.png)](https://xpeng1999.github.io/MundiSense_v1/)
 
 </div>
 
@@ -17,6 +19,8 @@ MundiSense v1 is a research system for recognizing **observable emotional expres
 The implementation retains the internal name `EmotionCore` and the Python namespace `emotioncore`. The public model name is **MundiSense v1**.
 
 ## Watch the system
+
+[![MundiSense v1 demo: original footage, saved module outputs and a schematic of the H3 system](docs/demo/MundiSense_v1_cover.png)](https://xpeng1999.github.io/MundiSense_v1/#demo)
 
 The **1 min 44 s** film replays **eight selected, saved model examples** at 1080p / 30 fps, with original source audio: six EmotionTalk cases and two CH-SIMS v2 film clips. The latter show complementary audio-visual evidence and rejection when multiple faces make attribution ambiguous.
 

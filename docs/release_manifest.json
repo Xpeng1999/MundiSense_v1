@@ -233,6 +233,14 @@
     "docs/demo/verification.json": {
       "sha256": "77bca0e8dd819271ce4288b731579c84f0a0db893e9bb4d6de3fd829d7d31300",
       "bytes": 3285
+    },
+    "docs/assets/brand/mundiscope-logo.png": {
+      "sha256": "62a2886f652937a5db90c752d9f1c0b4ad7898883b5322c34e367a1e4b19240c",
+      "bytes": 302521
+    },
+    "docs/assets/brand/mundisense-v1-banner.png": {
+      "sha256": "6b771db9fbd2905d3242135d9a759942f7b950c8b2b7e7463f7039513ddc8c8e",
+      "bytes": 1276110
     }
   }
 }
