@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-14T06:22:35.519742+00:00",
+  "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+  "continuation": "infra_resume_1",
+  "recovery": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/dependency_recovery.json",
+    "sha256": "e1925fc582de1c723c3321980e17972891a895f7cc03bf619972de961ec60314",
+    "bytes": 122429
+  }
+}

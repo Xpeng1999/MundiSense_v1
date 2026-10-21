@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-14T05:27:33.706742+00:00",
+  "pid": 2609750,
+  "protocol": {
+    "path": "configs/x07_lockbox_protocol_v2.json",
+    "sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+    "bytes": 148545
+  },
+  "protocol_commit": {
+    "commit": "32479b378bc75596f23fa2db430254c720d66127",
+    "commit_unix": 1791955419,
+    "sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80"
+  },
+  "root_free_bytes": 112927399936,
+  "v1_preserved_files": 30585,
+  "command": "python -u -m emotioncore.x07.stages"
+}

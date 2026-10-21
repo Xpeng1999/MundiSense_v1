@@ -1,0 +1,3245 @@
+{
+  "inputs": {
+    "aqgy3_0001__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0001__00004/input.json",
+      "sha256": "dc1ed2705aa667875f238368f63d32500f61f22064ec8ed3807ebbbb53d43de1",
+      "bytes": 3177
+    },
+    "aqgy3_0002__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0002__00009/input.json",
+      "sha256": "c3f66d22e44c9eae1023231229e4dc57880d9a5f183379ca72f9aee71173bcdf",
+      "bytes": 4327
+    },
+    "aqgy3_0002__00011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0002__00011/input.json",
+      "sha256": "ca8fb0c51580bb4ffce5b397640afb83e6fca1e119234c3fb803ca9b28e328c4",
+      "bytes": 4240
+    },
+    "aqgy3_0002__00020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0002__00020/input.json",
+      "sha256": "a5fa9967860233ec2c941074e415d4408391bb41bd87084077a3a303d5160b90",
+      "bytes": 4076
+    },
+    "aqgy3_0002__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0002__00023/input.json",
+      "sha256": "8b6b936a1d036c8bef2c18ee5520f80c9c809134e2aa9230a10e13fd1e693095",
+      "bytes": 4217
+    },
+    "aqgy3_0003__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0003__00009/input.json",
+      "sha256": "d6c55b31b4b0b383615cdd96e2004448f98004b3a7915656e77b99d528adfbc4",
+      "bytes": 4437
+    },
+    "aqgy3_0004__00005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0004__00005/input.json",
+      "sha256": "eab70045154d11e71adb1fdf1a6e209c4078149177cb4ee97f34d8ef78a16a40",
+      "bytes": 3345
+    },
+    "aqgy3_0004__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0004__00023/input.json",
+      "sha256": "87fe7c98224a56692f5b7d5b880e30688a4e530dcbebdcf0c7a6db50c6b0dd32",
+      "bytes": 4233
+    },
+    "aqgy3_0004__00030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0004__00030/input.json",
+      "sha256": "a5280a7b8a7ef29a548737ee15188f279546f2cbea2fc85a872fb75d94ec9f04",
+      "bytes": 3043
+    },
+    "aqgy3_0004__00031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0004__00031/input.json",
+      "sha256": "6616e78074df9872a77ffeca354e04768dcd3ad4ba614e51fe0b5442c5932d51",
+      "bytes": 4242
+    },
+    "aqgy3_0005__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0005__00001/input.json",
+      "sha256": "56e83c3ceea205959a0b2b129f6ac6b10522a2d1a7bdf86437d757f939949104",
+      "bytes": 4231
+    },
+    "aqgy3_0005__00026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0005__00026/input.json",
+      "sha256": "3be752e956d9a3a562b4935f0ffdd51059afe75744c4379b63f5f3b9c3b890ea",
+      "bytes": 4350
+    },
+    "aqgy3_0006__00008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0006__00008/input.json",
+      "sha256": "4b05beb7aae32718d549ec5e57852bb631eb795c6179cbbf686dde013bfb1c67",
+      "bytes": 4364
+    },
+    "aqgy3_0008__00000": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy3_0008__00000/input.json",
+      "sha256": "4c8c50e00b242145651e049fe6d6861ff1f6057b2549f79b8d7f6c23008dc464",
+      "bytes": 4291
+    },
+    "aqgy4_0001__00008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00008/input.json",
+      "sha256": "d5ded718deda56dc15e65dff9ef3efb063aa3868b5464ee2be4eb6ab2ab8e19a",
+      "bytes": 4363
+    },
+    "aqgy4_0001__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00017/input.json",
+      "sha256": "a6531a9e7a40d3f151b07caf90fcb67612f06f6b62525767bdf5c58bdfe20e1f",
+      "bytes": 4207
+    },
+    "aqgy4_0001__00024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00024/input.json",
+      "sha256": "e2ff77637af69b3480c328e074652bb00054af8928d7abea0501cc6bc38d4b2e",
+      "bytes": 4221
+    },
+    "aqgy4_0001__00028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00028/input.json",
+      "sha256": "9528cb5f842de93be961440aead48b0582a90c85f4c9287a6ba202b10a20f4b6",
+      "bytes": 435
+    },
+    "aqgy4_0001__00033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00033/input.json",
+      "sha256": "3eee6ce9bd2ea7a8421f393a513a8a8e485e403f1c03a65a485e7fac83ab5422",
+      "bytes": 450
+    },
+    "aqgy4_0001__00046": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00046/input.json",
+      "sha256": "f10d71ebac34cf2a579e72b9cbc5b9f3ab8de984c569b8be3c9332f5965f9ee3",
+      "bytes": 4330
+    },
+    "aqgy4_0001__00047": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00047/input.json",
+      "sha256": "155815c77ba9980a0f2ebd84bb32a96b2a87a5cd2ef5d501280e905097422309",
+      "bytes": 4341
+    },
+    "aqgy4_0001__00065": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0001__00065/input.json",
+      "sha256": "eb088c22fa7cf20177df859d01885d8a32470b61380cc0728587f6667ed2ef52",
+      "bytes": 4278
+    },
+    "aqgy4_0002__00002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0002__00002/input.json",
+      "sha256": "a5a97a0637649a8ed76950dbb0b3c8f355a3fc8dda28c617775783171933983a",
+      "bytes": 4233
+    },
+    "aqgy4_0003__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0003__00003/input.json",
+      "sha256": "1db9486cbaca62df3dd296b9785863435541a2f7ff08515203aa3642ed6ce787",
+      "bytes": 4381
+    },
+    "aqgy4_0004__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0004__00003/input.json",
+      "sha256": "d521baaa1f67e43bbc422048b96319fb0c58a64b32b03564c4eb254343acb3e7",
+      "bytes": 4249
+    },
+    "aqgy4_0004__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0004__00004/input.json",
+      "sha256": "0ac16c7f800c978f4e7d3b8620378b73baddb969216a0cc3866b34430a621d6f",
+      "bytes": 3327
+    },
+    "aqgy4_0004__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0004__00018/input.json",
+      "sha256": "db885d2bdd36a029e10a641d7b154ffde80060bdfe6c3d6957464fe3baf9fffd",
+      "bytes": 1780
+    },
+    "aqgy4_0005__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0005__00001/input.json",
+      "sha256": "8c65622f09a5a7943817f1fccdc09f4680c600522dfff38bdb2321bdad6a1586",
+      "bytes": 4297
+    },
+    "aqgy4_0005__00002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0005__00002/input.json",
+      "sha256": "5cfa081a2e8b84752ccca14dc155d7b6937c4ac025dbe9e82f093c8cef254b50",
+      "bytes": 4248
+    },
+    "aqgy4_0005__00049": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0005__00049/input.json",
+      "sha256": "25df21253ac54aa26b50e593d5faa353406f37f7287431d688510020e0707bf8",
+      "bytes": 4410
+    },
+    "aqgy4_0006__00000": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0006__00000/input.json",
+      "sha256": "ce571bb4505d8bd069ae3a360d834a4d900a67ab2b49a4295fa2e9e8db269934",
+      "bytes": 4236
+    },
+    "aqgy4_0006__00014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0006__00014/input.json",
+      "sha256": "5a6dad1ea308ef3043151f172355d519068bd3fafaf30bbea5d9dfffb9f50268",
+      "bytes": 3124
+    },
+    "aqgy4_0006__00020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0006__00020/input.json",
+      "sha256": "ab815803bca982a78fc195bfc0ffd70b97b64d01d9fdbb36672277a6c1442be2",
+      "bytes": 4232
+    },
+    "aqgy4_0006__00022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0006__00022/input.json",
+      "sha256": "ea8075721bf34cd2b60b8a5e14930226d8bba07ae6829463d736ba1b19ca6dcb",
+      "bytes": 4371
+    },
+    "aqgy4_0008__00005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0008__00005/input.json",
+      "sha256": "75474241639378e361aedd30bd45fde8ede6f8669fd6e313f2390106d08a3c75",
+      "bytes": 4223
+    },
+    "aqgy4_0008__00019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0008__00019/input.json",
+      "sha256": "c4cfcba1d570fad858c8ddca9426767c1bce139a54aa9fc5c5b79f3a2b5ad455",
+      "bytes": 3271
+    },
+    "aqgy4_0008__00027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0008__00027/input.json",
+      "sha256": "2e2b9eb50bca03dcb836fd7b58aa52797185b7af35158326daf0080c0f1b9126",
+      "bytes": 3191
+    },
+    "aqgy4_0008__00032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0008__00032/input.json",
+      "sha256": "bdeb6f7ffb366f4d097ce70630b319ab098c5d2c7f29e54fe282777a1c81bd9e",
+      "bytes": 3329
+    },
+    "aqgy4_0008__00040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0008__00040/input.json",
+      "sha256": "a8b9fea8b732dce3e612a82cc581d1d1c03726084d31cc06fffe9ea6a0771083",
+      "bytes": 4208
+    },
+    "aqgy4_0009__00035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0009__00035/input.json",
+      "sha256": "c7a04606ace4d1e82288db3380c021e4aea560ae92b0f29131529d775ba17c1c",
+      "bytes": 4259
+    },
+    "aqgy4_0010__00000": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0010__00000/input.json",
+      "sha256": "f34148f77aa8ba5e118d106712fe44cf693c13d0809a99ada83c18bcfb51f24f",
+      "bytes": 4261
+    },
+    "aqgy4_0010__00024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0010__00024/input.json",
+      "sha256": "4cda07795264359550f43b9f462c99a591791390ec7a83a740849810295734fb",
+      "bytes": 4303
+    },
+    "aqgy4_0010__00025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0010__00025/input.json",
+      "sha256": "acb45ff9e79f5682cbf0a7e72728c3501e165796239a32601ed39301ec590025",
+      "bytes": 3784
+    },
+    "aqgy4_0011__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0011__00001/input.json",
+      "sha256": "0afdccd6ea2bd739c31cb65bcaec8260778cf2e35c302f9c2f9b8c7527a79798",
+      "bytes": 4253
+    },
+    "aqgy4_0011__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0011__00004/input.json",
+      "sha256": "5b7930c90f118edff553abe66f9913b289ca53e672e838c314f064f1cb1a76b7",
+      "bytes": 4238
+    },
+    "aqgy4_0011__00006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0011__00006/input.json",
+      "sha256": "14984df4f207cb19ed46aa20f973ec636ee07406d912531eb075ce0c5884f6e0",
+      "bytes": 4264
+    },
+    "aqgy4_0011__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0011__00023/input.json",
+      "sha256": "826d41d95e11b11d601c16c9b9457236e4c46c316571ab7826b05f6504b59dac",
+      "bytes": 4236
+    },
+    "aqgy4_0012__00002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00002/input.json",
+      "sha256": "b49788db5b08a44e7cbd4c710c20ce7c03d316aa37fd752aa95fbe0be97a0189",
+      "bytes": 4353
+    },
+    "aqgy4_0012__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00004/input.json",
+      "sha256": "0d75ef1de118fb0ad49cd57cf2d7d4862c1cc50a3125a874c85bb5498a16792f",
+      "bytes": 4320
+    },
+    "aqgy4_0012__00006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00006/input.json",
+      "sha256": "0d5d06a67bb302698afeca6c298292305f60c4d27a76f169375dcb57f19426a6",
+      "bytes": 4376
+    },
+    "aqgy4_0012__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00010/input.json",
+      "sha256": "25dddd971a940719cebaa3d64528492c8f08c3f5a100eddf12020523674adfd5",
+      "bytes": 4333
+    },
+    "aqgy4_0012__00012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00012/input.json",
+      "sha256": "bef3ee120ad6cf99a11b41051cc14da3126604438f436ac195b8447db1af0d1a",
+      "bytes": 4238
+    },
+    "aqgy4_0012__00014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00014/input.json",
+      "sha256": "6496b9126d2dc95530285f7b6326d968d035271a6b87e59b0dbd1392557312dc",
+      "bytes": 4251
+    },
+    "aqgy4_0012__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00016/input.json",
+      "sha256": "8ebc239ed756e8fdc3466e31badf035aa27764893880fab21b8db450351baffc",
+      "bytes": 4290
+    },
+    "aqgy4_0012__00022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00022/input.json",
+      "sha256": "d10d329a0fefde84e0174251e76d1b9d47afd9a7adb2d4052af433fc37fd5fff",
+      "bytes": 4288
+    },
+    "aqgy4_0012__00037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00037/input.json",
+      "sha256": "5523a6231e0b38ad2366d36947e006211600305af57ef31e98fbf98ca4a43d36",
+      "bytes": 4307
+    },
+    "aqgy4_0012__00042": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00042/input.json",
+      "sha256": "536231d5619f97aeece4054d8901cc58f2ad502cb3e4750a69bbf7722e845d5c",
+      "bytes": 4285
+    },
+    "aqgy4_0012__00043": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00043/input.json",
+      "sha256": "ffdea065770f999fb5893eabe9552a2839475d27a11f99c7ceff24c70bbbc8c8",
+      "bytes": 4254
+    },
+    "aqgy4_0012__00044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00044/input.json",
+      "sha256": "00e28228f578726bf7f7e8228919b72a6b6f9a7eaca4c6506ad55f067b2594bb",
+      "bytes": 4312
+    },
+    "aqgy4_0012__00049": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00049/input.json",
+      "sha256": "fe6ebd59d48c6b7f0c7439cc1ab0192d2fbc43d16650bf3f77c945c50ef4d996",
+      "bytes": 3956
+    },
+    "aqgy4_0012__00061": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0012__00061/input.json",
+      "sha256": "7e4dd5f0b44e71e5a19025fc379a4dec2d1b1107a1e96268fb1a8d355d8310e2",
+      "bytes": 4237
+    },
+    "aqgy4_0014__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0014__00004/input.json",
+      "sha256": "0e423c0b66af41ae468f649a2cb862efab9d3a44b0eda019c9832e6918bb4658",
+      "bytes": 4299
+    },
+    "aqgy4_0014__00008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0014__00008/input.json",
+      "sha256": "a30a4830c072aabe25a387a32bdd0b358411d4ea7fcebcb8d886b3cebfc49a54",
+      "bytes": 4232
+    },
+    "aqgy4_0014__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0014__00010/input.json",
+      "sha256": "5bf49b08105ae5b34b9525e219f82287f8d2999f23220707bad0af963fc01f59",
+      "bytes": 4241
+    },
+    "aqgy4_0014__00019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0014__00019/input.json",
+      "sha256": "9e3192dd0b2cd52e39ae084d28535cb1fff2e6beb8d1ffba10470f8c3b2c8b9f",
+      "bytes": 4460
+    },
+    "aqgy4_0016__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0016__00007/input.json",
+      "sha256": "63f1fdc561e823c1ab5e069cd54c983ea5bc016b5b4ed72737a858fe2fc8221c",
+      "bytes": 449
+    },
+    "aqgy4_0017__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0017__00017/input.json",
+      "sha256": "1cb7b53a283954652ae2e87fdf2a3a13cd9382828417b6d33556bb2d4f039a9d",
+      "bytes": 4242
+    },
+    "aqgy4_0018__00006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0018__00006/input.json",
+      "sha256": "cb2bb6d5027f2c216510167d8299a81ccb72b385f85fcd68b964f579754df76d",
+      "bytes": 4237
+    },
+    "aqgy4_0018__00020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0018__00020/input.json",
+      "sha256": "9ec6b32f903ef2b719c2d90cb7fdec03b9d7a3c4568011d478c93536c58701bb",
+      "bytes": 450
+    },
+    "aqgy4_0018__00021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0018__00021/input.json",
+      "sha256": "dce949e586a69efb7e21467a9cb4b9becf3cf20c7d30e3b814dfd34c850661e0",
+      "bytes": 4260
+    },
+    "aqgy4_0020__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0020__00001/input.json",
+      "sha256": "749215db904b2ac83be281f25952adf57f704165a850c82f8b7c0f361861003f",
+      "bytes": 4262
+    },
+    "aqgy4_0023__00000": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0023__00000/input.json",
+      "sha256": "2074ee04cb91fbaf251264964b914425ffe98fc3c317017d1c6aab7bb358f3ae",
+      "bytes": 435
+    },
+    "aqgy4_0024__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy4_0024__00004/input.json",
+      "sha256": "b2e0f70f0f07eb4c0c1970054304d6ab63cce933cdc308d8794d81005aa92116",
+      "bytes": 4171
+    },
+    "aqgy5_0001__00000": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0001__00000/input.json",
+      "sha256": "4b23d64c5619a6130094371a66184fae79e14c82edd13fb9f69c353a84b91130",
+      "bytes": 4262
+    },
+    "aqgy5_0001__00005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0001__00005/input.json",
+      "sha256": "1d39b18a2a6e856e1dbfc06e98cc2382514b2ad60d7364f878a6c8df6d82fb32",
+      "bytes": 4281
+    },
+    "aqgy5_0001__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0001__00009/input.json",
+      "sha256": "38284b32fc27f2f828938c1972805553da14ec19cdde8666882e55e3dd0e4cb1",
+      "bytes": 4296
+    },
+    "aqgy5_0001__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0001__00017/input.json",
+      "sha256": "b54825b9fea90cc35bed491d3845509a149aedbd98abcfddb15c02491009266f",
+      "bytes": 4269
+    },
+    "aqgy5_0002__00002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0002__00002/input.json",
+      "sha256": "21f3824fa471ff36544d40b3e39890da91312b02bdedf99612c5c6ae4c1c9fbe",
+      "bytes": 4280
+    },
+    "aqgy5_0002__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0002__00007/input.json",
+      "sha256": "240f530cbf1ead8ff7e8f0a4b44b9533454b6ce8389ede6e2e4f27d3cda7fdc8",
+      "bytes": 4287
+    },
+    "aqgy5_0002__00008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0002__00008/input.json",
+      "sha256": "066fc0195e89983ebbfacbf1a95e424224ae9ce868d2f5e58d67b8544ac6b758",
+      "bytes": 4113
+    },
+    "aqgy5_0003__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0003__00001/input.json",
+      "sha256": "e969ef19e3322ded4e1d49c9cacaff6ed4a96207267a7ff01412c79ebc0b19c7",
+      "bytes": 4232
+    },
+    "aqgy5_0003__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0003__00017/input.json",
+      "sha256": "731ca5912793453ac6217c358a28132ed4885114531368cb82301a1e6674d99f",
+      "bytes": 4310
+    },
+    "aqgy5_0004__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0004__00007/input.json",
+      "sha256": "ae04fd2b614400f2b10b6bca49c596bd0981ce1dd8a371d5ef70cb16ba1c772d",
+      "bytes": 4236
+    },
+    "aqgy5_0005__00021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0005__00021/input.json",
+      "sha256": "43714fee2dbef43981a594325a9b413c03dc4e87088912c05c405c1695bd4078",
+      "bytes": 4216
+    },
+    "aqgy5_0005__00022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0005__00022/input.json",
+      "sha256": "cad0775639948045ddf9aabe05ef366517d41206995fce3950dee9b96cdbad40",
+      "bytes": 4286
+    },
+    "aqgy5_0005__00024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0005__00024/input.json",
+      "sha256": "db0dc4aca0c35273652e35f1ae33adb1ffe8cbb03c73d28930cc0cf044cb5ec7",
+      "bytes": 4305
+    },
+    "aqgy5_0005__00025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0005__00025/input.json",
+      "sha256": "4f4e0b98b8c80cebe10df5395af7085fd954bf5f33ee8912f076c00a10407bfe",
+      "bytes": 4362
+    },
+    "aqgy5_0005__00033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0005__00033/input.json",
+      "sha256": "3710b72b45403947a2bd0d568291dd676ec29fe8c86e311ff4874052e55981e5",
+      "bytes": 449
+    },
+    "aqgy5_0006__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0006__00003/input.json",
+      "sha256": "f2b80519f740aacc91db62559b3bc96017f8ce096c949da0c6f47404f4ce37cd",
+      "bytes": 4313
+    },
+    "aqgy5_0006__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0006__00007/input.json",
+      "sha256": "a43b15ad797cadd42ba0e6c03bca778d3fb37dcf8d680476b985958c84f3800a",
+      "bytes": 4270
+    },
+    "aqgy5_0006__00028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0006__00028/input.json",
+      "sha256": "7109f4b135fe1465032d67560d78e3ca5cde9a1b0e75199b2f598c926ee57208",
+      "bytes": 4231
+    },
+    "aqgy5_0006__00035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0006__00035/input.json",
+      "sha256": "1e05d322a180e0631734613fe8f04b85128e5fdfeff2698445df87d31f82e1cd",
+      "bytes": 4233
+    },
+    "aqgy5_0007__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0007__00016/input.json",
+      "sha256": "acd102272ab46ee432173f9f8f02ec13f9f718558ed1640ad4bdbc0ecd505501",
+      "bytes": 4336
+    },
+    "aqgy5_0009__00015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0009__00015/input.json",
+      "sha256": "77b1e00de35f4739ebe51bc8ad4b31137ac8112343264b612b6906a98b847667",
+      "bytes": 4234
+    },
+    "aqgy5_0009__00037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0009__00037/input.json",
+      "sha256": "f3aae18d2c46b526942a87c7b11e6849ecc2a830000f22d5ceb7e7ee629475c3",
+      "bytes": 4251
+    },
+    "aqgy5_0009__00040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0009__00040/input.json",
+      "sha256": "5174a251334fc425b731c5fbbf2d26e03d5482b57dd5e5618c377fd84a57cb0a",
+      "bytes": 4224
+    },
+    "aqgy5_0010__00011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0010__00011/input.json",
+      "sha256": "25a3bae364afb2906481db29fc97092f76c7f3928f52a435bfd5a975bc7e1d7b",
+      "bytes": 4152
+    },
+    "aqgy5_0010__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0010__00013/input.json",
+      "sha256": "8c72ccf71e782522b943c78a6638822cb2fc961a63801a01fe0f39af8be8306e",
+      "bytes": 4307
+    },
+    "aqgy5_0010__00015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0010__00015/input.json",
+      "sha256": "fe8d3edbcfeded11895044cdfbacf88e9d73d13cfaddc8284a9f814d58371972",
+      "bytes": 4367
+    },
+    "aqgy5_0010__00025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0010__00025/input.json",
+      "sha256": "2c128c9b6b72f75236630a1767dcf50cfc7c596ac225b9892369c356799e2bcc",
+      "bytes": 3940
+    },
+    "aqgy5_0010__00027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0010__00027/input.json",
+      "sha256": "da0b594ab5224ce3735b02e2d56e842ac4596e9bcdd063d5253b2daa135ebf02",
+      "bytes": 4047
+    },
+    "aqgy5_0011__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00003/input.json",
+      "sha256": "e2ac779dcbc78d56998372886b2987950f11a314bfea044b8872242a55bdb291",
+      "bytes": 4248
+    },
+    "aqgy5_0011__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00010/input.json",
+      "sha256": "976a3394395a365c0b84ac8027ea02701a262010497e4883a9bda51f844e5a27",
+      "bytes": 4236
+    },
+    "aqgy5_0011__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00013/input.json",
+      "sha256": "67b2110f47c21aa12cf7f93c3f227214f64ff5f7e80b31bbe66861717c76f132",
+      "bytes": 4238
+    },
+    "aqgy5_0011__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00016/input.json",
+      "sha256": "00d0d7db93f1234c7edd37a5ca8668ec81a45bd5a3fd5a3b62a2192d940869a6",
+      "bytes": 4262
+    },
+    "aqgy5_0011__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00017/input.json",
+      "sha256": "0e7c5a12fbc9c0407ad1308335e836c482094590070709d42aadbdab667a67ba",
+      "bytes": 3757
+    },
+    "aqgy5_0011__00028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00028/input.json",
+      "sha256": "e41cdb6bbc5c94909bc88bf841cc1efd5a41a48090c9ae5d5dd9e65cd17a53d4",
+      "bytes": 4340
+    },
+    "aqgy5_0011__00031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00031/input.json",
+      "sha256": "2f06e64c1bd648a59ab88516737600182af761ce614f26bcd3ca9a9a51fbee5f",
+      "bytes": 3150
+    },
+    "aqgy5_0011__00036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00036/input.json",
+      "sha256": "09c08dac2b39d08cd41d2943705ede0fba45019651888cbf8e47a2bf6f11efe2",
+      "bytes": 4233
+    },
+    "aqgy5_0011__00039": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00039/input.json",
+      "sha256": "2af31752464a6b6aff342a2b943b7c0513b4f1694069cdd513ebb8e695fea2a6",
+      "bytes": 3441
+    },
+    "aqgy5_0011__00040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00040/input.json",
+      "sha256": "4c0e752855bf088ea562a268069f2bca870f239c80b7a31c8a750744c4fd34ed",
+      "bytes": 3889
+    },
+    "aqgy5_0011__00041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00041/input.json",
+      "sha256": "f4fd19717ff09dad65854b7946488701c5bfc933733979eed67e203500802f45",
+      "bytes": 4206
+    },
+    "aqgy5_0011__00043": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0011__00043/input.json",
+      "sha256": "e8dfd0feb4ffaa2c809561bc49f978581b0812fe2835f1e7f6d5c1a337d79ea5",
+      "bytes": 4309
+    },
+    "aqgy5_0013__00011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0013__00011/input.json",
+      "sha256": "bf5662caf0fd65a6bc88e81ff4800b995cc343662dd0de8781824effb79d64eb",
+      "bytes": 4261
+    },
+    "aqgy5_0013__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0013__00018/input.json",
+      "sha256": "c8174e0332668aff79e85ae8a78673dd4dc95972dac98b8c3b18c21dbaf8fc7f",
+      "bytes": 4210
+    },
+    "aqgy5_0013__00028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0013__00028/input.json",
+      "sha256": "9fe9bb05b5f1ced6770b2e76d637fbe6365b6834374d54eedb1cffd6ba4d39d7",
+      "bytes": 4260
+    },
+    "aqgy5_0014__00015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0014__00015/input.json",
+      "sha256": "b49f564204ad98bfe7721677d1a5f25eb1249dd1a0756fa646f1464b312b10e5",
+      "bytes": 4235
+    },
+    "aqgy5_0014__00024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0014__00024/input.json",
+      "sha256": "635741a850de1dc19a24b3ae8661f2dfde30d110a5efe3d1f14e7c78443ffb10",
+      "bytes": 4331
+    },
+    "aqgy5_0014__00031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0014__00031/input.json",
+      "sha256": "955e7d5c83e84c6b8104d4821b9d94ce3dd811ec32a67a66542af1fa55f19a76",
+      "bytes": 4281
+    },
+    "aqgy5_0015__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0015__00009/input.json",
+      "sha256": "67d1fd4aabd8b3800cc0a49c3dfb85fabc8c3bfd0ea7e5dd64b2bd4f9070834e",
+      "bytes": 4259
+    },
+    "aqgy5_0015__00015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0015__00015/input.json",
+      "sha256": "343578114abe20a30ef1a2e09d291709483c822eaf18948480bdea0f0498fd43",
+      "bytes": 4469
+    },
+    "aqgy5_0015__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0015__00023/input.json",
+      "sha256": "549fefbcbef1b14d28f6310b9596fb5df12b379777a501d4c304343d9a34a43d",
+      "bytes": 4237
+    },
+    "aqgy5_0016__00006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00006/input.json",
+      "sha256": "ab565ff3281f1e502c40c3b9f587a128099acf0c1fc3cdf798e415a458aaadb3",
+      "bytes": 3339
+    },
+    "aqgy5_0016__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00016/input.json",
+      "sha256": "5f49f66cc41c9aa6097cfc894b0505bb7ad7becf4cab714b4fe3db6222e5cff5",
+      "bytes": 4316
+    },
+    "aqgy5_0016__00029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00029/input.json",
+      "sha256": "7c8c0a8273d89d78e78500b9397c2da302b1b53c2209d2419a25bf28a69b1e82",
+      "bytes": 4229
+    },
+    "aqgy5_0016__00035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00035/input.json",
+      "sha256": "98003a172318e621db0ae5c6181af4add3436ef96e0f84624a1fa730de2dc79e",
+      "bytes": 4296
+    },
+    "aqgy5_0016__00036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00036/input.json",
+      "sha256": "63f493a62382a71630cf41950c1f2d1028bc7a8b9efc12b5411d9124b987949d",
+      "bytes": 4310
+    },
+    "aqgy5_0016__00045": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0016__00045/input.json",
+      "sha256": "b3de6cdc030a6c239135bc43394a80760566fa6eba78c292b5d9b66d3d0b6a75",
+      "bytes": 3683
+    },
+    "aqgy5_0017__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0017__00001/input.json",
+      "sha256": "07ef5b6efb43fafb361cb84dd8c2c4bb0423de1ee4022b9294743bf7a207328e",
+      "bytes": 4311
+    },
+    "aqgy5_0017__00022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0017__00022/input.json",
+      "sha256": "d2efa24bb668e8a2046b41c91991f4b169bc188adfe8b9c545c762a42a80e1a2",
+      "bytes": 4343
+    },
+    "aqgy5_0017__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0017__00023/input.json",
+      "sha256": "a46f0651ff0fabbf3bbd19b226ada220052f0f5d756afdab50f29c1fc0260eb7",
+      "bytes": 4318
+    },
+    "aqgy5_0017__00027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0017__00027/input.json",
+      "sha256": "78cb8b8851659f36a3a4dd1dedff836147f7b7606cb30a19105bde980cc326ea",
+      "bytes": 450
+    },
+    "aqgy5_0017__00029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0017__00029/input.json",
+      "sha256": "3743879efd86db46ffaa35e7e92de53dcc8d08f9b60bd7e043ddce190918ad3a",
+      "bytes": 4172
+    },
+    "aqgy5_0018__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0018__00007/input.json",
+      "sha256": "73a2dff2b8db15a5eff011535e33b43245959ab03384c6bd8c551856dc88e3ff",
+      "bytes": 449
+    },
+    "aqgy5_0019__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0019__00009/input.json",
+      "sha256": "1558b2a821012aebdfb11707894e04437d31646aab29850d2a577dca9875442f",
+      "bytes": 4151
+    },
+    "aqgy5_0020__00007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0020__00007/input.json",
+      "sha256": "9535d338d76ca46e08031e3daebba9db153f45b01f65b9e33d1a4216d5418d2c",
+      "bytes": 4265
+    },
+    "aqgy5_0020__00014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0020__00014/input.json",
+      "sha256": "47c0558276d86be70a626e0108774d05ba8d8610d556d0c090b5196ec4750fb4",
+      "bytes": 4259
+    },
+    "aqgy5_0020__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0020__00016/input.json",
+      "sha256": "a3a1eb4518bef7bdce202214e08e80c7153084e10d0b5730987f243bbd4a0ef1",
+      "bytes": 4141
+    },
+    "aqgy5_0020__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0020__00018/input.json",
+      "sha256": "ad9acbda05d73f8731ade5b86f36fcd821476af512014953beb36a80efad3480",
+      "bytes": 4331
+    },
+    "aqgy5_0020__00034": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0020__00034/input.json",
+      "sha256": "6670578cbc8b7f8e7e5203125076bbf125023588eee5e0116b51af1163e947af",
+      "bytes": 4343
+    },
+    "aqgy5_0021__00021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0021__00021/input.json",
+      "sha256": "442554e676a67a067fb8a14a72256555b5d666322fc925a8b5a00ed13cc082b0",
+      "bytes": 4302
+    },
+    "aqgy5_0022__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0022__00001/input.json",
+      "sha256": "d0a23238d15376a9c04ac342926d0e9d51beb8b3c2851cabbd373c5bb5fe077c",
+      "bytes": 3988
+    },
+    "aqgy5_0022__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0022__00013/input.json",
+      "sha256": "8a35942f73f5ea870701b088b82ab658f3207968c7229098cd5e84db30147036",
+      "bytes": 4253
+    },
+    "aqgy5_0022__00014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0022__00014/input.json",
+      "sha256": "9ad79c18b5f95aca47a4338e63b6982a8a47ef5568e554597ac8a558e9983e57",
+      "bytes": 3684
+    },
+    "aqgy5_0022__00016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0022__00016/input.json",
+      "sha256": "51550307b076f0ff52a865e417d2ded1d135fc8b2e0520c134df657f2244741d",
+      "bytes": 3965
+    },
+    "aqgy5_0022__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0022__00023/input.json",
+      "sha256": "536e76e7918dc47a960201d204ba528b5cd8a8c9e9380668b3bb47abc9fe7da8",
+      "bytes": 448
+    },
+    "aqgy5_0023__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0023__00003/input.json",
+      "sha256": "0688dba944df8d4d5a0b49328b5c926ec529de8f6f3365bb920d00b02e1485f5",
+      "bytes": 4259
+    },
+    "aqgy5_0024__00005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0024__00005/input.json",
+      "sha256": "e4a2256c21769c842da5e1971efca902b77720aab6c1c0749f409f079a93e8c2",
+      "bytes": 4252
+    },
+    "aqgy5_0025__00011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0025__00011/input.json",
+      "sha256": "faa541ad1056af30ab64129a142219d3b1958c91c4b599fd56151a705f188f38",
+      "bytes": 4292
+    },
+    "aqgy5_0025__00012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0025__00012/input.json",
+      "sha256": "db66545a444808e7de7d01a9e369164e56dcd55238528d950ba5ea1089444aff",
+      "bytes": 4235
+    },
+    "aqgy5_0026__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0026__00010/input.json",
+      "sha256": "efa9a2c05bdf862d2bf833660f0b0557429a955670892b180a42f2557349c6f3",
+      "bytes": 3141
+    },
+    "aqgy5_0026__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0026__00018/input.json",
+      "sha256": "d576aeaa9d90912a9b132e01a5f2e12e8c0179cda41660ce1d246a64b4e18a10",
+      "bytes": 4274
+    },
+    "aqgy5_0027__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0027__00009/input.json",
+      "sha256": "17e3ada452819e2e2a891bf90bba8ae8c1a0b69f63e446b5e03f583ed35bc5af",
+      "bytes": 4357
+    },
+    "aqgy5_0027__00025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0027__00025/input.json",
+      "sha256": "55625a5a630d4c94b242b40a5d22ac13b19728030671bddca29d30ab860183ec",
+      "bytes": 4286
+    },
+    "aqgy5_0027__00033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0027__00033/input.json",
+      "sha256": "570dffe553fe086aef06aad659c507ef71cc2d1e641e8412147e72d53c67850e",
+      "bytes": 4237
+    },
+    "aqgy5_0028__00037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0028__00037/input.json",
+      "sha256": "8ad79ce18db5e4421e8d8443b2bf545bbf99df8c3ff9ceec2d889f893559fb20",
+      "bytes": 436
+    },
+    "aqgy5_0028__00041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0028__00041/input.json",
+      "sha256": "e64c6e210d109d0f6b6932f099ff0371bc952b7ccf6692a3c179a0402f444e49",
+      "bytes": 436
+    },
+    "aqgy5_0029__00003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00003/input.json",
+      "sha256": "e163af5c9a6804d7dd13a01b5c52fe13ee24b9fe7585cb902b5c25e35b3eb96b",
+      "bytes": 4266
+    },
+    "aqgy5_0029__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00004/input.json",
+      "sha256": "f9be88ed720587f53288487f09189e81e2e6cc4423d154c6a62809dd4fe5e6ea",
+      "bytes": 4264
+    },
+    "aqgy5_0029__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00009/input.json",
+      "sha256": "bc9605ad4bb9eb58e3adfb3520e2f40e88b567f9810c6a19d92077f2d11d14a3",
+      "bytes": 4311
+    },
+    "aqgy5_0029__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00010/input.json",
+      "sha256": "7710eb5c6c99689a0fa64283787893a0d7fc7f1209d468eb63d39054afe1bad2",
+      "bytes": 4288
+    },
+    "aqgy5_0029__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00017/input.json",
+      "sha256": "59487954d10439f28f3c9f13aba93b58331020116149131e61b0b32b56aa9c03",
+      "bytes": 4265
+    },
+    "aqgy5_0029__00020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00020/input.json",
+      "sha256": "9afbc488dd762f7eed94285966502ddff3b13b37589d13bb67482481b9fc6c74",
+      "bytes": 4244
+    },
+    "aqgy5_0029__00023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00023/input.json",
+      "sha256": "c9dbe0e4362352250329d1b87097bf975e5a9e26dade8167fc8312064353cc29",
+      "bytes": 4287
+    },
+    "aqgy5_0029__00029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0029__00029/input.json",
+      "sha256": "4ce6fb3d07b782cf216c0de94c9720f35befcc8322549592bdd08d3f9127a2a0",
+      "bytes": 4400
+    },
+    "aqgy5_0030__00010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0030__00010/input.json",
+      "sha256": "110e05166e51056ee50b16780c442ec74a0117c49a39854edfec4cc5960a5262",
+      "bytes": 4253
+    },
+    "aqgy5_0030__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0030__00013/input.json",
+      "sha256": "8517d05926d51c348714597844b06a9d2aca0563246c02809fe2c5d39f88edbf",
+      "bytes": 435
+    },
+    "aqgy5_0030__00017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0030__00017/input.json",
+      "sha256": "dcd2f897da63b6be340f02798dd69e3d5cec4c7a451ff5fa875e86f3edd8ca97",
+      "bytes": 4236
+    },
+    "aqgy5_0031__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00009/input.json",
+      "sha256": "7c7fd2e7e7eb66e472eb9383afa684a3879f3f273064686ebcdb04a4660c2855",
+      "bytes": 3952
+    },
+    "aqgy5_0031__00012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00012/input.json",
+      "sha256": "64cb0d74dbb736795f835f1129d3b657cdde822b797704681d362614733ea52f",
+      "bytes": 4287
+    },
+    "aqgy5_0031__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00018/input.json",
+      "sha256": "55f55e4b8324d3e43d442e256ac49b7f9b64dceffc616257ad7dfe870f8e377a",
+      "bytes": 4334
+    },
+    "aqgy5_0031__00020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00020/input.json",
+      "sha256": "819890f789e89e707a8667afa9e80bbc1f066cf4f5196befafa31061d34b7150",
+      "bytes": 4252
+    },
+    "aqgy5_0031__00025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00025/input.json",
+      "sha256": "3ad0562a8aa9552224a7686ec12ed83f8d352c9879553bf0ee48777269df3256",
+      "bytes": 4235
+    },
+    "aqgy5_0031__00054": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00054/input.json",
+      "sha256": "b67b4360562ace6d5df7fd458de0c8c722e8163bfd0329f02d21838a37cb0490",
+      "bytes": 4237
+    },
+    "aqgy5_0031__00059": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0031__00059/input.json",
+      "sha256": "84f688cba75d5d699a2f6a510d9267ef547e5d3e08f2ba702f280fff1143f075",
+      "bytes": 4241
+    },
+    "aqgy5_0033__00019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0033__00019/input.json",
+      "sha256": "3c32be42a44eda809e89ef8f20afb484de5333fdd06885894ec0b1fde7a9d0d6",
+      "bytes": 4230
+    },
+    "aqgy5_0034__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0034__00013/input.json",
+      "sha256": "4b1279de0538e2415c968fd0074251a43bebb0fc9284851ecb61d35513f3c995",
+      "bytes": 4222
+    },
+    "aqgy5_0036__00002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0036__00002/input.json",
+      "sha256": "0d160b0dc8814a6d858f3f67613fd114bc40fb1ec130408f246d8891b168608a",
+      "bytes": 3176
+    },
+    "aqgy5_0036__00006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0036__00006/input.json",
+      "sha256": "626cb1c1bfe26d1b85d7ad22a49cf9e8e3f3c548f46c7dc395bc45cf227f261a",
+      "bytes": 4236
+    },
+    "aqgy5_0036__00015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/aqgy5_0036__00015/input.json",
+      "sha256": "faa1e0bc2327bcd794a4c65b13e2109a9096d29772904346696a661868dd0988",
+      "bytes": 4265
+    },
+    "csbgs2_0001__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0001__00009/input.json",
+      "sha256": "1f1f4e7aa73f350b3dfc3a90cf1592cd55a252d0fb19c3a3e16e55891fc8ecd8",
+      "bytes": 4299
+    },
+    "csbgs2_0002__00004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0002__00004/input.json",
+      "sha256": "74ba45170c031eab8d36fd3dfa448c884d096f520cb1b993e77e9579b596176e",
+      "bytes": 4391
+    },
+    "csbgs2_0002__00009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0002__00009/input.json",
+      "sha256": "c13f15eac736b44892ff2a68a7318f8e77983a89b77786bfe47dcbfb0a38bdc9",
+      "bytes": 4272
+    },
+    "csbgs2_0002__00012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0002__00012/input.json",
+      "sha256": "27ea59504eb1b80f5c2f2719d97a9df0bc5c7cf1c66e47ee6bf71e0eb922834b",
+      "bytes": 4190
+    },
+    "csbgs2_0003__00001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0003__00001/input.json",
+      "sha256": "2060567c341ae038b660032938dc6d207da1e4ab68cfcc498f98e0348dc127ff",
+      "bytes": 3701
+    },
+    "csbgs2_0003__00019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/csbgs2_0003__00019/input.json",
+      "sha256": "13eaa3bfd67a9beb9debab158e5bf1f730cc87b53fa9a4245c93e0a60d057202",
+      "bytes": 4283
+    },
+    "video_0001__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0001__0012/input.json",
+      "sha256": "b31db102049b983c5ebac2a71ddfe209f3826bf015b093900df153814e5c9e79",
+      "bytes": 4212
+    },
+    "video_0001__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0001__0021/input.json",
+      "sha256": "891182e48d6678eb06ad435a0001306098a57876acd8f49b8889d25efab308db",
+      "bytes": 4214
+    },
+    "video_0001__0022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0001__0022/input.json",
+      "sha256": "e8a9d96047117b976fdb21e5c62851d29c497c3ae7553be44e587f7c528095bf",
+      "bytes": 4222
+    },
+    "video_0001__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0001__0023/input.json",
+      "sha256": "e10b4cbdac3c152bef5306f2bc7eacd5f4354f6df8fdc125f2d1685927d03c2f",
+      "bytes": 4215
+    },
+    "video_0001__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0001__0032/input.json",
+      "sha256": "bab89ab985df9623b4e7696c9082a7f581fb7ac662bef46c86a0e92769b924a0",
+      "bytes": 4210
+    },
+    "video_0002__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0006/input.json",
+      "sha256": "e784e0bb5e065ea5c3171c9eac8896ab071828796c04c7a6201e8ad4622e80ff",
+      "bytes": 433
+    },
+    "video_0002__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0007/input.json",
+      "sha256": "3c348f145ece7de5ebd73c88e6d303a594891b6006ee1acd2a4741c6dc6ca674",
+      "bytes": 433
+    },
+    "video_0002__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0009/input.json",
+      "sha256": "6dd8bb5a32dcd8ec9c1f2524803615614fa6e988666ac5051fec9e3d57ac0492",
+      "bytes": 432
+    },
+    "video_0002__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0010/input.json",
+      "sha256": "df87770bf11739d66de2f2459349a238d464c38c13189b8555c66ce1c3ab046a",
+      "bytes": 434
+    },
+    "video_0002__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0020/input.json",
+      "sha256": "94e44a39e787afc4bae669df04303afe6dc870543d99a3d3603874fcc2b9ebd2",
+      "bytes": 434
+    },
+    "video_0002__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0023/input.json",
+      "sha256": "68b34c62128ef38a45de9fb85b2af64d181eab2be5b8f9af32428867b17a8c33",
+      "bytes": 433
+    },
+    "video_0002__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0026/input.json",
+      "sha256": "7a1be05b2cf65b5919f4630b243c0ca0997e7b5e044fd18753a796abdc37ddb8",
+      "bytes": 433
+    },
+    "video_0002__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0028/input.json",
+      "sha256": "bf15fdc5a2d372517708a5a4c41f37f491bc8cb1caccd034c9a6ee7f2048e2fb",
+      "bytes": 434
+    },
+    "video_0002__0034": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0002__0034/input.json",
+      "sha256": "a03a574059ff451a13320bd7d9937a15fe7541c420fa062409a54d7a671d6aba",
+      "bytes": 434
+    },
+    "video_0003__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0003__0005/input.json",
+      "sha256": "db2d33f365dbe820ffb85a66469726cc5c1c6a0806d393e596bf5fec9d65ba23",
+      "bytes": 4204
+    },
+    "video_0005__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0003/input.json",
+      "sha256": "8349621998fad2fc4347a8e6f0dc849c6645dd7516006700e8a75a14751a0349",
+      "bytes": 4186
+    },
+    "video_0005__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0005/input.json",
+      "sha256": "0972785bda0a03fedd69ba41b1393fecd79b02a9ab61b95d738ff3b0d97c958a",
+      "bytes": 4211
+    },
+    "video_0005__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0008/input.json",
+      "sha256": "20f18627168d33cec2d0b8a1569a809f04de8aadebfbad9ed6ccdbbaf161957a",
+      "bytes": 4208
+    },
+    "video_0005__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0011/input.json",
+      "sha256": "ee360db10a2babe0cd91428e86d7cc75e8c7f3d0f5b406a38c68d224d4302048",
+      "bytes": 3993
+    },
+    "video_0005__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0013/input.json",
+      "sha256": "c56d517e885af4491da7b9d252fbc554746331a1545791bdb2cf62a3655eb5ba",
+      "bytes": 4215
+    },
+    "video_0005__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0014/input.json",
+      "sha256": "251f19f270e74b2cb125f2ac5be259b3a059498659d3c52502ffe82027b0c7f0",
+      "bytes": 4188
+    },
+    "video_0005__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0005__0016/input.json",
+      "sha256": "071f3bdff6ca783cafaa37fbcaebb33ffe92b550ee281f67b235f03009caceb1",
+      "bytes": 4235
+    },
+    "video_0006__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0001/input.json",
+      "sha256": "23e480dea5eea584ca8a9f8ad861b2b5f8bed9672e1538cd826331da8d183689",
+      "bytes": 3302
+    },
+    "video_0006__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0002/input.json",
+      "sha256": "d06a9f687f872d5092978b10d78cbe4a6b8614d307e1ceaede8c6a68c95d8305",
+      "bytes": 4207
+    },
+    "video_0006__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0003/input.json",
+      "sha256": "df0e98b801ea17e7193dceb584ad64164331e422a8191680b9fd10343e346223",
+      "bytes": 3577
+    },
+    "video_0006__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0005/input.json",
+      "sha256": "1840e5de0992a3ec1dc24e4b3bdef5d56e33ecf2930ddf8c0e16a3a06a51ac2a",
+      "bytes": 4212
+    },
+    "video_0006__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0008/input.json",
+      "sha256": "985e017e5a2b77d71073a1efab636a529a8c60cd70121fe08e2afde4df731e81",
+      "bytes": 4208
+    },
+    "video_0006__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0017/input.json",
+      "sha256": "5a5925dd42f82547a38452b1226a30f373d216e8d34c8e0237dfad42a13cef66",
+      "bytes": 4245
+    },
+    "video_0006__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0006__0019/input.json",
+      "sha256": "8c8c61ef4bc61d6768de659d5c81969137c42c191536c37e63e8eb1f5334bb54",
+      "bytes": 3910
+    },
+    "video_0007__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0007__0003/input.json",
+      "sha256": "50b379301eb2a7c11a6984557567c67045966a9b406d450b36202591ac29c978",
+      "bytes": 4214
+    },
+    "video_0007__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0007__0010/input.json",
+      "sha256": "5cb2ac0f5019875cf4b5338c5af71f22402e8925179526f2963e43a2cbddda06",
+      "bytes": 4210
+    },
+    "video_0008__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0008__0006/input.json",
+      "sha256": "1e3d425037b9227ddd8ee0f973cb79b1503f9ab8848d982f8fc4f9154c009d96",
+      "bytes": 4099
+    },
+    "video_0009__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0007/input.json",
+      "sha256": "158154f9e8b6049a45778c3ebaf062112153ba721442dd2ae7211a5242ddd9c4",
+      "bytes": 4235
+    },
+    "video_0009__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0008/input.json",
+      "sha256": "413d84fd26dc625c83889fb3a476856875cfbd020360074e876095be64aaaf04",
+      "bytes": 4213
+    },
+    "video_0009__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0014/input.json",
+      "sha256": "3aedf1d366bd48c7949def045306109aee3a6446339dab59b09bf74033044fdd",
+      "bytes": 4215
+    },
+    "video_0009__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0015/input.json",
+      "sha256": "e09e2e3040d41d47a9f808ac2b7b706f379701fe1907e1a92150b1698b7472d0",
+      "bytes": 4194
+    },
+    "video_0009__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0020/input.json",
+      "sha256": "26c0f458abdb3e83f0a9bd0e49fe658e9c9f8073d8eb4fb27f0d16f850ade18e",
+      "bytes": 4209
+    },
+    "video_0009__0022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0022/input.json",
+      "sha256": "3178c01847ef871b7b86ab03db582e4294563fa54ecd2e9c8a6af2b971b763c1",
+      "bytes": 4220
+    },
+    "video_0009__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0027/input.json",
+      "sha256": "e772c149b6382413c84fe805cd58f76a172b5c4ef1f4b41069ed99ec619fa79c",
+      "bytes": 4209
+    },
+    "video_0009__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0030/input.json",
+      "sha256": "79b9c0898e42cf18cf20deef645979997c56cadc57c266a0c9068e3bc97fff19",
+      "bytes": 4208
+    },
+    "video_0009__0038": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0009__0038/input.json",
+      "sha256": "84b5df7b7ca16ebbcce4f406c33643d15b54f1f63aeea1c6d4fc6e8bf05ad7eb",
+      "bytes": 4214
+    },
+    "video_0010__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0010__0002/input.json",
+      "sha256": "03359e0acad16f6ab26a4132ce6736846ca0f50f877841c8383fc4ed609dde27",
+      "bytes": 4217
+    },
+    "video_0010__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0010__0005/input.json",
+      "sha256": "b8bb169a39ab081acb96f47504ef3ac448e677e1c2713aebe37b503d81816551",
+      "bytes": 4138
+    },
+    "video_0010__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0010__0015/input.json",
+      "sha256": "a33c413e117a226932e01890714d6bd9d2418c22ceebc22fd39f8f149241d355",
+      "bytes": 4174
+    },
+    "video_0010__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0010__0018/input.json",
+      "sha256": "63f22ce03fe0116e1b9b57876cdaf0e63a54dfe98a96fdec57f19e14dcb6a099",
+      "bytes": 4216
+    },
+    "video_0010__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0010__0031/input.json",
+      "sha256": "a0649ba8aaa47e99663c891ee79204f86a54e976492a8388d2f64eccb99d9784",
+      "bytes": 4219
+    },
+    "video_0011__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0007/input.json",
+      "sha256": "b449136a8d07bc06c88cf0b2f3e98df792a640c217591b5d9835b054bbaf39a0",
+      "bytes": 4313
+    },
+    "video_0011__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0015/input.json",
+      "sha256": "5d626ed2bd34ea759aeea2cf2d7115d14fcd1ef369725d7bb8a511f8099d3c17",
+      "bytes": 4212
+    },
+    "video_0011__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0016/input.json",
+      "sha256": "b3d6260dded1019c69a14feed0fc031d58f284c788a6216b788160175411ade9",
+      "bytes": 4294
+    },
+    "video_0011__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0018/input.json",
+      "sha256": "c883d6dd1559f7c1ab88b0f823ffbad3997204a9ebeea7651cf1bae563c3fbb0",
+      "bytes": 4207
+    },
+    "video_0011__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0023/input.json",
+      "sha256": "d29eefe8cb802cc98a90ddaa7fef54d4c415a945e8f670745eff14a66486e476",
+      "bytes": 4213
+    },
+    "video_0011__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0028/input.json",
+      "sha256": "7a0355b460554ccbf160253f55706501f7de65442892a78f7081f79183a86919",
+      "bytes": 4214
+    },
+    "video_0011__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0030/input.json",
+      "sha256": "03ce8f5fe2ce8a0bb402ed8387e38189961e2fc53fe477f1c08dfe6332325d76",
+      "bytes": 4243
+    },
+    "video_0011__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0011__0031/input.json",
+      "sha256": "d277a8596a30240ede1cdc8c8de9c3b96f7d0b981fd044e84e2bba1a1f73af85",
+      "bytes": 434
+    },
+    "video_0012__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0007/input.json",
+      "sha256": "79e51bfdf74eb04169a78e2bab5c294d33d152b075f283c452ac91ac9dd726f0",
+      "bytes": 4237
+    },
+    "video_0012__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0009/input.json",
+      "sha256": "a0b25dc5541c1383bd597387f652879b1bb7d7a81d770a15dd4d43a10f569023",
+      "bytes": 4213
+    },
+    "video_0012__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0014/input.json",
+      "sha256": "eb8da722a98a393a5ac79464c74738c5160b83c9abd09a876e6ec2f653f7daab",
+      "bytes": 4256
+    },
+    "video_0012__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0017/input.json",
+      "sha256": "bac9ef65a5715dd566c79e34858687885254e95bb8508bd8e868f2401b067d17",
+      "bytes": 4215
+    },
+    "video_0012__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0029/input.json",
+      "sha256": "b1b01c4256bea599a56e2f4f11bfffc923157dfe30de1a7d5749e15f56d9a211",
+      "bytes": 4214
+    },
+    "video_0012__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0037/input.json",
+      "sha256": "4a54f2fe84da3a3a43e939920c0ebf20e7d50593070d0826112f933ce97f0714",
+      "bytes": 4208
+    },
+    "video_0012__0039": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0039/input.json",
+      "sha256": "608fb98365be64bf8082a582466f14d5e93592c17e97120cc9e92dd14fe07d00",
+      "bytes": 3987
+    },
+    "video_0012__0042": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0042/input.json",
+      "sha256": "89cea3fd1f815fa6ded43b59e43538fd78e940723326b6d23c298f65e82e756e",
+      "bytes": 4214
+    },
+    "video_0012__0044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0044/input.json",
+      "sha256": "a52b72fd9ae6efa6e7ab62ee87bfd9006d5c767d2bd4ece439230b081a62fc1f",
+      "bytes": 4214
+    },
+    "video_0012__0045": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0045/input.json",
+      "sha256": "059e75216fae38daf15bfe4c2e006336dad138181ce4b0163281dc35111571d2",
+      "bytes": 4216
+    },
+    "video_0012__0047": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0012__0047/input.json",
+      "sha256": "f0a5f7465f66fcaa9c03aecd344f93094c6007549a263cfc4c96981503088195",
+      "bytes": 4214
+    },
+    "video_0013__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0001/input.json",
+      "sha256": "0ebfd4c415fadb77bc76dbc2df406725e579ff42eb6b4a6166c25ca0512a40a3",
+      "bytes": 4208
+    },
+    "video_0013__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0005/input.json",
+      "sha256": "a71d61303e70c2c02e256e9be66ad54a11cb28e2a4497d8eedf09cd1f45a58e1",
+      "bytes": 4123
+    },
+    "video_0013__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0009/input.json",
+      "sha256": "4efc713c823845995deda71fbe5a3ff99e1f3a368b572f845a6af390536112de",
+      "bytes": 3076
+    },
+    "video_0013__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0010/input.json",
+      "sha256": "7805d602873ce56ddb8e2a5520db839e3f88dba7a824fd190f3c0ac47ddbe9bc",
+      "bytes": 4212
+    },
+    "video_0013__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0011/input.json",
+      "sha256": "9de353e275581464cb17ed593bd88d084700f9386e5959a5c2b4cb10ae959646",
+      "bytes": 4209
+    },
+    "video_0013__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0012/input.json",
+      "sha256": "72ac58a112de5f6b75aef56cd8b0abed471d2fbf54654e55a0834d694624dec8",
+      "bytes": 3906
+    },
+    "video_0013__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0014/input.json",
+      "sha256": "8b99b9fcd6a9fd106074221c4821c294dbfbe0d5fbf2bdea1a9936a14f943e89",
+      "bytes": 4215
+    },
+    "video_0013__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0018/input.json",
+      "sha256": "ceb2abd676bbeb6e2c64c1a76ea28beee8ffd05150639529102114d3e8c0792f",
+      "bytes": 4220
+    },
+    "video_0013__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0027/input.json",
+      "sha256": "bb422faef05d927b296a5c474abdb4a5321a234ddcaa04a6b591d419678e5dd1",
+      "bytes": 4205
+    },
+    "video_0013__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0028/input.json",
+      "sha256": "ec948d39fdc226835579b06762aa4a4faefec77b451b18d85c2de5f3c0348eca",
+      "bytes": 4212
+    },
+    "video_0013__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0031/input.json",
+      "sha256": "fa99f3e4f6071064bdbe449902eaf492d8f55f9bad610521e5fd2c452561bd3e",
+      "bytes": 4207
+    },
+    "video_0013__0033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0013__0033/input.json",
+      "sha256": "104673d82e987ed4d7e16749f44354589564f7510e785b40ec2653424ea44a82",
+      "bytes": 4217
+    },
+    "video_0014__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0003/input.json",
+      "sha256": "25534308ca10abf97fb78086dd2df66968f754bca28b31b2d9f575f241bd9de5",
+      "bytes": 4224
+    },
+    "video_0014__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0006/input.json",
+      "sha256": "018703e638ebcd19680bd2b18ebb889a6a28138fc90c81908651fd2d54b342ed",
+      "bytes": 4217
+    },
+    "video_0014__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0007/input.json",
+      "sha256": "7f86d6d6b6209d15dcc5beb80aa414dd392b2255c1d7e1b6db07cee7101e55d6",
+      "bytes": 4204
+    },
+    "video_0014__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0008/input.json",
+      "sha256": "d60b0e1116cf439fe01df3d0dc133e7257ed0f5467343af5199d55a6aaccea1b",
+      "bytes": 4293
+    },
+    "video_0014__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0010/input.json",
+      "sha256": "08ee4867dc85cce146f6bf73f81c1e20f317f75b42f413b20a7cd1892eb4f451",
+      "bytes": 4324
+    },
+    "video_0014__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0013/input.json",
+      "sha256": "1bc6acf08467ba5980256dee22210b2a38a32051eb956a6c1e05c583c5e24a3a",
+      "bytes": 4083
+    },
+    "video_0014__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0017/input.json",
+      "sha256": "7bbab733f6e4af5eb88916c7d349ad33e77fc166e4a5c7acd61308aa6859d34e",
+      "bytes": 4297
+    },
+    "video_0014__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0018/input.json",
+      "sha256": "65b03a658d351cb2bcf10eab824e3a69ded39955479732ed1698651258a3135d",
+      "bytes": 4218
+    },
+    "video_0014__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0021/input.json",
+      "sha256": "9afa3c3b4837c3440f75dec816e53867d9943da71922874c6a554aaa112bcd8b",
+      "bytes": 4219
+    },
+    "video_0014__0024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0024/input.json",
+      "sha256": "c40c3a66b57730bbd44763c0c1643a651777e2a2b71876e218751c6a476b1a16",
+      "bytes": 4114
+    },
+    "video_0014__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0027/input.json",
+      "sha256": "b1f7644342364c82d60b28907ad091c8d17eab98790ca00b9f9d88276b2702bb",
+      "bytes": 3479
+    },
+    "video_0014__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0030/input.json",
+      "sha256": "e6e583d7b56b24f061cbd958a2c3b490aca86a1c61bf9f155a275bf552b4d268",
+      "bytes": 4212
+    },
+    "video_0014__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0031/input.json",
+      "sha256": "b6b057601d0d6911bf3b1140541e0e151cb9bd6d3e67b01854d1c7cb09ba2823",
+      "bytes": 4211
+    },
+    "video_0014__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0014__0032/input.json",
+      "sha256": "2bf687bfa3646fb791dbeb50732751753e5f251c9d4fbee920e8677abc2ab8ef",
+      "bytes": 4220
+    },
+    "video_0015__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0006/input.json",
+      "sha256": "1affc750fcf1b057be4b0cd843a66687d5670213f6e455d52d64113803059ec7",
+      "bytes": 4188
+    },
+    "video_0015__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0007/input.json",
+      "sha256": "6e9208275de8db89f34637be2027db1e67de8fe8cf7c6148ff05197a9f4f85cf",
+      "bytes": 4215
+    },
+    "video_0015__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0008/input.json",
+      "sha256": "02d0fbaf16fa8513e1d21a052fae34055c82712d508894a72b88faaf061d45f4",
+      "bytes": 4207
+    },
+    "video_0015__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0011/input.json",
+      "sha256": "f458df9872c112380c63b46bf3617b04702afb572a0338d8b5d73d453fbe2ae2",
+      "bytes": 4215
+    },
+    "video_0015__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0018/input.json",
+      "sha256": "54915db423a9bfcc30df51869dbc2cbbc23aa4804a476b8a87204d1191026494",
+      "bytes": 4214
+    },
+    "video_0015__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0020/input.json",
+      "sha256": "ad86a640d43539d2ed564fdda752d1ae6fb5c8bbc7de39b4a67aed0d892f3f54",
+      "bytes": 4219
+    },
+    "video_0015__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0025/input.json",
+      "sha256": "d57e538dfbb58f106c1719b9e8f85abc7e92459c0dc4205c47e1ac00a1f9a7a1",
+      "bytes": 4217
+    },
+    "video_0015__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0029/input.json",
+      "sha256": "b0d0a226d467cbed9dceb59f9f5160a5712a18f0dc7af81e78de60132e29c86a",
+      "bytes": 4234
+    },
+    "video_0015__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0030/input.json",
+      "sha256": "c8e960ebe8df95d7a625bd14d955a1c254ef3dab800d281b6fd88ede1b346967",
+      "bytes": 4093
+    },
+    "video_0015__0036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0036/input.json",
+      "sha256": "9674b988b742d51a0279e93ae674a00ae9e826b4433986ada64cf0b012af97e3",
+      "bytes": 4247
+    },
+    "video_0015__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0015__0041/input.json",
+      "sha256": "620c7c7c83d522c2b3e0039d42e9aca879db8e78028813f32e49961bdd36ee99",
+      "bytes": 4221
+    },
+    "video_0016__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0004/input.json",
+      "sha256": "9800c01c7424c01ec07c7420e26032bfd91589c22208a44f5e461c1515b018f8",
+      "bytes": 4024
+    },
+    "video_0016__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0009/input.json",
+      "sha256": "625acbbf46e848b47dea6da801881af0bd247ef83bb67315343b963bb4c285d9",
+      "bytes": 4215
+    },
+    "video_0016__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0012/input.json",
+      "sha256": "ceff1d102f38e32109fad2c7396f6fce6e716b2c44699886aedf2d2c5015d64a",
+      "bytes": 4219
+    },
+    "video_0016__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0020/input.json",
+      "sha256": "fde84e7963b4008a0a9ae119755422c3821abf966dacb880a90e5ed359be19da",
+      "bytes": 4230
+    },
+    "video_0016__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0028/input.json",
+      "sha256": "96ea926ba8af1f3c17303642e1aeadab505d75b86266c6f4eaf31ae80663432d",
+      "bytes": 4209
+    },
+    "video_0016__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0031/input.json",
+      "sha256": "8e0220d342a133174aaee6c7e5af82820c2901e8ad493b186723dd4345d19116",
+      "bytes": 4241
+    },
+    "video_0016__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0037/input.json",
+      "sha256": "3c4035eaa2c588f79dede5eaa218a340246407a3e413b2604f6cbec7de5afe7a",
+      "bytes": 4247
+    },
+    "video_0016__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0041/input.json",
+      "sha256": "f77f75115f2d00446c4b4afbd46f3371ff44909880114f3dfd71b8cfffc4f9a7",
+      "bytes": 4206
+    },
+    "video_0016__0043": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0016__0043/input.json",
+      "sha256": "c6e43560b460d64323a9e4434dd05181da8fa9fc0daf19e20fa2c54d23252da9",
+      "bytes": 4216
+    },
+    "video_0017__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0017__0015/input.json",
+      "sha256": "cd864417236cdf31aa9693057148bd67e2869f7e6640f3a017ac25459ff44c4c",
+      "bytes": 4207
+    },
+    "video_0018__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0018__0006/input.json",
+      "sha256": "04a9bc45450675a3cfa2a81e7c99ca428a77e76072f886fc09564e8d7348ee16",
+      "bytes": 4203
+    },
+    "video_0019__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0019__0003/input.json",
+      "sha256": "e539b70280328abefbc681fa8bb57cfd2e6b7f5c2fa16fe27270c3b652ede799",
+      "bytes": 4215
+    },
+    "video_0019__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0019__0007/input.json",
+      "sha256": "da274da890d7913f99665dcc030a1ec83f5fdc6c96d75980d65b49051c8e390b",
+      "bytes": 4225
+    },
+    "video_0019__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0019__0014/input.json",
+      "sha256": "8a05e9449edc481a050288a5e77b6e854d61255e3b83f3b7fb4133ab5e12de61",
+      "bytes": 4222
+    },
+    "video_0019__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0019__0016/input.json",
+      "sha256": "e20acc3a7edf06e239aebfa1e2ad2348fb99fb4db847b4ef968e3addef6b4303",
+      "bytes": 4225
+    },
+    "video_0020__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0020__0008/input.json",
+      "sha256": "e1b19565e5b194bffc124d1b646e1ab7abbd5a25361299243a8eb35844b7d284",
+      "bytes": 4216
+    },
+    "video_0021__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0021__0008/input.json",
+      "sha256": "750a8597503ee5e170766952e7b6cbe3497026ef749ed2d101d91e8e5adefe5b",
+      "bytes": 433
+    },
+    "video_0021__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0021__0010/input.json",
+      "sha256": "a741e61da07e1f19bb2084b56109e0fc877511ac828c1faeab2175c8f0c0014d",
+      "bytes": 434
+    },
+    "video_0022__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0022__0001/input.json",
+      "sha256": "1ec524fed5837465c42aea88c5c6c675aac476e33008fa6919c330c43c701af9",
+      "bytes": 4219
+    },
+    "video_0023__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0008/input.json",
+      "sha256": "3aa26ae21a76fa8ff8aae895a58f60aeef53ba91f03c8e6e81a20aa09849c225",
+      "bytes": 4207
+    },
+    "video_0023__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0014/input.json",
+      "sha256": "1749bce313da646791d8fe0d1a7abc9d5ebb26e8f66607394da22351b277f35c",
+      "bytes": 4214
+    },
+    "video_0023__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0020/input.json",
+      "sha256": "a47d3073c852f9cfd5ee3e5ab001640bcd5da9699b921f15d376faa88f9d3ac3",
+      "bytes": 4201
+    },
+    "video_0023__0022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0022/input.json",
+      "sha256": "d570fd5e1fc19908189931349d2e69aec0926ee44236d648f9a50293382765b5",
+      "bytes": 4196
+    },
+    "video_0023__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0026/input.json",
+      "sha256": "e98ef3487385d6efe67b73554aae3ce7663c8b88aa23a69e266c2ac80219ab49",
+      "bytes": 4214
+    },
+    "video_0023__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0029/input.json",
+      "sha256": "312c3f8ab6248bfa7cb86231cb64ba90a61f4d2d22adc9bd31916157874ea725",
+      "bytes": 4217
+    },
+    "video_0023__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0032/input.json",
+      "sha256": "82a0ee87c91a4b4ee7d38b20f38ca67926cf8d0e912749db85e20a38361a1ee5",
+      "bytes": 4215
+    },
+    "video_0023__0040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0040/input.json",
+      "sha256": "60b3437b3615bd9639ed8b463063bab35807f384f97a84b2b7a519d1db1162ce",
+      "bytes": 4218
+    },
+    "video_0023__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0041/input.json",
+      "sha256": "d090155370287611e85d302d12cdfa2fd592882c57d16684653b17daf96fc31d",
+      "bytes": 4214
+    },
+    "video_0023__0042": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0042/input.json",
+      "sha256": "fd0d014198a75771149769d1a3b2450539426c8a02cbe3c2bcfac3dee75cfa5b",
+      "bytes": 4220
+    },
+    "video_0023__0044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0044/input.json",
+      "sha256": "736e169dbf481fc82699df3ac49a942315a4e4c4b3040f5512dc7529c7c60362",
+      "bytes": 4174
+    },
+    "video_0023__0048": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0048/input.json",
+      "sha256": "ed66be201633658589bf6f51051cc70dc10d881c6e1e39a684de1efe92464084",
+      "bytes": 4199
+    },
+    "video_0023__0050": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0050/input.json",
+      "sha256": "16bcee9413a27c88a9d08c33de63c2ec881899d630817c70f77513681da2ff25",
+      "bytes": 4214
+    },
+    "video_0023__0058": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0023__0058/input.json",
+      "sha256": "ad9b3e0d4a0c535d46660f011ad7dc2f9b82263559e7f171128bc942fa97fe0e",
+      "bytes": 4205
+    },
+    "video_0024__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0001/input.json",
+      "sha256": "170317507d4c488fa4a43b2c169aaa5d6e37eb30a264162611dcb3ea577d285b",
+      "bytes": 4214
+    },
+    "video_0024__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0005/input.json",
+      "sha256": "cb2544929436cd1150beb8d988115290ab4f156c9d36c713ae8ab25acb9745b6",
+      "bytes": 4223
+    },
+    "video_0024__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0006/input.json",
+      "sha256": "e6b3a05f5041d8d363e419756378635544773e666fbbb02a74ad49e0cacd0033",
+      "bytes": 4083
+    },
+    "video_0024__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0007/input.json",
+      "sha256": "53be52268bdd3dfa74b6c494ce5753b50a5e50f330330525b95ce9a32df1305e",
+      "bytes": 4201
+    },
+    "video_0024__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0009/input.json",
+      "sha256": "f79837544bf7d37c2f5330ecd83314f72bf7ea4677fb90197d9cebebf724fb49",
+      "bytes": 4212
+    },
+    "video_0024__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0013/input.json",
+      "sha256": "74c8798743bbb91ac8aff96e4de6266a74c6316aa510b46e67deea921d96b35b",
+      "bytes": 4218
+    },
+    "video_0024__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0015/input.json",
+      "sha256": "e2879c7216a30d161c3ffc9242a397100f1e17a11b84472106e482cd69e57c83",
+      "bytes": 4213
+    },
+    "video_0024__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0020/input.json",
+      "sha256": "07eb5f8bcba770904ee46a91c736cc6c0dc8be929b99e0377f9775d4ffcf316e",
+      "bytes": 3307
+    },
+    "video_0024__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0026/input.json",
+      "sha256": "6f051b3d2c4306b16448038e21022f2cf5cdd93bf5367ea18fda9c1902962154",
+      "bytes": 3080
+    },
+    "video_0024__0040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0040/input.json",
+      "sha256": "c751569b47252fba09e426a664a87431a550f099e47c079370ea2d4324b02ae2",
+      "bytes": 4462
+    },
+    "video_0024__0045": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0045/input.json",
+      "sha256": "fb617eaf1115a88285407cd6abcfcb32e4a4b5786712c7629454ea17a99350b4",
+      "bytes": 4297
+    },
+    "video_0024__0050": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0050/input.json",
+      "sha256": "2fd71d020f83076774829fe31ea61116966dd0035fffb7e59aa195f687b50029",
+      "bytes": 4233
+    },
+    "video_0024__0051": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0051/input.json",
+      "sha256": "7568afbab9cb9c374a48fe74c3179f507f2937a4f078270cda39ebdebdde51c5",
+      "bytes": 4205
+    },
+    "video_0024__0056": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0056/input.json",
+      "sha256": "600be247d6996e94b7fa0c4b02aaf357783087cb4ed297962dade9046e461454",
+      "bytes": 4639
+    },
+    "video_0024__0058": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0058/input.json",
+      "sha256": "bedd2bb4e700176764f3f1e6a95c36403f440b36f41815cc32ef158e867a24e4",
+      "bytes": 3896
+    },
+    "video_0024__0064": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0064/input.json",
+      "sha256": "6a3f5ab4b3cab7e2575a7da96048ce49f460179d780ccf6101a17c0058aa542a",
+      "bytes": 4219
+    },
+    "video_0024__0068": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0068/input.json",
+      "sha256": "333a0cc04f54c13b966a754d79b68ac8049ccc0b2556059a9f2395cc847a2774",
+      "bytes": 4207
+    },
+    "video_0024__0069": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0069/input.json",
+      "sha256": "2b110301e20017e5563ffae0c8b325c3380c2b7b6ede0b6c03d65675877c51ca",
+      "bytes": 4224
+    },
+    "video_0024__0072": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0072/input.json",
+      "sha256": "af026a7c88fbcd03f4e8b852350728ae837a68129e8e25a1f9ae40392c975164",
+      "bytes": 4214
+    },
+    "video_0024__0080": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0080/input.json",
+      "sha256": "5fbb539326d46ff55e371034098f0c11550009b7ac4392d294b4bae14fae40b1",
+      "bytes": 4220
+    },
+    "video_0024__0085": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0085/input.json",
+      "sha256": "351b7ef0fec4d1566657e80f47930e264396dfd66084654b5e35629a627f4254",
+      "bytes": 4211
+    },
+    "video_0024__0086": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0086/input.json",
+      "sha256": "43d4e9ca44ac68eb838212d55180f569125c08354526d3da94014dc16c32dfab",
+      "bytes": 4199
+    },
+    "video_0024__0090": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0090/input.json",
+      "sha256": "043a496bb970107f2f9b129c250133ba927f1b50e49d39bb73bf1b02556fce4f",
+      "bytes": 4246
+    },
+    "video_0024__0103": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0103/input.json",
+      "sha256": "fbc0e430576b3c1ba35d6c213a7254f155486e7694a2faef8fda6095998ad8fa",
+      "bytes": 4219
+    },
+    "video_0024__0106": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0106/input.json",
+      "sha256": "4e91000a33be3efac83e583aab2fbd0e8e9439bbf6baec3b5f0cfe9a6a5ae068",
+      "bytes": 4312
+    },
+    "video_0024__0107": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0107/input.json",
+      "sha256": "2d229f777052f9319d78d11c8001239f5608014351d5a86f0eb1d231b55bf6f4",
+      "bytes": 4216
+    },
+    "video_0024__0108": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0108/input.json",
+      "sha256": "8515d3dcc190a32864ac7a64f6c334195ff4ef256afbb9452af1d03b364e0e64",
+      "bytes": 4222
+    },
+    "video_0024__0115": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0024__0115/input.json",
+      "sha256": "d1194ceb82f2e39c84eb9687782d6ec9436981f8ecbdd940242403ee291e0c6c",
+      "bytes": 4222
+    },
+    "video_0025__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0008/input.json",
+      "sha256": "8295b1529713e05b23401d7f5ef7a1a035d9d5341e27835fbe6fd60f1a7a427f",
+      "bytes": 4203
+    },
+    "video_0025__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0009/input.json",
+      "sha256": "eda519b435588c9c9ab5b55da3289b84dd2c7f1da52b6fe347cd48e888167a21",
+      "bytes": 4205
+    },
+    "video_0025__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0020/input.json",
+      "sha256": "71241fa9d6a1e0934d1f98f2797b0c0b4dd3fc55dc713c9b324ab1d6badc73d4",
+      "bytes": 3929
+    },
+    "video_0025__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0027/input.json",
+      "sha256": "0c15aeeee30f6a7160ba2cdadf0ca459a0a8f41315e5097152e0ef75333d73b5",
+      "bytes": 4217
+    },
+    "video_0025__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0029/input.json",
+      "sha256": "b2caae92a370846755a031683f65cbdab3dff645a1decf6f47acf4216a2718ca",
+      "bytes": 4205
+    },
+    "video_0025__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0030/input.json",
+      "sha256": "e6b884d3e00dc74d87c24a2e349d64423b617bd33dc4617a0dd14e1a0315172e",
+      "bytes": 4216
+    },
+    "video_0025__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0032/input.json",
+      "sha256": "5ec88bf43b5ff75a3f5be587b289bfee5e774f8f91c57463858277677f80a99c",
+      "bytes": 4208
+    },
+    "video_0025__0038": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0038/input.json",
+      "sha256": "f0aa40da7544701eb8bffc126585ebe9fb509c7b5ddf977d93a26c464ec63025",
+      "bytes": 4213
+    },
+    "video_0025__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0041/input.json",
+      "sha256": "2d2690bfc0bbcb3a86e0ce10ca23c045c924cd1b78d659319c0ec2755b727540",
+      "bytes": 4247
+    },
+    "video_0025__0048": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0048/input.json",
+      "sha256": "71e7c4514c6f92f7a9f9a3b8e5aeed2168fd74ceb949ab64af168c2aa9eb695d",
+      "bytes": 4211
+    },
+    "video_0025__0055": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0025__0055/input.json",
+      "sha256": "e466e41aac2f332ba19003cb907e9c25490f355b470a69230979d09f31d93c24",
+      "bytes": 4226
+    },
+    "video_0026__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0026__0002/input.json",
+      "sha256": "aeed1d4890b7e5b7947bba08bd599edc8b80f3a9bd0a823f98a431b0642fbea1",
+      "bytes": 4218
+    },
+    "video_0026__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0026__0011/input.json",
+      "sha256": "584ea918bbbf2fa2eea6ede5bd979e11f4faa2f3277c0370462dda13ea6b470b",
+      "bytes": 4222
+    },
+    "video_0026__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0026__0014/input.json",
+      "sha256": "f013039c26761114fe18568a37603ee025d4a483b8d837ed3413430f8b72f138",
+      "bytes": 4251
+    },
+    "video_0026__0024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0026__0024/input.json",
+      "sha256": "6b5b8c0b618ecc46c83fbaff6894b5c8c75dda169d333ada870d2d449853d9b3",
+      "bytes": 4398
+    },
+    "video_0027__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0002/input.json",
+      "sha256": "3a2d76590060a3061a6cd0a543e8651aff93f63296a28f259f8b5f063ba723c8",
+      "bytes": 4211
+    },
+    "video_0027__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0010/input.json",
+      "sha256": "64a5407885b8025de7b51bc054a18cb5fcbec6b7c69ef0d7097a930862b06062",
+      "bytes": 4217
+    },
+    "video_0027__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0014/input.json",
+      "sha256": "7ca077065edea711e9f7dd7f2c34a20fd95f2d443da2819f569a164b4eacfe82",
+      "bytes": 4219
+    },
+    "video_0027__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0021/input.json",
+      "sha256": "d4ee24438cfceabf54e54d411e5f74c5c35e11fec6a7928a96d25c87978f2ff6",
+      "bytes": 4219
+    },
+    "video_0027__0024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0024/input.json",
+      "sha256": "9d91d093bf1ef052ecffe76165705ac65a4bf04b390719dfee938b58f74687a7",
+      "bytes": 4211
+    },
+    "video_0027__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0029/input.json",
+      "sha256": "930e432cc6e006f0b36d9087e90fd8da9eabee8057b3c922ca1cfa9154f34178",
+      "bytes": 4220
+    },
+    "video_0027__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0037/input.json",
+      "sha256": "24ba27a255db6544a1e68467c478ce653dfaa29daee646f131ab7a69c56ece63",
+      "bytes": 4216
+    },
+    "video_0027__0047": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0047/input.json",
+      "sha256": "654ffc15a8fdbb81698ec41140ad48aace0903c95d500650705d23d977d4c939",
+      "bytes": 4244
+    },
+    "video_0027__0048": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0027__0048/input.json",
+      "sha256": "954283c2c3d1b4c5f73538d8bd06b2dedd83ba50a5db655af6840efde6c96a88",
+      "bytes": 4212
+    },
+    "video_0028__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0001/input.json",
+      "sha256": "ce3dc6023f62ba52263dbd01c822150cc91fa44d9893b354cf41d74137898be3",
+      "bytes": 4201
+    },
+    "video_0028__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0005/input.json",
+      "sha256": "4a8d655654f3fd84a723cd72094e1d4efa4954c5a992c411e6d4b7700182bd99",
+      "bytes": 4215
+    },
+    "video_0028__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0006/input.json",
+      "sha256": "4a6a2b400f6c48e5ca766b3d261fd678fb0ed4ddfe10f607689742f2818c3379",
+      "bytes": 4266
+    },
+    "video_0028__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0009/input.json",
+      "sha256": "1af9bf7de26c9694ef5666b8208ed0e6f5830d086a6cc6111870d9b2922d790f",
+      "bytes": 4295
+    },
+    "video_0028__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0012/input.json",
+      "sha256": "83bc325fc8fbcd604ba4a225ede7bf799a8372afebb2f211b775aa749cf595de",
+      "bytes": 4261
+    },
+    "video_0028__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0014/input.json",
+      "sha256": "516e8ae063173140176f26986dbc30727ec78b637b676785ad036a2a8ecfbfa1",
+      "bytes": 4209
+    },
+    "video_0028__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0017/input.json",
+      "sha256": "818cadefa5d3f55db62d2c12a4c199f29039dd1f910415f9eb7445ff295c3b48",
+      "bytes": 4211
+    },
+    "video_0028__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0028__0018/input.json",
+      "sha256": "7cd905ecc7ed22cc79d46d8b931dcc683be8b58f8cd83131efdabe80fb050fd1",
+      "bytes": 4216
+    },
+    "video_0029__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0029__0023/input.json",
+      "sha256": "8ac89147975294fd3f48d1c8528d03397af3c8f82cc77b687c232cf6db3719cb",
+      "bytes": 4220
+    },
+    "video_0029__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0029__0026/input.json",
+      "sha256": "ef576a8b4a9654fcee8993dd03ef1cc021b11f9f8491a03e85607b1185d3aee2",
+      "bytes": 4266
+    },
+    "video_0030__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0030__0005/input.json",
+      "sha256": "8d76708b6630bc4a5399b53863cc8e45424f1b4ba9b3c90a8ca577b78282def0",
+      "bytes": 4151
+    },
+    "video_0030__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0030__0012/input.json",
+      "sha256": "f301e871820b536bbbc8146cc10f6ce0645752a61eb7cd4f20a4373a2bacd025",
+      "bytes": 4243
+    },
+    "video_0030__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0030__0037/input.json",
+      "sha256": "6b25a19625fff2a11a3fc306ea3d3e35cb72631e46fdd553e9dc6b8d9c681fa8",
+      "bytes": 4110
+    },
+    "video_0030__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0030__0041/input.json",
+      "sha256": "add3f60d5d4c9d258d583c7c791f347665f1c2021785a622b3dd251121f0dfba",
+      "bytes": 4216
+    },
+    "video_0031__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0003/input.json",
+      "sha256": "ad57e6e93cb950dc065da48d3139f21cd89fada9e2d873d4b4c9c2ea2cacc5f5",
+      "bytes": 4222
+    },
+    "video_0031__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0006/input.json",
+      "sha256": "dd4a8c156d5aad3062c187242fec6a311d853000ba4baff71aa49e0927eca738",
+      "bytes": 4210
+    },
+    "video_0031__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0008/input.json",
+      "sha256": "30a0278e5b0047f2e6115d10ce0f40121076c485a63fa44d2b0244e7d75fd0c1",
+      "bytes": 4217
+    },
+    "video_0031__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0009/input.json",
+      "sha256": "108abb3830551d5e336413df378d1d7d30ae4ed264983e4919dc76277653ef71",
+      "bytes": 4215
+    },
+    "video_0031__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0013/input.json",
+      "sha256": "f6069cfe11b91599cd4c63096d061cfb56567e2b4c69f657f785ec8c75b9d565",
+      "bytes": 4212
+    },
+    "video_0031__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0016/input.json",
+      "sha256": "859cd3f3b3050c18c03d1af13babaae9bbda701578f39ff28799d8d88d44b9d3",
+      "bytes": 4219
+    },
+    "video_0031__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0025/input.json",
+      "sha256": "9adfa82b322aa89bb36bb7a46cabe087376e54c3ca190c72bd0611de627cb495",
+      "bytes": 4209
+    },
+    "video_0031__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0027/input.json",
+      "sha256": "39f5f00d70917b65cadafb0e33f65fd342b98762c9f27dce152656ce64de2be1",
+      "bytes": 4220
+    },
+    "video_0031__0033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0031__0033/input.json",
+      "sha256": "12c1882f10daf6204fbbac6de4efdc2836871c3c426cd1c705cb699ca6df190f",
+      "bytes": 4218
+    },
+    "video_0032__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0032__0009/input.json",
+      "sha256": "a10059a49dcdce5f1ba720d1b2747695c30a40d58ff8b58ca509341ef379e954",
+      "bytes": 4216
+    },
+    "video_0032__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0032__0015/input.json",
+      "sha256": "994e5062b4999090f8d55b3f996aeb17c63861ddf389c0fa7c0d83a4fdb8b90b",
+      "bytes": 4221
+    },
+    "video_0033__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0033__0002/input.json",
+      "sha256": "2ce2abffd624a12054a90b2f198c2678b508f713acb03a7d69c270163d35b51f",
+      "bytes": 4208
+    },
+    "video_0033__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0033__0006/input.json",
+      "sha256": "84808233400da15b53bbf88a299a56e0346de256efd2b0488501f8c3876696b2",
+      "bytes": 4206
+    },
+    "video_0033__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0033__0011/input.json",
+      "sha256": "955662bd20b644567635f3b81ecafc7780b1256d6430c345985d703b5a99c6ae",
+      "bytes": 4213
+    },
+    "video_0033__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0033__0013/input.json",
+      "sha256": "27cee87c0b2231a9592cb9b45d5442a4d4a0297f357235b156fbda939df1d47d",
+      "bytes": 4224
+    },
+    "video_0034__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0034__0001/input.json",
+      "sha256": "0e7fd3c971e645aae5178167cafa98f8bbcfc95db7da461e9f5e293ff227986f",
+      "bytes": 4208
+    },
+    "video_0034__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0034__0002/input.json",
+      "sha256": "4c212ad8a07cc600f41c23ee5b40fc4a5b056bddf2b8ac21a155ba1dc8e9003e",
+      "bytes": 4236
+    },
+    "video_0034__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0034__0017/input.json",
+      "sha256": "5fc91014c1192b34c7815497c36f645ad072fbb81c8e1c91134d96bb57e0ee7a",
+      "bytes": 4203
+    },
+    "video_0034__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0034__0020/input.json",
+      "sha256": "230fe30b66acb5f7b57084ea4f28cc945639282fdf1573825cd1d647b29d89f2",
+      "bytes": 4216
+    },
+    "video_0035__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0035__0003/input.json",
+      "sha256": "e3bf5b34c80c68e4fb5ccbc8b1e4e6a5f426705dda8d851e2c13486d0242ef26",
+      "bytes": 4212
+    },
+    "video_0035__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0035__0018/input.json",
+      "sha256": "af86611d447af705d5859e13c1a25e27611f8b701a3e816e424f406aa2387f97",
+      "bytes": 3744
+    },
+    "video_0035__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0035__0030/input.json",
+      "sha256": "419cd73ad803a9bc66d644171d5de937f97369cf00860018b5192bbbf6389899",
+      "bytes": 4215
+    },
+    "video_0035__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0035__0031/input.json",
+      "sha256": "35590c54538d2cabded628e925dd66942c667aa64e20a432bfdd433781f62350",
+      "bytes": 4205
+    },
+    "video_0035__0033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0035__0033/input.json",
+      "sha256": "77822eecaf1716389bfc98d406ac2a3f5fb40269d1105a62033501fb133a29ab",
+      "bytes": 4208
+    },
+    "video_0036__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0006/input.json",
+      "sha256": "46527472febd9105dcf3656c366886424d3f5832c2888cf0db5a3a5570d780a1",
+      "bytes": 4222
+    },
+    "video_0036__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0007/input.json",
+      "sha256": "4d4e3134d22779fcff74413fc5812022a174a131155dcd4602d56a7ed91f6195",
+      "bytes": 4224
+    },
+    "video_0036__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0008/input.json",
+      "sha256": "8f2560cc1a3461da6d391eab8a8bd99e9c3c9a7eccc295e0eed11deb687a8c0a",
+      "bytes": 4211
+    },
+    "video_0036__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0009/input.json",
+      "sha256": "47b40d32d0dcd3f592486bab0c044bc0faa1ffbb6a1fef5ee26b07a7c674bc89",
+      "bytes": 4233
+    },
+    "video_0036__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0011/input.json",
+      "sha256": "7029d59f458c4ed46f30e15d5d376943524ca188ee5ecc3c0b2d3ade6d88a4e0",
+      "bytes": 4145
+    },
+    "video_0036__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0020/input.json",
+      "sha256": "170f4cb38fa9fa3de20400b3f967e0a6e38aa1dd32166206b999dffecb30f668",
+      "bytes": 4200
+    },
+    "video_0036__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0025/input.json",
+      "sha256": "6b56c7382cb5a3aec16f84801c1dd1c2c720e28eddee1e5d1fdc26d3f8beb991",
+      "bytes": 4228
+    },
+    "video_0036__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0036__0027/input.json",
+      "sha256": "d9e7808aa65bb48283e33b0ab657d394cd02969d99846d5e111b8dab4eb1bb26",
+      "bytes": 4225
+    },
+    "video_0037__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0037__0007/input.json",
+      "sha256": "feca01fef27ab8eed30f33105f27f88411c5f04a6c4a63bbe66e1308928cc546",
+      "bytes": 4217
+    },
+    "video_0037__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0037__0016/input.json",
+      "sha256": "060aec566d5e2834d2236f2fc4d2075154b922a126193d9d6e167ba04f7d6642",
+      "bytes": 4209
+    },
+    "video_0037__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0037__0018/input.json",
+      "sha256": "230f784822529d7dfb53517ad18b66e0c042f5fc960a830d02c46ecbcfa0a192",
+      "bytes": 4218
+    },
+    "video_0037__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0037__0019/input.json",
+      "sha256": "95c515da3de5b0c1fe67bcc11f0786d5543132ea036e744353def0e1cbe7cc32",
+      "bytes": 4212
+    },
+    "video_0037__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0037__0021/input.json",
+      "sha256": "1d6c2779a1b82679129b76dce6e8e43f2dbc663da8659e1590b1473e469d2b50",
+      "bytes": 4096
+    },
+    "video_0038__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0002/input.json",
+      "sha256": "4c456ca49f161fce5ce8b9e81097d660850d0a4f3fb6bda79e0efbfc4cd38245",
+      "bytes": 4215
+    },
+    "video_0038__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0005/input.json",
+      "sha256": "7620c2c0524c6dd231992270022cdf9aaee1d23d5e53463c1a5dec728bf912b4",
+      "bytes": 4193
+    },
+    "video_0038__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0006/input.json",
+      "sha256": "a1844a9d9f97edf2aa3e2017c6206696fb631d476c5d34687313d86ecc247fe3",
+      "bytes": 4221
+    },
+    "video_0038__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0010/input.json",
+      "sha256": "603772ed2e5fdaf94770898ea2100bb3da329a103e6d81d8cfdbfb0e529a7643",
+      "bytes": 4211
+    },
+    "video_0038__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0011/input.json",
+      "sha256": "2591e45ebeaae58b16e87788f8ec3d35383d26462c85eda11ee5da1f0b6bd779",
+      "bytes": 4206
+    },
+    "video_0038__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0018/input.json",
+      "sha256": "1097c4792f3a38fe642eeb5c4a8a44cf53b3bc7f3549c10407fe16a8cfacbcaf",
+      "bytes": 4138
+    },
+    "video_0038__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0028/input.json",
+      "sha256": "9c5b74a1a48ab86523187ca6179cfa46bfbc6f858a1c1428c4022cfa2eafc199",
+      "bytes": 4205
+    },
+    "video_0038__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0030/input.json",
+      "sha256": "b912608567a312de108c64c51298cb98cd354254912536c50947b8f3ed9b2148",
+      "bytes": 4211
+    },
+    "video_0038__0033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0033/input.json",
+      "sha256": "bf363126c87d1934f859af86787dca5e4fb7f20aa2902f4e14052e71c8e92e8e",
+      "bytes": 4187
+    },
+    "video_0038__0035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0035/input.json",
+      "sha256": "8ab64edcbf9fa0ece1d5c1c57b105cb2369f8b0fd371a04afc33d45edcb296de",
+      "bytes": 4206
+    },
+    "video_0038__0036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0036/input.json",
+      "sha256": "6c51c42c0d36298854a38d2cb18805e9303e369946a7f37b0107d0936cae873a",
+      "bytes": 4206
+    },
+    "video_0038__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0041/input.json",
+      "sha256": "6232ae46e399c566672932fdd53b000acc75996024327ec18b63d99721de25fe",
+      "bytes": 4207
+    },
+    "video_0038__0043": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0038__0043/input.json",
+      "sha256": "6b431d08d5e2d7b7628bcb058134fa8635758d1af83163b5b0d8b7480f9e912c",
+      "bytes": 4205
+    },
+    "video_0039__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0039__0004/input.json",
+      "sha256": "e6a8cc925611339f3dad23a471f730a07e4d2bbc5bf9f90a50bae7016c52c578",
+      "bytes": 4208
+    },
+    "video_0040__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0002/input.json",
+      "sha256": "ea788457ea4223c583837249dedeccc3fb7df1544ee43e6d66b564911fb5dd40",
+      "bytes": 3325
+    },
+    "video_0040__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0003/input.json",
+      "sha256": "6e4ba3c9873f1c7eed94aefdd36ddb1ea0a345952c8d82a468725b328a11e368",
+      "bytes": 4073
+    },
+    "video_0040__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0014/input.json",
+      "sha256": "f6461dd8443e991ea56e8b730fb61d1ae0bf43d66bbdbeea1155179cb19e55f3",
+      "bytes": 4208
+    },
+    "video_0040__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0017/input.json",
+      "sha256": "426c457ede0bbe6a7fcdf43012cfca244dd7cbbcdc47acf62fa9349a2f150fa7",
+      "bytes": 4218
+    },
+    "video_0040__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0021/input.json",
+      "sha256": "04e8d43bf324f6d80d334d93748952d218695f5f79985ccfc9cdb9287880c9ab",
+      "bytes": 4213
+    },
+    "video_0040__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0023/input.json",
+      "sha256": "3f8c10c369bfd673817bf7f1d2312dfb30e7595af5bce2680bbce77acd6dd754",
+      "bytes": 4215
+    },
+    "video_0040__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0027/input.json",
+      "sha256": "6ab93145d9e26e686d78080384ac8d777d98a4a85a49c0487c669b6d29db343f",
+      "bytes": 3911
+    },
+    "video_0040__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0030/input.json",
+      "sha256": "bfa2ce4dfd61ffe88b7fbb015072679fc601aef7e7bf100783ead39bd70a8b84",
+      "bytes": 4214
+    },
+    "video_0040__0050": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0050/input.json",
+      "sha256": "7dc731f03c16fe989d1d1846d3275087d3f559cfcd5b8632275ea157acc01ae7",
+      "bytes": 4239
+    },
+    "video_0040__0054": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0040__0054/input.json",
+      "sha256": "3a7c0647a3d7a79490d01b965284190b15d7d4112775e5758c92f2f58014319f",
+      "bytes": 4221
+    },
+    "video_0041__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0002/input.json",
+      "sha256": "4fc315e2c60abf62a57fa56a597c699141f883fbec6afa7da7c3b11be48d6285",
+      "bytes": 4214
+    },
+    "video_0041__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0006/input.json",
+      "sha256": "b7924e09d4d17585ace39199b434423c38dec260e00583cb512846eec3e64a3d",
+      "bytes": 4219
+    },
+    "video_0041__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0007/input.json",
+      "sha256": "5e829dc676961000f7a82bd17e3cacb18f5fc1b155d891a3fec6100816490097",
+      "bytes": 4216
+    },
+    "video_0041__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0008/input.json",
+      "sha256": "aac9367e16c541e4defc4841d65bf94abf415bb77ac783052df5e70311af3107",
+      "bytes": 4216
+    },
+    "video_0041__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0014/input.json",
+      "sha256": "78dced618798e84fa635e1d0c056dca7723c65c7dab6a8df48dad45873de49b7",
+      "bytes": 4212
+    },
+    "video_0041__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0016/input.json",
+      "sha256": "0883dff7173d457137ab4ad6ceea776e682ba9ae1020634afc4168df9ad624af",
+      "bytes": 4203
+    },
+    "video_0041__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0026/input.json",
+      "sha256": "a32b832fc09cb3ee8429aa3aef41b2648297de8a4eb917bf3bc462d7668db4f0",
+      "bytes": 4217
+    },
+    "video_0041__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0041__0030/input.json",
+      "sha256": "13f75172c8b2c5bd88901b38165bb8846d7f2dd23ed2c36a83a07496aa089e91",
+      "bytes": 4211
+    },
+    "video_0042__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0042__0001/input.json",
+      "sha256": "38446f268239ce206116fb94df3d1a82de33fcd51b0d051933ea34e955dc6f32",
+      "bytes": 4214
+    },
+    "video_0042__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0042__0002/input.json",
+      "sha256": "0d3fb9f37d523ad13bb46c2d0dd01c42babb77ed929a07c213736560ea0209f8",
+      "bytes": 4208
+    },
+    "video_0042__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0042__0013/input.json",
+      "sha256": "c01ce8c5e2a64278f49ae2b3c49954775dd123f80ce32cccf0adefbd2ad8b188",
+      "bytes": 4214
+    },
+    "video_0042__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0042__0016/input.json",
+      "sha256": "4fd1c6d441159f0e00a0c67ffb75663c98e30c6f3ba96a2795cd365d4d49bd3f",
+      "bytes": 4207
+    },
+    "video_0042__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0042__0019/input.json",
+      "sha256": "056ed9c870e20593e436c271e6fda284a201a2f01e62fe869bb627f6ef39ee16",
+      "bytes": 4220
+    },
+    "video_0043__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0021/input.json",
+      "sha256": "0eef1557c4eb7b5f98fa742fecef5dccec766d59c97a78103bdce0a23205aa83",
+      "bytes": 4209
+    },
+    "video_0043__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0023/input.json",
+      "sha256": "ea390f1ab56c9eab7155904eaab00989823a664a0a67a3bc147762a56899bb0a",
+      "bytes": 4214
+    },
+    "video_0043__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0031/input.json",
+      "sha256": "64e3b2f6419d5741672b3288305d8b62b86d0eb08b5df2caac6766d312ce6413",
+      "bytes": 4207
+    },
+    "video_0043__0044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0044/input.json",
+      "sha256": "90eec2f42743110067e7ecf71b98030c590e46a3a63585df39717aba72e4919f",
+      "bytes": 4213
+    },
+    "video_0043__0047": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0047/input.json",
+      "sha256": "f21400d1223bc5a328fe87653ecf71b0fd738baf46efab540b3e945a39edd29d",
+      "bytes": 4211
+    },
+    "video_0043__0054": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0054/input.json",
+      "sha256": "94eaa7598a79cb6f63260a739bba4dfaeb8eb964e6fd1e386b4e59625cd240a7",
+      "bytes": 4216
+    },
+    "video_0043__0064": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0043__0064/input.json",
+      "sha256": "814d522240370ca962ae80735e4db4c56577b7c6448b0d5edfcc33a166517618",
+      "bytes": 4088
+    },
+    "video_0044__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0044__0004/input.json",
+      "sha256": "7108c1588fdbb0acdb521f6ecc501bba87f304d842083417ab944bbd86866acc",
+      "bytes": 4207
+    },
+    "video_0045__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0006/input.json",
+      "sha256": "2a51abe256b35096096fc6a696d2da325afd9ff88acb7f38baf4e03953d71584",
+      "bytes": 4201
+    },
+    "video_0045__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0013/input.json",
+      "sha256": "cf776aeaa0513247394c22f82a91b248cf310a8b2a410d92dffbd29af25559f4",
+      "bytes": 4213
+    },
+    "video_0045__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0014/input.json",
+      "sha256": "bc0553dde072c39bff61411b25b91408023f43665a399f9d7664d3a7e5e7a4f1",
+      "bytes": 4175
+    },
+    "video_0045__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0028/input.json",
+      "sha256": "50b21708a7e7d1c5bfcd3fb6f8003f3ca5f12e9d48d5ea51521357300c520d8e",
+      "bytes": 4215
+    },
+    "video_0045__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0029/input.json",
+      "sha256": "6574968bb363f586013f6f9ad64cc5ac58f73fcfa55c0be49edbac153f1fcc1b",
+      "bytes": 3322
+    },
+    "video_0045__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0031/input.json",
+      "sha256": "b34dff51515ce1074b521d66981765b4aacc82ec04efc6a14d73ccc9df272995",
+      "bytes": 4217
+    },
+    "video_0045__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0032/input.json",
+      "sha256": "67f4e06ed111dc6341eb18073c8be5feafdf81ab6091a51b63fe44908f2ba422",
+      "bytes": 4220
+    },
+    "video_0045__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0037/input.json",
+      "sha256": "0856dab3932595cd9fbc76df0ece12706ea2af4489d13a1a5eec069bdde0f6c4",
+      "bytes": 4216
+    },
+    "video_0045__0038": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0038/input.json",
+      "sha256": "b537b3190698d66b23a0c0de69e00e70325adb8db17a7ff927e2f7452199399c",
+      "bytes": 4207
+    },
+    "video_0045__0046": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0046/input.json",
+      "sha256": "e264a9003d9f0cbbb8361b2e1e9c096357397e94e572df6e47518f3152541833",
+      "bytes": 4223
+    },
+    "video_0045__0064": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0064/input.json",
+      "sha256": "6b5ba577bd368f706142aac5bcda48a6e752d7ac454ea1dcd491fdab1be964a9",
+      "bytes": 4219
+    },
+    "video_0045__0066": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0066/input.json",
+      "sha256": "a487bdbf7967a9c8ac8afe437556b67abe253c891a311a55eee723e4be4b9731",
+      "bytes": 4235
+    },
+    "video_0045__0070": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0070/input.json",
+      "sha256": "89fbffd86c93a0650c6bce87033e775ef02db1406293f874c403564004a4a231",
+      "bytes": 4020
+    },
+    "video_0045__0078": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0078/input.json",
+      "sha256": "e70b40f7edceccd3d38ab88cdd530eea91441be15c7d284f35c38b7017278a96",
+      "bytes": 4213
+    },
+    "video_0045__0082": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0082/input.json",
+      "sha256": "e5f29c809795e99bc91f5d16fdfcb474df767a992a77ab321392e68224fe5349",
+      "bytes": 4218
+    },
+    "video_0045__0091": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0091/input.json",
+      "sha256": "fcfa5e7bda5dce4a4f81a96d756c4a82315722d9a260893a1f401f99c009a238",
+      "bytes": 4244
+    },
+    "video_0045__0092": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0092/input.json",
+      "sha256": "e582ba0a197a4f8cb69db9384ea0c2abdce680c8c448df690f0ff82115a1a5a8",
+      "bytes": 4216
+    },
+    "video_0045__0094": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0094/input.json",
+      "sha256": "80286518fb6cf8a8bfcae5dcaef5e294af180ca8956942dbc5c4a7f30d30a29a",
+      "bytes": 4163
+    },
+    "video_0045__0098": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0045__0098/input.json",
+      "sha256": "0c04fb0a925cd3dea6400cf7bdad460f748bd9d00b093a22249dd3e4f3350c47",
+      "bytes": 4019
+    },
+    "video_0046__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0001/input.json",
+      "sha256": "7db9a9056d3ad8d00783b28f4b65bb1bb1cd7e55187df7b3e03a02a2e62dab72",
+      "bytes": 4218
+    },
+    "video_0046__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0002/input.json",
+      "sha256": "106b2705c5d5ed2e6776242e597f2f1503e980ad8bef3ed14b54f811c68f7357",
+      "bytes": 434
+    },
+    "video_0046__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0005/input.json",
+      "sha256": "901e4f425c0c348c1955b239ebc3f7cc558ddb23ae2a7fde8449ad468198292f",
+      "bytes": 3833
+    },
+    "video_0046__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0007/input.json",
+      "sha256": "0d538d5572c0616972956fe4d615f4ed1d0eba320d758164955514130410c6a9",
+      "bytes": 4088
+    },
+    "video_0046__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0012/input.json",
+      "sha256": "ef45e2e160b911603b07cadcfe3160d8de7158da1b16d2bf11ff6354e185160b",
+      "bytes": 4207
+    },
+    "video_0046__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0017/input.json",
+      "sha256": "3610dc1594bcef68eda6214b11b2d7d92ba90ba9a663ed0cb6bf22fbfe0788aa",
+      "bytes": 4131
+    },
+    "video_0046__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0019/input.json",
+      "sha256": "eb11f46b36f7fac010496689045304034d9dda97db08b8d35a5b3737eb6ac5ac",
+      "bytes": 4220
+    },
+    "video_0046__0022": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0022/input.json",
+      "sha256": "2d95681176cebf1660ea0462b2ac9abde3d8f3e64120e474ce1640b2bd4725d2",
+      "bytes": 4219
+    },
+    "video_0046__0026": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0026/input.json",
+      "sha256": "013e491a31373ae334d8a2b42a613904043e430548491e61f16e15373cb7bdb3",
+      "bytes": 433
+    },
+    "video_0046__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0028/input.json",
+      "sha256": "1aaefe78d909478d8fed89fd6b26bfb49340c054135fbd0a2816ffafcd8ad02c",
+      "bytes": 4216
+    },
+    "video_0046__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0031/input.json",
+      "sha256": "ca6f41adcc5ae915fab3686fc6d8a91be5e2994a9f1c49094cb3435a478ffb5d",
+      "bytes": 4221
+    },
+    "video_0046__0042": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0042/input.json",
+      "sha256": "5733522b1012c1cf0797d1a5d564cd27c91ad6132814f5ad34abd20bfc3ff4d0",
+      "bytes": 4219
+    },
+    "video_0046__0044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0044/input.json",
+      "sha256": "4827ec2750bbc867d4b1986224f2bb7bfce35e37634a897ad33139103580575b",
+      "bytes": 4205
+    },
+    "video_0046__0045": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0045/input.json",
+      "sha256": "cb2a3fe802b28c8ec618f4dc6c0b8199db8facacfafa87f30ce32696b7cce7fe",
+      "bytes": 4216
+    },
+    "video_0046__0048": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0048/input.json",
+      "sha256": "103d8142b91ac0848513cf0c261c80b0b764fccb25ae3f52e9513c0755f69e5c",
+      "bytes": 433
+    },
+    "video_0046__0050": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0050/input.json",
+      "sha256": "58cb98a2f1dfe819b9762a4729bbf3f4ce30e2157a88db343f372c4c5d157b91",
+      "bytes": 4215
+    },
+    "video_0046__0056": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0056/input.json",
+      "sha256": "5e54fd043f8f5ea290042dba9910c9de6eaf92704b1bef8c829c9a3ae0a94a94",
+      "bytes": 4208
+    },
+    "video_0046__0063": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0046__0063/input.json",
+      "sha256": "b698ce7c94aa8f8b2b46811e17eb07dda0404af07bc8f9b6b404eecbefee0e6e",
+      "bytes": 4257
+    },
+    "video_0047__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0004/input.json",
+      "sha256": "b232dd1f124cc44964e6859af3887bbc8e1a5de341d456ae7c9628bd2b8e16d6",
+      "bytes": 4201
+    },
+    "video_0047__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0011/input.json",
+      "sha256": "ae8d7550b7cfc4e163e3b096b16197664650bc9002f431db60bcf7ad53e1ae90",
+      "bytes": 4212
+    },
+    "video_0047__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0020/input.json",
+      "sha256": "f35ed1f46efa2f9896e5d641baab6cf3bb2684209e633fb9c675fc7d0ab99a4b",
+      "bytes": 3617
+    },
+    "video_0047__0033": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0033/input.json",
+      "sha256": "c9eadde618b7e4f9077bb740fc367d7ba59d03518882033160f7b64522b168db",
+      "bytes": 4260
+    },
+    "video_0047__0035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0035/input.json",
+      "sha256": "82b103a86d2dd33eae364a66388d1ca52c3fcf238e42d5ace2305d9d36f36d46",
+      "bytes": 4213
+    },
+    "video_0047__0036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0036/input.json",
+      "sha256": "3b88be5d9a65e3fada364c25aa6e9e68249206e7baf92ba9872e824465723bba",
+      "bytes": 4214
+    },
+    "video_0047__0039": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0039/input.json",
+      "sha256": "77929ee71484437b5ecc09036060b6232d799f20092d7e9a3c1c83615cb652f9",
+      "bytes": 4202
+    },
+    "video_0047__0041": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0041/input.json",
+      "sha256": "aef42cf3b00800f292357331e5e0f8911d0ff7b3c92c9c7908db97a14b3ee48b",
+      "bytes": 4201
+    },
+    "video_0047__0049": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0049/input.json",
+      "sha256": "b5b317fa7e58f9731b390f1548544cea7d975a97d0b15dc5e885986d1d872ee3",
+      "bytes": 4211
+    },
+    "video_0047__0056": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0056/input.json",
+      "sha256": "744c5b461ac48ca8e158969c075ea6cca2beaa0e5e4dc8b7bb5e50021ec3cd86",
+      "bytes": 4218
+    },
+    "video_0047__0059": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0059/input.json",
+      "sha256": "8874278b1d26a41f3c2a886d164f6d968003adf596387e2d2c5d2d970e14f8a2",
+      "bytes": 4197
+    },
+    "video_0047__0065": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0065/input.json",
+      "sha256": "c78314e3b1bdd0d938d9cd4ba60e73ef82cf582bff81a4ab99ac8988a32beb23",
+      "bytes": 4212
+    },
+    "video_0047__0071": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0071/input.json",
+      "sha256": "094420d3a2a409843bfbc1e9c6286dd06a02ed56971b920aa3d042b4ade55c73",
+      "bytes": 4213
+    },
+    "video_0047__0072": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0072/input.json",
+      "sha256": "8c11f96af36cbc0f9634d506b6948cd9a8f1a832b7e7331d0a0e3793fe5239d0",
+      "bytes": 4188
+    },
+    "video_0047__0074": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0074/input.json",
+      "sha256": "129af6b3c088191a7bce028493333d1a1cf9642c9418f657183cb544eb320562",
+      "bytes": 4210
+    },
+    "video_0047__0078": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0078/input.json",
+      "sha256": "c7745db165b47de96e6cd382e221194f6f7c6345c4e00073562b22e313ec10b0",
+      "bytes": 4212
+    },
+    "video_0047__0079": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0079/input.json",
+      "sha256": "e28a6e84e85f64f01252b1dddfa9d08a5fbe755e25ec9dd764f83e38bce2d476",
+      "bytes": 4205
+    },
+    "video_0047__0080": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0080/input.json",
+      "sha256": "4d7522e84fa21b57d34847f4572c8fd8a282b78af6593ffd20f06b6afadd2be2",
+      "bytes": 4216
+    },
+    "video_0047__0081": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0081/input.json",
+      "sha256": "7fdeab5a85c9b990d2f4d5f6658fc6331c1d087a2865bcd9a513d007c0bcd610",
+      "bytes": 4213
+    },
+    "video_0047__0087": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0087/input.json",
+      "sha256": "5ad38891dfb7ad93932924e28622fc5b907a37e7a1a84b082044db5a95d6cbde",
+      "bytes": 4217
+    },
+    "video_0047__0088": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0088/input.json",
+      "sha256": "23f2fed18ea4099570a28b88e07c84373369066ccdb8776ea862958d9b6f88ba",
+      "bytes": 3895
+    },
+    "video_0047__0089": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0047__0089/input.json",
+      "sha256": "d3d41486bd344796f07352e7e1e2b0845a3249fb3ea90fe8126f08307884b403",
+      "bytes": 4203
+    },
+    "video_0048__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0001/input.json",
+      "sha256": "dc4dc4a7fae0cbb4ed0465fe6833794ff34fe03b885764a5ad0f8a93fa779bce",
+      "bytes": 4203
+    },
+    "video_0048__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0006/input.json",
+      "sha256": "433701b59310ada8ab98231b0d8fc6f670e2d1399f9790da71fc19f3b32a0829",
+      "bytes": 4217
+    },
+    "video_0048__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0011/input.json",
+      "sha256": "c7956f220676bff071f76ea665bef403576676479c42bce7aa01e535137a04fc",
+      "bytes": 4216
+    },
+    "video_0048__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0025/input.json",
+      "sha256": "6c2d327091775c8a3e75f1eccfd96970d1c8e3bd5ed53ba3238c5d8501bf1419",
+      "bytes": 4208
+    },
+    "video_0048__0027": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0027/input.json",
+      "sha256": "335f5d4dc0d74f349d4342de0579438c6591e5fa997e43a6e60961d62689843e",
+      "bytes": 4213
+    },
+    "video_0048__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0028/input.json",
+      "sha256": "36c289cf650407fc186125b76fccf6ba9c356111b8d269ffa8ca600a4981ee8a",
+      "bytes": 4210
+    },
+    "video_0048__0032": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0048__0032/input.json",
+      "sha256": "3f94b126679d3973b4257a69c03719e0c3bd1196a4f4c4ca3c327eb076046c06",
+      "bytes": 4196
+    },
+    "video_0049__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0001/input.json",
+      "sha256": "8b901772c059f3ecf72e2f1379dc81ea041227869955e8376e6930d2e09008be",
+      "bytes": 433
+    },
+    "video_0049__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0002/input.json",
+      "sha256": "385c58cc0e7c676bb9bb26020b9a1c749949c10dfab15b2fb9b7ba36ef8c40eb",
+      "bytes": 434
+    },
+    "video_0049__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0003/input.json",
+      "sha256": "b05d586eaf6861e45f500db8609bd81dee01fdf892de929f2a180e7600ee963c",
+      "bytes": 434
+    },
+    "video_0049__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0013/input.json",
+      "sha256": "8d5f34bb301d387e5c90ca3d60baae6123da11b50302c6facb35880b90bec9d8",
+      "bytes": 434
+    },
+    "video_0049__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0014/input.json",
+      "sha256": "896651d8235804fd7a861a38a94553393bc66393ff227d762bab5d48262189eb",
+      "bytes": 433
+    },
+    "video_0049__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0049__0017/input.json",
+      "sha256": "68591eaf6d5839b98a02cdd8be106c3337a80cdcf931fe58c3b654aef3c2653f",
+      "bytes": 433
+    },
+    "video_0050__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0050__0004/input.json",
+      "sha256": "888658852ad7a904126a103643f560f07a251541251bc5b1d655da6d82397b42",
+      "bytes": 434
+    },
+    "video_0050__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0050__0009/input.json",
+      "sha256": "ecbb5dbe3a448638f84151ca1f021c31c98c41879f6b0ffd3c7c1ab523dbae2a",
+      "bytes": 4211
+    },
+    "video_0051__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0003/input.json",
+      "sha256": "eafa104be5764681e7f97e0bfb6f8688295ec651fadd2b991e3e46a17ff9e950",
+      "bytes": 4201
+    },
+    "video_0051__0004": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0004/input.json",
+      "sha256": "532955e11c6d7b93e3f04352a532d37a88a848dcdf0e5388d264c2c3e60e5861",
+      "bytes": 3389
+    },
+    "video_0051__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0012/input.json",
+      "sha256": "1c9b81a8c57643d4bb26f5fc65d32ee4fa6ae6b4541813ec71ac0f97c3abeaa4",
+      "bytes": 4305
+    },
+    "video_0051__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0016/input.json",
+      "sha256": "be17c9a5f76c3ea0167729afa129a0cc57a7bffe704cc84191e490d3c9e7fbf6",
+      "bytes": 4304
+    },
+    "video_0051__0017": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0017/input.json",
+      "sha256": "64d3e1570543f23bb18a5828e4edd648f5a34e509c599b6841b076f62ba4c31f",
+      "bytes": 4295
+    },
+    "video_0051__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0019/input.json",
+      "sha256": "c1c0cb1b9242811f5453577fb8ba0573bffa6571aa85ce0f2fdfca1c16b01071",
+      "bytes": 4200
+    },
+    "video_0051__0020": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0020/input.json",
+      "sha256": "ddb6c5169a0fa75b3b836ffd3be8ddc5f79581197f558833bb1bd6497a33e039",
+      "bytes": 4172
+    },
+    "video_0051__0028": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0028/input.json",
+      "sha256": "c37a5ad0495ff72b4da09ed4cac1bd7ad7e69849c613a6f72bf7d1d6431f8e59",
+      "bytes": 4130
+    },
+    "video_0051__0030": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0030/input.json",
+      "sha256": "a9bb4e661fd8d96ddf9e2ed00569fa605dc50c4a0584b86307980bd07bc07845",
+      "bytes": 4262
+    },
+    "video_0051__0059": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0059/input.json",
+      "sha256": "fa6762c903316bb6fbc5e8a095f139435d9d4151835d7894060fa9dd3d16805e",
+      "bytes": 4216
+    },
+    "video_0051__0064": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0064/input.json",
+      "sha256": "82fa521078a28a330754405ce11138074f90cc913877dda2520be96c9e92a980",
+      "bytes": 4241
+    },
+    "video_0051__0065": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0065/input.json",
+      "sha256": "910dd637305ffc392252e688c490b474e712ba6426da7ed2523f8bf9ace7a9dc",
+      "bytes": 4239
+    },
+    "video_0051__0068": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0051__0068/input.json",
+      "sha256": "263f0fc714830ee29f294d492bf85cab7537929d4240aa4f250630015b66efff",
+      "bytes": 4197
+    },
+    "video_0052__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0052__0005/input.json",
+      "sha256": "b12003142d97d81e3e3439f0111a5fc21f727f117eea0177fa98876f3edc9da1",
+      "bytes": 4195
+    },
+    "video_0052__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0052__0007/input.json",
+      "sha256": "e649a48b6b6d9b1fe27abeca494262e7be6b82f8a2108d1b296018f1153be703",
+      "bytes": 4211
+    },
+    "video_0052__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0052__0012/input.json",
+      "sha256": "4b84b79d19ca03f526245c9b81cfece4dc42dacb5c564eeb2a6f28826082968a",
+      "bytes": 4213
+    },
+    "video_0052__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0052__0013/input.json",
+      "sha256": "a10eaa2644bb2ba89e20cf73331e7c1b09d22b352541d04e50128dc8a899da33",
+      "bytes": 4212
+    },
+    "video_0052__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0052__0025/input.json",
+      "sha256": "3164e21f33b9df627bfa8d8c2afa65523aa13ed1301796cb8808af834ee638a5",
+      "bytes": 4213
+    },
+    "video_0053__0001": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0001/input.json",
+      "sha256": "36ff6f42ea322c92b9c2bbfb259aee57fc80733687ab8bb315cbfeb4fcaa1fa6",
+      "bytes": 4216
+    },
+    "video_0053__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0006/input.json",
+      "sha256": "b5dac95ad0afd82d003533940e282a89f34e516d8f91bad7fb0ffbee31f9258f",
+      "bytes": 4214
+    },
+    "video_0053__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0011/input.json",
+      "sha256": "cb696e1ea7922a114a120ae7dbd45d595c7afaabcf17b6947fdd833e24b64b68",
+      "bytes": 4200
+    },
+    "video_0053__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0014/input.json",
+      "sha256": "24acb2567d2821103ace5a1b50665c8fb36af3bb5f02562d204a9492eb9133b2",
+      "bytes": 4213
+    },
+    "video_0053__0018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0018/input.json",
+      "sha256": "4e0807f2ad3248ce082fb84b6dd6e595b2424cb6e1310dd576f9c7807a97e0a4",
+      "bytes": 4209
+    },
+    "video_0053__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0025/input.json",
+      "sha256": "6a0c684013b7cf85f287716fb2f83a92dbf74985b26affb2f930ac79d3111089",
+      "bytes": 4243
+    },
+    "video_0053__0035": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0035/input.json",
+      "sha256": "4dadad2d68f4a5869ec3a42ead31ac3b9d3461a8b3e9d9a6d4b218c3dc4e968a",
+      "bytes": 4215
+    },
+    "video_0053__0036": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0036/input.json",
+      "sha256": "27741b837dcafd8de71a79255d5ea444fe70acc6c139ab62b53b6bc2fadde9b5",
+      "bytes": 4216
+    },
+    "video_0053__0044": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0044/input.json",
+      "sha256": "d644da893977c2b1f06923031c4b5ca639582274bf9777c7103c8eb21e25c9b1",
+      "bytes": 4293
+    },
+    "video_0053__0051": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0051/input.json",
+      "sha256": "b290b96d22015c9d13548288fdebd80b4661a9616172cb8c66aa098b616a6725",
+      "bytes": 4026
+    },
+    "video_0053__0053": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0053__0053/input.json",
+      "sha256": "ca3230163b6ce547d7b283e32c50458730044fc9e0e98f44fb39bf22da936375",
+      "bytes": 4313
+    },
+    "video_0054__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0006/input.json",
+      "sha256": "fa5104e79f434cded890b74065c3371161df76efe99b2f0d6786f708924a3df7",
+      "bytes": 3352
+    },
+    "video_0054__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0007/input.json",
+      "sha256": "99c601000971450f63889592ee1a5feb26acf11fb6d55c7c830dde2ba6c365d7",
+      "bytes": 3584
+    },
+    "video_0054__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0025/input.json",
+      "sha256": "67221dc363d3d73a65e02d68c5970b809ab6804081515cd6b22644a406bb4f1c",
+      "bytes": 4221
+    },
+    "video_0054__0031": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0031/input.json",
+      "sha256": "105c4ed3b9f244e6989f80d47a85b9f5c70a7c21b1085f399e57d5d6e9820d98",
+      "bytes": 4215
+    },
+    "video_0054__0046": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0046/input.json",
+      "sha256": "163cd168397be3d95a6b8ec0dfe9bbd4ef421fe8c2aed94097274503fa8948d5",
+      "bytes": 4196
+    },
+    "video_0054__0051": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0051/input.json",
+      "sha256": "c43c9cadf2e1181cbab52b425f721f60236ee40e20e78c1d963155353f9b2271",
+      "bytes": 4219
+    },
+    "video_0054__0058": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0058/input.json",
+      "sha256": "5e8c5075c80b22a1a181a2c435c7dc1b1d76ba84e0987a81a4749fddf3cbd3b9",
+      "bytes": 4217
+    },
+    "video_0054__0060": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0060/input.json",
+      "sha256": "57f46febb227b2cda80211948b28eabebcdfdcb9890068dc0d3dbeb2489afdec",
+      "bytes": 4203
+    },
+    "video_0054__0064": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0064/input.json",
+      "sha256": "731639d906fb3a3f2fcf824a604b525f4d3d1f61c74398b63d368d1a0f3ff38b",
+      "bytes": 4206
+    },
+    "video_0054__0070": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0070/input.json",
+      "sha256": "6fffe12ae69d22cd691541ab6503566f20f4219bb84e551c010a7502048bcf0b",
+      "bytes": 4180
+    },
+    "video_0054__0075": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0075/input.json",
+      "sha256": "8700b3ae808c43a0f06accbdbe3719d2c395a0465a7ecd1790c4fa131671d72f",
+      "bytes": 4217
+    },
+    "video_0054__0079": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0079/input.json",
+      "sha256": "2737cc25f79a6e55d1f6fb7932de8520cac88eabd1e3ac6e4fc87c49770f1a85",
+      "bytes": 4205
+    },
+    "video_0054__0085": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0085/input.json",
+      "sha256": "ae882b916858e2a130ca18a837e2889c56a15bd71ddd863a4b3dc64ac4551ba4",
+      "bytes": 4200
+    },
+    "video_0054__0089": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0089/input.json",
+      "sha256": "c68474b6b8ad3aedfab562cd9b13bcfff14dd41ec721512c336023e0e80d78b4",
+      "bytes": 4217
+    },
+    "video_0054__0095": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0095/input.json",
+      "sha256": "ddf5bec9b8f088cab079349bb89c85c37e820d033487885b3d444cdebc8088ea",
+      "bytes": 4212
+    },
+    "video_0054__0110": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0110/input.json",
+      "sha256": "3057b2da27bb8cbe674200a08df686762fa0908335b2eaa4fba4779068fef29b",
+      "bytes": 3914
+    },
+    "video_0054__0120": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0120/input.json",
+      "sha256": "4604d33facd8e5fae40238d6271eae5ee90ef7557d72bb36db599a0db2499b03",
+      "bytes": 3107
+    },
+    "video_0054__0128": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0128/input.json",
+      "sha256": "9d5cc28b55020e50f444bca2c81130f126deaae082d27e1a54ed95163e7f2c26",
+      "bytes": 4230
+    },
+    "video_0054__0134": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0134/input.json",
+      "sha256": "11e69c4d60dd1e3a3c17b87ea1cedb85931e69050317368d0569e50d0faf2ec6",
+      "bytes": 4215
+    },
+    "video_0054__0141": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0141/input.json",
+      "sha256": "98fe538c74a3e1af1041900f23a5c10e12aebe05f186c98c3d931e729f335786",
+      "bytes": 4220
+    },
+    "video_0054__0145": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0145/input.json",
+      "sha256": "f4efd3836cc8d78a5b11759b6dd37e1981ee7d5c9ee79047c2a9a2569dd79c9d",
+      "bytes": 4232
+    },
+    "video_0054__0164": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0164/input.json",
+      "sha256": "fa9dfeec6d3ab5390c02d29de74756e14618a32e3ca340966088101820045ced",
+      "bytes": 4269
+    },
+    "video_0054__0167": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0167/input.json",
+      "sha256": "88ff7e1019f4e30c63721d17f8012f9461992a44088d0e6a25a4c88db8966a38",
+      "bytes": 4220
+    },
+    "video_0054__0168": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0168/input.json",
+      "sha256": "0652ca8a15481fdaacab16fbaba14e36e7dd7ab3e084fdd5d7b63af8abb33c2e",
+      "bytes": 4207
+    },
+    "video_0054__0172": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0172/input.json",
+      "sha256": "fba04a7eb028895e59b1d50ccea9c40672ab4db8ed87759addb274366bbde7cd",
+      "bytes": 4215
+    },
+    "video_0054__0174": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0174/input.json",
+      "sha256": "c64f386e1919420594b918697e8f5bb2eeb95f5bb8e3db431bd5cf921d5eac99",
+      "bytes": 4208
+    },
+    "video_0054__0183": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0183/input.json",
+      "sha256": "6ae487e265bd07c9558113ed1361032e85c4513c1ae120afc2a88ab1bc0a979f",
+      "bytes": 4266
+    },
+    "video_0054__0184": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0054__0184/input.json",
+      "sha256": "e1277161d6f79cf2567fc8285ec2da6319d0b35e203b28905855efe1ff5c7d39",
+      "bytes": 4217
+    },
+    "video_0055__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0002/input.json",
+      "sha256": "f04b590dd75e24434598a8a1ee4d6b73e2c9478be77df7b6775a0194de7a6dc4",
+      "bytes": 4310
+    },
+    "video_0055__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0007/input.json",
+      "sha256": "b98cc5bf71ea685c7b10532ad2ad4f1851f78138e0d819bda3ac5818ce9967b4",
+      "bytes": 3907
+    },
+    "video_0055__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0008/input.json",
+      "sha256": "9b5f159f4e4a7e84bf59b819943ff5563c761c3ac44b9c101023d90df490a8fe",
+      "bytes": 4280
+    },
+    "video_0055__0010": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0010/input.json",
+      "sha256": "dfd309a380986dc57cc9309b093b8eaf5c6e7fd6df3e362166debddcd5763100",
+      "bytes": 4246
+    },
+    "video_0055__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0014/input.json",
+      "sha256": "1bf9480ac6816121c0885cd090331951df4c6c9a94880394b1841c5601bf500a",
+      "bytes": 4258
+    },
+    "video_0055__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0015/input.json",
+      "sha256": "ebdbcc58063e885d4a4b57b6397a951828fa05cc4f1cee83f333308a04fc7aaf",
+      "bytes": 4206
+    },
+    "video_0055__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0019/input.json",
+      "sha256": "16cfe04a2017850652200c2a2880b2f06c192f1e443235064cfc16e0a191687a",
+      "bytes": 4211
+    },
+    "video_0055__0021": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0021/input.json",
+      "sha256": "c1d20f5ce492bc196929745979904093942034fdc7490a58fa94d5f1da3a9731",
+      "bytes": 4205
+    },
+    "video_0055__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0055__0025/input.json",
+      "sha256": "204ca3732c9f855b3f9951d1e9e36ba675843ae245e38e4df1baaa70274579c6",
+      "bytes": 4234
+    },
+    "video_0056__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0011/input.json",
+      "sha256": "9e214ab5f73d039ef94e5a9183c995ddc5c7af8e6f0d3e3e9c543963719d5d1f",
+      "bytes": 3934
+    },
+    "video_0056__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0013/input.json",
+      "sha256": "870bff485f013cff3a4adb83dc929885e0f970b63755632344feed70dd868046",
+      "bytes": 4210
+    },
+    "video_0056__0014": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0014/input.json",
+      "sha256": "c6caba0ea6577087a10e8aed0a90795c629c0006a96adb0a21f29eeb59414c98",
+      "bytes": 4220
+    },
+    "video_0056__0015": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0015/input.json",
+      "sha256": "6390a7f35dbb86d2920298168aefe7ca72b5ea4ef6813be29875abdd630cd54d",
+      "bytes": 4207
+    },
+    "video_0056__0023": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0023/input.json",
+      "sha256": "543db00575d084026e5fc6be93f367a2c4791b25de9683d25f02e5e983d1ea85",
+      "bytes": 4135
+    },
+    "video_0056__0025": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0025/input.json",
+      "sha256": "b48020144e7d50412eb51ed14aba71b0661952e64543478fa8ce3fa947302e2f",
+      "bytes": 4236
+    },
+    "video_0056__0037": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0037/input.json",
+      "sha256": "f87b3a0dfa87ca1db4a83f85d9911e494ea992c0d36aa187daea07f142b90f2c",
+      "bytes": 2729
+    },
+    "video_0056__0040": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0040/input.json",
+      "sha256": "f230a034b4d3295a80d0b1617ef1111fef90d32db6425641985c0b43881cfb5e",
+      "bytes": 3913
+    },
+    "video_0056__0050": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0050/input.json",
+      "sha256": "5ccd89469f8f5de36b56d5334f0ac26ace05b4d8ca92087db8a6576900633751",
+      "bytes": 4219
+    },
+    "video_0056__0069": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0069/input.json",
+      "sha256": "e0475cbe1981101bf286aa6b76590e2cb66ba8dac06f488fb23384659bc7fe4e",
+      "bytes": 4215
+    },
+    "video_0056__0073": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0073/input.json",
+      "sha256": "2f3b89089f2c0e43a3002694df2b685444b32d8e33e5d8b2f26e13813c46abf9",
+      "bytes": 4205
+    },
+    "video_0056__0081": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0081/input.json",
+      "sha256": "d770bcd398b5695a20e2f0c007c41e535c67cf5f65282e1a152ba45b5278d416",
+      "bytes": 4219
+    },
+    "video_0056__0082": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0082/input.json",
+      "sha256": "01477690e8e299298b4afcdcb7ce52e556933f184d171bc56c3d7c68882a7cde",
+      "bytes": 4204
+    },
+    "video_0056__0088": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0088/input.json",
+      "sha256": "9954bf82724d3a24fe5491b2c0988e69aef2d760a951201fe536772b62666e94",
+      "bytes": 4209
+    },
+    "video_0056__0091": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0056__0091/input.json",
+      "sha256": "71510ae918d1f937d2530d8964603fbd53f043cd0caefbb1abdf4d60cae91f70",
+      "bytes": 4212
+    },
+    "video_0057__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0057__0003/input.json",
+      "sha256": "fcfd0eeefa6e735f713b330a17c903b30fa7baf875f1dba273522aa846c00be9",
+      "bytes": 4221
+    },
+    "video_0057__0006": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0057__0006/input.json",
+      "sha256": "412cd8366cc13d01b733d634d88581fe6331a7e8ee6da8959ba25b062c9b18d8",
+      "bytes": 4220
+    },
+    "video_0057__0007": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0057__0007/input.json",
+      "sha256": "e7cb3e82dde535f765f5a72e4149d24c44eed1d8c53a06a27ed95eba0136760c",
+      "bytes": 3618
+    },
+    "video_0057__0019": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0057__0019/input.json",
+      "sha256": "7af36a7cb469a9212a85166314994fdcb908893d5cf011ced36aee52ef02ffe5",
+      "bytes": 4215
+    },
+    "video_0057__0024": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0057__0024/input.json",
+      "sha256": "f47c74e56bc4fc1f26dc0f3f948e06b505c349cdb96b747744b80646eb120bce",
+      "bytes": 4204
+    },
+    "video_0058__0005": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0005/input.json",
+      "sha256": "ed33b85b0ef63a550343f70fcd50194b7efc1db0e288d13aa5eabe40a9f53327",
+      "bytes": 4211
+    },
+    "video_0058__0008": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0008/input.json",
+      "sha256": "9fb0329a12e0c64d82f84adaa82468676ddc924426ba7fcca0b11983f0af452d",
+      "bytes": 4205
+    },
+    "video_0058__0009": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0009/input.json",
+      "sha256": "2acf2ada1440f058ee5049eb2eb3f6e82858e51e4a455860b068bd1ef3cd701d",
+      "bytes": 4201
+    },
+    "video_0058__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0012/input.json",
+      "sha256": "6c7122b156d0122d2ac4d035e29f7490bbc1a5f8a283bd889fb920432c75f27a",
+      "bytes": 4211
+    },
+    "video_0058__0013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0013/input.json",
+      "sha256": "9b43e699fdd07f4d81c1e133294ddf2c2e959148ab14b9f5d92bdd88f2fbb7b3",
+      "bytes": 4201
+    },
+    "video_0058__0016": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0058__0016/input.json",
+      "sha256": "aced5be2ff5ce2088198574d810d621227289b659188fa6a23db59fb00515001",
+      "bytes": 4202
+    },
+    "video_0059__0002": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0059__0002/input.json",
+      "sha256": "8816fd45868dc8042487c729711d32a08208895bb28c4ffab22c98514e984391",
+      "bytes": 4228
+    },
+    "video_0059__0003": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0059__0003/input.json",
+      "sha256": "64c9e76e484f065a17fea4e65039ce5f172e5e03f26f3e1b87f213eb4ea434c6",
+      "bytes": 4211
+    },
+    "video_0059__0011": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0059__0011/input.json",
+      "sha256": "f0a98290518e29fbf3ad92231c611a93bf541cb687eb3c9fed0147b0cce2a172",
+      "bytes": 4210
+    },
+    "video_0060__0012": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0060__0012/input.json",
+      "sha256": "ab3d44d09f81d40e021a360fd9b2772d3baacaf96a20087a642058227f391c9b",
+      "bytes": 4210
+    },
+    "video_0060__0029": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0060__0029/input.json",
+      "sha256": "a2d6ade325d40c187248f5e6477ebbf382d3b8f655dec23fd6b60cdcd3ef024c",
+      "bytes": 4218
+    },
+    "video_0060__0038": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0060__0038/input.json",
+      "sha256": "71fe9d256a6cfa6398f104efa2d073aad93d3b0ca0f24d620af7b00052106916",
+      "bytes": 4231
+    },
+    "video_0060__0039": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_0060__0039/input.json",
+      "sha256": "f04fb37c5e7bc1e5239d210a8774f7818b605b00cfb2834a52ea230f55367d76",
+      "bytes": 3663
+    },
+    "video_xjzw__00013": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_xjzw__00013/input.json",
+      "sha256": "4c58f17e836422ed6cc0d180ed4ba608fb6f84778db7299855fd7b6201752f5b",
+      "bytes": 4745
+    },
+    "video_xjzw__00018": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_xjzw__00018/input.json",
+      "sha256": "b8da16f4c511b8f71f710723d8629b10bc8dd5c7e89fa9fc82c21f134b10383e",
+      "bytes": 4268
+    },
+    "video_xjzw__00038": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_xjzw__00038/input.json",
+      "sha256": "c76ac363b1e4642216e9c65af5b668b861982e0690030dfb10d1d70085a7e542",
+      "bytes": 4251
+    },
+    "video_xjzw__00045": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_xjzw__00045/input.json",
+      "sha256": "88b07961911ef273c3d21d9d57f11f15fec8d56992fe0dea6511a831d0b9122b",
+      "bytes": 4270
+    },
+    "video_xjzw__00054": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/inputs/video_xjzw__00054/input.json",
+      "sha256": "85ee156c88bd4319f712929330b81990e2162c0c2f4e07944bfd4dfea22bda95",
+      "bytes": 4227
+    }
+  },
+  "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+  "started_at": "2026-10-14T05:27:46.440707+00:00",
+  "ended_at": "2026-10-14T05:32:07.345874+00:00",
+  "n": 647,
+  "vad_used": false,
+  "labels_read": false
+}
