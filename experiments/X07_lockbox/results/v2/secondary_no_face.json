@@ -1,0 +1,234 @@
+{
+  "at": "2026-10-14T06:26:10.172907+00:00",
+  "kind": "identity list only; no metric computation",
+  "splits": {
+    "valid": {
+      "completion": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/complete.json",
+        "sha256": "59713affbd02c7eb8cb3e7bb4ddf0f47c32b5ce9b35b9666eb2b4d04fb71e043",
+        "bytes": 152820
+      },
+      "H_V_only_no_face": [
+        {
+          "id": "aqgy3_0001__00004",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy3_0001__00004.json",
+            "sha256": "2b9574e215da383599c69d39c87fb288e58692e7f820019287e1af94ba729f98",
+            "bytes": 3157
+          }
+        },
+        {
+          "id": "aqgy4_0004__00018",
+          "reason": "no_face",
+          "H3_route": "H_A",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy4_0004__00018.json",
+            "sha256": "455f6e359bf23c0d7d559157c17bec823f38e1df4437c25e9e62475e843e6acc",
+            "bytes": 3163
+          }
+        },
+        {
+          "id": "aqgy4_0006__00014",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy4_0006__00014.json",
+            "sha256": "51c1eb425143c78efa31be222e554857bd8b3f08b529535b133ecc3cfee485de",
+            "bytes": 3160
+          }
+        },
+        {
+          "id": "aqgy4_0008__00027",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy4_0008__00027.json",
+            "sha256": "9c3b28a9f8a61f8bed00b78c3e8f01ec5d31e13012116b55db977c6d3dcb0f44",
+            "bytes": 3153
+          }
+        },
+        {
+          "id": "aqgy4_0008__00032",
+          "reason": "no_face",
+          "H3_route": "H_A",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy4_0008__00032.json",
+            "sha256": "cb5e561e1c526766cdb75bb96a68c215b32d896b99cd985895a425dd307a585e",
+            "bytes": 3134
+          }
+        },
+        {
+          "id": "aqgy5_0011__00031",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy5_0011__00031.json",
+            "sha256": "481bfec674393f8d8e82c93f7ad95dfde207ad79eeaffb901793d7403c98c6f2",
+            "bytes": 3207
+          }
+        },
+        {
+          "id": "aqgy5_0026__00010",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy5_0026__00010.json",
+            "sha256": "0e7d08b3697d5618189a4a44d79a36fc7babce720d18141df56b9c9e9e2e39b0",
+            "bytes": 3152
+          }
+        },
+        {
+          "id": "aqgy5_0036__00002",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/aqgy5_0036__00002.json",
+            "sha256": "dc50d687d99719a57fb79929a8b0db9e69f7b4c952b4e507c0ab4fd99f3984c6",
+            "bytes": 3150
+          }
+        },
+        {
+          "id": "video_0014__0027",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/video_0014__0027.json",
+            "sha256": "ae22fec08a28b225786fbee441c3ebf443fc56d0ce63c7ddb8702523a565c97c",
+            "bytes": 3143
+          }
+        },
+        {
+          "id": "video_0024__0026",
+          "reason": "no_face",
+          "H3_route": "H_A",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/video_0024__0026.json",
+            "sha256": "20814665e8b7206b7917d324354cea5f5ace2f92b485c75d543490bb9dbc5e1b",
+            "bytes": 3138
+          }
+        },
+        {
+          "id": "video_0054__0120",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/video_0054__0120.json",
+            "sha256": "e4bce0c8c94b970a36dd0c8bc490b5aa5c739a9440c369148e58fb5332713265",
+            "bytes": 3141
+          }
+        },
+        {
+          "id": "video_0056__0037",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/valid/predictions/video_0056__0037.json",
+            "sha256": "e10acb64ee80990f555dbcbb19496be8fce7ed4446f1c26266b227b39990f85f",
+            "bytes": 3141
+          }
+        }
+      ]
+    },
+    "test": {
+      "completion": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/complete.json",
+        "sha256": "cb8f687edabd63c3be03a3f107801d7ad5f63e90ce0a500a59ea3aaddaaa005c",
+        "bytes": 241856
+      },
+      "H_V_only_no_face": [
+        {
+          "id": "aqgy3_0008__00008",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy3_0008__00008.json",
+            "sha256": "58733bae95e244cc001d2a250fc9b4ea8af2e6895f48826b508bf658659d24a0",
+            "bytes": 3181
+          }
+        },
+        {
+          "id": "aqgy4_0010__00019",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy4_0010__00019.json",
+            "sha256": "f0300d198d240d32bb8b7c8ceb0068db697ba8691800890af02fa040e31d3827",
+            "bytes": 3194
+          }
+        },
+        {
+          "id": "aqgy4_0016__00012",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy4_0016__00012.json",
+            "sha256": "6e017f37e8241c372cfde16a793963153f7ef9c21a65341a58f157091810ff98",
+            "bytes": 3176
+          }
+        },
+        {
+          "id": "aqgy5_0014__00032",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy5_0014__00032.json",
+            "sha256": "fccd5f8c6cecebf5a0450194be2edadfb7cd22fa788ead0ce14e3b0c2935d81e",
+            "bytes": 3154
+          }
+        },
+        {
+          "id": "aqgy5_0027__00024",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/aqgy5_0027__00024.json",
+            "sha256": "6a02abbe5014a25272e1ec4de0247c8eb392f154f662b15c39bfd0fcea76bfc5",
+            "bytes": 3168
+          }
+        },
+        {
+          "id": "video_0014__0028",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/video_0014__0028.json",
+            "sha256": "f70ecfb640da19185329e2b29556e2c2e644baa84e0b61dde9d41ecef746dd56",
+            "bytes": 3150
+          }
+        },
+        {
+          "id": "video_0040__0046",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/video_0040__0046.json",
+            "sha256": "be6b68c2181d35441857c7a563f4f8670d61734041c519233246725523aabc32",
+            "bytes": 3164
+          }
+        },
+        {
+          "id": "video_0043__0004",
+          "reason": "no_face",
+          "H3_route": "H_A",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/video_0043__0004.json",
+            "sha256": "0902c4aeb6f6123437e6da3efe49c7e357fb80b259b9cdf227055a6fe12deb17",
+            "bytes": 3138
+          }
+        },
+        {
+          "id": "video_0056__0006",
+          "reason": "no_face",
+          "H3_route": "reject",
+          "prediction": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/test/predictions/video_0056__0006.json",
+            "sha256": "3b270147dd3bdc1c729d5ec5daf5871ace4cf695f3fff213b79fb07af9510a89",
+            "bytes": 3184
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "split": "valid",
+  "started_at": "2026-10-14T05:37:28.134043+00:00",
+  "charged_seconds": 862.31799528189,
+  "prior_seconds": 34.09454137389548,
+  "limit_seconds": 14400,
+  "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x07.infer",
+    "valid",
+    "--resume-reason",
+    "Missing timm at initialization before any prediction; restore byte-identical accepted X06b timm 0.9.16; retain failed GPU charge; frozen code/config unchanged. See dependency_recovery.json."
+  ],
+  "pid": 2915757,
+  "updated_at": "2026-10-14T05:51:48.444860+00:00",
+  "ended_at": "2026-10-14T05:51:50.452045+00:00",
+  "returncode": 0,
+  "failure": null,
+  "log": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/gpu_jobs/valid_1791956248133058935/child.log",
+    "sha256": "613bfae59b84500a3b6c4ebe5be57984035cbbf4da330bd5628dacbcf5a99c39",
+    "bytes": 13509
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "split": "test",
+  "started_at": "2026-10-14T05:59:51.561179+00:00",
+  "charged_seconds": 1349.6217548619024,
+  "prior_seconds": 896.4125366557855,
+  "limit_seconds": 14400,
+  "protocol_sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+  "command": [
+    "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+    "-u",
+    "-m",
+    "emotioncore.x07.infer",
+    "test"
+  ],
+  "pid": 3577405,
+  "updated_at": "2026-10-14T06:22:19.178159+00:00",
+  "ended_at": "2026-10-14T06:22:21.182939+00:00",
+  "returncode": 0,
+  "failure": null,
+  "log": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/gpu_jobs/test_1791957591560178656/child.log",
+    "sha256": "899304da7c1be3788cb91c2b259067c633a50f523cb8258c94c60e83697c7b6f",
+    "bytes": 13501
+  }
+}

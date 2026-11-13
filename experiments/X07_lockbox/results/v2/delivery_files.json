@@ -1,0 +1,145 @@
+{
+  "description": "Local delivery copy hashes; raw server artifacts and metrics unchanged",
+  "files": {
+    "experiments/X07_lockbox/results/v2/collect_delivery_1.py": {
+      "sha256": "3e0edad78e0ca470c5eada8ee5c4b426d1b9eefbb47492302047d69103a7d6a8",
+      "bytes": 5992
+    },
+    "experiments/X07_lockbox/results/v2/delivery_audit.json": {
+      "sha256": "d5c7c0f42f07adbd5aee05c8125b9d0e197082e896e0ce5a21f3f5d264829820",
+      "bytes": 509760
+    },
+    "experiments/X07_lockbox/results/v2/dependency_recovery.json": {
+      "sha256": "e1925fc582de1c723c3321980e17972891a895f7cc03bf619972de961ec60314",
+      "bytes": 122429
+    },
+    "experiments/X07_lockbox/results/v2/execution_start.json": {
+      "sha256": "77f7de2b3ca72630d98c872160417b844cacbbb89ba769e92921c58dbb3bcbd2",
+      "bytes": 555
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/test_1791957591560178656/child_log.txt": {
+      "sha256": "899304da7c1be3788cb91c2b259067c633a50f523cb8258c94c60e83697c7b6f",
+      "bytes": 13501
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/test_1791957591560178656/receipt.json": {
+      "sha256": "f6815cf1a9f955ff0c23b68f46f9b0e1f0c10242b7caca9feed243c797879767",
+      "bytes": 825
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/valid_1791955960286282893/child_log.txt": {
+      "sha256": "d157bedf272ddba99a6ef667a38d90b1d8e4b3c957c9a02b23a84201b39af707",
+      "bytes": 14457
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/valid_1791955960286282893/receipt.json": {
+      "sha256": "bf62b6a83fa9671d524fd165c95d61569ce36fdb2648a92726ec754178b58657",
+      "bytes": 810
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/valid_1791956248133058935/child_log.txt": {
+      "sha256": "613bfae59b84500a3b6c4ebe5be57984035cbbf4da330bd5628dacbcf5a99c39",
+      "bytes": 13509
+    },
+    "experiments/X07_lockbox/results/v2/gpu_jobs/valid_1791956248133058935/receipt.json": {
+      "sha256": "5cebf780dad7a1ee6a73356b1d779f90aff83f147cb381b0915cfc523d17b38c",
+      "bytes": 1045
+    },
+    "experiments/X07_lockbox/results/v2/infra_resume_1.py": {
+      "sha256": "8735cf2c4e543d3587613d5a4b578fea145425deac8575579960308becbfa883",
+      "bytes": 1669
+    },
+    "experiments/X07_lockbox/results/v2/leakage.json": {
+      "sha256": "b8e7240e7105aed015d51b74c7517b78868104c13da13b11d7f8f5785f73f0f3",
+      "bytes": 74692
+    },
+    "experiments/X07_lockbox/results/v2/preflight_tests.txt": {
+      "sha256": "c53ea735b114162946088e4ecd42d0a85eec06191aa0541819a472c1f1d9cb48",
+      "bytes": 729
+    },
+    "experiments/X07_lockbox/results/v2/resume_driver.started.json": {
+      "sha256": "c49c6595070d13cb23668c5193ea351b8267568ef7d56c71ae3ef06739ed0850",
+      "bytes": 615
+    },
+    "experiments/X07_lockbox/results/v2/secondary_no_face.json": {
+      "sha256": "907628437363c1926d3a7c501399355ef63a65e03af79c3e3c0e9eb1d72b0ef2",
+      "bytes": 8616
+    },
+    "experiments/X07_lockbox/results/v2/stages.completed.json": {
+      "sha256": "c08dee96e565745654f5825ac09aa201c21b57149a6f2ef7020ac5f99358552e",
+      "bytes": 375
+    },
+    "experiments/X07_lockbox/results/v2/stages.interrupted.json": {
+      "sha256": "a38ddf1441e732bc7bdeb294f76fd4a8a9fa5e8da3e8802725516430edfc2999",
+      "bytes": 91
+    },
+    "experiments/X07_lockbox/results/v2/stages.started.json": {
+      "sha256": "df6db78dbc004c14ee7c8fdb963f258caf54f1436380ebca4b4356976033ea70",
+      "bytes": 135
+    },
+    "experiments/X07_lockbox/results/v2/test_complete.json": {
+      "sha256": "cb8f687edabd63c3be03a3f107801d7ad5f63e90ce0a500a59ea3aaddaaa005c",
+      "bytes": 241856
+    },
+    "experiments/X07_lockbox/results/v2/test_inference.started.json": {
+      "sha256": "7f493d7c3c4be997487ef09e0fc47fdcdb88e88b8272a0eba28005ffc2f8bfd9",
+      "bytes": 414
+    },
+    "experiments/X07_lockbox/results/v2/test_inputs.json": {
+      "sha256": "f2a7f2e42b766a2f7fac52d7b23d8b9d79420800cd0052e9624b674924e89050",
+      "bytes": 242719
+    },
+    "experiments/X07_lockbox/results/v2/test_metrics.json": {
+      "sha256": "a6449c942c7c403d448caebd0d33d343350457cbd585ef04589c15ce28f19991",
+      "bytes": 45064
+    },
+    "experiments/X07_lockbox/results/v2/test_metrics.started.json": {
+      "sha256": "2e53635340c93a2ba3224e91f3c6d24380de4cb9edeca9392e36814e5ebe6541",
+      "bytes": 99
+    },
+    "experiments/X07_lockbox/results/v2/v1_preservation_before_summary.json": {
+      "sha256": "689bf7dbaa1721b3f786c628141661bfc3adf4391a9b2d5c3e60934d515d68d3",
+      "bytes": 664
+    },
+    "experiments/X07_lockbox/results/v2/valid/resumes/1791956251710585647.json": {
+      "sha256": "a8e1f8a14febe5cc9fa4e224910b021c3fa9e9baa39883bbde46daac5c758cb4",
+      "bytes": 679
+    },
+    "experiments/X07_lockbox/results/v2/valid_complete.json": {
+      "sha256": "59713affbd02c7eb8cb3e7bb4ddf0f47c32b5ce9b35b9666eb2b4d04fb71e043",
+      "bytes": 152820
+    },
+    "experiments/X07_lockbox/results/v2/valid_inference.started.json": {
+      "sha256": "538afd3f65fc71d0964ac8a3d43de97dff60db587b294f9f2f37e5d292a38816",
+      "bytes": 414
+    },
+    "experiments/X07_lockbox/results/v2/valid_inputs.json": {
+      "sha256": "6b606a03cda1f78adef568ea26fb009f8915680192bcda2a2a626b05bdb80dfa",
+      "bytes": 153320
+    },
+    "experiments/X07_lockbox/results/v2/valid_metrics.json": {
+      "sha256": "f1d39873f3ca2bd6422a2b7628ddf8d9eea93d682ea5bcb4dd21d1c0fb4a801c",
+      "bytes": 30791
+    },
+    "experiments/X07_lockbox/results/v2/valid_metrics.started.json": {
+      "sha256": "13ccc84c9d8ae47f29140714842a17bee1f896cf6535c5a66ef626946ee51f2e",
+      "bytes": 99
+    },
+    "experiments/X07_lockbox/REPORT.md": {
+      "sha256": "702fd05c8080e93a7293d06e60a5916fedd9ce487106169c0a17aafb6fda025d",
+      "bytes": 17827
+    },
+    "docs/SYSTEM_CARD.md": {
+      "sha256": "19a05b19071639943d854db0ac8f0fe8753d11f14128544393fcae90cb153677",
+      "bytes": 2691
+    },
+    "experiments/X07_lockbox/REPORT_BEFORE_REVISION_1.md": {
+      "sha256": "ed23a696440f7a2e65bddeb3a456773035a5bb7fa311ca72e5614c7d31c6f334",
+      "bytes": 9070
+    },
+    "docs/SYSTEM_CARD_BEFORE_REVISION_1.md": {
+      "sha256": "46b92f751f0dafeaf9dbc1f35fe1936425fd3fec9b0d1331eb64d1c94b8a6064",
+      "bytes": 2340
+    },
+    "configs/x07_lockbox_protocol_v2.json": {
+      "sha256": "fba5481ec16df7b5d8f1d403542cd7552c9fbf2d57013da96f1b1e1fff475e80",
+      "bytes": 148545
+    }
+  }
+}

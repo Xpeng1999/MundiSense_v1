@@ -1,0 +1,147 @@
+{
+  "launch.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/launch.json",
+      "sha256": "75e1742019a478ebaa823d619d1076343c9da0be8f333b4d5955f865e4e4d71a"
+    },
+    "data": {
+      "pid": 2300264,
+      "started_at": "2026-10-14T05:01:51.987655+00:00",
+      "command": [
+        "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+        "-u",
+        "-m",
+        "emotioncore.x07.stages"
+      ],
+      "protocol_commit": "6d9d07c2e592c82fa97d4d31e5eae37658e83360"
+    }
+  },
+  "leakage.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/leakage.json",
+      "sha256": "61879bbd014669043810fdd474871be5c711361c1e491b0b4ded953b6217f2ed"
+    },
+    "data": {
+      "status": "passed",
+      "at": "2026-10-14T05:02:01.083523+00:00",
+      "protocol_sha256": "8ca5430c3c009450d30daa7c4cdf04bb162819d70df21857225069c37eca09c2",
+      "checks": {
+        "Q_epoch0": {
+          "rows": 17793,
+          "unique_ids": 17793,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch0.jsonl",
+            "sha256": "1e2fd0944afa9ce3aeddd76416bf579d87b0370a78f9046a50e8e0b63a626b36",
+            "bytes": 11337163
+          }
+        },
+        "Q_epoch1": {
+          "rows": 17793,
+          "unique_ids": 17793,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X04b/manifests/final_epoch1.jsonl",
+            "sha256": "d6d11cf3c025e674f992c97b83f961709f80d10a2895eabf97913c1afefc1740",
+            "bytes": 11337284
+          }
+        },
+        "D1_A3": {
+          "rows": 22486,
+          "unique_ids": 22486,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/A3/training_ids.jsonl",
+            "sha256": "c5847ee71fd928745a6d937aea050656c31a264234f662a1a36e3304482dd8d6",
+            "bytes": 2216088
+          }
+        },
+        "D1_V2": {
+          "rows": 22486,
+          "unique_ids": 22486,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V2/training_ids.jsonl",
+            "sha256": "c5847ee71fd928745a6d937aea050656c31a264234f662a1a36e3304482dd8d6",
+            "bytes": 2216088
+          }
+        },
+        "D1_V1": {
+          "rows": 22486,
+          "unique_ids": 22486,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X05/heads/D1_fmhx/V1/training_ids.jsonl",
+            "sha256": "c5847ee71fd928745a6d937aea050656c31a264234f662a1a36e3304482dd8d6",
+            "bytes": 2216088
+          }
+        },
+        "calibration": {
+          "rows": 9799,
+          "unique_ids": 9799,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X05/deployment/fitting_ids.jsonl",
+            "sha256": "931c433ef3cab429a6f55412e063637eeeec326e99389d394a9129393e9df774",
+            "bytes": 718596
+          }
+        },
+        "MER_dedup": {
+          "rows": 9386,
+          "unique_ids": 9386,
+          "overlap": 0,
+          "source": {
+            "path": "/mnt/h/emotionAI/emotioncore_runs/X04a/manifests/mer_train_dedup.jsonl",
+            "sha256": "91a1aeea0fb3fc6d5f281976a9ae378d8e683eefa7d2d90a7d90085830847e74",
+            "bytes": 11565809
+          }
+        }
+      },
+      "suspected_duplicates": {
+        "excluded_ids": [
+          "mer_sample_00000876",
+          "mer_sample_00002517",
+          "mer_samplenew3_00104997"
+        ],
+        "pairs": [
+          {
+            "source_id": "mer_sample_00002517",
+            "target_id": "sims_video_0003_0006",
+            "similarity": 0.7692307692307693,
+            "short_exact": false,
+            "audio_confirmed": false,
+            "audio_available": false
+          },
+          {
+            "source_id": "mer_sample_00000876",
+            "target_id": "sims_video_0056_0006",
+            "similarity": 0.8333333333333334,
+            "short_exact": false,
+            "audio_confirmed": false,
+            "audio_available": false
+          },
+          {
+            "source_id": "mer_samplenew3_00104997",
+            "target_id": "sims_video_0028_0002",
+            "similarity": 1.0,
+            "short_exact": false,
+            "audio_confirmed": false,
+            "audio_available": false
+          }
+        ],
+        "absent_from_all_training_sources": true
+      },
+      "test_count": 1034
+    }
+  },
+  "stages.started.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/stages.started.json",
+      "sha256": "05d04fc845cff5236f728fa443e6abb8defb50457bce806c3f1df144fe3910ae"
+    },
+    "data": {
+      "at": "2026-10-14T05:01:54.896659+00:00",
+      "protocol_sha256": "8ca5430c3c009450d30daa7c4cdf04bb162819d70df21857225069c37eca09c2"
+    }
+  }
+}

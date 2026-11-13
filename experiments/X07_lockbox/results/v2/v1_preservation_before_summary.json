@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-14T05:27:33.376183+00:00",
+  "root": "/mnt/h/emotionAI/emotioncore_runs/X07",
+  "stop": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07/STOP.json",
+    "sha256": "cfbc1eea62b3ca6271674c0a9ccec5c37700294c63fdabf73f2923a310811cae",
+    "bytes": 358
+  },
+  "protocol": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07/code/configs/x07_lockbox_protocol.json",
+    "sha256": "8ca5430c3c009450d30daa7c4cdf04bb162819d70df21857225069c37eca09c2",
+    "bytes": 146844
+  },
+  "test_directory_exists": false,
+  "gpu_jobs": 0,
+  "file_count": 30585,
+  "full_snapshot_remote": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/v1_preservation_before.json"
+}

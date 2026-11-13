@@ -1,0 +1,2995 @@
+{
+  "at": "2026-10-14T05:36:17.144539+00:00",
+  "reason": "Missing timm in launch PYTHONPATH; restore accepted timm 0.9.16 byte-identical package copy before any prediction",
+  "failed_job": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/gpu_jobs/valid_1791955960286282893/receipt.json",
+    "sha256": "bf62b6a83fa9671d524fd165c95d61569ce36fdb2648a92726ec754178b58657",
+    "bytes": 810
+  },
+  "charged_seconds_retained": 34.09454137389548,
+  "predictions_before_resume": 0,
+  "metrics_lock_exists": false,
+  "test_directory_exists": false,
+  "frozen_code_or_config_modified": false,
+  "accepted_environment": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06b/r3_fmh/run_meta.json",
+    "sha256": "f54a8cc05e55b7a59b0e4851ebdd0d797c728f2daecddb6ac53ae3d187562128",
+    "bytes": 1831
+  },
+  "accepted_package_inventory": {
+    "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/dependency_repair/files.json",
+    "sha256": "45acdedeef7400a6d2b1aa87436f13c2705be5796ab56fe69bfc6b2cec55b99c",
+    "bytes": 119651
+  },
+  "packages": {
+    "numpy": "2.3.5",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.15.0",
+    "opencv-python-headless": "5.0.0.93",
+    "timm": "0.9.16",
+    "soundfile": "0.14.0"
+  },
+  "cpu_model_load_passed": true,
+  "files": [
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/__init__.py",
+        "sha256": "d1b91a5531a3481e81661a86f05c3a3c5726197238ec174db78720f9e03f41d0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/__init__.py",
+        "sha256": "d1b91a5531a3481e81661a86f05c3a3c5726197238ec174db78720f9e03f41d0",
+        "bytes": 292
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/__init__.py",
+        "sha256": "cfa46e769edee3cf425a83b0dd35c1306d00d66cd74a01815b3e4ca6d9cf016d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/__init__.py",
+        "sha256": "cfa46e769edee3cf425a83b0dd35c1306d00d66cd74a01815b3e4ca6d9cf016d",
+        "bytes": 819
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet12k_synsets.txt",
+        "sha256": "f6483e79f18a9b670d43d915ddba40bbcaf82cfc4e92a07bd44057b9d44935f3"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet12k_synsets.txt",
+        "sha256": "f6483e79f18a9b670d43d915ddba40bbcaf82cfc4e92a07bd44057b9d44935f3",
+        "bytes": 118210
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet21k_goog_synsets.txt",
+        "sha256": "66362bdedf36d933382edca5493fc562dcc17128ce36403c9e730a75f48cb2f2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet21k_goog_synsets.txt",
+        "sha256": "66362bdedf36d933382edca5493fc562dcc17128ce36403c9e730a75f48cb2f2",
+        "bytes": 218430
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet21k_goog_to_12k_indices.txt",
+        "sha256": "6b588e9d55c7fed67aac82e91beeabe7eace2de1ed67115010ca076179e8c508"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet21k_goog_to_12k_indices.txt",
+        "sha256": "6b588e9d55c7fed67aac82e91beeabe7eace2de1ed67115010ca076179e8c508",
+        "bytes": 64070
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet21k_goog_to_22k_indices.txt",
+        "sha256": "86a76780366f807a9f804617ea244ca1bf5817414d0330cf11ba29e285c1cc57"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet21k_goog_to_22k_indices.txt",
+        "sha256": "86a76780366f807a9f804617ea244ca1bf5817414d0330cf11ba29e285c1cc57",
+        "bytes": 119937
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet21k_miil_synsets.txt",
+        "sha256": "cd76d977daaa2f13a4a91fca0f53713f2f29675308d4ce0f0ee0e5b07a3164c6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet21k_miil_synsets.txt",
+        "sha256": "cd76d977daaa2f13a4a91fca0f53713f2f29675308d4ce0f0ee0e5b07a3164c6",
+        "bytes": 112210
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet21k_miil_w21_synsets.txt",
+        "sha256": "f49dde3d69946b8635586432f34f35985f807d168286ce5fde746aac3a7d94c8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet21k_miil_w21_synsets.txt",
+        "sha256": "f49dde3d69946b8635586432f34f35985f807d168286ce5fde746aac3a7d94c8",
+        "bytes": 104500
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet22k_ms_synsets.txt",
+        "sha256": "e159efd39f70d26fa77818f178417e8fac79f65b73ac16d101515e12077431e6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet22k_ms_synsets.txt",
+        "sha256": "e159efd39f70d26fa77818f178417e8fac79f65b73ac16d101515e12077431e6",
+        "bytes": 218410
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet22k_ms_to_12k_indices.txt",
+        "sha256": "c0c910923b70d892a6f8accde9b0cabdaa8dd67b8c0fcfd0b82d481557a2d63b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet22k_ms_to_12k_indices.txt",
+        "sha256": "c0c910923b70d892a6f8accde9b0cabdaa8dd67b8c0fcfd0b82d481557a2d63b",
+        "bytes": 63625
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet22k_ms_to_22k_indices.txt",
+        "sha256": "4a9fdd07433e9dc385fe3feb021586308f894a3dcb85f4882b25ed204cf63321"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet22k_ms_to_22k_indices.txt",
+        "sha256": "4a9fdd07433e9dc385fe3feb021586308f894a3dcb85f4882b25ed204cf63321",
+        "bytes": 119938
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet22k_synsets.txt",
+        "sha256": "0ae24538751973797b29d8dec412b2bdc61bc4ec3ecd081eba0735804236bbd2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet22k_synsets.txt",
+        "sha256": "0ae24538751973797b29d8dec412b2bdc61bc4ec3ecd081eba0735804236bbd2",
+        "bytes": 218410
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet22k_to_12k_indices.txt",
+        "sha256": "d3ffaab48064bab1ea7ce1626c72f5a011ee4503cac612b90ee1da0d147c8e87"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet22k_to_12k_indices.txt",
+        "sha256": "d3ffaab48064bab1ea7ce1626c72f5a011ee4503cac612b90ee1da0d147c8e87",
+        "bytes": 64070
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_a_indices.txt",
+        "sha256": "e81223a35add6e78f9afe6f215652c1926ebefe1d8efc26c6e923d7ac9143937"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_a_indices.txt",
+        "sha256": "e81223a35add6e78f9afe6f215652c1926ebefe1d8efc26c6e923d7ac9143937",
+        "bytes": 774
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_a_synsets.txt",
+        "sha256": "9826a24166e74ce62fb87b27889874ca26917542c745712309d6e25855d63bc2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_a_synsets.txt",
+        "sha256": "9826a24166e74ce62fb87b27889874ca26917542c745712309d6e25855d63bc2",
+        "bytes": 2000
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_r_indices.txt",
+        "sha256": "91e09d2ff0a002104bc0d37a892a7e75ffc2cc0db47b2b506047a3493b9116d2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_r_indices.txt",
+        "sha256": "91e09d2ff0a002104bc0d37a892a7e75ffc2cc0db47b2b506047a3493b9116d2",
+        "bytes": 769
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_r_synsets.txt",
+        "sha256": "a6a0729f7a99230280639cab6e51e01485a3b41a676ea35621a501c9d6e83ca4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_r_synsets.txt",
+        "sha256": "a6a0729f7a99230280639cab6e51e01485a3b41a676ea35621a501c9d6e83ca4",
+        "bytes": 2000
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_real_labels.json",
+        "sha256": "d83e9bff374c631aae8439eb064c7019acc56e1b3bc3f56b8380c2a710b0220b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_real_labels.json",
+        "sha256": "d83e9bff374c631aae8439eb064c7019acc56e1b3bc3f56b8380c2a710b0220b",
+        "bytes": 388478
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_synset_to_definition.txt",
+        "sha256": "191e227d48fc8c7b7e2d2a3cac41fc8b2eb517d9d2819d0edbc91c5767250eed"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_synset_to_definition.txt",
+        "sha256": "191e227d48fc8c7b7e2d2a3cac41fc8b2eb517d9d2819d0edbc91c5767250eed",
+        "bytes": 1748917
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_synset_to_lemma.txt",
+        "sha256": "1b8babda187421a4bde0c9c5a197c36f6bdda962f7ca11ffb2813806cbb2178f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_synset_to_lemma.txt",
+        "sha256": "1b8babda187421a4bde0c9c5a197c36f6bdda962f7ca11ffb2813806cbb2178f",
+        "bytes": 741457
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/_info/imagenet_synsets.txt",
+        "sha256": "70002b0ff5de60a3a17a82dbfcff291931f96225ddf941ad2e182fc39e183d15"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/_info/imagenet_synsets.txt",
+        "sha256": "70002b0ff5de60a3a17a82dbfcff291931f96225ddf941ad2e182fc39e183d15",
+        "bytes": 10000
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/auto_augment.py",
+        "sha256": "1352595992d5e86668c0891e00553466e685ecc8479286926ca550a202c38a70"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/auto_augment.py",
+        "sha256": "1352595992d5e86668c0891e00553466e685ecc8479286926ca550a202c38a70",
+        "bytes": 35550
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/config.py",
+        "sha256": "b9fda9fa6356ff09ed09edf82bf5ebdc9e3970987c216125fdc33083228647e8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/config.py",
+        "sha256": "b9fda9fa6356ff09ed09edf82bf5ebdc9e3970987c216125fdc33083228647e8",
+        "bytes": 4616
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/constants.py",
+        "sha256": "6644abed002b72c0f238e051610a4b7b873654e24a4406280d1535270609b1e1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/constants.py",
+        "sha256": "6644abed002b72c0f238e051610a4b7b873654e24a4406280d1535270609b1e1",
+        "bytes": 442
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/dataset.py",
+        "sha256": "5902a4a32651b609966d1127f83e62f8fc871e029d561396c72a5d5b3a5f7eb9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/dataset.py",
+        "sha256": "5902a4a32651b609966d1127f83e62f8fc871e029d561396c72a5d5b3a5f7eb9",
+        "bytes": 6210
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/dataset_factory.py",
+        "sha256": "0da91934466509878a9e2ce6fa15f31ad114107c60d57ca98110845d2e232cd7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/dataset_factory.py",
+        "sha256": "0da91934466509878a9e2ce6fa15f31ad114107c60d57ca98110845d2e232cd7",
+        "bytes": 8180
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/dataset_info.py",
+        "sha256": "7c08d391b8bede8119bde2a0fa7d5cc4e60cfe0703e6471479631659146484e4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/dataset_info.py",
+        "sha256": "7c08d391b8bede8119bde2a0fa7d5cc4e60cfe0703e6471479631659146484e4",
+        "bytes": 2391
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/distributed_sampler.py",
+        "sha256": "99f712fdbccbff3108444a517abf0b01d5f0d56bd415826b5e0a8ac367ea9471"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/distributed_sampler.py",
+        "sha256": "99f712fdbccbff3108444a517abf0b01d5f0d56bd415826b5e0a8ac367ea9471",
+        "bytes": 5540
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/imagenet_info.py",
+        "sha256": "73f0ca550432cc761fb60a143bed7606eaa1b01248fe1e9273283a1b3b9ef9f6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/imagenet_info.py",
+        "sha256": "73f0ca550432cc761fb60a143bed7606eaa1b01248fe1e9273283a1b3b9ef9f6",
+        "bytes": 4167
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/loader.py",
+        "sha256": "1f74182a37e92b5228c5165610f3f578ebb32abd81959774aa56173e2f20ee2a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/loader.py",
+        "sha256": "1f74182a37e92b5228c5165610f3f578ebb32abd81959774aa56173e2f20ee2a",
+        "bytes": 15511
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/mixup.py",
+        "sha256": "f94e24a8f1853990b3feedab5d55cb5ef2e47515f5ae12231e6a897d58f3660b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/mixup.py",
+        "sha256": "f94e24a8f1853990b3feedab5d55cb5ef2e47515f5ae12231e6a897d58f3660b",
+        "bytes": 14634
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/random_erasing.py",
+        "sha256": "8d24c9abed731994f5cd15afe41cb206e038950763fc415ca226dd2e3450683a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/random_erasing.py",
+        "sha256": "8d24c9abed731994f5cd15afe41cb206e038950763fc415ca226dd2e3450683a",
+        "bytes": 4964
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/__init__.py",
+        "sha256": "02e2a0423679abd5c82c866eea2443209cbe5f276283fcc2d5395a5519917026"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/__init__.py",
+        "sha256": "02e2a0423679abd5c82c866eea2443209cbe5f276283fcc2d5395a5519917026",
+        "bytes": 72
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/class_map.py",
+        "sha256": "74c5ece0fb840ea26ba1a3a6941b6d4e98cc95a7973220781f86daac32adcef7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/class_map.py",
+        "sha256": "74c5ece0fb840ea26ba1a3a6941b6d4e98cc95a7973220781f86daac32adcef7",
+        "bytes": 895
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/img_extensions.py",
+        "sha256": "293b640b27eb3a12f01fbbf0b3b93bc6c86412a7a476b10667eae612bc92bdc4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/img_extensions.py",
+        "sha256": "293b640b27eb3a12f01fbbf0b3b93bc6c86412a7a476b10667eae612bc92bdc4",
+        "bytes": 1482
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader.py",
+        "sha256": "fc5a7def02c8d5cc45148d5094e92f5882b0766b5068f1201fdeca9ad4036682"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader.py",
+        "sha256": "fc5a7def02c8d5cc45148d5094e92f5882b0766b5068f1201fdeca9ad4036682",
+        "bytes": 487
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_factory.py",
+        "sha256": "718aa097eec8c7ec6c94bf3737c01eea4cc020a96975ddaa90c61c89104ee0f0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_factory.py",
+        "sha256": "718aa097eec8c7ec6c94bf3737c01eea4cc020a96975ddaa90c61c89104ee0f0",
+        "bytes": 1732
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_hfds.py",
+        "sha256": "aab89a99f923ef3d9cb1961e20c9b5feecebfd779e97f87fb6582a3f7e77e432"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_hfds.py",
+        "sha256": "aab89a99f923ef3d9cb1961e20c9b5feecebfd779e97f87fb6582a3f7e77e432",
+        "bytes": 2608
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_hfids.py",
+        "sha256": "3a4e9d7215781c53efaf2f20c842e7cb182afe793a108289947c278d9c4205c1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_hfids.py",
+        "sha256": "3a4e9d7215781c53efaf2f20c842e7cb182afe793a108289947c278d9c4205c1",
+        "bytes": 8282
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_image_folder.py",
+        "sha256": "fe1b50fe8b8c89b09e79e9a0d34f7bbfb9e3d78a9794502da52f47550c28a8d2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_image_folder.py",
+        "sha256": "fe1b50fe8b8c89b09e79e9a0d34f7bbfb9e3d78a9794502da52f47550c28a8d2",
+        "bytes": 3508
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_image_in_tar.py",
+        "sha256": "a24e080cf929baeff744ac4af37104a3bcdf2cf9ea26aff1ec2c0399ea407f71"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_image_in_tar.py",
+        "sha256": "a24e080cf929baeff744ac4af37104a3bcdf2cf9ea26aff1ec2c0399ea407f71",
+        "bytes": 9182
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_image_tar.py",
+        "sha256": "8743e58661d4ff5433532e29de9b08f49a1e6806a8d7f38114ad7f2ba45ef5ee"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_image_tar.py",
+        "sha256": "8743e58661d4ff5433532e29de9b08f49a1e6806a8d7f38114ad7f2ba45ef5ee",
+        "bytes": 2644
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_tfds.py",
+        "sha256": "e5d69aaa127362aee16d80407ae174ea55c23bb034b4f8a91db25530532ff8d9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_tfds.py",
+        "sha256": "e5d69aaa127362aee16d80407ae174ea55c23bb034b4f8a91db25530532ff8d9",
+        "bytes": 17909
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/reader_wds.py",
+        "sha256": "4bdd54f7b0fd68aa4bd483470386e21640f935989449adac2d3cfba279650f14"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/reader_wds.py",
+        "sha256": "4bdd54f7b0fd68aa4bd483470386e21640f935989449adac2d3cfba279650f14",
+        "bytes": 16947
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/readers/shared_count.py",
+        "sha256": "ffffd1bcb47e8e8851674227b3a88a54090a538e0bc54de8e07ec4d01d1bdb9a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/readers/shared_count.py",
+        "sha256": "ffffd1bcb47e8e8851674227b3a88a54090a538e0bc54de8e07ec4d01d1bdb9a",
+        "bytes": 303
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/real_labels.py",
+        "sha256": "c5d7b17a853f284e9cd876341bcd4dcb6f93fe24d0ff51ce58b8fb47f59f025b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/real_labels.py",
+        "sha256": "c5d7b17a853f284e9cd876341bcd4dcb6f93fe24d0ff51ce58b8fb47f59f025b",
+        "bytes": 1800
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/tf_preprocessing.py",
+        "sha256": "c4294c799c943f1f1801306f567ce28346c324d05af19ab3729995594c1e7d68"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/tf_preprocessing.py",
+        "sha256": "c4294c799c943f1f1801306f567ce28346c324d05af19ab3729995594c1e7d68",
+        "bytes": 9169
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/transforms.py",
+        "sha256": "8065ab17a86404d6cc1c3eda065d428fc6c84f8c904fca45987cb339a10a310e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/transforms.py",
+        "sha256": "8065ab17a86404d6cc1c3eda065d428fc6c84f8c904fca45987cb339a10a310e",
+        "bytes": 18852
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/data/transforms_factory.py",
+        "sha256": "06a8d6275d99c3afa11ad7c357a3ab8aceb906ce7834c78c566049c2c72e9428"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/data/transforms_factory.py",
+        "sha256": "06a8d6275d99c3afa11ad7c357a3ab8aceb906ce7834c78c566049c2c72e9428",
+        "bytes": 17961
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/__init__.py",
+        "sha256": "e781b89662e109bfa99e93430ac8cb663a665e45e71f4b4247abf3151ca15644"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/__init__.py",
+        "sha256": "e781b89662e109bfa99e93430ac8cb663a665e45e71f4b4247abf3151ca15644",
+        "bytes": 3862
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/activations.py",
+        "sha256": "e5d9ccf45afadc50474c1c26364ecfb3ffdf60be1a0897ea51b5a114b0189b42"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/activations.py",
+        "sha256": "e5d9ccf45afadc50474c1c26364ecfb3ffdf60be1a0897ea51b5a114b0189b42",
+        "bytes": 4882
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/activations_jit.py",
+        "sha256": "05023c3188d9849c74c3ac93529b25ff1fed83e5c575b603918cb91040506084"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/activations_jit.py",
+        "sha256": "05023c3188d9849c74c3ac93529b25ff1fed83e5c575b603918cb91040506084",
+        "bytes": 2529
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/activations_me.py",
+        "sha256": "425ae1f8d597c42e8eb31235c29a5e05db1df141965d3f04087f79b456971844"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/activations_me.py",
+        "sha256": "425ae1f8d597c42e8eb31235c29a5e05db1df141965d3f04087f79b456971844",
+        "bytes": 5886
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/adaptive_avgmax_pool.py",
+        "sha256": "9a6a69f60e7d2dac85532e14255679f56b0568a5b01b5fc892005efb65aa397a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/adaptive_avgmax_pool.py",
+        "sha256": "9a6a69f60e7d2dac85532e14255679f56b0568a5b01b5fc892005efb65aa397a",
+        "bytes": 6309
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/attention_pool.py",
+        "sha256": "f972eaf48e23f053f00b48c787533d99e4f77c6d7b69f40186b0e0d6b0c4c110"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/attention_pool.py",
+        "sha256": "f972eaf48e23f053f00b48c787533d99e4f77c6d7b69f40186b0e0d6b0c4c110",
+        "bytes": 3458
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/attention_pool2d.py",
+        "sha256": "cd0d0fe95468fd5b19d4f7668c211b3b26ea1e29539954078918df146966dbd7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/attention_pool2d.py",
+        "sha256": "cd0d0fe95468fd5b19d4f7668c211b3b26ea1e29539954078918df146966dbd7",
+        "bytes": 4934
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/blur_pool.py",
+        "sha256": "31fc17669ea6eceb634c9cd74b5221c6d9deda2b7886ac88d951dd8d680453f1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/blur_pool.py",
+        "sha256": "31fc17669ea6eceb634c9cd74b5221c6d9deda2b7886ac88d951dd8d680453f1",
+        "bytes": 1594
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/bottleneck_attn.py",
+        "sha256": "1cbb996f27a9d4d7fd42af407a2f35902cd032ce94d5a4014112eb3a78e7907a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/bottleneck_attn.py",
+        "sha256": "1cbb996f27a9d4d7fd42af407a2f35902cd032ce94d5a4014112eb3a78e7907a",
+        "bytes": 6895
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/cbam.py",
+        "sha256": "6fa968dca14e73cf0c578213c36a52a24bafa4b90016907d94d7357b6d107462"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/cbam.py",
+        "sha256": "6fa968dca14e73cf0c578213c36a52a24bafa4b90016907d94d7357b6d107462",
+        "bytes": 4426
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/classifier.py",
+        "sha256": "9b135aafeaa8dba982011fea955d28b754e03da119cb72333f82b615f1de25d4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/classifier.py",
+        "sha256": "9b135aafeaa8dba982011fea955d28b754e03da119cb72333f82b615f1de25d4",
+        "bytes": 7478
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/cond_conv2d.py",
+        "sha256": "6d47cc625dcf4677dd2142c9a1794b8e1ef5513f194ac6fc95005afe7faaed5a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/cond_conv2d.py",
+        "sha256": "6d47cc625dcf4677dd2142c9a1794b8e1ef5513f194ac6fc95005afe7faaed5a",
+        "bytes": 5199
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/config.py",
+        "sha256": "ff5d6394c57d703c3efb0d7348ac4778920d39feb437a203aa7b349b680f1adb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/config.py",
+        "sha256": "ff5d6394c57d703c3efb0d7348ac4778920d39feb437a203aa7b349b680f1adb",
+        "bytes": 4175
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/conv2d_same.py",
+        "sha256": "b2cc686809716ae11abdfbd1efdd8a05f2089951004e5aa5eed0ecb2fef1c916"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/conv2d_same.py",
+        "sha256": "b2cc686809716ae11abdfbd1efdd8a05f2089951004e5aa5eed0ecb2fef1c916",
+        "bytes": 3216
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/conv_bn_act.py",
+        "sha256": "26bda952d2a18fc2f3ba83958533b821a227d3cb81a9fccb93330f762bfb2492"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/conv_bn_act.py",
+        "sha256": "26bda952d2a18fc2f3ba83958533b821a227d3cb81a9fccb93330f762bfb2492",
+        "bytes": 3836
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/create_act.py",
+        "sha256": "9c4c8ce23b8b79c0f25a380e13e3135dd08f508e22aec4cb8202c38be4d1ed44"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/create_act.py",
+        "sha256": "9c4c8ce23b8b79c0f25a380e13e3135dd08f508e22aec4cb8202c38be4d1ed44",
+        "bytes": 5422
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/create_attn.py",
+        "sha256": "77dfa3ea23dc14fa42da8eff0d6e102ca28fd4a599061667ebe0071fe8927e1e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/create_attn.py",
+        "sha256": "77dfa3ea23dc14fa42da8eff0d6e102ca28fd4a599061667ebe0071fe8927e1e",
+        "bytes": 3514
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/create_conv2d.py",
+        "sha256": "75aaf153392f3d853182eb89fd625dd4f7a993138ae227f92702730b9202f399"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/create_conv2d.py",
+        "sha256": "75aaf153392f3d853182eb89fd625dd4f7a993138ae227f92702730b9202f399",
+        "bytes": 1622
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/create_norm.py",
+        "sha256": "280ad96fa69ab72a09b3ce323b56318030afcc7d3b9c01ae26d799c091396ee2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/create_norm.py",
+        "sha256": "280ad96fa69ab72a09b3ce323b56318030afcc7d3b9c01ae26d799c091396ee2",
+        "bytes": 1573
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/create_norm_act.py",
+        "sha256": "8b910897e5fc82bef94c5274b7b390684c4520573f38b3290d51cb8422457c8a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/create_norm_act.py",
+        "sha256": "8b910897e5fc82bef94c5274b7b390684c4520573f38b3290d51cb8422457c8a",
+        "bytes": 3836
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/drop.py",
+        "sha256": "1e8714902348371bd244757475047bce9791889406fca924f3fc30d801cad998"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/drop.py",
+        "sha256": "1e8714902348371bd244757475047bce9791889406fca924f3fc30d801cad998",
+        "bytes": 6973
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/eca.py",
+        "sha256": "3225616e80d4a8b51f7ae6e9ca959f691dcb30b1f080b08db163b789e99c405b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/eca.py",
+        "sha256": "3225616e80d4a8b51f7ae6e9ca959f691dcb30b1f080b08db163b789e99c405b",
+        "bytes": 6386
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/evo_norm.py",
+        "sha256": "98e26efa93250645468e9dda28dd258639ee103de55cb11336a6c9207a524920"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/evo_norm.py",
+        "sha256": "98e26efa93250645468e9dda28dd258639ee103de55cb11336a6c9207a524920",
+        "bytes": 13862
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/fast_norm.py",
+        "sha256": "20894cd9552cf8349436cfc8ab42844fee738cffdd4d8323f104d0fdcd56841a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/fast_norm.py",
+        "sha256": "20894cd9552cf8349436cfc8ab42844fee738cffdd4d8323f104d0fdcd56841a",
+        "bytes": 4008
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/filter_response_norm.py",
+        "sha256": "9832779dbbb99e270ffb969cb6f0e265ae0761ddfddd5abeff4e994dc6b9778c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/filter_response_norm.py",
+        "sha256": "9832779dbbb99e270ffb969cb6f0e265ae0761ddfddd5abeff4e994dc6b9778c",
+        "bytes": 2540
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/format.py",
+        "sha256": "8b4d8d2d76d65cfbf8589092505e0c9d28d0a7af7df941abe59deb9cc664dfae"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/format.py",
+        "sha256": "8b4d8d2d76d65cfbf8589092505e0c9d28d0a7af7df941abe59deb9cc664dfae",
+        "bytes": 1109
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/gather_excite.py",
+        "sha256": "e770c7b7a7324a33ea77d356defa19ba1c3c6fd9d4cefb06f4d565fc3fbd340a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/gather_excite.py",
+        "sha256": "e770c7b7a7324a33ea77d356defa19ba1c3c6fd9d4cefb06f4d565fc3fbd340a",
+        "bytes": 3824
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/global_context.py",
+        "sha256": "6995af8a3e09f93e48d6b7532bbdb90fa4747c3b89c983c3697be5dfa40c9a4c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/global_context.py",
+        "sha256": "6995af8a3e09f93e48d6b7532bbdb90fa4747c3b89c983c3697be5dfa40c9a4c",
+        "bytes": 2445
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/grid.py",
+        "sha256": "94c33c6ccde0831ba7bd016a40207de3749901f63b370d38c3e94568c064c6df"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/grid.py",
+        "sha256": "94c33c6ccde0831ba7bd016a40207de3749901f63b370d38c3e94568c064c6df",
+        "bytes": 1624
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/grn.py",
+        "sha256": "7712d69fe578f0e88594a2cb29a53c66dd26741711fc03a0d268758bcb661ca6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/grn.py",
+        "sha256": "7712d69fe578f0e88594a2cb29a53c66dd26741711fc03a0d268758bcb661ca6",
+        "bytes": 1319
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/halo_attn.py",
+        "sha256": "ccc2647fd4bea1c0afadfbd639ed08f7b5074e91102243f7f350ce3773979be7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/halo_attn.py",
+        "sha256": "ccc2647fd4bea1c0afadfbd639ed08f7b5074e91102243f7f350ce3773979be7",
+        "bytes": 10662
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/helpers.py",
+        "sha256": "f552ea203f238ddc3f527dbbd05deb40bbcdcfdbd032137d9adb3b924fcc6bf6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/helpers.py",
+        "sha256": "f552ea203f238ddc3f527dbbd05deb40bbcdcfdbd032137d9adb3b924fcc6bf6",
+        "bytes": 1053
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/inplace_abn.py",
+        "sha256": "09325cc779ff0ece90f9476cf3723cec3b90cb68e0cd7f2e9a60552a4ae5c80d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/inplace_abn.py",
+        "sha256": "09325cc779ff0ece90f9476cf3723cec3b90cb68e0cd7f2e9a60552a4ae5c80d",
+        "bytes": 3374
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/interpolate.py",
+        "sha256": "3aca1b5aa1750aba4b7ba6245cb991cc049b02cc3fbb3cedcaab0167ac5462bb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/interpolate.py",
+        "sha256": "3aca1b5aa1750aba4b7ba6245cb991cc049b02cc3fbb3cedcaab0167ac5462bb",
+        "bytes": 2439
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/lambda_layer.py",
+        "sha256": "fa307eb98a18aa4d108d2b4085a79cdf4bb21005a9eb837debf070df7a18f07f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/lambda_layer.py",
+        "sha256": "fa307eb98a18aa4d108d2b4085a79cdf4bb21005a9eb837debf070df7a18f07f",
+        "bytes": 5958
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/linear.py",
+        "sha256": "6da4b65a9974bd810b9ef86743a2f0eb98d5a2d689cf98866eba0927d2662113"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/linear.py",
+        "sha256": "6da4b65a9974bd810b9ef86743a2f0eb98d5a2d689cf98866eba0927d2662113",
+        "bytes": 743
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/median_pool.py",
+        "sha256": "6f4dafdfa546becfe0098f4d855c14efe9a095c5c91f3ac9573704a4452e1c12"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/median_pool.py",
+        "sha256": "6f4dafdfa546becfe0098f4d855c14efe9a095c5c91f3ac9573704a4452e1c12",
+        "bytes": 1737
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/mixed_conv2d.py",
+        "sha256": "9914a6014b69807c9afd176752ae23f392b9412ec91537523d45ce5132a0a660"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/mixed_conv2d.py",
+        "sha256": "9914a6014b69807c9afd176752ae23f392b9412ec91537523d45ce5132a0a660",
+        "bytes": 1843
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/ml_decoder.py",
+        "sha256": "694d39fdad94d7e7a2e3f4880e721649393aec36f92ee03f50e607c9b1ad10f7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/ml_decoder.py",
+        "sha256": "694d39fdad94d7e7a2e3f4880e721649393aec36f92ee03f50e607c9b1ad10f7",
+        "bytes": 7008
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/mlp.py",
+        "sha256": "daf34147a30be416d2d70ae5784baa99567ba511af3da659c27dab58f055f8bb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/mlp.py",
+        "sha256": "daf34147a30be416d2d70ae5784baa99567ba511af3da659c27dab58f055f8bb",
+        "bytes": 8457
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/non_local_attn.py",
+        "sha256": "dbd66e9e64babeb3269213cdc25ec3b4fa056201a50e9bb0175edca02132ec75"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/non_local_attn.py",
+        "sha256": "dbd66e9e64babeb3269213cdc25ec3b4fa056201a50e9bb0175edca02132ec75",
+        "bytes": 6218
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/norm.py",
+        "sha256": "826ec34b75d2668f0a7926f468c5f21c6ad9848fe5f9c5d68f5807955fd39e45"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/norm.py",
+        "sha256": "826ec34b75d2668f0a7926f468c5f21c6ad9848fe5f9c5d68f5807955fd39e45",
+        "bytes": 6040
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/norm_act.py",
+        "sha256": "6eebfe8c3763684fae6a10b6db63e635dc3bc5efae60c1b2089729a5ec7ee9f4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/norm_act.py",
+        "sha256": "6eebfe8c3763684fae6a10b6db63e635dc3bc5efae60c1b2089729a5ec7ee9f4",
+        "bytes": 17418
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/padding.py",
+        "sha256": "cf12337b11f13bca579d99433f4487a7119f139e1dbe02fb65c5c5b247b70ace"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/padding.py",
+        "sha256": "cf12337b11f13bca579d99433f4487a7119f139e1dbe02fb65c5c5b247b70ace",
+        "bytes": 2877
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/patch_dropout.py",
+        "sha256": "dd5867ca131bcce1d50183709cd03707f7405b301da210da5ac4fc733f05a21f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/patch_dropout.py",
+        "sha256": "dd5867ca131bcce1d50183709cd03707f7405b301da210da5ac4fc733f05a21f",
+        "bytes": 1741
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/patch_embed.py",
+        "sha256": "5232ce2c4041056b5a8f9699dd2c9922e81585ca075efde2743f47d8df288d19"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/patch_embed.py",
+        "sha256": "5232ce2c4041056b5a8f9699dd2c9922e81585ca075efde2743f47d8df288d19",
+        "bytes": 9625
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/pool2d_same.py",
+        "sha256": "52c9ad5a76b993991f5533f6e53d7e38a24e82d71f0500aa4b2d0599a65b8d1c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/pool2d_same.py",
+        "sha256": "52c9ad5a76b993991f5533f6e53d7e38a24e82d71f0500aa4b2d0599a65b8d1c",
+        "bytes": 3045
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/pos_embed.py",
+        "sha256": "dc81ad8f73584dc3cdc561c816430d4253fd7d9e8d14e8673185974033ee966d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/pos_embed.py",
+        "sha256": "dc81ad8f73584dc3cdc561c816430d4253fd7d9e8d14e8673185974033ee966d",
+        "bytes": 2584
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/pos_embed_rel.py",
+        "sha256": "c4890f2981d00717d756bdfed715b2ebe2bc7ca33e6fd0e8352d16387933bdf0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/pos_embed_rel.py",
+        "sha256": "c4890f2981d00717d756bdfed715b2ebe2bc7ca33e6fd0e8352d16387933bdf0",
+        "bytes": 19370
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/pos_embed_sincos.py",
+        "sha256": "e25422c040ec3fba4d8b837eea5a0ff79e16bc4db30a6aa04a161184e0b63016"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/pos_embed_sincos.py",
+        "sha256": "e25422c040ec3fba4d8b837eea5a0ff79e16bc4db30a6aa04a161184e0b63016",
+        "bytes": 14465
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/selective_kernel.py",
+        "sha256": "eba8ec14ce286be3241dec1ef731cfd27d18ec3f6a4c1d0113f907d95f5ac4f4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/selective_kernel.py",
+        "sha256": "eba8ec14ce286be3241dec1ef731cfd27d18ec3f6a4c1d0113f907d95f5ac4f4",
+        "bytes": 5387
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/separable_conv.py",
+        "sha256": "b2d69564f3fe071b4edead0a6b7fd59c8d4cd5efb1b4d01450008ff35ae117f6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/separable_conv.py",
+        "sha256": "b2d69564f3fe071b4edead0a6b7fd59c8d4cd5efb1b4d01450008ff35ae117f6",
+        "bytes": 2620
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/space_to_depth.py",
+        "sha256": "380af80dedef24cdbc9045476ad02a6e1bd87747a04e1447ddb575fd4912783a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/space_to_depth.py",
+        "sha256": "380af80dedef24cdbc9045476ad02a6e1bd87747a04e1447ddb575fd4912783a",
+        "bytes": 1775
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/split_attn.py",
+        "sha256": "0a5da0c7494d568b17db382278b81ffc5b6a530bb0b46293cb14a85b2bde8de8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/split_attn.py",
+        "sha256": "0a5da0c7494d568b17db382278b81ffc5b6a530bb0b46293cb14a85b2bde8de8",
+        "bytes": 3076
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/split_batchnorm.py",
+        "sha256": "e20846b6588ae73d199f3476f73241feb37d0493e21aecb53d296d995c85e56c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/split_batchnorm.py",
+        "sha256": "e20846b6588ae73d199f3476f73241feb37d0493e21aecb53d296d995c85e56c",
+        "bytes": 3441
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/squeeze_excite.py",
+        "sha256": "62b2442e4604e5c07573eaf85b0f6899ecd4a7776e81b833faa37c5ec4db7372"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/squeeze_excite.py",
+        "sha256": "62b2442e4604e5c07573eaf85b0f6899ecd4a7776e81b833faa37c5ec4db7372",
+        "bytes": 4327
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/std_conv.py",
+        "sha256": "cd885c2826c4d3f46a9f8db680433d82bdcb7817b0bb40972aabe5b1af7e3364"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/std_conv.py",
+        "sha256": "cd885c2826c4d3f46a9f8db680433d82bdcb7817b0bb40972aabe5b1af7e3364",
+        "bytes": 5887
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/test_time_pool.py",
+        "sha256": "67994fbd52c8e0862aac92c64218097f13dab2e83d9edb35cba9830ffaf39c14"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/test_time_pool.py",
+        "sha256": "67994fbd52c8e0862aac92c64218097f13dab2e83d9edb35cba9830ffaf39c14",
+        "bytes": 1996
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/trace_utils.py",
+        "sha256": "71b66e7ce6862a685318431ce764009eacc64537e7e2fbf3aac00e25a2ca250f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/trace_utils.py",
+        "sha256": "71b66e7ce6862a685318431ce764009eacc64537e7e2fbf3aac00e25a2ca250f",
+        "bytes": 335
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/typing.py",
+        "sha256": "518ad3873f7e83c3e5997afb2d9bad29fb7ab1e15a155a7f66b0f464657668fe"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/typing.py",
+        "sha256": "518ad3873f7e83c3e5997afb2d9bad29fb7ab1e15a155a7f66b0f464657668fe",
+        "bytes": 163
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/layers/weight_init.py",
+        "sha256": "8a5c7462ae53c4671bf474e4c96d23a3e2681deed03630b2050ddb81a4a52a7b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/layers/weight_init.py",
+        "sha256": "8a5c7462ae53c4671bf474e4c96d23a3e2681deed03630b2050ddb81a4a52a7b",
+        "bytes": 4765
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/loss/__init__.py",
+        "sha256": "882341f5b5007faf6778d7b5fd73b479e835417bb1bba8d14c0bb2e15f7214bf"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/loss/__init__.py",
+        "sha256": "882341f5b5007faf6778d7b5fd73b479e835417bb1bba8d14c0bb2e15f7214bf",
+        "bytes": 245
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/loss/asymmetric_loss.py",
+        "sha256": "87673f6723b16434b58f88fe5726ba02ffcfb94844582bf096f8ca2c1c8bcf9f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/loss/asymmetric_loss.py",
+        "sha256": "87673f6723b16434b58f88fe5726ba02ffcfb94844582bf096f8ca2c1c8bcf9f",
+        "bytes": 3343
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/loss/binary_cross_entropy.py",
+        "sha256": "f40800482bc3f94446652d44e97c9a6980717f450ec7c0071ca0bbb532d34335"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/loss/binary_cross_entropy.py",
+        "sha256": "f40800482bc3f94446652d44e97c9a6980717f450ec7c0071ca0bbb532d34335",
+        "bytes": 2483
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/loss/cross_entropy.py",
+        "sha256": "5c3135f459e16237ae7407ab6fa52e948203df80266685d0d423c40231240903"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/loss/cross_entropy.py",
+        "sha256": "5c3135f459e16237ae7407ab6fa52e948203df80266685d0d423c40231240903",
+        "bytes": 1145
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/loss/jsd.py",
+        "sha256": "3057bc1ff242d6cac513f14a8a717b8cc54841880d5a0793ee464bf567885c62"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/loss/jsd.py",
+        "sha256": "3057bc1ff242d6cac513f14a8a717b8cc54841880d5a0793ee464bf567885c62",
+        "bytes": 1595
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/__init__.py",
+        "sha256": "30bd47469af835afba8d692652fcbd894da758a9762ceaf3ef3f6bdfe7397d92"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/__init__.py",
+        "sha256": "30bd47469af835afba8d692652fcbd894da758a9762ceaf3ef3f6bdfe7397d92",
+        "bytes": 3290
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_builder.py",
+        "sha256": "fc26379ba053ea04617710a61d02a71888c319824eef9db110937f07e04ceb3f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_builder.py",
+        "sha256": "fc26379ba053ea04617710a61d02a71888c319824eef9db110937f07e04ceb3f",
+        "bytes": 18937
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_efficientnet_blocks.py",
+        "sha256": "b53d9988f8fef0b3fccaf37a608f1fc131a9cee8d3ea002d3a85d8fa127e0245"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_efficientnet_blocks.py",
+        "sha256": "b53d9988f8fef0b3fccaf37a608f1fc131a9cee8d3ea002d3a85d8fa127e0245",
+        "bytes": 12092
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_efficientnet_builder.py",
+        "sha256": "936756c821a59eaca21730f6ea4728a38396606d06f5d096600b040b9473d33f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_efficientnet_builder.py",
+        "sha256": "936756c821a59eaca21730f6ea4728a38396606d06f5d096600b040b9473d33f",
+        "bytes": 20021
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_factory.py",
+        "sha256": "d72897097e804dfbe9fc1c6cf138401e4b5b99a016e44ae27eb58922838bc5ae"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_factory.py",
+        "sha256": "d72897097e804dfbe9fc1c6cf138401e4b5b99a016e44ae27eb58922838bc5ae",
+        "bytes": 5188
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_features.py",
+        "sha256": "8c7e8e3b4b941c20849421058d55a569a3bc7216e7e722a0924ebc587d5c2a85"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_features.py",
+        "sha256": "8c7e8e3b4b941c20849421058d55a569a3bc7216e7e722a0924ebc587d5c2a85",
+        "bytes": 15540
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_features_fx.py",
+        "sha256": "d972b4a5c845ba0b879852553da2ea6480e15dfedf576fff171d9b5dabc74b42"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_features_fx.py",
+        "sha256": "d972b4a5c845ba0b879852553da2ea6480e15dfedf576fff171d9b5dabc74b42",
+        "bytes": 4972
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_helpers.py",
+        "sha256": "06bde3e97eab8e71de07b6360dac90c1c76c7feb7fc30ef13cf5523cd5a78a38"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_helpers.py",
+        "sha256": "06bde3e97eab8e71de07b6360dac90c1c76c7feb7fc30ef13cf5523cd5a78a38",
+        "bytes": 5948
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_hub.py",
+        "sha256": "65884a7adeb24936b0854eb046eb089881ec9429741c9be35321750176fe54b9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_hub.py",
+        "sha256": "65884a7adeb24936b0854eb046eb089881ec9429741c9be35321750176fe54b9",
+        "bytes": 15848
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_manipulate.py",
+        "sha256": "3c2ac2243f943cf6a078bba11df0f32201206b1ee9c3de9b12cafa77ac75fc31"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_manipulate.py",
+        "sha256": "3c2ac2243f943cf6a078bba11df0f32201206b1ee9c3de9b12cafa77ac75fc31",
+        "bytes": 10503
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pretrained.py",
+        "sha256": "b92f7900d2539f87983a429d2f3b99503cf7d414e7d281cc16463eaacdab0a31"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pretrained.py",
+        "sha256": "b92f7900d2539f87983a429d2f3b99503cf7d414e7d281cc16463eaacdab0a31",
+        "bytes": 3525
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_prune.py",
+        "sha256": "c8042293a84e859a08a1ce3e81e56b00d077d28405dfa7cc42c9de500d2a8079"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_prune.py",
+        "sha256": "c8042293a84e859a08a1ce3e81e56b00d077d28405dfa7cc42c9de500d2a8079",
+        "bytes": 4171
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pruned/ecaresnet101d_pruned.txt",
+        "sha256": "d7303b5dac6c4e7149c59f4f31b7cc5524fbc0f49070057e5334a07457c68186"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pruned/ecaresnet101d_pruned.txt",
+        "sha256": "d7303b5dac6c4e7149c59f4f31b7cc5524fbc0f49070057e5334a07457c68186",
+        "bytes": 8734
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pruned/ecaresnet50d_pruned.txt",
+        "sha256": "2780254f069b69207af97ac83423c20d632233f16b74d8ee24dfc92516fcf561"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pruned/ecaresnet50d_pruned.txt",
+        "sha256": "2780254f069b69207af97ac83423c20d632233f16b74d8ee24dfc92516fcf561",
+        "bytes": 4520
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pruned/efficientnet_b1_pruned.txt",
+        "sha256": "a4d0e6d4410d258313f3e1a35d9de45d60970032c3ba7fb88df8a087be1110b1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pruned/efficientnet_b1_pruned.txt",
+        "sha256": "a4d0e6d4410d258313f3e1a35d9de45d60970032c3ba7fb88df8a087be1110b1",
+        "bytes": 18596
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pruned/efficientnet_b2_pruned.txt",
+        "sha256": "7bfa1a49533e531dcd315011ca727be18c23cf1b81017ff0ee4ccec3d325de03"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pruned/efficientnet_b2_pruned.txt",
+        "sha256": "7bfa1a49533e531dcd315011ca727be18c23cf1b81017ff0ee4ccec3d325de03",
+        "bytes": 18676
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_pruned/efficientnet_b3_pruned.txt",
+        "sha256": "0350c91308c49ab83ca14af4430cf0064740255ddd55e5058e73bda4d0bfd0f8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_pruned/efficientnet_b3_pruned.txt",
+        "sha256": "0350c91308c49ab83ca14af4430cf0064740255ddd55e5058e73bda4d0bfd0f8",
+        "bytes": 21133
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/_registry.py",
+        "sha256": "d8787c66fb2ec49e5570723bce81a7760be0cd3a57ad373e1ac5a3b74187cdb1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/_registry.py",
+        "sha256": "d8787c66fb2ec49e5570723bce81a7760be0cd3a57ad373e1ac5a3b74187cdb1",
+        "bytes": 13822
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/beit.py",
+        "sha256": "cf88782127a4cc18ab18ad1cd378e0ca246b169997bdf7de0744ad1617bf1d9b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/beit.py",
+        "sha256": "cf88782127a4cc18ab18ad1cd378e0ca246b169997bdf7de0744ad1617bf1d9b",
+        "bytes": 25559
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/byoanet.py",
+        "sha256": "7e0bc0024c401c1b68d33954617e0aac7e166bf4f83cea718569066bd8f8bceb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/byoanet.py",
+        "sha256": "7e0bc0024c401c1b68d33954617e0aac7e166bf4f83cea718569066bd8f8bceb",
+        "bytes": 18985
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/byobnet.py",
+        "sha256": "ff26c105cad52c03d6d47565299bea7f9a2a5e88600bd25dea2d66a2a8acede8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/byobnet.py",
+        "sha256": "ff26c105cad52c03d6d47565299bea7f9a2a5e88600bd25dea2d66a2a8acede8",
+        "bytes": 85786
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/cait.py",
+        "sha256": "c543243569aeac1e6e5754259b09017a2fb1e24bb5ce520de9acac35be97db7d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/cait.py",
+        "sha256": "c543243569aeac1e6e5754259b09017a2fb1e24bb5ce520de9acac35be97db7d",
+        "bytes": 18131
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/coat.py",
+        "sha256": "302b1cefa4ab838979a19120632aff8115947547e752d7d2848033f7885faf3d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/coat.py",
+        "sha256": "302b1cefa4ab838979a19120632aff8115947547e752d7d2848033f7885faf3d",
+        "bytes": 30015
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/convit.py",
+        "sha256": "3f8bb62cba43817f323fc42e7b14fe851016b2a9581adcd59ecdfaf7e8351459"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/convit.py",
+        "sha256": "3f8bb62cba43817f323fc42e7b14fe851016b2a9581adcd59ecdfaf7e8351459",
+        "bytes": 15301
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/convmixer.py",
+        "sha256": "fef6e0bc95de4ac17fb6de6b24f1fb3d764488793875831b1e0924bae2f3dc4f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/convmixer.py",
+        "sha256": "fef6e0bc95de4ac17fb6de6b24f1fb3d764488793875831b1e0924bae2f3dc4f",
+        "bytes": 4598
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/convnext.py",
+        "sha256": "b6f993a543350ef26bb66f38996ea2b7b5bd17aa2c943b71a6f7a3f3f2ab20d5"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/convnext.py",
+        "sha256": "b6f993a543350ef26bb66f38996ea2b7b5bd17aa2c943b71a6f7a3f3f2ab20d5",
+        "bytes": 49907
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/crossvit.py",
+        "sha256": "8403aba63aec062ec331c6feaddd7a620246d40c1fc75f466f8096593f77a40a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/crossvit.py",
+        "sha256": "8403aba63aec062ec331c6feaddd7a620246d40c1fc75f466f8096593f77a40a",
+        "bytes": 24271
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/cspnet.py",
+        "sha256": "b9489ed59c8435db7ae069502178ddda3996d7c0ab1afc38e1e7a17e65299d1a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/cspnet.py",
+        "sha256": "b9489ed59c8435db7ae069502178ddda3996d7c0ab1afc38e1e7a17e65299d1a",
+        "bytes": 40028
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/davit.py",
+        "sha256": "ac39f0949149fbf3f4b84663bc2777a3ab258768a4bacbc132036a8d3e015334"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/davit.py",
+        "sha256": "ac39f0949149fbf3f4b84663bc2777a3ab258768a4bacbc132036a8d3e015334",
+        "bytes": 23269
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/deit.py",
+        "sha256": "e8743b3dd67b06b361212d670ac12a61bd769e6aa955000e023e52e536690859"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/deit.py",
+        "sha256": "e8743b3dd67b06b361212d670ac12a61bd769e6aa955000e023e52e536690859",
+        "bytes": 18550
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/densenet.py",
+        "sha256": "cfd75c70aeafb9d958263884d7833dbc122fd55c396bae00396e6706f08386e2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/densenet.py",
+        "sha256": "cfd75c70aeafb9d958263884d7833dbc122fd55c396bae00396e6706f08386e2",
+        "bytes": 15942
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/dla.py",
+        "sha256": "9c687238ef4ae8f5080e3a441e8622222255042c5f6a534c284de14ae7c087c3"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/dla.py",
+        "sha256": "9c687238ef4ae8f5080e3a441e8622222255042c5f6a534c284de14ae7c087c3",
+        "bytes": 18599
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/dpn.py",
+        "sha256": "6892e5def4435ac165d968ce3c6005bb358734fe38f49cf459126207c3f69d8e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/dpn.py",
+        "sha256": "6892e5def4435ac165d968ce3c6005bb358734fe38f49cf459126207c3f69d8e",
+        "bytes": 13593
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/edgenext.py",
+        "sha256": "b41ef9c3251ad98e9d485daa061a8b6167a1d7c2696bd892afdc646bb93c4a93"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/edgenext.py",
+        "sha256": "b41ef9c3251ad98e9d485daa061a8b6167a1d7c2696bd892afdc646bb93c4a93",
+        "bytes": 20958
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/efficientformer.py",
+        "sha256": "5db8556e7a8cace3a3ae394a8b7495fc53001c3bc49b1b800f6c035fe7be18cd"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/efficientformer.py",
+        "sha256": "5db8556e7a8cace3a3ae394a8b7495fc53001c3bc49b1b800f6c035fe7be18cd",
+        "bytes": 19024
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/efficientformer_v2.py",
+        "sha256": "bfea8421c8fabad5323ddfe852e54a5bb7ad205393620cd8b9127ea40a4c1365"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/efficientformer_v2.py",
+        "sha256": "bfea8421c8fabad5323ddfe852e54a5bb7ad205393620cd8b9127ea40a4c1365",
+        "bytes": 24841
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/efficientnet.py",
+        "sha256": "d780300f2c5509d1f5c4dd36079ff3dbeaa88dece20b1237ec28ff9b9cad81e7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/efficientnet.py",
+        "sha256": "d780300f2c5509d1f5c4dd36079ff3dbeaa88dece20b1237ec28ff9b9cad81e7",
+        "bytes": 102012
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/efficientvit_mit.py",
+        "sha256": "b3411cc2f1094a269d23d67a7e0fe21ffc0263ac26822db1e89a15628ec7e23a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/efficientvit_mit.py",
+        "sha256": "b3411cc2f1094a269d23d67a7e0fe21ffc0263ac26822db1e89a15628ec7e23a",
+        "bytes": 34179
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/efficientvit_msra.py",
+        "sha256": "75f178c9ac12480a0ac5a5d6728d0ef12373090530d8b4f499f38e97eb7f5069"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/efficientvit_msra.py",
+        "sha256": "75f178c9ac12480a0ac5a5d6728d0ef12373090530d8b4f499f38e97eb7f5069",
+        "bytes": 23405
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/eva.py",
+        "sha256": "c65b0cca0c5ec4eea3bb1bedc82e8534039c99a024e7bac103092feb86490c24"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/eva.py",
+        "sha256": "c65b0cca0c5ec4eea3bb1bedc82e8534039c99a024e7bac103092feb86490c24",
+        "bytes": 40811
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/factory.py",
+        "sha256": "8583d1680faa8b77645fdd8f1dff10380d743b7ff9701e8ea9e6fff5c82c9f0d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/factory.py",
+        "sha256": "8583d1680faa8b77645fdd8f1dff10380d743b7ff9701e8ea9e6fff5c82c9f0d",
+        "bytes": 150
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/fastvit.py",
+        "sha256": "4da111deadd35efe62e8e2a01838c76b925ea246a3fe217541af03a59e9051e1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/fastvit.py",
+        "sha256": "4da111deadd35efe62e8e2a01838c76b925ea246a3fe217541af03a59e9051e1",
+        "bytes": 48399
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/features.py",
+        "sha256": "4cbeaa5df364de6868f38ad1a67c7c516d3aa4466001d357a43b9b9915cb479c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/features.py",
+        "sha256": "4cbeaa5df364de6868f38ad1a67c7c516d3aa4466001d357a43b9b9915cb479c",
+        "bytes": 151
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/focalnet.py",
+        "sha256": "3c8215e38112f022c2a4d81014d7c06cca3754ddf86a61ecd855ce0ef73cb17e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/focalnet.py",
+        "sha256": "3c8215e38112f022c2a4d81014d7c06cca3754ddf86a61ecd855ce0ef73cb17e",
+        "bytes": 24033
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/fx_features.py",
+        "sha256": "30551999c762b0cdc7acd8da93ddcbdd2c16be7b587a39f356b2575db04b00e1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/fx_features.py",
+        "sha256": "30551999c762b0cdc7acd8da93ddcbdd2c16be7b587a39f356b2575db04b00e1",
+        "bytes": 154
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/gcvit.py",
+        "sha256": "37a6607221f2b1abefa0ee064316a1cf70f26f9f8ff7d75ec0d08a1bc5578cca"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/gcvit.py",
+        "sha256": "37a6607221f2b1abefa0ee064316a1cf70f26f9f8ff7d75ec0d08a1bc5578cca",
+        "bytes": 21393
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/ghostnet.py",
+        "sha256": "6afd487aef683009f71f8a0fff8070c3871aeadba588660873dd93703599db4d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/ghostnet.py",
+        "sha256": "6afd487aef683009f71f8a0fff8070c3871aeadba588660873dd93703599db4d",
+        "bytes": 14559
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/hardcorenas.py",
+        "sha256": "31d32144e49c359f76cac2d064fe80c51cf5343d28de19fddb414b2db185b6df"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/hardcorenas.py",
+        "sha256": "31d32144e49c359f76cac2d064fe80c51cf5343d28de19fddb414b2db185b6df",
+        "bytes": 7697
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/helpers.py",
+        "sha256": "bd9ce1c8132b250a316eed55c524aaecf8ec633d15cd090dd54b93fa5b9263bb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/helpers.py",
+        "sha256": "bd9ce1c8132b250a316eed55c524aaecf8ec633d15cd090dd54b93fa5b9263bb",
+        "bytes": 223
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/hgnet.py",
+        "sha256": "c08d72eea789e8a19b097af4967a2879ec4d94f408d67dfb5fe1a2f74cbbd123"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/hgnet.py",
+        "sha256": "c08d72eea789e8a19b097af4967a2879ec4d94f408d67dfb5fe1a2f74cbbd123",
+        "bytes": 23366
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/hrnet.py",
+        "sha256": "d5a063d096442d9ff88539bca927ed7d6a4e992bf43e82b39b0eee78c7025a7b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/hrnet.py",
+        "sha256": "d5a063d096442d9ff88539bca927ed7d6a4e992bf43e82b39b0eee78c7025a7b",
+        "bytes": 33100
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/hub.py",
+        "sha256": "ee10e668374c16388d4b42897a59ff1e16472c1480378b71d16cf27a427a3fc4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/hub.py",
+        "sha256": "ee10e668374c16388d4b42897a59ff1e16472c1480378b71d16cf27a427a3fc4",
+        "bytes": 146
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/inception_next.py",
+        "sha256": "df6074842dae8af3654f2a8cc48377ef34eacdbaf5f5a0c3f41f5c8c90f0896a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/inception_next.py",
+        "sha256": "df6074842dae8af3654f2a8cc48377ef34eacdbaf5f5a0c3f41f5c8c90f0896a",
+        "bytes": 15052
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/inception_resnet_v2.py",
+        "sha256": "e4c4757f0748314f506f888d017b04f00113547d024c6836404d8c9ae1980954"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/inception_resnet_v2.py",
+        "sha256": "e4c4757f0748314f506f888d017b04f00113547d024c6836404d8c9ae1980954",
+        "bytes": 12077
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/inception_v3.py",
+        "sha256": "e778e1af806a07383ce62803b7db683c2c8ebd00f9c0d575be552dd115693793"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/inception_v3.py",
+        "sha256": "e778e1af806a07383ce62803b7db683c2c8ebd00f9c0d575be552dd115693793",
+        "bytes": 17104
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/inception_v4.py",
+        "sha256": "269cfa0eaf40967a43e1569c0a8b495d51d011af3b0f763ca08bb7f5df0c657d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/inception_v4.py",
+        "sha256": "269cfa0eaf40967a43e1569c0a8b495d51d011af3b0f763ca08bb7f5df0c657d",
+        "bytes": 11076
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/layers/__init__.py",
+        "sha256": "b6552c18c04d10c7d4a533c6eafe062a9a7d9aa20c5f9176a83dfef870b14e9a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/layers/__init__.py",
+        "sha256": "b6552c18c04d10c7d4a533c6eafe062a9a7d9aa20c5f9176a83dfef870b14e9a",
+        "bytes": 3432
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/levit.py",
+        "sha256": "532493df16eb66c35ffdfb2badd662284eec4873efb7d23015e2d3787ca5a17f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/levit.py",
+        "sha256": "532493df16eb66c35ffdfb2badd662284eec4873efb7d23015e2d3787ca5a17f",
+        "bytes": 32436
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/maxxvit.py",
+        "sha256": "f1a9d98f5a3303ddbccf7cbfe4a5a1a7f179ed3f8a0ba66c68af9141ef2f59f7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/maxxvit.py",
+        "sha256": "f1a9d98f5a3303ddbccf7cbfe4a5a1a7f179ed3f8a0ba66c68af9141ef2f59f7",
+        "bytes": 84981
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/metaformer.py",
+        "sha256": "407d1a16bc7a778a22c2c45b4aa3ba2477a7fcaf4f0810f6104351f87af34eab"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/metaformer.py",
+        "sha256": "407d1a16bc7a778a22c2c45b4aa3ba2477a7fcaf4f0810f6104351f87af34eab",
+        "bytes": 35053
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/mlp_mixer.py",
+        "sha256": "e55c6a72fd40a9c47395653d6f613da049a475849bee44effe33cbf58abae456"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/mlp_mixer.py",
+        "sha256": "e55c6a72fd40a9c47395653d6f613da049a475849bee44effe33cbf58abae456",
+        "bytes": 24231
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/mobilenetv3.py",
+        "sha256": "3adfbedb7079550c9f6a5c3c1bc8f972b7018f4acf2fd197294b15b1292f9e68"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/mobilenetv3.py",
+        "sha256": "3adfbedb7079550c9f6a5c3c1bc8f972b7018f4acf2fd197294b15b1292f9e68",
+        "bytes": 34045
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/mobilevit.py",
+        "sha256": "6476c63c6def1611422347f7ccb5b31f626a89ab2bfd269c6a1ff53018bd288f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/mobilevit.py",
+        "sha256": "6476c63c6def1611422347f7ccb5b31f626a89ab2bfd269c6a1ff53018bd288f",
+        "bytes": 25734
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/mvitv2.py",
+        "sha256": "fbe1af5ed07d81c52f2d69740aa8382dcff5668d6419fbad80e7719073011c16"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/mvitv2.py",
+        "sha256": "fbe1af5ed07d81c52f2d69740aa8382dcff5668d6419fbad80e7719073011c16",
+        "bytes": 35873
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/nasnet.py",
+        "sha256": "b1ed1afde4d6e006d29176c5d1451d88cccd36aeb02a2a7fbbf3cc0262f1d04a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/nasnet.py",
+        "sha256": "b1ed1afde4d6e006d29176c5d1451d88cccd36aeb02a2a7fbbf3cc0262f1d04a",
+        "bytes": 26627
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/nest.py",
+        "sha256": "9c69f522cbdd09224493886a48ae9c0a1ead63e9fb480f1c18dcbc14bb89ce82"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/nest.py",
+        "sha256": "9c69f522cbdd09224493886a48ae9c0a1ead63e9fb480f1c18dcbc14bb89ce82",
+        "bytes": 21505
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/nextvit.py",
+        "sha256": "798e501fd228101894db0d229b795b48e60e2d1506a942aee465fdc6de53d3e8"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/nextvit.py",
+        "sha256": "798e501fd228101894db0d229b795b48e60e2d1506a942aee465fdc6de53d3e8",
+        "bytes": 22710
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/nfnet.py",
+        "sha256": "c4f6fbe1b727cdee81e516f45521cd029e2e6d1c8bba669f38a8b5480aacfff0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/nfnet.py",
+        "sha256": "c4f6fbe1b727cdee81e516f45521cd029e2e6d1c8bba669f38a8b5480aacfff0",
+        "bytes": 41085
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/pit.py",
+        "sha256": "7e4d186f416ddfd433e4d04f6a8978256b38ec14477a88b586181f9939546a8a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/pit.py",
+        "sha256": "7e4d186f416ddfd433e4d04f6a8978256b38ec14477a88b586181f9939546a8a",
+        "bytes": 14946
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/pnasnet.py",
+        "sha256": "73a4cfe78912400a4a1ef815da8bf689cdfdd178e49d4dbc2b41a96f98f014fb"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/pnasnet.py",
+        "sha256": "73a4cfe78912400a4a1ef815da8bf689cdfdd178e49d4dbc2b41a96f98f014fb",
+        "bytes": 15389
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/pvt_v2.py",
+        "sha256": "6db9499519edb25e3c564be66f3f91ad42e51c666e0ef8585c7bed228024f670"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/pvt_v2.py",
+        "sha256": "6db9499519edb25e3c564be66f3f91ad42e51c666e0ef8585c7bed228024f670",
+        "bytes": 17286
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/registry.py",
+        "sha256": "4428256b1fa919f3d2d701ce76835698e907a21609e88bc659b771b8037a84a9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/registry.py",
+        "sha256": "4428256b1fa919f3d2d701ce76835698e907a21609e88bc659b771b8037a84a9",
+        "bytes": 151
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/regnet.py",
+        "sha256": "91a12be9c6c062753c2be281764376b80600a2638e036910e0a2a32426549be1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/regnet.py",
+        "sha256": "91a12be9c6c062753c2be281764376b80600a2638e036910e0a2a32426549be1",
+        "bytes": 44020
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/repghost.py",
+        "sha256": "6d12a91cf6547f317ad6c255e0d0c4b49d19588d0b6d3d9d9ddcc08366c2ff45"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/repghost.py",
+        "sha256": "6d12a91cf6547f317ad6c255e0d0c4b49d19588d0b6d3d9d9ddcc08366c2ff45",
+        "bytes": 16340
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/repvit.py",
+        "sha256": "9af7a187c6cba702cbef14a3d840aa79136161c2edf79ffb3be693bb15d376d2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/repvit.py",
+        "sha256": "9af7a187c6cba702cbef14a3d840aa79136161c2edf79ffb3be693bb15d376d2",
+        "bytes": 16386
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/res2net.py",
+        "sha256": "3d9788e37e531b5eb1fbf6729efa9dc1f72fc32e1bff5ffdc9d7eefefc81cce0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/res2net.py",
+        "sha256": "3d9788e37e531b5eb1fbf6729efa9dc1f72fc32e1bff5ffdc9d7eefefc81cce0",
+        "bytes": 7691
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/resnest.py",
+        "sha256": "eb90c1e03004acd95eb89e954d56fd1df48ced0156b31993b3e1d3f9eeae1089"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/resnest.py",
+        "sha256": "eb90c1e03004acd95eb89e954d56fd1df48ced0156b31993b3e1d3f9eeae1089",
+        "bytes": 9635
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/resnet.py",
+        "sha256": "4baa73e53a22b477d82d1b7dbf87f9ce8ea634af71b69da3f99703486289ff69"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/resnet.py",
+        "sha256": "4baa73e53a22b477d82d1b7dbf87f9ce8ea634af71b69da3f99703486289ff69",
+        "bytes": 95579
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/resnetv2.py",
+        "sha256": "cf1767058f7a667f97a03f0a539de03a38a1dfae2946146841a00726992981c7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/resnetv2.py",
+        "sha256": "cf1767058f7a667f97a03f0a539de03a38a1dfae2946146841a00726992981c7",
+        "bytes": 30449
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/rexnet.py",
+        "sha256": "61201a9b75d714099e7e5fc74e92d9e95ba3768fa1256d5700b537da85d8f883"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/rexnet.py",
+        "sha256": "61201a9b75d714099e7e5fc74e92d9e95ba3768fa1256d5700b537da85d8f883",
+        "bytes": 11918
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/selecsls.py",
+        "sha256": "bf18b1c8e8595edce6d24038a4de0305a98200e5d93830786e9b086659d4f943"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/selecsls.py",
+        "sha256": "bf18b1c8e8595edce6d24038a4de0305a98200e5d93830786e9b086659d4f943",
+        "bytes": 13254
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/senet.py",
+        "sha256": "0dd04b0de019a1a6e11407cc42a30c2051671b67c3837579577143a578c61241"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/senet.py",
+        "sha256": "0dd04b0de019a1a6e11407cc42a30c2051671b67c3837579577143a578c61241",
+        "bytes": 18165
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/sequencer.py",
+        "sha256": "5027619d9832d158e6ffbb2fab3eb72856f20a22bf52a7ad73287a09b03fb907"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/sequencer.py",
+        "sha256": "5027619d9832d158e6ffbb2fab3eb72856f20a22bf52a7ad73287a09b03fb907",
+        "bytes": 17254
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/sknet.py",
+        "sha256": "dc56d166fd10b011906a317b948b34d2fb7f33c159924ecf06c059b91637a4d0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/sknet.py",
+        "sha256": "dc56d166fd10b011906a317b948b34d2fb7f33c159924ecf06c059b91637a4d0",
+        "bytes": 8777
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/swin_transformer.py",
+        "sha256": "17c14d490d6ce081bbcc0ac71ca75fb2a1710519bc32735bc76e7c352fa558e5"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/swin_transformer.py",
+        "sha256": "17c14d490d6ce081bbcc0ac71ca75fb2a1710519bc32735bc76e7c352fa558e5",
+        "bytes": 34566
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/swin_transformer_v2.py",
+        "sha256": "d1749e8d205634656fc610840960dadcca72048a18c4c33da3c6c8038695ea44"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/swin_transformer_v2.py",
+        "sha256": "d1749e8d205634656fc610840960dadcca72048a18c4c33da3c6c8038695ea44",
+        "bytes": 34500
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/swin_transformer_v2_cr.py",
+        "sha256": "613310a460859c8b869587d2cce2b9d456c627dc387ebf8e4ca9367040f1c38c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/swin_transformer_v2_cr.py",
+        "sha256": "613310a460859c8b869587d2cce2b9d456c627dc387ebf8e4ca9367040f1c38c",
+        "bytes": 41818
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/tiny_vit.py",
+        "sha256": "9669c8b22b6c12ceacb2bac79debbfbbd9396bd28f3bbb372fb82d63d0a4df95"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/tiny_vit.py",
+        "sha256": "9669c8b22b6c12ceacb2bac79debbfbbd9396bd28f3bbb372fb82d63d0a4df95",
+        "bytes": 23776
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/tnt.py",
+        "sha256": "16c53c227768adc5d93e9787a312a8b5b19d726c690c4cb5227459361eac496b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/tnt.py",
+        "sha256": "16c53c227768adc5d93e9787a312a8b5b19d726c690c4cb5227459361eac496b",
+        "bytes": 13362
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/tresnet.py",
+        "sha256": "2b6168eaeadebc66e897a20255125b3126edba9083a3e6904c956dcd2733cef9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/tresnet.py",
+        "sha256": "2b6168eaeadebc66e897a20255125b3126edba9083a3e6904c956dcd2733cef9",
+        "bytes": 12901
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/twins.py",
+        "sha256": "8a541f80b7682d127f064aca274c355840cc7667d730a991896478fd4c9314e7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/twins.py",
+        "sha256": "8a541f80b7682d127f064aca274c355840cc7667d730a991896478fd4c9314e7",
+        "bytes": 19038
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vgg.py",
+        "sha256": "1dc7312dbd810e17daa3ec78a5388f864ce51c9d57e88aad427c648510e96bb0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vgg.py",
+        "sha256": "1dc7312dbd810e17daa3ec78a5388f864ce51c9d57e88aad427c648510e96bb0",
+        "bytes": 11004
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/visformer.py",
+        "sha256": "b47857aace8ee7ff2ea4b4504e0f17942eb88e701e9584f55ded6956ad171ea0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/visformer.py",
+        "sha256": "b47857aace8ee7ff2ea4b4504e0f17942eb88e701e9584f55ded6956ad171ea0",
+        "bytes": 18982
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vision_transformer.py",
+        "sha256": "8dc607d12266dbe12c0b35e2e9832cf132b9ad052eb2f2ae50d402fa07f88ba3"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vision_transformer.py",
+        "sha256": "8dc607d12266dbe12c0b35e2e9832cf132b9ad052eb2f2ae50d402fa07f88ba3",
+        "bytes": 121736
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vision_transformer_hybrid.py",
+        "sha256": "ff1a010c80b02a8b147f1d1705e61212067f31a0e645946663c097b12fdb9b93"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vision_transformer_hybrid.py",
+        "sha256": "ff1a010c80b02a8b147f1d1705e61212067f31a0e645946663c097b12fdb9b93",
+        "bytes": 17394
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vision_transformer_relpos.py",
+        "sha256": "b1f60cb8e21259c1f961f8b5dc01f80dc1d7c6e257e1ad419abed4573c886cd1"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vision_transformer_relpos.py",
+        "sha256": "b1f60cb8e21259c1f961f8b5dc01f80dc1d7c6e257e1ad419abed4573c886cd1",
+        "bytes": 24675
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vision_transformer_sam.py",
+        "sha256": "30f3f1d7bf28bed35334bf3ec963b21106ae1163b27fa885e9a7b321bce104d2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vision_transformer_sam.py",
+        "sha256": "30f3f1d7bf28bed35334bf3ec963b21106ae1163b27fa885e9a7b321bce104d2",
+        "bytes": 25122
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/volo.py",
+        "sha256": "a4e10bee26ae632cab27c943cb78091afa9ebf86050709460742aa8505365e7d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/volo.py",
+        "sha256": "a4e10bee26ae632cab27c943cb78091afa9ebf86050709460742aa8505365e7d",
+        "bytes": 30366
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/vovnet.py",
+        "sha256": "aeea0049306ac14ea03fc8c4f419e6c6b40a96d4966a15b882dbb5d5a31a6701"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/vovnet.py",
+        "sha256": "aeea0049306ac14ea03fc8c4f419e6c6b40a96d4966a15b882dbb5d5a31a6701",
+        "bytes": 15477
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/xception.py",
+        "sha256": "cff9a424b05dd5199d795c029cd85ed02654e29426f8a172370ef2ddc44e324b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/xception.py",
+        "sha256": "cff9a424b05dd5199d795c029cd85ed02654e29426f8a172370ef2ddc44e324b",
+        "bytes": 8098
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/xception_aligned.py",
+        "sha256": "812736e9921d0e00af41fdbeeb685bee4a00d16117d5bde9e8c299ce560abdac"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/xception_aligned.py",
+        "sha256": "812736e9921d0e00af41fdbeeb685bee4a00d16117d5bde9e8c299ce560abdac",
+        "bytes": 15298
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/models/xcit.py",
+        "sha256": "fb96784c56986d96234bcd8c5c005d4084c071adc56398b55814ea0f00d54511"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/models/xcit.py",
+        "sha256": "fb96784c56986d96234bcd8c5c005d4084c071adc56398b55814ea0f00d54511",
+        "bytes": 37896
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/__init__.py",
+        "sha256": "3c65294328c008d34e80a03f7221ac8b7019c65c3b49c0f45c02b6bb8788ba33"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/__init__.py",
+        "sha256": "3c65294328c008d34e80a03f7221ac8b7019c65c3b49c0f45c02b6bb8788ba33",
+        "bytes": 530
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adabelief.py",
+        "sha256": "9fc9d56c55f44eb0a0908f7cb3bb15f43d65febc0fa2a81575f516d4ac4630f6"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adabelief.py",
+        "sha256": "9fc9d56c55f44eb0a0908f7cb3bb15f43d65febc0fa2a81575f516d4ac4630f6",
+        "bytes": 9827
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adafactor.py",
+        "sha256": "50e61d6e2b0218e5c9245e2c92505ae1711bde6ebc23257a224cdc128a4669c9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adafactor.py",
+        "sha256": "50e61d6e2b0218e5c9245e2c92505ae1711bde6ebc23257a224cdc128a4669c9",
+        "bytes": 7459
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adahessian.py",
+        "sha256": "bc9b50f1b65318bae4318b863ce25d80efb957c86356f336225f874aa839f40a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adahessian.py",
+        "sha256": "bc9b50f1b65318bae4318b863ce25d80efb957c86356f336225f874aa839f40a",
+        "bytes": 6535
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adamp.py",
+        "sha256": "3d22587e86d0bf1cbd2b4b5d53afa68da885e01aa121763db07576be9a2cc792"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adamp.py",
+        "sha256": "3d22587e86d0bf1cbd2b4b5d53afa68da885e01aa121763db07576be9a2cc792",
+        "bytes": 3574
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adamw.py",
+        "sha256": "38a48119f696b3a0c90b569724769d029e050030270c3c1bf9944ab8f6a8ef39"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adamw.py",
+        "sha256": "38a48119f696b3a0c90b569724769d029e050030270c3c1bf9944ab8f6a8ef39",
+        "bytes": 5147
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/adan.py",
+        "sha256": "b3361fab4f715991c7787729c0b8d4f93de795af7a994600da8949aa42362642"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/adan.py",
+        "sha256": "b3361fab4f715991c7787729c0b8d4f93de795af7a994600da8949aa42362642",
+        "bytes": 5071
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/lamb.py",
+        "sha256": "208f734e97315b336a824e0af9bb395462a540f69b5289520261e47128eca925"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/lamb.py",
+        "sha256": "208f734e97315b336a824e0af9bb395462a540f69b5289520261e47128eca925",
+        "bytes": 9184
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/lars.py",
+        "sha256": "3dcee56936e4ea20ede2246d2fe6595ed074746182ba1a3a01e052bf1bc86266"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/lars.py",
+        "sha256": "3dcee56936e4ea20ede2246d2fe6595ed074746182ba1a3a01e052bf1bc86266",
+        "bytes": 5256
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/lion.py",
+        "sha256": "0614271bba4bfc2fd8d501168e18898540275867d78b408bbb242cdc40a4aa70"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/lion.py",
+        "sha256": "0614271bba4bfc2fd8d501168e18898540275867d78b408bbb242cdc40a4aa70",
+        "bytes": 7099
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/lookahead.py",
+        "sha256": "f9f3350c4c057ff6e96cdab6717764272ae86c5e2269534806e99a9ff45f464f"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/lookahead.py",
+        "sha256": "f9f3350c4c057ff6e96cdab6717764272ae86c5e2269534806e99a9ff45f464f",
+        "bytes": 2687
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/madgrad.py",
+        "sha256": "5772c9b8f8c6c223bb45d1c064517442a6bc253f1af432492d210ed8f086ec7a"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/madgrad.py",
+        "sha256": "5772c9b8f8c6c223bb45d1c064517442a6bc253f1af432492d210ed8f086ec7a",
+        "bytes": 6893
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/nadam.py",
+        "sha256": "a4b57cfe14398d81a56377893733ef1a71481153469298bcc0b8184ba45e3c71"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/nadam.py",
+        "sha256": "a4b57cfe14398d81a56377893733ef1a71481153469298bcc0b8184ba45e3c71",
+        "bytes": 3929
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/nadamw.py",
+        "sha256": "9dc020a77175e0f9029194dbd31a8c895f4f2a0f1cded65efb5d1666801ec5ab"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/nadamw.py",
+        "sha256": "9dc020a77175e0f9029194dbd31a8c895f4f2a0f1cded65efb5d1666801ec5ab",
+        "bytes": 12369
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/nvnovograd.py",
+        "sha256": "36444bab4d3baaa8910eb86a8992b528ffe47c270570349809645ca18bdd74e4"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/nvnovograd.py",
+        "sha256": "36444bab4d3baaa8910eb86a8992b528ffe47c270570349809645ca18bdd74e4",
+        "bytes": 4856
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/optim_factory.py",
+        "sha256": "50b78d75c2879f3d929c80ffa44c3efe202c802422f5805259bd0544e3e10cef"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/optim_factory.py",
+        "sha256": "50b78d75c2879f3d929c80ffa44c3efe202c802422f5805259bd0544e3e10cef",
+        "bytes": 15868
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/radam.py",
+        "sha256": "7427852462a8e560bcc3b01df2dba574ce90173e359d85c92182391e41fabb19"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/radam.py",
+        "sha256": "7427852462a8e560bcc3b01df2dba574ce90173e359d85c92182391e41fabb19",
+        "bytes": 3468
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/rmsprop_tf.py",
+        "sha256": "497e3b61168b3cd07e6292692d46d7ab1db5645a033deaafa495f69229f8c027"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/rmsprop_tf.py",
+        "sha256": "497e3b61168b3cd07e6292692d46d7ab1db5645a033deaafa495f69229f8c027",
+        "bytes": 6143
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/sgdp.py",
+        "sha256": "edfe193151db8c24c34e03ce65f134e92e2599d5019c80420ebfd8cf2d511616"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/sgdp.py",
+        "sha256": "edfe193151db8c24c34e03ce65f134e92e2599d5019c80420ebfd8cf2d511616",
+        "bytes": 2296
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/optim/sgdw.py",
+        "sha256": "c22086845e283a3f9d249f610f5041081fb853fdd974288376a26194404abeca"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/optim/sgdw.py",
+        "sha256": "c22086845e283a3f9d249f610f5041081fb853fdd974288376a26194404abeca",
+        "bytes": 9046
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/__init__.py",
+        "sha256": "3b7c8d45c8237bd97fc1487137956d7800114463290b13a685b3a657ff23d83c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/__init__.py",
+        "sha256": "3b7c8d45c8237bd97fc1487137956d7800114463290b13a685b3a657ff23d83c",
+        "bytes": 330
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/cosine_lr.py",
+        "sha256": "d38a2358aec47f52e7f00f784bd761aefde40cec9e6a4bf4bba9e4dbf1633eaa"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/cosine_lr.py",
+        "sha256": "d38a2358aec47f52e7f00f784bd761aefde40cec9e6a4bf4bba9e4dbf1633eaa",
+        "bytes": 3843
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/multistep_lr.py",
+        "sha256": "6f44cba719beaf487d0d517cd7ea6c41c66521bd0bf04d3fe58008076ceedb2e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/multistep_lr.py",
+        "sha256": "6f44cba719beaf487d0d517cd7ea6c41c66521bd0bf04d3fe58008076ceedb2e",
+        "bytes": 1930
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/plateau_lr.py",
+        "sha256": "bb8ee51df0bfb32b6bbcf3f3d7792c376c4e3a82d2a7d2e7c57aa972b7e5f2fc"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/plateau_lr.py",
+        "sha256": "bb8ee51df0bfb32b6bbcf3f3d7792c376c4e3a82d2a7d2e7c57aa972b7e5f2fc",
+        "bytes": 3573
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/poly_lr.py",
+        "sha256": "031ced4e7da995099556bbe2fe7105f2aeab00d2f8b0b7e81f4a82624e7f6d0c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/poly_lr.py",
+        "sha256": "031ced4e7da995099556bbe2fe7105f2aeab00d2f8b0b7e81f4a82624e7f6d0c",
+        "bytes": 3673
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/scheduler.py",
+        "sha256": "9892cda15d4e15831384b35d43738f461d57aa10f30d07fa35b99d5796370777"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/scheduler.py",
+        "sha256": "9892cda15d4e15831384b35d43738f461d57aa10f30d07fa35b99d5796370777",
+        "bytes": 5408
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/scheduler_factory.py",
+        "sha256": "633d360393daaed0ec51dc6b06ace09a22936dde3a57df8aaf3dcb82add4c173"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/scheduler_factory.py",
+        "sha256": "633d360393daaed0ec51dc6b06ace09a22936dde3a57df8aaf3dcb82add4c173",
+        "bytes": 6787
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/step_lr.py",
+        "sha256": "09e9872fa07383012b5e1084b66bac345a38800d458738b76de5268816529ca2"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/step_lr.py",
+        "sha256": "09e9872fa07383012b5e1084b66bac345a38800d458738b76de5268816529ca2",
+        "bytes": 1732
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/scheduler/tanh_lr.py",
+        "sha256": "8c30049b40851269392c8f3cec2573676174fd9256d852b270dd5a52159e7523"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/scheduler/tanh_lr.py",
+        "sha256": "8c30049b40851269392c8f3cec2573676174fd9256d852b270dd5a52159e7523",
+        "bytes": 3607
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/__init__.py",
+        "sha256": "9b60ee7d70506c6929c4683638b7bb201d5db20708d6b949ec5c8ecd2988deb9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/__init__.py",
+        "sha256": "9b60ee7d70506c6929c4683638b7bb201d5db20708d6b949ec5c8ecd2988deb9",
+        "bytes": 798
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/agc.py",
+        "sha256": "ea56420a17db5b428634c7e4cf3b560ff34ff3b112a298e4db85ed6f759b06a5"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/agc.py",
+        "sha256": "ea56420a17db5b428634c7e4cf3b560ff34ff3b112a298e4db85ed6f759b06a5",
+        "bytes": 1624
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/checkpoint_saver.py",
+        "sha256": "4658e280f89c3001e7938f0ad906e5d7b7169d07a980ee103194341428ddf31c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/checkpoint_saver.py",
+        "sha256": "4658e280f89c3001e7938f0ad906e5d7b7169d07a980ee103194341428ddf31c",
+        "bytes": 6133
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/clip_grad.py",
+        "sha256": "8981447fb7ef3dba728792b5488f8429ecb91aab36833b51f555141a36b4181d"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/clip_grad.py",
+        "sha256": "8981447fb7ef3dba728792b5488f8429ecb91aab36833b51f555141a36b4181d",
+        "bytes": 796
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/cuda.py",
+        "sha256": "9660df299154a8c964265a4c6db6b9b4396c95292c51de81da8b98964776533e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/cuda.py",
+        "sha256": "9660df299154a8c964265a4c6db6b9b4396c95292c51de81da8b98964776533e",
+        "bytes": 2029
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/decay_batch.py",
+        "sha256": "e5f3ab30ef7ce4fc3cbb3bc12bbf11c180a81f736fda36f8e8e19af46909e8b0"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/decay_batch.py",
+        "sha256": "e5f3ab30ef7ce4fc3cbb3bc12bbf11c180a81f736fda36f8e8e19af46909e8b0",
+        "bytes": 1762
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/distributed.py",
+        "sha256": "c73240ed47342eb41f2ce8d0a5b3e16b121ec078422b0389324159930b482b45"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/distributed.py",
+        "sha256": "c73240ed47342eb41f2ce8d0a5b3e16b121ec078422b0389324159930b482b45",
+        "bytes": 5635
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/jit.py",
+        "sha256": "a30f2c3e3b679737110c647fc4d2fb13a054d1c7638e05121248465eebcc364c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/jit.py",
+        "sha256": "a30f2c3e3b679737110c647fc4d2fb13a054d1c7638e05121248465eebcc364c",
+        "bytes": 2203
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/log.py",
+        "sha256": "05d6763aa5a8deff1def0b03449fae00272878d5214bc4c94b0237098beadd2b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/log.py",
+        "sha256": "05d6763aa5a8deff1def0b03449fae00272878d5214bc4c94b0237098beadd2b",
+        "bytes": 1015
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/metrics.py",
+        "sha256": "4521e96db9325ba16c6f14fa4f37012fb319878b2fe00fc61b5068f1a379a8a7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/metrics.py",
+        "sha256": "4521e96db9325ba16c6f14fa4f37012fb319878b2fe00fc61b5068f1a379a8a7",
+        "bytes": 901
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/misc.py",
+        "sha256": "c21d515193c4c953ad0371c591bba736900a3dbace29061e26a86f383992cb24"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/misc.py",
+        "sha256": "c21d515193c4c953ad0371c591bba736900a3dbace29061e26a86f383992cb24",
+        "bytes": 1105
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/model.py",
+        "sha256": "2970d2527146c8ded426334225ac044124b4d9ab9f51d4cdfd400bdd1bb2f7ea"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/model.py",
+        "sha256": "2970d2527146c8ded426334225ac044124b4d9ab9f51d4cdfd400bdd1bb2f7ea",
+        "bytes": 10420
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/model_ema.py",
+        "sha256": "822c4445e82be71d395ded569f694ee13b920e00a1304668dcfa072eab24fad7"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/model_ema.py",
+        "sha256": "822c4445e82be71d395ded569f694ee13b920e00a1304668dcfa072eab24fad7",
+        "bytes": 11175
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/onnx.py",
+        "sha256": "c5a4020bf1636e992dadac7dfc88c896c44632653124287d4c29bc0b5886f91c"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/onnx.py",
+        "sha256": "c5a4020bf1636e992dadac7dfc88c896c44632653124287d4c29bc0b5886f91c",
+        "bytes": 3342
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/random.py",
+        "sha256": "62cbfa1779c83bc25813c8fa52b0f11b2243a77b8da6ae6ff14d0aa8bffc7627"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/random.py",
+        "sha256": "62cbfa1779c83bc25813c8fa52b0f11b2243a77b8da6ae6ff14d0aa8bffc7627",
+        "bytes": 178
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/utils/summary.py",
+        "sha256": "1d80f99c9b13383dc31aa08f52ed8bdec5f85633454f26c76e3c27b52116062e"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/utils/summary.py",
+        "sha256": "1d80f99c9b13383dc31aa08f52ed8bdec5f85633454f26c76e3c27b52116062e",
+        "bytes": 1325
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm/version.py",
+        "sha256": "823313eb2d219eb131b03cb4093b3edbd0f2ad8d1e3a9fa4481c8289351a7bfa"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm/version.py",
+        "sha256": "823313eb2d219eb131b03cb4093b3edbd0f2ad8d1e3a9fa4481c8289351a7bfa",
+        "bytes": 23
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/INSTALLER",
+        "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/INSTALLER",
+        "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9",
+        "bytes": 2
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/METADATA",
+        "sha256": "daf0a37037af69c9f6cc5195344c397435608c6b058f5c2fb7aa4ee016d3c86b"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/METADATA",
+        "sha256": "daf0a37037af69c9f6cc5195344c397435608c6b058f5c2fb7aa4ee016d3c86b",
+        "bytes": 38468
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/RECORD",
+        "sha256": "0e33e478227917769bd1d292db71ce21b5f37094e2a8689f8b77bce54ad5ee19"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/RECORD",
+        "sha256": "0e33e478227917769bd1d292db71ce21b5f37094e2a8689f8b77bce54ad5ee19",
+        "bytes": 22471
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/REQUESTED",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/REQUESTED",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/WHEEL",
+        "sha256": "37627af32cd9a89877988fd683ddabc21c34aed243169663f5bc1020c2606958"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/WHEEL",
+        "sha256": "37627af32cd9a89877988fd683ddabc21c34aed243169663f5bc1020c2606958",
+        "bytes": 90
+      }
+    },
+    {
+      "accepted_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X06a/deps/timm-0.9.16.dist-info/licenses/LICENSE",
+        "sha256": "71b111620fa32c17a80ccd6db2da759d31a591e497d8b5f382174f59d1b59d49"
+      },
+      "v2_copy": {
+        "path": "/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps/timm-0.9.16.dist-info/licenses/LICENSE",
+        "sha256": "71b111620fa32c17a80ccd6db2da759d31a591e497d8b5f382174f59d1b59d49",
+        "bytes": 11343
+      }
+    }
+  ],
+  "resume_pythonpath": "src:/mnt/h/emotionAI/emotioncore_runs/X07_v2/deps"
+}

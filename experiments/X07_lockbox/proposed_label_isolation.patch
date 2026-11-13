@@ -1,0 +1,76 @@
+--- a/src/emotioncore/x07/metrics.py
++++ b/src/emotioncore/x07/metrics.py
+@@ -59,6 +59,27 @@
+             'bootstrap_valid_replicates':{k:len(v) for k,v in series.items()}}
+     return result
+ 
++def labels_for_split(path, split, expected_ids):
++    """Select CSV row numbers without labels, then parse only selected labels."""
++    import pandas as pd
++    identity=pd.read_csv(path,usecols=['video_id','clip_id','mode'],dtype=str,keep_default_na=False)
++    selected=identity[identity['mode']==split]
++    ids=[f'{r.video_id}__{r.clip_id}' for r in selected.itertuples()]
++    if len(ids)!=len(expected_ids) or set(ids)!=set(expected_ids):
++        raise RuntimeError('STOP metric identity mismatch before label access')
++    # skiprows addresses physical lines. Fail closed on multiline CSV records.
++    with Path(path).open(newline='') as stream:
++        line_count=sum(1 for _ in stream)
++    if line_count!=len(identity)+1:
++        raise RuntimeError('STOP CSV is not one physical line per record')
++    skip=[int(i)+1 for i in identity.index if i not in selected.index]
++    frame=pd.read_csv(path,usecols=['video_id','clip_id','label'],
++        dtype={'video_id':str,'clip_id':str,'label':float},skiprows=skip)
++    result={f'{r.video_id}__{r.clip_id}':float(r.label) for r in frame.itertuples()}
++    if set(result)!=set(expected_ids):
++        raise RuntimeError('STOP metric label identities differ')
++    return result
++
+ def run(split):
+     protocol,receipt=authority()
+     stage_gate(split)
+@@ -70,11 +91,8 @@
+     verify_precedes(receipt,done['first_inference_at'])
+     claim_metrics(directory)
+     # This is deliberately below the completion AND exclusive-once guards.
+-    import pandas as pd
+     source=protocol['inventory']['meta_csv']; checked(source)
+-    df=pd.read_csv(source['path'],usecols=['video_id','clip_id','mode','label'],dtype={'video_id':str,'clip_id':str})
+-    selected=df[df['mode']==split]
+-    labels={f'{r.video_id}__{r.clip_id}':float(r.label) for r in selected.itertuples()}
++    labels=labels_for_split(source['path'],split,ids)
+     if set(labels)!=set(ids):
+         raise RuntimeError('STOP metric population mismatch')
+     begin=now()
+--- a/tests/test_x07_lockbox.py
++++ b/tests/test_x07_lockbox.py
+@@ -100,7 +100,8 @@
+     calls=[]
+     original=pd.read_csv
+     def read_once(*args,**kwargs):
+-        calls.append('labels');return original(*args,**kwargs)
++        if 'label' in kwargs.get('usecols',[]): calls.append('labels')
++        return original(*args,**kwargs)
+     monkeypatch.setattr(pd,'read_csv',read_once)
+     monkeypatch.setattr(metrics,'compute',lambda *a,**kw:{'H3':{'pearson_available':1.}})
+     with pytest.raises(RuntimeError):metrics.run('test')
+@@ -137,3 +138,20 @@
+         assert got['H_V']['available']==face
+     assert json.dumps(bundle,sort_keys=True)==before
+     assert not unavailable('decode_failed')['accepted_r90']
++
++
++@pytest.mark.parametrize('split',['valid','test'])
++def test_proposed_loader_never_parses_other_split_label(tmp_path,split):
++    from emotioncore.x07.metrics import labels_for_split
++    opposite='test' if split=='valid' else 'valid'
++    path=tmp_path/'meta.csv'
++    path.write_text(f'video_id,clip_id,mode,label\nvideo_1,01,{split},0.6\nvideo_2,02,{opposite},FORBIDDEN_LABEL_MUST_NOT_PARSE\n')
++    assert labels_for_split(path,split,['video_1__01'])=={'video_1__01':.6}
++    with pytest.raises(RuntimeError):labels_for_split(path,split,['wrong__id'])
++
++def test_proposed_loader_rejects_multiline_before_labels(tmp_path):
++    from emotioncore.x07.metrics import labels_for_split
++    path=tmp_path/'meta.csv'
++    path.write_text('video_id,clip_id,mode,label,text\nvideo_1,01,valid,0.6,"two\nlines"\n')
++    with pytest.raises(RuntimeError,match='physical line'):
++        labels_for_split(path,'valid',['video_1__01'])

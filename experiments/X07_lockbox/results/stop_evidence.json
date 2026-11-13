@@ -1,0 +1,74 @@
+{
+  "STOP.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/STOP.json",
+      "sha256": "cfbc1eea62b3ca6271674c0a9ccec5c37700294c63fdabf73f2923a310811cae"
+    },
+    "data": {
+      "stage": "L3_before_GPU",
+      "reason": "Pre-metric self-audit: valid metrics reads full meta.csv label column before split filtering; halt before label access and request explicitly authorized superseding freeze.",
+      "at": "2026-10-14T05:06:54.449617+00:00",
+      "protocol_unchanged": true,
+      "metrics_not_executed": true,
+      "test_directory_exists": false
+    }
+  },
+  "stop_audit.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/stop_audit.json",
+      "sha256": "17f4b70bb0ab34f5b4034b5df76fc02cb31bae7ec05c42e12cf2d3920d6c8e30"
+    },
+    "data": {
+      "stage": "L3_before_GPU",
+      "reason": "Pre-metric self-audit: valid metrics reads full meta.csv label column before split filtering; halt before label access and request explicitly authorized superseding freeze.",
+      "at": "2026-10-14T05:06:54.449617+00:00",
+      "protocol_unchanged": true,
+      "metrics_not_executed": true,
+      "test_directory_exists": false,
+      "terminated_processes": [
+        {
+          "pid": 2604081,
+          "cmdline": [
+            "/home/administrator/emotion-data/emotioncore_runs/X02/venv/bin/python",
+            "-u",
+            "-m",
+            "emotioncore.x07.guard",
+            "valid"
+          ]
+        }
+      ],
+      "stopped_at": "2026-10-14T05:06:54.477436+00:00",
+      "gpu_jobs": [],
+      "valid_metrics_started": false,
+      "prepared_inputs": 647
+    }
+  },
+  "stage_progress.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/stage_progress.json",
+      "sha256": "fd28c6b73c8ed3993c8fab97110ab72a13f87709d7e409bec4b1423afa149a5c"
+    },
+    "data": {
+      "stage": "guard_valid",
+      "at": "2026-10-14T05:06:26.855448+00:00"
+    }
+  },
+  "valid/prepare_progress.json": {
+    "source": {
+      "path": "/mnt/h/emotionAI/emotioncore_runs/X07/valid/prepare_progress.json",
+      "sha256": "d241487b819f607d28f8a346dd9785ac0f6a0920fdb2fcf3849bdab94824f30d"
+    },
+    "data": {
+      "done": 647,
+      "total": 647,
+      "at": "2026-10-14T05:06:26.449280+00:00"
+    }
+  },
+  "observations": {
+    "valid_complete": false,
+    "valid_metrics_started": false,
+    "test_exists": false,
+    "gpu_jobs": [],
+    "root_free_bytes": 112928030720
+  }
+}
